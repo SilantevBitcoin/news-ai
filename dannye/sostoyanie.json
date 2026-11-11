@@ -66,7 +66,7 @@
     },
     {
       "data": "2026-11-10T20:46:17Z",
-      "oboroty": false,
+      "oboroty": true,
       "url": "https://claude.com/resources/articles/interactive-connectors-full-tool",
       "vid": "sayty",
       "zagolovok": "Приложения партнёров теперь открываются и работают прямо в Claude"
@@ -91,10 +91,73 @@
       "url": "https://x.com/OpenAIDevs/status/2120212596850663712",
       "vid": "x",
       "zagolovok": "Тариф ChatGPT Business теперь работает в Notion, v0, Warp и других инструментах"
+    },
+    {
+      "data": "2026-11-11T00:04:15Z",
+      "oboroty": true,
+      "url": "https://claude.com/resources/articles/interactive-connectors-full-tool",
+      "vid": "krupnaya",
+      "zagolovok": "Приложения партнёров открываются в Claude целиком, и Claude работает в них вместе с вами"
+    },
+    {
+      "data": "2026-11-11T00:04:16Z",
+      "oboroty": false,
+      "url": "https://x.com/ClaudeDevs/status/2120275296637321476",
+      "vid": "x",
+      "zagolovok": "Claude подарил платным подписчикам один полный сброс лимитов до 10 декабря"
+    },
+    {
+      "data": "2026-11-11T00:04:16Z",
+      "oboroty": false,
+      "url": "https://x.com/cursor_ai/status/2120295553309565139",
+      "vid": "x",
+      "zagolovok": "В Cursor агенты команды теперь работают вместе в общих проектах"
+    },
+    {
+      "data": "2026-11-11T00:04:16Z",
+      "oboroty": false,
+      "url": "https://x.com/OpenAIDevs/status/2120258357533749755",
+      "vid": "x",
+      "zagolovok": "Плагин Runway появился в Codex и ChatGPT"
+    },
+    {
+      "data": "2026-11-11T00:04:16Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261110/p50#a261110p50",
+      "vid": "dengi",
+      "zagolovok": "Nvidia вложит в Anthropic около 10 млрд долларов вместе с её IPO"
+    },
+    {
+      "data": "2026-11-11T00:04:16Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261110/p51#a261110p51",
+      "vid": "dengi",
+      "zagolovok": "Выручка OpenAI в третьем квартале выросла на 50% — до 10 млрд долларов"
+    },
+    {
+      "data": "2026-11-11T00:04:16Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261110/p53#a261110p53",
+      "vid": "dengi",
+      "zagolovok": "Выручка CoreWeave за квартал выросла на 168% — до 3,66 млрд долларов"
+    },
+    {
+      "data": "2026-11-11T00:04:16Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261110/p58#a261110p58",
+      "vid": "dengi",
+      "zagolovok": "Daylight, ИИ-сервис кибербезопасности, привлёк 80 млн долларов"
+    },
+    {
+      "data": "2026-11-11T00:04:16Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261110/p55#a261110p55",
+      "vid": "dengi",
+      "zagolovok": "Coframe, делающая сайты под каждого посетителя с помощью ИИ, привлекла 25 млн долларов"
     }
   ],
-  "posledniy_sbor": "2026-11-10T20:43:39Z",
-  "posledniy_slot": null,
+  "posledniy_sbor": "2026-11-10T23:02:18Z",
+  "posledniy_slot": "2026-11-10T18:00:00Z",
   "vidennye": {
     "https://claude.com/resources/articles/how-curative-is-building-a-national-provider-network-with-agents-on-claude": "2026-11-10T20:46:17Z",
     "https://claude.com/resources/articles/interactive-connectors-full-tool": "2026-11-10T20:46:17Z",
@@ -110,6 +173,7 @@
     "https://openai.com/index/introducing-businesses-chatgpt": "2026-11-10T20:46:17Z",
     "https://platform.claude.com/docs/en/release-notes/overview#claude-fable-5-2": "2026-11-10T20:46:17Z",
     "https://platform.claude.com/docs/en/release-notes/overview#fast-mode-claude-fable-5-2": "2026-11-10T20:46:17Z",
+    "https://simonwillison.net/2026/Nov/10/llm-gemini/": "2026-11-11T00:04:17Z",
     "https://simonwillison.net/2026/Nov/10/muse-ember/": "2026-11-10T20:46:17Z",
     "https://simonwillison.net/2026/Nov/10/prompting-claude-fable-52/": "2026-11-10T20:46:17Z",
     "https://simonwillison.net/2026/Nov/10/yonkers-rises/": "2026-11-10T20:46:17Z",
@@ -133,10 +197,19 @@
     "https://www.techmeme.com/261110/p47#a261110p47": "2026-11-10T20:46:17Z",
     "https://www.techmeme.com/261110/p48#a261110p48": "2026-11-10T20:46:17Z",
     "https://www.techmeme.com/261110/p49#a261110p49": "2026-11-10T20:46:17Z",
+    "https://www.techmeme.com/261110/p50#a261110p50": "2026-11-11T00:04:16Z",
+    "https://www.techmeme.com/261110/p51#a261110p51": "2026-11-11T00:04:16Z",
+    "https://www.techmeme.com/261110/p52#a261110p52": "2026-11-11T00:04:17Z",
+    "https://www.techmeme.com/261110/p53#a261110p53": "2026-11-11T00:04:16Z",
+    "https://www.techmeme.com/261110/p54#a261110p54": "2026-11-11T00:04:17Z",
+    "https://www.techmeme.com/261110/p55#a261110p55": "2026-11-11T00:04:16Z",
+    "https://www.techmeme.com/261110/p56#a261110p56": "2026-11-11T00:04:16Z",
+    "https://www.techmeme.com/261110/p58#a261110p58": "2026-11-11T00:04:16Z",
     "https://x.com/AIatMeta/status/2119912647034642817": "2026-11-10T20:46:16Z",
     "https://x.com/AnthropicAI/status/2120117722230968385": "2026-11-10T20:46:17Z",
     "https://x.com/ClaudeDevs/status/2119898687803621427": "2026-11-10T20:46:17Z",
     "https://x.com/ClaudeDevs/status/2120227979041341943": "2026-11-10T20:46:17Z",
+    "https://x.com/ClaudeDevs/status/2120275296637321476": "2026-11-11T00:04:16Z",
     "https://x.com/GoogleDeepMind/status/2120169787896525104": "2026-11-10T20:46:17Z",
     "https://x.com/GoogleDeepMind/status/2120219371473617099": "2026-11-10T20:46:17Z",
     "https://x.com/OfficialLoganK/status/2120024720510984234": "2026-11-10T20:46:17Z",
@@ -145,21 +218,26 @@
     "https://x.com/OpenAI/status/2120202353907486826": "2026-11-10T20:46:17Z",
     "https://x.com/OpenAI/status/2120216592395174382": "2026-11-10T20:46:17Z",
     "https://x.com/OpenAIDevs/status/2120212596850663712": "2026-11-10T20:46:17Z",
+    "https://x.com/OpenAIDevs/status/2120258357533749755": "2026-11-11T00:04:16Z",
     "https://x.com/alexalbert__/status/2119916954337349737": "2026-11-10T20:46:17Z",
     "https://x.com/claudeai/status/2119899459761131615": "2026-11-10T20:46:17Z",
     "https://x.com/claudeai/status/2120174844822298730": "2026-11-10T20:46:17Z",
     "https://x.com/claudeai/status/2120206365759094857": "2026-11-10T20:46:17Z",
     "https://x.com/cursor_ai/status/2120193584670580857": "2026-11-10T20:46:17Z",
+    "https://x.com/cursor_ai/status/2120295553309565139": "2026-11-11T00:04:16Z",
     "https://x.com/demishassabis/status/2120210297948696997": "2026-11-10T20:46:17Z",
     "https://x.com/gdb/status/2120222471412666562": "2026-11-10T20:46:17Z",
     "https://x.com/jackclarkSF/status/2120162750660026481": "2026-11-10T20:46:17Z",
     "https://x.com/mikeyk/status/2120254420105806188": "2026-11-10T20:46:17Z",
     "https://x.com/simonw/status/2119945524514328631": "2026-11-10T20:46:17Z",
     "https://x.com/simonw/status/2120029347948220500": "2026-11-10T20:46:17Z",
+    "https://x.com/simonw/status/2120258951594037732": "2026-11-11T00:04:17Z",
     "https://x.com/swyx/status/2119935240202539147": "2026-11-10T20:46:17Z",
     "https://x.com/swyx/status/2120187167901372559": "2026-11-10T20:46:17Z",
     "https://x.com/swyx/status/2120208862221684809": "2026-11-10T20:46:17Z",
     "https://x.com/swyx/status/2120241063193706960": "2026-11-10T20:46:17Z",
+    "https://x.com/swyx/status/2120259002324140192": "2026-11-11T00:04:17Z",
+    "https://x.com/swyx/status/2120260228902264872": "2026-11-11T00:04:17Z",
     "https://x.com/testingcatalog/status/2119894220748280190": "2026-11-10T20:46:17Z",
     "https://x.com/testingcatalog/status/2119913217371799774": "2026-11-10T20:46:17Z",
     "https://x.com/testingcatalog/status/2119914321245577334": "2026-11-10T20:46:17Z",
@@ -187,6 +265,8 @@
     "https://x.com/testingcatalog/status/2120245174752137605": "2026-11-10T20:46:17Z",
     "https://x.com/testingcatalog/status/2120250776794566710": "2026-11-10T20:46:17Z",
     "https://x.com/thsottiaux/status/2120021043876106429": "2026-11-10T20:46:17Z",
+    "https://x.com/thsottiaux/status/2120266880963473789": "2026-11-11T00:04:15Z",
+    "https://x.com/thsottiaux/status/2120267268517249036": "2026-11-11T00:04:17Z",
     "https://x.com/trq212/status/2120223476279869875": "2026-11-10T20:46:17Z"
   }
 }
