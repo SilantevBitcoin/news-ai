@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ChatGPT &amp; Codex changelog</title><description>Latest updates to ChatGPT and Codex.</description><link>https://developers.openai.com/</link><atom:link rel="self" type="application/rss+xml" href="https://developers.openai.com/codex/changelog/rss.xml"/><item><title>Codex CLI Release: 0.167.0</title><link>https://developers.openai.com/codex/changelog/#github-release-435979892</link><guid>https://developers.openai.com/codex/changelog/#github-release-435979892</guid><description>0.167.0</description><pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;</content:encoded></item>
+<item><title>ChatGPT for iOS</title><link>https://developers.openai.com/codex/changelog/#codex-2026-11-02-mobile</link><guid>https://developers.openai.com/codex/changelog/#codex-2026-11-02-mobile</guid><description>ChatGPT for iOS</description><pubDate>Mon, 02 Nov 2026 00:00:00 GMT</pubDate><content:encoded># ChatGPT for iOS
+
+### New features
+
+- Add, preview, and remove attachments without leaving the full-screen composer.
+- Task read status now syncs with supported hosts, helping clear stale unread indicators across devices.
+
+### Improvements and bug fixes
+
+- Follow-ups steer the running task by default unless you have saved a different preference.
+- Improved response annotations: add and edit notes on selected text, and tap numbered references to revisit the selected text and its note.
+- Custom-provider tasks keep their model and reasoning effort when you send a follow-up from iOS.
+- When you reopen a task, prompts that failed to send retain their attachments, and you can retry sending them.
+- Improved keyboard behavior when opening tasks, scrolling long drafts, and returning to an open editor.
+- Drafts, text selection, and undo history survive changes between compact and split layouts.
+- Improved iPhone Duo layouts, including full-width editing and controls that stay above the keyboard.
+- Linked files open directly, and closing the preview takes you back to the task. Absolute file links outside the workspace also open correctly.
+- Images with relative file paths load from the directory where the original turn ran.
+- Fixed invisible chart labels and bars in inline visualizations.
+- Reconnect errors show a single Retry control, with better alignment on iPad.
+- Archiving a task can reconnect to its host when the computer appears offline.</content:encoded></item>
+<item><title>Codex CLI Release: 0.166.0</title><link>https://developers.openai.com/codex/changelog/#github-release-428320524</link><guid>https://developers.openai.com/codex/changelog/#github-release-428320524</guid><description>0.166.0</description><pubDate>Thu, 29 Oct 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;</content:encoded></item>
+</channel>
+</rss>

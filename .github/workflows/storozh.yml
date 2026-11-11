@@ -1,0 +1,44 @@
+# Сторож (спека «GitHub: репозиторий и публикатор», Р29).
+# Через 40 минут после слота: публикатор слот не обработал и заявки агента к нему нет — в канал
+# строка «выпуск <слот> не собран: заявка агента не пришла». Расписание запускается только из
+# основной ветки — секреты environment publikaciya ему доступны. Состояние сторож не пишет.
+name: storozh
+
+on:
+  schedule:
+    - cron: "40 2,10,18 * * *"     # 09:40, 17:40, 01:40 по Бангкоку
+
+permissions: {}
+
+concurrency:
+  group: storozh
+  cancel-in-progress: false
+
+jobs:
+  storozh:
+    runs-on: ubuntu-latest
+    environment: publikaciya
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      # Событие schedule идёт только с последнего коммита основной ветки: её и чекаутим.
+      - name: Код основной ветки
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Заявки за последнее время
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          # Заявки слота уже могут быть закрыты публикатором — берём все, свежие первыми.
+          gh api "repos/$GITHUB_REPOSITORY/pulls?state=all&sort=created&direction=desc&per_page=50" \
+            > "$RUNNER_TEMP/zayavki.json"
+
+      - name: Сторож
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: python3 -m newsai storozh --zayavki "$RUNNER_TEMP/zayavki.json"

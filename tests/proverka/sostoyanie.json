@@ -1,0 +1,10 @@
+{
+  "posledniy_sbor": "2026-11-10T18:07:00Z",
+  "posledniy_slot": "2026-11-10T10:00:00Z",
+  "github_obhod": true,
+  "vidennye": {"https://openai.com/index/codex-for-everyone/": "2026-11-10T22:10:00Z"},
+  "opublikovannye": [
+    {"zagolovok": "OpenAI открыла Codex для всех тарифов", "url": "https://openai.com/index/codex-for-everyone/",
+     "data": "2026-11-10T22:10:00Z", "vid": "sayty", "oboroty": false}
+  ]
+}

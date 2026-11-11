@@ -1,0 +1,145 @@
+{
+  "istochniki": [
+    {
+      "imya": "claude.dev",
+      "vid": "rss",
+      "adres": "https://claude.dev/rss.xml",
+      "filtr": {}
+    },
+    {
+      "imya": "Claude Code",
+      "vid": "atom",
+      "adres": "https://github.com/anthropics/claude-code/releases.atom",
+      "filtr": {
+        "otbrosit_stroki_s": "Fixed",
+        "pustoy_ne_kandidat": true
+      },
+      "filtr_slovami": "в теле релиза отбросить строки, начинающиеся с Fixed; релиз, где ничего не осталось, — не кандидат"
+    },
+    {
+      "imya": "Claude Platform",
+      "vid": "rss",
+      "adres": "https://platform.claude.com/docs/en/release-notes/feed.xml",
+      "filtr": {}
+    },
+    {
+      "imya": "Блог Claude",
+      "vid": "stranica_statey",
+      "adres": "https://claude.com/resources/articles",
+      "filtr": {},
+      "filtr_slovami": "карточки страницы статей: адрес, дата, заголовок; кандидаты — с датой в окне охвата. Блог claude.com/blog переехал сюда (308), в карте сайта нет ни /blog/, ни lastmod (проверено 11.11.2026)"
+    },
+    {
+      "imya": "OpenAI",
+      "vid": "rss",
+      "adres": "https://openai.com/news/rss.xml",
+      "filtr": {
+        "kategorii": ["Product", "Research"]
+      },
+      "filtr_slovami": "только категории Product и Research"
+    },
+    {
+      "imya": "Codex",
+      "vid": "rss",
+      "adres": "https://developers.openai.com/codex/changelog/rss.xml",
+      "filtr": {
+        "bez_zagolovka_na": "Codex CLI Release"
+      },
+      "filtr_slovami": "без записей, чей заголовок начинается с Codex CLI Release"
+    },
+    {
+      "imya": "OpenAI API",
+      "vid": "stranica",
+      "adres": "https://developers.openai.com/api/docs/changelog",
+      "filtr": {
+        "zapisi_po_datam": true
+      },
+      "filtr_slovami": "записи по датам из разметки страницы; кандидаты — с датой в окне охвата; id — адрес, дата и заголовок записи, адрес — с якорем записи, если разметка его даёт"
+    },
+    {
+      "imya": "AINews",
+      "vid": "rss",
+      "adres": "https://www.latent.space/feed",
+      "filtr": {
+        "zagolovok_na": "[AINews]"
+      },
+      "filtr_slovami": "только записи с заголовком на [AINews]"
+    },
+    {
+      "imya": "Simon Willison",
+      "vid": "atom",
+      "adres": "https://simonwillison.net/atom/everything/",
+      "filtr": {}
+    },
+    {
+      "imya": "Ben's Bites",
+      "vid": "rss",
+      "adres": "https://www.bensbites.com/feed",
+      "filtr": {}
+    },
+    {
+      "imya": "Cursor",
+      "vid": "rss",
+      "adres": "https://cursor.com/changelog/rss.xml",
+      "filtr": {}
+    },
+    {
+      "imya": "DeepMind",
+      "vid": "rss",
+      "adres": "https://deepmind.google/blog/rss.xml",
+      "filtr": {}
+    },
+    {
+      "imya": "Techmeme",
+      "vid": "rss",
+      "adres": "https://www.techmeme.com/feed.xml",
+      "filtr": {
+        "original_v_tekst": true
+      },
+      "filtr_slovami": "без фильтра: сюжеты не про ИИ отбрасывает отбор (Р16)"
+    },
+    {
+      "imya": "X",
+      "vid": "x",
+      "adres": "https://api.fxtwitter.com/2/profile/{akkaunt}/statuses?since={nachalo_okna}",
+      "zapasnye": [
+        {
+          "vid": "syndication",
+          "adres": "https://syndication.twitter.com/srv/timeline-profile/screen-name/{akkaunt}"
+        },
+        {
+          "vid": "twitterapi_io",
+          "peremennaya_klyucha": "TWITTERAPI_KEY"
+        }
+      ],
+      "filtr": {
+        "bez_otvetov": true,
+        "bez_repostov": true,
+        "otvet_204_net_novogo": true
+      },
+      "filtr_slovami": "без ответов (with_replies выключен) и без репостов; since — начало окна охвата; ответ 204 — новых постов нет, это не сбой",
+      "akkaunty": [
+        "AnthropicAI", "claudeai", "ClaudeDevs", "bcherny", "_catwu", "alexalbert__", "mikeyk", "trq212",
+        "jackclarkSF", "OpenAI", "OpenAIDevs", "sama", "gdb", "thsottiaux", "embirico", "romainhuet",
+        "kevinweil", "GoogleDeepMind", "OfficialLoganK", "demishassabis", "deepseek_ai", "Alibaba_Qwen",
+        "MistralAI", "AIatMeta", "cursor_ai", "karpathy", "simonw", "swyx", "testingcatalog", "btibor91"
+      ]
+    },
+    {
+      "imya": "GitHub Claude Code",
+      "vid": "github_issues",
+      "adres": "https://api.github.com/search/issues",
+      "filtr": {
+        "repozitoriy": "anthropics/claude-code",
+        "reakcii_ot": 100,
+        "avtor_komandy": ["MEMBER", "COLLABORATOR"],
+        "loginy_komandy": [
+          "bcherny", "hackyon-anthropic", "chrislloyd", "blois", "wolffiex", "localden", "bogini",
+          "ant-kurt", "igorkofman", "ashwin-ant", "dicksontsai"
+        ],
+        "skoro": true
+      },
+      "filtr_slovami": "issue с reactions:>=100, обновлённые в периоде; кандидат — только issue с комментарием MEMBER или COLLABORATOR либо от логина из loginy_komandy и только если его ещё нет в vidennye; пока в состоянии нет github_obhod — поиск без периода, все набравшие условия — в vidennye, в выпуск — только с первым комментарием команды за последние 24 часа, сбой посреди обхода не записывает ничего; у кандидата признак скоро"
+    }
+  ]
+}

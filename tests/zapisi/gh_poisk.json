@@ -1,0 +1,56 @@
+{
+ "total_count": 2,
+ "incomplete_results": false,
+ "items": [
+  {
+   "url": "https://api.github.com/repos/anthropics/claude-code/issues/42796",
+   "html_url": "https://github.com/anthropics/claude-code/issues/42796",
+   "comments_url": "https://api.github.com/repos/anthropics/claude-code/issues/42796/comments",
+   "number": 42796,
+   "title": "[MODEL] Claude Code is unusable for complex engineering tasks with the Feb updates",
+   "state": "closed",
+   "comments": 583,
+   "created_at": "2026-04-02T21:18:16Z",
+   "updated_at": "2026-04-24T00:26:08Z",
+   "author_association": "NONE",
+   "reactions": {
+    "url": "https://api.github.com/repos/anthropics/claude-code/issues/42796/reactions",
+    "total_count": 3286,
+    "+1": 2072,
+    "-1": 8,
+    "laugh": 149,
+    "hooray": 114,
+    "confused": 59,
+    "heart": 436,
+    "rocket": 231,
+    "eyes": 217
+   },
+   "body": "### Preflight Checklist\n\n- [x] I have searched [existing issues](https://github.com/anthropics/claude-code/issues?q=is%3Aissue%20state%3Aopen%20label%3Amodel) for similar behavior reports\n- [x] This report does NOT contain sensitive information (API keys, passwords, etc.)\n\n### Type of Behavior Issue\n\nOther unexpected behavior\n\n### What You Asked Claude to Do\n\nClaude has regressed to the point it c"
+  },
+  {
+   "url": "https://api.github.com/repos/anthropics/claude-code/issues/65697",
+   "html_url": "https://github.com/anthropics/claude-code/issues/65697",
+   "comments_url": "https://api.github.com/repos/anthropics/claude-code/issues/65697/comments",
+   "number": 65697,
+   "title": "[FEATURE] Official Claude Desktop build for Linux (Ubuntu LTS / Debian)",
+   "state": "closed",
+   "comments": 55,
+   "created_at": "2026-06-05T17:48:57Z",
+   "updated_at": "2026-10-18T14:14:24Z",
+   "author_association": "NONE",
+   "reactions": {
+    "url": "https://api.github.com/repos/anthropics/claude-code/issues/65697/reactions",
+    "total_count": 655,
+    "+1": 498,
+    "-1": 4,
+    "laugh": 0,
+    "hooray": 28,
+    "confused": 0,
+    "heart": 65,
+    "rocket": 35,
+    "eyes": 25
+   },
+   "body": "### Preflight Checklist\n\n- [x] I have searched [existing requests](https://github.com/anthropics/claude-code/issues?q=is%3Aissue%20label%3Aenhancement) and this feature hasn't been requested yet\n- [x] This is a single feature request (not multiple features)\n\n### Problem Statement\n\n**Preflight note.** The closest open issue is #40347. Related: #47316 (closed), #38276 (closed as out of scope for thi"
+  }
+ ]
+}

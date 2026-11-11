@@ -1,0 +1,250 @@
+# Публикатор (спека «GitHub: репозиторий и публикатор», схема В, Р55).
+# Запускается открытием заявки агента. Код берётся только из основной ветки; из заявки читаются
+# файлы данных — как данные, код заявки не чекаутится и не запускается. Значения события в run: —
+# только через переменные окружения. Секреты — только у environment publikaciya.
+name: publikaciya
+
+on:
+  pull_request_target:
+    types: [opened]
+
+permissions: {}
+
+# Одна очередь на все запуски, идущий не отменяется; ждать могут несколько заявок сразу.
+concurrency:
+  group: publikaciya
+  cancel-in-progress: false
+  queue: max
+
+jobs:
+  publikaciya:
+    runs-on: ubuntu-latest
+    environment: publikaciya
+    timeout-minutes: 20
+    permissions:
+      contents: write          # удалить ветку заявки
+      pull-requests: write     # комментарий и закрытие заявки
+    env:
+      NOMER: ${{ github.event.pull_request.number }}
+      HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+      VETKA: ${{ github.event.pull_request.head.ref }}
+      OSNOVNAYA: ${{ github.event.repository.default_branch }}
+    steps:
+      - name: Код основной ветки
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+
+      # Из заявки — только файл выпуска или файл сбоя. Файл прогона агента не извлекается: публикатор
+      # ему не верит ни в чём и собирает кандидатов сам.
+      - name: Файлы данных заявки
+        id: dannye
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          P="$RUNNER_TEMP/zayavka"
+          mkdir -p "$P"
+          git fetch --no-tags --depth=1 origin "$HEAD_SHA"
+          for f in vypusk sboj; do
+            if [ "$(git cat-file -t "$HEAD_SHA:dannye/$f.json" 2>/dev/null || true)" = "blob" ]; then
+              git show "$HEAD_SHA:dannye/$f.json" > "$P/$f.json"
+            fi
+          done
+          gh api --paginate "repos/$GITHUB_REPOSITORY/pulls/$NOMER/files" \
+            --jq '.[] | [.status, .filename] | @tsv' > "$P/fayly.tsv"
+          if [ -f "$P/vypusk.json" ]; then echo "vid=vypusk" >> "$GITHUB_OUTPUT"
+          elif [ -f "$P/sboj.json" ]; then echo "vid=sboj" >> "$GITHUB_OUTPUT"; fi
+
+      # До сбора: заявка, слот, файлы, схема, длина, свежесть по открытию заявки. Чужая заявка, заявка
+      # вне окна своего слота или по обработанному слоту — код 3: закрыть молча, в канал ничего.
+      - name: Проверка заявки
+        id: proverka
+        run: |
+          set +e
+          P="$RUNNER_TEMP/zayavka"
+          python3 -m newsai proverit --vypusk "$P/vypusk.json" --sboj "$P/sboj.json" \
+            --zayavka "$GITHUB_EVENT_PATH" --fayly "$P/fayly.tsv" \
+            > "$P/proverka.txt" 2> "$P/proverka-oshibki.txt"
+          kod=$?
+          cat "$P/proverka.txt" "$P/proverka-oshibki.txt"
+          echo "kod=$kod" >> "$GITHUB_OUTPUT"
+
+      - name: Файл сбоя агента — строка сбоя
+        id: sboj_agenta
+        if: steps.proverka.outputs.kod == '0' && steps.dannye.outputs.vid == 'sboj'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: |
+          P="$RUNNER_TEMP/zayavka"
+          NEWSAI_SBOJ="$P/sboj.json" NEWSAI_VYPUSK="$P/vypusk.json" python3 -m newsai opublikovat
+
+      # Свой сбор за то же окно: конец периода — открытие заявки. Токен раннера — только чтение
+      # публичного anthropics/claude-code для поиска issue.
+      - name: Сбор публикатора
+        id: sbor
+        if: steps.proverka.outputs.kod == '0' && steps.dannye.outputs.vid == 'vypusk'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set +e
+          P="$RUNNER_TEMP/zayavka"
+          NEWSAI_PROGON="$P/sbor.json" python3 -m newsai sbor --konec-iz-zayavki "$GITHUB_EVENT_PATH"
+          echo "kod=$?" >> "$GITHUB_OUTPUT"
+
+      - name: Сбор публикатора не удался — строка сбоя
+        if: steps.sbor.outcome == 'success' && steps.sbor.outputs.kod != '0'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: |
+          P="$RUNNER_TEMP/zayavka"
+          # Причина — текст workflow, не данные. Слот заявки — обработан, период не сдвигается.
+          printf 'сбор публикатора не удался\n' > "$P/prichina.txt"
+          python3 -m newsai sboj --prichina-iz "$P/prichina.txt" --slot-iz-zayavki "$GITHUB_EVENT_PATH"
+
+      # Против своего сбора: пункты без ссылки в сборе отбрасываются, очищенный выпуск — в ochishchennyy.json.
+      - name: Проверка против сбора публикатора
+        id: sverka
+        if: steps.sbor.outputs.kod == '0'
+        run: |
+          set +e
+          P="$RUNNER_TEMP/zayavka"
+          python3 -m newsai proverit --vypusk "$P/vypusk.json" --sboj "$P/sboj.json" \
+            --zayavka "$GITHUB_EVENT_PATH" --fayly "$P/fayly.tsv" \
+            --progon "$P/sbor.json" --vyhod "$P/ochishchennyy.json" \
+            > "$P/sverka.txt" 2> "$P/sverka-oshibki.txt"
+          kod=$?
+          cat "$P/sverka.txt" "$P/sverka-oshibki.txt"
+          echo "kod=$kod" >> "$GITHUB_OUTPUT"
+
+      - name: Своя заявка не прошла — строка сбоя
+        if: steps.proverka.outputs.kod == '1' || steps.sverka.outputs.kod == '1'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: |
+          P="$RUNNER_TEMP/zayavka"
+          # Названия — из строки итога proverit: их пишет код, не данные заявки.
+          nazvaniya=$(cat "$P/proverka.txt" "$P/sverka.txt" 2>/dev/null \
+            | sed -n 's/^проверки не прошли: //p' | head -n 1)
+          printf 'заявка не прошла проверку: %s\n' "${nazvaniya:-схема}" > "$P/prichina.txt"
+          python3 -m newsai sboj --prichina-iz "$P/prichina.txt" --slot-iz-zayavki "$GITHUB_EVENT_PATH"
+
+      # Обрыв отправки — одну строку сбоя шлёт сам opublikovat; второй здесь нет.
+      - name: Публикация
+        id: publikaciya
+        if: steps.sverka.outputs.kod == '0'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: |
+          P="$RUNNER_TEMP/zayavka"
+          NEWSAI_PROGON="$P/sbor.json" NEWSAI_VYPUSK="$P/ochishchennyy.json" NEWSAI_SBOJ="$P/sboj.json" \
+            python3 -m newsai opublikovat
+
+      # Каждой своей заявкой: выпуск, пустой выпуск, сбой, обрыв отправки, строка сбоя публикатора —
+      # в том числе при неудачном сборе публикатора (там меняется только слот, период не сдвигается).
+      - name: Состояние в основную ветку
+        id: sostoyanie
+        if: ${{ !cancelled() && (steps.proverka.outputs.kod == '0' || steps.proverka.outputs.kod == '1') }}
+        env:
+          KLYUCH: ${{ secrets.NEWSAI_DEPLOY_KEY }}
+        run: |
+          set -uo pipefail
+          git config user.name "news-ai publikator"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          [ -f dannye/sostoyanie.json ] && git add dannye/sostoyanie.json
+          if git diff --cached --quiet; then
+            echo "состояние не менялось"
+            echo "itog=ne-menyalos" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git commit -q -m "состояние: заявка #$NOMER"
+          umask 077
+          K="$RUNNER_TEMP/klyuch"
+          H="$RUNNER_TEMP/known_hosts"
+          printf '%s\n' "$KLYUCH" > "$K"
+          # Ключи хоста GitHub закреплены: https://api.github.com/meta, поле ssh_keys.
+          cat > "$H" <<'KLYUCHI'
+          github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl
+          github.com ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEmKSENjQEezOmxkZMy7opKgwFB9nkt5YRrYMjNuG5N87uRgg6CLrbo5wAdT/y6v0mKV0U2w0WZ2YB/++Tpockg=
+          github.com ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCj7ndNxQowgcQnjshcLrqPEiiphnt+VTTvDP6mHBL9j1aNUkY4Ue1gvwnGLVlOhGeYrnZaMgRK6+PKCUXaDbC7qtbW8gIkhL7aGCsOr/C56SJMy/BCZfxd1nWzAOxSDPgVsmerOBYfNqltV9/hWCqBywINIR+5dIg6JTJ72pcEpEjcYgXkE2YEFXV1JHnsKgbLWNlhScqb2UmyRkQyytRLtL+38TGxkxCflmO+5Z8CSSNY7GidjMIZ7Q4zMjA2n1nGrlTDkzwDCsw+wqFPGQA179cnfGWOWRVruj16z6XyvxvjJwbz0wQZ75XK5tKSb7FNyeIEs4TT4jk+S4dhPeAUC5y+bDYirYgM4GC7uEnztnZyaVWQ7B381AK4Qdrwt51ZqExKbQpTUNn+EjqoTwvqNj4kqx5QUCI0ThS/YkOxJCXmPUWZbhjpCg56i+2aB6CmK2JGhn57K5mj0MNdBXA4/WnwH6XoPWJzK5Nyu2zB3nAZp+S5hpQs+p1vN1/wsjk=
+          KLYUCHI
+          export GIT_SSH_COMMAND="ssh -i $K -o IdentitiesOnly=yes -o UserKnownHostsFile=$H -o StrictHostKeyChecking=yes"
+          ADRES="git@github.com:$GITHUB_REPOSITORY.git"
+          if git push -q "$ADRES" "HEAD:refs/heads/$OSNOVNAYA" \
+              || { git pull -q --rebase "$ADRES" "$OSNOVNAYA" && git push -q "$ADRES" "HEAD:refs/heads/$OSNOVNAYA"; }; then
+            echo "itog=sohraneno" >> "$GITHUB_OUTPUT"
+          else
+            echo "itog=nesohraneno" >> "$GITHUB_OUTPUT"
+          fi
+          rm -f "$K"
+
+      - name: Состояние не сохранено — строка в канал
+        if: ${{ !cancelled() && (steps.sostoyanie.outputs.itog == 'nesohraneno' || steps.sostoyanie.outcome == 'failure') }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: python3 -m newsai nesohraneno
+
+      - name: Итог в заявку, закрыть, удалить ветку
+        if: ${{ !cancelled() && steps.proverka.outputs.kod != '' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          KOD: ${{ steps.proverka.outputs.kod }}
+          VID: ${{ steps.dannye.outputs.vid }}
+          KOD_SBORA: ${{ steps.sbor.outputs.kod }}
+          KOD_SVERKI: ${{ steps.sverka.outputs.kod }}
+          SBOJ_AGENTA: ${{ steps.sboj_agenta.outcome }}
+          PUBLIKACIYA: ${{ steps.publikaciya.outcome }}
+          SOSTOYANIE: ${{ steps.sostoyanie.outputs.itog }}
+        run: |
+          set -euo pipefail
+          P="$RUNNER_TEMP/zayavka"
+          API="repos/$GITHUB_REPOSITORY"
+          if [ "$KOD" = "3" ]; then
+            gh api -X PATCH "$API/pulls/$NOMER" -f state=closed > /dev/null
+            # Заявка не к своему слоту — своя: проверка «заявка» прошла, ветка claude/ этого репозитория;
+            # итог комментарием, ветку удалить. Чужая — молча, ветку не трогать: она не наша.
+            if grep -qxF 'заявка не к своему слоту: закрыть без публикации' "$P/proverka.txt"; then
+              {
+                echo "Заявка вне окна своего слота или по обработанному слоту — закрыта без публикации, в канал ничего."
+                echo
+                echo '```'
+                sed 's/`/ʼ/g' "$P/proverka.txt"
+                echo '```'
+              } > "$P/itog.md"
+              gh api -X POST "$API/issues/$NOMER/comments" -F "body=@$P/itog.md" > /dev/null
+              gh api -X DELETE "$API/git/refs/heads/$VETKA" > /dev/null
+            fi
+            exit 0
+          fi
+          zakryt=1
+          if [ "$KOD" = "1" ]; then
+            itog="Проверка не прошла — в канал ушла строка сбоя."
+          elif [ "$KOD" != "0" ]; then
+            itog="Проверка упала с кодом $KOD — публикации нет, заявка оставлена открытой."; zakryt=0
+          elif [ "$VID" = "sboj" ]; then
+            itog="Файл сбоя агента — строка сбоя: $SBOJ_AGENTA."
+          elif [ "$KOD_SBORA" != "0" ]; then
+            itog="Сбор публикатора не удался (код ${KOD_SBORA:-нет}) — в канал строка сбоя, слот отмечен, период не сдвинут."
+          elif [ "$KOD_SVERKI" = "1" ]; then
+            itog="Проверка против сбора публикатора не прошла — в канал ушла строка сбоя."
+          elif [ "$KOD_SVERKI" = "0" ]; then
+            itog="Проверка пройдена, выпуск очищен по сбору публикатора. Публикация: $PUBLIKACIYA."
+          else
+            itog="Проверка против сбора упала с кодом ${KOD_SVERKI:-нет} — публикации нет, заявка оставлена открытой."; zakryt=0
+          fi
+          {
+            echo "$itog Состояние: ${SOSTOYANIE:-не записано}."
+            echo
+            echo '```'
+            # Данные заявки не выходят из блока кода. Отброшенное — строки «отброшено: …» сверки.
+            cat "$P/proverka.txt" "$P/sverka.txt" 2>/dev/null | sed 's/`/ʼ/g'
+            echo '```'
+          } > "$P/itog.md"
+          gh api -X POST "$API/issues/$NOMER/comments" -F "body=@$P/itog.md" > /dev/null
+          if [ "$zakryt" = "0" ]; then
+            exit 1
+          fi
+          gh api -X PATCH "$API/pulls/$NOMER" -f state=closed > /dev/null
+          # Имя ветки уже проверено proverit: claude/ и только [A-Za-z0-9._/-].
+          gh api -X DELETE "$API/git/refs/heads/$VETKA" > /dev/null

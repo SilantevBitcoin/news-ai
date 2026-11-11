@@ -1,0 +1,495 @@
+{
+ "code": 200,
+ "results": [
+  {
+   "type": "status",
+   "url": "https://x.com/AnthropicAI/status/2120117722230968385",
+   "id": "2120117722230968385",
+   "text": "Anthropic has launched the roadshow for its proposed initial public offering: https://www.anthropic.com/news/roadshow-launch\n\nLegal disclaimer: A registration statement relating to these securities has been filed with the SEC but has not yet become effective. These securities may not be sold, nor may offers to buy be accepted, prior to the time the registration statement becomes effective. This post does not constitute an offer to sell or the solicitation of an offer to buy these securities, nor shall there be any sale of these securities in any state or jurisdiction in which such offer, solicitation or sale would be unlawful prior to registration or qualification under the securities laws of any such state or jurisdiction.",
+   "raw_text": {
+    "text": "Anthropic has launched the roadshow for its proposed initial public offering: https://t.co/FhVRVuWN9X\n\nLegal disclaimer: A registration statement relating to these securities has been filed with the SEC but has not yet become effective. These securities may not be sold, nor may offers to buy be accepted, prior to the time the registration statement becomes effective. This post does not constitute an offer to sell or the solicitation of an offer to buy these securities, nor shall there be any sale of these securities in any state or jurisdiction in which such offer, solicitation or sale would be unlawful prior to registration or qualification under the securities laws of any such state or jurisdiction.",
+    "display_text_range": [
+     0,
+     710
+    ],
+    "facets": [
+     {
+      "type": "url",
+      "indices": [
+       78,
+       101
+      ],
+      "original": "https://t.co/FhVRVuWN9X",
+      "replacement": "https://www.anthropic.com/news/roadshow-launch",
+      "display": "anthropic.com/news/roadshow-…"
+     },
+     {
+      "type": "italic",
+      "indices": [
+       103,
+       710
+      ]
+     }
+    ]
+   },
+   "replies": 391,
+   "reposts": 416,
+   "likes": 3945,
+   "bookmarks": 602,
+   "quotes": 370,
+   "embed_card": "tweet",
+   "created_at": "Tue Nov 10 11:33:49 +0000 2026",
+   "created_timestamp": 1794310429,
+   "possibly_sensitive": false,
+   "views": 606066,
+   "is_note_tweet": true,
+   "community_note": null,
+   "lang": "en",
+   "replying_to": null,
+   "card": {
+    "url": "https://t.co/oE6TA0vt3E",
+    "title": "Anthropic launches roadshow for proposed initial public offering",
+    "description": "Today Anthropic, PBC launched the roadshow for its proposed initial public offering of its Class A common stock.",
+    "domain": "www.anthropic.com",
+    "image": {
+     "width": 800,
+     "height": 419,
+     "url": "https://pbs.twimg.com/card_img/2117895312757125120/vGbVmixy?format=jpg&name=800x419",
+     "alt": "Anthropic logo"
+    }
+   },
+   "provider": "twitter",
+   "reposted_by": null
+  },
+  {
+   "type": "status",
+   "url": "https://x.com/AnthropicAI/status/2119867707546071125",
+   "id": "2119867707546071125",
+   "text": "Claude Fable 5.2 and Claude Mythos 5.2 are available now:",
+   "raw_text": {
+    "text": "Claude Fable 5.2 and Claude Mythos 5.2 are available now:",
+    "display_text_range": [
+     0,
+     57
+    ],
+    "facets": []
+   },
+   "replies": 547,
+   "reposts": 908,
+   "likes": 14421,
+   "bookmarks": 923,
+   "quotes": 410,
+   "embed_card": "player",
+   "created_at": "Mon Nov 09 19:00:21 +0000 2026",
+   "created_timestamp": 1794250821,
+   "views": 819629,
+   "is_note_tweet": false,
+   "community_note": null,
+   "lang": "en",
+   "replying_to": null,
+   "quote": {
+    "type": "status",
+    "url": "https://x.com/claudeai/status/2119867114450268322",
+    "id": "2119867114450268322",
+    "text": "Introducing Claude Fable 5.2 and Claude Mythos 5.2, designed to tackle the most daunting technical challenges.\n\nThey’re capable collaborators on ambitious projects in many fields, and show improvements in areas like coding, reasoning, and vision.",
+    "raw_text": {
+     "text": "Introducing Claude Fable 5.2 and Claude Mythos 5.2, designed to tackle the most daunting technical challenges.\n\nThey’re capable collaborators on ambitious projects in many fields, and show improvements in areas like coding, reasoning, and vision. https://t.co/jP0AutLxXb",
+     "display_text_range": [
+      0,
+      246
+     ],
+     "facets": [
+      {
+       "type": "media",
+       "indices": [
+        247,
+        270
+       ],
+       "id": "2119862225028452352",
+       "display": "pic.x.com/jP0AutLxXb",
+       "original": "https://t.co/jP0AutLxXb",
+       "replacement": "https://x.com/claudeai/status/2119867114450268322/video/1"
+      }
+     ]
+    },
+    "author": {
+     "screen_name": "claudeai",
+     "url": "https://x.com/claudeai",
+     "id": "1943306828697550848",
+     "followers": 2035864,
+     "following": 2,
+     "likes": 406,
+     "media_count": 382,
+     "statuses": 813,
+     "name": "Claude",
+     "description": "Claude is an AI assistant built by @anthropicai to be safe, accurate, and secure. Talk to Claude on http://claude.ai or download the app.",
+     "raw_description": {
+      "text": "Claude is an AI assistant built by @anthropicai to be safe, accurate, and secure. Talk to Claude on https://t.co/ZhTwG8d1e5 or download the app.",
+      "facets": [
+       {
+        "type": "mention",
+        "indices": [
+         35,
+         47
+        ],
+        "original": "anthropicai",
+        "id": ""
+       },
+       {
+        "type": "url",
+        "indices": [
+         100,
+         123
+        ],
+        "original": "https://t.co/ZhTwG8d1e5",
+        "replacement": "http://claude.ai",
+        "display": "claude.ai"
+       }
+      ]
+     },
+     "location": "",
+     "banner_url": "https://pbs.twimg.com/profile_banners/1943306828697550848/1791401760",
+     "avatar_url": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_200x200.jpg",
+     "joined": "Thu Jul 10 13:50:48 +0000 2025",
+     "protected": false,
+     "website": {
+      "url": "http://claude.ai",
+      "display_url": "claude.ai"
+     },
+     "verification": {
+      "verified": true,
+      "verified_at": null,
+      "type": "individual"
+     },
+     "type": "profile"
+    },
+    "replies": 2962,
+    "reposts": 8788,
+    "likes": 91838,
+    "bookmarks": 14815,
+    "quotes": 6580,
+    "embed_card": "player",
+    "created_at": "Mon Nov 09 18:57:59 +0000 2026",
+    "created_timestamp": 1794250679,
+    "possibly_sensitive": false,
+    "views": 14804553,
+    "is_note_tweet": false,
+    "community_note": null,
+    "lang": "en",
+    "replying_to": null,
+    "media": {
+     "all": [
+      {
+       "id": "2119862225028452352",
+       "url": "https://video.twimg.com/amplify_video/2119862225028452352/vid/avc1/1920x1080/E6naF0FCPw_qRYv0.mp4?tag=29",
+       "thumbnail_url": "https://pbs.twimg.com/media/HWtIJNLWUAAcc7I.jpg",
+       "duration": 18.52,
+       "width": 3840,
+       "height": 2160,
+       "format": "video/mp4",
+       "type": "video",
+       "formats": [
+        {
+         "url": "https://video.twimg.com/amplify_video/2119862225028452352/pl/HaJmi5jdpm9uu9F7.m3u8?tag=29&v=cfc",
+         "container": "m3u8"
+        },
+        {
+         "url": "https://video.twimg.com/amplify_video/2119862225028452352/vid/avc1/480x270/KuRIV9T6U3sjUxh8.mp4?tag=29",
+         "bitrate": 256000,
+         "container": "mp4",
+         "codec": "h264"
+        },
+        {
+         "url": "https://video.twimg.com/amplify_video/2119862225028452352/vid/avc1/640x360/bBFaSOnx8pVZ2kVi.mp4?tag=29",
+         "bitrate": 832000,
+         "container": "mp4",
+         "codec": "h264"
+        },
+        {
+         "url": "https://video.twimg.com/amplify_video/2119862225028452352/vid/avc1/1280x720/7r7y5hn-S0neCXHa.mp4?tag=29",
+         "bitrate": 2176000,
+         "container": "mp4",
+         "codec": "h264"
+        },
+        {
+         "url": "https://video.twimg.com/amplify_video/2119862225028452352/vid/avc1/1920x1080/E6naF0FCPw_qRYv0.mp4?tag=29",
+         "bitrate": 10368000,
+         "container": "mp4",
+         "codec": "h264"
+        }
+       ],
+       "publisher": null
+      }
+     ],
+     "videos": [
+      {
+       "id": "2119862225028452352",
+       "url": "https://video.twimg.com/amplify_video/2119862225028452352/vid/avc1/1920x1080/E6naF0FCPw_qRYv0.mp4?tag=29",
+       "thumbnail_url": "https://pbs.twimg.com/media/HWtIJNLWUAAcc7I.jpg",
+       "duration": 18.52,
+       "width": 3840,
+       "height": 2160,
+       "format": "video/mp4",
+       "type": "video",
+       "formats": [
+        {
+         "url": "https://video.twimg.com/amplify_video/2119862225028452352/pl/HaJmi5jdpm9uu9F7.m3u8?tag=29&v=cfc",
+         "container": "m3u8"
+        },
+        {
+         "url": "https://video.twimg.com/amplify_video/2119862225028452352/vid/avc1/480x270/KuRIV9T6U3sjUxh8.mp4?tag=29",
+         "bitrate": 256000,
+         "container": "mp4",
+         "codec": "h264"
+        },
+        {
+         "url": "https://video.twimg.com/amplify_video/2119862225028452352/vid/avc1/640x360/bBFaSOnx8pVZ2kVi.mp4?tag=29",
+         "bitrate": 832000,
+         "container": "mp4",
+         "codec": "h264"
+        },
+        {
+         "url": "https://video.twimg.com/amplify_video/2119862225028452352/vid/avc1/1280x720/7r7y5hn-S0neCXHa.mp4?tag=29",
+         "bitrate": 2176000,
+         "container": "mp4",
+         "codec": "h264"
+        },
+        {
+         "url": "https://video.twimg.com/amplify_video/2119862225028452352/vid/avc1/1920x1080/E6naF0FCPw_qRYv0.mp4?tag=29",
+         "bitrate": 10368000,
+         "container": "mp4",
+         "codec": "h264"
+        }
+       ],
+       "publisher": null
+      }
+     ]
+    },
+    "provider": "twitter",
+    "reposted_by": null
+   },
+   "provider": "twitter",
+   "reposted_by": null
+  },
+  {
+   "type": "status",
+   "url": "https://x.com/AnthropicAI/status/2118814753154064501",
+   "id": "2118814753154064501",
+   "text": "Memory is what allows Claude to learn from experience. In a new Engineering Blog post, we share how “dreaming” helps Claude organize what it’s learned, correct its mistakes, and find what it needs more easily the next time. https://www.anthropic.com/research/components-of-agent-memory",
+   "raw_text": {
+    "text": "Memory is what allows Claude to learn from experience. In a new Engineering Blog post, we share how “dreaming” helps Claude organize what it’s learned, correct its mistakes, and find what it needs more easily the next time. https://t.co/uUEN4bNkr9",
+    "display_text_range": [
+     0,
+     247
+    ],
+    "facets": [
+     {
+      "type": "url",
+      "indices": [
+       224,
+       247
+      ],
+      "original": "https://t.co/uUEN4bNkr9",
+      "replacement": "https://www.anthropic.com/research/components-of-agent-memory",
+      "display": "anthropic.com/research/compo…"
+     }
+    ]
+   },
+   "replies": 1045,
+   "reposts": 1312,
+   "likes": 14192,
+   "bookmarks": 12900,
+   "quotes": 941,
+   "embed_card": "tweet",
+   "created_at": "Fri Nov 06 21:16:17 +0000 2026",
+   "created_timestamp": 1793999777,
+   "possibly_sensitive": false,
+   "views": 2084348,
+   "is_note_tweet": false,
+   "community_note": null,
+   "lang": "en",
+   "replying_to": null,
+   "card": {
+    "url": "https://www.anthropic.com/research/components-of-agent-memory",
+    "title": "The components of agent memory",
+    "description": "For Claude to learn from experience, it has to decide what’s worth remembering before it knows what’s next. Here’s how “dreaming” helps it organize memory and correct mistakes.",
+    "domain": "www.anthropic.com",
+    "image": {
+     "width": 800,
+     "height": 419,
+     "url": "https://pbs.twimg.com/card_img/2118978305558814720/BezvEo9C?format=jpg&name=800x419",
+     "alt": "Illustration of two offset half circles with a grid pattern, one green and one pink, facing each other across a gap on a light blue background."
+    }
+   },
+   "provider": "twitter",
+   "reposted_by": {
+    "screen_name": "AnthropicAI"
+   }
+  },
+  {
+   "type": "status",
+   "url": "https://x.com/AnthropicAI/status/2118792930211107115",
+   "id": "2118792930211107115",
+   "text": "New on our Science Blog: How AI is beginning to change scientific modeling.\n\nScientific models help researchers explain and predict real-world systems—like how a single nerve cell fires, or what happens when neutron stars collide. Recent advances have transformed how scientists fit complex models to data. But scientists still typically write the models manually, and usually need to weigh up several competing versions, each of which might explain the data in a different way.\n\nIn a guest post, Jakob Macke, Daniel Gedon, and Stefan Wahl describe how AI is starting to help with these parts of the process. By writing, running, fitting, and revising scientific models as code, AI can explore many possible model structures, and find out which explanations the data support.\n\nhttps://www.anthropic.com/research/teaching-ai-to-build-scientific-models",
+   "raw_text": {
+    "text": "New on our Science Blog: How AI is beginning to change scientific modeling.\n\nScientific models help researchers explain and predict real-world systems—like how a single nerve cell fires, or what happens when neutron stars collide. Recent advances have transformed how scientists fit complex models to data. But scientists still typically write the models manually, and usually need to weigh up several competing versions, each of which might explain the data in a different way.\n\nIn a guest post, Jakob Macke, Daniel Gedon, and Stefan Wahl describe how AI is starting to help with these parts of the process. By writing, running, fitting, and revising scientific models as code, AI can explore many possible model structures, and find out which explanations the data support.\n\nhttps://t.co/qsFJG76FDw",
+    "display_text_range": [
+     0,
+     800
+    ],
+    "facets": [
+     {
+      "type": "url",
+      "indices": [
+       777,
+       800
+      ],
+      "original": "https://t.co/qsFJG76FDw",
+      "replacement": "https://www.anthropic.com/research/teaching-ai-to-build-scientific-models",
+      "display": "anthropic.com/research/teach…"
+     }
+    ]
+   },
+   "replies": 374,
+   "reposts": 403,
+   "likes": 3692,
+   "bookmarks": 1463,
+   "quotes": 158,
+   "embed_card": "tweet",
+   "created_at": "Fri Nov 06 19:49:34 +0000 2026",
+   "created_timestamp": 1793994574,
+   "views": 475173,
+   "is_note_tweet": true,
+   "community_note": null,
+   "lang": "en",
+   "replying_to": null,
+   "card": {
+    "url": "https://www.anthropic.com/research/teaching-ai-to-build-scientific-models",
+    "title": "Teaching AI to build scientific models",
+    "description": "AI for Science grantees Jakob Macke, Daniel Gedon, and Stefan Wahl on how AI is starting to change how scientific models are built and interpreted.",
+    "domain": "www.anthropic.com",
+    "image": {
+     "width": 800,
+     "height": 419,
+     "url": "https://pbs.twimg.com/card_img/2118799801722810368/kOJ3F_Xm?format=jpg&name=800x419",
+     "alt": "Collage of a looping black line drawn across a pink grid, continuing into a green engraving of a textured, branching landscape."
+    }
+   },
+   "provider": "twitter",
+   "reposted_by": null
+  },
+  {
+   "type": "status",
+   "url": "https://x.com/AnthropicAI/status/2118073665296228863",
+   "id": "2118073665296228863",
+   "text": "We’re sharing how our biology research team worked with Claude to map the first 3D structure of a vault particle from bacterial life.\n\nVault particles are a longstanding mystery. They are barrel-shaped objects, among the largest protein structures found in our cells. They were first discovered by Leonard Rome and Nancy Kedersha in 1986, but their function remains unknown.\n\nWith Claude, we’ve found results that might bring us closer to solving that mystery.\n\nUntil now, vaults were only known in the cells of complex things like animals and plants. We have shown that similar proteins from bacteria (and the viruses that infect them) can also assemble into vaults. Finding the structures in these simpler forms of life may make it easier to investigate their function in our own cells.\n\nFor our life sciences team, the project was also a demonstration of the potential (and the limitations) of using AI to accelerate science.\n\nIn our full piece, we discuss how Claude was able to dramatically speed up some stages—manually determining the vault particle’s structure would have taken weeks to months of painstaking work, but here it took days. We also discuss how Claude made some simple mistakes along the way, and how we collaborated with our machine learning researchers to address them.\n\nRead more: https://www.anthropic.com/research/investigating-vault-particles-with-claude",
+   "raw_text": {
+    "text": "We’re sharing how our biology research team worked with Claude to map the first 3D structure of a vault particle from bacterial life.\n\nVault particles are a longstanding mystery. They are barrel-shaped objects, among the largest protein structures found in our cells. They were first discovered by Leonard Rome and Nancy Kedersha in 1986, but their function remains unknown.\n\nWith Claude, we’ve found results that might bring us closer to solving that mystery.\n\nUntil now, vaults were only known in the cells of complex things like animals and plants. We have shown that similar proteins from bacteria (and the viruses that infect them) can also assemble into vaults. Finding the structures in these simpler forms of life may make it easier to investigate their function in our own cells.\n\nFor our life sciences team, the project was also a demonstration of the potential (and the limitations) of using AI to accelerate science.\n\nIn our full piece, we discuss how Claude was able to dramatically speed up some stages—manually determining the vault particle’s structure would have taken weeks to months of painstaking work, but here it took days. We also discuss how Claude made some simple mistakes along the way, and how we collaborated with our machine learning researchers to address them.\n\nRead more: https://t.co/KowVVCSPp8",
+    "display_text_range": [
+     0,
+     1328
+    ],
+    "facets": [
+     {
+      "type": "url",
+      "indices": [
+       1305,
+       1328
+      ],
+      "original": "https://t.co/KowVVCSPp8",
+      "replacement": "https://www.anthropic.com/research/investigating-vault-particles-with-claude",
+      "display": "anthropic.com/research/inves…"
+     }
+    ]
+   },
+   "replies": 573,
+   "reposts": 531,
+   "likes": 4915,
+   "bookmarks": 1363,
+   "quotes": 305,
+   "embed_card": "tweet",
+   "created_at": "Wed Nov 04 20:11:28 +0000 2026",
+   "created_timestamp": 1793823088,
+   "views": 1018757,
+   "is_note_tweet": true,
+   "community_note": null,
+   "lang": "en",
+   "replying_to": null,
+   "card": {
+    "url": "https://www.anthropic.com/research/investigating-vault-particles-with-claude",
+    "title": "Investigating vault particles with Claude",
+    "description": "We’re sharing another finding from Anthropic’s biology research lab: the first 3D structure of a vault particle found in prokaryotic cells.",
+    "domain": "www.anthropic.com",
+    "image": {
+     "width": 800,
+     "height": 419,
+     "url": "https://pbs.twimg.com/card_img/2118068457287585792/p275vh9C?format=jpg&name=800x419",
+     "alt": "Collage illustration pairing vintage measuring scales over a black-and-white photograph with a green print of a ribbed, vaulted cathedral ceiling."
+    }
+   },
+   "provider": "twitter",
+   "reposted_by": null
+  },
+  {
+   "type": "status",
+   "url": "https://x.com/AnthropicAI/status/2118073667858887068",
+   "id": "2118073667858887068",
+   "text": "Read the full preprint here: https://www-cdn.anthropic.com/76e55fbe85697afbaae16b839498dc00797dec30.pdf",
+   "raw_text": {
+    "text": "Read the full preprint here: https://t.co/endRhOCTko https://t.co/C2TO3Z4sAS",
+    "display_text_range": [
+     0,
+     52
+    ],
+    "facets": [
+     {
+      "type": "url",
+      "indices": [
+       29,
+       52
+      ],
+      "original": "https://t.co/endRhOCTko",
+      "replacement": "https://www-cdn.anthropic.com/76e55fbe85697afbaae16b839498dc00797dec30.pdf",
+      "display": "www-cdn.anthropic.com/76e55fbe85697a…"
+     },
+     {
+      "type": "media",
+      "indices": [
+       53,
+       76
+      ],
+      "id": "2118069611543273472",
+      "display": "pic.x.com/C2TO3Z4sAS",
+      "original": "https://t.co/C2TO3Z4sAS",
+      "replacement": "https://x.com/AnthropicAI/status/2118073667858887068/photo/1"
+     }
+    ]
+   },
+   "replies": 48,
+   "reposts": 66,
+   "likes": 848,
+   "bookmarks": 249,
+   "quotes": 28,
+   "embed_card": "player",
+   "created_at": "Wed Nov 04 20:11:28 +0000 2026",
+   "created_timestamp": 1793823088,
+   "possibly_sensitive": false,
+   "views": 295662,
+   "is_note_tweet": false,
+   "community_note": null,
+   "lang": "en",
+   "replying_to": {
+    "screen_name": "AnthropicAI",
+    "status": "2118073665296228863",
+    "url": "https://x.com/AnthropicAI/status/2118073665296228863",
+    "profile_url": "https://x.com/AnthropicAI"
+   },
+   "provider": "twitter",
+   "reposted_by": null
+  }
+ ],
+ "cursor": {
+  "top": "a",
+  "bottom": "b"
+ }
+}

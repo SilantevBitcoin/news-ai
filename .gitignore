@@ -1,0 +1,16 @@
+# секреты — никогда в git
+.env
+.env.*
+!.env.example
+
+# зависимости / артефакты
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+dist/
+build/
+
+# личное и временное
+docs/private/
+temp/

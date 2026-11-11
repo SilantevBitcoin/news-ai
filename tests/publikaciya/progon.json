@@ -1,0 +1,123 @@
+{
+  "nachalo_progona": "2026-11-11T02:07:00Z",
+  "nachalo_perioda": "2026-11-10T18:07:00Z",
+  "pervyy_progon": false,
+  "kandidaty": [
+    {
+      "id": "https://www.anthropic.com/news/claude-opus-5-5?utm=a&b=\"c\"",
+      "istochnik": "claude.dev",
+      "zagolovok": "Introducing Claude Opus 5.5",
+      "url": "https://www.anthropic.com/news/claude-opus-5-5?utm=a&b=\"c\"",
+      "data": "2026-11-10T20:00:00Z",
+      "tekst": "Today we're releasing Claude Opus 5.5.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://x.com/AnthropicAI/status/1988000000000000001",
+      "istochnik": "X",
+      "zagolovok": "Claude Opus 5.5 is here.",
+      "url": "https://x.com/AnthropicAI/status/1988000000000000001",
+      "data": "2026-11-10T20:05:00Z",
+      "tekst": "Claude Opus 5.5 is here.",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "AnthropicAI"
+    },
+    {
+      "id": "https://openai.com/index/codex-for-everyone/",
+      "istochnik": "OpenAI",
+      "zagolovok": "Codex for everyone",
+      "url": "https://openai.com/index/codex-for-everyone/",
+      "data": "2026-11-10T22:00:00Z",
+      "tekst": "Codex is now available on all paid plans.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://deepmind.google/blog/deep-think-api/",
+      "istochnik": "DeepMind",
+      "zagolovok": "Deep Think in the Gemini API",
+      "url": "https://deepmind.google/blog/deep-think-api/",
+      "data": "2026-11-10T21:00:00Z",
+      "tekst": "Deep Think is now available in the Gemini API.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.bensbites.com/p/week-45?a=1&b=2",
+      "istochnik": "Ben's Bites",
+      "zagolovok": "Ben's Bites: week 45",
+      "url": "https://www.bensbites.com/p/week-45?a=1&b=2",
+      "data": "2026-11-10T21:30:00Z",
+      "tekst": "This week in AI.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://x.com/sama/status/1988000000000000002",
+      "istochnik": "X",
+      "zagolovok": "GPT-6 Luna ships in December.",
+      "url": "https://x.com/sama/status/1988000000000000002",
+      "data": "2026-11-10T22:30:00Z",
+      "tekst": "GPT-6 Luna ships in December.",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "sama"
+    },
+    {
+      "id": "https://x.com/simonw/status/1988000000000000003",
+      "istochnik": "X",
+      "zagolovok": "Notes on tool use and agents.",
+      "url": "https://x.com/simonw/status/1988000000000000003",
+      "data": "2026-11-10T22:40:00Z",
+      "tekst": "Notes on tool use and agents.",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "simonw"
+    },
+    {
+      "id": "https://www.techmeme.com/261110/p12",
+      "istochnik": "Techmeme",
+      "zagolovok": "Mistral raises €2B",
+      "url": "https://www.techmeme.com/261110/p12",
+      "data": "2026-11-10T23:10:00Z",
+      "tekst": "Mistral raises a €2B round.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://github.com/anthropics/claude-code/issues/4321",
+      "istochnik": "GitHub Claude Code",
+      "zagolovok": "Custom panels for mods",
+      "url": "https://github.com/anthropics/claude-code/issues/4321",
+      "data": "2026-11-10T23:20:00Z",
+      "tekst": "Feature request: custom panels.",
+      "skoro": true,
+      "novyy": true
+    },
+    {
+      "id": "https://simonwillison.net/2026/Nov/10/fixed-typo/",
+      "istochnik": "Simon Willison",
+      "zagolovok": "A small note",
+      "url": "https://simonwillison.net/2026/Nov/10/fixed-typo/",
+      "data": "2026-11-10T23:00:00Z",
+      "tekst": "Уровень 1 — в выпуск не идёт, но увиденным становится.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://simonwillison.net/2026/Nov/10/opus-5-5/",
+      "istochnik": "Simon Willison",
+      "zagolovok": "Claude Opus 5.5",
+      "url": "https://simonwillison.net/2026/Nov/10/opus-5-5/",
+      "data": "2026-11-10T12:00:00Z",
+      "tekst": "Увиден прошлым выпуском — только в счёт охвата.",
+      "skoro": false,
+      "novyy": false
+    }
+  ],
+  "ne_otvetili": ["X", "OpenAI API", "X"],
+  "tolko_v_vidennye": ["https://github.com/anthropics/claude-code/issues/1000"],
+  "github_polnyy_obhod": true
+}

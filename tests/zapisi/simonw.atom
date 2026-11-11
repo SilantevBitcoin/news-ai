@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xml:lang="en-us" xmlns="http://www.w3.org/2005/Atom"><title>Simon Willison's Weblog</title><link href="http://simonwillison.net/" rel="alternate"/><link href="http://simonwillison.net/atom/everything/" rel="self"/><id>http://simonwillison.net/</id><updated>2026-11-10T07:28:21+00:00</updated><author><name>Simon Willison</name></author><entry><title>Introducing Our Smallest, Most Efficient Model: Muse Ember</title><link href="https://simonwillison.net/2026/Nov/10/muse-ember/" rel="alternate"/><published>2026-11-10T07:28:21+00:00</published><updated>2026-11-10T07:28:21+00:00</updated><id>https://simonwillison.net/2026/Nov/10/muse-ember/</id><summary type="html">
+    
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://research.meta.ai/blog/muse-ember"&gt;Introducing Our Smallest, Most Efficient Model: Muse Ember&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+Meta AI just launched their entry in the Claude Haiku/GPT Luna category: Muse Ember, which they describe as:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[...] our smallest and most efficient model designed for complex reasoning execution and the work agents repeat all day: tool calls, coding subtasks, routing, extraction, and long document parsing.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;For shorter prompts it's priced the same as GPT-6 Luna and Claude Haiku 5.5 - both are $0.10/million input tokens and $0.50/million output. Today's other big model release, Claude Fable 5.2, is &lt;em&gt;80x that price&lt;/em&gt; at $8/$40.&lt;/p&gt;
+&lt;p&gt;The pricing is a little less straightforward as prompts get longer, though. Luna, Ember, and Haiku all support up to a million input tokens, but they also all have a threshold after which the price goes up. Taking &lt;em&gt;that&lt;/em&gt; threshold into account Ember is priced between the two others:&lt;/p&gt;
+&lt;center&gt;&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Model&lt;/th&gt;
+      &lt;th&gt;Prompt size&lt;/th&gt;
+      &lt;th&gt;Input ($/M)&lt;/th&gt;
+      &lt;th&gt;Cached input&lt;/th&gt;
+      &lt;th&gt;Output&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td rowspan="2"&gt;GPT-6 Luna&lt;/td&gt;
+      &lt;td&gt;≤272k&lt;/td&gt;
+      &lt;td&gt;$0.10&lt;/td&gt;
+      &lt;td&gt;$0.01&lt;/td&gt;
+      &lt;td&gt;$0.50&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&amp;gt;272k&lt;/td&gt;
+      &lt;td&gt;$0.20&lt;/td&gt;
+      &lt;td&gt;$0.02&lt;/td&gt;
+      &lt;td&gt;$0.75&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td rowspan="2"&gt;Muse Ember 1.0&lt;/td&gt;
+      &lt;td&gt;≤200k&lt;/td&gt;
+      &lt;td&gt;$0.10&lt;/td&gt;
+      &lt;td&gt;$0.004&lt;/td&gt;
+      &lt;td&gt;$0.50&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&amp;gt;200k&lt;/td&gt;
+      &lt;td&gt;$0.30&lt;/td&gt;
+      &lt;td&gt;$0.012&lt;/td&gt;
+      &lt;td&gt;$1.50&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td rowspan="2"&gt;Claude Haiku 5.5&lt;/td&gt;
+      &lt;td&gt;≤100k&lt;/td&gt;
+      &lt;td&gt;$0.10&lt;/td&gt;
+      &lt;td&gt;$0.01&lt;/td&gt;
+      &lt;td&gt;$0.50&lt;/td&gt;
+    &lt;/tr&gt; 
+    &lt;tr&gt;
+      &lt;td&gt;&amp;gt;100k&lt;/td&gt;
+      &lt;td&gt;$0.50&lt;/td&gt;
+      &lt;td&gt;$0.05&lt;/td&gt;
+      &lt;td&gt;$2.50&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;&lt;/center&gt;
+
+&lt;p&gt;But comparing price-per-token doesn't really make sense these days, when reasoning tokens mean that different models might use dramatically different numbers of tokens to solve the same problem.&lt;/p&gt;
+&lt;p&gt;For that, one measure that's useful is the Artificial Analysis. &lt;/p&gt;
+&lt;p&gt;&lt;img alt="Stacked bar chart from Artificial Analysis comparing a cost in dollars across six models, each bar split into four unlabeled stacked segments, sorted from lowest to highest total. Claude Haiku 5.5 (low): $0.04* total, bottom segment $0.02, three thin unlabeled segments above. GPT-6 Luna (non-reasoning): $0.07 total, bottom segment $0.06, thin unlabeled segments above. GPT-6 Luna (xhigh): $0.10 total, segments from bottom $0.07, $0.02, $0.02, plus a thin unlabeled top segment. Muse Ember (xhigh): $0.12 total, segments from bottom $0.06, $0.02, $0.02, plus a thin unlabeled top segment. Muse Ember (max): $0.14 total, segments from bottom $0.07, $0.03, $0.03, $0.02. Claude Haiku 5.5 (xhigh): $0.25* total, segments from bottom $0.14, $0.04, $0.05, $0.02. Anthropic bars are terracotta, OpenAI bars are dark gray, Meta bars are blue, each with the company logo beneath." src="https://static.simonwillison.net/static/2026/artificial-analysis-haiku-class.webp" /&gt;&lt;/p&gt;
+&lt;p&gt;And even more useful than that is their Intelligence Index vs. Cost per Task chart, which shows the following for those three models:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Scatter plot from Artificial Analysis titled &amp;quot;Intelligence Index vs. Cost per Task&amp;quot;, plotting Artificial Analysis Intelligence Index (y-axis, 5 to 40) against cost per task in USD on a log scale (x-axis, $0.04 to $0.3), with a green &amp;quot;most attractive quadrant&amp;quot; in the upper left and a dotted Pareto line. Claude Haiku 5.5 (low)* scores about 19 at roughly $0.044. GPT-6 Luna (non-reasoning) scores about 9.5 at roughly $0.07. GPT-6 Luna (xhigh) scores about 23.5 at roughly $0.10. Muse Ember (xhigh) scores about 34 at roughly $0.12 and Muse Ember (max) about 36 at roughly $0.14, both on the Pareto line. Claude Haiku 5.5 (xhigh)* scores about 34.5 at roughly $0.25, well to the right of the Pareto line. Three unlabeled gray dots also sit on the Pareto line." src="https://static.simonwillison.net/static/2026/artificial-analysis-pareto.webp" /&gt;&lt;/p&gt;
+&lt;p&gt;The Muse Ember models sit right on that Pareto line - the line at which you can only improve one dimension by giving up another. Meta call this out in their announcement:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It also sits on the efficiency frontier of the full Artificial Analysis leaderboard: no model scores higher for less per task.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;(That grey dot on the Pareto line in the middle of the green area is GPT-6.1 Terra (low) - clearly I should be paying more attention to the Terra family!)&lt;/p&gt;
+&lt;p&gt;Muse Ember has six reasoning levels - minimal, low, medium, high, xhigh, and max - so I &lt;a href="https://tools.simonwillison.net/markdown-svg-renderer?url=https%3A%2F%2Fgist.github.com%2Fsimonw%2Fc7666e8a54d84f724ac8121f9fa6cc4d"&gt;rendered six pelicans riding bicycles&lt;/a&gt;. The "high" reasoning level failed to return a full SVG, and the other SVGs were surprising in that the reasoning level didn't cleanly map to the visual quality of the response.&lt;/p&gt;
+&lt;p&gt;Here's the "max" one, but the others are worth a look too:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Bicycle frame is OK, basket has fish, pelican has a weird blue hat on." src="https://static.simonwillison.net/static/2026/muse-ember.webp" /&gt;&lt;/p&gt;
+&lt;p&gt;The Ember pelicans are comparable in quality to those &lt;a href="https://tools.simonwillison.net/markdown-svg-renderer?url=https://gist.github.com/simonw/185cff7ff0b11379725abf7f78d5d2b2"&gt;I got from Muse Wonder&lt;/a&gt;, which is &lt;a href="https://www.llm-prices.com/#sel=muse-ember-1.0%2Cmuse-ember-1.0-200k%2Cmuse-wonder-1.0"&gt;40x the price&lt;/a&gt; of Muse Ember.
+
+
+    &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/ai"&gt;ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/generative-ai"&gt;generative-ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llms"&gt;llms&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/meta"&gt;meta&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llm-pricing"&gt;llm-pricing&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llm-release"&gt;llm-release&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/artificial-analysis"&gt;artificial-analysis&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/muse"&gt;muse&lt;/a&gt;&lt;/p&gt;
+
+
+
+</summary><category term="ai"/><category term="generative-ai"/><category term="llms"/><category term="meta"/><category term="llm-pricing"/><category term="llm-release"/><category term="artificial-analysis"/><category term="muse"/></entry>
+<entry><title>Quoting Prompting Claude Fable 5.2</title><link href="https://simonwillison.net/2026/Nov/10/prompting-claude-fable-52/" rel="alternate"/><published>2026-11-10T05:34:14+00:00</published><updated>2026-11-10T05:34:14+00:00</updated><id>https://simonwillison.net/2026/Nov/10/prompting-claude-fable-52/</id><summary type="html">
+    &lt;blockquote cite="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-2#say-who-owns-the-code"&gt;&lt;p&gt;Claude Fable 5.2 responds closely to what the prompt says about who owns the code it works on. In Anthropic’s testing on small coding tasks, when a prompt said nothing about ownership or presented the code base as someone else’s, the model tended to add to the existing structure, even when that repeated existing code. [...]&lt;/p&gt;
+&lt;p&gt;If you want the model to improve the structure as it works, say that the code is its own:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;This codebase is yours: what it's for and how it's built are your call, and you'll keep building on it.&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In Anthropic’s testing on small coding tasks, the model merged repeated code in about half of the tries with this sentence, and in under a tenth of the tries without it.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p class="cite"&gt;&amp;mdash; &lt;a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-2#say-who-owns-the-code"&gt;Prompting Claude Fable 5.2&lt;/a&gt;, Anthropic documentation&lt;/p&gt;
+
+    &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/prompt-engineering"&gt;prompt-engineering&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/anthropic"&gt;anthropic&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/generative-ai"&gt;generative-ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai"&gt;ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llms"&gt;llms&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/claude-mythos-fable"&gt;claude-mythos-fable&lt;/a&gt;&lt;/p&gt;
+
+
+
+</summary><category term="prompt-engineering"/><category term="anthropic"/><category term="generative-ai"/><category term="ai"/><category term="llms"/><category term="claude-mythos-fable"/></entry>
+</feed>

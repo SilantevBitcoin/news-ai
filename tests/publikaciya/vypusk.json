@@ -1,0 +1,79 @@
+{
+  "krupnye": [
+    {
+      "zagolovok": "Anthropic выпустила Claude Opus 5.5 — «модель <для агентов>» & не только",
+      "abzacy": [
+        "Anthropic представила Claude Opus 5.5.",
+        "Модель держит длинные задачи агентов дольше прежней.",
+        "Цена за токен не изменилась.",
+        "Модель уже доступна в API и в Claude Code.",
+        "Старшая версия прошлого поколения уходит из эксплуатации через 60 дней."
+      ],
+      "url": "https://www.anthropic.com/news/claude-opus-5-5?utm=a&b=\"c\"",
+      "oboroty": false,
+      "idy": ["https://www.anthropic.com/news/claude-opus-5-5?utm=a&b=\"c\"",
+              "https://x.com/AnthropicAI/status/1988000000000000001"]
+    },
+    {
+      "zagolovok": "OpenAI открыла Codex для всех тарифов",
+      "abzacy": [
+        "OpenAI сделала Codex доступным на всех платных тарифах.",
+        "Лимиты зависят от тарифа.",
+        "В бесплатном тарифе Codex по-прежнему нет.",
+        "Включается в настройках ChatGPT.",
+        "Работает и в облаке, и локально."
+      ],
+      "url": "https://openai.com/index/codex-for-everyone/",
+      "oboroty": true,
+      "idy": ["https://openai.com/index/codex-for-everyone/"]
+    }
+  ],
+  "sayty": [
+    {
+      "zagolovok": "Gemini получил режим <Deep Think> в API",
+      "url": "https://deepmind.google/blog/deep-think-api/",
+      "istochnik": "DeepMind",
+      "zvezda": true,
+      "idy": ["https://deepmind.google/blog/deep-think-api/"]
+    },
+    {
+      "zagolovok": "Ben & Bites: обзор недели",
+      "url": "https://www.bensbites.com/p/week-45?a=1&b=2",
+      "istochnik": "Ben's Bites",
+      "zvezda": false,
+      "idy": ["https://www.bensbites.com/p/week-45?a=1&b=2"]
+    }
+  ],
+  "x": [
+    {
+      "zagolovok": "Сэм Альтман: GPT-6 Luna выйдет в декабре",
+      "url": "https://x.com/sama/status/1988000000000000002",
+      "akkaunt": "sama",
+      "zvezda": true,
+      "idy": ["https://x.com/sama/status/1988000000000000002"]
+    },
+    {
+      "zagolovok": "Саймон Уиллисон: заметки о <tool use> & агентах",
+      "url": "https://x.com/simonw/status/1988000000000000003",
+      "akkaunt": "simonw",
+      "zvezda": false,
+      "idy": ["https://x.com/simonw/status/1988000000000000003"]
+    }
+  ],
+  "dengi": [
+    {
+      "zagolovok": "Mistral привлекла раунд на 2 млрд евро",
+      "url": "https://www.techmeme.com/261110/p12",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": ["https://www.techmeme.com/261110/p12"]
+    }
+  ],
+  "github": [
+    {
+      "zagolovok": "Моды в Claude Code: команда для своей панели",
+      "url": "https://github.com/anthropics/claude-code/issues/4321",
+      "idy": ["https://github.com/anthropics/claude-code/issues/4321"]
+    }
+  ]
+}

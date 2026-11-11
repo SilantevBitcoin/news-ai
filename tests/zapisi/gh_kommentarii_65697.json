@@ -1,0 +1,497 @@
+[
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4642811548",
+  "user": {
+   "login": "fluffynuts"
+  },
+  "created_at": "2026-06-07T13:28:38Z",
+  "author_association": "NONE",
+  "body": "Yes please. Then I can stop using unofficial builds that are reverse-engineered from the windows electron app."
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4642902469",
+  "user": {
+   "login": "fenix1851"
+  },
+  "created_at": "2026-06-07T14:06:55Z",
+  "author_association": "NONE",
+  "body": "please🙏🙏🙏🙏"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4642912280",
+  "user": {
+   "login": "Ammar-Sadaoui"
+  },
+  "created_at": "2026-06-07T14:11:08Z",
+  "author_association": "NONE",
+  "body": "i would like to have arch linux build too"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4642961599",
+  "user": {
+   "login": "marcopiraccini"
+  },
+  "created_at": "2026-06-07T14:30:54Z",
+  "author_association": "NONE",
+  "body": "yes, please. "
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4642981765",
+  "user": {
+   "login": "tcpiplab"
+  },
+  "created_at": "2026-06-07T14:39:11Z",
+  "author_association": "NONE",
+  "body": "Agreed. Linux desktop build for Linux please. Ubuntu LTS preferred if possible. Thank you."
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4643056044",
+  "user": {
+   "login": "pshirshov"
+  },
+  "created_at": "2026-06-07T15:08:58Z",
+  "author_association": "NONE",
+  "body": "Does anyone actually use the desktop app? O_o What's its utility?"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4643163235",
+  "user": {
+   "login": "autarch"
+  },
+  "created_at": "2026-06-07T15:53:06Z",
+  "author_association": "NONE",
+  "body": "> Does anyone actually use the desktop app? O_o What's its utility?\n\nI find it way easier to manage multiple coding sessions w/ the desktop app versus in the terminal."
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4643229268",
+  "user": {
+   "login": "mil-ad"
+  },
+  "created_at": "2026-06-07T16:18:28Z",
+  "author_association": "NONE",
+  "body": "> Does anyone actually use the desktop app? O_o What's its utility?\n\nI believe if you want to add local MCP servers to Claude the only option is the desktop app (via `~/.config/Claude/claude_desktop_c"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4643268140",
+  "user": {
+   "login": "christian-korneck"
+  },
+  "created_at": "2026-06-07T16:33:31Z",
+  "author_association": "NONE",
+  "body": "yes please"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4643281432",
+  "user": {
+   "login": "sirch613"
+  },
+  "created_at": "2026-06-07T16:37:36Z",
+  "author_association": "NONE",
+  "body": "Pls do this!"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4643297673",
+  "user": {
+   "login": "maluoi"
+  },
+  "created_at": "2026-06-07T16:44:28Z",
+  "author_association": "NONE",
+  "body": "As a long time Microsoft fan boy, Claude Code is the reason I left Windows behind and switched entirely over to Linux late last year!"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4643301133",
+  "user": {
+   "login": "onno-schuit"
+  },
+  "created_at": "2026-06-07T16:45:56Z",
+  "author_association": "NONE",
+  "body": "Agreed!"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4643360694",
+  "user": {
+   "login": "lucaspolo"
+  },
+  "created_at": "2026-06-07T17:10:54Z",
+  "author_association": "NONE",
+  "body": "Extremely necessary for some users"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4643368970",
+  "user": {
+   "login": "arnautovd"
+  },
+  "created_at": "2026-06-07T17:14:23Z",
+  "author_association": "NONE",
+  "body": "I want to see it on Fedora Linux too."
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4643370942",
+  "user": {
+   "login": "desOne"
+  },
+  "created_at": "2026-06-07T17:15:16Z",
+  "author_association": "NONE",
+  "body": "This is incredibly important for many of us, please add Fedora support. "
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4643408602",
+  "user": {
+   "login": "felixrieseberg"
+  },
+  "created_at": "2026-06-07T17:31:15Z",
+  "author_association": "NONE",
+  "body": "Hi, Felix from Anthropic here! \n\nLet me answer a understandable question first: Armed with Claude and developers with a history of shipping Linux software, why didn't we just churn out a quick Linux b"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4643417851",
+  "user": {
+   "login": "patrickjaja"
+  },
+  "created_at": "2026-06-07T17:34:51Z",
+  "author_association": "NONE",
+  "body": "@powell-clark \nwe have also built such a project, its working very good on different linux versions🤞\n\nall features supported, we are trying to stay rolling\nhttps://github.com/patrickjaja/claude-deskto"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4643466127",
+  "user": {
+   "login": "johnpanos"
+  },
+  "created_at": "2026-06-07T17:55:06Z",
+  "author_association": "NONE",
+  "body": "This would be great! Off and on Fedora user here."
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4643633940",
+  "user": {
+   "login": "pshirshov"
+  },
+  "created_at": "2026-06-07T18:31:45Z",
+  "author_association": "NONE",
+  "body": "> I believe if you want to add local MCP servers to Claude the only option is the desktop app (via `~/.config/Claude/claude_desktop_config.json`)?\n\nNo, you could have MCPs in the TUI."
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4644033250",
+  "user": {
+   "login": "wirmola"
+  },
+  "created_at": "2026-06-07T20:38:50Z",
+  "author_association": "NONE",
+  "body": "I am bit curious why Linux is so poorly supported from Anthropics side, both desktop and cowork would be welcome here. And to be honest, if you don't fix it, others will!"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4644184736",
+  "user": {
+   "login": "Giancarlos"
+  },
+  "created_at": "2026-06-07T21:41:47Z",
+  "author_association": "NONE",
+  "body": "I would take half the pay of any developer at anthropic to work on this tbh."
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4644588104",
+  "user": {
+   "login": "savager"
+  },
+  "created_at": "2026-06-08T00:31:45Z",
+  "author_association": "NONE",
+  "body": "100% please "
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4644923515",
+  "user": {
+   "login": "mahonzhan"
+  },
+  "created_at": "2026-06-08T02:16:51Z",
+  "author_association": "NONE",
+  "body": "yes please"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4645084338",
+  "user": {
+   "login": "imokaythanks"
+  },
+  "created_at": "2026-06-08T03:02:02Z",
+  "author_association": "NONE",
+  "body": "Why dont you just use Claude code to make the Linux build that solves all of your concerns?"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4645548142",
+  "user": {
+   "login": "erra0002"
+  },
+  "created_at": "2026-06-08T04:44:57Z",
+  "author_association": "NONE",
+  "body": "> Hi, Felix from Anthropic here!\n> \n> Let me answer a understandable question first: Armed with Claude and developers with a history of shipping Linux software, why didn't we just churn out a quick Li"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4646647802",
+  "user": {
+   "login": "ngmisl"
+  },
+  "created_at": "2026-06-08T08:11:16Z",
+  "author_association": "NONE",
+  "body": "> > Hi, Felix from Anthropic here!\n> > \n> > Let me answer a understandable question first: Armed with Claude and developers with a history of shipping Linux software, why didn't we just churn out a qu"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4651558786",
+  "user": {
+   "login": "nyavana"
+  },
+  "created_at": "2026-06-08T17:20:05Z",
+  "author_association": "NONE",
+  "body": "Please do it"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4652393830",
+  "user": {
+   "login": "autopeasant"
+  },
+  "created_at": "2026-06-08T18:56:41Z",
+  "author_association": "NONE",
+  "body": "No, please don't. Noone needs it. What we actually need is cheap programmatic usage, which Anthropic decided to disable for everyone."
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4657088881",
+  "user": {
+   "login": "Kevohhh"
+  },
+  "created_at": "2026-06-09T07:04:04Z",
+  "author_association": "NONE",
+  "body": "what are the solutions / alternatives that linux users are using in place of the codex desktop app ? im having trouble with the wsl2 method. "
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4665639974",
+  "user": {
+   "login": "ncancelliere"
+  },
+  "created_at": "2026-06-10T01:31:45Z",
+  "author_association": "NONE",
+  "body": "❤️ ➕  Plus one to this."
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4665674527",
+  "user": {
+   "login": "christian-korneck"
+  },
+  "created_at": "2026-06-10T01:40:16Z",
+  "author_association": "NONE",
+  "body": "> please add Fedora support.\n\njfwiw, my current workaround to run Claude Desktop on Fedora: [claude-desktop-rpm](https://github.com/christian-korneck/claude-desktop-rpm) ."
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4674696235",
+  "user": {
+   "login": "OscarParzon"
+  },
+  "created_at": "2026-06-10T21:26:16Z",
+  "author_association": "NONE",
+  "body": "👏"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4677730280",
+  "user": {
+   "login": "chuanhhoang"
+  },
+  "created_at": "2026-06-11T06:14:50Z",
+  "author_association": "NONE",
+  "body": "> As a long time Microsoft fan boy, Claude Code is the reason I left Windows behind and switched entirely over to Linux late last year!\n\nWhy not MacOS buddy? Macbook is cheaper than the equivalent Win"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4681456411",
+  "user": {
+   "login": "flori4n"
+  },
+  "created_at": "2026-06-11T14:10:04Z",
+  "author_association": "NONE",
+  "body": "> > As a long time Microsoft fan boy, Claude Code is the reason I left Windows behind and switched entirely over to Linux late last year!\n> \n> Why not MacOS buddy? Macbook is cheaper than the equivale"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4682272491",
+  "user": {
+   "login": "bkorpan"
+  },
+  "created_at": "2026-06-11T15:36:21Z",
+  "author_association": "NONE",
+  "body": "They can get Mythos to do almost all the work for them at this point, no excuses really."
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4697934621",
+  "user": {
+   "login": "acraens"
+  },
+  "created_at": "2026-06-13T07:59:52Z",
+  "author_association": "NONE",
+  "body": "+1 from a non-developer professional user on Ubuntu (Leuven, Belgium).\n\nI use Claude daily for structured work: facility management documentation, HR appraisal cycles, pension modelling, and connected"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4708588233",
+  "user": {
+   "login": "arcanjo96"
+  },
+  "created_at": "2026-06-15T13:47:58Z",
+  "author_association": "NONE",
+  "body": "please🙏\n"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4715840522",
+  "user": {
+   "login": "Namache"
+  },
+  "created_at": "2026-06-16T07:01:27Z",
+  "author_association": "NONE",
+  "body": "+1.\n\nWhen so many devs utilizing Linux for their development needs, it only makes sense to distribute developer tools to the audience through its natural channels!\n\nAnthropic, come on!"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4730032629",
+  "user": {
+   "login": "asmmahmud"
+  },
+  "created_at": "2026-06-17T12:25:35Z",
+  "author_association": "NONE",
+  "body": "It is very necessary"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4732839182",
+  "user": {
+   "login": "Wayfiding"
+  },
+  "created_at": "2026-06-17T16:27:41Z",
+  "author_association": "NONE",
+  "body": "I'm also waiting for Claude Desktop on Linux, I don't why this problem to port it to Linux. "
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4743300964",
+  "user": {
+   "login": "rodrigoGA"
+  },
+  "created_at": "2026-06-18T15:03:54Z",
+  "author_association": "NONE",
+  "body": "This could probably be one of the most upvoted issues here, if similar Linux requests had not been repeatedly closed, marked stale, or quietly redirected.\n\nAnthropic presents Claude Code as a serious "
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4744265854",
+  "user": {
+   "login": "Alona-Tsarova-ODDITY"
+  },
+  "created_at": "2026-06-18T16:55:38Z",
+  "author_association": "NONE",
+  "body": "+++\nreally waiting for it!"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4750723450",
+  "user": {
+   "login": "artyomabrahamyan"
+  },
+  "created_at": "2026-06-19T10:30:37Z",
+  "author_association": "NONE",
+  "body": "+1"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4777290151",
+  "user": {
+   "login": "BugraKY"
+  },
+  "created_at": "2026-06-23T08:33:51Z",
+  "author_association": "NONE",
+  "body": "+++"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4801456844",
+  "user": {
+   "login": "vighneshanap"
+  },
+  "created_at": "2026-06-25T15:55:58Z",
+  "author_association": "NONE",
+  "body": "## The irony is real\n\nIndependent reverse-engineering found that on macOS, Cowork boots a custom Ubuntu 22.04 VM via Apple’s Virtualization Framework and runs the Claude Code binary inside it. Anthrop"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4809927928",
+  "user": {
+   "login": "srdelavera"
+  },
+  "created_at": "2026-06-26T13:16:25Z",
+  "author_association": "NONE",
+  "body": "The first AI company to ship official, fully supported Linux desktop tools will take the entire Linux user base. \nWe are not a large group, but we are the most valuable for training AI models. \nWe don"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4813381667",
+  "user": {
+   "login": "allefeld"
+  },
+  "created_at": "2026-06-26T20:56:32Z",
+  "author_association": "NONE",
+  "body": "I'm waiting for it, too. If supporting different distributions is a problem, just support one or two mainstream distributions, e.g. Ubuntu, and then let hackers like aaddrick figure out the adaptation"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4846074962",
+  "user": {
+   "login": "MarshallOfSound"
+  },
+  "created_at": "2026-06-30T17:10:33Z",
+  "author_association": "NONE",
+  "body": "Hey folks, As of this morning Claude Desktop for Linux is officially in Beta.\n\nhttps://x.com/ClaudeDevs/status/2071988881717871065\n\nhttps://claude.com/download"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4854488881",
+  "user": {
+   "login": "ncancelliere"
+  },
+  "created_at": "2026-07-01T12:05:09Z",
+  "author_association": "NONE",
+  "body": "Adding a Fedora/RHEL data point, since this issue's proposed solution (Ubuntu LTS + Debian via apt) wouldn't cover us.\n\nI run Claude Code CLI natively on Fedora Workstation daily — it's solid. The gap"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4864548460",
+  "user": {
+   "login": "frenkel"
+  },
+  "created_at": "2026-07-02T10:07:17Z",
+  "author_association": "NONE",
+  "body": "@ncancelliere [it is planned](https://code.claude.com/docs/en/desktop-linux):\n\n> Fedora and RHEL: only Debian-based distributions are supported today. Support for additional distributions is coming in"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-4880192294",
+  "user": {
+   "login": "powell-clark"
+  },
+  "created_at": "2026-07-04T01:33:36Z",
+  "author_association": "NONE",
+  "body": "Thank you @felixrieseberg and the team! 🙌🏼🙏🏾🙇🏾‍♂️"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-5273937585",
+  "user": {
+   "login": "massroc"
+  },
+  "created_at": "2026-08-12T23:20:14Z",
+  "author_association": "NONE",
+  "body": " +1 on this from a Fedora 44 user. Since the Cowork-side sandbox tightening following the SharedRoot / CVE-2026-46331 disclosure, host-filesystem access via the community Debian-port-on-Fedora path ha"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-5282341720",
+  "user": {
+   "login": "allefeld"
+  },
+  "created_at": "2026-08-13T15:18:42Z",
+  "author_association": "NONE",
+  "body": "I have switched to Code (in Desktop) for Cowork-type tasks. Works just as well, but without the annoying sandbox."
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-5452103438",
+  "user": {
+   "login": "powell-clark"
+  },
+  "created_at": "2026-08-28T11:44:09Z",
+  "author_association": "NONE",
+  "body": "Closing the loop on this from the original poster, with thanks rather than a nudge.\n\n@felixrieseberg — thank you for taking the time to write a real answer rather than a holding line. \"We would rather"
+ },
+ {
+  "html_url": "https://github.com/anthropics/claude-code/issues/65697#issuecomment-6250939451",
+  "user": {
+   "login": "github-actions[bot]"
+  },
+  "created_at": "2026-10-18T14:14:23Z",
+  "author_association": "NONE",
+  "body": "This issue has been automatically locked since it was closed and has not had any activity for 7 days. If you're experiencing a similar issue, please file a new issue and reference this one if it's rel"
+ }
+]

@@ -1,0 +1,14 @@
+{
+  "action": "opened",
+  "number": 7,
+  "pull_request": {
+    "number": 7,
+    "created_at": "2026-11-11T02:15:00Z",
+    "user": {"login": "egor", "type": "User"},
+    "head": {"ref": "claude/vypusk-2026-11-11T020700Z", "sha": "0123456789abcdef0123456789abcdef01234567",
+             "repo": {"full_name": "egor/news-ai", "fork": false}},
+    "base": {"ref": "main", "sha": "fedcba9876543210fedcba9876543210fedcba98",
+             "repo": {"full_name": "egor/news-ai", "fork": false}}
+  },
+  "repository": {"full_name": "egor/news-ai", "default_branch": "main", "owner": {"login": "egor"}}
+}

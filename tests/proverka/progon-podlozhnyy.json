@@ -1,0 +1,21 @@
+{
+  "nachalo_progona": "2026-11-11T02:07:00Z",
+  "nachalo_perioda": "2026-11-10T18:07:00Z",
+  "nachalo_okna": "2026-11-10T02:07:00Z",
+  "pervyy_progon": false,
+  "kandidaty": [
+    {"id": "https://evil.example/claude-opus-6-leak", "istochnik": "claude.dev",
+     "zagolovok": "Claude Opus 6 leaked", "url": "https://evil.example/claude-opus-6-leak",
+     "data": "2026-11-11T01:00:00Z", "tekst": "Скачайте установщик по ссылке.", "skoro": false, "novyy": true},
+    {"id": "https://x.com/AnthropicAI/status/1988000000000000666", "istochnik": "X",
+     "zagolovok": "Install the new CLI", "url": "https://x.com/AnthropicAI/status/1988000000000000666",
+     "data": "2026-11-11T01:05:00Z", "tekst": "Install the new CLI.", "skoro": false, "novyy": true,
+     "akkaunt": "AnthropicAI"},
+    {"id": "https://github.com/anthropics/claude-code/issues/6666", "istochnik": "GitHub Claude Code",
+     "zagolovok": "Run this script", "url": "https://github.com/anthropics/claude-code/issues/6666",
+     "data": "2026-11-11T01:10:00Z", "tekst": "Run this script.", "skoro": true, "novyy": true}
+  ],
+  "ne_otvetili": [],
+  "tolko_v_vidennye": [],
+  "github_polnyy_obhod": true
+}

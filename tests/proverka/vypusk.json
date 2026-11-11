@@ -1,0 +1,29 @@
+{
+  "krupnye": [
+    {"zagolovok": "Anthropic выпустила Claude Opus 5.5",
+     "abzacy": ["Раз.", "Два.", "Три.", "Четыре.", "Пять."],
+     "url": "https://www.anthropic.com/news/claude-opus-5-5", "oboroty": false,
+     "idy": ["https://www.anthropic.com/news/claude-opus-5-5", "https://x.com/AnthropicAI/status/1988000000000000001"]},
+    {"zagolovok": "OpenAI открыла Codex для всех тарифов",
+     "abzacy": ["Раз.", "Два.", "Три.", "Четыре.", "Пять."],
+     "url": "https://openai.com/index/codex-for-everyone/", "oboroty": true,
+     "idy": ["https://openai.com/index/codex-for-everyone/"]}
+  ],
+  "sayty": [
+    {"zagolovok": "Gemini получил Deep Think в API", "url": "https://deepmind.google/blog/deep-think-api/",
+     "istochnik": "DeepMind", "zvezda": true, "idy": ["https://deepmind.google/blog/deep-think-api/"]}
+  ],
+  "x": [
+    {"zagolovok": "Альтман: GPT-6 Luna выйдет в декабре", "url": "https://x.com/sama/status/1988000000000000002",
+     "akkaunt": "sama", "zvezda": false, "idy": ["https://x.com/sama/status/1988000000000000002"]}
+  ],
+  "dengi": [
+    {"zagolovok": "Mistral привлекла 2 млрд евро", "url": "https://www.techmeme.com/261110/p12",
+     "istochnik": "Techmeme", "zvezda": false, "idy": ["https://www.techmeme.com/261110/p12"]}
+  ],
+  "github": [
+    {"zagolovok": "Моды в Claude Code: команда для своей панели",
+     "url": "https://github.com/anthropics/claude-code/issues/4321",
+     "idy": ["https://github.com/anthropics/claude-code/issues/4321"]}
+  ]
+}
