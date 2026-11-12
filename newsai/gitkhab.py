@@ -2,14 +2,21 @@
 
 Ответ команды — комментарий с author_association из avtor_komandy или от логина из loginy_komandy
 (Р41). Каждый issue выходит один раз — когда впервые набрал оба условия: issue из vidennye не
-проверяется. Пока в состоянии нет отметки github_obhod, поиск идёт без периода: все набравшие оба
-условия — в tolko_v_vidennye, в выпуск — только те, где первый комментарий команды за последние
-24 часа; сбой посреди такого обхода не отдаёт ничего.
+проверяется. Пока в состоянии нет действующей отметки github_obhod (sostoyanie.obhod_deystvuet:
+отметка и хоть один issue в vidennye), поиск идёт без периода: все набравшие оба условия — в
+tolko_v_vidennye, в выпуск — только те, где первый комментарий команды за последние 24 часа; сбой
+посреди такого обхода не отдаёт ничего. С действующей отметкой поиск — с более раннего из начала
+периода и момента сбора минус 7 дней, без отбора по дате обновления: в vidennye issue попадает только
+вышедшим, пропущенный выпуском поиск ловит снова.
 
-Сборщик issue (спека «Сборщик issue»): команда `sbor-issue` пишет найденное в файл issue
-dannye/issue.json. Сбор агента берёт issue из этого файла, когда запрос к API не прошёл (из облака —
-403 прокси), и только если файл годен. Записи из API и из файла превращаются в кандидатов одной
-функцией — текст кандидата один и тот же.
+Поиск с токеном пуст — один повтор без Authorization (у токена Actions поиск по чужому репозиторию
+может быть пустым); пуст и так — отказ «поиск issue: 0 результатов»: таких issue больше 170.
+
+Файл issue (спека «Сборщик issue»): команда `sbor-issue` пишет найденное в dannye/issue.json; зовут её
+публикатор после своей заявки и workflow сборщика issue. Сбор агента берёт issue из этого файла, когда
+запрос к API не прошёл (из облака — 403 прокси), и только если файл годен (собран за 24 часа до
+начала прогона). Записи из API и из файла превращаются в кандидатов одной функцией — текст кандидата
+один и тот же.
 
 Вид файла issue:
     {
@@ -32,7 +39,8 @@ from urllib.parse import quote
 from . import nastrojki, sekrety
 from .progon import Kandidat, Period
 from .razbor import data_iso
-from .vremya import iz_stroki, nachalo_slota, seychas, v_stroku
+from .sostoyanie import obhod_deystvuet
+from .vremya import iz_stroki, seychas, v_stroku
 from .zaprosy import OshibkaZaprosa, Otvet
 
 API = "https://api.github.com"
@@ -52,6 +60,14 @@ class OshibkaGitHub(Exception):
 
 class NegodnyyFayl(Exception):
     """Файл issue не годится сбору агента; текст — чем именно."""
+
+
+def nachalo_poiska(sost: dict, nachalo_perioda: datetime, moment: datetime) -> datetime | None:
+    """Начало периода поиска issue: без действующей отметки github_obhod — None (поиск без периода),
+    иначе — более раннее из начала периода и момента сбора минус ISSUE_POISK_DNEY дней."""
+    if not obhod_deystvuet(sost):
+        return None
+    return min(nachalo_perioda, moment - timedelta(days=nastrojki.ISSUE_POISK_DNEY))
 
 
 def token_github() -> str | None:
@@ -107,6 +123,24 @@ def _poisk(istochnik: dict, nachalo: datetime | None, poluchit, zagolovki: dict)
     return issue
 
 
+def _poisk_s_povtorom(istochnik: dict, nachalo: datetime | None, poluchit, zagolovki: dict,
+                      itog: dict) -> list[dict]:
+    """Поиск; пуст с токеном — один повтор без Authorization; пуст и так — OshibkaGitHub.
+
+    itog: iz_poiska — сколько issue дал поиск, bez_tokena — был ли повтор без токена."""
+    issue = _poisk(istochnik, nachalo, poluchit, zagolovki)
+    itog["bez_tokena"] = False
+    if not issue and "Authorization" in zagolovki:
+        itog["bez_tokena"] = True
+        issue = _poisk(istochnik, nachalo, poluchit,
+                       {k: v for k, v in zagolovki.items() if k != "Authorization"})
+    if not issue:
+        raise OshibkaGitHub("поиск issue: 0 результатов"
+                            + (" (с токеном и повтором без токена)" if itog["bez_tokena"] else ""))
+    itog["iz_poiska"] = len(issue)
+    return issue
+
+
 def _iz_komandy(k: dict, associacii: set, loginy: set) -> bool:
     login = ((k.get("user") or {}).get("login") or "").lower()
     return k.get("author_association") in associacii or login in loginy
@@ -153,18 +187,23 @@ def _zapis(i: dict, otvet: dict) -> dict:
 
 
 def nayti_zapisi(istochnik: dict, sost: dict, nachalo: datetime | None, poluchit,
-                 zagolovki: dict, zapisi: list | None = None) -> list[dict]:
+                 zagolovki: dict, zapisi: list | None = None, itog: dict | None = None) -> list[dict]:
     """Поиск issue → записи файла issue: только с ответом команды и не из vidennye (их комментарии
-    не запрашиваются). Отказ запроса — OshibkaGitHub или OshibkaZaprosa; найденное до отказа
-    остаётся в переданном списке zapisi."""
+    не запрашиваются). Отказ запроса или пустой поиск — OshibkaGitHub или OshibkaZaprosa; найденное
+    до отказа остаётся в переданном списке zapisi. itog — для вывода: iz_poiska, bez_tokena,
+    videnyh (пропущено как увиденные)."""
     from .sostoyanie import videno
 
     f = istochnik.get("filtr") or {}
     associacii = set(f.get("avtor_komandy") or ["MEMBER", "COLLABORATOR"])
     loginy = {l.lower() for l in f.get("loginy_komandy") or []}
     zapisi = [] if zapisi is None else zapisi
-    for i in _poisk(istochnik, nachalo, poluchit, zagolovki):
+    itog = {} if itog is None else itog
+    itog["videnyh"] = 0
+    for i in _poisk_s_povtorom(istochnik, nachalo, poluchit, zagolovki, itog):
         url = i.get("html_url") or ""
+        if url and videno(sost, url):
+            itog["videnyh"] += 1
         if not url or videno(sost, url):
             continue
         otvet = _pervyy_otvet_komandy(i, associacii, loginy, poluchit, zagolovki)
@@ -183,17 +222,16 @@ def _kandidat(istochnik: dict, z: dict, period: Period) -> Kandidat:
                     skoro=True, novyy=True)
 
 
-def kandidaty_iz_zapisey(istochnik: dict, zapisi: list[dict], sost: dict, period: Period,
-                         iz_fayla: bool = False) -> tuple[list[Kandidat], list[str]]:
+def kandidaty_iz_zapisey(istochnik: dict, zapisi: list[dict], sost: dict,
+                         period: Period) -> tuple[list[Kandidat], list[str]]:
     """Записи (из API или из файла issue) → (кандидаты, id только в увиденные) по общим правилам.
 
-    vidennye не берутся; без github_obhod первый ответ команды раньше 24 часов до начала прогона —
-    только в увиденные; из файла с github_obhod — только obnovleno в периоде (поиск файла мог
-    начаться раньше периода агента).
+    vidennye не берутся; без действующей отметки github_obhod первый ответ команды раньше 24 часов
+    до начала прогона — только в увиденные; иначе — все остальные, без отбора по дате обновления.
     """
     from .sostoyanie import videno
 
-    polnyy = not sost.get("github_obhod")
+    polnyy = not obhod_deystvuet(sost)
     granica_polnogo = period.konec - timedelta(hours=nastrojki.PERVYY_PERIOD_CHASOV)
     kandidaty, tolko = [], []
     for z in zapisi:
@@ -204,8 +242,6 @@ def kandidaty_iz_zapisey(istochnik: dict, zapisi: list[dict], sost: dict, period
             if kogda_otvet is None or kogda_otvet < granica_polnogo:
                 tolko.append(z["url"])
                 continue
-        elif iz_fayla and iz_stroki(z["obnovleno"]) not in period:
-            continue
         kandidaty.append(_kandidat(istochnik, z, period))
     return kandidaty, tolko
 
@@ -268,15 +304,14 @@ def prochitat_fayl_issue(put: Path, sost: dict, period: Period) -> dict:
     if oshibka:
         raise NegodnyyFayl(f"не по схеме: {oshibka}")
     sobrano = iz_stroki(dannye["sobrano"])
-    slot = nachalo_slota(period.konec)
-    rannyaya = slot - timedelta(minutes=nastrojki.ISSUE_DO_SLOTA_MINUT)
+    rannyaya = period.konec - timedelta(hours=nastrojki.ISSUE_GODEN_CHASOV)
     if sobrano < rannyaya:
         raise NegodnyyFayl(f"собран {v_stroku(sobrano)} — раньше {v_stroku(rannyaya)}, "
-                           f"за {nastrojki.ISSUE_DO_SLOTA_MINUT} минут до начала слота {v_stroku(slot)}")
+                           f"за {nastrojki.ISSUE_GODEN_CHASOV} часа до начала прогона {v_stroku(period.konec)}")
     if sobrano > period.konec:
         raise NegodnyyFayl(f"собран {v_stroku(sobrano)} — позже начала прогона {v_stroku(period.konec)}")
     nachalo = dannye["nachalo_poiska"]
-    if not sost.get("github_obhod"):
+    if not obhod_deystvuet(sost):
         if nachalo is not None:
             raise NegodnyyFayl(f"поиск с {v_stroku(iz_stroki(nachalo))}, а полного обхода ещё не было — "
                                f"нужен поиск без периода")
@@ -307,16 +342,18 @@ def sobrat(istochnik: dict, sost: dict, period: Period, poluchit,
 
     period — период выпуска; его конец — начало прогона.
 
-    Обычный прогон: найденное до ошибки не теряется. Полный обход: при ошибке — ничего.
+    Обычный прогон: найденное до ошибки не теряется. Полный обход: при ошибке — ничего; пустой
+    поиск — тоже ошибка, полным обходом не засчитывается.
     fayl_issue — путь к файлу сборщика (только у сбора агента): запрос к API не прошёл и файл
     годен — кандидаты из файла, найденное запросами отброшено. Без пути файл не читается.
     """
-    polnyy = not sost.get("github_obhod")
+    polnyy = not obhod_deystvuet(sost)
     token = token_github()
     zagolovki = _zagolovki(token)
     zapisi = []
     try:
-        nayti_zapisi(istochnik, sost, None if polnyy else period.nachalo, poluchit, zagolovki, zapisi)
+        nayti_zapisi(istochnik, sost, nachalo_poiska(sost, period.nachalo, period.konec), poluchit,
+                     zagolovki, zapisi)
     except (OshibkaGitHub, OshibkaZaprosa) as e:
         oshibka = str(e)
         if not token and "исчерпан лимит" in oshibka:
@@ -327,7 +364,7 @@ def sobrat(istochnik: dict, sost: dict, period: Period, poluchit,
             except NegodnyyFayl as nf:
                 oshibka += f"; файл сборщика issue не годен: {nf}"
             else:
-                kandidaty, tolko = kandidaty_iz_zapisey(istochnik, fayl["issue"], sost, period, iz_fayla=True)
+                kandidaty, tolko = kandidaty_iz_zapisey(istochnik, fayl["issue"], sost, period)
                 return kandidaty, tolko, None, False, f"из файла сборщика, собран {fayl['sobrano']}"
         if polnyy:
             return [], [], oshibka, False, ""
@@ -340,9 +377,11 @@ def sbor_issue(poluchit=None, sobrano: datetime | None = None, put_istochnikov: 
                put_sostoyaniya: Path | None = None, put_issue: Path | None = None) -> int:
     """Команда `sbor-issue`: поиск issue по строке «GitHub Claude Code» → файл issue.
 
-    Без github_obhod в состоянии — поиск без периода, иначе — с начала периода по состоянию.
-    Коды: 0 — файл записан; 1 — состояние или источники не читаются; 2 — запрос к API не прошёл,
-    прежний файл не тронут. Состояние не пишется.
+    Без действующей отметки github_obhod — поиск без периода, иначе — с более раннего из начала
+    периода по состоянию и момента сбора минус 7 дней. Коды: 0 — файл записан; 1 — состояние или
+    источники не читаются; 2 — запрос к API не прошёл или поиск пуст и после повтора без токена,
+    прежний файл не тронут. Состояние не пишется. Вывод — для лога Actions: сколько дал поиск, был ли
+    повтор без токена, сколько с ответом команды, nachalo_poiska.
     """
     from . import sostoyanie
     from .zaprosy import poluchit as poluchit_po_seti
@@ -358,14 +397,20 @@ def sbor_issue(poluchit=None, sobrano: datetime | None = None, put_istochnikov: 
     except (sostoyanie.OshibkaSostoyaniya, OSError, ValueError, KeyError, StopIteration) as e:
         print(f"newsai sbor-issue: {type(e).__name__}: {e}", file=sys.stderr)
         return 1
-    nachalo = sostoyanie.period(sost, sobrano)[0] if sost.get("github_obhod") else None
+    nachalo = nachalo_poiska(sost, sostoyanie.period(sost, sobrano)[0], sobrano)
+    token = token_github()
+    itog = {}
     try:
-        zapisi = nayti_zapisi(istochnik, sost, nachalo, poluchit, _zagolovki(token_github()))
+        zapisi = nayti_zapisi(istochnik, sost, nachalo, poluchit, _zagolovki(token), itog=itog)
     except (OshibkaGitHub, OshibkaZaprosa) as e:
         print(f"newsai sbor-issue: {e}; файл issue не переписан", file=sys.stderr)
         return 2
     zapisat_fayl_issue(put_issue, sobrano, nachalo, zapisi)
     print(f"issue: {len(zapisi)}")
     print(f"nachalo_poiska: {v_stroku(nachalo) if nachalo else 'null'}")
+    print(f"поиск: {itog['iz_poiska']}, из них уже в vidennye: {itog['videnyh']}, "
+          f"с ответом команды: {len(zapisi)}")
+    print("токен: " + ("нет" if not token else
+                       "поиск с ним пуст — повтор без токена" if itog["bez_tokena"] else "есть"))
     print(f"файл issue: {put_issue}")
     return 0

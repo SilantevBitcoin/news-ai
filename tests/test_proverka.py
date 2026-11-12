@@ -778,6 +778,63 @@ class AdresVTekste(SObrazcami):
                 self.assertFalse(proverka.adres_v_tekste(f"Текст {tekst} дальше"))
 
 
+class DengiIzX(SObrazcami):
+    """Пункт денег с адресом поста X несёт akkaunt и сверяется по постам X того же akkaunt, как строка X;
+    istochnik «X» у пункта денег — у агента нарушение «ссылки», у публикатора пункт отброшен."""
+
+    POST = "https://x.com/AnthropicAI/status/1988000000000000001"
+
+    def s_punktom(self, **pole) -> None:
+        v = self.json("vypusk.json")
+        p = {"zagolovok": "Anthropic привлекла раунд", "url": self.POST, "akkaunt": "AnthropicAI",
+             "zvezda": False, "idy": [self.POST]}
+        p.update(pole)
+        v["dengi"].append({k: z for k, z in p.items() if z is not None})
+        self.zapisat("vypusk.json", v)
+
+    def test_svoy_akkaunt_prohodit(self):
+        self.s_punktom()
+        self.assertEqual(self.zapusk(), (0, "проверка пройдена\n"))
+        self.assertEqual(self.zapusk(zayavka=True), (0, "проверка пройдена\n"))
+        self.assertEqual(self.json("chistyy.json")["dengi"][1],
+                         {"zagolovok": "Anthropic привлекла раунд", "url": self.POST, "akkaunt": "AnthropicAI",
+                          "zvezda": False, "idy": [self.POST]})
+
+    def test_chuzhoy_akkaunt(self):
+        self.s_punktom(akkaunt="sama")
+        self.assertEqual(self.zapusk(), (1, "ссылки: список денег и сделок, пункт 2: адреса нет среди постов X "
+                                            "этого аккаунта\nпроверки не прошли: ссылки\n"))
+        self.assertEqual(self.zapusk(zayavka=True), (0, "отброшено: список денег и сделок, пункт 2: адреса нет "
+                                                        "среди постов X этого аккаунта в сборе публикатора\n"
+                                                        "проверка пройдена\n"))
+        self.assertEqual([p["url"] for p in self.json("chistyy.json")["dengi"]], ["https://www.techmeme.com/261110/p12"])
+
+    def test_akkaunt_u_adresa_ne_posta_x(self):
+        self.s_punktom(url="https://www.techmeme.com/261110/p12", idy=["https://www.techmeme.com/261110/p12"])
+        self.assertEqual(self.zapusk(), (1, "ссылки: список денег и сделок, пункт 2: адреса нет среди постов X "
+                                            "этого аккаунта\nпроверки не прошли: ссылки\n"))
+        self.assertEqual(self.zapusk(zayavka=True), (0, "отброшено: список денег и сделок, пункт 2: адреса нет "
+                                                        "среди постов X этого аккаунта в сборе публикатора\n"
+                                                        "проверка пройдена\n"))
+
+    def test_istochnik_x(self):
+        self.s_punktom(akkaunt=None, istochnik="X")
+        self.assertEqual(self.zapusk(), (1, "ссылки: список денег и сделок, пункт 2: имя источника X — пост X "
+                                            "подписывается полем akkaunt\nпроверки не прошли: ссылки\n"))
+        self.assertEqual(self.zapusk(zayavka=True), (0, "отброшено: список денег и сделок, пункт 2: имя источника "
+                                                        "X — пост X подписывается полем akkaunt\n"
+                                                        "проверка пройдена\n"))
+        self.assertEqual(len(self.json("chistyy.json")["dengi"]), 1)
+
+    def test_oba_polya_ili_ni_odnogo_shema(self):
+        for pole in ({"istochnik": "X"}, {"akkaunt": None}):
+            with self.subTest(pole=pole):
+                self.s_punktom(**pole)
+                self.assertEqual(self.zapusk(), (1, "схема: список денег и сделок, пункт 2: нужно ровно одно поле из "
+                                                    "istochnik и akkaunt\nпроверки не прошли: схема\n"))
+                shutil.copy(OBRAZCY / "vypusk.json", self.papka / "vypusk.json")
+
+
 class Komanda(SObrazcami):
     """`python -m newsai proverit` — связка аргументов с файлами и коды выхода."""
 

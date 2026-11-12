@@ -1,13 +1,16 @@
 # Сборщик issue (спека «Устройство», сторона 4; «GitHub: репозиторий и публикатор», «Сборщик issue»).
-# За 27 минут до старта агента ищет issue GitHub Claude Code штатным токеном Actions (только чтение) и
-# коммитит файл issue dannye/issue.json в основную ветку ключом публикатора: прокси облака Claude Code
-# закрывает агенту api.github.com. Расписание запускается только из основной ветки — секреты
-# environment publikaciya ему доступны. Токена бота у сборщика нет, в канал он не пишет.
+# Запасной путь к файлу issue: главный — шаг публикатора после каждой его заявки. Ищет issue GitHub
+# Claude Code штатным токеном Actions (только чтение) и коммитит файл issue dannye/issue.json в основную
+# ветку ключом публикатора: прокси облака Claude Code закрывает агенту api.github.com. Запуск — по
+# расписанию за 27 минут до старта агента (расписание GitHub в этом репозитории может не сработать) и
+# вручную: Actions → sbor-issue → Run workflow на основной ветке. Job идёт только из основной ветки:
+# секреты environment publikaciya есть только у неё. Токена бота у сборщика нет, в канал он не пишет.
 name: sbor-issue
 
 on:
   schedule:
     - cron: "40 1,9,17 * * *"     # 08:40, 16:40, 00:40 по Бангкоку — агент стартует в 7 2,10,18
+  workflow_dispatch:              # ручной запуск — починить файл issue, если публикатор не отработал
 
 permissions: {}
 
@@ -17,19 +20,22 @@ concurrency:
 
 jobs:
   sbor-issue:
+    # Только основная ветка: ручной запуск из другой ветки — защита от случайности, не от агента
+    # (environment всё равно не отдаст ключ другой ветке) [техника].
+    if: github.event_name == 'schedule' || github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
     runs-on: ubuntu-latest
     environment: publikaciya       # ради ключа развёртывания
     timeout-minutes: 15
     permissions:
       contents: read
     steps:
-      # Событие schedule идёт только с последнего коммита основной ветки: её и чекаутим.
+      # schedule идёт с последнего коммита основной ветки, ручной запуск — по if тоже с неё.
       - name: Код основной ветки
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
 
-      # Код не 0 — шаг красный, коммита нет: агент не возьмёт старый файл.
+      # Код не 0 — шаг красный, коммита нет: агент возьмёт прежний файл, пока он годен (сутки).
       - name: Сбор issue
         env:
           GITHUB_TOKEN: ${{ github.token }}

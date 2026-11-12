@@ -5,13 +5,14 @@
       "posledniy_sbor": "2026-11-11T01:07:00Z" | null,   # конец периода вышедшего выпуска минус запас, UTC
       "posledniy_slot": "2026-11-11T02:00:00Z" | null,   # слот последней обработанной заявки (начало, UTC)
       "github_obhod": true | false,                      # полный обход issue GitHub уже был
+                                                         # (действует, только если в vidennye есть issue)
       "vidennye": {"<id кандидата>": "<когда увиден, UTC>"},
       "opublikovannye": [{"zagolovok", "url", "data": "<UTC>",
                           "vid": "krupnaya|sayty|x|dengi|github", "oboroty": bool}]
     }
 
 Кто что вызывает:
-- сбор: zagruzit → period / pervyy_progon / videno, отметка github_obhod;
+- сбор: zagruzit → period / pervyy_progon / videno, obhod_deystvuet (отметка github_obhod);
 - публикация: zapisat_punkt сразу после каждого отправленного сообщения (файл пишется тут же),
   zavershit_progon в конце — в том числе при пустом выпуске; zapisat_slot — при сбое.
 """
@@ -85,6 +86,12 @@ def period(sost: dict, nachalo_progona: datetime) -> tuple[datetime, datetime]:
 
 def eto_issue_github(identifikator: str) -> bool:
     return bool(_ISSUE_GITHUB.match(identifikator or ""))
+
+
+def obhod_deystvuet(sost: dict) -> bool:
+    """Отметка github_obhod действует, только если в vidennye есть хоть один issue GitHub: отметка без
+    них — след обхода с пустым поиском (13.11), следующий сбор снова идёт полным обходом [техника]."""
+    return bool(sost.get("github_obhod")) and any(eto_issue_github(i) for i in sost.get("vidennye") or {})
 
 
 def videno(sost: dict, identifikator: str) -> bool:

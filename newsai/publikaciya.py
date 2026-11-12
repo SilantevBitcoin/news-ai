@@ -13,9 +13,10 @@
       "krupnye": [{"zagolovok", "abzacy": [5–8 строк], "url", "oboroty": bool, "idy": [...]}],   # до 3
       "sayty":   [{"zagolovok", "url", "istochnik", "zvezda": bool, "idy": [...]}],             # до 10
       "x":       [{"zagolovok", "url", "akkaunt", "zvezda": bool, "idy": [...]}],               # до 10
-      "dengi":   [{"zagolovok", "url", "istochnik", "zvezda": bool, "idy": [...]}],             # до 5
+      "dengi":   [{"zagolovok", "url", "istochnik" | "akkaunt", "zvezda": bool, "idy": [...]}], # до 5
       "github":  [{"zagolovok", "url", "idy": [...]}]
     }
+У пункта денег ровно одно из istochnik и akkaunt: akkaunt — у поста X, строка тогда как в списке X.
 Файл сбоя: {"prichina": "<одна из PRICHINY_FAYLA_SBOYA>"}.
 """
 from __future__ import annotations
@@ -53,9 +54,10 @@ RAZDELY = (
     ("krupnye", 3, ("zagolovok", "abzacy", "url", "oboroty", "idy")),
     ("sayty", 10, ("zagolovok", "url", "istochnik", "zvezda", "idy")),
     ("x", 10, ("zagolovok", "url", "akkaunt", "zvezda", "idy")),
-    ("dengi", 5, ("zagolovok", "url", "istochnik", "zvezda", "idy")),
+    ("dengi", 5, ("zagolovok", "url", "istochnik", "akkaunt", "zvezda", "idy")),
     ("github", None, ("zagolovok", "url", "idy")),
 )
+ODNO_IZ = {"dengi": ("istochnik", "akkaunt")}
 NAZVANIYA = {"krupnye": "крупная новость", "sayty": "список сайтов", "x": "список X",
              "dengi": "список денег и сделок", "github": "список GitHub", "ne_otvetili": "не ответили"}
 VID_PUNKTA = {"krupnye": "krupnaya", "sayty": "sayty", "x": "x", "dengi": "dengi", "github": "github"}
@@ -124,8 +126,13 @@ def _punkt(razdel: str, polya: tuple, punkt, nomer: int) -> dict:
     lishnie = sorted(set(punkt) - set(polya))
     if lishnie:
         raise OtkazVypuska(f"{gde}: лишние поля {', '.join(lishnie)}")
+    odno_iz = ODNO_IZ.get(razdel, ())
+    if odno_iz and sum(pole in punkt for pole in odno_iz) != 1:
+        raise OtkazVypuska(f"{gde}: нужно ровно одно поле из {' и '.join(odno_iz)}")
     p = {}
     for pole in polya:
+        if pole in odno_iz and pole not in punkt:
+            continue
         if pole not in punkt:
             raise OtkazVypuska(f"{gde}: нет поля {pole}")
         z = punkt[pole]
@@ -172,7 +179,7 @@ def _krupnaya(p: dict) -> dict:
 
 def _stroka_spiska(razdel: str, n: int, p: dict) -> str:
     zvezda = "⭐ " if p.get("zvezda") else ""
-    if razdel == "x":
+    if "akkaunt" in p:
         return f"{n}. {zvezda}@{p['akkaunt']}: {_ssylka(p)}"
     if razdel == "github":
         return f"{n}. {_ssylka(p)} ({_ekranirovat_tekst(IMYA_GITHUB)}) · скоро"
@@ -305,10 +312,13 @@ def _do_zapasa(kandidat: dict, granica: datetime) -> bool:
 
 def _idy_progona(dannye: dict, konec_perioda: datetime) -> list[str]:
     """Что запомнить увиденным: кандидаты с novyy (нет признака — новый) с датой раньше начала
-    запаса и tolko_v_vidennye. Кандидат внутри запаса агент мог не видеть — он придёт снова."""
+    запаса, кроме issue GitHub, и tolko_v_vidennye. Кандидат внутри запаса агент мог не видеть — он
+    придёт снова. Issue GitHub — только вышедшим пунктом (zapisat_punkt): агент мог его не видеть
+    (файл issue собран раньше), тогда он выйдет следующим выпуском."""
     granica = sostoyanie.nachalo_zapasa(konec_perioda)
     idy = [k.get("id") for k in dannye.get("kandidaty") or []
-           if isinstance(k, dict) and k.get("novyy", True) is not False and _do_zapasa(k, granica)]
+           if isinstance(k, dict) and k.get("novyy", True) is not False and _do_zapasa(k, granica)
+           and k.get("skoro") is not True and not sostoyanie.eto_issue_github(str(k.get("id") or ""))]
     idy += list(dannye.get("tolko_v_vidennye") or [])
     return [i for i in idy if isinstance(i, str) and i]
 

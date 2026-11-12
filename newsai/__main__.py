@@ -15,9 +15,10 @@ def razbor() -> argparse.ArgumentParser:
     sb.add_argument("--konec-iz-zayavki", metavar="event.json",
                     help="сбор публикатора: конец периода — pull_request.created_at события GitHub, "
                          "а не часы машины; коды: 2 — нет времени открытия, 4 — не ответил ни один источник")
-    k.add_parser("sbor-issue", help="сборщик issue: поиск issue GitHub Claude Code в файл issue "
-                                    "(NEWSAI_ISSUE или dannye/issue.json); код 2 — запрос к API не "
-                                    "прошёл, файл не переписан")
+    k.add_parser("sbor-issue", help="поиск issue GitHub Claude Code в файл issue (NEWSAI_ISSUE или "
+                                    "dannye/issue.json); зовут публикатор после заявки и сборщик issue; "
+                                    "код 2 — запрос к API не прошёл или поиск пуст и без токена, файл "
+                                    "не переписан")
     t = k.add_parser("tekst", help="текст страницы без разметки, до 20 000 знаков")
     t.add_argument("url")
     v = k.add_parser("proverit", help="проверить файл выпуска или сбоя против прогона и состояния; "

@@ -16,7 +16,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from unittest import mock
 
-from newsai import nastrojki, sbor, sostoyanie
+from newsai import iks, nastrojki, sbor, sostoyanie
 from newsai.zaprosy import OshibkaZaprosa, Otvet
 
 UTC = timezone.utc
@@ -26,6 +26,7 @@ TEMP = nastrojki.KOREN / "temp"
 
 _okruzhenie = None
 _sekrety = None
+_pauza_x = mock.patch.object(iks, "spat", lambda sekundy: None)
 
 
 def setUpModule():
@@ -37,9 +38,11 @@ def setUpModule():
         os.environ.pop(imya, None)
     _sekrety = mock.patch.object(nastrojki, "FAYL_SEKRETOV", TEMP / "net-takogo-fayla-sekretov")
     _sekrety.start()
+    _pauza_x.start()
 
 
 def tearDownModule():
+    _pauza_x.stop()
     _sekrety.stop()
     _okruzhenie.stop()
 
@@ -67,12 +70,16 @@ class Set:
         return Otvet(404)
 
 
+STARYY_ISSUE = {"https://github.com/anthropics/claude-code/issues/1": "2026-10-01T00:00:00Z"}
+
+
 def sost_s(posledniy=None, vidennye=None, github_obhod=False):
     s = sostoyanie.pustoe()
     s["posledniy_sbor"] = posledniy
     s["vidennye"] = dict(vidennye or {})
     if github_obhod:
         s["github_obhod"] = True
+        s["vidennye"].update(STARYY_ISSUE)
     return s
 
 
@@ -262,6 +269,25 @@ def x_istochnik(*akkaunty):
 
 
 class X(unittest.TestCase):
+    def setUp(self):
+        self.pauzy = []
+        for imya, zamena in (("spat", self.pauzy.append), ("chasy", lambda: 0.0)):
+            p = mock.patch.object(iks, imya, zamena)
+            p.start()
+            self.addCleanup(p.stop)
+
+    def test_chast_akkauntov_ne_otvetila_prichiny_po_akkauntam(self):
+        set_ = Set([("fxtwitter.com/2/profile/AnthropicAI/", otvet("fx_200.json", tip="application/json")),
+                    ("fxtwitter.com/2/profile/net/statuses", otvet("fx_posty_404.json", 404, "application/json")),
+                    ("fxtwitter.com/2/profile/net", otvet("fx_profil_404.json", 404, "application/json"))])
+        rez = sbor.sobrat([x_istochnik("AnthropicAI", "net")], sost_s(X_PERIOD), SEYCHAS, set_)
+        self.assertEqual(rez["ne_otvetili"], ["X"])
+        self.assertEqual({x["akkaunt"] for x in kand(rez)}, {"AnthropicAI"})
+        self.assertEqual(len(kand(rez)), 3)
+        self.assertEqual(rez["itogi"][0]["oshibka"], "не ответили аккаунты: net (FxTwitter: аккаунт не найден)")
+        self.assertFalse([u for u in set_.zaprosy if "syndication" in u])
+        self.assertEqual(self.pauzy, [2, 5, 2])
+
     def test_200_i_204(self):
         set_ = Set([("fxtwitter.com/2/profile/AnthropicAI/", otvet("fx_200.json", tip="application/json")),
                     ("fxtwitter.com/2/profile/OpenAI/", Otvet(204)),
@@ -363,7 +389,7 @@ class GitHub(unittest.TestCase):
         self.assertEqual(rez["ne_otvetili"], [])
         self.assertEqual([(k["id"], k["skoro"], k["novyy"]) for k in kand(rez)], [(ISSUE, True, True)])
         self.assertIn("bcherny", kand(rez)[0]["tekst"])
-        self.assertIn("updated%3A%3E%3D2026-11-10T18%3A07%3A00Z", set_.zaprosy[0])
+        self.assertIn("updated%3A%3E%3D2026-11-04T02%3A07%3A00Z", set_.zaprosy[0])
         self.assertIn("reactions%3A%3E%3D100", set_.zaprosy[0])
         self.assertFalse(rez["github_polnyy_obhod"])
 
@@ -375,9 +401,11 @@ class GitHub(unittest.TestCase):
         self.assertEqual(rez["ne_otvetili"], [])
 
     def test_otvet_ot_logina_iz_spiska_komandy(self):
+        set_ = gh_set()
         rez = sbor.sobrat([self.ist(loginy_komandy=["marshallofsound"])],
-                          sost_s("2026-10-01T00:00:00Z", github_obhod=True), SEYCHAS, gh_set())
+                          sost_s("2026-10-01T00:00:00Z", github_obhod=True), SEYCHAS, set_)
         self.assertEqual([k["id"] for k in kand(rez)], [ISSUE, BEZ_KOMANDY])
+        self.assertIn("updated%3A%3E%3D2026-10-01T00%3A00%3A00Z", set_.zaprosy[0])
         self.assertIn("Ответ команды (MarshallOfSound, 2026-06-30T17:10:33Z)", kand(rez)[1]["tekst"])
 
     def test_polnyy_obhod_poka_net_otmetki(self):

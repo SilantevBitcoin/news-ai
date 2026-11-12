@@ -43,6 +43,8 @@ ZAKRYT_NE_K_SLOTU = "заявка не к своему слоту: закрыт�
 PREDEL_FAYLA = 2 * 1024 * 1024
 SVEZHEST_CHASOV = 3
 DOPUSK_BUDUSHCHEGO_MINUT = 10
+IMYA_X = "X"
+PRICHINA_ISTOCHNIK_X = "имя источника X — пост X подписывается полем akkaunt"
 
 PROGON, VYPUSK, SBOJ = "dannye/progon.json", "dannye/vypusk.json", "dannye/sboj.json"
 STATUSY_FAYLA = ("added", "modified")
@@ -113,6 +115,11 @@ def _adresa_v_tekste(p: dict) -> list[str]:
     if ist is not None and ist.strip() not in _imena_istochnikov() and adres_v_tekste(ist):
         prichiny.append("адрес или упоминание в имени источника")
     return prichiny
+
+
+def _istochnik_x(p: dict) -> bool:
+    """istochnik X у сайтов и денег: пост X подписывается akkaunt, а не именем источника (Р48) [техника]."""
+    return "istochnik" in p and p["istochnik"].strip() == IMYA_X
 
 
 def _istochnik_ne_tot(p: dict, po_adresu: list[dict]) -> bool:
@@ -265,10 +272,11 @@ def _punkty(vypusk: dict):
 
 
 def _po_adresu(razdel: str, p: dict, kandidaty: list[dict]) -> list[dict]:
-    """Кандидаты с адресом пункта: у строки X — посты X того же akkaunt, у GitHub — issue со skoro."""
+    """Кандидаты с адресом пункта: у строки X и пункта денег с akkaunt — посты X того же akkaunt, у
+    GitHub — issue со skoro."""
     url = p["url"].strip()
     po_adresu = [k for k in kandidaty if k["url"] == url]
-    if razdel == "x":
+    if "akkaunt" in p:
         return [k for k in po_adresu if k.get("akkaunt") == p["akkaunt"].strip()]
     if razdel == "github":
         return [k for k in po_adresu if k.get("skoro") is True]
@@ -306,12 +314,14 @@ def proverit_ssylki(vypusk: dict, dannye_progona: dict, sost: dict | None, n: Na
             continue
         po_adresu = _po_adresu(razdel, p, kandidaty)
         if not po_adresu:
-            if razdel == "x":
+            if "akkaunt" in p:
                 n.dobavit("ссылки", f"{gde}: адреса нет среди постов X этого аккаунта")
             elif razdel == "github":
                 n.dobavit("ссылки", f"{gde}: адреса нет среди issue со skoro")
             else:
                 n.dobavit("ссылки", f"{gde}: адреса нет среди кандидатов прогона")
+        elif _istochnik_x(p):
+            n.dobavit("ссылки", f"{gde}: {PRICHINA_ISTOCHNIK_X}")
         elif _istochnik_ne_tot(p, po_adresu):
             n.dobavit("ссылки", f"{gde}: имя источника — не источник кандидата с этим адресом")
         if any(i.strip() not in idy for i in p["idy"]):
@@ -375,7 +385,8 @@ def ochistit(vypusk: dict, sbor_dannye: dict, sost: dict | None) -> tuple[dict, 
 
     Отбрасывается пункт, чьего адреса нет среди кандидатов сбора публикатора; пункт с адресом или
     упоминанием в заголовке, абзаце или имени источника; пункт сайтов или денег, чей istochnik — не имя
-    источника кандидата сбора с этим адресом; пункт, чей адрес уже в opublikovannye состояния, кроме
+    источника кандидата сбора с этим адресом или X (пост X несёт akkaunt и сверяется по постам X того же
+    akkaunt, как строка X); пункт, чей адрес уже в opublikovannye состояния, кроме
     крупной с oboroty. Остальные — в прежнем порядке. Из idy уходят
     идентификаторы не из сбора; опустевший idy — идентификаторы кандидатов с адресом пункта [техника].
     Причины — только из кода: данных заявки в строках нет.
@@ -389,11 +400,15 @@ def ochistit(vypusk: dict, sbor_dannye: dict, sost: dict | None) -> tuple[dict, 
     for razdel, _, gde, p in _punkty(vypusk):
         po_adresu = _po_adresu(razdel, p, kandidaty)
         if not po_adresu:
-            otbrosheno.append(f"{gde}: {prichiny.get(razdel, 'адреса нет среди кандидатов сбора публикатора')}")
+            vid = "x" if "akkaunt" in p else razdel
+            otbrosheno.append(f"{gde}: {prichiny.get(vid, 'адреса нет среди кандидатов сбора публикатора')}")
             continue
         v_tekste = _adresa_v_tekste(p)
         if v_tekste:
             otbrosheno.append(f"{gde}: {v_tekste[0]}")
+            continue
+        if _istochnik_x(p):
+            otbrosheno.append(f"{gde}: {PRICHINA_ISTOCHNIK_X}")
             continue
         if _istochnik_ne_tot(p, po_adresu):
             otbrosheno.append(f"{gde}: имя источника — не источник кандидата сбора публикатора с этим адресом")

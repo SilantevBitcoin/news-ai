@@ -163,8 +163,8 @@ class Istochniki(unittest.TestCase):
         imena = [i["imya"] for i in self.spisok]
         self.assertEqual(imena, [
             "claude.dev", "Claude Code", "Claude Platform", "Блог Claude", "OpenAI", "Codex", "OpenAI API",
-            "AINews", "Simon Willison", "Ben's Bites", "Cursor", "DeepMind", "Techmeme", "X",
-            "GitHub Claude Code"])
+            "AINews", "Simon Willison", "Ben's Bites", "Cursor", "DeepMind", "Блог Google",
+            "Google Developers Blog", "Techmeme", "X", "GitHub Claude Code"])
         for i in self.spisok:
             self.assertTrue(i["vid"] and i["adres"], i["imya"])
 

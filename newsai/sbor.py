@@ -9,6 +9,10 @@ progon.zapisat. Состояние не меняет — это делает п�
 Окно охвата — 24 часа до начала прогона, а если период длиннее — весь период (Р46). Сбор отдаёт всех
 кандидатов окна: novyy — нет в vidennye; остальные идут только в счёт охвата.
 
+Источник из нескольких лент (`dop_adresa`, Блог Google) — один источник: повтор адреса — один
+кандидат, не ответившая лента — источник в не ответивших, записи остальных лент остаются. Лента без
+дат (`filtr.daty_iz_karty`, Google Developers Blog) — дата записи из lastmod карты сайта.
+
 Issue GitHub у агента: запрос к API не прошёл (из облака — 403 прокси) — issue из файла сборщика
 issue, если он годен (gitkhab). Путь к файлу — параметр fayl_issue; его передаёт только команда `sbor`
 агента, сбор публикатора файл не читает.
@@ -88,8 +92,8 @@ def _filtr(istochnik: dict, z: razbor.Zapis) -> razbor.Zapis | None:
     return z
 
 
-def _zapisi(istochnik: dict, poluchit) -> list[razbor.Zapis]:
-    imya, vid, adres = istochnik["imya"], istochnik["vid"], istochnik["adres"]
+def _odin_adres(istochnik: dict, adres: str, imya: str, poluchit) -> list[razbor.Zapis]:
+    vid = istochnik["vid"]
     tekst = _tekst_otveta(poluchit(adres), imya)
     try:
         if vid in ("rss", "atom"):
@@ -101,6 +105,55 @@ def _zapisi(istochnik: dict, poluchit) -> list[razbor.Zapis]:
     except razbor.OshibkaRazbora as e:
         raise OshibkaIstochnika(f"{imya}: {e}") from e
     raise OshibkaIstochnika(f"{imya}: неизвестный вид источника {vid}")
+
+
+def _bez_slesha(url: str) -> str:
+    return (url or "").strip().rstrip("/")
+
+
+def _daty_iz_karty(istochnik: dict, zapisi: list[razbor.Zapis], poluchit) -> None:
+    """Дата записи — lastmod её адреса в карте сайта, день без времени (Google Developers Blog).
+
+    Записи нет в карте — даты нет, запись не кандидат; карта не ответила или ни у одной записи нет
+    даты — источник не ответил."""
+    imya = istochnik["imya"]
+    tekst = _tekst_otveta(poluchit(istochnik["filtr"]["daty_iz_karty"]), f"{imya}: карта сайта")
+    try:
+        karta = {_bez_slesha(a): d for a, d in razbor.karta_sayta(tekst).items()}
+    except razbor.OshibkaRazbora as e:
+        raise OshibkaIstochnika(f"{imya}: карта сайта: {e}") from e
+    for z in zapisi:
+        z.data = karta.get(_bez_slesha(z.url))
+        z.tolko_data = True
+    if zapisi and all(z.data is None for z in zapisi):
+        raise OshibkaIstochnika(f"{imya}: ни у одной записи ленты нет даты в карте сайта")
+
+
+def _zapisi(istochnik: dict, poluchit) -> tuple[list[razbor.Zapis], list[str]]:
+    """Записи всех адресов источника (adres, затем dop_adresa) и ошибки адресов, что не ответили.
+
+    Несколько лент — один источник (Блог Google): не ответившая лента — ошибка источника, записи
+    остальных остаются (Р29). В ошибке адрес ленты — только когда лент несколько [техника]."""
+    imya = istochnik["imya"]
+    adresa = [istochnik["adres"], *istochnik.get("dop_adresa", [])]
+    neskolko = len(adresa) > 1
+    zapisi, oshibki = [], []
+    for adres in adresa:
+        metka = f"{imya}: {adres}" if neskolko else imya
+        try:
+            zapisi.extend(_odin_adres(istochnik, adres, metka, poluchit))
+        except (OshibkaIstochnika, OshibkaZaprosa) as e:
+            s = str(e)
+            if neskolko and not s.startswith(imya):
+                s = f"{imya}: {s}" if adres in s else f"{metka}: {s}"
+            oshibki.append(s)
+        except Exception as e:
+            if not neskolko:
+                raise
+            oshibki.append(f"{metka}: {type(e).__name__}: {e}")
+    if not oshibki and (istochnik.get("filtr") or {}).get("daty_iz_karty"):
+        _daty_iz_karty(istochnik, zapisi, poluchit)
+    return zapisi, oshibki
 
 
 def _otmetit_novyy(kandidaty: list[Kandidat], sost: dict) -> list[Kandidat]:
@@ -136,7 +189,10 @@ def _odin(istochnik: dict, sost: dict, period: Period, okno: Period, poluchit, f
                 itog["otchet"] = f"полный обход; уже набравших условия — в увиденные без выпуска: {len(tolko)}"
         else:
             byli = set()
-            for z in _zapisi(istochnik, poluchit):
+            zapisi, oshibki = _zapisi(istochnik, poluchit)
+            if oshibki:
+                itog["oshibka"] = "; ".join(oshibki)
+            for z in zapisi:
                 if not v_okne(z, okno) or z.identifikator in byli:
                     continue
                 z = _filtr(istochnik, z)
@@ -152,7 +208,7 @@ def _odin(istochnik: dict, sost: dict, period: Period, okno: Period, poluchit, f
     except Exception as e:
         itog["oshibka"] = f"{imya}: {type(e).__name__}: {e}"
         itog["polnyy_obhod"] = False
-        if istochnik["vid"] == "github_issues" and not sost.get("github_obhod"):
+        if istochnik["vid"] == "github_issues" and not sostoyanie.obhod_deystvuet(sost):
             itog["kandidaty"], itog["tolko_v_vidennye"] = [], []
     return itog
 

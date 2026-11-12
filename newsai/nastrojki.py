@@ -32,7 +32,8 @@ TEKST_KANDIDATA_ZNAKOV = 3000
 ZAGOLOVOK_X_ZNAKOV = 120
 TEKST_STRANICY_ZNAKOV = 20000
 
-ISSUE_DO_SLOTA_MINUT = 20
+ISSUE_GODEN_CHASOV = 24
+ISSUE_POISK_DNEY = 7
 
 LIMIT_SOOBSHCHENIYA = 4096
 PRICHINA_SBOYA_ZNAKOV = 200
@@ -66,5 +67,6 @@ def fayl_sboya() -> Path:
 
 
 def fayl_issue() -> Path:
-    """Файл issue: пишет только сборщик issue, лежит в основной ветке; читает его только `sbor` агента."""
+    """Файл issue: пишет только команда `sbor-issue` (у публикатора после заявки и у сборщика issue),
+    лежит в основной ветке; читает его только `sbor` агента."""
     return _put("NEWSAI_ISSUE", PAPKA_DANNYH / "issue.json")

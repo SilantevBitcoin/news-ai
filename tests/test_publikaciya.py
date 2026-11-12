@@ -65,6 +65,15 @@ OZHIDAEMYE_ZAPROSY = [
     {"chat_id": KANAL, "parse_mode": "HTML", "text": "не ответили: X, OpenAI API"},
 ]
 
+VYPUSK_DENGI_X = OBRAZCY / "vypusk-dengi-x.json"
+OZHIDAEMYE_ZAPROSY_DENGI_X = [
+    {"chat_id": KANAL, "parse_mode": "HTML", "link_preview_options": {"is_disabled": True}, "text":
+        '1. ⭐ @sama: <a href="https://x.com/sama/status/1988000000000000004">OpenAI привлекла раунд на 40 млрд '
+        "долларов</a>\n"
+        '2. <a href="https://www.techmeme.com/261110/p12">Mistral привлекла раунд на 2 млрд евро</a> (Techmeme)'},
+    {"chat_id": KANAL, "parse_mode": "HTML", "text": "не ответили: X, OpenAI API"},
+]
+
 
 def obrazec_vypuska() -> dict:
     return json.loads(VYPUSK.read_text(encoding="utf-8"))
@@ -86,6 +95,14 @@ def sayt(n=1, **pole) -> dict:
 
 def iks(n=1, **pole) -> dict:
     p = {"zagolovok": f"Пост {n}", "url": f"https://x.com/sama/status/{n}", "akkaunt": "sama", "zvezda": False,
+         "idy": [f"https://x.com/sama/status/{n}"]}
+    p.update(pole)
+    return p
+
+
+def dengi_x(n=1, **pole) -> dict:
+    """Пункт денег с адресом поста X: akkaunt вместо istochnik."""
+    p = {"zagolovok": f"Сделка {n}", "url": f"https://x.com/sama/status/{n}", "akkaunt": "sama", "zvezda": False,
          "idy": [f"https://x.com/sama/status/{n}"]}
     p.update(pole)
     return p
@@ -132,6 +149,36 @@ class Sborka(unittest.TestCase):
                                         '2. <a href="https://b/2">Строка 2</a> (Cursor)')
         s = publikaciya.soobshcheniya({"x": [iks(1)]}, [])
         self.assertEqual(s[0]["tekst"], '1. @sama: <a href="https://x.com/sama/status/1">Пост 1</a>')
+
+    def test_dengi_iz_x_kak_stroka_x(self):
+        s = publikaciya.soobshcheniya({"dengi": [dengi_x(1)]}, [])
+        self.assertEqual(s[0]["tekst"], '1. @sama: <a href="https://x.com/sama/status/1">Сделка 1</a>')
+        s = publikaciya.soobshcheniya({"dengi": [sayt(1, istochnik="Techmeme"),
+                                                 dengi_x(2, zvezda=True, zagolovok="Раунд <A> & B")]}, [])
+        self.assertEqual(s[0]["tekst"], '1. <a href="https://b/1">Строка 1</a> (Techmeme)\n'
+                                        '2. ⭐ @sama: <a href="https://x.com/sama/status/2">Раунд &lt;A&gt; &amp; B</a>')
+        self.assertNotIn("(X)", s[0]["tekst"])
+        self.assertEqual(s[0]["vid"], "dengi")
+        self.assertEqual(s[0]["punkty"][1], {"zagolovok": "Раунд <A> & B", "url": "https://x.com/sama/status/2",
+                                             "idy": ["https://x.com/sama/status/2"], "vid": "dengi",
+                                             "oboroty": False})
+
+    def test_dengi_rovno_odno_iz_istochnik_i_akkaunt(self):
+        bez_obeih = {k: v for k, v in sayt().items() if k != "istochnik"}
+        for plohoy, tekst in (
+                (dengi_x(istochnik="Techmeme"), "список денег и сделок, пункт 1: нужно ровно одно поле из "
+                                                "istochnik и akkaunt"),
+                (bez_obeih, "список денег и сделок, пункт 1: нужно ровно одно поле из istochnik и akkaunt"),
+                (dengi_x(akkaunt="@sama"), "список денег и сделок, пункт 1: akkaunt — имя аккаунта X без @"),
+                (dengi_x(akkaunt=""), "список денег и сделок, пункт 1: нет поля akkaunt"),
+                (dengi_x(akkaunt=None), "список денег и сделок, пункт 1: нет поля akkaunt")):
+            with self.subTest(plohoy=plohoy):
+                with self.assertRaises(publikaciya.OtkazVypuska) as e:
+                    publikaciya.soobshcheniya({"dengi": [plohoy]}, [])
+                self.assertEqual(str(e.exception), tekst)
+        with self.assertRaises(publikaciya.OtkazVypuska) as e:
+            publikaciya.soobshcheniya({"sayty": [sayt(akkaunt="sama")]}, [])
+        self.assertEqual(str(e.exception), "список сайтов, пункт 1: лишние поля akkaunt")
 
     def test_ne_otvetili_ekraniruetsya(self):
         s = publikaciya.soobshcheniya({"sayty": [sayt()]}, ["A<b>&"])
@@ -558,6 +605,78 @@ class FaylSboya(SFaylami):
         self.assertEqual(self.zapusk()[0], 0)
 
 
+class DengiIzX(SFaylami):
+    """Пункт денег с akkaunt: отправка строки как в списке X и вид пункта в состоянии — dengi."""
+
+    def test_otpravka_i_sostoyanie(self):
+        os.environ["NEWSAI_VYPUSK"] = str(VYPUSK_DENGI_X)
+        kod, out, err, telegram = self.zapusk()
+        self.assertEqual(kod, 0, err)
+        self.assertEqual(telegram.tela(), OZHIDAEMYE_ZAPROSY_DENGI_X)
+        itog = sostoyanie.zagruzit(self.sost)
+        self.assertEqual([(p["url"], p["vid"], p["oboroty"]) for p in itog["opublikovannye"]], [
+            ("https://x.com/sama/status/1988000000000000004", "dengi", False),
+            ("https://www.techmeme.com/261110/p12", "dengi", False),
+        ])
+        self.assertEqual(out.strip(), "отправлено сообщений: 2")
+
+
+class IssueVUvidennyh(SFaylami):
+    """Шов «opublikovat на записанном сборе публикатора с issue GitHub»: в vidennye — только вышедший
+    issue и tolko_v_vidennye; невышедший issue сбора с датой раньше запаса в следующем сборе снова
+    кандидат."""
+
+    VYSHEL = "https://github.com/anthropics/claude-code/issues/4321"
+    NE_VYSHEL = "https://github.com/anthropics/claude-code/issues/5555"
+    TOLKO = "https://github.com/anthropics/claude-code/issues/1000"
+
+    def setUp(self):
+        super().setUp()
+        def issue(url, zagolovok):
+            return {"id": url, "istochnik": "GitHub Claude Code", "zagolovok": zagolovok, "url": url,
+                    "data": "2026-11-10T23:20:00Z", "tekst": "Feature request.", "skoro": True, "novyy": True}
+        sbor_ = {"nachalo_progona": "2026-11-11T02:15:00Z", "nachalo_perioda": "2026-11-10T18:07:00Z",
+                 "pervyy_progon": False,
+                 "kandidaty": [issue(self.VYSHEL, "Custom panels"), issue(self.NE_VYSHEL, "Linux build"),
+                               {"id": "https://cursor.com/changelog/2-9", "istochnik": "Cursor",
+                                "zagolovok": "Cursor 2.9", "url": "https://cursor.com/changelog/2-9",
+                                "data": "2026-11-10T22:00:00Z", "tekst": "Notes.", "skoro": False,
+                                "novyy": True}],
+                 "ne_otvetili": [], "tolko_v_vidennye": [self.TOLKO], "github_polnyy_obhod": True}
+        put = self.papka / "sbor.json"
+        put.write_text(json.dumps(sbor_, ensure_ascii=False), encoding="utf-8")
+        os.environ["NEWSAI_PROGON"] = str(put)
+        self.svoy_vypusk({"krupnye": [], "sayty": [], "x": [], "dengi": [],
+                          "github": [{"zagolovok": "Свои панели для модов", "url": self.VYSHEL,
+                                      "idy": [self.VYSHEL]}]})
+
+    def test_tolko_vyshedshiy_issue_v_uvidennyh(self):
+        from newsai import gitkhab
+        from newsai.progon import Period
+
+        kod, out, err, telegram = self.zapusk()
+        self.assertEqual(kod, 0, err)
+        self.assertEqual(out.strip(), "отправлено сообщений: 1")
+        sost = sostoyanie.zagruzit(self.sost)
+        self.assertEqual(sorted(sost["vidennye"]), [
+            "https://cursor.com/changelog/2-9",
+            "https://github.com/anthropics/claude-code/issues/1000",
+            "https://github.com/anthropics/claude-code/issues/4321",
+        ])
+        self.assertIs(sost["github_obhod"], True)
+        self.assertIs(sostoyanie.obhod_deystvuet(sost), True)
+        zapisi = [{"url": u, "zagolovok": "Issue", "obnovleno": "2026-11-10T23:20:00Z", "reakcii": 120,
+                   "kommentariev": 3, "sostoyanie": "open", "tekst": "Feature request.",
+                   "otvet_komandy": {"login": "bcherny", "data": "2026-11-01T00:00:00Z", "tekst": "Soon."}}
+                  for u in (self.VYSHEL, self.NE_VYSHEL, self.TOLKO)]
+        ist = {"imya": "GitHub Claude Code", "vid": "github_issues"}
+        sleduyushchiy = Period(datetime(2026, 11, 11, 9, 15, tzinfo=timezone.utc),
+                               datetime(2026, 11, 11, 10, 7, tzinfo=timezone.utc))
+        kandidaty, tolko = gitkhab.kandidaty_iz_zapisey(ist, zapisi, sost, sleduyushchiy)
+        self.assertEqual(([k.identifikator for k in kandidaty], tolko),
+                         (["https://github.com/anthropics/claude-code/issues/5555"], []))
+
+
 class SuhojVProcesse(SFaylami):
     def test_bez_tokena_bez_sostoyaniya_pechataet_zaprosy(self):
         del os.environ[PEREMENNAYA]
@@ -589,6 +708,15 @@ class SuhojKomanda(SFaylami):
             zaprosy.append(json.loads(telo))
         self.assertEqual(zaprosy, OZHIDAEMYE_ZAPROSY)
         self.assertNotIn("api.telegram.org/bot", r.stdout)
+        self.assertFalse(self.sost.exists())
+
+    def test_dengi_iz_x(self):
+        os.environ["NEWSAI_VYPUSK"] = str(VYPUSK_DENGI_X)
+        r = self.zapros_komandy()
+        self.assertEqual(r.returncode, 0, r.stderr)
+        bloki = [b for b in r.stdout.split("--- запрос ") if b.strip()]
+        self.assertEqual([b.partition("\n")[0] for b in bloki], ["1 из 2: sendMessage", "2 из 2: sendMessage"])
+        self.assertEqual([json.loads(b.partition("\n")[2]) for b in bloki], OZHIDAEMYE_ZAPROSY_DENGI_X)
         self.assertFalse(self.sost.exists())
 
     def test_otkaz_bez_fayla_vypuska(self):

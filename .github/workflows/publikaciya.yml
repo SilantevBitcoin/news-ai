@@ -185,6 +185,58 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         run: python3 -m newsai nesohraneno
 
+      # Файл issue для следующего выпуска — на состоянии, которое только что легло в основную ветку.
+      # Главный путь к файлу issue: не зависит от расписания GitHub (сборщик issue — запасной). Провал —
+      # шаг с ошибкой в логе, job идёт дальше, в канал ничего, nesohraneno не срабатывает: следующий
+      # агент возьмёт прежний файл, пока он годен. Состояние не сохранено — шага нет: в основной ветке
+      # не то состояние, а push файла протащил бы туда и коммит состояния [техника].
+      - name: Файл issue — сбор
+        id: issue
+        if: ${{ !cancelled() && (steps.sostoyanie.outputs.itog == 'sohraneno' || steps.sostoyanie.outputs.itog == 'ne-menyalos') }}
+        continue-on-error: true
+        timeout-minutes: 10
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -o pipefail
+          P="$RUNNER_TEMP/zayavka"
+          mkdir -p "$P"
+          python3 -m newsai sbor-issue 2>&1 | tee "$P/issue.txt"
+
+      # Как «Состояние в основную ветку»: только файл issue, ключ публикатора, закреплённые ключи хоста;
+      # push не прошёл — pull --rebase и ещё раз.
+      - name: Файл issue — в основную ветку
+        id: issue_push
+        if: ${{ !cancelled() && steps.issue.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          KLYUCH: ${{ secrets.NEWSAI_DEPLOY_KEY }}
+        run: |
+          set -euo pipefail
+          git config user.name "news-ai publikator"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dannye/issue.json
+          if git diff --cached --quiet; then
+            echo "файл issue не менялся"
+            exit 0
+          fi
+          git commit -q -m "issue: после заявки #$NOMER"
+          umask 077
+          K="$RUNNER_TEMP/klyuch"
+          H="$RUNNER_TEMP/known_hosts"
+          trap 'rm -f "$K"' EXIT
+          printf '%s\n' "$KLYUCH" > "$K"
+          # Ключи хоста GitHub закреплены: https://api.github.com/meta, поле ssh_keys.
+          cat > "$H" <<'KLYUCHI'
+          github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl
+          github.com ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEmKSENjQEezOmxkZMy7opKgwFB9nkt5YRrYMjNuG5N87uRgg6CLrbo5wAdT/y6v0mKV0U2w0WZ2YB/++Tpockg=
+          github.com ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCj7ndNxQowgcQnjshcLrqPEiiphnt+VTTvDP6mHBL9j1aNUkY4Ue1gvwnGLVlOhGeYrnZaMgRK6+PKCUXaDbC7qtbW8gIkhL7aGCsOr/C56SJMy/BCZfxd1nWzAOxSDPgVsmerOBYfNqltV9/hWCqBywINIR+5dIg6JTJ72pcEpEjcYgXkE2YEFXV1JHnsKgbLWNlhScqb2UmyRkQyytRLtL+38TGxkxCflmO+5Z8CSSNY7GidjMIZ7Q4zMjA2n1nGrlTDkzwDCsw+wqFPGQA179cnfGWOWRVruj16z6XyvxvjJwbz0wQZ75XK5tKSb7FNyeIEs4TT4jk+S4dhPeAUC5y+bDYirYgM4GC7uEnztnZyaVWQ7B381AK4Qdrwt51ZqExKbQpTUNn+EjqoTwvqNj4kqx5QUCI0ThS/YkOxJCXmPUWZbhjpCg56i+2aB6CmK2JGhn57K5mj0MNdBXA4/WnwH6XoPWJzK5Nyu2zB3nAZp+S5hpQs+p1vN1/wsjk=
+          KLYUCHI
+          export GIT_SSH_COMMAND="ssh -i $K -o IdentitiesOnly=yes -o UserKnownHostsFile=$H -o StrictHostKeyChecking=yes"
+          ADRES="git@github.com:$GITHUB_REPOSITORY.git"
+          git push -q "$ADRES" "HEAD:refs/heads/$OSNOVNAYA" \
+            || { git pull -q --rebase "$ADRES" "$OSNOVNAYA" && git push -q "$ADRES" "HEAD:refs/heads/$OSNOVNAYA"; }
+
       - name: Итог в заявку, закрыть, удалить ветку
         if: ${{ !cancelled() && steps.proverka.outputs.kod != '' }}
         env:
@@ -196,6 +248,8 @@ jobs:
           SBOJ_AGENTA: ${{ steps.sboj_agenta.outcome }}
           PUBLIKACIYA: ${{ steps.publikaciya.outcome }}
           SOSTOYANIE: ${{ steps.sostoyanie.outputs.itog }}
+          ISSUE_SBOR: ${{ steps.issue.outcome }}
+          ISSUE_PUSH: ${{ steps.issue_push.outcome }}
         run: |
           set -euo pipefail
           P="$RUNNER_TEMP/zayavka"
@@ -233,12 +287,19 @@ jobs:
           else
             itog="Проверка против сбора упала с кодом ${KOD_SVERKI:-нет} — публикации нет, заявка оставлена открытой."; zakryt=0
           fi
+          case "$ISSUE_SBOR" in
+            success) if [ "$ISSUE_PUSH" = "success" ]; then fayl_issue="собран и в основной ветке"
+                     else fayl_issue="собран, но push не прошёл — у агента прежний файл"; fi ;;
+            failure) fayl_issue="sbor-issue не прошёл — у агента прежний файл" ;;
+            *) fayl_issue="не собирался" ;;
+          esac
           {
-            echo "$itog Состояние: ${SOSTOYANIE:-не записано}."
+            echo "$itog Состояние: ${SOSTOYANIE:-не записано}. Файл issue: $fayl_issue."
             echo
             echo '```'
             # Данные заявки не выходят из блока кода. Отброшенное — строки «отброшено: …» сверки.
-            cat "$P/proverka.txt" "$P/sverka.txt" 2>/dev/null | sed 's/`/ʼ/g'
+            # Файла нет (сверки или сбора issue не было) — cat не валит шаг при pipefail [техника].
+            { cat "$P/proverka.txt" "$P/sverka.txt" "$P/issue.txt" 2>/dev/null || true; } | sed 's/`/ʼ/g'
             echo '```'
           } > "$P/itog.md"
           gh api -X POST "$API/issues/$NOMER/comments" -F "body=@$P/itog.md" > /dev/null

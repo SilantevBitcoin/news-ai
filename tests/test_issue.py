@@ -1,8 +1,8 @@
 """Швы «Функция сбора issue для сборщика» и «Сбор агента с записанным файлом issue» (спека, «Швы для
 тестов»): записанные ответы GitHub из tests/zapisi/, временные состояние и файл issue.
 
-Время прогона агента — 02:07 UTC (09:07 по Бангкоку), слот начался в 02:00 UTC: файл issue годен, если
-собран с 01:40 до 02:07 UTC. Сборщик по cron — 01:40.
+Время прогона агента — 02:07 UTC (09:07 по Бангкоку): файл issue годен, если собран не раньше чем за
+24 часа до начала прогона (с 10.11 02:07 UTC) и не позже его начала. Сборщик по cron — 01:40.
 """
 import io
 import json
@@ -71,10 +71,29 @@ class Set:
         return Otvet(404)
 
 
+PUSTO = Otvet(200, b'{"total_count": 0, "incomplete_results": false, "items": []}',
+              {"content-type": "application/json"})
+PUSTOY_POISK = ("api.github.com/search/issues", PUSTO)
+
+
+class PustoSTokenom(Set):
+    """Поиск с заголовком Authorization пуст, без него — записанный ответ (гипотеза 13.11 о токене Actions)."""
+
+    def __call__(self, url, zagolovki=None):
+        if "search/issues" in url and "Authorization" in (zagolovki or {}):
+            self.zaprosy.append(url)
+            self.zagolovki.append(dict(zagolovki))
+            return PUSTO
+        return super().__call__(url, zagolovki)
+
+
 def gh_set(*pervye):
     return Set(list(pervye) + [("api.github.com/search/issues", otvet("gh_poisk.json")),
                                ("issues/42796/comments", otvet("gh_kommentarii_42796.json")),
                                ("issues/65697/comments", otvet("gh_kommentarii_65697.json"))])
+
+
+STARYY_ISSUE = {"https://github.com/anthropics/claude-code/issues/1": "2026-10-01T00:00:00Z"}
 
 
 def sost_s(posledniy=None, vidennye=None, github_obhod=False):
@@ -82,6 +101,8 @@ def sost_s(posledniy=None, vidennye=None, github_obhod=False):
     s["posledniy_sbor"] = posledniy
     s["vidennye"] = dict(vidennye or {})
     s["github_obhod"] = github_obhod
+    if github_obhod:
+        s["vidennye"].update(STARYY_ISSUE)
     return s
 
 
@@ -178,10 +199,68 @@ class Sborshchik(Papka):
         set_ = gh_set()
         kod, vyvod, _ = self.sborshchik(sost_s("2026-11-10T18:07:00Z", github_obhod=True), set_)
         self.assertEqual(kod, 0)
-        self.assertIn("updated%3A%3E%3D2026-11-10T18%3A07%3A00Z", set_.zaprosy[0])
+        self.assertIn("updated%3A%3E%3D2026-11-04T01%3A40%3A12Z", set_.zaprosy[0])
         dannye = json.loads(self.put_issue.read_text(encoding="utf-8"))
-        self.assertEqual(dannye["nachalo_poiska"], "2026-11-10T18:07:00Z")
-        self.assertEqual(vyvod.splitlines()[:2], ["issue: 1", "nachalo_poiska: 2026-11-10T18:07:00Z"])
+        self.assertEqual(dannye["nachalo_poiska"], "2026-11-04T01:40:12Z")
+        self.assertEqual(vyvod.splitlines()[:2], ["issue: 1", "nachalo_poiska: 2026-11-04T01:40:12Z"])
+
+    def test_s_github_obhod_period_ranshe_7_dney(self):
+        set_ = gh_set()
+        kod, vyvod, _ = self.sborshchik(sost_s("2026-10-20T00:00:00Z", github_obhod=True), set_)
+        self.assertEqual(kod, 0)
+        self.assertIn("updated%3A%3E%3D2026-10-20T00%3A00%3A00Z", set_.zaprosy[0])
+        self.assertEqual(json.loads(self.put_issue.read_text(encoding="utf-8"))["nachalo_poiska"],
+                         "2026-10-20T00:00:00Z")
+
+    def test_otmetka_bez_issue_v_vidennyh_poisk_bez_perioda(self):
+        sost = sost_s("2026-11-10T18:07:00Z", {"https://cursor.com/changelog/2-9": "2026-11-10T20:00:00Z"})
+        sost["github_obhod"] = True
+        set_ = gh_set()
+        kod, vyvod, _ = self.sborshchik(sost, set_)
+        self.assertEqual(kod, 0)
+        self.assertNotIn("updated%3A", set_.zaprosy[0])
+        self.assertEqual(json.loads(self.put_issue.read_text(encoding="utf-8"))["nachalo_poiska"], None)
+        self.assertEqual(vyvod.splitlines()[:2], ["issue: 1", "nachalo_poiska: null"])
+
+    def test_vyvod_chisla_i_token(self):
+        kod, vyvod, _ = self.sborshchik(sost_s(vidennye={ISSUE: "2026-11-01T00:00:00Z"}), gh_set(),
+                                        loginy=("marshallofsound",))
+        self.assertEqual(kod, 0)
+        self.assertEqual(vyvod.splitlines()[:4], [
+            "issue: 1", "nachalo_poiska: null", "поиск: 2, из них уже в vidennye: 1, с ответом команды: 1",
+            "токен: нет"])
+
+    def test_pustoy_poisk_s_tokenom_povtor_bez_tokena(self):
+        set_ = PustoSTokenom(gh_set().pravila)
+        with mock.patch.dict(os.environ, {"GITHUB_TOKEN": "proba-token-sborshchika"}):
+            kod, vyvod, err = self.sborshchik(sost_s(), set_)
+        self.assertEqual(kod, 0, err)
+        poisk = [(u, z.get("Authorization")) for u, z in zip(set_.zaprosy, set_.zagolovki) if "search/issues" in u]
+        self.assertEqual([a for _, a in poisk], ["Bearer proba-token-sborshchika", None])
+        self.assertEqual(poisk[0][0], poisk[1][0])
+        self.assertEqual(len(json.loads(self.put_issue.read_text(encoding="utf-8"))["issue"]), 1)
+        self.assertEqual(vyvod.splitlines()[2:4], [
+            "поиск: 2, из них уже в vidennye: 0, с ответом команды: 1",
+            "токен: поиск с ним пуст — повтор без токена"])
+        self.assertNotIn("proba-token-sborshchika", vyvod + err)
+
+    def test_pustoy_poisk_kod_2_fayl_ne_tronut(self):
+        prezhniy = b'{"sobrano": "2026-11-10T17:40:05Z", "nachalo_poiska": null, "issue": []}\n'
+        for imya, token, zaprosov, prichina in (
+                ("с токеном и без", "proba-token-sborshchika", 2,
+                 "поиск issue: 0 результатов (с токеном и повтором без токена)"),
+                ("без токена", None, 1, "поиск issue: 0 результатов")):
+            with self.subTest(imya):
+                self.put_issue.write_bytes(prezhniy)
+                set_ = gh_set(PUSTOY_POISK)
+                okr = {"GITHUB_TOKEN": token} if token else {}
+                with mock.patch.dict(os.environ, okr):
+                    kod, vyvod, err = self.sborshchik(sost_s(), set_)
+                self.assertEqual(kod, 2)
+                self.assertEqual(len(set_.zaprosy), zaprosov)
+                self.assertEqual(self.put_issue.read_bytes(), prezhniy)
+                self.assertEqual(err, f"newsai sbor-issue: {prichina}; файл issue не переписан\n")
+                self.assertEqual(vyvod, "")
 
     def test_loginy_komandy(self):
         kod, _, _ = self.sborshchik(sost_s(), gh_set(), loginy=("marshallofsound",))
@@ -317,15 +396,46 @@ class Agent(Papka):
         self.assertEqual(([k["id"] for k in kand(rez)], rez["tolko_v_vidennye"]), ([BEZ_KOMANDY], [ISSUE]))
         self.assertFalse(rez["github_polnyy_obhod"])
 
-    def test_obnovleno_vne_perioda_iz_fayla_ne_kandidat(self):
-        fayl = self.fayl(issue=[zapis(obnovleno="2026-11-10T18:06:59Z"), zapis(url=ISSUE)])
+    def test_obnovleno_ranshe_perioda_iz_fayla_kandidat(self):
+        fayl = self.fayl(nachalo="2026-11-04T01:40:12Z",
+                         issue=[zapis(obnovleno="2026-11-05T00:00:00Z"), zapis(url=ISSUE)])
         rez = self.sobrat(sost_s("2026-11-10T18:07:00Z", github_obhod=True),
                           gh_set(("api.github.com/search/issues", ZAKRYTO)), fayl)
-        self.assertEqual([k["id"] for k in kand(rez)], [ISSUE])
+        self.assertEqual(([k["id"] for k in kand(rez)], rez["ne_otvetili"]), ([BEZ_KOMANDY, ISSUE], []))
+        self.assertEqual(kand(rez)[0]["data"], "2026-11-05T00:00:00Z")
+
+    def test_otmetka_bez_issue_v_vidennyh_kak_bez_otmetki(self):
+        sost = sost_s("2026-11-10T18:07:00Z")
+        sost["github_obhod"] = True
+        zakryt = ("api.github.com/search/issues", ZAKRYTO)
+        rez = self.sobrat(sost, gh_set(zakryt), self.fayl(nachalo="2026-11-04T01:40:12Z", issue=[zapis()]))
+        self.assertEqual(rez["ne_otvetili"], [GH])
+        self.assertEqual(rez["itogi"][0]["oshibka"],
+                         f"{OTKAZ_POISKA}; файл сборщика issue не годен: поиск с 2026-11-04T01:40:12Z, а полного "
+                         f"обхода ещё не было — нужен поиск без периода")
+        set_ = gh_set()
+        rez = self.sobrat(sost, set_)
+        self.assertNotIn("updated%3A", set_.zaprosy[0])
+        self.assertEqual((kand(rez), rez["tolko_v_vidennye"], rez["github_polnyy_obhod"]), ([], [ISSUE], True))
+
+    def test_polnyy_obhod_s_pustym_poiskom_ne_obhod(self):
+        for imya, token in (("без токена", None), ("с токеном", "proba-token-agenta")):
+            with self.subTest(imya):
+                set_ = gh_set(PUSTOY_POISK)
+                okr = {"GITHUB_TOKEN": token} if token else {}
+                with mock.patch.dict(os.environ, okr):
+                    rez = self.sobrat(sost_s("2026-11-10T18:07:00Z"), set_)
+                self.assertEqual((rez["ne_otvetili"], kand(rez), rez["tolko_v_vidennye"], rez["github_polnyy_obhod"]),
+                                 ([GH], [], [], False))
+                self.assertEqual(rez["itogi"][0]["oshibka"], "поиск issue: 0 результатов"
+                                 + (" (с токеном и повтором без токена)" if token else ""))
+                self.assertEqual([z.get("Authorization") for z in set_.zagolovki],
+                                 ["Bearer proba-token-agenta", None] if token else [None])
 
     def test_granicy_godnosti(self):
         zakryt = ("api.github.com/search/issues", ZAKRYTO)
-        for sobrano, nachalo in (("2026-11-11T01:40:00Z", "2026-11-10T18:07:00Z"),
+        for sobrano, nachalo in (("2026-11-10T02:07:00Z", "2026-11-10T18:07:00Z"),
+                                 ("2026-11-10T03:07:00Z", None),
                                  ("2026-11-11T02:07:00Z", None)):
             with self.subTest(sobrano=sobrano):
                 fayl = self.fayl(sobrano=sobrano, nachalo=nachalo, issue=[zapis()])
@@ -336,9 +446,9 @@ class Agent(Papka):
         zakryt = ("api.github.com/search/issues", ZAKRYTO)
         dlinnyy = zapis(tekst="я" * 3001)
         sluchai = (
-            ("старше 20 минут до слота", dict(sobrano="2026-11-11T01:39:59Z"), True,
-             "собран 2026-11-11T01:39:59Z — раньше 2026-11-11T01:40:00Z, за 20 минут до начала слота "
-             "2026-11-11T02:00:00Z"),
+            ("старше 24 часов", dict(sobrano="2026-11-10T02:06:59Z"), True,
+             "собран 2026-11-10T02:06:59Z — раньше 2026-11-10T02:07:00Z, за 24 часа до начала прогона "
+             "2026-11-11T02:07:00Z"),
             ("позже начала прогона", dict(sobrano="2026-11-11T02:07:01Z"), True,
              "собран 2026-11-11T02:07:01Z — позже начала прогона 2026-11-11T02:07:00Z"),
             ("поиск позже начала периода", dict(nachalo="2026-11-10T18:07:01Z"), True,

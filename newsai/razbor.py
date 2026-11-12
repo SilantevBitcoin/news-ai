@@ -223,6 +223,30 @@ def _atom(koren: ET.Element) -> list[Zapis]:
     return zapisi
 
 
+_KARTA = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
+
+
+def karta_sayta(tekst: str) -> dict[str, datetime]:
+    """Карта сайта (sitemap.xml, urlset) → {адрес: день lastmod, полночь UTC}.
+
+    Адрес без lastmod или с неразбираемым lastmod в словарь не попадает; время lastmod
+    отбрасывается — у записи день без времени [техника]."""
+    koren = _koren(tekst)
+    if koren.tag != f"{_KARTA}urlset":
+        raise OshibkaRazbora(f"не карта сайта со списком адресов: <{koren.tag}>")
+    daty = {}
+    for url in koren.findall(f"{_KARTA}url"):
+        adres = _tekst_elementa(url.find(f"{_KARTA}loc"))
+        lastmod = _tekst_elementa(url.find(f"{_KARTA}lastmod"))
+        try:
+            den = datetime.strptime(lastmod[:10], "%Y-%m-%d").replace(tzinfo=timezone.utc)
+        except ValueError:
+            continue
+        if adres:
+            daty[adres] = den
+    return daty
+
+
 def bez_strok(razmetka: str, nachalo: str) -> str:
     """Тело релиза без пунктов, начинающихся с `nachalo`; заголовки разделов не в счёт."""
     vse = [s for s in html_v_tekst(razmetka).split("\n") if s.strip()]

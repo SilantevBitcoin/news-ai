@@ -90,6 +90,26 @@
       "filtr": {}
     },
     {
+      "imya": "Блог Google",
+      "vid": "rss",
+      "adres": "https://blog.google/innovation-and-ai/technology/ai/rss/",
+      "dop_adresa": [
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/rss/",
+        "https://blog.google/innovation-and-ai/technology/developers-tools/rss/"
+      ],
+      "filtr": {},
+      "filtr_slovami": "фильтр шума — выбор разделов: три ленты (ИИ, модели Gemini, developers-tools), а не общая blog.google/rss/ — та несёт благотворительность, сети, рекламу, и 20 записей в ней — около двух суток; запуск модели бывает только в ленте моделей (13.11.2026: «Introducing Gemini 4 Hydrogen» — только там). Записи трёх лент — один источник: повтор адреса — один кандидат; не ответила хоть одна лента — источник в не ответивших, записи ответивших лент остаются кандидатами. Остальной шум — уровень 1 по рубрике"
+    },
+    {
+      "imya": "Google Developers Blog",
+      "vid": "rss",
+      "adres": "https://developers.googleblog.com/rss/",
+      "filtr": {
+        "daty_iz_karty": "https://developers.googleblog.com/sitemap.xml"
+      },
+      "filtr_slovami": "в ленте нет дат (13.11.2026): дата записи — lastmod того же адреса в карте сайта, день без времени; записи нет в карте — не кандидат; карта не ответила или ни у одной записи нет даты — источник в не ответивших. lastmod — день правки, а не выхода: повтор старой записи отсекают vidennye и opublikovannye. Фильтра нет: блог целиком про разработку у Google, шум — уровень 1 по рубрике"
+    },
+    {
       "imya": "Techmeme",
       "vid": "rss",
       "adres": "https://www.techmeme.com/feed.xml",

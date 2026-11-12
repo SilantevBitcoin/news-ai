@@ -1,0 +1,22 @@
+{
+  "krupnye": [],
+  "sayty": [],
+  "x": [],
+  "dengi": [
+    {
+      "zagolovok": "OpenAI привлекла раунд на 40 млрд долларов",
+      "url": "https://x.com/sama/status/1988000000000000004",
+      "akkaunt": "sama",
+      "zvezda": true,
+      "idy": ["https://x.com/sama/status/1988000000000000004"]
+    },
+    {
+      "zagolovok": "Mistral привлекла раунд на 2 млрд евро",
+      "url": "https://www.techmeme.com/261110/p12",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": ["https://www.techmeme.com/261110/p12"]
+    }
+  ],
+  "github": []
+}

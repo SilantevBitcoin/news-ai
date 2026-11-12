@@ -173,6 +173,18 @@ class SlotIObhod(SVremennoyPapkoy):
         sostoyanie.zavershit_progon(sost, SEYCHAS, [], SEYCHAS, self.put)
         self.assertIs(sostoyanie.zagruzit(self.put)["github_obhod"], True)
 
+    def test_otmetka_deystvuet_tolko_s_issue_v_vidennyh(self):
+        self.put.write_text(json.dumps({"posledniy_sbor": "2026-11-12T17:15:00Z", "github_obhod": True,
+                                        "vidennye": {"https://cursor.com/changelog/2-9": "2026-11-12T18:20:00Z"},
+                                        "opublikovannye": []}), encoding="utf-8")
+        sost = sostoyanie.zagruzit(self.put)
+        self.assertIs(sost["github_obhod"], True)
+        self.assertIs(sostoyanie.obhod_deystvuet(sost), False)
+        sost["vidennye"]["https://github.com/anthropics/claude-code/issues/42796"] = "2026-11-13T02:20:00Z"
+        self.assertIs(sostoyanie.obhod_deystvuet(sost), True)
+        sost["github_obhod"] = False
+        self.assertIs(sostoyanie.obhod_deystvuet(sost), False)
+
     def test_staryy_fayl_bez_novyh_poley(self):
         self.put.write_text(json.dumps({"posledniy_sbor": "2026-11-10T18:07:00Z", "vidennye": {},
                                         "opublikovannye": []}), encoding="utf-8")
