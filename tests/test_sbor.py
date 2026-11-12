@@ -1,8 +1,10 @@
 """Шов «Функция сбора с подменённым HTTP»: записанные ответы источников из tests/zapisi/.
 
-Образцы — настоящие ответы 11.11.2026, урезанные до нескольких записей. Правки образцов: в
-claude-code.atom у третьего релиза оставлены только строки Fixed; в fx_200.json третий пост помечен
-репостом.
+Образцы — настоящие ответы 11.11.2026, урезанные до нескольких записей; claude-code-changelog.xml —
+ответ 12.11.2026 (записи 2.1.322, 2.1.321, 2.1.306). Правки образцов: в claude-code-changelog.xml у
+2.1.321 между разделами Added и Changed вставлен раздел Fixed из трёх пунктов релиза v2.1.321 на
+github.com (в changelog документации его нет), один — с меткой платформы «Windows:»; в fx_200.json
+третий пост помечен репостом.
 """
 import io
 import json
@@ -113,13 +115,24 @@ class Lenty(unittest.TestCase):
         self.assertEqual(len(k), 1)
         self.assertTrue(k[0]["zagolovok"].startswith("[AINews]"))
 
-    def test_claude_code_bez_fixed(self):
-        k = self.sobrat("Claude Code", "claude-code.atom")
-        self.assertEqual([x["zagolovok"] for x in k], ["v2.1.322", "v2.1.321"])
-        self.assertIn("Added Claude Fable 5.2", k[1]["tekst"])
-        self.assertFalse([s for s in k[1]["tekst"].split("\n") if "Fixed" in s.split(" ")[:3]])
-        self.assertIn("Improved the /model picker", k[1]["tekst"])
-        self.assertEqual(k[0]["url"], "https://github.com/anthropics/claude-code/releases/tag/v2.1.322")
+    def test_claude_code_changelog_bez_fixed(self):
+        k = self.sobrat("Claude Code", "claude-code-changelog.xml", posledniy="2026-10-20T00:00:00Z")
+        self.assertEqual([x["zagolovok"] for x in k], ["2.1.322", "2.1.321"])
+        self.assertEqual(k[0], {
+            "id": "https://code.claude.com/docs/en/changelog#2-1-322", "istochnik": "Claude Code",
+            "zagolovok": "2.1.322", "url": "https://code.claude.com/docs/en/changelog#2-1-322",
+            "data": "2026-11-10T03:18:49Z",
+            "tekst": "- Added fast mode on Vertex in the global, us and eu regions, falling back to standard "
+                     "speed if Vertex refuses it",
+            "skoro": False, "novyy": True})
+        self.assertEqual(k[1]["url"], "https://code.claude.com/docs/en/changelog#2-1-321")
+        self.assertNotIn("Fixed", k[1]["tekst"])
+        self.assertNotIn("FileChanged", k[1]["tekst"])
+        self.assertIn("- [VSCode] Added a warning above the prompt box when both an auth token and an API key are "
+                      "set, matching the terminal's startup warning\n- Updated the session-feedback message",
+                      k[1]["tekst"])
+        self.assertTrue(k[1]["tekst"].startswith("- Added Claude Fable 5.2 (claude-fable-5-2), now the default "
+                                                 "Fable model"))
 
     def test_techmeme_bez_filtra_so_ssylkoy_na_statyu(self):
         k = self.sobrat("Techmeme", "techmeme.xml")

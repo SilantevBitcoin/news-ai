@@ -1,4 +1,5 @@
-"""Точка входа: python -m newsai sbor [--konec-iz-zayavki <event.json>] | tekst <url> | proverit [...]
+"""Точка входа: python -m newsai sbor [--konec-iz-zayavki <event.json>] | sbor-issue | tekst <url>
+| proverit [...]
 | opublikovat [--suhoj]
 | sboj --prichina-iz <файл> [--slot-iz-zayavki <event.json>] | nesohraneno | storozh --zayavki <файл>."""
 from __future__ import annotations
@@ -14,6 +15,9 @@ def razbor() -> argparse.ArgumentParser:
     sb.add_argument("--konec-iz-zayavki", metavar="event.json",
                     help="сбор публикатора: конец периода — pull_request.created_at события GitHub, "
                          "а не часы машины; коды: 2 — нет времени открытия, 4 — не ответил ни один источник")
+    k.add_parser("sbor-issue", help="сборщик issue: поиск issue GitHub Claude Code в файл issue "
+                                    "(NEWSAI_ISSUE или dannye/issue.json); код 2 — запрос к API не "
+                                    "прошёл, файл не переписан")
     t = k.add_parser("tekst", help="текст страницы без разметки, до 20 000 знаков")
     t.add_argument("url")
     v = k.add_parser("proverit", help="проверить файл выпуска или сбоя против прогона и состояния; "
@@ -58,8 +62,12 @@ def main(argv: list[str] | None = None) -> int:
             if args.konec_iz_zayavki:
                 from .sbor import sbor_publikatora
                 return sbor_publikatora(args.konec_iz_zayavki)
+            from .nastrojki import fayl_issue
             from .sbor import sbor
-            return sbor()
+            return sbor(put_issue=fayl_issue())
+        if args.komanda == "sbor-issue":
+            from .gitkhab import sbor_issue
+            return sbor_issue()
         if args.komanda == "tekst":
             from .tekst import tekst
             print(tekst(args.url))

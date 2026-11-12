@@ -19,6 +19,7 @@
 | `dannye/vypusk.json` | ты, шаг 7 | файл выпуска, вид — ниже |
 | `dannye/sboj.json` | ты, шаг 9 | файл сбоя `{"prichina": "…"}` — вместо файла выпуска |
 | `dannye/sostoyanie.json` | только публикатор | читаешь `opublikovannye` — пункты, вышедшие за 14 дней: `zagolovok`, `url`, `data`, `vid` (`krupnaya`, `sayty`, `x`, `dengi`, `github`), `oboroty`; файла нет — это первый выпуск, `opublikovannye` пуст |
+| `dannye/issue.json` | только сборщик issue (workflow основной ветки, за 27 минут до тебя) | issue GitHub Claude Code с ответом команды. Ты его не читаешь: `sbor` сам берёт из него issue, когда запрос к API не прошёл (из облака прокси GitHub отвечает 403) |
 | `istochniki.json` | никто в прогоне | источники; их число нужно в шаге 1 |
 
 Файлы прогона, выпуска и сбоя уходят в GitHub только веткой твоей заявки; в основной ветке их нет.
@@ -124,7 +125,7 @@
 
    ```bash
    VETKA="claude/vypusk-<nachalo_progona без двоеточий, например 2026-11-11T020700Z>"
-   OSNOVA=$(git rev-parse --abbrev-ref origin/HEAD | sed 's#^origin/##')
+   OSNOVA=$(git remote show origin | sed -n 's/.*HEAD branch: //p')
    git switch -c "$VETKA"
    git add dannye/progon.json dannye/vypusk.json        # при сбое — dannye/progon.json dannye/sboj.json
    git diff --cached --name-only                         # только эти файлы, больше ничего
@@ -135,7 +136,10 @@
    ```
 
    - Двоеточий в имени ветки git не принимает — поэтому время без них `[техника]`.
-   - `OSNOVA` пустая — имя из `git remote show origin`, строка `HEAD branch`.
+   - Основную ветку берёшь только так, сразу: в облачном клоне нет ссылки на HEAD удалённого
+     репозитория, `git rev-parse` по ней имени не даст. `OSNOVA` пустая — повтори команду один раз;
+     снова пустая — дальше не идёшь, шаг 10: `заявка не открыта: основная ветка не найдена`
+     `[техника]`.
    - `gh` не нашёл репозиторий для `{owner}/{repo}` — возьми владельца и имя из
      `git remote get-url origin` `[техника]`.
    - `gh pr` в облаке закрыт (GraphQL — 403): заявку открываешь только через `gh api` (REST).
@@ -208,8 +212,8 @@
   выводишь, файл секретов не открываешь, `GITHUB_TOKEN` не печатаешь.
 - В основную ветку не пушишь и в неё ничего не сливаешь; пушишь только свою ветку
   `claude/vypusk-…`; без `--force`; workflow не запускаешь; чужие заявки не трогаешь.
-- Код, эту инструкцию (`agent/`), `.github/`, `istochniki.json` и `dannye/sostoyanie.json` не
-  правишь; коммитишь только `dannye/progon.json` и `dannye/vypusk.json` (или `dannye/sboj.json`) —
+- Код, эту инструкцию (`agent/`), `.github/`, `istochniki.json`, `dannye/sostoyanie.json` и
+  `dannye/issue.json` не правишь; коммитишь только `dannye/progon.json` и `dannye/vypusk.json` (или `dannye/sboj.json`) —
   иначе публикатор заявку не опубликует.
 - `opublikovat`, `sboj`, `nesohraneno` и `storozh` в облаке не зовёшь — это команды публикатора и
   сторожа.
@@ -244,6 +248,9 @@
   уже вышедшее;
 - крупных (из них «набирает обороты»), строк в списках сайтов, X, денег, GitHub; сколько отрезано
   сверх пределов;
+- «GitHub Claude Code» — откуда issue, по выводу `sbor`: из файла сборщика (в строке источника
+  `из файла сборщика, собран <время>`) или из API (этой пометки нет); источник в не ответивших — его
+  причина из вывода;
 - не ответили;
 - отказы `proverit` — сколько и какие;
 - что в заявке: выпуск, пустой выпуск или сбой с причиной и сутью ошибки (суть — только здесь);

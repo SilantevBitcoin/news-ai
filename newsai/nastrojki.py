@@ -1,8 +1,8 @@
 """Настройки проекта: канал, бот, пути к файлам, лимиты.
 
 Файлы данных — в папке dannye/ репозитория. Пути к файлам состояния, прогона, выпуска и сбоя
-можно подменить переменными окружения NEWSAI_SOSTOYANIE, NEWSAI_PROGON, NEWSAI_VYPUSK, NEWSAI_SBOJ —
-для тестов и для публикатора, который читает файлы заявки из своей папки.
+можно подменить переменными окружения NEWSAI_SOSTOYANIE, NEWSAI_PROGON, NEWSAI_VYPUSK, NEWSAI_SBOJ,
+NEWSAI_ISSUE — для тестов и для публикатора, который читает файлы заявки из своей папки.
 """
 from __future__ import annotations
 
@@ -31,6 +31,8 @@ POVTOROV = 1
 TEKST_KANDIDATA_ZNAKOV = 3000
 ZAGOLOVOK_X_ZNAKOV = 120
 TEKST_STRANICY_ZNAKOV = 20000
+
+ISSUE_DO_SLOTA_MINUT = 20
 
 LIMIT_SOOBSHCHENIYA = 4096
 PRICHINA_SBOYA_ZNAKOV = 200
@@ -61,3 +63,8 @@ def fayl_vypuska() -> Path:
 def fayl_sboya() -> Path:
     """Файл сбоя {"prichina": ...} — вместо файла выпуска, когда выпуск не собрать."""
     return _put("NEWSAI_SBOJ", PAPKA_DANNYH / "sboj.json")
+
+
+def fayl_issue() -> Path:
+    """Файл issue: пишет только сборщик issue, лежит в основной ветке; читает его только `sbor` агента."""
+    return _put("NEWSAI_ISSUE", PAPKA_DANNYH / "issue.json")

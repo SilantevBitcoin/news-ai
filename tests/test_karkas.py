@@ -144,14 +144,15 @@ class Puti(unittest.TestCase):
             self.assertEqual(nastrojki.fayl_progona(), koren / "dannye" / "progon.json")
             self.assertEqual(nastrojki.fayl_vypuska(), koren / "dannye" / "vypusk.json")
             self.assertEqual(nastrojki.fayl_sboya(), koren / "dannye" / "sboj.json")
+            self.assertEqual(nastrojki.fayl_issue(), koren / "dannye" / "issue.json")
 
     def test_puti_iz_okruzheniya(self):
         okr = {"NEWSAI_SOSTOYANIE": "s.json", "NEWSAI_PROGON": "p.json", "NEWSAI_VYPUSK": "v.json",
-               "NEWSAI_SBOJ": "b.json"}
+               "NEWSAI_SBOJ": "b.json", "NEWSAI_ISSUE": "i.json"}
         with mock.patch.dict(os.environ, okr):
             self.assertEqual([nastrojki.fayl_sostoyaniya(), nastrojki.fayl_progona(), nastrojki.fayl_vypuska(),
-                              nastrojki.fayl_sboya()],
-                             [Path("s.json"), Path("p.json"), Path("v.json"), Path("b.json")])
+                              nastrojki.fayl_sboya(), nastrojki.fayl_issue()],
+                             [Path("s.json"), Path("p.json"), Path("v.json"), Path("b.json"), Path("i.json")])
 
 
 class Istochniki(unittest.TestCase):
@@ -181,8 +182,10 @@ class TochkaVhoda(unittest.TestCase):
     def test_spravka(self):
         r = self.zapusk("--help")
         self.assertEqual(r.returncode, 0)
-        for komanda in ("sbor", "tekst", "proverit", "opublikovat", "sboj", "nesohraneno", "storozh"):
+        for komanda in ("sbor", "sbor-issue", "tekst", "proverit", "opublikovat", "sboj", "nesohraneno",
+                        "storozh"):
             self.assertIn(komanda, r.stdout)
+        self.assertIn("    sbor-issue ", r.stdout)
 
     def test_sboj_beret_prichinu_iz_fayla(self):
         r = self.zapusk("sboj", "--help")

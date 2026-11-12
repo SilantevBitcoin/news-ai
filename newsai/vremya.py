@@ -34,3 +34,13 @@ def slot(dt: datetime) -> str:
     seychas_hm = mestnoe.strftime("%H:%M")
     proshedshie = [s for s in nastrojki.SLOTY if s <= seychas_hm]
     return proshedshie[-1] if proshedshie else nastrojki.SLOTY[-1]
+
+
+def nachalo_slota(dt: datetime) -> datetime:
+    """Начало слота, в котором момент dt, — UTC: 02:07 UTC (09:07 по Бангкоку) → 02:00 UTC."""
+    mestnoe = dt.astimezone(timezone(timedelta(hours=nastrojki.SDVIG_BANGKOKA_CHASOV)))
+    chas, minuta = (int(c) for c in slot(dt).split(":"))
+    nachalo = mestnoe.replace(hour=chas, minute=minuta, second=0, microsecond=0)
+    if nachalo > mestnoe:
+        nachalo -= timedelta(days=1)
+    return nachalo.astimezone(timezone.utc)

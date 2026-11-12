@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Claude Code changelog]]></title>
+        <description><![CDATA[Release notes for Claude Code, including new features, improvements, and bug fixes by version.]]></description>
+        <link>https://code.claude.com/docs</link>
+        <generator>Mintlify</generator>
+        <lastBuildDate>Thu, 12 Nov 2026 05:09:49 GMT</lastBuildDate>
+        <atom:link href="https://code.claude.com/docs/en/changelog/rss.xml" rel="self" type="application/rss+xml"/>
+        <copyright><![CDATA[Claude Code Docs]]></copyright>
+        <docs>https://code.claude.com/docs</docs>
+        <item>
+            <title><![CDATA[2.1.322]]></title>
+            <link>https://code.claude.com/docs/en/changelog#2-1-322</link>
+            <guid isPermaLink="false">cad402f7eb6f086e</guid>
+            <pubDate>Tue, 10 Nov 2026 03:18:49 GMT</pubDate>
+            <content:encoded><![CDATA[<ul>
+<li>Added fast mode on Vertex in the global, us and eu regions, falling back to standard speed if Vertex refuses it</li>
+</ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[2.1.321]]></title>
+            <link>https://code.claude.com/docs/en/changelog#2-1-321</link>
+            <guid isPermaLink="false">c95ab2af571a534e</guid>
+            <pubDate>Mon, 09 Nov 2026 20:24:45 GMT</pubDate>
+            <content:encoded><![CDATA[<p><strong>Added</strong></p>
+<ul>
+<li>Added Claude Fable 5.2 (<code>claude-fable-5-2</code>), now the default Fable model — 1M context, $8/$40 per Mtok with $0.20/Mtok cache reads</li>
+<li>Added <code>--settings &#x3C;file></code> to <code>claude remote-control</code>, which applies a settings file to every session it starts; if the file changes, no new session starts until you restart <code>claude remote-control</code></li>
+<li>[VSCode] Added a warning above the prompt box when both an auth token and an API key are set, matching the terminal's startup warning</li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul>
+<li>Fixed MCP OAuth requests sending secrets such as refresh tokens to another host when a server redirected them</li>
+<li>Fixed a case where a read-only Bash command ran outside the sandbox without a permission prompt</li>
+<li>Windows: Fixed FileChanged hooks stopping for paths set through <code>watchPaths</code> after the first shell command, when the session's working directory had a lowercase drive letter</li>
+</ul>
+<p><strong>Changed</strong></p>
+<ul>
+<li>Updated the session-feedback message and the <code>allowedProviders</code> setting description to name Ultra alongside Pro and Max, and the <code>forceLoginMethod</code> description to cover every paid Claude plan</li>
+<li>Updated the bundled dataviz skill to suggest a list of meters, one row per item, for several ratios that each have their own limit</li>
+<li>Updated the "Upgrade to Max" options to say "Upgrade to Max or Ultra"</li>
+<li>Changed mods Claude writes to turn on without asking in auto and bypass modes, even with managed <code>allowUnsandboxedCommands: false</code> or <code>allowManagedDomainsOnly</code>, and not to load in <code>dontAsk</code> mode</li>
+<li>Changed mods' own tool calls (<code>$.tool.call</code>, <code>$.mcp.call</code>) to raise no permission prompt, even under your own ask rules or in <code>dontAsk</code> and <code>-p</code> runs; deny rules and organization policy still apply</li>
+<li>Changed saved Fable 5.1 model picks to move to <code>fable</code>: on Pro and Max plans at once, on Team and Enterprise plans once your organization allows it; use <code>/model claude-fable-5-1</code> to switch back</li>
+<li>Changed the fast mode labels in <code>/fast</code>, <code>/config</code> and <code>/model</code> to name your current model when it supports fast mode, and removed "(Opus only)" from the VS Code row</li>
+<li>Changed nested skill loading: <code>.claude/skills</code> folders inside <code>~/.claude/plugins</code> no longer load when Claude works on files there</li>
+<li>Self-hosted runner: Changed an on-demand runner that the server refuses because it is not needed (session ended or paused, work order superseded) to exit 0 instead of 1</li>
+<li>Windows: Changed how Claude Code finds programs it starts itself, such as git, to skip relative and UNC PATH entries and links onto a network share, and to pick up PATH changes from settings</li>
+<li>Changed OpenTelemetry hook events in non-interactive sessions to leave two built-in hooks out of <code>num_hooks</code> and <code>num_success</code> after Bash and PowerShell calls</li>
+<li>Changed the number of messages a Claude Desktop Code tab session can send to your other sessions before it waits for you to type again from 10 to 20</li>
+<li>Changed <code>AskUserQuestion</code> in <code>claude -p</code> and SDK sessions to deny a host's permission answer that sets the undocumented <code>afkTimeoutMs</code> input field</li>
+<li>Changed managed <code>extraKnownMarketplaces</code>: a declared name can't be added from another source, an entry from elsewhere is hidden, and plugins the declared marketplace lists are reinstalled from it</li>
+<li>Changed Claude in Chrome tools that an app running Claude Code provides, such as the Claude desktop app's Code tab, to follow your organization's Claude in Chrome policy</li>
+<li>Changed <code>policy_mode: layered</code> in the Claude apps gateway: managed MCP servers now add up over every matching policy, <code>match: {}</code> included, so a gateway already on it serves more after the upgrade</li>
+<li>Gateway: Changed Bedrock, Vertex and Foundry upstreams to ignore the <code>ANTHROPIC_*_BASE_URL</code> variables in the gateway's environment. Set <code>base_url</code> on the upstream to use another endpoint</li>
+<li>Changed headless sessions to reload mods in <code>.claude/skills</code> when their files change; set <code>CLAUDE_CODE_PLUGIN_DIR_WATCH=0</code> to turn this off</li>
+<li>Changed the Cyber Verification Program sentence on a cyber safeguard block to use the same words as claude.ai</li>
+<li>Changed Cowork cloud sessions: a PostToolUse hook can no longer replace the answer to AskUserQuestion or the plan in ExitPlanMode's result; Claude reads the originals</li>
+<li>Changed <code>cp</code> and <code>mv</code> spelled by a path, such as <code>/bin/cp</code>, to get the same path checks as <code>cp</code> and <code>mv</code></li>
+<li>Changed background command notifications and TaskStop results to show Claude only the start and end of a command over 1,000 characters, which saves context</li>
+<li>Changed artifact design guidance to treat Inter and Space Grotesk as good default typefaces</li>
+<li>Changed the account email check to refuse only a shell command that holds your email and names a User-Agent, without asking, so other commands and scheduled runs no longer stop at its prompt</li>
+<li>Changed Remote Control sessions to keep the folder they were started in: a connected client can no longer move a session to another folder</li>
+<li>Changed managed <code>extraKnownMarketplaces</code> take-overs from an undeclared source: saved data is set aside for <code>cleanupPeriodDays</code>, and options and secrets until <code>claude plugin restore-set-aside</code></li>
+</ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[2.1.306]]></title>
+            <link>https://code.claude.com/docs/en/changelog#2-1-306</link>
+            <guid isPermaLink="false">f08415411a843fd8</guid>
+            <pubDate>Wed, 21 Oct 2026 03:27:13 GMT</pubDate>
+            <content:encoded><![CDATA[<ul>
+<li>Fixed <code>claude -p</code> inside cloud sessions reporting "Not logged in" when started without the session's environment variables</li>
+<li>Fixed an API error being replaced by "prompt is too long", and an unneeded compaction, in sessions with many MCP tools</li>
+</ul>]]></content:encoded>
+        </item>
+    </channel>
+</rss>

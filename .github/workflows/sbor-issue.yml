@@ -1,0 +1,68 @@
+# Сборщик issue (спека «Устройство», сторона 4; «GitHub: репозиторий и публикатор», «Сборщик issue»).
+# За 27 минут до старта агента ищет issue GitHub Claude Code штатным токеном Actions (только чтение) и
+# коммитит файл issue dannye/issue.json в основную ветку ключом публикатора: прокси облака Claude Code
+# закрывает агенту api.github.com. Расписание запускается только из основной ветки — секреты
+# environment publikaciya ему доступны. Токена бота у сборщика нет, в канал он не пишет.
+name: sbor-issue
+
+on:
+  schedule:
+    - cron: "40 1,9,17 * * *"     # 08:40, 16:40, 00:40 по Бангкоку — агент стартует в 7 2,10,18
+
+permissions: {}
+
+concurrency:
+  group: sbor-issue
+  cancel-in-progress: false
+
+jobs:
+  sbor-issue:
+    runs-on: ubuntu-latest
+    environment: publikaciya       # ради ключа развёртывания
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      # Событие schedule идёт только с последнего коммита основной ветки: её и чекаутим.
+      - name: Код основной ветки
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      # Код не 0 — шаг красный, коммита нет: агент не возьмёт старый файл.
+      - name: Сбор issue
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 -m newsai sbor-issue
+
+      # Как «Состояние в основную ветку» публикатора: только файл issue, ключ публикатора, закреплённые
+      # ключи хоста; push не прошёл — pull --rebase и ещё раз; не прошёл и он — job красный.
+      - name: Файл issue в основную ветку
+        env:
+          KLYUCH: ${{ secrets.NEWSAI_DEPLOY_KEY }}
+          OSNOVNAYA: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          git config user.name "news-ai sborshchik issue"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dannye/issue.json
+          if git diff --cached --quiet; then
+            echo "файл issue не менялся"
+            exit 0
+          fi
+          git commit -q -m "issue: сборщик issue"
+          umask 077
+          K="$RUNNER_TEMP/klyuch"
+          H="$RUNNER_TEMP/known_hosts"
+          trap 'rm -f "$K"' EXIT
+          printf '%s\n' "$KLYUCH" > "$K"
+          # Ключи хоста GitHub закреплены: https://api.github.com/meta, поле ssh_keys.
+          cat > "$H" <<'KLYUCHI'
+          github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl
+          github.com ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEmKSENjQEezOmxkZMy7opKgwFB9nkt5YRrYMjNuG5N87uRgg6CLrbo5wAdT/y6v0mKV0U2w0WZ2YB/++Tpockg=
+          github.com ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCj7ndNxQowgcQnjshcLrqPEiiphnt+VTTvDP6mHBL9j1aNUkY4Ue1gvwnGLVlOhGeYrnZaMgRK6+PKCUXaDbC7qtbW8gIkhL7aGCsOr/C56SJMy/BCZfxd1nWzAOxSDPgVsmerOBYfNqltV9/hWCqBywINIR+5dIg6JTJ72pcEpEjcYgXkE2YEFXV1JHnsKgbLWNlhScqb2UmyRkQyytRLtL+38TGxkxCflmO+5Z8CSSNY7GidjMIZ7Q4zMjA2n1nGrlTDkzwDCsw+wqFPGQA179cnfGWOWRVruj16z6XyvxvjJwbz0wQZ75XK5tKSb7FNyeIEs4TT4jk+S4dhPeAUC5y+bDYirYgM4GC7uEnztnZyaVWQ7B381AK4Qdrwt51ZqExKbQpTUNn+EjqoTwvqNj4kqx5QUCI0ThS/YkOxJCXmPUWZbhjpCg56i+2aB6CmK2JGhn57K5mj0MNdBXA4/WnwH6XoPWJzK5Nyu2zB3nAZp+S5hpQs+p1vN1/wsjk=
+          KLYUCHI
+          export GIT_SSH_COMMAND="ssh -i $K -o IdentitiesOnly=yes -o UserKnownHostsFile=$H -o StrictHostKeyChecking=yes"
+          ADRES="git@github.com:$GITHUB_REPOSITORY.git"
+          git push -q "$ADRES" "HEAD:refs/heads/$OSNOVNAYA" \
+            || { git pull -q --rebase "$ADRES" "$OSNOVNAYA" && git push -q "$ADRES" "HEAD:refs/heads/$OSNOVNAYA"; }

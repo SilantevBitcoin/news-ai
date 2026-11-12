@@ -9,7 +9,12 @@ progon.zapisat. Состояние не меняет — это делает п�
 Окно охвата — 24 часа до начала прогона, а если период длиннее — весь период (Р46). Сбор отдаёт всех
 кандидатов окна: novyy — нет в vidennye; остальные идут только в счёт охвата.
 
-Шов для тестов: `sobrat(istochniki, sost, nachalo_progona, poluchit)` — без файлов, HTTP подменяется.
+Issue GitHub у агента: запрос к API не прошёл (из облака — 403 прокси) — issue из файла сборщика
+issue, если он годен (gitkhab). Путь к файлу — параметр fayl_issue; его передаёт только команда `sbor`
+агента, сбор публикатора файл не читает.
+
+Шов для тестов: `sobrat(istochniki, sost, nachalo_progona, poluchit, fayl_issue=None)` — без файлов,
+HTTP подменяется.
 Кандидаты в памяти — progon.Kandidat, период выпуска и окно охвата — progon.Period.
 """
 from __future__ import annotations
@@ -105,7 +110,7 @@ def _otmetit_novyy(kandidaty: list[Kandidat], sost: dict) -> list[Kandidat]:
     return kandidaty
 
 
-def _odin(istochnik: dict, sost: dict, period: Period, okno: Period, poluchit) -> dict:
+def _odin(istochnik: dict, sost: dict, period: Period, okno: Period, poluchit, fayl_issue=None) -> dict:
     """Один источник → {kandidaty, tolko_v_vidennye, oshibka, otchet, polnyy_obhod}."""
     imya = istochnik["imya"]
     itog = {"imya": imya, "kandidaty": [], "tolko_v_vidennye": [], "oshibka": None, "otchet": "",
@@ -120,11 +125,13 @@ def _odin(istochnik: dict, sost: dict, period: Period, okno: Period, poluchit) -
                 itog["oshibka"] = "не ответили аккаунты: " + "; ".join(
                     f"{a} ({p})" for a, p in otchet["molchat"].items())
         elif istochnik["vid"] == "github_issues":
-            kandidaty, tolko, oshibka, polnyy = gitkhab.sobrat(istochnik, sost, period, poluchit)
+            kandidaty, tolko, oshibka, polnyy, otchet = gitkhab.sobrat(istochnik, sost, period, poluchit,
+                                                                      fayl_issue)
             itog["kandidaty"] = kandidaty
             itog["tolko_v_vidennye"] = tolko
             itog["oshibka"] = oshibka
             itog["polnyy_obhod"] = polnyy
+            itog["otchet"] = otchet
             if polnyy:
                 itog["otchet"] = f"полный обход; уже набравших условия — в увиденные без выпуска: {len(tolko)}"
         else:
@@ -150,15 +157,18 @@ def _odin(istochnik: dict, sost: dict, period: Period, okno: Period, poluchit) -
     return itog
 
 
-def sobrat(istochniki: list[dict], sost: dict, nachalo_progona: datetime, poluchit=None) -> dict:
+def sobrat(istochniki: list[dict], sost: dict, nachalo_progona: datetime, poluchit=None,
+           fayl_issue: Path | None = None) -> dict:
     """Все источники → {period, okno, pervyy_progon, kandidaty, ne_otvetili, tolko_v_vidennye,
-    github_polnyy_obhod, itogi}; period и okno — Period, kandidaty — список Kandidat."""
+    github_polnyy_obhod, itogi}; period и okno — Period, kandidaty — список Kandidat.
+
+    fayl_issue — путь к файлу сборщика issue (только сбор агента); None — файл не читается."""
     poluchit = poluchit or poluchit_po_seti
     period = Period(*sostoyanie.period(sost, nachalo_progona))
     okno = okno_ohvata(period)
     pervyy = sostoyanie.pervyy_progon(sost)
     with ThreadPoolExecutor(max_workers=POTOKOV) as pul:
-        itogi = list(pul.map(lambda i: _odin(i, sost, period, okno, poluchit), istochniki))
+        itogi = list(pul.map(lambda i: _odin(i, sost, period, okno, poluchit, fayl_issue), istochniki))
     kandidaty, ne_otvetili, tolko, byli = [], [], [], set()
     for it in itogi:
         for k in it["kandidaty"]:
@@ -210,20 +220,24 @@ def sbor_publikatora(put_sobytiya: Path, poluchit=None, put_istochnikov: Path | 
 
 
 def sbor(poluchit=None, nachalo_progona: datetime | None = None, put_istochnikov: Path | None = None,
-         put_sostoyaniya: Path | None = None, put_progona: Path | None = None) -> int:
-    """Команда `sbor`: собрать кандидатов и не ответивших в файл прогона; вернуть код выхода."""
-    return _sbor(poluchit, nachalo_progona or seychas(), put_istochnikov, put_sostoyaniya, put_progona)[0]
+         put_sostoyaniya: Path | None = None, put_progona: Path | None = None,
+         put_issue: Path | None = None) -> int:
+    """Команда `sbor`: собрать кандидатов и не ответивших в файл прогона; вернуть код выхода.
+
+    put_issue — файл сборщика issue; команда агента передаёт nastrojki.fayl_issue()."""
+    return _sbor(poluchit, nachalo_progona or seychas(), put_istochnikov, put_sostoyaniya, put_progona,
+                 put_issue)[0]
 
 
 def _sbor(poluchit, nachalo_progona: datetime, put_istochnikov, put_sostoyaniya,
-          put_progona) -> tuple[int, bool]:
+          put_progona, put_issue=None) -> tuple[int, bool]:
     """Сбор в файл прогона → (код выхода, не ответил ли ни один источник)."""
     try:
         sost = sostoyanie.zagruzit(put_sostoyaniya)
     except sostoyanie.OshibkaSostoyaniya as e:
         print(f"newsai sbor: {e}", file=sys.stderr)
         return 1, False
-    rez = sobrat(zagruzit_istochniki(put_istochnikov), sost, nachalo_progona, poluchit)
+    rez = sobrat(zagruzit_istochniki(put_istochnikov), sost, nachalo_progona, poluchit, put_issue)
     period, okno = rez["period"], rez["okno"]
     put = progon.zapisat(period, okno, rez["pervyy_progon"], rez["kandidaty"], rez["ne_otvetili"],
                          rez["tolko_v_vidennye"], rez["github_polnyy_obhod"], put_progona)
