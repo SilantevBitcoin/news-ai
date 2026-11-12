@@ -1,0 +1,106 @@
+{
+ "krupnye": [],
+ "sayty": [
+  {
+   "zagolovok": "Google выпустила Gemini 4 Hydrogen — быструю модель для кода и мультимодальных задач",
+   "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/",
+   "istochnik": "DeepMind",
+   "zvezda": false,
+   "idy": [
+    "https://deepmind.google/blog/introducing-gemini-4-hydrogen/",
+    "https://x.com/GoogleDeepMind/status/2120940338869055788"
+   ]
+  },
+  {
+   "zagolovok": "Google запустила Gemini Decision 1 — модель-«решатель» за 10 центов на миллион токенов",
+   "url": "https://simonwillison.net/2026/Nov/11/gemini-decisions-api/",
+   "istochnik": "Simon Willison",
+   "zvezda": false,
+   "idy": [
+    "https://simonwillison.net/2026/Nov/11/gemini-decisions-api/",
+    "https://latent.space/p/ainews-d-day-decision-models-day/"
+   ]
+  },
+  {
+   "zagolovok": "Claude Managed Agents можно целиком развернуть в своей инфраструктуре (закрытая бета)",
+   "url": "https://claude.com/resources/articles/self-hosted-claude-managed-agents",
+   "istochnik": "Блог Claude",
+   "zvezda": false,
+   "idy": [
+    "https://claude.com/resources/articles/self-hosted-claude-managed-agents",
+    "https://platform.claude.com/docs/en/release-notes/overview#self-hosted-managed-agents",
+    "https://x.com/ClaudeDevs/status/2120938988165091693"
+   ]
+  },
+  {
+   "zagolovok": "Claude для производства: плагин из 17 навыков и четырёх коннекторов",
+   "url": "https://claude.com/resources/articles/claude-for-manufacturing",
+   "istochnik": "Блог Claude",
+   "zvezda": false,
+   "idy": [
+    "https://claude.com/resources/articles/claude-for-manufacturing"
+   ]
+  },
+  {
+   "zagolovok": "Глава Nvidia Дженсен Хуанг ушёл в отставку, акции компании упали на 14%",
+   "url": "https://www.techmeme.com/261112/p31#a261112p31",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261112/p31#a261112p31",
+    "https://www.techmeme.com/261112/p33#a261112p33",
+    "https://www.techmeme.com/261112/p34#a261112p34",
+    "https://x.com/swyx/status/2120888435942760642"
+   ]
+  },
+  {
+   "zagolovok": "Dreams в Claude теперь работает на Claude Fable 5.2",
+   "url": "https://platform.claude.com/docs/en/release-notes/overview#dreams-claude-fable-5-2",
+   "istochnik": "Claude Platform",
+   "zvezda": false,
+   "idy": [
+    "https://platform.claude.com/docs/en/release-notes/overview#dreams-claude-fable-5-2"
+   ]
+  },
+  {
+   "zagolovok": "Приложение Codex для iOS: вставка файлов и картинок, диктовка заметок",
+   "url": "https://developers.openai.com/codex/changelog/#codex-2026-11-10-mobile",
+   "istochnik": "Codex",
+   "zvezda": false,
+   "idy": [
+    "https://developers.openai.com/codex/changelog/#codex-2026-11-10-mobile"
+   ]
+  }
+ ],
+ "x": [],
+ "dengi": [
+  {
+   "zagolovok": "Anthropic опубликовала страницу своего IPO с проспектом эмиссии",
+   "url": "https://x.com/AnthropicAI/status/2120841731302154708",
+   "istochnik": "X",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/AnthropicAI/status/2120841731302154708"
+   ]
+  },
+  {
+   "zagolovok": "Mercor привлёк 750 млн долларов при оценке в 20 млрд",
+   "url": "https://latent.space/p/ainews-mercor-750m-series-d-at-20b-valuation-3b-run-rate/",
+   "istochnik": "AINews",
+   "zvezda": false,
+   "idy": [
+    "https://latent.space/p/ainews-mercor-750m-series-d-at-20b-valuation-3b-run-rate/"
+   ]
+  },
+  {
+   "zagolovok": "LangChain привлекла 300 млн долларов при оценке в 3 млрд",
+   "url": "https://www.techmeme.com/261112/p35#a261112p35",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261112/p35#a261112p35"
+   ]
+  }
+ ],
+ "github": []
+}
