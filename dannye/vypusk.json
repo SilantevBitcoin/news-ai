@@ -1,0 +1,128 @@
+{
+  "krupnye": [
+    {
+      "zagolovok": "Google выпустила Gemini Decision 1 — модель для быстрых решений",
+      "abzacy": [
+        "Google представила Gemini Decision 1 — новую модель для API Gemini, которая выдаёт быстрые и откалиброванные решения.",
+        "За один вызов она отвечает сразу на тысячу вопросов, причём работает с текстом, картинками, аудио, видео и PDF.",
+        "Контекстное окно — 256 тысяч токенов, а цена — 10 центов за миллион входных токенов; за ответ плата не берётся.",
+        "Попробовать можно бесплатно в Google AI Studio и через API, ждать доступа не нужно.",
+        "Модель поддерживает три типа вопросов: да или нет, выбор из вариантов и оценка по критериям.",
+        "Саймон Уиллисон отмечает, что она почти повторяет Jev и дешевле модели OpenAI не стала: у Jev цена ниже, но он понимает только текст.",
+        "На его проверке с видео Gemini возвращает вероятности вроде 0,92, а не жёсткие 1,0 или 0,0, как конкуренты."
+      ],
+      "url": "https://x.com/OfficialLoganK/status/2120581433639198885",
+      "oboroty": false,
+      "idy": [
+        "https://x.com/OfficialLoganK/status/2120581433639198885",
+        "https://simonwillison.net/2026/Nov/11/gemini-decisions-api/",
+        "https://latent.space/p/ainews-d-day-decision-models-day/",
+        "https://x.com/testingcatalog/status/2120584426211979756",
+        "https://x.com/testingcatalog/status/2120562722353848472",
+        "https://x.com/testingcatalog/status/2120809757107737072"
+      ]
+    }
+  ],
+  "sayty": [
+    {
+      "zagolovok": "DeepMind представила AlphaGenome 2 — модель, предсказывающую влияние мутаций ДНК в разных типах клеток",
+      "url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/",
+      "istochnik": "DeepMind",
+      "zvezda": false,
+      "idy": [
+        "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/",
+        "https://x.com/GoogleDeepMind/status/2120532824465805749",
+        "https://x.com/demishassabis/status/2120565316619284734",
+        "https://x.com/GoogleDeepMind/status/2120841923237683462"
+      ]
+    },
+    {
+      "zagolovok": "Dreams в Claude Platform теперь работают с Claude Fable 5.2",
+      "url": "https://platform.claude.com/docs/en/release-notes/overview#dreams-claude-fable-5-2",
+      "istochnik": "Claude Platform",
+      "zvezda": false,
+      "idy": [
+        "https://platform.claude.com/docs/en/release-notes/overview#dreams-claude-fable-5-2"
+      ]
+    }
+  ],
+  "x": [
+    {
+      "zagolovok": "Grok Bot вышел в версии 1.0 и научился заходить в Slack и видеозвонки",
+      "url": "https://x.com/testingcatalog/status/2120597292159762821",
+      "akkaunt": "testingcatalog",
+      "zvezda": false,
+      "idy": [
+        "https://x.com/testingcatalog/status/2120597292159762821"
+      ]
+    },
+    {
+      "zagolovok": "Google открыла всем пользователям Antigravity работу с браузером",
+      "url": "https://x.com/testingcatalog/status/2120618461646758191",
+      "akkaunt": "testingcatalog",
+      "zvezda": false,
+      "idy": [
+        "https://x.com/testingcatalog/status/2120618461646758191"
+      ]
+    },
+    {
+      "zagolovok": "AlphaProof Code математически доказал надёжность протокола Signal на уровне кода",
+      "url": "https://x.com/GoogleDeepMind/status/2120484246401777737",
+      "akkaunt": "GoogleDeepMind",
+      "zvezda": false,
+      "idy": [
+        "https://x.com/GoogleDeepMind/status/2120484246401777737"
+      ]
+    },
+    {
+      "zagolovok": "Google анонсировала Tabletop — экспериментальное общее пространство для групп с ИИ",
+      "url": "https://x.com/testingcatalog/status/2120632256213430716",
+      "akkaunt": "testingcatalog",
+      "zvezda": false,
+      "idy": [
+        "https://x.com/testingcatalog/status/2120632256213430716",
+        "https://www.techmeme.com/261112/p21#a261112p21"
+      ]
+    },
+    {
+      "zagolovok": "ChatGPT Finance стал доступен в десктопной версии ChatGPT",
+      "url": "https://x.com/testingcatalog/status/2120646869013696889",
+      "akkaunt": "testingcatalog",
+      "zvezda": false,
+      "idy": [
+        "https://x.com/testingcatalog/status/2120646869013696889"
+      ]
+    }
+  ],
+  "dengi": [
+    {
+      "zagolovok": "Anthropic назначила начало торгов акциями на 19 ноября",
+      "url": "https://x.com/AnthropicAI/status/2120841731302154708",
+      "istochnik": "X",
+      "zvezda": false,
+      "idy": [
+        "https://x.com/AnthropicAI/status/2120841731302154708",
+        "https://x.com/testingcatalog/status/2120857786078593262"
+      ]
+    },
+    {
+      "zagolovok": "Mercor привлёк 750 млн долларов при оценке в 20 млрд",
+      "url": "https://latent.space/p/ainews-mercor-750m-series-d-at-20b-valuation-3b-run-rate/",
+      "istochnik": "AINews",
+      "zvezda": false,
+      "idy": [
+        "https://latent.space/p/ainews-mercor-750m-series-d-at-20b-valuation-3b-run-rate/"
+      ]
+    },
+    {
+      "zagolovok": "Мюнхенский стартап SE3 привлёк 30 млн долларов на ИИ для военных дронов",
+      "url": "https://www.techmeme.com/261112/p25#a261112p25",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261112/p25#a261112p25"
+      ]
+    }
+  ],
+  "github": []
+}
