@@ -1,0 +1,16 @@
+{
+  "krupnye": [],
+  "sayty": [
+    {"zagolovok": "ChatGPT Wallet: агенты ChatGPT смогут сами оплачивать покупки с вашего одобрения", "url": "https://openai.com/index/introducing-chatgpt-wallet", "istochnik": "OpenAI", "zvezda": false, "idy": ["https://openai.com/index/introducing-chatgpt-wallet", "https://www.techmeme.com/261113/p15#a261113p15", "https://x.com/gdb/status/2121295213025194172"]}
+  ],
+  "x": [
+    {"zagolovok": "DeepSeek открыла через API возможности своего приложения: поиск, файлы, голос, OCR", "url": "https://x.com/deepseek_ai/status/2121247896918253875", "akkaunt": "deepseek_ai", "zvezda": false, "idy": ["https://x.com/deepseek_ai/status/2121247896918253875"]},
+    {"zagolovok": "Google DeepMind опубликовала наборы данных PARDIG и SatWeave, на которых построен WeatherNext 3", "url": "https://x.com/GoogleDeepMind/status/2121229774865527097", "akkaunt": "GoogleDeepMind", "zvezda": false, "idy": ["https://x.com/GoogleDeepMind/status/2121229774865527097"]}
+  ],
+  "dengi": [
+    {"zagolovok": "IPO Anthropic закрыто для институциональных инвесторов из материкового Китая и Гонконга", "url": "https://www.techmeme.com/261113/p18#a261113p18", "istochnik": "Techmeme", "zvezda": false, "idy": ["https://www.techmeme.com/261113/p18#a261113p18"]},
+    {"zagolovok": "Уолл-стрит опасается, что уход Хуанга замедлит сделки Nvidia: кредитный консорциум на 500 млрд долларов в неопределённости", "url": "https://www.techmeme.com/261113/p20#a261113p20", "istochnik": "Techmeme", "zvezda": false, "idy": ["https://www.techmeme.com/261113/p20#a261113p20"]},
+    {"zagolovok": "Долг Nscale вырос до 5,5 млрд долларов, Nvidia вложит 2 млрд в её конвертируемое финансирование", "url": "https://www.techmeme.com/261113/p11#a261113p11", "istochnik": "Techmeme", "zvezda": false, "idy": ["https://www.techmeme.com/261113/p11#a261113p11"]}
+  ],
+  "github": []
+}
