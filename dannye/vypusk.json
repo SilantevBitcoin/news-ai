@@ -1,0 +1,11 @@
+{
+  "krupnye": [],
+  "sayty": [
+    {"zagolovok": "Claude Code 2.1.325: песочница по умолчанию спрашивает разрешение на команды, подсказки следующего запроса в VS Code", "url": "https://code.claude.com/docs/en/changelog#2-1-325", "istochnik": "Claude Code", "zvezda": false, "idy": ["https://code.claude.com/docs/en/changelog#2-1-325"]}
+  ],
+  "x": [
+    {"zagolovok": "Все пользователи Gemini в США могут подключить Google Wallet и получать персональные ответы о финансах", "url": "https://x.com/testingcatalog/status/2121352761379860628", "akkaunt": "testingcatalog", "zvezda": false, "idy": ["https://x.com/testingcatalog/status/2121352761379860628"]}
+  ],
+  "dengi": [],
+  "github": []
+}
