@@ -13,6 +13,9 @@ progon.zapisat. Состояние не меняет — это делает п�
 кандидат, не ответившая лента — источник в не ответивших, записи остальных лент остаются. Лента без
 дат (`filtr.daty_iz_karty`, Google Developers Blog) — дата записи из lastmod карты сайта.
 
+X — один источник из 30 аккаунтов: в не ответивших он только когда не ответил ни один аккаунт;
+частичный отказ — в канале молчим (С85), молчавшие аккаунты с причинами — в отчёте сбора, в строке X.
+
 Issue GitHub у агента: запрос к API не прошёл (из облака — 403 прокси) — issue из файла сборщика
 issue, если он годен (gitkhab). Путь к файлу — параметр fayl_issue; его передаёт только команда `sbor`
 агента, сбор публикатора файл не читает.
@@ -163,6 +166,19 @@ def _otmetit_novyy(kandidaty: list[Kandidat], sost: dict) -> list[Kandidat]:
     return kandidaty
 
 
+def _puti_x(otchet: dict) -> str:
+    """«FxTwitter — 28, из них со 2-го прохода — 2, с 3-го прохода — 1» (Р71)."""
+    chasti = []
+    for put, skolko in otchet["puti"].items():
+        stroka = f"{put} — {skolko}"
+        povtorno = (otchet.get("prohody") or {}).get(put) or {}
+        if povtorno:
+            stroka += ", из них " + ", ".join(
+                f"{'со' if n == 2 else 'с'} {n}-го прохода — {v}" for n, v in sorted(povtorno.items()))
+        chasti.append(stroka)
+    return ", ".join(chasti) or "ни один"
+
+
 def _odin(istochnik: dict, sost: dict, period: Period, okno: Period, poluchit, fayl_issue=None) -> dict:
     """Один источник → {kandidaty, tolko_v_vidennye, oshibka, otchet, polnyy_obhod}."""
     imya = istochnik["imya"]
@@ -172,11 +188,14 @@ def _odin(istochnik: dict, sost: dict, period: Period, okno: Period, poluchit, f
         if istochnik["vid"] == "x":
             posty, otchet = iks.sobrat(istochnik, okno, poluchit)
             itog["kandidaty"] = _otmetit_novyy(posty, sost)
-            puti = ", ".join(f"{k} — {v}" for k, v in otchet["puti"].items()) or "ни один"
-            itog["otchet"] = f"пути: {puti}"
+            itog["otchet"] = f"пути: {_puti_x(otchet)}"
             if otchet["molchat"]:
-                itog["oshibka"] = "не ответили аккаунты: " + "; ".join(
+                molchat = "не ответили аккаунты: " + "; ".join(
                     f"{a} ({p})" for a, p in otchet["molchat"].items())
+                if otchet["puti"]:
+                    itog["otchet"] += f" · {molchat}"
+                else:
+                    itog["oshibka"] = molchat
         elif istochnik["vid"] == "github_issues":
             kandidaty, tolko, oshibka, polnyy, otchet = gitkhab.sobrat(istochnik, sost, period, poluchit,
                                                                       fayl_issue)

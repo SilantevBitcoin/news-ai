@@ -44,3 +44,8 @@ def nachalo_slota(dt: datetime) -> datetime:
     if nachalo > mestnoe:
         nachalo -= timedelta(days=1)
     return nachalo.astimezone(timezone.utc)
+
+
+def mestnoe_vremya(dt: datetime) -> str:
+    """Часы и минуты момента dt по Бангкоку: 07:20 UTC → '14:20' (тестовый выпуск в строке сбоя, Р72)."""
+    return dt.astimezone(timezone(timedelta(hours=nastrojki.SDVIG_BANGKOKA_CHASOV))).strftime("%H:%M")

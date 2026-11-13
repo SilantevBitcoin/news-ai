@@ -173,6 +173,94 @@ class Istochniki(unittest.TestCase):
         self.assertEqual(len(x["akkaunty"]), 30)
         self.assertEqual(len(set(x["akkaunty"])), 30)
 
+    def test_podpisi_x_u_kazhdogo_akkaunta(self):
+        x = next(i for i in self.spisok if i["imya"] == "X")
+        podpisi = x["podpisi"]
+        self.assertEqual(len(podpisi), 30)
+        self.assertEqual(set(podpisi), set(x["akkaunty"]))
+        self.assertEqual(podpisi["gdb"], "Грег Брокман, OpenAI")
+        self.assertEqual(podpisi["claudeai"], "Claude")
+        self.assertEqual(podpisi["GoogleDeepMind"], "Google DeepMind")
+        self.assertEqual(podpisi["OpenAI"], "OpenAI")
+        self.assertEqual(podpisi["testingcatalog"], "TestingCatalog, утечки новых функций ИИ")
+        for akk, podpis in podpisi.items():
+            self.assertTrue(podpis.strip(), akk)
+            self.assertLessEqual(len(podpis), 60, akk)
+            self.assertNotIn("@", podpis, akk)
+            self.assertNotIn("://", podpis, akk)
+            self.assertNotRegex(podpis, r"[A-Za-z0-9-]\.[A-Za-z]", akk)
+            self.assertFalse(any(ord(s) < 32 or 0x7f <= ord(s) < 0xa0 for s in podpis), akk)
+
+    def test_v_kanale_po_tablice_speki(self):
+        v_kanale = {i["imya"]: i["v_kanale"] for i in self.spisok if "v_kanale" in i}
+        self.assertEqual(v_kanale, {
+            "Claude Code": "обновления Claude Code",
+            "Claude Platform": "обновления Claude Platform",
+            "OpenAI": "новости OpenAI",
+            "Codex": "обновления Codex",
+            "OpenAI API": "обновления OpenAI API",
+            "AINews": "рассылка AINews",
+            "Simon Willison": "блог Simon Willison",
+            "Ben's Bites": "рассылка Ben's Bites",
+            "Cursor": "обновления Cursor",
+            "DeepMind": "блог DeepMind",
+            "X": "посты X",
+            "GitHub Claude Code": "issue GitHub Claude Code",
+        })
+
+    def test_funkcii_chteniya_na_nastoyashchem_fayle(self):
+        self.assertEqual(nastrojki.podpisi_x()["gdb"], "Грег Брокман, OpenAI")
+        self.assertEqual(nastrojki.podpisi_x()["anthropicai"], "Anthropic")
+        self.assertEqual(len(nastrojki.podpisi_x()), 30)
+        nazvaniya = nastrojki.nazvaniya_v_kanale()
+        self.assertEqual(nazvaniya["X"], "посты X")
+        self.assertEqual(nazvaniya["Techmeme"], "Techmeme")
+        self.assertEqual(len(nazvaniya), 17)
+
+    def zapisat(self, istochniki):
+        (nastrojki.KOREN / "temp").mkdir(exist_ok=True)
+        papka = tempfile.TemporaryDirectory(dir=nastrojki.KOREN / "temp")
+        self.addCleanup(papka.cleanup)
+        put = Path(papka.name) / "istochniki.json"
+        put.write_text(json.dumps({"istochniki": istochniki}, ensure_ascii=False), encoding="utf-8")
+        return put
+
+    def test_funkcii_chteniya_registr_i_net_polya(self):
+        put = self.zapisat([
+            {"imya": "Блог", "vid": "rss", "adres": "a", "v_kanale": "блог компании"},
+            {"imya": "Лента", "vid": "rss", "adres": "b"},
+            {"imya": "X", "vid": "x", "adres": "c", "akkaunty": ["GDB", "OpenAI"],
+             "podpisi": {"GDB": "Грег Брокман, OpenAI", "OpenAI": "OpenAI"}},
+        ])
+        with mock.patch.object(nastrojki, "FAYL_ISTOCHNIKOV", put):
+            self.assertEqual(nastrojki.podpisi_x(), {"gdb": "Грег Брокман, OpenAI", "openai": "OpenAI"})
+            self.assertEqual(nastrojki.nazvaniya_v_kanale(),
+                             {"Блог": "блог компании", "Лента": "Лента", "X": "X"})
+
+    def test_funkcii_chteniya_bez_spravochnika(self):
+        put = self.zapisat([{"imya": "X", "vid": "x", "adres": "c", "akkaunty": ["gdb"]}])
+        with mock.patch.object(nastrojki, "FAYL_ISTOCHNIKOV", put):
+            self.assertEqual(nastrojki.podpisi_x(), {})
+        put = self.zapisat([{"imya": "Лента", "vid": "rss", "adres": "b"}])
+        with mock.patch.object(nastrojki, "FAYL_ISTOCHNIKOV", put):
+            self.assertEqual(nastrojki.podpisi_x(), {})
+
+    def test_funkcii_chteniya_fayl_ne_chitaetsya(self):
+        (nastrojki.KOREN / "temp").mkdir(exist_ok=True)
+        papka = tempfile.TemporaryDirectory(dir=nastrojki.KOREN / "temp")
+        self.addCleanup(papka.cleanup)
+        net = Path(papka.name) / "net.json"
+        with mock.patch.object(nastrojki, "FAYL_ISTOCHNIKOV", net):
+            with self.assertRaises(OSError):
+                nastrojki.podpisi_x()
+            with self.assertRaises(OSError):
+                nastrojki.nazvaniya_v_kanale()
+        bitiy = Path(papka.name) / "bitiy.json"
+        bitiy.write_text("{не json", encoding="utf-8")
+        with mock.patch.object(nastrojki, "FAYL_ISTOCHNIKOV", bitiy):
+            with self.assertRaises(ValueError):
+                nastrojki.podpisi_x()
+
 
 class TochkaVhoda(unittest.TestCase):
     def zapusk(self, *argumenty):

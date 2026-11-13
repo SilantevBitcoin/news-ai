@@ -6,6 +6,7 @@ NEWSAI_ISSUE — для тестов и для публикатора, кото�
 """
 from __future__ import annotations
 
+import json
 import os
 from pathlib import Path
 
@@ -40,6 +41,15 @@ PRICHINA_SBOYA_ZNAKOV = 200
 
 PAPKA_DANNYH = KOREN / "dannye"
 
+PEREMENNAYA_REZHIMA = "NEWSAI_REZHIM_PROVERKI"
+
+
+def rezhim_proverki() -> bool:
+    """Режим проверки включён: переменная окружения ровно «1»; нет её или другое значение — выключен.
+
+    Читается в момент вызова: тест подменяет окружение [техника]."""
+    return os.environ.get(PEREMENNAYA_REZHIMA) == "1"
+
 
 def _put(peremennaya: str, po_umolchaniyu: Path) -> Path:
     znachenie = os.environ.get(peremennaya)
@@ -70,3 +80,20 @@ def fayl_issue() -> Path:
     """Файл issue: пишет только команда `sbor-issue` (у публикатора после заявки и у сборщика issue),
     лежит в основной ветке; читает его только `sbor` агента."""
     return _put("NEWSAI_ISSUE", PAPKA_DANNYH / "issue.json")
+
+
+def _istochniki() -> list:
+    return json.loads(FAYL_ISTOCHNIKOV.read_text(encoding="utf-8"))["istochniki"]
+
+
+def podpisi_x() -> dict:
+    """Справочник подписей X (Р65): аккаунт в нижнем регистре → подпись. Поля нет — пустой словарь."""
+    for i in _istochniki():
+        if i.get("vid") == "x":
+            return {akk.lower(): podpis for akk, podpis in (i.get("podpisi") or {}).items()}
+    return {}
+
+
+def nazvaniya_v_kanale() -> dict:
+    """Имя источника → как назвать его в строке «Не удалось собрать» (Р64): v_kanale или имя."""
+    return {i["imya"]: i.get("v_kanale") or i["imya"] for i in _istochniki()}

@@ -1,0 +1,11 @@
+{
+  "istochniki": [
+    {"imya": "OpenAI API", "v_kanale": "обновления OpenAI API", "vid": "stranica", "adres": "https://platform.openai.com/docs/changelog"},
+    {"imya": "Techmeme", "vid": "rss", "adres": "https://www.techmeme.com/feed.xml"},
+    {"imya": "DeepMind", "v_kanale": "блог <DeepMind> & Co", "vid": "rss", "adres": "https://deepmind.google/blog/rss.xml"},
+    {"imya": "X", "v_kanale": "посты X", "vid": "x",
+     "akkaunty": ["sama", "gdb", "OpenAI", "AT_T"],
+     "podpisi": {"sama": "Сэм Альтман, OpenAI", "gdb": "Грег Брокман, OpenAI", "OpenAI": "OpenAI",
+                 "AT_T": "AT&T <Labs>"}}
+  ]
+}

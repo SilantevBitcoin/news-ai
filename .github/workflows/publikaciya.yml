@@ -1,7 +1,9 @@
 # Публикатор (спека «GitHub: репозиторий и публикатор», схема В, Р55).
 # Запускается открытием заявки агента. Код берётся только из основной ветки; из заявки читаются
 # файлы данных — как данные, код заявки не чекаутится и не запускается. Значения события в run: —
-# только через переменные окружения. Секреты — только у environment publikaciya.
+# только через переменные окружения. Секреты — только у environment publikaciya. Режим проверки (Р72)
+# — переменная репозитория NEWSAI_REZHIM_PROVERKI=1 в окружении job'а: заявка принимается в любое
+# время, слот не отмечается.
 name: publikaciya
 
 on:
@@ -29,6 +31,7 @@ jobs:
       HEAD_SHA: ${{ github.event.pull_request.head.sha }}
       VETKA: ${{ github.event.pull_request.head.ref }}
       OSNOVNAYA: ${{ github.event.repository.default_branch }}
+      NEWSAI_REZHIM_PROVERKI: ${{ vars.NEWSAI_REZHIM_PROVERKI }}
     steps:
       - name: Код основной ветки
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -279,7 +282,11 @@ jobs:
           elif [ "$VID" = "sboj" ]; then
             itog="Файл сбоя агента — строка сбоя: $SBOJ_AGENTA."
           elif [ "$KOD_SBORA" != "0" ]; then
-            itog="Сбор публикатора не удался (код ${KOD_SBORA:-нет}) — в канал строка сбоя, слот отмечен, период не сдвинут."
+            if [ "${NEWSAI_REZHIM_PROVERKI:-}" = "1" ]; then
+              itog="Сбор публикатора не удался (код ${KOD_SBORA:-нет}) — в канал строка сбоя, режим проверки: слот не отмечен, период не сдвинут."
+            else
+              itog="Сбор публикатора не удался (код ${KOD_SBORA:-нет}) — в канал строка сбоя, слот отмечен, период не сдвинут."
+            fi
           elif [ "$KOD_SVERKI" = "1" ]; then
             itog="Проверка против сбора публикатора не прошла — в канал ушла строка сбоя."
           elif [ "$KOD_SVERKI" = "0" ]; then

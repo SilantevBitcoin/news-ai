@@ -8,6 +8,7 @@
     },
     {
       "imya": "Claude Code",
+      "v_kanale": "обновления Claude Code",
       "vid": "rss",
       "adres": "https://code.claude.com/docs/en/changelog/rss.xml",
       "filtr": {
@@ -18,6 +19,7 @@
     },
     {
       "imya": "Claude Platform",
+      "v_kanale": "обновления Claude Platform",
       "vid": "rss",
       "adres": "https://platform.claude.com/docs/en/release-notes/feed.xml",
       "filtr": {}
@@ -31,6 +33,7 @@
     },
     {
       "imya": "OpenAI",
+      "v_kanale": "новости OpenAI",
       "vid": "rss",
       "adres": "https://openai.com/news/rss.xml",
       "filtr": {
@@ -40,6 +43,7 @@
     },
     {
       "imya": "Codex",
+      "v_kanale": "обновления Codex",
       "vid": "rss",
       "adres": "https://developers.openai.com/codex/changelog/rss.xml",
       "filtr": {
@@ -49,6 +53,7 @@
     },
     {
       "imya": "OpenAI API",
+      "v_kanale": "обновления OpenAI API",
       "vid": "stranica",
       "adres": "https://developers.openai.com/api/docs/changelog",
       "filtr": {
@@ -58,6 +63,7 @@
     },
     {
       "imya": "AINews",
+      "v_kanale": "рассылка AINews",
       "vid": "rss",
       "adres": "https://www.latent.space/feed",
       "filtr": {
@@ -67,24 +73,28 @@
     },
     {
       "imya": "Simon Willison",
+      "v_kanale": "блог Simon Willison",
       "vid": "atom",
       "adres": "https://simonwillison.net/atom/everything/",
       "filtr": {}
     },
     {
       "imya": "Ben's Bites",
+      "v_kanale": "рассылка Ben's Bites",
       "vid": "rss",
       "adres": "https://www.bensbites.com/feed",
       "filtr": {}
     },
     {
       "imya": "Cursor",
+      "v_kanale": "обновления Cursor",
       "vid": "rss",
       "adres": "https://cursor.com/changelog/rss.xml",
       "filtr": {}
     },
     {
       "imya": "DeepMind",
+      "v_kanale": "блог DeepMind",
       "vid": "rss",
       "adres": "https://deepmind.google/blog/rss.xml",
       "filtr": {}
@@ -120,6 +130,7 @@
     },
     {
       "imya": "X",
+      "v_kanale": "посты X",
       "vid": "x",
       "adres": "https://api.fxtwitter.com/2/profile/{akkaunt}/statuses?since={nachalo_okna}",
       "zapasnye": [
@@ -143,10 +154,43 @@
         "jackclarkSF", "OpenAI", "OpenAIDevs", "sama", "gdb", "thsottiaux", "embirico", "romainhuet",
         "kevinweil", "GoogleDeepMind", "OfficialLoganK", "demishassabis", "deepseek_ai", "Alibaba_Qwen",
         "MistralAI", "AIatMeta", "cursor_ai", "karpathy", "simonw", "swyx", "testingcatalog", "btibor91"
-      ]
+      ],
+      "podpisi": {
+        "AnthropicAI": "Anthropic",
+        "claudeai": "Claude",
+        "ClaudeDevs": "ClaudeDevs",
+        "bcherny": "Борис Черный, Claude Code в Anthropic",
+        "_catwu": "Кэт Ву, OpenAI",
+        "alexalbert__": "Алекс Альберт, Anthropic",
+        "mikeyk": "Майк Кригер, Anthropic Labs",
+        "trq212": "Тарик Шихипар",
+        "jackclarkSF": "Джек Кларк, сооснователь Anthropic",
+        "OpenAI": "OpenAI",
+        "OpenAIDevs": "OpenAI Developers",
+        "sama": "Сэм Альтман, OpenAI",
+        "gdb": "Грег Брокман, OpenAI",
+        "thsottiaux": "Тибо Соттьо, Codex в OpenAI",
+        "embirico": "Александр Эмбирикос, Codex в OpenAI",
+        "romainhuet": "Ромен Юэ, OpenAI",
+        "kevinweil": "Кевин Уэйл, Warp Sciences",
+        "GoogleDeepMind": "Google DeepMind",
+        "OfficialLoganK": "Логан Килпатрик, Gemini в Google",
+        "demishassabis": "Демис Хассабис, Google DeepMind",
+        "deepseek_ai": "DeepSeek",
+        "Alibaba_Qwen": "Qwen",
+        "MistralAI": "Mistral AI",
+        "AIatMeta": "AI at Meta",
+        "cursor_ai": "Cursor",
+        "karpathy": "Андрей Карпаты",
+        "simonw": "Саймон Уиллисон, соавтор Django",
+        "swyx": "Шон Ван (swyx), Latent Space",
+        "testingcatalog": "TestingCatalog, утечки новых функций ИИ",
+        "btibor91": "Тибор Блахо, AIPRM"
+      }
     },
     {
       "imya": "GitHub Claude Code",
+      "v_kanale": "issue GitHub Claude Code",
       "vid": "github_issues",
       "adres": "https://api.github.com/search/issues",
       "filtr": {

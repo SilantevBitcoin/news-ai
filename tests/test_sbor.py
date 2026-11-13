@@ -281,12 +281,14 @@ class X(unittest.TestCase):
                     ("fxtwitter.com/2/profile/net/statuses", otvet("fx_posty_404.json", 404, "application/json")),
                     ("fxtwitter.com/2/profile/net", otvet("fx_profil_404.json", 404, "application/json"))])
         rez = sbor.sobrat([x_istochnik("AnthropicAI", "net")], sost_s(X_PERIOD), SEYCHAS, set_)
-        self.assertEqual(rez["ne_otvetili"], ["X"])
+        self.assertEqual(rez["ne_otvetili"], [])
+        self.assertIsNone(rez["itogi"][0]["oshibka"])
         self.assertEqual({x["akkaunt"] for x in kand(rez)}, {"AnthropicAI"})
         self.assertEqual(len(kand(rez)), 3)
-        self.assertEqual(rez["itogi"][0]["oshibka"], "не ответили аккаунты: net (FxTwitter: аккаунт не найден)")
+        self.assertEqual(rez["itogi"][0]["otchet"], "пути: FxTwitter — 1 · не ответили аккаунты: net (проход 1: "
+                                                    "FxTwitter: профиль 404 | проход 2: FxTwitter: аккаунт не найден)")
         self.assertFalse([u for u in set_.zaprosy if "syndication" in u])
-        self.assertEqual(self.pauzy, [2, 5, 2])
+        self.assertEqual(self.pauzy, [2, 5, 2, 60, 5, 2])
 
     def test_200_i_204(self):
         set_ = Set([("fxtwitter.com/2/profile/AnthropicAI/", otvet("fx_200.json", tip="application/json")),
@@ -325,13 +327,61 @@ class X(unittest.TestCase):
         self.assertEqual(kand(rez)[0]["akkaunt"], "AnthropicAI")
         self.assertNotIn("t.co/", kand(rez)[0]["tekst"])
 
+    def test_otchet_x_s_povtornyh_prohodov(self):
+        otvety = {"a/statuses?since": [Otvet(404)], "a/statuses": [Otvet(204)],
+                  "b/statuses": [Otvet(503), Otvet(503), Otvet(204)], "c/statuses": [Otvet(204)]}
+
+        def set_(url, zagolovki=None):
+            if "syndication" in url:
+                return Otvet(503)
+            if url.endswith("/2/profile/a"):
+                return otvet("fx_profil_200.json", tip="application/json")
+            for chast, spisok in otvety.items():
+                if chast in url:
+                    return spisok.pop(0) if len(spisok) > 1 else spisok[0]
+            raise AssertionError(url)
+
+        rez = sbor.sobrat([x_istochnik("a", "b", "c")], sost_s(X_PERIOD), SEYCHAS, set_)
+        self.assertEqual(rez["ne_otvetili"], [])
+        self.assertEqual(rez["itogi"][0]["otchet"],
+                         "пути: FxTwitter — 3, из них со 2-го прохода — 1, с 3-го прохода — 1")
+        self.assertEqual(self.pauzy, [5, 2, 2, 2, 2, 2, 60, 2, 2, 60])
+
     def test_ni_odin_put_u_akkaunta_x_v_ne_otvetivshih(self):
         set_ = Set([("fxtwitter.com/2/profile/AnthropicAI/", otvet("fx_200.json", tip="application/json")),
                     ("fxtwitter.com", OshibkaZaprosa("timeout")), ("syndication", Otvet(429))])
         rez = sbor.sobrat([x_istochnik("AnthropicAI", "sama")], sost_s(X_PERIOD), SEYCHAS, set_)
-        self.assertEqual(rez["ne_otvetili"], ["X"])
+        self.assertEqual(rez["ne_otvetili"], [])
         self.assertEqual(len(kand(rez)), 3)
-        self.assertIn("sama", rez["itogi"][0]["oshibka"])
+        self.assertIn("не ответили аккаунты: sama (", rez["itogi"][0]["otchet"])
+
+    def test_ni_odin_akkaunt_x_ne_otvetil_x_v_ne_otvetivshih(self):
+        set_ = Set([("fxtwitter.com", OshibkaZaprosa("timeout")), ("syndication", Otvet(429))])
+        rez = sbor.sobrat([x_istochnik("AnthropicAI", "sama")], sost_s(X_PERIOD), SEYCHAS, set_)
+        self.assertEqual(rez["ne_otvetili"], ["X"])
+        self.assertEqual(kand(rez), [])
+        self.assertEqual(rez["itogi"][0]["otchet"], "пути: ни один")
+        self.assertTrue(rez["itogi"][0]["oshibka"].startswith("не ответили аккаунты: AnthropicAI ("))
+        self.assertIn("; sama (", rez["itogi"][0]["oshibka"])
+
+    def test_chastichnyy_otkaz_x_v_vyvode_sbora(self):
+        set_ = Set([("fxtwitter.com/2/profile/AnthropicAI/", otvet("fx_200.json", tip="application/json")),
+                    ("fxtwitter.com", OshibkaZaprosa("timeout")), ("syndication", Otvet(429))])
+        with tempfile.TemporaryDirectory(dir=TEMP) as papka:
+            ist = Path(papka) / "istochniki.json"
+            ist.write_text(json.dumps({"istochniki": [x_istochnik("AnthropicAI", "sama")]}), encoding="utf-8")
+            sost = Path(papka) / "sostoyanie.json"
+            sost.write_text(json.dumps(sost_s(X_PERIOD)), encoding="utf-8")
+            vyvod = io.StringIO()
+            with redirect_stdout(vyvod):
+                kod = sbor.sbor(set_, SEYCHAS, ist, sost, Path(papka) / "progon.json")
+            dannye = json.loads((Path(papka) / "progon.json").read_text(encoding="utf-8"))
+        self.assertEqual(kod, 0)
+        self.assertEqual(dannye["ne_otvetili"], [])
+        stroka_x = [s for s in vyvod.getvalue().splitlines() if s.startswith("X: ")][0]
+        self.assertIn("· пути: FxTwitter — 1 · не ответили аккаунты: sama (", stroka_x)
+        self.assertNotIn("НЕ ОТВЕТИЛ", vyvod.getvalue())
+        self.assertIn("не ответили: —\n", vyvod.getvalue())
 
     TVITY = (b'{"status":"success","data":{"tweets":[{"id":"777","text":"proba twitterapi",'
              b'"createdAt":"Tue Nov 10 11:33:49 +0000 2026"}]}}')

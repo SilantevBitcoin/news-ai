@@ -5,8 +5,9 @@
 отправленного сообщения — sostoyanie.zapisat_punkt, в конце — sostoyanie.zavershit_progon.
 
 У публикатора файл прогона — его собственный сбор (`sbor --konec-iz-zayavki`), файл выпуска —
-очищенный `proverit --vyhod`: «не ответили», конец периода и увиденное — из сбора публикатора.
-Обрыв отправки — одна строка сбоя, её шлёт сам opublikovat; вызывающий второй не шлёт.
+очищенный `proverit --vyhod`: «Не удалось собрать», конец периода и увиденное — из сбора публикатора.
+Обрыв отправки — одна строка сбоя, её шлёт сам opublikovat; вызывающий второй не шлёт. Строка сбоя в
+канал — слова по таблице (slova_sboya, Р66), причина и текст ошибки — только в stderr.
 
 Файл выпуска (Р47–Р50):
     {
@@ -22,22 +23,25 @@
 from __future__ import annotations
 
 import html
+import http.client
 import json
 import re
+import ssl
 import sys
 import time
-import urllib.error
-import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Callable
 
 from . import nastrojki, progon, sostoyanie, tokenbota
-from .vremya import iz_stroki, seychas, v_stroku
+from .vremya import iz_stroki, mestnoe_vremya, seychas, v_stroku
 from .vremya import slot as chas_slota
 
-API = "https://api.telegram.org"
+HOST_API = "api.telegram.org"
 POPYTOK_429 = 5
+POPYTOK_PODKLYUCHENIYA = 3
+PAUZA_PODKLYUCHENIYA = 5
+POVTOROV_POSLE_OTPRAVKI = 1
 ZAGOLOVOK_ZNAKOV = 300
 ABZACEV = (5, 8)
 IMYA_GITHUB = "GitHub Claude Code"
@@ -49,6 +53,28 @@ SBOR_UPAL = "сбор упал"
 NIKTO_NE_OTVETIL = "не ответил ни один источник"
 PROVERKA_NE_PROSHLA = "проверка выпуска не прошла"
 PRICHINY_FAYLA_SBOYA = (SBOR_UPAL, NIKTO_NE_OTVETIL, PROVERKA_NE_PROSHLA)
+SBOR_PUBLIKATORA_NE_UDALSYA = "сбор публикатора не удался"
+ZAYAVKA_NE_PROSHLA = "заявка не прошла проверку:"
+OBRYV_CHAST = "обрыв связи, часть выпуска ушла"
+OBRYV_NICHEGO = "обрыв связи на первом сообщении"
+OTKAZ_CHAST = "отказ Bot API, часть выпуска ушла"
+OTKAZ_NICHEGO = "отказ Bot API на первом сообщении"
+NE_SOBRAN = "не собран"
+SLOVA_SBOYA = {
+    SBOR_UPAL: "не собран: сбор новостей упал",
+    NIKTO_NE_OTVETIL: "не собран: ни один источник не ответил",
+    PROVERKA_NE_PROSHLA: "не собран: выпуск не прошёл проверку",
+    SBOR_PUBLIKATORA_NE_UDALSYA: "не собран: не удалось перепроверить новости перед публикацией",
+    ZAYAVKA_NE_PRISHLA: "не собран: агент не прислал выпуск",
+    OBRYV_CHAST: "отправлен не полностью — Telegram оборвал связь",
+    OBRYV_NICHEGO: "не отправлен — Telegram оборвал связь",
+    OTKAZ_CHAST: "отправлен не полностью — Telegram не принял сообщение",
+    OTKAZ_NICHEGO: "не отправлен — Telegram не принял сообщение",
+}
+SLOVA_ZAYAVKA_NE_PROSHLA = "не собран: выпуск не прошёл проверку"
+PODPISI_SPISKOV = {"sayty": "🌐 Блоги компаний", "x": "𝕏 Посты в X", "dengi": "💰 Деньги и сделки",
+                   "github": "🛠 GitHub Claude Code"}
+NE_UDALOS_SOBRAT = "⚠️ Не удалось собрать: "
 
 RAZDELY = (
     ("krupnye", 3, ("zagolovok", "abzacy", "url", "oboroty", "idy")),
@@ -59,7 +85,7 @@ RAZDELY = (
 )
 ODNO_IZ = {"dengi": ("istochnik", "akkaunt")}
 NAZVANIYA = {"krupnye": "крупная новость", "sayty": "список сайтов", "x": "список X",
-             "dengi": "список денег и сделок", "github": "список GitHub", "ne_otvetili": "не ответили"}
+             "dengi": "список денег и сделок", "github": "список GitHub", "ne_otvetili": "не удалось собрать"}
 VID_PUNKTA = {"krupnye": "krupnaya", "sayty": "sayty", "x": "x", "dengi": "dengi", "github": "github"}
 
 _UPRAVLYAYUSHCHIE = re.compile(r"[\x00-\x1f\x7f-\x9f]")
@@ -72,8 +98,16 @@ class OtkazVypuska(Exception):
     """Выпуск не годится к отправке — ничего не отправлено."""
 
 
+OBRYV, OTKAZ = "obryv", "otkaz"
+
+
 class OshibkaTelegram(Exception):
-    """Bot API вернул ошибку или не ответил."""
+    """Отправка не удалась: vid — OBRYV (повторы по виду обрыва исчерпаны) или OTKAZ (ответ ok: false
+    не 429, 429 сверх ожиданий, ответ не JSON, негодный запрос); текст — для лога, без токена."""
+
+    def __init__(self, tekst: str, vid: str = OTKAZ):
+        super().__init__(tekst)
+        self.vid = vid
 
 
 def slot(kogda: datetime) -> str:
@@ -93,6 +127,18 @@ def v_okne_slota(kogda: datetime, nachalo_slota: datetime | None = None) -> bool
     """Момент kogda — в окне слота [начало, начало + OKNO_SLOTA_MINUT); слот по умолчанию — свой."""
     nachalo = nachalo_slota if nachalo_slota is not None else iz_stroki(slot(kogda))
     return nachalo <= kogda < nachalo + timedelta(minutes=OKNO_SLOTA_MINUT)
+
+
+def sudimyy_slot(kogda: datetime) -> str:
+    """Слот, который судит сторож, запущенный в kogda (Р70): последний слот, чьё окно закрылось.
+
+    Слот момента запуска, если запуск не раньше его начала плюс OKNO_SLOTA_MINUT; иначе — предыдущий
+    (на 8 часов раньше, через полночь — по slot()) [техника].
+    """
+    nachalo = iz_stroki(slot(kogda))
+    if kogda < nachalo + timedelta(minutes=OKNO_SLOTA_MINUT):
+        nachalo = iz_stroki(slot(nachalo - timedelta(seconds=1)))
+    return v_stroku(nachalo)
 
 
 def _ekranirovat_tekst(s: str) -> str:
@@ -177,27 +223,38 @@ def _krupnaya(p: dict) -> dict:
     return {"vid": "krupnye", "tekst": tekst, "prevyu": p["url"], "punkty": [_zapis("krupnye", p)]}
 
 
-def _stroka_spiska(razdel: str, n: int, p: dict) -> str:
+def _stroka_spiska(razdel: str, n: int, p: dict, podpisi: dict) -> str:
     zvezda = "⭐ " if p.get("zvezda") else ""
     if "akkaunt" in p:
-        return f"{n}. {zvezda}@{p['akkaunt']}: {_ssylka(p)}"
+        podpis = podpisi.get(p["akkaunt"].lower()) or f"@{p['akkaunt']}"
+        return f"{n}. {zvezda}{_ekranirovat_tekst(podpis)}: {_ssylka(p)}"
     if razdel == "github":
         return f"{n}. {_ssylka(p)} ({_ekranirovat_tekst(IMYA_GITHUB)}) · скоро"
     return f"{n}. {zvezda}{_ssylka(p)} ({_ekranirovat_tekst(p['istochnik'])})"
 
 
-def _spisok(razdel: str, punkty: list[dict]) -> dict:
-    stroki = [_stroka_spiska(razdel, n, p) for n, p in enumerate(punkty, 1)]
+def _spisok(razdel: str, punkty: list[dict], podpisi: dict) -> dict:
+    stroki = [_ekranirovat_tekst(PODPISI_SPISKOV[razdel])]
+    stroki += [_stroka_spiska(razdel, n, p, podpisi) for n, p in enumerate(punkty, 1)]
     return {"vid": razdel, "tekst": "\n".join(stroki), "prevyu": None,
             "punkty": [_zapis(razdel, p) for p in punkty]}
 
 
-def soobshcheniya(vypusk: dict, ne_otvetili: list[str]) -> list[dict]:
-    """Файл выпуска → сообщения по порядку Р49: крупные, сайты, X, деньги, GitHub, «не ответили».
+def _iz_nastroek(funkciya: Callable[[], dict]) -> dict:
+    """Справочник из файла настроек источников; файл не читается — OtkazVypuska [техника]."""
+    try:
+        return funkciya()
+    except (OSError, ValueError, KeyError, TypeError, AttributeError) as e:
+        raise OtkazVypuska(f"файл настроек источников не читается: {type(e).__name__}") from None
 
-    Сообщение: vid (krupnye, sayty, x, dengi, github, ne_otvetili), tekst (HTML), prevyu (адрес
-    превью или None — выключено), punkty (что записать в состояние после отправки). Пустой выпуск —
-    пустой список. Негодный выпуск — OtkazVypuska.
+
+def soobshcheniya(vypusk: dict, ne_otvetili: list[str]) -> list[dict]:
+    """Файл выпуска → сообщения по порядку Р49: крупные, сайты, X, деньги, GitHub, «Не удалось собрать».
+
+    Сообщение: vid (krupnye, sayty, x, dengi, github, ne_otvetili — «Не удалось собрать»), tekst
+    (HTML), prevyu (адрес превью или None — выключено), punkty (что записать в состояние после
+    отправки). Подписи X и названия не ответивших — из файла настроек источников (nastrojki).
+    Пустой выпуск — пустой список. Негодный выпуск — OtkazVypuska.
     """
     if not isinstance(vypusk, dict):
         raise OtkazVypuska("файл выпуска — не объект JSON")
@@ -218,13 +275,17 @@ def soobshcheniya(vypusk: dict, ne_otvetili: list[str]) -> list[dict]:
     if not any(razdely.values()):
         return []
 
+    nuzhny_podpisi = any("akkaunt" in p for r in ("x", "dengi") for p in razdely[r])
+    podpisi = _iz_nastroek(nastrojki.podpisi_x) if nuzhny_podpisi else {}
     vyhod = [_krupnaya(p) for p in razdely["krupnye"]]
     for razdel, _, _ in RAZDELY[1:]:
         if razdely[razdel]:
-            vyhod.append(_spisok(razdel, razdely[razdel]))
+            vyhod.append(_spisok(razdel, razdely[razdel], podpisi))
     imena = list(dict.fromkeys(i.strip() for i in ne_otvetili if isinstance(i, str) and i.strip()))
     if imena:
-        vyhod.append({"vid": "ne_otvetili", "tekst": _ekranirovat_tekst("не ответили: " + ", ".join(imena)),
+        nazvaniya = _iz_nastroek(nastrojki.nazvaniya_v_kanale)
+        slova = list(dict.fromkeys(nazvaniya.get(i) or i for i in imena))
+        vyhod.append({"vid": "ne_otvetili", "tekst": _ekranirovat_tekst(NE_UDALOS_SOBRAT + ", ".join(slova)),
                       "prevyu": None, "punkty": []})
     for n, s in enumerate(vyhod, 1):
         if dlina(s["tekst"]) > nastrojki.LIMIT_SOOBSHCHENIYA:
@@ -238,61 +299,166 @@ def zapros(soobshchenie: dict) -> dict:
     parametry = {"chat_id": nastrojki.KANAL_ID, "text": soobshchenie["tekst"], "parse_mode": "HTML"}
     if soobshchenie["prevyu"]:
         parametry["link_preview_options"] = {"url": soobshchenie["prevyu"]}
-    elif soobshchenie["vid"] != "ne_otvetili":
+    else:
         parametry["link_preview_options"] = {"is_disabled": True}
     return parametry
 
 
-def bot_api(token: str) -> Otpravitel:
-    """Отправитель через Bot API: 429 — ждать retry_after и повторить; прочее — OshibkaTelegram.
+def _soedinenie() -> http.client.HTTPSConnection:
+    """Новое (ещё не открытое) HTTPS-соединение с Bot API; тест подменяет эту функцию [техника]."""
+    return http.client.HTTPSConnection(HOST_API, timeout=nastrojki.TAYMAUT_SEKUND,
+                                       context=ssl.create_default_context())
 
-    Любое исключение отправки превращается в OshibkaTelegram с текстом без токена.
+
+def _pauza(sekund: float) -> None:
+    """Пауза между попытками; тест подменяет эту функцию [техника]."""
+    time.sleep(sekund)
+
+
+class _Sboj(Exception):
+    """Сбой сети на одном запросе: etap — DO_OTPRAVKI или POSLE_OTPRAVKI, isklyuchenie — исходное."""
+
+    def __init__(self, etap: str, isklyuchenie: BaseException):
+        super().__init__(etap)
+        self.etap, self.isklyuchenie = etap, isklyuchenie
+
+
+DO_OTPRAVKI, POSLE_OTPRAVKI = "do", "posle"
+_SETEVYE = (OSError, http.client.HTTPException)
+
+
+class BotApi:
+    """Отправитель через Bot API (раздел спеки «Отправка», Р67): одно постоянное HTTPS-соединение на
+    всю команду; вызов (метод, параметры) → поле result ответа; ошибка — OshibkaTelegram с видом.
+
+    Повторы — на одно сообщение: сбой до отправки (подключение, TLS, запись запроса) — новое
+    соединение, пауза, всего до POPYTOK_PODKLYUCHENIYA попыток; сбой после отправки (ответ не
+    прочитан) — новое соединение и POVTOROV_POSLE_OTPRAVKI повтор; 429 — ждать retry_after на том же
+    соединении до POPYTOK_429 раз. Токен — только в пути запроса, ни в одном тексте ошибки.
     """
 
-    def skryt(tekst: str) -> str:
-        return tekst.replace(token, "***") if token else tekst
+    def __init__(self, token: str, soedinenie: Callable[[], http.client.HTTPConnection] | None = None,
+                 pauza: Callable[[float], None] | None = None):
+        self._token = token
+        self._fabrika = soedinenie
+        self._pauza = pauza
+        self._soed = None
+        self.schetchiki = {"soedineniy": 0, "sboev_do_otpravki": 0, "sboev_posle_otpravki": 0,
+                           "povtorov": 0, "ozhidaniy_429": 0}
 
-    def _otpravit(metod: str, parametry: dict) -> dict:
-        telo = json.dumps(parametry, ensure_ascii=False).encode("utf-8")
-        for popytka in range(POPYTOK_429 + 1):
-            zapr = urllib.request.Request(f"{API}/bot{token}/{metod}", data=telo, method="POST",
-                                          headers={"Content-Type": "application/json"})
+    def _skryt(self, tekst: str) -> str:
+        return tekst.replace(self._token, "***") if self._token else tekst
+
+    def zakryt(self) -> None:
+        """Закрыть соединение; следующий запрос откроет новое."""
+        soed, self._soed = self._soed, None
+        if soed is not None:
             try:
-                with urllib.request.urlopen(zapr, timeout=nastrojki.TAYMAUT_SEKUND) as otvet:
-                    dannye = json.loads(otvet.read().decode("utf-8"))
-            except urllib.error.HTTPError as e:
-                try:
-                    dannye = json.loads(e.read().decode("utf-8"))
-                except (ValueError, OSError):
-                    raise OshibkaTelegram(f"{metod}: HTTP {e.code}") from None
-                finally:
-                    e.close()
-            except (urllib.error.URLError, OSError, ValueError) as e:
-                raise OshibkaTelegram(f"{metod}: нет ответа Bot API: {e}") from None
+                soed.close()
+            except Exception:
+                pass
+
+    def _podklyuchit(self):
+        """Открытое соединение: прежнее, если сервер его не закрыл, иначе новое с явным connect()."""
+        if self._soed is not None and self._soed.sock is None:
+            self.zakryt()
+        if self._soed is None:
+            self._soed = (self._fabrika or _soedinenie)()
+            self.schetchiki["soedineniy"] += 1
+            try:
+                self._soed.connect()
+            except _SETEVYE as e:
+                raise _Sboj(DO_OTPRAVKI, e) from None
+        return self._soed
+
+    def _zapros(self, put: str, telo: bytes) -> tuple[int, bytes]:
+        """Один запрос на постоянном соединении → (статус, тело ответа целиком); сеть — _Sboj."""
+        soed = self._podklyuchit()
+        try:
+            soed.request("POST", put, body=telo, headers={"Content-Type": "application/json"})
+        except http.client.InvalidURL:
+            raise
+        except _SETEVYE as e:
+            raise _Sboj(DO_OTPRAVKI, e) from None
+        try:
+            otvet = soed.getresponse()
+            status, syroe = otvet.status, otvet.read()
+        except http.client.InvalidURL:
+            raise
+        except _SETEVYE as e:
+            raise _Sboj(POSLE_OTPRAVKI, e) from None
+        if otvet.will_close:
+            self.zakryt()
+        return status, syroe
+
+    def _otpravit(self, metod: str, parametry: dict) -> dict:
+        put = f"/bot{self._token}/{metod}"
+        telo = json.dumps(parametry, ensure_ascii=False).encode("utf-8")
+        sboev_do, povtorov_posle, ozhidaniy = 0, 0, 0
+        pauza = self._pauza or _pauza
+        while True:
+            try:
+                status, syroe = self._zapros(put, telo)
+            except _Sboj as s:
+                self.zakryt()
+                if s.etap == DO_OTPRAVKI:
+                    sboev_do += 1
+                    self.schetchiki["sboev_do_otpravki"] += 1
+                    if sboev_do >= POPYTOK_PODKLYUCHENIYA:
+                        raise OshibkaTelegram(f"{metod}: нет связи с Bot API после {sboev_do} попыток: "
+                                              f"{type(s.isklyuchenie).__name__}: {s.isklyuchenie}", OBRYV) from None
+                    pauza(PAUZA_PODKLYUCHENIYA)
+                else:
+                    self.schetchiki["sboev_posle_otpravki"] += 1
+                    if povtorov_posle >= POVTOROV_POSLE_OTPRAVKI:
+                        raise OshibkaTelegram(f"{metod}: нет ответа Bot API после повтора: "
+                                              f"{type(s.isklyuchenie).__name__}: {s.isklyuchenie}", OBRYV) from None
+                    povtorov_posle += 1
+                self.schetchiki["povtorov"] += 1
+                continue
+            try:
+                dannye = json.loads(syroe.decode("utf-8"))
+            except ValueError:
+                raise OshibkaTelegram(f"{metod}: ответ не JSON, HTTP {status}", OTKAZ) from None
+            if not isinstance(dannye, dict):
+                raise OshibkaTelegram(f"{metod}: ответ не объект JSON, HTTP {status}", OTKAZ)
             if dannye.get("ok"):
                 return dannye.get("result") or {}
             kod = dannye.get("error_code")
             zhdat = (dannye.get("parameters") or {}).get("retry_after")
-            if kod == 429 and isinstance(zhdat, (int, float)) and popytka < POPYTOK_429:
-                time.sleep(zhdat)
+            if kod == 429 and isinstance(zhdat, (int, float)) and ozhidaniy < POPYTOK_429:
+                ozhidaniy += 1
+                self.schetchiki["ozhidaniy_429"] += 1
+                pauza(zhdat)
                 continue
-            raise OshibkaTelegram(f"{metod}: {kod} {dannye.get('description', '')}".strip())
-        raise OshibkaTelegram(f"{metod}: 429 после {POPYTOK_429} ожиданий")
+            raise OshibkaTelegram(f"{metod}: {kod} {dannye.get('description', '')}".strip(), OTKAZ)
 
-    def otpravit(metod: str, parametry: dict) -> dict:
+    def __call__(self, metod: str, parametry: dict) -> dict:
         try:
-            return _otpravit(metod, parametry)
+            return self._otpravit(metod, parametry)
         except OshibkaTelegram as e:
-            tekst = skryt(str(e))
+            tekst, vid = self._skryt(str(e)), e.vid
         except Exception as e:
-            tekst = skryt(f"{metod}: {type(e).__name__}: {e}")
-        raise OshibkaTelegram(tekst) from None
+            self.zakryt()
+            tekst, vid = self._skryt(f"{metod}: {type(e).__name__}: {e}"), OTKAZ
+        raise OshibkaTelegram(tekst, vid) from None
 
-    return otpravit
+
+def bot_api(token: str, soedinenie: Callable[[], http.client.HTTPConnection] | None = None,
+            pauza: Callable[[float], None] | None = None) -> BotApi:
+    """Отправитель Bot API с одним соединением; фабрика соединения и пауза — для теста [техника]."""
+    return BotApi(token, soedinenie, pauza)
 
 
-def _otpravitel_po_tokenu() -> Otpravitel:
+def _otpravitel_po_tokenu() -> BotApi:
     return bot_api(tokenbota.zagruzit_token())
+
+
+def _zakryt(otpravitel) -> None:
+    """Закрыть соединение отправителя в конце команды, если оно у него есть."""
+    zakryt = getattr(otpravitel, "zakryt", None)
+    if callable(zakryt):
+        zakryt()
 
 
 def _pechat_zaprosov(zaprosy: list[dict]) -> None:
@@ -329,7 +495,8 @@ def opublikovat(suhoj: bool = False, otpravitel: Otpravitel | None = None) -> in
     Есть файл сбоя — строка сбоя и posledniy_slot, период не сдвигается. Иначе файл выпуска: всё
     проверяется до первой отправки; отправленный пункт сразу пишется в состояние; период
     сдвигается только после всего выпуска. Обрыв отправки — строка сбоя, код 1. --suhoj печатает
-    запросы и состояние не трогает.
+    запросы и состояние не трогает. В режиме проверки (Р72) posledniy_slot не пишется, остальное
+    состояние — как всегда.
     """
     put_sboya, put_vypuska = nastrojki.fayl_sboya(), nastrojki.fayl_vypuska()
     if put_sboya.exists():
@@ -366,26 +533,38 @@ def opublikovat(suhoj: bool = False, otpravitel: Otpravitel | None = None) -> in
         sost = sostoyanie.zagruzit()
     except sostoyanie.OshibkaSostoyaniya as e:
         return _otkaz(str(e))
-    if soobshch and otpravitel is None:
+    svoy = soobshch and otpravitel is None
+    if svoy:
         try:
             otpravitel = _otpravitel_po_tokenu()
         except tokenbota.NetTokena as e:
             return _otkaz(str(e))
 
-    slot_zayavki = slot(seychas())
-    for n, s in enumerate(soobshch, 1):
-        try:
-            otpravitel("sendMessage", zapros(s))
-        except OshibkaTelegram as e:
-            print(f"newsai opublikovat: отправлено {n - 1} из {len(soobshch)}, ошибка: {e}",
-                  file=sys.stderr)
-            sostoyanie.zapisat_slot(sost, slot_zayavki)
-            prichina = f"часть выпуска не отправлена: {e}" if n > 1 else f"выпуск не отправлен: {e}"
-            _poslat_sboj(otpravitel, prichina, "opublikovat")
-            return 1
-        for p in s["punkty"]:
-            sostoyanie.zapisat_punkt(sost, p["zagolovok"], p["url"], seychas(), idy=p["idy"],
-                                     vid=p["vid"], oboroty=p["oboroty"])
+    rezhim = nastrojki.rezhim_proverki()
+    slot_zayavki = None if rezhim else slot(seychas())
+    if rezhim:
+        print("newsai opublikovat: режим проверки — слот не отмечается", file=sys.stderr)
+    try:
+        for n, s in enumerate(soobshch, 1):
+            try:
+                otpravitel("sendMessage", zapros(s))
+            except OshibkaTelegram as e:
+                print(f"newsai opublikovat: отправлено {n - 1} из {len(soobshch)}, ошибка: {e}",
+                      file=sys.stderr)
+                if slot_zayavki is not None:
+                    sostoyanie.zapisat_slot(sost, slot_zayavki)
+                if e.vid == OBRYV:
+                    prichina = OBRYV_CHAST if n > 1 else OBRYV_NICHEGO
+                else:
+                    prichina = OTKAZ_CHAST if n > 1 else OTKAZ_NICHEGO
+                _poslat_sboj(otpravitel, prichina, "opublikovat")
+                return 1
+            for p in s["punkty"]:
+                sostoyanie.zapisat_punkt(sost, p["zagolovok"], p["url"], seychas(), idy=p["idy"],
+                                         vid=p["vid"], oboroty=p["oboroty"])
+    finally:
+        if svoy:
+            _zakryt(otpravitel)
 
     sostoyanie.zavershit_progon(sost, nachalo_progona, _idy_progona(dannye_progona, nachalo_progona), seychas(),
                                 slot=slot_zayavki,
@@ -395,11 +574,13 @@ def opublikovat(suhoj: bool = False, otpravitel: Otpravitel | None = None) -> in
 
 
 def _opublikovat_sboj(put: Path, suhoj: bool, otpravitel: Otpravitel | None) -> int:
-    """Файл сбоя → строка сбоя в канал и posledniy_slot; период не сдвигается."""
+    """Файл сбоя → строка сбоя в канал и posledniy_slot (в режиме проверки — без него); период не
+    сдвигается."""
     try:
         prichina = prichina_iz_fayla_sboya(put)
     except OtkazVypuska as e:
         return _otkaz(str(e))
+    print(f"newsai opublikovat: файл сбоя, причина: {prichina}", file=sys.stderr)
     parametry = zapros_sboya(prichina)
     if suhoj:
         _pechat_zaprosov([parametry])
@@ -408,7 +589,8 @@ def _opublikovat_sboj(put: Path, suhoj: bool, otpravitel: Otpravitel | None) -> 
         sost = sostoyanie.zagruzit()
     except sostoyanie.OshibkaSostoyaniya as e:
         return _otkaz(str(e))
-    if otpravitel is None:
+    svoy = otpravitel is None
+    if svoy:
         try:
             otpravitel = _otpravitel_po_tokenu()
         except tokenbota.NetTokena as e:
@@ -419,7 +601,13 @@ def _opublikovat_sboj(put: Path, suhoj: bool, otpravitel: Otpravitel | None) -> 
     except OshibkaTelegram as e:
         print(f"newsai opublikovat: строка сбоя не отправлена: {e}", file=sys.stderr)
         kod = 1
-    sostoyanie.zapisat_slot(sost, slot(seychas()))
+    finally:
+        if svoy:
+            _zakryt(otpravitel)
+    if nastrojki.rezhim_proverki():
+        print("newsai opublikovat: режим проверки — слот не отмечается", file=sys.stderr)
+    else:
+        sostoyanie.zapisat_slot(sost, slot(seychas()))
     if not kod:
         print("отправлена строка сбоя")
     return kod
@@ -448,9 +636,29 @@ def _otkaz(prichina: str) -> int:
     return 1
 
 
+def slova_sboya(prichina: str) -> str:
+    """Причина из набора (техника) → слова для канала по таблице строк сбоя (Р66). Сравнение после
+    схлопывания пробелов: по точной фразе, у «заявка не прошла проверку:» — по началу; названия
+    проверок в канал не идут. Неизвестная причина — «не собран» [техника]."""
+    prichina = " ".join(prichina.split())
+    if prichina in SLOVA_SBOYA:
+        return SLOVA_SBOYA[prichina]
+    if prichina.startswith(ZAYAVKA_NE_PROSHLA):
+        return SLOVA_ZAYAVKA_NE_PROSHLA
+    return NE_SOBRAN
+
+
 def tekst_sboya(prichina: str, kogda=None) -> str:
-    """`выпуск <слот> не собран: <причина>`, обрезано до лимита Telegram."""
-    tekst = f"выпуск {chas_slota(kogda or seychas())} не собран: {' '.join(prichina.split())}"
+    """`⚠️ Выпуск <слот> <слова по таблице>`, обрезано до лимита Telegram.
+
+    В режиме проверки (Р72) — `⚠️ Тестовый выпуск <ЧЧ:ММ> …`: время самого момента kogda (открытие
+    заявки или часы запуска) по Бангкоку, а не слот расписания."""
+    kogda = kogda or seychas()
+    if nastrojki.rezhim_proverki():
+        nachalo = f"⚠️ Тестовый выпуск {mestnoe_vremya(kogda)}"
+    else:
+        nachalo = f"⚠️ Выпуск {chas_slota(kogda)}"
+    tekst = f"{nachalo} {slova_sboya(prichina)}"
     while dlina(tekst) > nastrojki.LIMIT_SOOBSHCHENIYA:
         tekst = tekst[:-1]
     return tekst
@@ -461,9 +669,10 @@ def zapros_sboya(prichina: str, kogda=None) -> dict:
     return {"chat_id": nastrojki.KANAL_ID, "text": tekst_sboya(prichina, kogda)}
 
 
-def _poslat_sboj(otpravitel: Otpravitel, prichina: str, komanda: str) -> int:
+def _poslat_sboj(otpravitel: Otpravitel, prichina: str, komanda: str, kogda: datetime | None = None) -> int:
+    print(f"newsai {komanda}: причина строки сбоя: {prichina}", file=sys.stderr)
     try:
-        otpravitel("sendMessage", zapros_sboya(prichina))
+        otpravitel("sendMessage", zapros_sboya(prichina, kogda))
     except OshibkaTelegram as e:
         print(f"newsai {komanda}: строка сбоя не отправлена: {e}", file=sys.stderr)
         return 1
@@ -478,18 +687,23 @@ def prichina_iz_fayla(put: Path) -> str:
     return stroka[: nastrojki.PRICHINA_SBOYA_ZNAKOV]
 
 
-def sboj(prichina: str, otpravitel: Otpravitel | None = None) -> int:
-    """Сообщение `выпуск <слот> не собран: <причина>`; вернуть код выхода."""
+def sboj(prichina: str, otpravitel: Otpravitel | None = None, kogda: datetime | None = None) -> int:
+    """Строка сбоя `⚠️ Выпуск <слот> …` — перевод причины (slova_sboya); причина — в stderr; вернуть
+    код выхода. Слот — момента kogda (у сторожа — начало судимого слота), по умолчанию — часов."""
     if not prichina.strip():
         print("newsai sboj: пустая причина", file=sys.stderr)
         return 2
-    if otpravitel is None:
-        try:
-            otpravitel = _otpravitel_po_tokenu()
-        except tokenbota.NetTokena as e:
-            print(f"newsai sboj: {e}", file=sys.stderr)
-            return 1
-    return _poslat_sboj(otpravitel, prichina, "sboj")
+    if otpravitel is not None:
+        return _poslat_sboj(otpravitel, prichina, "sboj", kogda)
+    try:
+        otpravitel = _otpravitel_po_tokenu()
+    except tokenbota.NetTokena as e:
+        print(f"newsai sboj: {e}", file=sys.stderr)
+        return 1
+    try:
+        return _poslat_sboj(otpravitel, prichina, "sboj", kogda)
+    finally:
+        _zakryt(otpravitel)
 
 
 def otkrytie_zayavki(put_sobytiya: Path) -> datetime | None:
@@ -506,7 +720,9 @@ def sboj_iz_fayla(put: Path, otpravitel: Otpravitel | None = None, sobytie: Path
 
     Причина — не аргумент shell, а первая строка файла. С событием заявки — слот её открытия идёт в
     строку и в posledniy_slot состояния, posledniy_sbor не трогается: вторая заявка того же слота
-    закроется молча. Событие без времени открытия — строка уходит, слот не пишется [техника].
+    закроется молча. Событие без времени открытия — строка уходит, слот не пишется [техника]. В режиме
+    проверки (Р72) в строке — «Тестовый выпуск» со временем открытия заявки, состояние не читается и
+    не пишется [техника].
     """
     try:
         prichina = prichina_iz_fayla(put)
@@ -522,23 +738,34 @@ def sboj_iz_fayla(put: Path, otpravitel: Otpravitel | None = None, sobytie: Path
     if not prichina.strip():
         print("newsai sboj: пустая причина", file=sys.stderr)
         return 2
-    try:
-        sost = sostoyanie.zagruzit()
-    except sostoyanie.OshibkaSostoyaniya as e:
-        sost = None
-        print(f"newsai sboj: {e} — слот не записан", file=sys.stderr)
-    if otpravitel is None:
+    rezhim = nastrojki.rezhim_proverki()
+    sost = None
+    if rezhim:
+        print("newsai sboj: режим проверки — слот не записан", file=sys.stderr)
+    else:
+        try:
+            sost = sostoyanie.zagruzit()
+        except sostoyanie.OshibkaSostoyaniya as e:
+            print(f"newsai sboj: {e} — слот не записан", file=sys.stderr)
+    svoy = otpravitel is None
+    if svoy:
         try:
             otpravitel = _otpravitel_po_tokenu()
         except tokenbota.NetTokena as e:
             print(f"newsai sboj: {e}", file=sys.stderr)
             return 1
+    print(f"newsai sboj: причина строки сбоя: {prichina}", file=sys.stderr)
     try:
         otpravitel("sendMessage", zapros_sboya(prichina, otkryta))
         kod = 0
     except OshibkaTelegram as e:
         print(f"newsai sboj: строка сбоя не отправлена: {e}", file=sys.stderr)
         kod = 1
+    finally:
+        if svoy:
+            _zakryt(otpravitel)
+    if rezhim:
+        return kod
     if sost is None:
         return 1
     sostoyanie.zapisat_slot(sost, slot(otkryta))
@@ -547,7 +774,8 @@ def sboj_iz_fayla(put: Path, otpravitel: Otpravitel | None = None, sobytie: Path
 
 def nesohraneno(otpravitel: Otpravitel | None = None) -> int:
     """Команда `nesohraneno`: строка Р40 отдельным сообщением, обычным текстом."""
-    if otpravitel is None:
+    svoy = otpravitel is None
+    if svoy:
         try:
             otpravitel = _otpravitel_po_tokenu()
         except tokenbota.NetTokena as e:
@@ -558,6 +786,9 @@ def nesohraneno(otpravitel: Otpravitel | None = None) -> int:
     except OshibkaTelegram as e:
         print(f"newsai nesohraneno: {e}", file=sys.stderr)
         return 1
+    finally:
+        if svoy:
+            _zakryt(otpravitel)
     return 0
 
 
@@ -586,11 +817,18 @@ def zayavka_k_slotu(zayavki: list, nachalo_slota: datetime) -> bool:
 
 
 def storozh(put_zayavok: Path, otpravitel: Otpravitel | None = None) -> int:
-    """Команда `storozh --zayavki <файл>`: слот не обработан и заявки к нему нет — строка сбоя (Р29).
+    """Команда `storozh --zayavki <файл>`: слот не обработан и заявки к нему нет — строка сбоя (Р29)
+    с причиной ZAYAVKA_NE_PRISHLA, в канале — её перевод (Р66).
 
+    Судит последний слот, чьё окно закрылось к запуску (sudimyy_slot, Р70): расписание GitHub
+    опаздывает, и запуск в открытом окне иначе судил бы слот, к которому агент ещё не успел. Час в
+    строке сбоя — этого слота. В режиме проверки (Р72) — тишина: состояние и заявки не читаются, код 0.
     Файл — список заявок из REST GitHub; его достаёт workflow сторожа, токен GitHub сюда не идёт.
     """
-    tekushchiy = slot(seychas())
+    if nastrojki.rezhim_proverki():
+        print("режим проверки — сторож молчит")
+        return 0
+    tekushchiy = sudimyy_slot(seychas())
     try:
         sost = sostoyanie.zagruzit()
     except sostoyanie.OshibkaSostoyaniya as e:
@@ -610,4 +848,4 @@ def storozh(put_zayavok: Path, otpravitel: Otpravitel | None = None) -> int:
     if zayavka_k_slotu(zayavki, iz_stroki(tekushchiy)):
         print(f"заявка к слоту {tekushchiy} есть — её обрабатывает публикатор")
         return 0
-    return sboj(ZAYAVKA_NE_PRISHLA, otpravitel)
+    return sboj(ZAYAVKA_NE_PRISHLA, otpravitel, iz_stroki(tekushchiy))

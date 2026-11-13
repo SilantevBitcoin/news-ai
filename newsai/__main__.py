@@ -38,7 +38,7 @@ def razbor() -> argparse.ArgumentParser:
                         "чьих ссылок нет в сборе публикатора")
     o = k.add_parser("opublikovat", help="файл выпуска → сообщения в канал, файл сбоя → строка сбоя")
     o.add_argument("--suhoj", action="store_true", help="напечатать запросы к Bot API вместо отправки")
-    s = k.add_parser("sboj", help="сообщение в канал «выпуск <слот> не собран: <причина>»")
+    s = k.add_parser("sboj", help="строка сбоя в канал человеческими словами (причина — в лог)")
     s.add_argument("--prichina-iz", required=True, metavar="файл",
                    help="файл, первая строка которого — причина (до 200 знаков)")
     s.add_argument("--slot-iz-zayavki", metavar="event.json",
@@ -46,8 +46,10 @@ def razbor() -> argparse.ArgumentParser:
                         "posledniy_slot состояния, период не сдвигается")
     k.add_parser("nesohraneno",
                  help="сообщение в канал «состояние не сохранено — следующий выпуск может повторить новости»")
-    st = k.add_parser("storozh", help="слот не обработан и заявки агента к нему нет — "
-                                      "«выпуск <слот> не собран: заявка агента не пришла»")
+    spravka_storozha = ("судит последний слот, чьё окно (начало + 40 минут) закрылось к запуску: слот не "
+                        "обработан и заявки агента к нему нет — «⚠️ Выпуск <час этого слота> не собран: агент "
+                        "не прислал выпуск»; в режиме проверки (NEWSAI_REZHIM_PROVERKI=1) молчит, код 0")
+    st = k.add_parser("storozh", help=spravka_storozha, description=spravka_storozha)
     st.add_argument("--zayavki", required=True, metavar="файл",
                     help="список заявок — ответ REST GitHub pulls?state=all")
     return p

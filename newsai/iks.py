@@ -7,6 +7,10 @@
 `Retry-After` и один повтор, 429 встраиваемой ленты выключает её до конца сбора, 404 FxTwitter —
 повтор и проверка профиля, общий срок сбора X. Пауза (`spat`) и часы (`chasy`) — функции модуля,
 тест их подменяет.
+
+Повторные проходы (спека, Р71): аккаунты без рабочего ответа — в очередь; проход 2 через 60 с —
+FxTwitter без `since`, проход 3 через 60 с — с `since`; «аккаунт не найден» — профиль 404 в двух
+проходах.
 """
 from __future__ import annotations
 
@@ -23,6 +27,7 @@ from .razbor import data_x, odnoy_strokoy
 from .zaprosy import OshibkaZaprosa
 
 FX = "https://api.fxtwitter.com/2/profile/{akkaunt}/statuses?since={nachalo_okna}"
+FX_BEZ_SINCE = "https://api.fxtwitter.com/2/profile/{akkaunt}/statuses"
 FX_PROFIL = "https://api.fxtwitter.com/2/profile/{akkaunt}"
 SYNDICATION = "https://syndication.twitter.com/srv/timeline-profile/screen-name/{akkaunt}"
 TWITTERAPI = "https://api.twitterapi.io/twitter/user/last_tweets?userName={akkaunt}&includeReplies=false"
@@ -33,9 +38,13 @@ PAUZA_SEKUND = 2
 PAUZA_404_SEKUND = 5
 ZHDAT_429_SEKUND = 30
 ZHDAT_429_MAKS = 60
-SROK_X_SEKUND = 300
+SROK_X_SEKUND = 480
+PROHODOV = 3
+PAUZA_PROHODA_SEKUND = 60
 
 NE_NAYDEN = "FxTwitter: аккаунт не найден"
+PROFIL_404 = "FxTwitter: профиль 404"
+PROFIL_404_ODIN_RAZ = "FxTwitter: профиль 404 один раз"
 NE_USPELI = "не успели: общий срок X"
 LENTA_VYKLYUCHENA = "лента X: пропущена — 429 раньше в этом сборе"
 
@@ -95,6 +104,14 @@ class Berezhno:
         if otvet.status == 429:
             otvet = self._odin(url, zagolovki, _zhdat_429(otvet))
         return otvet
+
+    def pauza_prohoda(self, sekundy=PAUZA_PROHODA_SEKUND):
+        """Пауза перед повторным проходом; не влезает в остаток срока — NeUspeli без паузы."""
+        ostalos = self.konec - self._chasy()
+        if ostalos <= 0 or sekundy >= ostalos:
+            raise NeUspeli()
+        self._spat(sekundy)
+        self.byl_zapros = False
 
 
 def _post(akkaunt: str, identifikator: str, tekst: str, data: datetime) -> Kandidat:
@@ -163,7 +180,8 @@ def _fx(akkaunt, okno: Period, bereg: Berezhno, adres=FX):
         niz = (dannye.get("cursor") or {}).get("bottom")
         if not rezultaty or not niz or samyy_staryy is None or samyy_staryy < okno.nachalo:
             return posty
-        url = adres.format(akkaunt=quote(akkaunt), nachalo_okna=since) + "&cursor=" + quote(niz, safe="")
+        url = adres.format(akkaunt=quote(akkaunt), nachalo_okna=since)
+        url += ("&" if "?" in url else "?") + "cursor=" + quote(niz, safe="")
     return posty
 
 
@@ -232,7 +250,10 @@ def _twitterapi(akkaunt, okno: Period, bereg: Berezhno, klyuch):
 
 
 def odin_akkaunt(akkaunt, okno: Period, bereg: Berezhno, klyuch=None, adres_fx=FX):
-    """→ (посты, сработавший путь или None, причины отказов). Срок вышел — NeUspeli наружу."""
+    """→ (посты, сработавший путь или None, причины отказов). Срок вышел — NeUspeli наружу.
+
+    Профиль 404 — причины ровно [PROFIL_404], запасные пути в этом проходе не пробуются.
+    """
     puti = [("FxTwitter", lambda: _fx(akkaunt, okno, bereg, adres_fx)),
             ("лента X", lambda: _syndication(akkaunt, okno, bereg))]
     if klyuch:
@@ -245,35 +266,75 @@ def odin_akkaunt(akkaunt, okno: Period, bereg: Berezhno, klyuch=None, adres_fx=F
         try:
             return put(), imya, otkazy
         except NetAkkaunta:
-            return [], None, [NE_NAYDEN]
+            return [], None, [PROFIL_404]
         except (NePoluchilos, OshibkaZaprosa) as e:
             otkazy.append(f"{imya}: {e}")
     return [], None, otkazy
 
 
-def sobrat(istochnik: dict, okno: Period, poluchit, spat_=None, chasy_=None) -> tuple[list[Kandidat], dict]:
-    """Все аккаунты источника X за окно охвата по одному → (кандидаты, отчёт {puti, molchat}).
+def _prichina(prohody: list, ne_uspeli: bool) -> str:
+    """Причины молчавшего: по проходам по порядку, «проход N:» — если проходов больше одного."""
+    podtverzhden = any(r == NE_NAYDEN for _, r in prohody)
+    teksty = [(n, PROFIL_404_ODIN_RAZ if r == PROFIL_404 and not podtverzhden else r) for n, r in prohody]
+    chasti = [teksty[0][1]] if len(teksty) == 1 else [f"проход {n}: {r}" for n, r in teksty]
+    if ne_uspeli:
+        chasti.append(NE_USPELI)
+    return " | ".join(chasti)
 
-    molchat — аккаунт → причина (путь и что случилось) в порядке аккаунтов.
+
+def sobrat(istochnik: dict, okno: Period, poluchit, spat_=None, chasy_=None) -> tuple[list[Kandidat], dict]:
+    """Все аккаунты источника X за окно охвата по одному → (кандидаты, отчёт {puti, prohody, molchat}).
+
+    Проходы (Р71): 1 — все аккаунты; 2 и 3 — только очередь без рабочего ответа, через паузу 60 с.
+    puti — путь → число ответивших аккаунтов; prohody — путь → {номер прохода ≥ 2: сколько из них
+    ответили с него}; molchat — аккаунт → причины в порядке аккаунтов.
     """
     klyuch = klyuch_twitterapi()
     adres_fx = istochnik.get("adres") or FX
-    akkaunty = istochnik.get("akkaunty") or []
+    akkaunty = list(istochnik.get("akkaunty") or [])
     bereg = Berezhno(poluchit, spat_, chasy_)
-    posty, puti, molchat = [], {}, {}
-    for i, akkaunt in enumerate(akkaunty):
-        try:
-            p, put, otkazy = odin_akkaunt(akkaunt, okno, bereg, klyuch, adres_fx)
-        except NeUspeli:
-            for ostavshiysya in akkaunty[i:]:
-                molchat[ostavshiysya] = NE_USPELI
+    posty, puti, prohody = [], {}, {}
+    prichiny = {}
+    ne_uspeli = set()
+    otvetili = set()
+    ochered = akkaunty
+    for n in range(1, PROHODOV + 1):
+        if not ochered:
             break
-        if put is None:
-            molchat[akkaunt] = "; ".join(otkazy)
-            continue
-        puti[put] = puti.get(put, 0) + 1
-        posty.extend(replace(k, istochnik=istochnik["imya"]) for k in p)
-    return posty, {"puti": puti, "molchat": molchat}
+        if n > 1:
+            try:
+                bereg.pauza_prohoda()
+            except NeUspeli:
+                ne_uspeli.update(ochered)
+                break
+        adres = FX_BEZ_SINCE if n == 2 else adres_fx
+        sleduyushchie = []
+        for i, akkaunt in enumerate(ochered):
+            try:
+                p, put, otkazy = odin_akkaunt(akkaunt, okno, bereg, klyuch, adres)
+            except NeUspeli:
+                ne_uspeli.update(ochered[i:])
+                if n < PROHODOV:
+                    ne_uspeli.update(sleduyushchie)
+                sleduyushchie = []
+                break
+            if put is None:
+                byl_404 = any(r == PROFIL_404 for _, r in prichiny.get(akkaunt, []))
+                if otkazy == [PROFIL_404] and byl_404:
+                    prichiny[akkaunt].append((n, NE_NAYDEN))
+                    continue
+                prichiny.setdefault(akkaunt, []).append((n, "; ".join(otkazy)))
+                sleduyushchie.append(akkaunt)
+                continue
+            otvetili.add(akkaunt)
+            puti[put] = puti.get(put, 0) + 1
+            if n > 1:
+                prohody.setdefault(put, {})
+                prohody[put][n] = prohody[put].get(n, 0) + 1
+            posty.extend(replace(k, istochnik=istochnik["imya"]) for k in p)
+        ochered = sleduyushchie
+    molchat = {a: _prichina(prichiny.get(a, []), a in ne_uspeli) for a in akkaunty if a not in otvetili}
+    return posty, {"puti": puti, "prohody": prohody, "molchat": molchat}
 
 
 def zagolovok(tekst: str) -> str:

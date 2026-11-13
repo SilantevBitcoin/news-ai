@@ -28,6 +28,10 @@ class SObrazcami(unittest.TestCase):
         papka.mkdir(exist_ok=True)
         self._papka = tempfile.TemporaryDirectory(dir=papka)
         self.addCleanup(self._papka.cleanup)
+        zaplatka = mock.patch.dict(os.environ)
+        zaplatka.start()
+        self.addCleanup(zaplatka.stop)
+        os.environ.pop("NEWSAI_REZHIM_PROVERKI", None)
         self.papka = Path(self._papka.name)
         for imya in ("progon.json", "vypusk.json", "sostoyanie.json", "sobytie.json", "fayly.tsv"):
             shutil.copy(OBRAZCY / imya, self.papka / imya)
@@ -441,7 +445,8 @@ class Publikator(SObrazcami):
                          ["https://www.techmeme.com/261110/p12", "https://deepmind.google/blog/deep-think-api/"])
         from newsai import publikaciya
         s = publikaciya.soobshcheniya(self.chistyy(), [])
-        self.assertEqual(s[2]["tekst"], '1. <a href="https://www.techmeme.com/261110/p12">Мистраль</a> (Techmeme)\n'
+        self.assertEqual(s[2]["tekst"], "🌐 Блоги компаний\n"
+                                        '1. <a href="https://www.techmeme.com/261110/p12">Мистраль</a> (Techmeme)\n'
                                         '2. ⭐ <a href="https://deepmind.google/blog/deep-think-api/">Gemini получил '
                                         "Deep Think в API</a> (DeepMind)")
 
@@ -611,6 +616,84 @@ class Slot(SObrazcami):
                 self.otkryta(kogda)
                 seychas = datetime(2026, 11, 10, 18, 45, tzinfo=timezone.utc)
                 self.assertEqual(self.zapusk(zayavka=True, progon=None, vyhod=None, seychas=seychas)[0], kod)
+
+
+class SlotRezhimProverki(SObrazcami):
+    """Р72: в режиме проверки (NEWSAI_REZHIM_PROVERKI ровно «1») проверки «слот» нет — заявка проходит в
+    любое время и по слоту, равному posledniy_slot; повтор той же заявки после выпуска отсекает
+    «свежесть». Значения 0, пусто и нет переменной — как без режима."""
+
+    otkryta = Slot.otkryta
+    obe_formy = Slot.obe_formy
+    CHEREZ_2_CHASA = datetime(2026, 11, 11, 4, 5, tzinfo=timezone.utc)
+
+    def rezhim(self, znachenie):
+        zaplatka = mock.patch.dict(os.environ)
+        zaplatka.start()
+        self.addCleanup(zaplatka.stop)
+        if znachenie is None:
+            os.environ.pop("NEWSAI_REZHIM_PROVERKI", None)
+        else:
+            os.environ["NEWSAI_REZHIM_PROVERKI"] = znachenie
+
+    def test_cherez_2_chasa_prohodit(self):
+        self.rezhim("1")
+        self.otkryta("2026-11-11T04:00:00Z")
+        err = io.StringIO()
+        with contextlib.redirect_stderr(err):
+            formy = self.obe_formy(self.CHEREZ_2_CHASA)
+        self.assertEqual(formy, ((0, "проверка пройдена\n"), (0, "проверка пройдена\n")))
+        self.assertEqual(err.getvalue(), "newsai proverit: режим проверки — слот не проверяется\n" * 2)
+        self.assertTrue((self.papka / "chistyy.json").exists())
+
+    def test_obrabotannyy_slot_prohodit(self):
+        self.rezhim("1")
+        s = self.json("sostoyanie.json")
+        s["posledniy_slot"] = "2026-11-11T02:00:00Z"
+        self.zapisat("sostoyanie.json", s)
+        with contextlib.redirect_stderr(io.StringIO()):
+            self.assertEqual(self.obe_formy(), ((0, "проверка пройдена\n"), (0, "проверка пройдена\n")))
+
+    def test_povtor_toy_zhe_zayavki_posle_vypuska_svezhest(self):
+        self.rezhim("1")
+        self.otkryta("2026-11-11T04:00:00Z")
+        s = self.json("sostoyanie.json")
+        s["posledniy_sbor"] = "2026-11-11T03:00:00Z"
+        self.zapisat("sostoyanie.json", s)
+        with contextlib.redirect_stderr(io.StringIO()):
+            self.assertEqual(self.zapusk(zayavka=True, seychas=self.CHEREZ_2_CHASA),
+                             (1, "свежесть: заявка открыта не позже прошлого выпуска\nпроверки не прошли: свежесть\n"))
+
+    def test_vyklyuchen_kak_bez_rezhima(self):
+        for znachenie in ("0", "", " 1", None):
+            with self.subTest(znachenie=znachenie):
+                self.rezhim(znachenie)
+                self.otkryta("2026-11-11T04:00:00Z")
+                err = io.StringIO()
+                with contextlib.redirect_stderr(err):
+                    self.assertEqual(self.obe_formy(self.CHEREZ_2_CHASA), ((3, VNE_SLOTA), (3, VNE_SLOTA)))
+                self.assertEqual(err.getvalue(), "")
+
+    def test_samoproverka_agenta_bez_izmeneniy(self):
+        for znachenie in ("1", None):
+            with self.subTest(znachenie=znachenie):
+                self.rezhim(znachenie)
+                err = io.StringIO()
+                with contextlib.redirect_stderr(err):
+                    self.assertEqual(self.zapusk(), (0, "проверка пройдена\n"))
+                self.assertEqual(err.getvalue(), "")
+
+    def test_komanda_cherez_tochku_vhoda(self):
+        self.rezhim("1")
+        self.otkryta("2026-11-11T04:00:00Z")
+        argumenty = ["proverit", "--vypusk", str(self.papka / "vypusk.json"), "--sboj", str(self.papka / "sboj.json"),
+                     "--sostoyanie", str(self.papka / "sostoyanie.json"),
+                     "--zayavka", str(self.papka / "sobytie.json"), "--fayly", str(self.papka / "fayly.tsv")]
+        out, err = io.StringIO(), io.StringIO()
+        with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err), \
+                mock.patch.object(proverka, "_seychas", return_value=self.CHEREZ_2_CHASA):
+            kod = tochka.main(argumenty)
+        self.assertEqual((kod, out.getvalue()), (0, "проверка пройдена\n"), err.getvalue())
 
 
 class Povtor(SObrazcami):
