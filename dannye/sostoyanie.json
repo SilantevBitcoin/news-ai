@@ -294,10 +294,17 @@
       "url": "https://www.techmeme.com/261112/p65#a261112p65",
       "vid": "dengi",
       "zagolovok": "Hatz AI, делающая ИИ-инструменты для поставщиков IT-услуг, привлекла 24 млн долларов"
+    },
+    {
+      "data": "2026-11-13T10:16:39Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261113/p1#a261113p1",
+      "vid": "sayty",
+      "zagolovok": "Meta добавила в Muse исходящие звонки в компании — для платных подписчиков в США"
     }
   ],
   "posledniy_sbor": "2026-11-13T01:13:04Z",
-  "posledniy_slot": "2026-11-13T02:00:00Z",
+  "posledniy_slot": "2026-11-13T10:00:00Z",
   "vidennye": {
     "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/": "2026-11-13T02:17:22Z",
     "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-hydrogen/": "2026-11-13T02:17:22Z",
@@ -464,6 +471,7 @@
     "https://www.techmeme.com/261112/p64#a261112p64": "2026-11-13T02:17:24Z",
     "https://www.techmeme.com/261112/p65#a261112p65": "2026-11-13T02:17:23Z",
     "https://www.techmeme.com/261112/p66#a261112p66": "2026-11-13T02:17:24Z",
+    "https://www.techmeme.com/261113/p1#a261113p1": "2026-11-13T10:16:39Z",
     "https://x.com/AIatMeta/status/2119912647034642817": "2026-11-10T20:46:16Z",
     "https://x.com/AnthropicAI/status/2120117722230968385": "2026-11-10T20:46:17Z",
     "https://x.com/AnthropicAI/status/2120841731302154708": "2026-11-12T18:10:16Z",
