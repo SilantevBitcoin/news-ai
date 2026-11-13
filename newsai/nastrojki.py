@@ -94,6 +94,14 @@ def podpisi_x() -> dict:
     return {}
 
 
+def istochniki_dlya_sbora() -> dict:
+    """Для служебной строки по файлу прогона без новых полей (Р74): {"istochniki": имена без X,
+    "iks": (имя источника X, число аккаунтов) или None}."""
+    vse = _istochniki()
+    iks = next(((i["imya"], len(i.get("akkaunty") or [])) for i in vse if i.get("vid") == "x"), None)
+    return {"istochniki": [i["imya"] for i in vse if i.get("vid") != "x"], "iks": iks}
+
+
 def nazvaniya_v_kanale() -> dict:
-    """Имя источника → как назвать его в строке «Не удалось собрать» (Р64): v_kanale или имя."""
+    """Имя источника → как назвать его в канале (Р64, Р74): v_kanale или имя."""
     return {i["imya"]: i.get("v_kanale") or i["imya"] for i in _istochniki()}

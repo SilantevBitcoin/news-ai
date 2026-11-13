@@ -282,6 +282,8 @@ class X(unittest.TestCase):
                     ("fxtwitter.com/2/profile/net", otvet("fx_profil_404.json", 404, "application/json"))])
         rez = sbor.sobrat([x_istochnik("AnthropicAI", "net")], sost_s(X_PERIOD), SEYCHAS, set_)
         self.assertEqual(rez["ne_otvetili"], [])
+        self.assertEqual(rez["iks"], {"akkauntov": 2, "ne_otvetili": ["net"]})
+        self.assertEqual(rez["istochniki"], [])
         self.assertIsNone(rez["itogi"][0]["oshibka"])
         self.assertEqual({x["akkaunt"] for x in kand(rez)}, {"AnthropicAI"})
         self.assertEqual(len(kand(rez)), 3)
@@ -359,6 +361,7 @@ class X(unittest.TestCase):
         set_ = Set([("fxtwitter.com", OshibkaZaprosa("timeout")), ("syndication", Otvet(429))])
         rez = sbor.sobrat([x_istochnik("AnthropicAI", "sama")], sost_s(X_PERIOD), SEYCHAS, set_)
         self.assertEqual(rez["ne_otvetili"], ["X"])
+        self.assertEqual(rez["iks"], {"akkauntov": 2, "ne_otvetili": ["AnthropicAI", "sama"]})
         self.assertEqual(kand(rez), [])
         self.assertEqual(rez["itogi"][0]["otchet"], "пути: ни один")
         self.assertTrue(rez["itogi"][0]["oshibka"].startswith("не ответили аккаунты: AnthropicAI ("))
@@ -565,8 +568,11 @@ class Komanda(unittest.TestCase):
             kod = sbor.sbor(set_, SEYCHAS, put_ist, put_sost, put_progona)
         self.assertEqual(kod, 0)
         dannye = json.loads(put_progona.read_text(encoding="utf-8"))
-        self.assertEqual(sorted(dannye), ["github_polnyy_obhod", "kandidaty", "nachalo_okna", "nachalo_perioda",
-                                          "nachalo_progona", "ne_otvetili", "pervyy_progon", "tolko_v_vidennye"])
+        self.assertEqual(sorted(dannye), ["github_polnyy_obhod", "iks", "istochniki", "kandidaty", "nachalo_okna",
+                                          "nachalo_perioda", "nachalo_progona", "ne_otvetili", "pervyy_progon",
+                                          "tolko_v_vidennye"])
+        self.assertEqual(dannye["istochniki"], ["OpenAI", "DeepMind", GH])
+        self.assertEqual(dannye["iks"], {"akkauntov": 1, "ne_otvetili": []})
         self.assertEqual(dannye["nachalo_progona"], "2026-11-11T02:07:00Z")
         self.assertEqual(dannye["nachalo_perioda"], "2026-11-10T02:07:00Z")
         self.assertEqual(dannye["nachalo_okna"], "2026-11-10T02:07:00Z")

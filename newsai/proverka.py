@@ -358,7 +358,7 @@ def proverit_svezhest_zayavki(otkryta: datetime, sost: dict, moment: datetime, n
         n.dobavit("свежесть", f"заявка открыта больше {SVEZHEST_CHASOV} часов назад")
 
 
-def _vypusk(put_vypuska: Path, ne_otvetili: list, n: Narusheniya):
+def _vypusk(put_vypuska: Path, n: Narusheniya):
     """Схема и длина файла выпуска; вернуть выпуск или None."""
     try:
         vypusk = _json(put_vypuska)
@@ -366,7 +366,7 @@ def _vypusk(put_vypuska: Path, ne_otvetili: list, n: Narusheniya):
         n.dobavit("схема", "файл выпуска не читается")
         return None
     try:
-        publikaciya.soobshcheniya(vypusk, ne_otvetili)
+        publikaciya.soobshcheniya(vypusk)
     except publikaciya.OtkazVypuska as e:
         n.dobavit("длина" if _DLINA.match(str(e)) else "схема", str(e))
         return None
@@ -382,7 +382,7 @@ def _vypusk_i_progon(put_vypuska: Path, put_progona: Path, n: Narusheniya):
         return None
     if not _shema_progona(dannye_progona, n):
         return None
-    vypusk = _vypusk(put_vypuska, dannye_progona.get("ne_otvetili") or [], n)
+    vypusk = _vypusk(put_vypuska, n)
     return (vypusk, dannye_progona) if vypusk is not None else None
 
 
@@ -546,7 +546,7 @@ def _publikator(put_vypuska: Path, put_sboya: Path, put_sost: Path, zayavka: Pat
     if vid == "sboj":
         _prichina_sboya(put_sboya, n)
     else:
-        vypusk = _vypusk(put_vypuska, [], n)
+        vypusk = _vypusk(put_vypuska, n)
         if vypusk is not None:
             for _, _, gde, p in _punkty(vypusk):
                 _oboroty(p, sost, gde, n)
@@ -558,7 +558,7 @@ def _publikator(put_vypuska: Path, put_sboya: Path, put_sost: Path, zayavka: Pat
     sbor_dannye = _sbor_publikatora(put_sbora)
     chistyy, otbrosheno = ochistit(vypusk, sbor_dannye, sost)
     try:
-        publikaciya.soobshcheniya(chistyy, sbor_dannye.get("ne_otvetili") or [])
+        publikaciya.soobshcheniya(chistyy)
     except publikaciya.OtkazVypuska as e:
         n.dobavit("длина" if _DLINA.match(str(e)) else "схема", str(e))
     if not n.spisok and vyhod is not None:

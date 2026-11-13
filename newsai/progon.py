@@ -12,7 +12,9 @@
       "kandidaty": [<кандидат>],       # все кандидаты окна охвата
       "ne_otvetili": ["X", "OpenAI", ...],   # имена источников, как в istochniki.json
       "tolko_v_vidennye": ["<id>", ...],     # отметить увиденным без выпуска (issue полного обхода)
-      "github_polnyy_obhod": true | false    # полный обход issue удался — публикатор ставит github_obhod
+      "github_polnyy_obhod": true | false,   # полный обход issue удался — публикатор ставит github_obhod
+      "istochniki": ["OpenAI", ...],         # все опрошенные источники, кроме X (служебная строка, Р74)
+      "iks": {"akkauntov": 30, "ne_otvetili": ["mikeyk", ...]} | null   # аккаунты X без постов (Р74)
     }
 Кандидат: id (адрес записи; для X — адрес поста; для OpenAI API — адрес, дата и заголовок), istochnik,
 zagolovok, url, data (UTC), tekst (до 3000 знаков), skoro (issue GitHub), novyy (нет в vidennye),
@@ -81,7 +83,7 @@ class Kandidat:
 
 def zapisat(period: Period, okno: Period, pervyy_progon: bool, kandidaty: list[Kandidat],
             ne_otvetili: list[str], tolko_v_vidennye: list[str] = (), github_polnyy_obhod: bool = False,
-            put: Path | None = None) -> Path:
+            put: Path | None = None, istochniki: list[str] = (), iks: dict | None = None) -> Path:
     """Записать файл прогона; начало прогона — конец периода."""
     put = Path(put) if put else nastrojki.fayl_progona()
     put.parent.mkdir(parents=True, exist_ok=True)
@@ -94,6 +96,8 @@ def zapisat(period: Period, okno: Period, pervyy_progon: bool, kandidaty: list[K
         "ne_otvetili": list(ne_otvetili),
         "tolko_v_vidennye": list(tolko_v_vidennye),
         "github_polnyy_obhod": bool(github_polnyy_obhod),
+        "istochniki": list(istochniki),
+        "iks": dict(iks) if iks is not None else None,
     }
     put.write_text(json.dumps(dannye, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
     return put

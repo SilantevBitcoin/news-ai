@@ -186,7 +186,10 @@ def _odin(istochnik: dict, sost: dict, period: Period, okno: Period, poluchit, f
             "polnyy_obhod": False}
     try:
         if istochnik["vid"] == "x":
+            akkaunty = list(istochnik.get("akkaunty") or [])
+            itog["iks"] = {"akkauntov": len(akkaunty), "ne_otvetili": akkaunty}
             posty, otchet = iks.sobrat(istochnik, okno, poluchit)
+            itog["iks"]["ne_otvetili"] = list(otchet["molchat"])
             itog["kandidaty"] = _otmetit_novyy(posty, sost)
             itog["otchet"] = f"пути: {_puti_x(otchet)}"
             if otchet["molchat"]:
@@ -235,7 +238,8 @@ def _odin(istochnik: dict, sost: dict, period: Period, okno: Period, poluchit, f
 def sobrat(istochniki: list[dict], sost: dict, nachalo_progona: datetime, poluchit=None,
            fayl_issue: Path | None = None) -> dict:
     """Все источники → {period, okno, pervyy_progon, kandidaty, ne_otvetili, tolko_v_vidennye,
-    github_polnyy_obhod, itogi}; period и okno — Period, kandidaty — список Kandidat.
+    github_polnyy_obhod, itogi, istochniki, iks}; period и okno — Period, kandidaty — список Kandidat;
+    istochniki — имена опрошенных источников без X, iks — {akkauntov, ne_otvetili} или None (нет X).
 
     fayl_issue — путь к файлу сборщика issue (только сбор агента); None — файл не читается."""
     poluchit = poluchit or poluchit_po_seti
@@ -254,9 +258,11 @@ def sobrat(istochniki: list[dict], sost: dict, nachalo_progona: datetime, poluch
         if it["oshibka"]:
             ne_otvetili.append(it["imya"])
     polnyy = any(it["polnyy_obhod"] and not it["oshibka"] for it in itogi)
+    vse = [it["imya"] for it in itogi if "iks" not in it]
+    iks_dannye = next((it["iks"] for it in itogi if "iks" in it), None)
     return {"period": period, "okno": okno, "pervyy_progon": pervyy,
             "kandidaty": kandidaty, "ne_otvetili": ne_otvetili, "tolko_v_vidennye": tolko,
-            "github_polnyy_obhod": polnyy, "itogi": itogi}
+            "github_polnyy_obhod": polnyy, "itogi": itogi, "istochniki": vse, "iks": iks_dannye}
 
 
 KOD_NIKTO_NE_OTVETIL = 4
@@ -315,7 +321,8 @@ def _sbor(poluchit, nachalo_progona: datetime, put_istochnikov, put_sostoyaniya,
     rez = sobrat(zagruzit_istochniki(put_istochnikov), sost, nachalo_progona, poluchit, put_issue)
     period, okno = rez["period"], rez["okno"]
     put = progon.zapisat(period, okno, rez["pervyy_progon"], rez["kandidaty"], rez["ne_otvetili"],
-                         rez["tolko_v_vidennye"], rez["github_polnyy_obhod"], put_progona)
+                         rez["tolko_v_vidennye"], rez["github_polnyy_obhod"], put_progona,
+                         istochniki=rez["istochniki"], iks=rez["iks"])
     print(f"период: {v_stroku(period.nachalo)} — {v_stroku(period.konec)}"
           + (" (первый прогон)" if rez["pervyy_progon"] else ""))
     print(f"окно охвата: {v_stroku(okno.nachalo)} — {v_stroku(okno.konec)}")

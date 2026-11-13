@@ -444,7 +444,7 @@ class Publikator(SObrazcami):
         self.assertEqual(self.adresa(self.chistyy(), "sayty"),
                          ["https://www.techmeme.com/261110/p12", "https://deepmind.google/blog/deep-think-api/"])
         from newsai import publikaciya
-        s = publikaciya.soobshcheniya(self.chistyy(), [])
+        s = publikaciya.soobshcheniya(self.chistyy())
         self.assertEqual(s[2]["tekst"], "🌐 Блоги компаний\n"
                                         '1. <a href="https://www.techmeme.com/261110/p12">Мистраль</a> (Techmeme)\n'
                                         '2. ⭐ <a href="https://deepmind.google/blog/deep-think-api/">Gemini получил '

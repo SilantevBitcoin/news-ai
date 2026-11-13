@@ -117,7 +117,9 @@
       "novyy": false
     }
   ],
-  "ne_otvetili": ["X", "OpenAI API", "X"],
+  "ne_otvetili": ["OpenAI API", "Techmeme", "OpenAI API"],
   "tolko_v_vidennye": ["https://github.com/anthropics/claude-code/issues/1000"],
-  "github_polnyy_obhod": true
+  "github_polnyy_obhod": true,
+  "istochniki": ["OpenAI API", "Techmeme", "DeepMind"],
+  "iks": {"akkauntov": 4, "ne_otvetili": ["gdb", "AT_T"]}
 }

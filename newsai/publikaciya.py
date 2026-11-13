@@ -5,7 +5,7 @@
 отправленного сообщения — sostoyanie.zapisat_punkt, в конце — sostoyanie.zavershit_progon.
 
 У публикатора файл прогона — его собственный сбор (`sbor --konec-iz-zayavki`), файл выпуска —
-очищенный `proverit --vyhod`: «Не удалось собрать», конец периода и увиденное — из сбора публикатора.
+очищенный `proverit --vyhod`: служебная строка сбора, конец периода и увиденное — из сбора публикатора.
 Обрыв отправки — одна строка сбоя, её шлёт сам opublikovat; вызывающий второй не шлёт. Строка сбоя в
 канал — слова по таблице (slova_sboya, Р66), причина и текст ошибки — только в stderr.
 
@@ -74,7 +74,9 @@ SLOVA_SBOYA = {
 SLOVA_ZAYAVKA_NE_PROSHLA = "не собран: выпуск не прошёл проверку"
 PODPISI_SPISKOV = {"sayty": "🌐 Блоги компаний", "x": "𝕏 Посты в X", "dengi": "💰 Деньги и сделки",
                    "github": "🛠 GitHub Claude Code"}
-NE_UDALOS_SOBRAT = "⚠️ Не удалось собрать: "
+SBOR_NACHALO = "ℹ️ Сбор: "
+SBOR_PUSTO = "ℹ️ Новых новостей нет · "
+SBOR_NE_OTOBRANO = "ℹ️ В выпуск ничего не отобрано · "
 
 RAZDELY = (
     ("krupnye", 3, ("zagolovok", "abzacy", "url", "oboroty", "idy")),
@@ -85,7 +87,7 @@ RAZDELY = (
 )
 ODNO_IZ = {"dengi": ("istochnik", "akkaunt")}
 NAZVANIYA = {"krupnye": "крупная новость", "sayty": "список сайтов", "x": "список X",
-             "dengi": "список денег и сделок", "github": "список GitHub", "ne_otvetili": "не удалось собрать"}
+             "dengi": "список денег и сделок", "github": "список GitHub", "sbor": "служебная строка сбора"}
 VID_PUNKTA = {"krupnye": "krupnaya", "sayty": "sayty", "x": "x", "dengi": "dengi", "github": "github"}
 
 _UPRAVLYAYUSHCHIE = re.compile(r"[\x00-\x1f\x7f-\x9f]")
@@ -248,21 +250,19 @@ def _iz_nastroek(funkciya: Callable[[], dict]) -> dict:
         raise OtkazVypuska(f"файл настроек источников не читается: {type(e).__name__}") from None
 
 
-def soobshcheniya(vypusk: dict, ne_otvetili: list[str]) -> list[dict]:
-    """Файл выпуска → сообщения по порядку Р49: крупные, сайты, X, деньги, GitHub, «Не удалось собрать».
+def soobshcheniya(vypusk: dict) -> list[dict]:
+    """Файл выпуска → сообщения по порядку Р49: крупные, сайты, X, деньги, GitHub.
 
-    Сообщение: vid (krupnye, sayty, x, dengi, github, ne_otvetili — «Не удалось собрать»), tekst
-    (HTML), prevyu (адрес превью или None — выключено), punkty (что записать в состояние после
-    отправки). Подписи X и названия не ответивших — из файла настроек источников (nastrojki).
-    Пустой выпуск — пустой список. Негодный выпуск — OtkazVypuska.
+    Сообщение: vid (krupnye, sayty, x, dengi, github; у служебной строки — sbor), tekst (HTML),
+    prevyu (адрес превью или None — выключено), punkty (что записать в состояние после отправки).
+    Подписи X — из файла настроек источников (nastrojki). Пустой выпуск — пустой список; служебную
+    строку сбора добавляет soobshchenie_sbora. Негодный выпуск — OtkazVypuska.
     """
     if not isinstance(vypusk, dict):
         raise OtkazVypuska("файл выпуска — не объект JSON")
     lishnie = sorted(set(vypusk) - {r for r, _, _ in RAZDELY})
     if lishnie:
         raise OtkazVypuska(f"в файле выпуска лишние поля: {', '.join(lishnie)}")
-    if not isinstance(ne_otvetili, (list, tuple)):
-        raise OtkazVypuska("ne_otvetili — не список")
 
     razdely = {}
     for razdel, predel, polya in RAZDELY:
@@ -281,17 +281,97 @@ def soobshcheniya(vypusk: dict, ne_otvetili: list[str]) -> list[dict]:
     for razdel, _, _ in RAZDELY[1:]:
         if razdely[razdel]:
             vyhod.append(_spisok(razdel, razdely[razdel], podpisi))
-    imena = list(dict.fromkeys(i.strip() for i in ne_otvetili if isinstance(i, str) and i.strip()))
-    if imena:
-        nazvaniya = _iz_nastroek(nastrojki.nazvaniya_v_kanale)
-        slova = list(dict.fromkeys(nazvaniya.get(i) or i for i in imena))
-        vyhod.append({"vid": "ne_otvetili", "tekst": _ekranirovat_tekst(NE_UDALOS_SOBRAT + ", ".join(slova)),
-                      "prevyu": None, "punkty": []})
+    _proverit_dlinu(vyhod)
+    return vyhod
+
+
+def _proverit_dlinu(vyhod: list[dict]) -> None:
     for n, s in enumerate(vyhod, 1):
         if dlina(s["tekst"]) > nastrojki.LIMIT_SOOBSHCHENIYA:
             raise OtkazVypuska(f"сообщение {n} ({NAZVANIYA[s['vid']]}) длиннее "
                                f"{nastrojki.LIMIT_SOOBSHCHENIYA} знаков: {dlina(s['tekst'])} — сократите текст")
-    return vyhod
+
+
+def _imena(znachenie) -> list[str]:
+    """Непустые строки списка без повторов, в прежнем порядке; не список — пусто [техника]."""
+    if not isinstance(znachenie, (list, tuple)):
+        return []
+    return list(dict.fromkeys(i.strip() for i in znachenie if isinstance(i, str) and i.strip()))
+
+
+def _ne_otvetil(imena: list[str], vse: bool) -> str:
+    """« (не ответил: A)» / « (не ответили: A, B)»; не ответил ни один из нескольких — так и пишем."""
+    if not imena:
+        return ""
+    if vse and len(imena) > 1:
+        return " (не ответил ни один)"
+    return f" ({'не ответил' if len(imena) == 1 else 'не ответили'}: {', '.join(imena)})"
+
+
+def stroka_sbora(dannye_progona: dict, v_vypuske: int) -> str:
+    """Служебная строка сбора (Р74) обычным текстом, по файлу прогона — сбору публикатора.
+
+    `ℹ️ Сбор: источники 13 из 14 (не ответил: Techmeme) · X 27 из 30 (не ответили: @a, @b, @c) ·
+    найдено 40, новых 9, в выпуске 5`; X ответил весь — `X 30 из 30 аккаунтов`; выпуск пустой —
+    `ℹ️ Новых новостей нет · источники 14 из 14 · X 30 из 30 · найдено 25, новых 0`.
+    Источники — istochniki прогона (все, кроме X), не ответившие — из ne_otvetili, названия — как в
+    канале (v_kanale или имя). X — по iks прогона. Файл прогона без istochniki — источники из
+    настроек; без iks — X только когда X целиком в не ответивших (0 из N по настройкам) [техника].
+    найдено — кандидаты прогона, новых — с novyy, в выпуске — пункты опубликованного выпуска.
+    """
+    if not isinstance(dannye_progona, dict):
+        raise OtkazVypuska("файл прогона — не объект JSON")
+    ne_otvetili = _imena(dannye_progona.get("ne_otvetili"))
+    istochniki = dannye_progona.get("istochniki")
+    iks = dannye_progona.get("iks")
+    nastroyki = None
+    if not isinstance(istochniki, list) or "iks" not in dannye_progona:
+        nastroyki = _iz_nastroek(nastrojki.istochniki_dlya_sbora)
+    istochniki = _imena(istochniki) if isinstance(istochniki, list) else nastroyki["istochniki"]
+    nazvaniya = _iz_nastroek(nastrojki.nazvaniya_v_kanale) if ne_otvetili else {}
+
+    upali = [i for i in istochniki if i in ne_otvetili]
+    slova = list(dict.fromkeys(nazvaniya.get(i) or i for i in upali))
+    chasti = [f"источники {len(istochniki) - len(upali)} из {len(istochniki)}"
+              + _ne_otvetil(slova, vse=bool(upali) and len(upali) == len(istochniki))]
+
+    pusto = v_vypuske == 0
+    if isinstance(iks, dict):
+        vsego = iks.get("akkauntov")
+        molchat = _imena(iks.get("ne_otvetili"))
+        if isinstance(vsego, int) and not isinstance(vsego, bool) and vsego >= len(molchat):
+            stroka = f"X {vsego - len(molchat)} из {vsego}"
+            if molchat:
+                stroka += _ne_otvetil([f"@{a.lstrip('@')}" for a in molchat], vse=len(molchat) == vsego)
+            elif not pusto:
+                stroka += " аккаунтов"
+            chasti.append(stroka)
+    elif nastroyki is not None and nastroyki["iks"] is not None:
+        imya_x, vsego = nastroyki["iks"]
+        if imya_x in ne_otvetili:
+            chasti.append(f"X 0 из {vsego}")
+
+    kandidaty = [k for k in dannye_progona.get("kandidaty") or [] if isinstance(k, dict)]
+    novyh = sum(1 for k in kandidaty if k.get("novyy", True) is not False)
+    schet = f"найдено {len(kandidaty)}, новых {novyh}"
+    if not pusto or novyh:
+        schet += f", в выпуске {v_vypuske}"
+    chasti.append(schet)
+    if not pusto:
+        nachalo = SBOR_NACHALO
+    else:
+        nachalo = SBOR_NE_OTOBRANO if novyh else SBOR_PUSTO
+    return nachalo + " · ".join(chasti)
+
+
+def soobshchenie_sbora(dannye_progona: dict, soobshch: list[dict]) -> dict:
+    """Служебная строка сбора сообщением (Р74): HTML с экранированием, превью выключено, в состояние
+    ничего; «в выпуске» — пункты сообщений soobshch (крупные и строки списков)."""
+    v_vypuske = sum(len(s["punkty"]) for s in soobshch)
+    s = {"vid": "sbor", "tekst": _ekranirovat_tekst(stroka_sbora(dannye_progona, v_vypuske)),
+         "prevyu": None, "punkty": []}
+    _proverit_dlinu([s])
+    return s
 
 
 def zapros(soobshchenie: dict) -> dict:
@@ -515,14 +595,16 @@ def opublikovat(suhoj: bool = False, otpravitel: Otpravitel | None = None) -> in
     except (OSError, ValueError) as e:
         return _otkaz(f"файл выпуска не читается: {e}")
     try:
-        soobshch = soobshcheniya(vypusk, dannye_progona.get("ne_otvetili") or [])
+        soobshch = soobshcheniya(vypusk)
+        pustoy = not soobshch
+        soobshch.append(soobshchenie_sbora(dannye_progona, soobshch))
     except OtkazVypuska as e:
         return _otkaz(str(e))
 
     if suhoj:
         _pechat_zaprosov([zapros(s) for s in soobshch])
-        if not soobshch:
-            print("выпуск пустой — запросов нет")
+        if pustoy:
+            print("выпуск пустой — только служебная строка сбора")
         return 0
 
     try:
@@ -533,7 +615,7 @@ def opublikovat(suhoj: bool = False, otpravitel: Otpravitel | None = None) -> in
         sost = sostoyanie.zagruzit()
     except sostoyanie.OshibkaSostoyaniya as e:
         return _otkaz(str(e))
-    svoy = soobshch and otpravitel is None
+    svoy = otpravitel is None
     if svoy:
         try:
             otpravitel = _otpravitel_po_tokenu()
@@ -569,7 +651,8 @@ def opublikovat(suhoj: bool = False, otpravitel: Otpravitel | None = None) -> in
     sostoyanie.zavershit_progon(sost, nachalo_progona, _idy_progona(dannye_progona, nachalo_progona), seychas(),
                                 slot=slot_zayavki,
                                 github_obhod=dannye_progona.get("github_polnyy_obhod") is True)
-    print(f"отправлено сообщений: {len(soobshch)}" if soobshch else "выпуск пустой — ничего не отправлено")
+    print("выпуск пустой — отправлена служебная строка сбора" if pustoy
+          else f"отправлено сообщений: {len(soobshch)}")
     return 0
 
 
