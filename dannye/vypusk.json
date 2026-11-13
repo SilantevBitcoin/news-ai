@@ -1,0 +1,120 @@
+{
+ "krupnye": [
+  {
+   "zagolovok": "Google выпустила Gemini 4 Hydrogen — быструю модель для кода и агентов",
+   "abzacy": [
+    "Google представила Gemini 4 Hydrogen — младшую модель семейства Gemini 4 рядом с Carbon и Argon.",
+    "Она рассчитана на быстрое выполнение задач: правку кода, запуск тестов, агентные сценарии, работу с таблицами и документами.",
+    "Модель доступна во всех тарифах Google AI Studio, в Gemini API, приложении Gemini, Поиске Google и в Antigravity для платных подписчиков.",
+    "Окно контекста — миллион токенов по единой цене: 1,5 доллара за миллион входных и 7,5 за миллион выходных токенов.",
+    "В индексе Artificial Analysis Hydrogen набирает 51 балл на уровне по умолчанию против 50 у Argon, а на новом уровне xhigh — 54.",
+    "Мышление теперь четырёхуровневое: low, medium, high и новый xhigh; по данным Google, задачи выполняются в 2,5 раза быстрее, чем у Gemini 3.8 Flash.",
+    "В Antigravity появился Orchestrator: он переключает Carbon и Hydrogen в одной сессии и тратит на 24% меньше квоты.",
+    "Модель уже подключили в Cursor; Саймон Уиллисон отмечает, что скидка к старшим моделям пока всего 25%, а с декабря станет 75%."
+   ],
+   "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/",
+   "oboroty": true,
+   "idy": [
+    "https://deepmind.google/blog/introducing-gemini-4-hydrogen/",
+    "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
+    "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-hydrogen/",
+    "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+    "https://simonwillison.net/2026/Nov/12/llm-gemini/",
+    "https://www.techmeme.com/261112/p60#a261112p60",
+    "https://x.com/GoogleDeepMind/status/2120940338869055788",
+    "https://x.com/OfficialLoganK/status/2120940951292268640",
+    "https://x.com/demishassabis/status/2120942605466800374",
+    "https://x.com/cursor_ai/status/2120944639633211619"
+   ]
+  }
+ ],
+ "sayty": [
+  {
+   "zagolovok": "Claude Code 2.1.323: экспериментальный Code Mode, где Claude вызывает инструменты кодом на JavaScript",
+   "url": "https://code.claude.com/docs/en/changelog#2-1-323",
+   "istochnik": "Claude Code",
+   "zvezda": false,
+   "idy": [
+    "https://code.claude.com/docs/en/changelog#2-1-323"
+   ]
+  },
+  {
+   "zagolovok": "Claude Meetings: Claude подключается к видеозвонку и начинает работу, пока вы говорите",
+   "url": "https://claude.com/resources/articles/claude-meetings",
+   "istochnik": "Блог Claude",
+   "zvezda": false,
+   "idy": [
+    "https://claude.com/resources/articles/claude-meetings"
+   ]
+  },
+  {
+   "zagolovok": "A2UI 1.0: открытый протокол, чтобы агенты рисовали интерактивные экраны в вебе и мобильных приложениях",
+   "url": "https://developers.googleblog.com/a2ui-10-build-delightful-fast-reliable-agentic-experiences/",
+   "istochnik": "Google Developers Blog",
+   "zvezda": false,
+   "idy": [
+    "https://developers.googleblog.com/a2ui-10-build-delightful-fast-reliable-agentic-experiences/"
+   ]
+  },
+  {
+   "zagolovok": "Google: Agent Anomaly Detection ловит 87% вредных действий агентов без задержки",
+   "url": "https://developers.googleblog.com/how-agent-anomaly-detection-scores-on-benchmarks-we-didnt-write/",
+   "istochnik": "Google Developers Blog",
+   "zvezda": false,
+   "idy": [
+    "https://developers.googleblog.com/how-agent-anomaly-detection-scores-on-benchmarks-we-didnt-write/"
+   ]
+  }
+ ],
+ "x": [
+  {
+   "zagolovok": "OpenAI представила кибер-продукты Daybreak Defense Factory и Daybreak Red Team",
+   "url": "https://x.com/gdb/status/2121004237413142656",
+   "akkaunt": "gdb",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/gdb/status/2121004237413142656",
+    "https://x.com/thsottiaux/status/2121036562058400200"
+   ]
+  },
+  {
+   "zagolovok": "Dots в ChatGPT стали быстрее и поддерживают свои инструкции; сброс лимитов уже активирован",
+   "url": "https://x.com/thsottiaux/status/2120999993079451919",
+   "akkaunt": "thsottiaux",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/thsottiaux/status/2120999993079451919"
+   ]
+  }
+ ],
+ "dengi": [
+  {
+   "zagolovok": "Размещение акций Anthropic переподписано примерно в шесть раз",
+   "url": "https://www.techmeme.com/261112/p55#a261112p55",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261112/p55#a261112p55"
+   ]
+  },
+  {
+   "zagolovok": "Выручка Cerebras в третьем квартале выросла на 70% — до 230,9 млн долларов, объявлена сделка с Microsoft",
+   "url": "https://www.techmeme.com/261112/p57#a261112p57",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261112/p57#a261112p57"
+   ]
+  },
+  {
+   "zagolovok": "Hatz AI, делающая ИИ-инструменты для поставщиков IT-услуг, привлекла 24 млн долларов",
+   "url": "https://www.techmeme.com/261112/p65#a261112p65",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261112/p65#a261112p65"
+   ]
+  }
+ ],
+ "github": []
+}
