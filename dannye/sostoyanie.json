@@ -385,9 +385,23 @@
       "url": "https://x.com/testingcatalog/status/2121338593675489338",
       "vid": "x",
       "zagolovok": "Reason Machines запустила кодинг-агента Reason: по её тестам решает больше задач, чем Codex на той же модели, и тратит на 22% меньше"
+    },
+    {
+      "data": "2026-11-13T21:51:00Z",
+      "oboroty": false,
+      "url": "https://code.claude.com/docs/en/changelog#2-1-325",
+      "vid": "sayty",
+      "zagolovok": "Claude Code 2.1.325: песочница по умолчанию спрашивает разрешение на команды, подсказки следующего запроса в VS Code"
+    },
+    {
+      "data": "2026-11-13T21:51:00Z",
+      "oboroty": false,
+      "url": "https://x.com/testingcatalog/status/2121352761379860628",
+      "vid": "x",
+      "zagolovok": "Все пользователи Gemini в США могут подключить Google Wallet и получать персональные ответы о финансах"
     }
   ],
-  "posledniy_sbor": "2026-11-13T19:49:41Z",
+  "posledniy_sbor": "2026-11-13T20:49:10Z",
   "posledniy_slot": "2026-11-13T18:00:00Z",
   "vidennye": {
     "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/": "2026-11-13T02:17:22Z",
@@ -409,6 +423,7 @@
     "https://claude.dev/blog/safely-scaling-multi-agent-teams-with-fable-5-2/": "2026-11-10T20:46:17Z",
     "https://claude.dev/blog/which-claude-model-should-you-build-with/": "2026-11-10T20:46:17Z",
     "https://code.claude.com/docs/en/changelog#2-1-323": "2026-11-13T02:17:23Z",
+    "https://code.claude.com/docs/en/changelog#2-1-325": "2026-11-13T21:51:00Z",
     "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/": "2026-11-12T18:10:16Z",
     "https://deepmind.google/blog/gemini-4-carbon-is-now-available/": "2026-11-10T20:46:15Z",
     "https://deepmind.google/blog/introducing-alphaproof-code/": "2026-11-10T20:46:17Z",
@@ -576,6 +591,9 @@
     "https://www.techmeme.com/261113/p23#a261113p23": "2026-11-13T20:35:18Z",
     "https://www.techmeme.com/261113/p24#a261113p24": "2026-11-13T20:35:18Z",
     "https://www.techmeme.com/261113/p25#a261113p25": "2026-11-13T20:35:18Z",
+    "https://www.techmeme.com/261113/p26#a261113p26": "2026-11-13T21:51:00Z",
+    "https://www.techmeme.com/261113/p27#a261113p27": "2026-11-13T21:51:00Z",
+    "https://www.techmeme.com/261113/p28#a261113p28": "2026-11-13T21:51:00Z",
     "https://www.techmeme.com/261113/p7#a261113p7": "2026-11-13T18:16:34Z",
     "https://www.techmeme.com/261113/p8#a261113p8": "2026-11-13T18:16:34Z",
     "https://www.techmeme.com/261113/p9#a261113p9": "2026-11-13T18:16:34Z",
@@ -723,6 +741,7 @@
     "https://x.com/testingcatalog/status/2121281708888564178": "2026-11-13T20:35:18Z",
     "https://x.com/testingcatalog/status/2121297682333606345": "2026-11-13T20:35:18Z",
     "https://x.com/testingcatalog/status/2121338593675489338": "2026-11-13T20:43:55Z",
+    "https://x.com/testingcatalog/status/2121352761379860628": "2026-11-13T21:51:00Z",
     "https://x.com/thsottiaux/status/2120021043876106429": "2026-11-10T20:46:17Z",
     "https://x.com/thsottiaux/status/2120266880963473789": "2026-11-11T00:04:15Z",
     "https://x.com/thsottiaux/status/2120267268517249036": "2026-11-11T00:04:17Z",
