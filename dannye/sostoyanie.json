@@ -371,13 +371,28 @@
       "url": "https://x.com/AnthropicAI/status/2121317227618340990",
       "vid": "x",
       "zagolovok": "Anthropic дала 10 рекомендаций, как проектировать, проводить и описывать оценки безопасности моделей"
+    },
+    {
+      "data": "2026-11-13T20:43:55Z",
+      "oboroty": false,
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/google-cloud-credits-gdp-ai-studio/",
+      "vid": "sayty",
+      "zagolovok": "Облачные кредиты Google Developer Program теперь прямо в AI Studio: подписчики AI Pro и Ultra получают их там же"
+    },
+    {
+      "data": "2026-11-13T20:43:55Z",
+      "oboroty": false,
+      "url": "https://x.com/testingcatalog/status/2121338593675489338",
+      "vid": "x",
+      "zagolovok": "Reason Machines запустила кодинг-агента Reason: по её тестам решает больше задач, чем Codex на той же модели, и тратит на 22% меньше"
     }
   ],
-  "posledniy_sbor": "2026-11-13T19:30:59Z",
+  "posledniy_sbor": "2026-11-13T19:41:59Z",
   "posledniy_slot": "2026-11-13T18:00:00Z",
   "vidennye": {
     "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/": "2026-11-13T02:17:22Z",
     "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-hydrogen/": "2026-11-13T02:17:22Z",
+    "https://blog.google/innovation-and-ai/technology/developers-tools/google-cloud-credits-gdp-ai-studio/": "2026-11-13T20:43:55Z",
     "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/": "2026-11-13T02:17:22Z",
     "https://claude.com/resources/articles/building-always-on-agents": "2026-11-13T20:35:18Z",
     "https://claude.com/resources/articles/claude-for-manufacturing": "2026-11-12T18:10:15Z",
@@ -707,6 +722,7 @@
     "https://x.com/testingcatalog/status/2121277055513862172": "2026-11-13T20:35:18Z",
     "https://x.com/testingcatalog/status/2121281708888564178": "2026-11-13T20:35:18Z",
     "https://x.com/testingcatalog/status/2121297682333606345": "2026-11-13T20:35:18Z",
+    "https://x.com/testingcatalog/status/2121338593675489338": "2026-11-13T20:43:55Z",
     "https://x.com/thsottiaux/status/2120021043876106429": "2026-11-10T20:46:17Z",
     "https://x.com/thsottiaux/status/2120266880963473789": "2026-11-11T00:04:15Z",
     "https://x.com/thsottiaux/status/2120267268517249036": "2026-11-11T00:04:17Z",
