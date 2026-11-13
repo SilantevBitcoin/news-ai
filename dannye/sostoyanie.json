@@ -301,10 +301,52 @@
       "url": "https://www.techmeme.com/261113/p1#a261113p1",
       "vid": "sayty",
       "zagolovok": "Meta добавила в Muse исходящие звонки в компании — для платных подписчиков в США"
+    },
+    {
+      "data": "2026-11-13T18:16:33Z",
+      "oboroty": false,
+      "url": "https://openai.com/index/introducing-chatgpt-wallet",
+      "vid": "sayty",
+      "zagolovok": "ChatGPT Wallet: агенты ChatGPT смогут сами оплачивать покупки с вашего одобрения"
+    },
+    {
+      "data": "2026-11-13T18:16:34Z",
+      "oboroty": false,
+      "url": "https://x.com/deepseek_ai/status/2121247896918253875",
+      "vid": "x",
+      "zagolovok": "DeepSeek открыла через API возможности своего приложения: поиск, файлы, голос, OCR"
+    },
+    {
+      "data": "2026-11-13T18:16:34Z",
+      "oboroty": false,
+      "url": "https://x.com/GoogleDeepMind/status/2121229774865527097",
+      "vid": "x",
+      "zagolovok": "Google DeepMind опубликовала наборы данных PARDIG и SatWeave, на которых построен WeatherNext 3"
+    },
+    {
+      "data": "2026-11-13T18:16:34Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261113/p18#a261113p18",
+      "vid": "dengi",
+      "zagolovok": "IPO Anthropic закрыто для институциональных инвесторов из материкового Китая и Гонконга"
+    },
+    {
+      "data": "2026-11-13T18:16:34Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261113/p20#a261113p20",
+      "vid": "dengi",
+      "zagolovok": "Уолл-стрит опасается, что уход Хуанга замедлит сделки Nvidia: кредитный консорциум на 500 млрд долларов в неопределённости"
+    },
+    {
+      "data": "2026-11-13T18:16:34Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261113/p11#a261113p11",
+      "vid": "dengi",
+      "zagolovok": "Долг Nscale вырос до 5,5 млрд долларов, Nvidia вложит 2 млрд в её конвертируемое финансирование"
     }
   ],
-  "posledniy_sbor": "2026-11-13T01:13:04Z",
-  "posledniy_slot": "2026-11-13T10:00:00Z",
+  "posledniy_sbor": "2026-11-13T17:12:28Z",
+  "posledniy_slot": "2026-11-13T18:00:00Z",
   "vidennye": {
     "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/": "2026-11-13T02:17:22Z",
     "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-hydrogen/": "2026-11-13T02:17:22Z",
@@ -400,8 +442,10 @@
     "https://github.com/anthropics/claude-code/releases/tag/v2.1.322": "2026-11-10T20:46:17Z",
     "https://latent.space/p/ainews-d-day-decision-models-day/": "2026-11-12T18:10:15Z",
     "https://latent.space/p/ainews-fable-5-2-retakes-world-1-llm-spot-as-ant-ipo-roadshow-begins/": "2026-11-10T20:46:17Z",
+    "https://latent.space/p/ainews-jensen-huang-resigns-after-33-years-leading-nvidia/": "2026-11-13T18:16:34Z",
     "https://latent.space/p/ainews-mercor-750m-series-d-at-20b-valuation-3b-run-rate/": "2026-11-12T18:10:16Z",
     "https://openai.com/index/introducing-businesses-chatgpt": "2026-11-10T20:46:17Z",
+    "https://openai.com/index/introducing-chatgpt-wallet": "2026-11-13T18:16:33Z",
     "https://platform.claude.com/docs/en/release-notes/overview#claude-fable-5-2": "2026-11-10T20:46:17Z",
     "https://platform.claude.com/docs/en/release-notes/overview#dreams-claude-fable-5-2": "2026-11-12T18:10:15Z",
     "https://platform.claude.com/docs/en/release-notes/overview#fast-mode-claude-fable-5-2": "2026-11-10T20:46:17Z",
@@ -472,9 +516,23 @@
     "https://www.techmeme.com/261112/p65#a261112p65": "2026-11-13T02:17:23Z",
     "https://www.techmeme.com/261112/p66#a261112p66": "2026-11-13T02:17:24Z",
     "https://www.techmeme.com/261113/p1#a261113p1": "2026-11-13T10:16:39Z",
+    "https://www.techmeme.com/261113/p10#a261113p10": "2026-11-13T18:16:34Z",
+    "https://www.techmeme.com/261113/p11#a261113p11": "2026-11-13T18:16:34Z",
+    "https://www.techmeme.com/261113/p12#a261113p12": "2026-11-13T18:16:34Z",
+    "https://www.techmeme.com/261113/p13#a261113p13": "2026-11-13T18:16:34Z",
+    "https://www.techmeme.com/261113/p14#a261113p14": "2026-11-13T18:16:34Z",
+    "https://www.techmeme.com/261113/p15#a261113p15": "2026-11-13T18:16:33Z",
+    "https://www.techmeme.com/261113/p16#a261113p16": "2026-11-13T18:16:34Z",
+    "https://www.techmeme.com/261113/p17#a261113p17": "2026-11-13T18:16:34Z",
+    "https://www.techmeme.com/261113/p18#a261113p18": "2026-11-13T18:16:34Z",
+    "https://www.techmeme.com/261113/p20#a261113p20": "2026-11-13T18:16:34Z",
+    "https://www.techmeme.com/261113/p7#a261113p7": "2026-11-13T18:16:34Z",
+    "https://www.techmeme.com/261113/p8#a261113p8": "2026-11-13T18:16:34Z",
+    "https://www.techmeme.com/261113/p9#a261113p9": "2026-11-13T18:16:34Z",
     "https://x.com/AIatMeta/status/2119912647034642817": "2026-11-10T20:46:16Z",
     "https://x.com/AnthropicAI/status/2120117722230968385": "2026-11-10T20:46:17Z",
     "https://x.com/AnthropicAI/status/2120841731302154708": "2026-11-12T18:10:16Z",
+    "https://x.com/AnthropicAI/status/2121272083863011714": "2026-11-13T18:16:34Z",
     "https://x.com/ClaudeDevs/status/2119898687803621427": "2026-11-10T20:46:17Z",
     "https://x.com/ClaudeDevs/status/2120227979041341943": "2026-11-10T20:46:17Z",
     "https://x.com/ClaudeDevs/status/2120275296637321476": "2026-11-11T00:04:16Z",
@@ -486,6 +544,7 @@
     "https://x.com/GoogleDeepMind/status/2120532824465805749": "2026-11-12T18:10:16Z",
     "https://x.com/GoogleDeepMind/status/2120841923237683462": "2026-11-12T18:10:16Z",
     "https://x.com/GoogleDeepMind/status/2120940338869055788": "2026-11-12T18:10:15Z",
+    "https://x.com/GoogleDeepMind/status/2121229774865527097": "2026-11-13T18:16:34Z",
     "https://x.com/MistralAI/status/2120489851615084876": "2026-11-12T18:10:16Z",
     "https://x.com/OfficialLoganK/status/2120024720510984234": "2026-11-10T20:46:17Z",
     "https://x.com/OfficialLoganK/status/2120186016254624039": "2026-11-10T20:46:17Z",
@@ -493,6 +552,7 @@
     "https://x.com/OfficialLoganK/status/2120581433639198885": "2026-11-12T18:10:16Z",
     "https://x.com/OfficialLoganK/status/2120738935261585576": "2026-11-12T18:10:16Z",
     "https://x.com/OfficialLoganK/status/2120940951292268640": "2026-11-13T02:17:22Z",
+    "https://x.com/OfficialLoganK/status/2121115028447531353": "2026-11-13T18:16:34Z",
     "https://x.com/OpenAI/status/2119913172039868579": "2026-11-10T20:46:17Z",
     "https://x.com/OpenAI/status/2120202353907486826": "2026-11-10T20:46:17Z",
     "https://x.com/OpenAI/status/2120216592395174382": "2026-11-10T20:46:17Z",
@@ -500,6 +560,7 @@
     "https://x.com/OpenAIDevs/status/2120258357533749755": "2026-11-11T00:04:16Z",
     "https://x.com/OpenAIDevs/status/2120669165283680644": "2026-11-12T18:10:16Z",
     "https://x.com/alexalbert__/status/2119916954337349737": "2026-11-10T20:46:17Z",
+    "https://x.com/alexalbert__/status/2120983722182988206": "2026-11-13T18:16:34Z",
     "https://x.com/claudeai/status/2119899459761131615": "2026-11-10T20:46:17Z",
     "https://x.com/claudeai/status/2120174844822298730": "2026-11-10T20:46:17Z",
     "https://x.com/claudeai/status/2120206365759094857": "2026-11-10T20:46:17Z",
@@ -508,12 +569,14 @@
     "https://x.com/cursor_ai/status/2120193584670580857": "2026-11-10T20:46:17Z",
     "https://x.com/cursor_ai/status/2120295553309565139": "2026-11-11T00:04:16Z",
     "https://x.com/cursor_ai/status/2120944639633211619": "2026-11-13T02:17:22Z",
+    "https://x.com/deepseek_ai/status/2121247896918253875": "2026-11-13T18:16:34Z",
     "https://x.com/demishassabis/status/2120210297948696997": "2026-11-10T20:46:17Z",
     "https://x.com/demishassabis/status/2120565316619284734": "2026-11-12T18:10:16Z",
     "https://x.com/demishassabis/status/2120941564000100437": "2026-11-13T02:17:24Z",
     "https://x.com/demishassabis/status/2120942605466800374": "2026-11-13T02:17:22Z",
     "https://x.com/gdb/status/2120222471412666562": "2026-11-10T20:46:17Z",
     "https://x.com/gdb/status/2121004237413142656": "2026-11-13T02:17:23Z",
+    "https://x.com/gdb/status/2121295213025194172": "2026-11-13T18:16:33Z",
     "https://x.com/jackclarkSF/status/2120162750660026481": "2026-11-10T20:46:17Z",
     "https://x.com/kevinweil/status/2120678428378894684": "2026-11-12T18:10:16Z",
     "https://x.com/mikeyk/status/2120254420105806188": "2026-11-10T20:46:17Z",
@@ -607,6 +670,7 @@
     "https://x.com/thsottiaux/status/2120999993079451919": "2026-11-13T02:17:23Z",
     "https://x.com/thsottiaux/status/2121036562058400200": "2026-11-13T02:17:23Z",
     "https://x.com/trq212/status/2120223476279869875": "2026-11-10T20:46:17Z",
-    "https://x.com/trq212/status/2120620900785820143": "2026-11-12T18:10:16Z"
+    "https://x.com/trq212/status/2120620900785820143": "2026-11-12T18:10:16Z",
+    "https://x.com/trq212/status/2121067561915916575": "2026-11-13T18:16:34Z"
   }
 }
