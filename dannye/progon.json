@@ -1,0 +1,475 @@
+{
+  "nachalo_progona": "2026-11-14T18:07:58Z",
+  "nachalo_perioda": "2026-11-14T09:12:39Z",
+  "nachalo_okna": "2026-11-13T18:07:58Z",
+  "pervyy_progon": false,
+  "kandidaty": [
+    {
+      "id": "https://code.claude.com/docs/en/changelog#2-1-325",
+      "istochnik": "Claude Code",
+      "zagolovok": "2.1.325",
+      "url": "https://code.claude.com/docs/en/changelog#2-1-325",
+      "data": "2026-11-13T21:02:14Z",
+      "tekst": "- Added a spinner tip in VS Code and similar integrated terminals about re-running a notebook cell, shown once Claude has read or edited a Jupyter notebook\n- Added a line under the error shown when your organization's policy blocks a request, saying how to continue: run /rewind and change the message, or run /clear\n- Added a note for Claude when a sandboxed git checkout, git stash or autostash pull cannot update protected files such as those in .claude\n- [VSCode] Added prompt suggestions wherever the terminal shows them: Tab accepts the suggested next prompt; promptSuggestionEnabled: false in Claude Code's settings.json turns them off\n- [VSCode] Added a Console sign-in that creates no API key\n- [VSCode] Added a field to paste the redirect URL when signing in to an MCP server from the panel in SSH, WSL and container windows\n- Changed sandboxed Bash commands to follow the normal permission flow by default; set sandbox.autoAllowBashIfSandboxed: true to keep running them without prompts\n- Changed managed settings that turn the sandbox on: to keep commands running without prompts, set sandbox.autoAllowBashIfSandboxed: true in your highest-ranking managed source\n- Changed read-only git commands to ask first in a repository that isn't the project's or one you trusted; name it with --add-dir, not the additionalDirectories setting, to run them without prompts\n- Changed scheduled tasks and /loop to ask before running a skill that declares allowed-tools or hooks; add Skill(name) to permissions.allow to run it unattended\n- Changed \"Always allow\" in Desktop, IDE and SDK hosts: a rule alone is offered only when saving it would allow that command again, so a scheduled task that relied on one can now wait for you\n- Changed the sandbox to refuse sandboxed writes to .claude settings, skills, agents, commands and hooks in added directories, as it does in the launch folder\n- Changed worktree isolation: an isolated worktree session or agent is now refused git bisect run, git maintenance register|start and scalar's set-up commands, and is told what still works\n- Changed plugin MCP bundles (.mcpb, .dxt) to unpack under the plugins directory, not .mcpb-cache in the plugin's folder, so read-only plugin folders load; one fetched by URL downloads again once\n- Changed plugins of a remote marketplace that managed settings declare, enable and list in prependPlugins or appendPlugins to count as the organization's; pluginDigests is deprecated and ignored\n- Changed plugin loading to skip, and claude plugin validate to report, some unsafe paths and links in a plugin's folder\n- Changed nested skill loading: .claude/skills folders in --plugin-dir plugins no longer load from a session started above them; start Claude Code in the plugin folder instead\n- Changed EnterWorktree to refuse a WorktreeCreate hook path that goes through a symlink inside the project; have the hook print the real path\n- Changed tmux and iTerm2 teammates, and new sessions from the agents view opened with ←, to ",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://platform.claude.com/docs/en/release-notes/overview#self-hosted-managed-agents",
+      "istochnik": "Claude Platform",
+      "zagolovok": "Claude Platform release notes — November 12, 2026",
+      "url": "https://platform.claude.com/docs/en/release-notes/overview#self-hosted-managed-agents",
+      "data": "2026-11-12T00:00:00Z",
+      "tekst": "- We’ve launched self-hosted Claude Managed Agents. You run the whole Managed Agents service, not only self-hosted sandboxes, on your own infrastructure, and you store agents, sessions, and session history there. The server sends model requests to the provider that you choose, which is Anthropic by default. To request access, contact your Anthropic account team.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://claude.com/resources/articles/building-always-on-agents",
+      "istochnik": "Блог Claude",
+      "zagolovok": "Building always-on agents",
+      "url": "https://claude.com/resources/articles/building-always-on-agents",
+      "data": "2026-11-13T00:00:00Z",
+      "tekst": "Always-on agents run indefinitely, deciding how and when to act across many sessions. This guide walks through their core primitives and how they fit together.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://claude.com/resources/articles/claude-tag-guide-for-startups",
+      "istochnik": "Блог Claude",
+      "zagolovok": "The Claude Tag guide for startups",
+      "url": "https://claude.com/resources/articles/claude-tag-guide-for-startups",
+      "data": "2026-11-13T00:00:00Z",
+      "tekst": "How leading startups use Claude Tag to ship faster and scale operations",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://claude.com/resources/articles/self-hosted-claude-managed-agents",
+      "istochnik": "Блог Claude",
+      "zagolovok": "Operate Claude Managed Agents inside your security perimeter",
+      "url": "https://claude.com/resources/articles/self-hosted-claude-managed-agents",
+      "data": "2026-11-12T00:00:00Z",
+      "tekst": "Introducing self-hosted Claude Managed Agents. Now you can run agents in your own environment, whether that’s in your own cloud or on-premise. You host the agents, credentials, and session history, and choose where requests to Claude are sent.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://claude.com/resources/articles/j-crew-style-advisor-with-claude",
+      "istochnik": "Блог Claude",
+      "zagolovok": "J. Crew brings its signature approach to styling to life with Claude",
+      "url": "https://claude.com/resources/articles/j-crew-style-advisor-with-claude",
+      "data": "2026-11-12T00:00:00Z",
+      "tekst": "J.Crew's new Style Advisor uses Claude to offer a more personalized way to shop online, with complete looks instead of individual products.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://claude.com/resources/articles/claude-for-manufacturing",
+      "istochnik": "Блог Claude",
+      "zagolovok": "Introducing Claude for Manufacturing",
+      "url": "https://claude.com/resources/articles/claude-for-manufacturing",
+      "data": "2026-11-12T00:00:00Z",
+      "tekst": "A new plugin with 17 skills and four connectors helps manufacturers draft quotes, quality reports, and supplier requests from the systems they already run.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://claude.com/resources/articles/claude-meetings",
+      "istochnik": "Блог Claude",
+      "zagolovok": "Introducing Claude Meetings",
+      "url": "https://claude.com/resources/articles/claude-meetings",
+      "data": "2026-11-12T00:00:00Z",
+      "tekst": "Add Claude to your video call and get the work started while you talk",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://claude.com/resources/articles/using-claude-opus-5-5-as-your-daily-driver-for-knowledge-work",
+      "istochnik": "Блог Claude",
+      "zagolovok": "Using Claude Opus 5.5 as your daily driver for knowledge work",
+      "url": "https://claude.com/resources/articles/using-claude-opus-5-5-as-your-daily-driver-for-knowledge-work",
+      "data": "2026-11-12T00:00:00Z",
+      "tekst": "Opus 5.5 is the default model in Claude on Pro, Max, Ultra, and Team plans. Here's how it compares with our other models, and how to get the most from it for knowledge work.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://latent.space/p/ainews-the-no-ai-slop-manifesto/",
+      "istochnik": "AINews",
+      "zagolovok": "[AINews] The No AI Slop Manifesto",
+      "url": "https://latent.space/p/ainews-the-no-ai-slop-manifesto/",
+      "data": "2026-11-14T08:31:02Z",
+      "tekst": "Congrats to both llama.ccp and ggml for reaching 1.0 (declaring stability and removing 35 deprecated functions from llama.cpp’s public header) and with SGLang also announcing 1.0 at the recent SGLang Summit. However, today’s title story goes to the No AI Slop manifesto, which arose out of the conference discussions at AIE CODE and which Dex introduced in the closing keynote after cosignatures by many of the speakers at the conference.\n\nIt seems Hacker News also liked it, voting it up to the front page today. We started this manifesto to offer a useful tool for discussion at work, and hope it gets used that way.\n\nFull manifesto, with cosignatures and edits and discussions open at https://www.slopmanifesto.com/\n\nSponsored by Deepgram\nDeepgram is the voice AI infrastructure behind natural conversation—bringing speech-to-text, text-to-speech, voice-focused LLMs, and agents to teams building with voice AI. For any stack and any tools you already love building with, Deepgram slots in as your foundational voice AI technology. So you have control. And we have the context to listen, understand, and speak like a human.\n\nLearn more about the Real-time Context Standard.\n\nSponsored by Backblaze B2\nGrowth shouldn’t make you sweat. Backblaze B2 delivers capacity storage that scales with your business and keeps flash and GPUs fed with terabit-scale throughput.\n\nPut B2 to the test!\n\ncontact business@latent.space for further enquiries. Thank to Deepgram and Backblaze for supporting AINews!\n\nAI Twitter Recap\n\nLocal inference and agent infrastructure\n\nllama.cpp 1.0. Users running mixture-of-experts models larger than their GPU memory can now set aside a cache for frequently used experts. Georgi Gerganov · Daniel Han Chen’s example\n\nLangChain’s Series C. CapitalG led the round. LangSmith lets teams trace and evaluate production agents across frameworks. The company plans to announce new LangSmith features on November 20. LangChain · CapitalG\n\nFrontier and Open Model Launches\n\nGemini 4 Hydrogen in GitHub Copilot. GitHub made the model generally available in Copilot across its app, CLI and VS Code. GitHub\n\nIndependent checks: Roboflow's vision bench shows high effort at 29.3s per image, against 51.4s for Argon and 132.3s for Carbon, though Carbon has better detection accuracy (@skalskip92). One 3D-modeling test found Hydrogen more expensive than Argon because it loops on over-verification (@dzhng).\n\nGoogle's week: Google also shipped two 8th-gen TPUs, Gemini 4 Carbon, Gemini Robotics 2.5, AlphaGenome 2 and a Decisions API (@sundarpichai).\n\nMathArena: Gemini 4 Carbon took #1, displacing GPT-6.1 Sol (@j_dekoninck).\n\nClaude Fable 5.2 in Agent Arena. Arena published new results for long coding sessions.\n\nPricing: API pricing fell from $10/$50 to $8/$40 per 1M input/output tokens (@arena).\n\nAgent Arena: The model ranks #1 at +30.4% net improvement, about 1.6x Opus 5.5. Its lead grows on long tasks, reaching 93% vs 85% no-correction responses at 16+ turns (@arena, turns).\n\nT",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://simonwillison.net/2026/Nov/13/datasette-cluster-map/",
+      "istochnik": "Simon Willison",
+      "zagolovok": "datasette-cluster-map 0.19",
+      "url": "https://simonwillison.net/2026/Nov/13/datasette-cluster-map/",
+      "data": "2026-11-13T23:02:45Z",
+      "tekst": "Release: datasette-cluster-map 0.19\n\nOne of the oldest Datasette plugins, and still one of my favorites. It now works with Datasette 1.0a42, and depends on the new datasette-leaflet to ensure OpenStreetMap tiles are requested with a referrer header.\n\nHere's a map of power plants owned by California's PG&E, also demonstrating Datasette's recently redesigned facets:\n\nTags: datasette, geospatial, openstreetmap",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://simonwillison.net/2026/Nov/13/datasette-leaflet/",
+      "istochnik": "Simon Willison",
+      "zagolovok": "datasette-leaflet 0.3",
+      "url": "https://simonwillison.net/2026/Nov/13/datasette-leaflet/",
+      "data": "2026-11-13T22:30:54Z",
+      "tekst": "Release: datasette-leaflet 0.3\n\nOpenStreetMap have a very reasonable policy that hits to their hosted tile server should send a referrer header. Datasette table pages used the Referrer-Policy: no-referrer HTTP header, causing plugins that loaded tiles from OpenStreetMap to violate that policy.\n\ndatasette-leaflet is the plugin that loads a bundled Leaflet so other Datasette plugins can depend on it. It now sets the referrer policy on the tile requests themselves to strict-origin-when-cross-origin, passing the host but not the full path to the page.\n\nTags: leaflet, datasette, openstreetmap",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://blog.google/innovation-and-ai/technology/developers-tools/google-cloud-credits-gdp-ai-studio/",
+      "istochnik": "Блог Google",
+      "zagolovok": "Claim your Google Cloud Credits in Google AI Studio",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/google-cloud-credits-gdp-ai-studio/",
+      "data": "2026-11-13T20:30:00Z",
+      "tekst": "Claim your Google Cloud Credits in Google AI Studio",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://developers.googleblog.com/catch-go-bugs-that-fuzzing-misses-with-gemini-and-a-constraint-solver/",
+      "istochnik": "Google Developers Blog",
+      "zagolovok": "Catch Go bugs that fuzzing misses with Gemini and a constraint solver",
+      "url": "https://developers.googleblog.com/catch-go-bugs-that-fuzzing-misses-with-gemini-and-a-constraint-solver/",
+      "data": "2026-11-12T00:00:00Z",
+      "tekst": "How pairing Go's surviving compiler bounds-check traps with Gemini 4 Argon and the Z3 constraint solver catches latent out-of-bounds panics in Go code and uncovers a slice-capacity blind spot in go test -fuzz.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://developers.googleblog.com/how-agent-anomaly-detection-scores-on-benchmarks-we-didnt-write/",
+      "istochnik": "Google Developers Blog",
+      "zagolovok": "How Agent Anomaly Detection scores on benchmarks we didn't write",
+      "url": "https://developers.googleblog.com/how-agent-anomaly-detection-scores-on-benchmarks-we-didnt-write/",
+      "data": "2026-11-12T00:00:00Z",
+      "tekst": "Agent Anomaly Detection (AAD) provides asynchronous, low-latency monitoring for AI agents by analyzing OpenTelemetry traces and logs to flag goal hijacks and tool misuse. Tested across five public security benchmarks, AAD successfully caught 87% of harmful instructions carried out by agents without adding runtime latency. Developers can integrate AAD alongside semantic governance and strict tool limits as part of a defense-in-depth strategy to secure agentic applications.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://developers.googleblog.com/a2ui-10-build-delightful-fast-reliable-agentic-experiences/",
+      "istochnik": "Google Developers Blog",
+      "zagolovok": "A2UI 1.0: Build delightful, fast, reliable, agentic experiences",
+      "url": "https://developers.googleblog.com/a2ui-10-build-delightful-fast-reliable-agentic-experiences/",
+      "data": "2026-11-12T00:00:00Z",
+      "tekst": "A2UI 1.0 is an open protocol for generative UI that enables AI agents to render interactive, native screens across web, mobile, and desktop applications. Developers can leverage open-source renderer SDKs—including React, Angular, Lit, Flutter, SwiftUI, and Jetpack Compose—alongside agent SDKs for Python, TypeScript, and Dart. The release introduces bidirectional function calls, swappable inference formats, and secure data binding to help teams seamlessly integrate generative UI into their product stacks.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p15#a261114p15",
+      "istochnik": "Techmeme",
+      "zagolovok": "Jensen Huang's resignation is a setback for US open models, as his funding gave open-source developers time to find their footing and will very likely dry up (Nathan Lambert/Interconnects AI)",
+      "url": "https://www.techmeme.com/261114/p15#a261114p15",
+      "data": "2026-11-14T18:05:02Z",
+      "tekst": "Статья: https://www.interconnects.ai/p/open-source-ai-without-jensen\nNathan Lambert / Interconnects AI:\n\nJensen Huang's resignation is a setback for US open models, as his funding gave open-source developers time to find their footing and will very likely dry up — A decapitation. It's time to rebuild. … Audio playback is not supported on your browser. Please upgrade.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p14#a261114p14",
+      "istochnik": "Techmeme",
+      "zagolovok": "Sean Duffy blames Friday's FAA outage on copper-to-fiber wiring work at a remote facility, saying contractor L3Harris may have installed a \"faulty router\" (Joseph Pisani/Wall Street Journal)",
+      "url": "https://www.techmeme.com/261114/p14#a261114p14",
+      "data": "2026-11-14T17:15:29Z",
+      "tekst": "Статья: https://www.wsj.com/business/airlines/travel-woes-persist-as-airlines-race-to-reset-after-groundstop-f34a7f9f\nJoseph Pisani / Wall Street Journal:\n\nSean Duffy blames Friday's FAA outage on copper-to-fiber wiring work at a remote facility, saying contractor L3Harris may have installed a “faulty router” — Work at a single remote location caused instability that led authorities to order nationwide groundstop; airlines continue to cancel flights as they rush to reset",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p13#a261114p13",
+      "istochnik": "Techmeme",
+      "zagolovok": "Trump Media faces a Nov. 30 deadline to repay up to $1B in convertible bonds sold last May to fund a \"bitcoin treasury,\" as its shares are down 60+% this year (Financial Times)",
+      "url": "https://www.techmeme.com/261114/p13#a261114p13",
+      "data": "2026-11-14T16:35:01Z",
+      "tekst": "Статья: https://www.ft.com/content/ada459c4-5f43-4a4a-bc6c-90de8897a4f0\nFinancial Times:\n\nTrump Media faces a Nov. 30 deadline to repay up to $1B in convertible bonds sold last May to fund a “bitcoin treasury,” as its shares are down 60+% this year — Plunge in shares and cryptocurrency prices could force Truth Social owner to sell assets or take on costly new debt",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p12#a261114p12",
+      "istochnik": "Techmeme",
+      "zagolovok": "Tesla's Cybercab Autonomy Subscription agreement states the vehicles will only work inside Tesla-enabled geofences, which the company can change at any time (Fred Lambert/Electrek)",
+      "url": "https://www.techmeme.com/261114/p12#a261114p12",
+      "data": "2026-11-14T16:01:26Z",
+      "tekst": "Статья: https://electrek.co/2026/11/14/tesla-cybercab-autonomy-subscription-agreement-terms/\nFred Lambert / Electrek:\n\nTesla's Cybercab Autonomy Subscription agreement states the vehicles will only work inside Tesla-enabled geofences, which the company can change at any time — Tesla has posted the agreement that comes with its $29,990 Cybercab, and it's even worse than the order page suggested.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p11#a261114p11",
+      "istochnik": "Techmeme",
+      "zagolovok": "Italy's data protection agency fines Meta €805M for allegedly accessing Android users' photos and videos without their consent or informing them (Reuters)",
+      "url": "https://www.techmeme.com/261114/p11#a261114p11",
+      "data": "2026-11-14T15:10:02Z",
+      "tekst": "Статья: https://www.reuters.com/world/italy-fines-meta-887-million-over-android-users-data-access-2026-11-14/\nReuters:\n\nItaly's data protection agency fines Meta €805M for allegedly accessing Android users' photos and videos without their consent or informing them — Italy's data protection agency said on Saturday it had fined Meta Platforms (META.O) €805 million ($887 million) …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p10#a261114p10",
+      "istochnik": "Techmeme",
+      "zagolovok": "How Marco Rubio helped topple Jensen Huang; source: Rubio used a CIA report about Alice Huang to write his own, recasting CIA reporting in more assertive terms (Washington Post)",
+      "url": "https://www.techmeme.com/261114/p10#a261114p10",
+      "data": "2026-11-14T14:30:23Z",
+      "tekst": "Статья: https://www.washingtonpost.com/technology/2026/11/13/behind-jensen-huangs-spy-scandal-shadow-war-trumps-ear-china/?pwapi_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZWFzb24iOiJnaWZ0IiwibmJmIjoxNzk0NTQ2MDAwLCJpc3MiOiJzdWJzY3JpcHRpb25zIiwiZXhwIjoxNzk1OTI4Mzk5LCJpYXQiOjE3OTQ1NDYwMDAsImp0aSI6ImI3ZWU0NWY4LWZiNmUtNGEzNy04NDk2LWEzYzkyM2I2MWEzMyIsInVybCI6Imh0dHBzOi8vd3d3Lndhc2hpbmd0b25wb3N0LmNvbS90ZWNobm9sb2d5LzIwMjYvMTEvMTMvYmVoaW5kLWplbnNlbi1odWFuZ3Mtc3B5LXNjYW5kYWwtc2hhZG93LXdhci10cnVtcHMtZWFyLWNoaW5hLyJ9.ckMTm0VCdUHrBcpi8_jACBIApqua-_4ZjYBg-GL0JYY&itid=gfta\nWashington Post:\n\nHow Marco Rubio helped topple Jensen Huang; source: Rubio used a CIA report about Alice Huang to write his own, recasting CIA reporting in more assertive terms — Rubio's intervention helped topple one of Washington's most influential corporate voices on China, giving momentum to officials pushing for tougher restrictions.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p9#a261114p9",
+      "istochnik": "Techmeme",
+      "zagolovok": "How the Swiss city of Lugano is trying to reinvent itself as a crypto hub to boost its economy by launching its own token LVGA, partnering with Tether, and more (Financial Times)",
+      "url": "https://www.techmeme.com/261114/p9#a261114p9",
+      "data": "2026-11-14T12:05:01Z",
+      "tekst": "Статья: https://www.ft.com/content/a1bcce14-c326-488f-b736-6e831b0fb6cf?accessToken=zwAAAaHY_bdnkdOhvM4UwyZIj9O3Nm6DGw-2zw.MEUCIQCBXyHHNsgOjjEJ2PQjkcLjJSExdRJKNtibv8XGeKew_QIgU17k6hYW9xMvFN1Fc5T7EBfD6P1hSQhzaIHiqP7qYxg&sharetype=gift&token=638a9a7e-087a-40eb-8ef9-e66519a5dbe7\nFinancial Times:\n\nHow the Swiss city of Lugano is trying to reinvent itself as a crypto hub to boost its economy by launching its own token LVGA, partnering with Tether, and more — Lugano bets digital assets and a joint venture with the stablecoin giant can boost its economy, but some warn of dangers",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p8#a261114p8",
+      "istochnik": "Techmeme",
+      "zagolovok": "Microsoft says all Microsoft 365 products are operational, ending an outage that disrupted governments, traders, hospitals, and businesses around the world (Bloomberg)",
+      "url": "https://www.techmeme.com/261114/p8#a261114p8",
+      "data": "2026-11-14T08:03:46Z",
+      "tekst": "Статья: https://www.bloomberg.com/news/articles/2026-11-13/microsoft-says-making-progress-fixing-one-of-its-longest-outages\nBloomberg:\n\nMicrosoft says all Microsoft 365 products are operational, ending an outage that disrupted governments, traders, hospitals, and businesses around the world — Microsoft Corp. said access has been fully restored to its flagship software, ending an outage that paralyzed government offices, traders and businesses around the world.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p7#a261114p7",
+      "istochnik": "Techmeme",
+      "zagolovok": "Sources: despite Nvidia's 20+ years of business in China, Jensen Huang struggled to gain access to policymakers driving Beijing's chip self-sufficiency campaign (Eleanor Olcott/Financial Times)",
+      "url": "https://www.techmeme.com/261114/p7#a261114p7",
+      "data": "2026-11-14T07:30:08Z",
+      "tekst": "Статья: https://www.ft.com/content/3efa9733-fbb4-47c2-83ba-b01e548ef277\nEleanor Olcott / Financial Times:\n\nSources: despite Nvidia's 20+ years of business in China, Jensen Huang struggled to gain access to policymakers driving Beijing's chip self-sufficiency campaign — Former Nvidia chief executive facing intense scrutiny over ties to Beijing — In January 2024, Nvidia's chief executive Jensen Huang ended …",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p6#a261114p6",
+      "istochnik": "Techmeme",
+      "zagolovok": "Operand, which offers AI-powered due diligence tools for PE firms, raised $31M across a seed and a Series A led by Khosla Ventures at a $220M valuation (Lucinda Shen/Axios)",
+      "url": "https://www.techmeme.com/261114/p6#a261114p6",
+      "data": "2026-11-14T07:02:17Z",
+      "tekst": "Статья: https://www.axios.com/pro/all-deals/2026/11/10/private-equity-due-diligence-ai-operand-31m\nLucinda Shen / Axios:\n\nOperand, which offers AI-powered due diligence tools for PE firms, raised $31M across a seed and a Series A led by Khosla Ventures at a $220M valuation — Operand, which uses AI to do due diligence for private equity firms, raised $31 million in seed and Series A funding, CEO Ram Gorthi tells Axios Pro exclusively.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p5#a261114p5",
+      "istochnik": "Techmeme",
+      "zagolovok": "WhiteMatter, which builds \"guardian\" AI agents to oversee file access, software use, decision making, and actions of existing AI agents, raised a $20M Series A (Alice Tecotzky/Business Insider)",
+      "url": "https://www.techmeme.com/261114/p5#a261114p5",
+      "data": "2026-11-14T06:55:00Z",
+      "tekst": "Статья: https://www.businessinsider.com/whitematter-startup-ai-agent-cybersecurity-funding-pitch-deck-2026-11\nAlice Tecotzky / Business Insider:\n\nWhiteMatter, which builds “guardian” AI agents to oversee file access, software use, decision making, and actions of existing AI agents, raised a $20M Series A — A startup using AI agents to keep rogue AI in line has raised $20 million. — WhiteMatter, founded in 2024 …",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p4#a261114p4",
+      "istochnik": "Techmeme",
+      "zagolovok": "Charta Health, which offers AI-powered tools to automate medical chart review, billing, and coding workflows, raised a $55M Series B led by Insight Partners (Jessica Hagen/MobiHealthNews)",
+      "url": "https://www.techmeme.com/261114/p4#a261114p4",
+      "data": "2026-11-14T06:35:00Z",
+      "tekst": "Статья: https://www.mobihealthnews.com/news/charta-health-raises-55m-launches-new-ai-coding-tools\nJessica Hagen / MobiHealthNews:\n\nCharta Health, which offers AI-powered tools to automate medical chart review, billing, and coding workflows, raised a $55M Series B led by Insight Partners — The round is the company's third in less than two years and brings its total funding to $85 million. — Global Investing",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p3#a261114p3",
+      "istochnik": "Techmeme",
+      "zagolovok": "Luminal, which provides an inference cloud and develops inference compiler software to test running AI models on different chips, raised a $25M Series A (Chris Metinko/Axios)",
+      "url": "https://www.techmeme.com/261114/p3#a261114p3",
+      "data": "2026-11-14T06:30:09Z",
+      "tekst": "Статья: https://www.axios.com/pro/enterprise-software-deals/2026/11/12/luminal-inference-standard-software\nChris Metinko / Axios:\n\nLuminal, which provides an inference cloud and develops inference compiler software to test running AI models on different chips, raised a $25M Series A — Luminal, a search compiler and inference cloud provider, raised a $25 million Series A led by Standard Capital, CEO Joe Fioti tells Axios Pro exclusively.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p2#a261114p2",
+      "istochnik": "Techmeme",
+      "zagolovok": "Cambridge, UK-based Tendrils, which is designing a CPU architecture with thousands of cores operating in parallel, raised $30M led by Benchmark (John Reynolds/Tech.eu)",
+      "url": "https://www.techmeme.com/261114/p2#a261114p2",
+      "data": "2026-11-14T05:55:01Z",
+      "tekst": "Статья: https://tech.eu/2026/11/11/tendrils-compute-raises-30m-to-redo-the-cpu/\nJohn Reynolds / Tech.eu:\n\nCambridge, UK-based Tendrils, which is designing a CPU architecture with thousands of cores operating in parallel, raised $30M led by Benchmark — Tendrils Compute is one of several UK chip startups which investors are backing. — A UK startup developing a radically different type …",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p1#a261114p1",
+      "istochnik": "Techmeme",
+      "zagolovok": "JD.com completes its takeover of German electronics retailer Ceconomy, after acquiring a ~60% stake for ~$1.5B, following the EU's approval of the deal (Tomoko Wakasugi/Nikkei Asia)",
+      "url": "https://www.techmeme.com/261114/p1#a261114p1",
+      "data": "2026-11-14T05:02:28Z",
+      "tekst": "Статья: https://asia.nikkei.com/business/business-deals/china-s-jd.com-completes-1.5bn-takeover-of-german-appliance-retailer\nTomoko Wakasugi / Nikkei Asia:\n\nJD.com completes its takeover of German electronics retailer Ceconomy, after acquiring a ~60% stake for ~$1.5B, following the EU's approval of the deal — SHANGHAI — JD.com has completed an acquisition of German consumer electronics retailer Ceconomy, aiming to link European physical …",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://x.com/AnthropicAI/status/2121317227618340990",
+      "istochnik": "X",
+      "zagolovok": "Safety evaluations are critical for understanding whether a model is ready to deploy, which safeguards to build for it, ",
+      "url": "https://x.com/AnthropicAI/status/2121317227618340990",
+      "data": "2026-11-13T19:00:13Z",
+      "tekst": "@AnthropicAI: Safety evaluations are critical for understanding whether a model is ready to deploy, which safeguards to build for it, and where to focus training and research.\n\nOn our Engineering Blog, we offer 10 recommendations for how to design, run and report them.\n\nhttps://www.anthropic.com/research/building-strong-safety-evaluations",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "AnthropicAI"
+    },
+    {
+      "id": "https://x.com/ClaudeDevs/status/2121392666244186327",
+      "istochnik": "X",
+      "zagolovok": "You can now build custom themes for Claude Code on desktop with mods! Change the colors, add an animated background, and",
+      "url": "https://x.com/ClaudeDevs/status/2121392666244186327",
+      "data": "2026-11-13T23:59:59Z",
+      "tekst": "@ClaudeDevs: You can now build custom themes for Claude Code on desktop with mods! Change the colors, add an animated background, and make it your own.\n\nJust tell Claude how you want it to look, or get started quickly with the theme-examples plugin. We'd love to see what you make!",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "ClaudeDevs"
+    },
+    {
+      "id": "https://x.com/ClaudeDevs/status/2121375309287301360",
+      "istochnik": "X",
+      "zagolovok": "We've made some big updates to Projects in Claude Code! In a project, Claude coordinates your tasks across parallel thre",
+      "url": "https://x.com/ClaudeDevs/status/2121375309287301360",
+      "data": "2026-11-13T22:51:01Z",
+      "tekst": "@ClaudeDevs: We've made some big updates to Projects in Claude Code!\n\nIn a project, Claude coordinates your tasks across parallel threads. The coordinator is now much more proactive. It answers your questions in the project chat and gives you updates on the status of your ongoing threads.",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "ClaudeDevs"
+    },
+    {
+      "id": "https://x.com/romainhuet/status/2121416122637615319",
+      "istochnik": "X",
+      "zagolovok": "It’s been amazing to see the Codex community grow this year. So happy to welcome the people behind so many of our local ",
+      "url": "https://x.com/romainhuet/status/2121416122637615319",
+      "data": "2026-11-14T01:33:12Z",
+      "tekst": "@romainhuet: It’s been amazing to see the Codex community grow this year. So happy to welcome the people behind so many of our local meetups as our new regional leads.\n\nThank you to all our Codex Ambassadors around the world! 🌍\n\nЦитирует @paw_lean: The only way community scales is with community. I'm so excited to introduce you to our Codex Ambassadors regional leads! 🌍\n\nThey’re some of our top contributors, and what makes them exceptional is how much they give back. \n\nThey bring their local communities together, support builders around the world, and are the drivers that will help bring program to greater heights.\n\nThank you @maxjendrall, @mrlesk, @borvibe, @Andy_AJT, @dgrreen, @aileenvl, @aastroza, @RaygunIcecream, @yashrajnayak, @nukonuko, @brianchew, @dayvough, @thatsmyThucents for all that you do! Excited to build 🫡\n\nhttps://developers.openai.com/community/codex-ambassadors/directory#regional-leads",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "romainhuet"
+    },
+    {
+      "id": "https://x.com/cursor_ai/status/2121411147714970092",
+      "istochnik": "X",
+      "zagolovok": "We’ve published an update on our recent security incident. See a detailed overview of what happened and our remediation ",
+      "url": "https://x.com/cursor_ai/status/2121411147714970092",
+      "data": "2026-11-14T01:13:26Z",
+      "tekst": "@cursor_ai: We’ve published an update on our recent security incident. See a detailed overview of what happened and our remediation steps here: https://cursor.com/blog/security-incident-update",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "cursor_ai"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2121636249903710411",
+      "istochnik": "X",
+      "zagolovok": "SPACEXSI 🔥: Grok Bot now has 7% more usage on paid plans and up to 15% on scheduled runs, according to Grok Bot team. Ti",
+      "url": "https://x.com/testingcatalog/status/2121636249903710411",
+      "data": "2026-11-14T16:07:54Z",
+      "tekst": "@testingcatalog: SPACEXSI 🔥: Grok Bot now has 7% more usage on paid plans and up to 15% on scheduled runs, according to Grok Bot team. \n\nTime to test these optimisations 👀\n\nЦитирует @mattyp: Grok Bot plans have ~7% more usage and up to ~15% more for routine runs!\n\nAwesome work from the team",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2121399402141233334",
+      "istochnik": "X",
+      "zagolovok": "ANTHROPIC 🔥: Claude Code on desktop now supports custom themes! Users can tell Claude how they want an app to look, so i",
+      "url": "https://x.com/testingcatalog/status/2121399402141233334",
+      "data": "2026-11-14T00:26:45Z",
+      "tekst": "@testingcatalog: ANTHROPIC 🔥: Claude Code on desktop now supports custom themes! \n\nUsers can tell Claude how they want an app to look, so it can tailor it to their preferences. That needs testing!\n\nFriday feature drop 👀",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2121359790039277839",
+      "istochnik": "X",
+      "zagolovok": "Sesame is ending its \"preview\" period and introducing Plus and Pro paid plans. Free users will keep access to 👀 - 30 min",
+      "url": "https://x.com/testingcatalog/status/2121359790039277839",
+      "data": "2026-11-13T21:49:21Z",
+      "tekst": "@testingcatalog: Sesame is ending its \"preview\" period and introducing Plus and Pro paid plans. \n\nFree users will keep access to 👀\n- 30 minutes of talk time a day\n- Limited weekly credits for texts and tasks\n- Every feature, the same on every plan\n\n> Plus will cost $20 and include 4x usage.\n> Pro will cost $100 and will come with 20x usage.\n\nPaid plans are supposed to go live next week. \n\nI am still using it daily, mainly because of Sesame Link, through which I control my Mac mini. Let's see how it goes!",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2121352761379860628",
+      "istochnik": "X",
+      "zagolovok": "GOOGLE 🔥: All Gemini users in the U.S. can now connect their Google Wallets to Gemini. Users also have the option to sec",
+      "url": "https://x.com/testingcatalog/status/2121352761379860628",
+      "data": "2026-11-13T21:21:25Z",
+      "tekst": "@testingcatalog: GOOGLE 🔥: All Gemini users in the U.S. can now connect their Google Wallets to Gemini. \n\nUsers also have the option to securely link their financial accounts, including credit cards and banks, to Wallet via Plaid to unlock deeper insights.\n\nGoogle's turn 👀\n\nЦитирует @Google: Personal Intelligence in Gemini securely connects information from apps you already use to make your experience more personalized and helpful. Today, we’re adding Google Wallet to the list of connected apps so you can get more tailored responses in the @GeminiApp around personal finance questions, based on your spending habits, including:\n\n📈 Generate dynamic charts tracking cash flow, asset allocation, and budgets directly in your chat to help you visualize your spending.\n📅 Find forgotten subscriptions and recurring charges across your linked accounts, and Gemini will also flag any price increases.\n🎁 Set a budget for the holidays by asking “How much did I spend on gifts and travel last year? Use that to help me set a holiday budget” and Gemini will look at your transactions from the last year to suggest a budget tailored for you.\n\nYou’ll also have the option to securely link your financial accounts from your credit cards and banks to Wallet via @Plaid to unlock deeper insights.",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2121349152277995703",
+      "istochnik": "X",
+      "zagolovok": "Maket has launched Custom Materials, a feature that lets users design their own floors and walls for the homes they plan",
+      "url": "https://x.com/testingcatalog/status/2121349152277995703",
+      "data": "2026-11-13T21:07:05Z",
+      "tekst": "@testingcatalog: Maket has launched Custom Materials, a feature that lets users design their own floors and walls for the homes they plan in Maket.\n\nUsers can describe a material, such as an aged checkered stone tile, or upload an image of one, and then use it across their floor plans.\n\nThe rooms can be viewed in 3D, giving users a realistic view of the home they are planning, including their custom floors and walls.\n\nЦитирует @Maketplans: Generate floor and wall textures from text or an image.\n\nLight oak, terracotta tile, or checkerboard marble? Try it out in your space and see what feels right.\n\nYour next room refresh starts in Maket.",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2121338593675489338",
+      "istochnik": "X",
+      "zagolovok": "Reason Machines has launched Reason, its AI coding agent designed to maximize work completed per dollar. During testing,",
+      "url": "https://x.com/testingcatalog/status/2121338593675489338",
+      "data": "2026-11-13T20:25:07Z",
+      "tekst": "@testingcatalog: Reason Machines has launched Reason, its AI coding agent designed to maximize work completed per dollar.\n\nDuring testing, Reason solved more tasks than Codex on the same model while spending 22% less.\n\nUsers can give it standing jobs to run autonomously, such as reviewing every new pull request, and run it using their own ChatGPT, Claude, GitHub Copilot, or Grok membership.\n\nЦитирует @xadisingh: Frontier coding performance at up to 20x lower cost.\n\nIntroducing the world’s most cost-efficient harness: Reason\n\nStop burning thousands on runaway agent bills. \n\nReason outperforms top harnesses on Terminal-Bench and DeepSWE while dropping cost per task to a fraction of the frontier baseline.\n\nComment “Reason” and we’ll send you early access + free compute credits.\n\nTry for free:\nhttp://reasonmachines.com",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/btibor91/status/2121618563660439787",
+      "istochnik": "X",
+      "zagolovok": "I believe this one is called “Nova” Цитирует @oncescuradu: 💠 OpenAI is testing a new ChatGPT desktop (web) interface fea",
+      "url": "https://x.com/btibor91/status/2121618563660439787",
+      "data": "2026-11-14T14:57:38Z",
+      "tekst": "@btibor91: I believe this one is called “Nova”\n\nЦитирует @oncescuradu: 💠 OpenAI is testing a new ChatGPT desktop (web) interface featuring dedicated cards for content creation and activities.\n\n@testingcatalog @btibor91",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "btibor91"
+    }
+  ],
+  "ne_otvetili": [],
+  "tolko_v_vidennye": [],
+  "github_polnyy_obhod": false,
+  "istochniki": [
+    "claude.dev",
+    "Claude Code",
+    "Claude Platform",
+    "Блог Claude",
+    "OpenAI",
+    "Codex",
+    "OpenAI API",
+    "AINews",
+    "Simon Willison",
+    "Ben's Bites",
+    "Cursor",
+    "DeepMind",
+    "Блог Google",
+    "Google Developers Blog",
+    "Techmeme",
+    "GitHub Claude Code"
+  ],
+  "iks": {
+    "akkauntov": 30,
+    "ne_otvetili": []
+  }
+}
