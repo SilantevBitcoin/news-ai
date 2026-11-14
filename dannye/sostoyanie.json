@@ -462,10 +462,24 @@
       "url": "https://www.techmeme.com/261113/p42#a261113p42",
       "vid": "dengi",
       "zagolovok": "FT: вложение Сэма Бэнкмана-Фрида в Anthropic ($500 млн в 2021) стоило бы ~$37 млрд при листинге компании на $1,5 трлн"
+    },
+    {
+      "data": "2026-11-14T18:17:54Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261114/p15#a261114p15",
+      "vid": "sayty",
+      "zagolovok": "Уход Дженсена Хуанга — удар по открытым моделям США: его деньги давали разработчикам время, и их, скорее всего, больше не будет"
+    },
+    {
+      "data": "2026-11-14T18:17:54Z",
+      "oboroty": false,
+      "url": "https://x.com/testingcatalog/status/2121636249903710411",
+      "vid": "x",
+      "zagolovok": "Лимиты Grok Bot на платных планах выросли примерно на 7%, а для запусков по расписанию — до 15%"
     }
   ],
-  "posledniy_sbor": "2026-11-14T09:12:39Z",
-  "posledniy_slot": "2026-11-14T10:00:00Z",
+  "posledniy_sbor": "2026-11-14T17:12:09Z",
+  "posledniy_slot": "2026-11-14T18:00:00Z",
   "vidennye": {
     "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/": "2026-11-13T02:17:22Z",
     "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-hydrogen/": "2026-11-13T02:17:22Z",
@@ -678,6 +692,11 @@
     "https://www.techmeme.com/261113/p8#a261113p8": "2026-11-13T18:16:34Z",
     "https://www.techmeme.com/261113/p9#a261113p9": "2026-11-13T18:16:34Z",
     "https://www.techmeme.com/261114/p1#a261114p1": "2026-11-14T10:17:27Z",
+    "https://www.techmeme.com/261114/p10#a261114p10": "2026-11-14T18:17:54Z",
+    "https://www.techmeme.com/261114/p11#a261114p11": "2026-11-14T18:17:55Z",
+    "https://www.techmeme.com/261114/p12#a261114p12": "2026-11-14T18:17:55Z",
+    "https://www.techmeme.com/261114/p13#a261114p13": "2026-11-14T18:17:55Z",
+    "https://www.techmeme.com/261114/p15#a261114p15": "2026-11-14T18:17:54Z",
     "https://www.techmeme.com/261114/p2#a261114p2": "2026-11-14T10:17:27Z",
     "https://www.techmeme.com/261114/p3#a261114p3": "2026-11-14T10:17:26Z",
     "https://www.techmeme.com/261114/p4#a261114p4": "2026-11-14T10:17:26Z",
@@ -685,6 +704,7 @@
     "https://www.techmeme.com/261114/p6#a261114p6": "2026-11-14T10:17:26Z",
     "https://www.techmeme.com/261114/p7#a261114p7": "2026-11-14T10:17:27Z",
     "https://www.techmeme.com/261114/p8#a261114p8": "2026-11-14T10:17:27Z",
+    "https://www.techmeme.com/261114/p9#a261114p9": "2026-11-14T18:17:55Z",
     "https://x.com/AIatMeta/status/2119912647034642817": "2026-11-10T20:46:16Z",
     "https://x.com/AnthropicAI/status/2120117722230968385": "2026-11-10T20:46:17Z",
     "https://x.com/AnthropicAI/status/2120841731302154708": "2026-11-12T18:10:16Z",
@@ -720,6 +740,7 @@
     "https://x.com/OpenAIDevs/status/2120669165283680644": "2026-11-12T18:10:16Z",
     "https://x.com/alexalbert__/status/2119916954337349737": "2026-11-10T20:46:17Z",
     "https://x.com/alexalbert__/status/2120983722182988206": "2026-11-13T18:16:34Z",
+    "https://x.com/btibor91/status/2121618563660439787": "2026-11-14T18:17:55Z",
     "https://x.com/claudeai/status/2119899459761131615": "2026-11-10T20:46:17Z",
     "https://x.com/claudeai/status/2120174844822298730": "2026-11-10T20:46:17Z",
     "https://x.com/claudeai/status/2120206365759094857": "2026-11-10T20:46:17Z",
@@ -837,6 +858,7 @@
     "https://x.com/testingcatalog/status/2121352761379860628": "2026-11-13T21:51:00Z",
     "https://x.com/testingcatalog/status/2121359790039277839": "2026-11-14T02:16:23Z",
     "https://x.com/testingcatalog/status/2121399402141233334": "2026-11-14T02:16:23Z",
+    "https://x.com/testingcatalog/status/2121636249903710411": "2026-11-14T18:17:54Z",
     "https://x.com/thsottiaux/status/2120021043876106429": "2026-11-10T20:46:17Z",
     "https://x.com/thsottiaux/status/2120266880963473789": "2026-11-11T00:04:15Z",
     "https://x.com/thsottiaux/status/2120267268517249036": "2026-11-11T00:04:17Z",
