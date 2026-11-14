@@ -1,0 +1,63 @@
+{
+  "krupnye": [],
+  "sayty": [
+    {
+      "zagolovok": "llama.cpp и ggml дошли до версии 1.0: API стабилизирован, убрано 35 устаревших функций",
+      "url": "https://latent.space/p/ainews-the-no-ai-slop-manifesto/",
+      "istochnik": "AINews",
+      "zvezda": false,
+      "idy": [
+        "https://latent.space/p/ainews-the-no-ai-slop-manifesto/"
+      ]
+    }
+  ],
+  "x": [],
+  "dengi": [
+    {
+      "zagolovok": "Operand, ИИ-инструменты для проверки сделок фондами прямых инвестиций, привлекла $31 млн при оценке $220 млн",
+      "url": "https://www.techmeme.com/261114/p6#a261114p6",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261114/p6#a261114p6"
+      ]
+    },
+    {
+      "zagolovok": "WhiteMatter, разработчик ИИ-агентов-«стражей» для надзора за другими агентами, привлекла $20 млн в раунде A",
+      "url": "https://www.techmeme.com/261114/p5#a261114p5",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261114/p5#a261114p5"
+      ]
+    },
+    {
+      "zagolovok": "Charta Health, автоматизация проверки медкарт и биллинга с помощью ИИ, привлекла $55 млн в раунде B",
+      "url": "https://www.techmeme.com/261114/p4#a261114p4",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261114/p4#a261114p4"
+      ]
+    },
+    {
+      "zagolovok": "Luminal, облако для инференса и компилятор для запуска моделей на разных чипах, привлекла $25 млн в раунде A",
+      "url": "https://www.techmeme.com/261114/p3#a261114p3",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261114/p3#a261114p3"
+      ]
+    },
+    {
+      "zagolovok": "FT: вложение Сэма Бэнкмана-Фрида в Anthropic ($500 млн в 2021) стоило бы ~$37 млрд при листинге компании на $1,5 трлн",
+      "url": "https://www.techmeme.com/261113/p42#a261113p42",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261113/p42#a261113p42"
+      ]
+    }
+  ],
+  "github": []
+}
