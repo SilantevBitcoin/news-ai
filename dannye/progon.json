@@ -1,0 +1,324 @@
+{
+  "nachalo_progona": "2026-11-15T02:08:07Z",
+  "nachalo_perioda": "2026-11-14T17:12:09Z",
+  "nachalo_okna": "2026-11-14T02:08:07Z",
+  "pervyy_progon": false,
+  "kandidaty": [
+    {
+      "id": "https://claude.com/resources/articles/building-always-on-agents",
+      "istochnik": "Блог Claude",
+      "zagolovok": "Building always-on agents",
+      "url": "https://claude.com/resources/articles/building-always-on-agents",
+      "data": "2026-11-13T00:00:00Z",
+      "tekst": "Always-on agents run indefinitely, deciding how and when to act across many sessions. This guide walks through their core primitives and how they fit together.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://claude.com/resources/articles/claude-tag-guide-for-startups",
+      "istochnik": "Блог Claude",
+      "zagolovok": "The Claude Tag guide for startups",
+      "url": "https://claude.com/resources/articles/claude-tag-guide-for-startups",
+      "data": "2026-11-13T00:00:00Z",
+      "tekst": "How leading startups use Claude Tag to ship faster and scale operations",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://latent.space/p/ainews-the-no-ai-slop-manifesto/",
+      "istochnik": "AINews",
+      "zagolovok": "[AINews] The No AI Slop Manifesto",
+      "url": "https://latent.space/p/ainews-the-no-ai-slop-manifesto/",
+      "data": "2026-11-14T08:31:02Z",
+      "tekst": "Congrats to both llama.ccp and ggml for reaching 1.0 (declaring stability and removing 35 deprecated functions from llama.cpp’s public header) and with SGLang also announcing 1.0 at the recent SGLang Summit. However, today’s title story goes to the No AI Slop manifesto, which arose out of the conference discussions at AIE CODE and which Dex introduced in the closing keynote after cosignatures by many of the speakers at the conference.\n\nIt seems Hacker News also liked it, voting it up to the front page today. We started this manifesto to offer a useful tool for discussion at work, and hope it gets used that way.\n\nFull manifesto, with cosignatures and edits and discussions open at https://www.slopmanifesto.com/\n\nSponsored by Deepgram\nDeepgram is the voice AI infrastructure behind natural conversation—bringing speech-to-text, text-to-speech, voice-focused LLMs, and agents to teams building with voice AI. For any stack and any tools you already love building with, Deepgram slots in as your foundational voice AI technology. So you have control. And we have the context to listen, understand, and speak like a human.\n\nLearn more about the Real-time Context Standard.\n\nSponsored by Backblaze B2\nGrowth shouldn’t make you sweat. Backblaze B2 delivers capacity storage that scales with your business and keeps flash and GPUs fed with terabit-scale throughput.\n\nPut B2 to the test!\n\ncontact business@latent.space for further enquiries. Thank to Deepgram and Backblaze for supporting AINews!\n\nAI Twitter Recap\n\nLocal inference and agent infrastructure\n\nllama.cpp 1.0. Users running mixture-of-experts models larger than their GPU memory can now set aside a cache for frequently used experts. Georgi Gerganov · Daniel Han Chen’s example\n\nLangChain’s Series C. CapitalG led the round. LangSmith lets teams trace and evaluate production agents across frameworks. The company plans to announce new LangSmith features on November 20. LangChain · CapitalG\n\nFrontier and Open Model Launches\n\nGemini 4 Hydrogen in GitHub Copilot. GitHub made the model generally available in Copilot across its app, CLI and VS Code. GitHub\n\nIndependent checks: Roboflow's vision bench shows high effort at 29.3s per image, against 51.4s for Argon and 132.3s for Carbon, though Carbon has better detection accuracy (@skalskip92). One 3D-modeling test found Hydrogen more expensive than Argon because it loops on over-verification (@dzhng).\n\nGoogle's week: Google also shipped two 8th-gen TPUs, Gemini 4 Carbon, Gemini Robotics 2.5, AlphaGenome 2 and a Decisions API (@sundarpichai).\n\nMathArena: Gemini 4 Carbon took #1, displacing GPT-6.1 Sol (@j_dekoninck).\n\nClaude Fable 5.2 in Agent Arena. Arena published new results for long coding sessions.\n\nPricing: API pricing fell from $10/$50 to $8/$40 per 1M input/output tokens (@arena).\n\nAgent Arena: The model ranks #1 at +30.4% net improvement, about 1.6x Opus 5.5. Its lead grows on long tasks, reaching 93% vs 85% no-correction responses at 16+ turns (@arena, turns).\n\nT",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://simonwillison.net/2026/Nov/14/datasette-llm/",
+      "istochnik": "Simon Willison",
+      "zagolovok": "datasette-llm 0.1a11",
+      "url": "https://simonwillison.net/2026/Nov/14/datasette-llm/",
+      "data": "2026-11-14T23:59:28Z",
+      "tekst": "Release: datasette-llm 0.1a11\n\ndatasette-llm is the intermediate plugin for Datasette that supports configuring LLMs for use with other Datasette plugins.\n\nThis release adds support for OpenAI-compatible endpoints, so you can configure Datasette to use an LLM hosted anywhere that talks the OpenAI pseudo-standard web protocol.\n\nThis means that if you're running local models with LM Studio or Ollama or llama.cpp (which just hit v1.0.0) you can run Datasette via uvx like this:\n\nwget https://datasette.io/content.db\n\nuvx --with datasette-agent datasette \\\n--root --secret 1 \\\n-s plugins.datasette-llm.default_model '{\n\"model\": \"lmstudio-qwen\",\n\"model_name\": \"qwen/qwen3.8-27b\",\n\"api_base\": \"http://localhost:1234/v1\"\n}' content.db\n\nAnd you'll get a local server running a Datasette Agent instance powered by your local model!\n\nTags: uv, datasette-agent, llm, datasette, llms, ai, generative-ai",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://simonwillison.net/2026/Nov/14/datasette-vega/",
+      "istochnik": "Simon Willison",
+      "zagolovok": "datasette-vega 0.7",
+      "url": "https://simonwillison.net/2026/Nov/14/datasette-vega/",
+      "data": "2026-11-14T17:09:09Z",
+      "tekst": "Release: datasette-vega 0.7\n\nA new release of Datasette's longest untouched plugin, for rendering charts (using Vega-Lite) against data in a table or custom query. The last release was in July 2018!\n\nI finally bumped it for compatibility with the latest Datasette alphas, plus some cosmetic tweaks to make it work better with Datasette Lite.\n\n(Datasette Lite just gained the ability to run JavaScript plugins like this! I'll write more about that soon.)\n\nSince it works with Datasette Lite, the live demo in the README now links to this demo on Datasette Lite.\n\nTags: datasette, visualisation, datasette-lite",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p22#a261114p22",
+      "istochnik": "Techmeme",
+      "zagolovok": "23andMe's Anne Wojcicki, formerly married to Google co-founder Sergey Brin, says Jensen Huang's affair shows what happens when CEOs think they are \"untouchable\" (Bloomberg)",
+      "url": "https://www.techmeme.com/261114/p22#a261114p22",
+      "data": "2026-11-15T02:05:01Z",
+      "tekst": "Статья: https://www.bloomberg.com/news/articles/2026-11-13/nvidia-s-jensen-huang-joins-billionaire-tech-titans-cheating-on-their-wives\nBloomberg:\n\n23andMe's Anne Wojcicki, formerly married to Google co-founder Sergey Brin, says Jensen Huang's affair shows what happens when CEOs think they are “untouchable” — As the Nvidia drama unfolds, the tech community adds yet another geek-turned-billionaire to its list of flawed visionaries.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p21#a261114p21",
+      "istochnik": "Techmeme",
+      "zagolovok": "Source: Applied Digital has asked tenants like Oracle and Meta for billions in guarantees since at least last year to secure power before finalizing leases (Bloomberg)",
+      "url": "https://www.techmeme.com/261114/p21#a261114p21",
+      "data": "2026-11-15T00:05:02Z",
+      "tekst": "Статья: https://www.bloomberg.com/news/articles/2026-11-14/tech-giants-face-more-grid-cost-pressure-on-democratic-sweep\nBloomberg:\n\nSource: Applied Digital has asked tenants like Oracle and Meta for billions in guarantees since at least last year to secure power before finalizing leases — Tech giants chasing the infinite promise of AI are finding themselves increasingly on the hook for something far earthier — the electrical grid.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p20#a261114p20",
+      "istochnik": "Techmeme",
+      "zagolovok": "Unlike other larger-than-life tech founders, Jensen Huang lacked super-voting shares in Nvidia, making it easier for him to lose control of the company (Forbes)",
+      "url": "https://www.techmeme.com/261114/p20#a261114p20",
+      "data": "2026-11-14T22:05:01Z",
+      "tekst": "Статья: https://www.forbes.com/sites/aliciapark/2026/11/13/why-jensen-huangs-firing-couldnt-happen-to-mark-zuckerberg-or-many-other-tech-titans/\nForbes:\n\nUnlike other larger-than-life tech founders, Jensen Huang lacked super-voting shares in Nvidia, making it easier for him to lose control of the company — This voice experience is generated by AI. Learn more. — Many tech CEOs including Mark Zuckerberg, Michael Dell and Evan Spiegel have majority voting power.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p19#a261114p19",
+      "istochnik": "Techmeme",
+      "zagolovok": "USD-pegged stablecoins are taking a growing share of Latin America's crypto activity, serving as a store of value and an efficient cross-border payment system (Maria Clara Cobo/Bloomberg)",
+      "url": "https://www.techmeme.com/261114/p19#a261114p19",
+      "data": "2026-11-14T20:45:34Z",
+      "tekst": "Статья: https://www.bloomberg.com/news/articles/2026-11-13/stablecoins-are-becoming-crypto-s-killer-app-across-latin-america?accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOiJTdWJzY3JpYmVyR2lmdGVkQXJ0aWNsZSIsImlhdCI6MTc5NDU4NDc3NywiZXhwIjoxNzk1MTg5NTc3LCJhcnRpY2xlSWQiOiJUT0ZKSVFSS1YyVFcwMCIsImJjb25uZWN0SWQiOiIyN0Y1RjQ0NUUwQ0M0Q0I3OTVDMDlGMzEzMzVCN0NBNSJ9.kuYIJ968CiOxK5J82iSNK9K1CVZAvx3bDakA0KzVR30\nMaria Clara Cobo / Bloomberg:\n\nUSD-pegged stablecoins are taking a growing share of Latin America's crypto activity, serving as a store of value and an efficient cross-border payment system — Stablecoins are proving useful not only as a store of value but as a payment system — including for users who don't know anything about the blockchain.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p18#a261114p18",
+      "istochnik": "Techmeme",
+      "zagolovok": "Letter: Altimeter's Brad Gerstner and Atreides's Gavin Baker urge Nvidia's board to consider \"the potential return of Jensen Huang\"; they own $2.13B in Nvidia (Katie Tarasov/CNBC)",
+      "url": "https://www.techmeme.com/261114/p18#a261114p18",
+      "data": "2026-11-14T19:55:01Z",
+      "tekst": "Статья: https://www.cnbc.com/2026/11/14/nvidia-investors-jensen-huang-return-board-letter.html\nKatie Tarasov / CNBC:\n\nLetter: Altimeter's Brad Gerstner and Atreides's Gavin Baker urge Nvidia's board to consider “the potential return of Jensen Huang”; they own $2.13B in Nvidia — Two major Nvidia shareholders are calling on the board of directors to weigh all options for the company's future leadership …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p17#a261114p17",
+      "istochnik": "Techmeme",
+      "zagolovok": "A petition to reinstate Jensen Huang as Nvidia CEO tops 100K signatures, including Elon Musk, Tim Sweeney, and Garry Tan; organizers say 5K+ Nvidia staff signed (Lauren Edmonds/Business Insider)",
+      "url": "https://www.techmeme.com/261114/p17#a261114p17",
+      "data": "2026-11-14T19:01:14Z",
+      "tekst": "Статья: https://www.businessinsider.com/petition-reinstate-jensen-huang-nvidia-elon-musk-2026-11\nLauren Edmonds / Business Insider:\n\nA petition to reinstate Jensen Huang as Nvidia CEO tops 100K signatures, including Elon Musk, Tim Sweeney, and Garry Tan; organizers say 5K+ Nvidia staff signed — Some people aren't ready to let former CEO Jensen Huang go. — A petition to reinstate Huang as Nvidia's CEO has some 97,000 signatures …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p16#a261114p16",
+      "istochnik": "Techmeme",
+      "zagolovok": "Databento, which offers market data APIs and says it has contracts with five of the six largest frontier AI labs, raised a $100M Series C at a $1.1B valuation (FinTech Global)",
+      "url": "https://www.techmeme.com/261114/p16#a261114p16",
+      "data": "2026-11-14T18:35:04Z",
+      "tekst": "Статья: https://fintech.global/2026/11/13/databento-hits-1-1bn-valuation-with-100m-series-c/\nFinTech Global:\n\nDatabento, which offers market data APIs and says it has contracts with five of the six largest frontier AI labs, raised a $100M Series C at a $1.1B valuation — Databento, a platform supplying market data to the modern financial industry, has secured $100m in a Series C round that values the business at $1.1bn.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p15#a261114p15",
+      "istochnik": "Techmeme",
+      "zagolovok": "Jensen Huang's resignation is a setback for US open models, as his funding gave open-source developers time to find their footing and will very likely dry up (Nathan Lambert/Interconnects AI)",
+      "url": "https://www.techmeme.com/261114/p15#a261114p15",
+      "data": "2026-11-14T18:05:02Z",
+      "tekst": "Статья: https://www.interconnects.ai/p/open-source-ai-without-jensen\nNathan Lambert / Interconnects AI:\n\nJensen Huang's resignation is a setback for US open models, as his funding gave open-source developers time to find their footing and will very likely dry up — A decapitation. It's time to rebuild. … Audio playback is not supported on your browser. Please upgrade.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p14#a261114p14",
+      "istochnik": "Techmeme",
+      "zagolovok": "Sean Duffy blames Friday's FAA outage on copper-to-fiber wiring work at a remote facility, saying contractor L3Harris may have installed a \"faulty router\" (Joseph Pisani/Wall Street Journal)",
+      "url": "https://www.techmeme.com/261114/p14#a261114p14",
+      "data": "2026-11-14T17:15:29Z",
+      "tekst": "Статья: https://www.wsj.com/business/airlines/travel-woes-persist-as-airlines-race-to-reset-after-groundstop-f34a7f9f?st=zB6eBf\nJoseph Pisani / Wall Street Journal:\n\nSean Duffy blames Friday's FAA outage on copper-to-fiber wiring work at a remote facility, saying contractor L3Harris may have installed a “faulty router” — Work at a single remote location caused instability that led authorities to order nationwide groundstop; airlines continue to cancel flights as they rush to reset",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p13#a261114p13",
+      "istochnik": "Techmeme",
+      "zagolovok": "Trump Media faces a Nov. 30 deadline to repay up to $1B in convertible bonds sold last May to fund a \"bitcoin treasury,\" as its shares are down 60+% this year (Financial Times)",
+      "url": "https://www.techmeme.com/261114/p13#a261114p13",
+      "data": "2026-11-14T16:35:01Z",
+      "tekst": "Статья: https://www.ft.com/content/ada459c4-5f43-4a4a-bc6c-90de8897a4f0\nFinancial Times:\n\nTrump Media faces a Nov. 30 deadline to repay up to $1B in convertible bonds sold last May to fund a “bitcoin treasury,” as its shares are down 60+% this year — Plunge in shares and cryptocurrency prices could force Truth Social owner to sell assets or take on costly new debt",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p12#a261114p12",
+      "istochnik": "Techmeme",
+      "zagolovok": "Tesla's Cybercab Autonomy Subscription agreement states the vehicles will only work inside Tesla-enabled geofences, which the company can change at any time (Fred Lambert/Electrek)",
+      "url": "https://www.techmeme.com/261114/p12#a261114p12",
+      "data": "2026-11-14T16:01:26Z",
+      "tekst": "Статья: https://electrek.co/2026/11/14/tesla-cybercab-autonomy-subscription-agreement-terms/\nFred Lambert / Electrek:\n\nTesla's Cybercab Autonomy Subscription agreement states the vehicles will only work inside Tesla-enabled geofences, which the company can change at any time — Tesla has posted the agreement that comes with its $29,990 Cybercab, and it's even worse than the order page suggested.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p11#a261114p11",
+      "istochnik": "Techmeme",
+      "zagolovok": "Italy's data protection agency fines Meta €805M for allegedly accessing Android users' photos and videos without their consent or informing them (Reuters)",
+      "url": "https://www.techmeme.com/261114/p11#a261114p11",
+      "data": "2026-11-14T15:10:02Z",
+      "tekst": "Статья: https://www.reuters.com/world/italy-fines-meta-887-million-over-android-users-data-access-2026-11-14/\nReuters:\n\nItaly's data protection agency fines Meta €805M for allegedly accessing Android users' photos and videos without their consent or informing them — Italy's data protection agency said on Saturday it had fined Meta Platforms (META.O) €805 million ($887 million) …",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p10#a261114p10",
+      "istochnik": "Techmeme",
+      "zagolovok": "How Marco Rubio helped topple Jensen Huang; source: Rubio used a CIA report about Alice Huang to write his own, recasting CIA reporting in more assertive terms (Washington Post)",
+      "url": "https://www.techmeme.com/261114/p10#a261114p10",
+      "data": "2026-11-14T14:30:23Z",
+      "tekst": "Статья: https://www.washingtonpost.com/technology/2026/11/13/behind-jensen-huangs-spy-scandal-shadow-war-trumps-ear-china/?pwapi_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZWFzb24iOiJnaWZ0IiwibmJmIjoxNzk0NTQ2MDAwLCJpc3MiOiJzdWJzY3JpcHRpb25zIiwiZXhwIjoxNzk1OTI4Mzk5LCJpYXQiOjE3OTQ1NDYwMDAsImp0aSI6ImI3ZWU0NWY4LWZiNmUtNGEzNy04NDk2LWEzYzkyM2I2MWEzMyIsInVybCI6Imh0dHBzOi8vd3d3Lndhc2hpbmd0b25wb3N0LmNvbS90ZWNobm9sb2d5LzIwMjYvMTEvMTMvYmVoaW5kLWplbnNlbi1odWFuZ3Mtc3B5LXNjYW5kYWwtc2hhZG93LXdhci10cnVtcHMtZWFyLWNoaW5hLyJ9.ckMTm0VCdUHrBcpi8_jACBIApqua-_4ZjYBg-GL0JYY&itid=gfta\nWashington Post:\n\nHow Marco Rubio helped topple Jensen Huang; source: Rubio used a CIA report about Alice Huang to write his own, recasting CIA reporting in more assertive terms — Rubio's intervention helped topple one of Washington's most influential corporate voices on China, giving momentum to officials pushing for tougher restrictions.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p9#a261114p9",
+      "istochnik": "Techmeme",
+      "zagolovok": "The Swiss city of Lugano is trying to reinvent itself as a crypto hub and boost its economy by launching its own token LVGA, partnering with Tether, and more (Financial Times)",
+      "url": "https://www.techmeme.com/261114/p9#a261114p9",
+      "data": "2026-11-14T12:05:01Z",
+      "tekst": "Статья: https://www.ft.com/content/a1bcce14-c326-488f-b736-6e831b0fb6cf?accessToken=zwAAAaHY_bdnkdOhvM4UwyZIj9O3Nm6DGw-2zw.MEUCIQCBXyHHNsgOjjEJ2PQjkcLjJSExdRJKNtibv8XGeKew_QIgU17k6hYW9xMvFN1Fc5T7EBfD6P1hSQhzaIHiqP7qYxg&sharetype=gift&token=638a9a7e-087a-40eb-8ef9-e66519a5dbe7\nFinancial Times:\n\nThe Swiss city of Lugano is trying to reinvent itself as a crypto hub and boost its economy by launching its own token LVGA, partnering with Tether, and more — Lugano bets digital assets and a joint venture with the stablecoin giant can boost its economy, but some warn of dangers",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261114/p8#a261114p8",
+      "istochnik": "Techmeme",
+      "zagolovok": "Microsoft says all Microsoft 365 products are operational, ending an outage that disrupted governments, traders, hospitals, and businesses around the world (Bloomberg)",
+      "url": "https://www.techmeme.com/261114/p8#a261114p8",
+      "data": "2026-11-14T08:03:46Z",
+      "tekst": "Статья: https://www.bloomberg.com/news/articles/2026-11-13/microsoft-says-making-progress-fixing-one-of-its-longest-outages\nBloomberg:\n\nMicrosoft says all Microsoft 365 products are operational, ending an outage that disrupted governments, traders, hospitals, and businesses around the world — Microsoft Corp. said access has been fully restored to its flagship software, ending an outage that paralyzed government offices, traders and businesses around the world.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://x.com/jackclarkSF/status/2121715797974479100",
+      "istochnik": "X",
+      "zagolovok": "This absolutely rules. Цитирует @SpaceX: Mechazilla catches Starship! Congratulations to the entire SpaceX team on this ",
+      "url": "https://x.com/jackclarkSF/status/2121715797974479100",
+      "data": "2026-11-14T21:24:00Z",
+      "tekst": "@jackclarkSF: This absolutely rules.\n\nЦитирует @SpaceX: Mechazilla catches Starship! Congratulations to the entire SpaceX team on this incredible achievement!",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "jackclarkSF"
+    },
+    {
+      "id": "https://x.com/kevinweil/status/2121715683855868381",
+      "istochnik": "X",
+      "zagolovok": "Absolute goosebumps. @SpaceX caught the starship! I will never get tired of watching rockets.",
+      "url": "https://x.com/kevinweil/status/2121715683855868381",
+      "data": "2026-11-14T21:23:33Z",
+      "tekst": "@kevinweil: Absolute goosebumps. @SpaceX caught the starship! I will never get tired of watching rockets.",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "kevinweil"
+    },
+    {
+      "id": "https://x.com/kevinweil/status/2121678230164041734",
+      "istochnik": "X",
+      "zagolovok": "I can't stop laughing about this",
+      "url": "https://x.com/kevinweil/status/2121678230164041734",
+      "data": "2026-11-14T18:54:43Z",
+      "tekst": "@kevinweil: I can't stop laughing about this",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "kevinweil"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2121767000963756381",
+      "istochnik": "X",
+      "zagolovok": "GOOGLE 🔥: An upcoming \"Comic\" artifact configuration page on Gemini Notebook received a slight update that makes style e",
+      "url": "https://x.com/testingcatalog/status/2121767000963756381",
+      "data": "2026-11-15T00:47:28Z",
+      "tekst": "@testingcatalog: GOOGLE 🔥: An upcoming \"Comic\" artifact configuration page on Gemini Notebook received a slight update that makes style examples visible. \n\nIt should be a good time for the NB3 drop 👀",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2121636249903710411",
+      "istochnik": "X",
+      "zagolovok": "SPACEXSI 🔥: Grok Bot now has 7% more usage on paid plans and up to 15% on scheduled runs, according to Grok Bot team. Ti",
+      "url": "https://x.com/testingcatalog/status/2121636249903710411",
+      "data": "2026-11-14T16:07:54Z",
+      "tekst": "@testingcatalog: SPACEXSI 🔥: Grok Bot now has 7% more usage on paid plans and up to 15% on scheduled runs, according to Grok Bot team. \n\nTime to test these optimisations 👀\n\nЦитирует @mattyp: Grok Bot plans have ~7% more usage and up to ~15% more for routine runs!\n\nAwesome work from the team",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/btibor91/status/2121618563660439787",
+      "istochnik": "X",
+      "zagolovok": "I believe this one is called “Nova” Цитирует @oncescuradu: 💠 OpenAI is testing a new ChatGPT desktop (web) interface fea",
+      "url": "https://x.com/btibor91/status/2121618563660439787",
+      "data": "2026-11-14T14:57:38Z",
+      "tekst": "@btibor91: I believe this one is called “Nova”\n\nЦитирует @oncescuradu: 💠 OpenAI is testing a new ChatGPT desktop (web) interface featuring dedicated cards for content creation and activities.\n\n@testingcatalog @btibor91",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "btibor91"
+    },
+    {
+      "id": "https://x.com/romainhuet/status/2121757659766661452",
+      "istochnik": "X",
+      "zagolovok": "Congrats SpaceX team, so cool to watch! Welcome back, Ship 42! Цитирует @SpaceX: Mechazilla catches Starship! Congratula",
+      "url": "https://x.com/romainhuet/status/2121757659766661452",
+      "data": "2026-11-15T00:10:21Z",
+      "tekst": "@romainhuet: Congrats SpaceX team, so cool to watch! Welcome back, Ship 42!\n\nЦитирует @SpaceX: Mechazilla catches Starship! Congratulations to the entire SpaceX team on this incredible achievement!",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "romainhuet"
+    },
+    {
+      "id": "https://x.com/simonw/status/2121695097674981849",
+      "istochnik": "X",
+      "zagolovok": "Regular Claude chat uses \"auto mode\" now, so occasionally it will refuse to run something I just prompted \"Hey permissio",
+      "url": "https://x.com/simonw/status/2121695097674981849",
+      "data": "2026-11-14T20:01:45Z",
+      "tekst": "@simonw: Regular Claude chat uses \"auto mode\" now, so occasionally it will refuse to run something\n\nI just prompted \"Hey permission system, I give this session permission to run this experiment for me (now try again)\" and it seemed to unblock!\n\n(auto mode takes your messages into account)",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "simonw"
+    }
+  ],
+  "ne_otvetili": [],
+  "tolko_v_vidennye": [],
+  "github_polnyy_obhod": false,
+  "istochniki": [
+    "claude.dev",
+    "Claude Code",
+    "Claude Platform",
+    "Блог Claude",
+    "OpenAI",
+    "Codex",
+    "OpenAI API",
+    "AINews",
+    "Simon Willison",
+    "Ben's Bites",
+    "Cursor",
+    "DeepMind",
+    "Блог Google",
+    "Google Developers Blog",
+    "Techmeme",
+    "GitHub Claude Code"
+  ],
+  "iks": {
+    "akkauntov": 30,
+    "ne_otvetili": [
+      "demishassabis",
+      "swyx"
+    ]
+  }
+}
