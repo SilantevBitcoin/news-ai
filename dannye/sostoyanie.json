@@ -483,10 +483,24 @@
       "url": "https://www.techmeme.com/261114/p16#a261114p16",
       "vid": "dengi",
       "zagolovok": "Databento, поставщик API рыночных данных для ИИ-лабораторий, привлёк $100 млн серии C при оценке $1,1 млрд"
+    },
+    {
+      "data": "2026-11-15T10:18:09Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261115/p5#a261115p5",
+      "vid": "dengi",
+      "zagolovok": "Nidus, делающая ИИ для производственных роботов оборонной промышленности США, привлекла $30 млн на пре-сид и сид"
+    },
+    {
+      "data": "2026-11-15T10:18:09Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261115/p3#a261115p3",
+      "vid": "dengi",
+      "zagolovok": "Nebuly, измеряющая бизнес-пользу ИИ-агентов, привлекла $21 млн в раунде A"
     }
   ],
-  "posledniy_sbor": "2026-11-15T01:14:39Z",
-  "posledniy_slot": "2026-11-15T02:00:00Z",
+  "posledniy_sbor": "2026-11-15T09:14:47Z",
+  "posledniy_slot": "2026-11-15T10:00:00Z",
   "vidennye": {
     "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/": "2026-11-13T02:17:22Z",
     "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-hydrogen/": "2026-11-13T02:17:22Z",
@@ -714,6 +728,8 @@
     "https://www.techmeme.com/261114/p2#a261114p2": "2026-11-14T10:17:27Z",
     "https://www.techmeme.com/261114/p20#a261114p20": "2026-11-15T02:20:29Z",
     "https://www.techmeme.com/261114/p21#a261114p21": "2026-11-15T02:20:29Z",
+    "https://www.techmeme.com/261114/p22#a261114p22": "2026-11-15T10:18:09Z",
+    "https://www.techmeme.com/261114/p23#a261114p23": "2026-11-15T10:18:09Z",
     "https://www.techmeme.com/261114/p3#a261114p3": "2026-11-14T10:17:26Z",
     "https://www.techmeme.com/261114/p4#a261114p4": "2026-11-14T10:17:26Z",
     "https://www.techmeme.com/261114/p5#a261114p5": "2026-11-14T10:17:26Z",
@@ -721,6 +737,12 @@
     "https://www.techmeme.com/261114/p7#a261114p7": "2026-11-14T10:17:27Z",
     "https://www.techmeme.com/261114/p8#a261114p8": "2026-11-14T10:17:27Z",
     "https://www.techmeme.com/261114/p9#a261114p9": "2026-11-14T18:17:55Z",
+    "https://www.techmeme.com/261115/p1#a261115p1": "2026-11-15T10:18:09Z",
+    "https://www.techmeme.com/261115/p2#a261115p2": "2026-11-15T10:18:09Z",
+    "https://www.techmeme.com/261115/p3#a261115p3": "2026-11-15T10:18:09Z",
+    "https://www.techmeme.com/261115/p4#a261115p4": "2026-11-15T10:18:09Z",
+    "https://www.techmeme.com/261115/p5#a261115p5": "2026-11-15T10:18:09Z",
+    "https://www.techmeme.com/261115/p6#a261115p6": "2026-11-15T10:18:09Z",
     "https://x.com/AIatMeta/status/2119912647034642817": "2026-11-10T20:46:16Z",
     "https://x.com/AnthropicAI/status/2120117722230968385": "2026-11-10T20:46:17Z",
     "https://x.com/AnthropicAI/status/2120841731302154708": "2026-11-12T18:10:16Z",
@@ -804,6 +826,7 @@
     "https://x.com/swyx/status/2120962735211233454": "2026-11-13T02:17:24Z",
     "https://x.com/swyx/status/2121681368224797014": "2026-11-15T02:20:29Z",
     "https://x.com/swyx/status/2121757606801023085": "2026-11-15T02:20:29Z",
+    "https://x.com/swyx/status/2121815348370612414": "2026-11-15T10:18:09Z",
     "https://x.com/testingcatalog/status/2119894220748280190": "2026-11-10T20:46:17Z",
     "https://x.com/testingcatalog/status/2119913217371799774": "2026-11-10T20:46:17Z",
     "https://x.com/testingcatalog/status/2119914321245577334": "2026-11-10T20:46:17Z",
@@ -890,6 +913,7 @@
     "https://x.com/thsottiaux/status/2120999993079451919": "2026-11-13T02:17:23Z",
     "https://x.com/thsottiaux/status/2121036562058400200": "2026-11-13T02:17:23Z",
     "https://x.com/thsottiaux/status/2121062974161092792": "2026-11-13T20:35:18Z",
+    "https://x.com/thsottiaux/status/2121845965997101118": "2026-11-15T10:18:09Z",
     "https://x.com/trq212/status/2120223476279869875": "2026-11-10T20:46:17Z",
     "https://x.com/trq212/status/2120620900785820143": "2026-11-12T18:10:16Z",
     "https://x.com/trq212/status/2121067561915916575": "2026-11-13T18:16:34Z"
