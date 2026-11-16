@@ -1,0 +1,125 @@
+{
+  "krupnye": [],
+  "sayty": [
+    {
+      "zagolovok": "OpenAI расширяет программу ChatGPT для учёных: бесплатный доступ к лучшим моделям для 200 000 исследователей, заявки с 23 ноября",
+      "url": "https://openai.com/index/expanding-chatgpt-for-academic-researchers",
+      "istochnik": "OpenAI",
+      "zvezda": false,
+      "idy": [
+        "https://openai.com/index/expanding-chatgpt-for-academic-researchers",
+        "https://openai.com/index/science-at-the-frontier",
+        "https://x.com/OpenAI/status/2122380010287960095",
+        "https://x.com/OpenAI/status/2122377585523126615",
+        "https://x.com/gdb/status/2122381437198586144"
+      ]
+    },
+    {
+      "zagolovok": "OpenAI показала агентов, которые работают с компьютером, для клиник, и новые плагины ChatGPT for Healthcare",
+      "url": "https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare",
+      "istochnik": "OpenAI",
+      "zvezda": false,
+      "idy": [
+        "https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare",
+        "https://openai.com/index/advancing-computer-use-for-healthcare-teams"
+      ]
+    },
+    {
+      "zagolovok": "Anthropic сократила окно раскрытия уязвимостей с 90 до 30 дней для серьёзных и критических ошибок",
+      "url": "https://www.techmeme.com/261116/p36#a261116p36",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261116/p36#a261116p36"
+      ]
+    },
+    {
+      "zagolovok": "Google: впервые замечены атакующие, у которых автономный ИИ-фреймворк без участия человека превращает патчи безопасности в эксплойты",
+      "url": "https://www.techmeme.com/261116/p30#a261116p30",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261116/p30#a261116p30"
+      ]
+    },
+    {
+      "zagolovok": "Минторг США ограничил удалённый доступ к передовым ИИ-чипам из Сингапура, Малайзии, Таиланда, Индонезии и Бразилии",
+      "url": "https://www.techmeme.com/261116/p27#a261116p27",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261116/p27#a261116p27"
+      ]
+    },
+    {
+      "zagolovok": "OpenAI API: бесплатный классификатор omni-moderation-csam-latest для проверенных организаций",
+      "url": "https://developers.openai.com/api/docs/changelog",
+      "istochnik": "OpenAI API",
+      "zvezda": false,
+      "idy": [
+        "https://developers.openai.com/api/docs/changelog#2026-11-16 Feature · omni-moderation-csam-latest · v1/moderations: Approved organizations can use the OpenAI CSAM Image Classifier at no cost to help prioritize images for human review."
+      ]
+    },
+    {
+      "zagolovok": "Ask Maps в Google Картах: планирование поездок на праздники, советы по маршруту и поиск по сохранённым спискам",
+      "url": "https://blog.google/products-and-platforms/products/maps/ask-maps-holiday-travel-features-2026/",
+      "istochnik": "Блог Google",
+      "zvezda": false,
+      "idy": [
+        "https://blog.google/products-and-platforms/products/maps/ask-maps-holiday-travel-features-2026/"
+      ]
+    }
+  ],
+  "x": [
+    {
+      "zagolovok": "OpenAI заключила договоры с независимыми оценщиками Apollo Research, METR, Transluce и Goodfire: они получат глубокий доступ к внутренним моделям и системам",
+      "url": "https://x.com/OpenAI/status/2122359930628063248",
+      "akkaunt": "OpenAI",
+      "zvezda": false,
+      "idy": [
+        "https://x.com/OpenAI/status/2122359930628063248",
+        "https://x.com/gdb/status/2122371202169905639",
+        "https://www.techmeme.com/261116/p33#a261116p33"
+      ]
+    }
+  ],
+  "dengi": [
+    {
+      "zagolovok": "Corma, делающая ИИ-агентов для киберзащиты, привлекла 125 млн долларов в раунде A",
+      "url": "https://www.techmeme.com/261116/p28#a261116p28",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261116/p28#a261116p28"
+      ]
+    },
+    {
+      "zagolovok": "Noeri, проверяющая и улучшающая ИИ-модели клиентов, привлекла 110 млн долларов во главе с Menlo Ventures",
+      "url": "https://www.techmeme.com/261116/p35#a261116p35",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261116/p35#a261116p35"
+      ]
+    },
+    {
+      "zagolovok": "Dreamteam, ИИ-CRM от бывших руководителей Freshworks, привлекла 53 млн долларов",
+      "url": "https://www.techmeme.com/261116/p24#a261116p24",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261116/p24#a261116p24"
+      ]
+    },
+    {
+      "zagolovok": "Knit Health, оптимизирующая направления пациентов с помощью ИИ, привлекла 35 млн долларов в раунде A",
+      "url": "https://www.techmeme.com/261116/p29#a261116p29",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261116/p29#a261116p29"
+      ]
+    }
+  ],
+  "github": []
+}
