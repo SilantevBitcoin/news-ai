@@ -1,0 +1,354 @@
+{
+  "nachalo_progona": "2026-11-16T02:08:31Z",
+  "nachalo_perioda": "2026-11-15T17:13:09Z",
+  "nachalo_okna": "2026-11-15T02:08:31Z",
+  "pervyy_progon": false,
+  "kandidaty": [
+    {
+      "id": "https://simonwillison.net/2026/Nov/15/datasette-maplibre/",
+      "istochnik": "Simon Willison",
+      "zagolovok": "datasette-maplibre 0.1a0",
+      "url": "https://simonwillison.net/2026/Nov/15/datasette-maplibre/",
+      "data": "2026-11-15T23:58:36Z",
+      "tekst": "Release: datasette-maplibre 0.1a0\n\nThe first new Datasette geospatial plugin in quite a while! This one combines the excellent MapLibre GL library with OpenFreeMap, the free vector map server operated by Zsolt Ero (you should sponsor Zsolt on GitHub.)\n\nI built most of this with a single prompt to Claude Fable 5.2:\n\nLook at datasette-cluster-map and datasette-leaflet-geojson plugins, then look at ~/dev/tools/openfreemap-demo.html - then build a brand new Datasette plugin that uses maplibreGL and openfreemap and combines the features of those other two plugins - but be creative and think outside the box for other useful features the plugin might have\n\n\"Be creative and think outside the box\" resulted in a few neat ideas - my favorite is that it displays SVG previews of GeoJSON shapes, then loads a WebGL preview only when they scroll into view.\n\nI also had Claude build a comprehensive demo which works in the latest Datasette Lite, so you can visit this link to load the plugin and a demo database in your browser via Pyodide and WebAssembly.\n\nI like this demo page showing both GeoJSON shapes and lat/lon points on the same map:\n\nTags: visualization, generative-ai, datasette-lite, claude-mythos-fable, ai, llms, geospatial, openstreetmap, datasette",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://simonwillison.net/2026/Nov/15/datasette/",
+      "istochnik": "Simon Willison",
+      "zagolovok": "datasette 1.0a43",
+      "url": "https://simonwillison.net/2026/Nov/15/datasette/",
+      "data": "2026-11-15T23:20:27Z",
+      "tekst": "Release: datasette 1.0a43\n\nI've been leaning hard into Claude Fable 5.2 to help knock things off the 1.0 milestone, which is now 53% complete.\n\nThe biggest 1.0 item in this release is streaming support for output renderers - the built-in TSV and CSV export mechanisms now use this as well, and plugins can register themselves as capable of streaming every row in a table in one go via the new Response.stream() method.\n\nThere are a couple of security fixes, one of which I deemed deserving of a GitHub advisory: private stored queries could be exposed, granting access to the title and SQL of the query (but not allowing that query to be executed).\n\nThere are dozens of smaller improvements. The row page JSON representation finally has a design suitable for 1.0. A new <datasette-copy-button> Web Component provides copy-schema in various places. JSON in columns on the row page can be pretty-printed. There's a new DatasetteModal.confirm() JavaScript utility method. Plus dozens of bug fixes, including contributions by Zihan Dai, Peter Olkhovets, Ilya Khalafi, and Ankita Advitot.\n\nThe feature I'm most excited about is a pretty tiny one: I've added CSS multi-page view transitions to Datasette! Here's the commit - key CSS is as follows:\n\n/* Enable cross-document view transitions,\nfor anyone without prefers-reduced-motion */\n@media (prefers-reduced-motion: no-preference) {\n@view-transition {\nnavigation: auto;\n}\n}\n/* .facet-results should morph from old position to new */\nhtml:active-view-transition .content > .facet-results {\nview-transition-name: facet-results;\n}\n/* So should a .table-wrapper, provided it contains .rows-and-columns */\nhtml:active-view-transition .table-wrapper:has(> table.rows-and-columns) {\nview-transition-name: rows-table;\n}\n\nWith that in place, navigations within Datasette - still staunchly a multi-page application - feel more like an SPA. This works on Safari and Chrome at the moment and I believe supports for Firefox is due to land in Firefox 162 on December 8th 2026 (seeing as they are no longer feature-flagged in Firefox Nightly.)\n\nTags: security, datasette, css, browsers, annotated-release-notes, firefox, javascript, safari, chrome",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://simonwillison.net/2026/Nov/15/datasette-2/",
+      "istochnik": "Simon Willison",
+      "zagolovok": "datasette 0.65.6",
+      "url": "https://simonwillison.net/2026/Nov/15/datasette-2/",
+      "data": "2026-11-15T23:18:17Z",
+      "tekst": "Release: datasette 0.65.6\n\nI backported a minor security fix from 1.0a43:\n\nFixed a security issue where a database registered using add_database(db, name=..., route=...) with a route that differs from its name could be downloaded from /<route>.db by actors who were denied access to it. [...]\n\nTags: security, datasette",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://simonwillison.net/2026/Nov/15/datasette-apps/",
+      "istochnik": "Simon Willison",
+      "zagolovok": "datasette-apps 0.4a0",
+      "url": "https://simonwillison.net/2026/Nov/15/datasette-apps/",
+      "data": "2026-11-15T04:02:45Z",
+      "tekst": "Release: datasette-apps 0.4a0\n\nDatasette Apps are sandboxed HTML and JavaScript applications that live inside Datasette - think Claude Artifacts, but these ones can run SQL queries against your data.\n\n0.4a0 adds support for linking: you can link to an app with #fragments in the URL and the app can see and use those, plus supported URL schemes are reported back to Datasette Agent so it can help write apps that link to each other.\n\nThis means you can have e.g. an app that shows details about a specific record, and a completely separate app that searches those records and links to their representations in the first app.\n\nTags: datasette-agent, datasette-apps, datasette, urls",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://simonwillison.net/2026/Nov/15/datasette-agent/",
+      "istochnik": "Simon Willison",
+      "zagolovok": "datasette-agent 0.6a0",
+      "url": "https://simonwillison.net/2026/Nov/15/datasette-agent/",
+      "data": "2026-11-15T03:49:47Z",
+      "tekst": "Release: datasette-agent 0.6a0\n\nAccumulated small fixes for Datasette Agent, my agent plugin for Datasette that lets you ask questions about your data. Most notably, it now adds an agent prompt directly to the Datasette homepage, with support for hash-mentions of tables and queries:\n\nTags: datasette-agent, llm, datasette, llms, ai, generative-ai",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261115/p20#a261115p20",
+      "istochnik": "Techmeme",
+      "zagolovok": "SK Hynix says it plans to spend ~$1.05B over five years to support domestic suppliers of chip materials, parts, and equipment, strengthening its supply chain (Heekyong Yang/Reuters)",
+      "url": "https://www.techmeme.com/261115/p20#a261115p20",
+      "data": "2026-11-16T01:45:01Z",
+      "tekst": "Статья: https://www.reuters.com/world/asia-pacific/sk-hynix-spend-1-billion-over-five-years-support-chip-suppliers-2026-11-16/\nHeekyong Yang / Reuters:\n\nSK Hynix says it plans to spend ~$1.05B over five years to support domestic suppliers of chip materials, parts, and equipment, strengthening its supply chain — South Korea's SK Hynix (000660.KS) said on Monday it plans to spend 1.4 trillion won ($1.05 billion) over the next five years …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261115/p19#a261115p19",
+      "istochnik": "Techmeme",
+      "zagolovok": "Samsung aims to be a one-stop shop that builds, runs, and powers AI data centers; sources: its IT arm is in early talks to sign Anthropic and OpenAI as tenants (Financial Times)",
+      "url": "https://www.techmeme.com/261115/p19#a261115p19",
+      "data": "2026-11-16T01:15:01Z",
+      "tekst": "Статья: https://www.ft.com/content/ee5b23b3-89b3-41f7-9158-56c1586759c2\nFinancial Times:\n\nSamsung aims to be a one-stop shop that builds, runs, and powers AI data centers; sources: its IT arm is in early talks to sign Anthropic and OpenAI as tenants — South Korean conglomerate hopes to replicate success with semiconductors across its sprawling portfolio of businesses",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261115/p18#a261115p18",
+      "istochnik": "Techmeme",
+      "zagolovok": "Sources: Anthropic's IPO is ~7x oversubscribed; Anthropic and some of its backers are seeking to raise up to $90.4B via the IPO and a separate private placement (Bloomberg)",
+      "url": "https://www.techmeme.com/261115/p18#a261115p18",
+      "data": "2026-11-15T23:00:00Z",
+      "tekst": "Статья: https://www.bloomberg.com/news/features/2026-11-15/anthropic-s-ipo-makes-dario-amodei-the-new-face-of-the-ai-boom\nBloomberg:\n\nSources: Anthropic's IPO is ~7x oversubscribed; Anthropic and some of its backers are seeking to raise up to $90.4B via the IPO and a separate private placement — The startup is set for the biggest IPO of all time, putting AI investors' hopes and dreams — and fears — onto a frontier model maker.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261115/p17#a261115p17",
+      "istochnik": "Techmeme",
+      "zagolovok": "Amazon loses 40 Leo satellites after ULA's Vulcan rocket fails 10 minutes into flight, marking the first mission failure for the Boeing-Lockheed joint venture (Joey Roulette/Reuters)",
+      "url": "https://www.techmeme.com/261115/p17#a261115p17",
+      "data": "2026-11-15T22:35:01Z",
+      "tekst": "Статья: https://www.reuters.com/business/aerospace-defense/us-rocket-fails-after-launch-payload-amazon-internet-satellites-destroyed-2026-11-15/\nJoey Roulette / Reuters:\n\nAmazon loses 40 Leo satellites after ULA's Vulcan rocket fails 10 minutes into flight, marking the first mission failure for the Boeing-Lockheed joint venture — A Vulcan rocket owned by United Launch Alliance, the joint venture of Boeing (BA.N) and Lockheed Martin (LMT.N) …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261115/p16#a261115p16",
+      "istochnik": "Techmeme",
+      "zagolovok": "Analysis: Huawei's Horinger data center, among China's largest for AI, has ~7% of the compute of SpaceX's Colossus 2 and may stay far behind until at least 2028 (Ben Cottier/Epoch AI)",
+      "url": "https://www.techmeme.com/261115/p16#a261115p16",
+      "data": "2026-11-15T22:02:17Z",
+      "tekst": "Статья: https://epochai.substack.com/p/what-huaweis-horinger-data-center\nBen Cottier / Epoch AI:\n\nAnalysis: Huawei's Horinger data center, among China's largest for AI, has ~7% of the compute of SpaceX's Colossus 2 and may stay far behind until at least 2028 — This is a condensed version of a longer report on our website — Huawei, China's biggest AI chip developer, is drawing on China's abundant energy to build data centers.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261115/p15#a261115p15",
+      "istochnik": "Techmeme",
+      "zagolovok": "Megaspeed says Alice Huang left in August 2025 and has no current role, and that it runs a \"legitimate and lawful business\" as it opens an internal probe (Associated Press)",
+      "url": "https://www.techmeme.com/261115/p15#a261115p15",
+      "data": "2026-11-15T20:02:17Z",
+      "tekst": "Статья: https://apnews.com/article/singapore-megaspeed-alice-huang-nvidia-probe-e9e2e18169dce0b30a34f39715bf35ed\nAssociated Press:\n\nMegaspeed says Alice Huang left in August 2025 and has no current role, and that it runs a “legitimate and lawful business” as it opens an internal probe — Singapore-based cloud computing company Megaspeed International said Sunday that Chinese businesswoman Alice Huang …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261115/p14#a261115p14",
+      "istochnik": "Techmeme",
+      "zagolovok": "Sources: Jensen Huang has discussed a comeback as Nvidia CEO with confidants, as allies form a \"war room\" to lobby for his return and seek White House support (Financial Times)",
+      "url": "https://www.techmeme.com/261115/p14#a261115p14",
+      "data": "2026-11-15T19:20:00Z",
+      "tekst": "Статья: https://www.ft.com/content/45383d86-33c4-4d99-86e5-5e058d3567c1?accessToken=zwAAAaHhCqBRkc9FOD2GM8RNmdOG5V4FjTVnwQ.MEYCIQCZEg_GADuUi3HMzfVy4L3GgdXzwW5GpeLTdxDHbMhYXQIhAKQz7pVUZgb0WKGUJq30p1B5vEF2gPlUop1e8Yzyol24&sharetype=gift&token=35d995ef-ed14-4cc4-8323-31a3da06ba1b&syn-25a6b1a6=1\nFinancial Times:\n\nSources: Jensen Huang has discussed a comeback as Nvidia CEO with confidants, as allies form a “war room” to lobby for his return and seek White House support — Tech supporters lobby chipmaker's board to reinstate former CEO after he resigned following affair with alleged Chinese spy",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261115/p13#a261115p13",
+      "istochnik": "Techmeme",
+      "zagolovok": "Sources: Nvidia appealed to Taiwanese officials after its manager was charged over chip smuggling, and sought advice from TSMC, which declined to get involved (Mackenzie Hawkins/Bloomberg)",
+      "url": "https://www.techmeme.com/261115/p13#a261115p13",
+      "data": "2026-11-15T19:10:00Z",
+      "tekst": "Статья: https://www.bloomberg.com/news/articles/2026-11-15/nvidia-sought-taipei-s-help-over-employee-s-chip-smuggling-case\nMackenzie Hawkins / Bloomberg:\n\nSources: Nvidia appealed to Taiwanese officials after its manager was charged over chip smuggling, and sought advice from TSMC, which declined to get involved — Nvidia Corp. appealed to Taiwanese officials after prosecutors on the island accused an employee of helping to smuggle AI chips into China …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261115/p12#a261115p12",
+      "istochnik": "Techmeme",
+      "zagolovok": "The US and Pax Silica allies, including Japan, the UK, and India, agree to create a joint list of AI technologies and supply chains to protect from China (Financial Times)",
+      "url": "https://www.techmeme.com/261115/p12#a261115p12",
+      "data": "2026-11-15T18:55:00Z",
+      "tekst": "Статья: https://www.ft.com/content/3c2197fc-9618-4838-91e6-522ce1a96a22\nFinancial Times:\n\nThe US and Pax Silica allies, including Japan, the UK, and India, agree to create a joint list of AI technologies and supply chains to protect from China — Pact comes ahead of Donald Trump's meeting with Xi Jinping at the Asia-Pacific Economic Cooperation forum in Shenzhen",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261115/p11#a261115p11",
+      "istochnik": "Techmeme",
+      "zagolovok": "Sources: Howard Lutnick is expected to join Trump on Air Force One to China this week, after clashing with Scott Bessent and others over Nvidia chip curbs (Ashley Gold/Semafor)",
+      "url": "https://www.techmeme.com/261115/p11#a261115p11",
+      "data": "2026-11-15T17:15:01Z",
+      "tekst": "Статья: https://www.semafor.com/article/11/15/2026/under-pressure-lutnick-joins-trump-in-china\nAshley Gold / Semafor:\n\nSources: Howard Lutnick is expected to join Trump on Air Force One to China this week, after clashing with Scott Bessent and others over Nvidia chip curbs — Howard Lutnick is expected to travel on Air Force One with the president to China this week as the commerce secretary fights to regain …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261115/p10#a261115p10",
+      "istochnik": "Techmeme",
+      "zagolovok": "Sources: Apple plans to unveil smart glasses at WWDC and ship them by the end of 2027, focusing heavily on integration of third-party iPhone apps with Siri AI (Mark Gurman/Bloomberg)",
+      "url": "https://www.techmeme.com/261115/p10#a261115p10",
+      "data": "2026-11-15T16:30:00Z",
+      "tekst": "Статья: https://www.bloomberg.com/news/newsletters/2026-11-15/apple-siri-ai-app-integrations-power-smart-glasses-iphone-duo-2-face-id-plan?accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOiJTdWJzY3JpYmVyR2lmdGVkQXJ0aWNsZSIsImlhdCI6MTc5NDc1NTQ2MSwiZXhwIjoxNzk1MzYwMjYxLCJhcnRpY2xlSWQiOiJUT0pUTzFLSVVQU0IwMCIsImJjb25uZWN0SWQiOiJDNEVEQ0FFMUZBMDU0MEJFQTI0QTlGMjExQzFFOTA4MCJ9.2TeBxZfpuwFLhhyEns0-GWBuy-YbU6nhgWwD5smKMD4\nMark Gurman / Bloomberg:\n\nSources: Apple plans to unveil smart glasses at WWDC and ship them by the end of 2027, focusing heavily on integration of third-party iPhone apps with Siri AI — Also: A look at the race to bring Face ID to the iPhone Duo. … Apple's just-announced Siri AI integrations are the centerpiece …",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261115/p9#a261115p9",
+      "istochnik": "Techmeme",
+      "zagolovok": "Investigation: Howard Lutnick pushed to narrow chip curbs affecting a client of his former firm Cantor Fitzgerald whose Malaysia data center may serve Tencent (New York Times)",
+      "url": "https://www.techmeme.com/261115/p9#a261115p9",
+      "data": "2026-11-15T16:10:01Z",
+      "tekst": "Статья: https://www.nytimes.com/2026/11/15/us/politics/lutnick-pushed-to-weaken-chip-rules-that-overlap-with-his-family-business.html?unlocked_article_code=1.QlE.S83S.v9pNUp3b3vi_&smid=url-share\nNew York Times:\n\nInvestigation: Howard Lutnick pushed to narrow chip curbs affecting a client of his former firm Cantor Fitzgerald whose Malaysia data center may serve Tencent — The commerce secretary has been writing new rules that would affect Southeast Asian data centers, some of which are clients of his former firm.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261115/p8#a261115p8",
+      "istochnik": "Techmeme",
+      "zagolovok": "Scott Bessent urges Nvidia to hire an outside CEO and wants answers within 10 days on whether it pushed \"seemingly illicit\" chip sales to China to boost revenue (Tony Czuczka/Bloomberg)",
+      "url": "https://www.techmeme.com/261115/p8#a261115p8",
+      "data": "2026-11-15T15:50:01Z",
+      "tekst": "Статья: https://www.bloomberg.com/news/articles/2026-11-15/bessent-says-nvidia-needs-dramatic-shakeup-after-huang-ouster\nTony Czuczka / Bloomberg:\n\nScott Bessent urges Nvidia to hire an outside CEO and wants answers within 10 days on whether it pushed “seemingly illicit” chip sales to China to boost revenue — Nvidia Corp. is facing intense pressure as it embarks on a search for a new chief executive after ousting Jensen Huang …",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261115/p7#a261115p7",
+      "istochnik": "Techmeme",
+      "zagolovok": "Inside the first AI Music Awards in Los Angeles, featuring AI announcers, lip-syncing, and human stand-ins, as the ceremony was mired in technical issues (Corbin Bolies/Variety)",
+      "url": "https://www.techmeme.com/261115/p7#a261115p7",
+      "data": "2026-11-15T12:02:16Z",
+      "tekst": "Статья: https://variety.com/2026/music/features/inside-first-ai-music-awards-sonic-intelligence-academy-1236947847/\nCorbin Bolies / Variety:\n\nInside the first AI Music Awards in Los Angeles, featuring AI announcers, lip-syncing, and human stand-ins, as the ceremony was mired in technical issues — I knew things were a little off when the first thing I heard on my walk to the AI Music Awards was “the winner...” followed by the sweet voice of Kelly Clarkson.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261115/p6#a261115p6",
+      "istochnik": "Techmeme",
+      "zagolovok": "A post-Jensen Nvidia must reshuffle its leadership, reset its DC ties, and recognize that even the US' most valuable company cannot dictate US foreign policy (Chris Miller/Financial Times)",
+      "url": "https://www.techmeme.com/261115/p6#a261115p6",
+      "data": "2026-11-15T07:01:35Z",
+      "tekst": "Статья: https://www.ft.com/content/0e2720d7-ba0a-4469-a854-30931f907bd3\nChris Miller / Financial Times:\n\nA post-Jensen Nvidia must reshuffle its leadership, reset its DC ties, and recognize that even the US' most valuable company cannot dictate US foreign policy — The chip company has only itself to blame for a long list of adversaries — Jensen Huang's exit from Nvidia, the company he co-founded …",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://x.com/OpenAI/status/2122123437141553630",
+      "istochnik": "X",
+      "zagolovok": "Physicist Nathaniel Craig shares how he worked with GPT-6 Astra to develop a candidate lattice definition of the Standar",
+      "url": "https://x.com/OpenAI/status/2122123437141553630",
+      "data": "2026-11-16T00:23:49Z",
+      "tekst": "@OpenAI: Physicist Nathaniel Craig shares how he worked with GPT-6 Astra to develop a candidate lattice definition of the Standard Model.\n\nIt’s the first post on our new science blog:\nhttps://openai.com/index/step-toward-defining-the-standard-model",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "OpenAI"
+    },
+    {
+      "id": "https://x.com/gdb/status/2122126010691060185",
+      "istochnik": "X",
+      "zagolovok": "GPT-6 Astra for theoretical physics: Цитирует @OpenAI: Physicist Nathaniel Craig shares how he worked with GPT-6 Astra t",
+      "url": "https://x.com/gdb/status/2122126010691060185",
+      "data": "2026-11-16T00:34:02Z",
+      "tekst": "@gdb: GPT-6 Astra for theoretical physics:\n\nЦитирует @OpenAI: Physicist Nathaniel Craig shares how he worked with GPT-6 Astra to develop a candidate lattice definition of the Standard Model.\n\nIt’s the first post on our new science blog:\nhttps://openai.com/index/step-toward-defining-the-standard-model",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "gdb"
+    },
+    {
+      "id": "https://x.com/thsottiaux/status/2121845965997101118",
+      "istochnik": "X",
+      "zagolovok": "Cyber team wants your feedback on Daybreak. Models, codex plugins, blue/red access, documentation, red teaming & defense",
+      "url": "https://x.com/thsottiaux/status/2121845965997101118",
+      "data": "2026-11-15T06:01:14Z",
+      "tekst": "@thsottiaux: Cyber team wants your feedback on Daybreak. Models, codex plugins, blue/red access, documentation, red teaming & defense factory... What can we do better or improve?",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "thsottiaux"
+    },
+    {
+      "id": "https://x.com/OfficialLoganK/status/2122073718432350706",
+      "istochnik": "X",
+      "zagolovok": "Life outside of AI pt 10, special edition : )",
+      "url": "https://x.com/OfficialLoganK/status/2122073718432350706",
+      "data": "2026-11-15T21:06:15Z",
+      "tekst": "@OfficialLoganK: Life outside of AI pt 10, special edition : )",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "OfficialLoganK"
+    },
+    {
+      "id": "https://x.com/swyx/status/2121815348370612414",
+      "istochnik": "X",
+      "zagolovok": "holy shit u guys like a lot of poteto Цитирует @poteto: my AIE talk is up! come hear how the grok @bot team ships so qui",
+      "url": "https://x.com/swyx/status/2121815348370612414",
+      "data": "2026-11-15T03:59:35Z",
+      "tekst": "@swyx: holy shit u guys like a lot of poteto\n\nЦитирует @poteto: my AIE talk is up! come hear how the grok @bot team ships so quickly without compromise on quality\n\nhttps://youtu.be/O_zcc6Xl12g",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "swyx"
+    },
+    {
+      "id": "https://x.com/swyx/status/2121896675048587765",
+      "istochnik": "X",
+      "zagolovok": "also the day 1 livestream has crossed 100k in the fastest time ever. covering coding agent practices and landscape conti",
+      "url": "https://x.com/swyx/status/2121896675048587765",
+      "data": "2026-11-15T09:22:44Z",
+      "tekst": "@swyx: also the day 1 livestream has crossed 100k in the fastest time ever. covering coding agent practices and landscape continues to be the strongest format we do and by far my strongest product-market-fit focus thing I have ever done.\n\nЦитирует @aiDotEngineer: taking day 1 view count predictions for the @poteto talk launching in 30 mins\n\nhttps://youtu.be/O_zcc6Xl12g\n\nhit the bell etc",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "swyx"
+    },
+    {
+      "id": "https://x.com/btibor91/status/2122010249255432478",
+      "istochnik": "X",
+      "zagolovok": "OpenAI and Anthropic this week: Fable 5.2, IPO roadshow, ChatGPT Wallet, Daybreak Red Team, Claude Meetings (Week 46, 20",
+      "url": "https://x.com/btibor91/status/2122010249255432478",
+      "data": "2026-11-15T16:54:03Z",
+      "tekst": "@btibor91: OpenAI and Anthropic this week: Fable 5.2, IPO roadshow, ChatGPT Wallet, Daybreak Red Team, Claude Meetings (Week 46, 2026)\n\nOpenAI introduced ChatGPT Wallet, which lets dots complete purchases with your approval, rolling out gradually to Pro subscribers in the US\n\nBusinesses in ChatGPT arrived in beta, with Business Hub for claiming a business and Business Agents for eligible US businesses\n\nChatGPT dots can now connect to multiple local computers, follow custom instructions and reply faster\n\nOpenAI will retire Advanced and Standard voice on December 11, since virtually all voice users are already on GPT-Live\n\nOpenAI built Control Room to track and stop model workloads across its research infrastructure, halting model output within 35 seconds of a decision\n\nOpenAI appears to be testing a new ChatGPT web interface with dedicated cards, and I believe this one is called Nova\n\nAnthropic launched Claude Fable 5.2 and Claude Mythos 5.2, the same underlying model, with Mythos limited to verified organizations\n\nA thousand Fable 5.2 agents formalized Fermat's Last Theorem in 28.7 hours\n\nAnthropic launched the roadshow for its proposed IPO of 825 million Class A shares at an expected 70 to 78 dollars per share, and applied to list on Nasdaq under the symbol ANT\n\nClaude Whiteboards and Claude Sheets started rolling out in beta on paid plans, and Claude Data, formerly Dashboards, is now generally available there\n\nClaude Meetings started rolling out in beta on Team and Enterprise plans, where Claude joins a Google Meet call as a visible participant\n\nAnthropic launched self-hosted Claude Managed Agents in private beta, so the harness, sandboxes and session history run in your own cloud or on-premises, and more\n\nЦитирует @btibor91: https://x.com/i/article/2121968348267159552",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "btibor91"
+    },
+    {
+      "id": "https://x.com/btibor91/status/2122009323278664103",
+      "istochnik": "X",
+      "zagolovok": "https://x.com/i/article/2121968348267159552",
+      "url": "https://x.com/btibor91/status/2122009323278664103",
+      "data": "2026-11-15T16:50:22Z",
+      "tekst": "@btibor91: https://x.com/i/article/2121968348267159552",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "btibor91"
+    },
+    {
+      "id": "https://x.com/Alibaba_Qwen/status/2122148127520289151",
+      "istochnik": "X",
+      "zagolovok": "📢 Meet Qwen4-Max, your new AI teammate for work, creativity, and discovery! Qwen4-Max is built on a new MoE architecture",
+      "url": "https://x.com/Alibaba_Qwen/status/2122148127520289151",
+      "data": "2026-11-16T02:01:55Z",
+      "tekst": "@Alibaba_Qwen: 📢 Meet Qwen4-Max, your new AI teammate for work, creativity, and discovery!\n\nQwen4-Max is built on a new MoE architecture with native vision and a 1M-token context window.\n\nHighlights:\n- Outperforms Qwen3.8-Max with up to ~50% fewer tokens, while average cost per task drops over 60% in our internal evaluation.\n- Advances real-world productivity through greater proficiency with professional tools, stronger long-horizon execution, and higher-quality deliverables.\n- Handles real tasks, including 3D modeling, game development, manufacturing, finance, law, healthcare, and frontier scientific discovery.\n- $1.5/M tokens for input, $4.5/M tokens for output, and $0.075/M tokens for implicit caching — all lower than Qwen3.8-Max, with implicit caching down by 70%.\n\nThe API is live on QwenCloud. You can also try Qwen4-Max on Qwen Studio, QwenWork and Qoder. \n\nStart building today! 🚀\n- Blog: https://qwen.ai/blog?id=qwen4-max\n- API: https://www.qwencloud.com/models/qwen4-max\n- Token Plan: https://www.qwencloud.com/pricing/token-plan\n\nMore to come! The open weights of smaller Qwen4 models will be released. Stay tuned. 👀",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "Alibaba_Qwen"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2122006928826257731",
+      "istochnik": "X",
+      "zagolovok": "APPLE 🔥: According to Bloomberg, “Siri AI integrations are the centrepiece of the upcoming smart glasses push” for Apple",
+      "url": "https://x.com/testingcatalog/status/2122006928826257731",
+      "data": "2026-11-15T16:40:51Z",
+      "tekst": "@testingcatalog: APPLE 🔥: According to Bloomberg, “Siri AI integrations are the centrepiece of the upcoming smart glasses push” for Apple. \n\nIt also seems like Apple now sees AI as a “more serious“ priority.\n\nNot soon 👀\n\nЦитирует @markgurman: NEW Power On: Apple’s next big product — smart glasses planned next year — will offer Siri AI app integrations as its flagship feature. The idea: Book an Uber, reserve a table or order a coffee from your Apple Glasses — with apps running on paired iPhone. https://www.bloomberg.com/news/newsletters/2026-11-15/apple-siri-ai-app-integrations-power-smart-glasses-iphone-duo-2-face-id-plan?accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOiJTdWJzY3JpYmVyR2lmdGVkQXJ0aWNsZSIsImlhdCI6MTc5NDc1NDk0MiwiZXhwIjoxNzk1MzU5NzQyLCJhcnRpY2xlSWQiOiJUT0pUTzFLSVVQU0IwMCIsImJjb25uZWN0SWQiOiJDNEVEQ0FFMUZBMDU0MEJFQTI0QTlGMjExQzFFOTA4MCJ9.JxizrLMB_4yO_RhcaLRgamHBB02Qjf92voFxp6xtjaI",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2121990594784374810",
+      "istochnik": "X",
+      "zagolovok": "ICYMI 👀: You can now configure different models for Coordinator and Threads in Claude Code Project settings. Projects in",
+      "url": "https://x.com/testingcatalog/status/2121990594784374810",
+      "data": "2026-11-15T15:35:57Z",
+      "tekst": "@testingcatalog: ICYMI 👀: You can now configure different models for Coordinator and Threads in Claude Code Project settings. \n\nProjects in overal got many small upgrades recently, including a possibility to create custom views and assign atrifacts to them. \n\nThis is Conway 🤖\n\nЦитирует @ClaudeDevs: We've made some big updates to Projects in Claude Code!\n\nIn a project, Claude coordinates your tasks across parallel threads. The coordinator is now much more proactive. It answers your questions in the project chat and gives you updates on the status of your ongoing threads.",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    }
+  ],
+  "ne_otvetili": [],
+  "tolko_v_vidennye": [],
+  "github_polnyy_obhod": false,
+  "istochniki": [
+    "claude.dev",
+    "Claude Code",
+    "Claude Platform",
+    "Блог Claude",
+    "OpenAI",
+    "Codex",
+    "OpenAI API",
+    "AINews",
+    "Simon Willison",
+    "Ben's Bites",
+    "Cursor",
+    "DeepMind",
+    "Блог Google",
+    "Google Developers Blog",
+    "Techmeme",
+    "GitHub Claude Code"
+  ],
+  "iks": {
+    "akkauntov": 30,
+    "ne_otvetili": []
+  }
+}

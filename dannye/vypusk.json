@@ -1,0 +1,12 @@
+{
+  "krupnye": [],
+  "sayty": [],
+  "x": [
+    {"zagolovok": "Alibaba выпустила Qwen4-Max: MoE-модель со встроенным зрением, контекстом 1 млн токенов и ценой $1,5/$4,5 за млн токенов; API уже доступен", "url": "https://x.com/Alibaba_Qwen/status/2122148127520289151", "akkaunt": "Alibaba_Qwen", "zvezda": false, "idy": ["https://x.com/Alibaba_Qwen/status/2122148127520289151"]},
+    {"zagolovok": "OpenAI открыла научный блог: первый пост — физик Натаниэль Крейг вместе с GPT-6 Astra предложил решёточное определение Стандартной модели", "url": "https://x.com/OpenAI/status/2122123437141553630", "akkaunt": "OpenAI", "zvezda": false, "idy": ["https://x.com/OpenAI/status/2122123437141553630", "https://x.com/gdb/status/2122126010691060185"]}
+  ],
+  "dengi": [
+    {"zagolovok": "Samsung хочет строить и обслуживать ИИ-дата-центры целиком: её IT-подразделение ведёт ранние переговоры с Anthropic и OpenAI как арендаторами", "url": "https://www.techmeme.com/261115/p19#a261115p19", "istochnik": "Techmeme", "zvezda": false, "idy": ["https://www.techmeme.com/261115/p19#a261115p19"]}
+  ],
+  "github": []
+}
