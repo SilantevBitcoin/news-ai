@@ -1,0 +1,112 @@
+{
+  "krupnye": [],
+  "sayty": [
+    {
+      "zagolovok": "Claude Code 2.1.326: Code Mode теперь работает вместе с командами агентов",
+      "url": "https://code.claude.com/docs/en/changelog#2-1-326",
+      "istochnik": "Claude Code",
+      "zvezda": false,
+      "idy": [
+        "https://code.claude.com/docs/en/changelog#2-1-326"
+      ]
+    },
+    {
+      "zagolovok": "Тексты Claude Opus 4.6, Opus 4.5, Sonnet 4.5 и Haiku 4.5 получили текстовый водяной знак Anthropic",
+      "url": "https://platform.claude.com/docs/en/release-notes/overview#text-watermark-claude-opus-4-6-and-4-5-models",
+      "istochnik": "Claude Platform",
+      "zvezda": false,
+      "idy": [
+        "https://platform.claude.com/docs/en/release-notes/overview#text-watermark-claude-opus-4-6-and-4-5-models"
+      ]
+    },
+    {
+      "zagolovok": "Совет директоров Nvidia не рассматривает возвращение Хуанга на пост главы и занят расследованием по нацбезопасности",
+      "url": "https://www.techmeme.com/261116/p37#a261116p37",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261116/p37#a261116p37",
+        "https://www.techmeme.com/261116/p38#a261116p38"
+      ]
+    },
+    {
+      "zagolovok": "Как команда Claude Code проверяет работу агентов: сквозные, свойственные и дифференциальные тесты",
+      "url": "https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/",
+      "istochnik": "claude.dev",
+      "zvezda": false,
+      "idy": [
+        "https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/",
+        "https://x.com/ClaudeDevs/status/2122457608963395586"
+      ]
+    },
+    {
+      "zagolovok": "Руководство Google по проектированию моделей под TPU: правила для LLM и MoE",
+      "url": "https://developers.googleblog.com/tpu-model-design-considerations-and-optimization-guide/",
+      "istochnik": "Google Developers Blog",
+      "zvezda": false,
+      "idy": [
+        "https://developers.googleblog.com/tpu-model-design-considerations-and-optimization-guide/"
+      ]
+    }
+  ],
+  "x": [
+    {
+      "zagolovok": "Claude Code на десктопе поддерживает iPhone Duo в симуляторе iOS (публичная бета): приложение можно запускать рядом с чатом, а Claude сам складывает и раскладывает устройство",
+      "url": "https://x.com/ClaudeDevs/status/2122439098740674839",
+      "akkaunt": "ClaudeDevs",
+      "zvezda": false,
+      "idy": [
+        "https://x.com/ClaudeDevs/status/2122439098740674839",
+        "https://x.com/testingcatalog/status/2122487574237466905"
+      ]
+    },
+    {
+      "zagolovok": "Внешняя песочница для кода от агентов: агент работает на Mac, а код исполняется в WebAssembly или контейнере",
+      "url": "https://x.com/simonw/status/2122500307557265651",
+      "akkaunt": "simonw",
+      "zvezda": false,
+      "idy": [
+        "https://x.com/simonw/status/2122500307557265651"
+      ]
+    },
+    {
+      "zagolovok": "Hugging Face переводит инференс языковых моделей на OpenRouter",
+      "url": "https://x.com/testingcatalog/status/2122413901685891441",
+      "akkaunt": "testingcatalog",
+      "zvezda": false,
+      "idy": [
+        "https://x.com/testingcatalog/status/2122413901685891441"
+      ]
+    }
+  ],
+  "dengi": [
+    {
+      "zagolovok": "Altimeter хочет вложить 5 млрд долларов в IPO Anthropic — в пять раз больше его крупнейшей IPO-ставки",
+      "url": "https://www.techmeme.com/261116/p43#a261116p43",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261116/p43#a261116p43"
+      ]
+    },
+    {
+      "zagolovok": "Стартап Howie с ИИ-секретарём переходит в Google Labs",
+      "url": "https://x.com/testingcatalog/status/2122474097598673165",
+      "akkaunt": "testingcatalog",
+      "zvezda": false,
+      "idy": [
+        "https://x.com/testingcatalog/status/2122474097598673165"
+      ]
+    },
+    {
+      "zagolovok": "Японская Kotoba, лаборатория голосового ИИ, присоединяется к ElevenLabs",
+      "url": "https://x.com/testingcatalog/status/2122472245129859267",
+      "akkaunt": "testingcatalog",
+      "zvezda": false,
+      "idy": [
+        "https://x.com/testingcatalog/status/2122472245129859267"
+      ]
+    }
+  ],
+  "github": []
+}
