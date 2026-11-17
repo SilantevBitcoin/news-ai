@@ -623,10 +623,87 @@
       "url": "https://www.techmeme.com/261116/p29#a261116p29",
       "vid": "dengi",
       "zagolovok": "Knit Health, оптимизирующая направления пациентов с помощью ИИ, привлекла 35 млн долларов в раунде A"
+    },
+    {
+      "data": "2026-11-17T02:14:29Z",
+      "oboroty": false,
+      "url": "https://code.claude.com/docs/en/changelog#2-1-326",
+      "vid": "sayty",
+      "zagolovok": "Claude Code 2.1.326: Code Mode теперь работает вместе с командами агентов"
+    },
+    {
+      "data": "2026-11-17T02:14:29Z",
+      "oboroty": false,
+      "url": "https://platform.claude.com/docs/en/release-notes/overview#text-watermark-claude-opus-4-6-and-4-5-models",
+      "vid": "sayty",
+      "zagolovok": "Тексты Claude Opus 4.6, Opus 4.5, Sonnet 4.5 и Haiku 4.5 получили текстовый водяной знак Anthropic"
+    },
+    {
+      "data": "2026-11-17T02:14:29Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261116/p37#a261116p37",
+      "vid": "sayty",
+      "zagolovok": "Совет директоров Nvidia не рассматривает возвращение Хуанга на пост главы и занят расследованием по нацбезопасности"
+    },
+    {
+      "data": "2026-11-17T02:14:29Z",
+      "oboroty": false,
+      "url": "https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/",
+      "vid": "sayty",
+      "zagolovok": "Как команда Claude Code проверяет работу агентов: сквозные, свойственные и дифференциальные тесты"
+    },
+    {
+      "data": "2026-11-17T02:14:29Z",
+      "oboroty": false,
+      "url": "https://developers.googleblog.com/tpu-model-design-considerations-and-optimization-guide/",
+      "vid": "sayty",
+      "zagolovok": "Руководство Google по проектированию моделей под TPU: правила для LLM и MoE"
+    },
+    {
+      "data": "2026-11-17T02:14:29Z",
+      "oboroty": false,
+      "url": "https://x.com/ClaudeDevs/status/2122439098740674839",
+      "vid": "x",
+      "zagolovok": "Claude Code на десктопе поддерживает iPhone Duo в симуляторе iOS (публичная бета): приложение можно запускать рядом с чатом, а Claude сам складывает и раскладывает устройство"
+    },
+    {
+      "data": "2026-11-17T02:14:29Z",
+      "oboroty": false,
+      "url": "https://x.com/simonw/status/2122500307557265651",
+      "vid": "x",
+      "zagolovok": "Внешняя песочница для кода от агентов: агент работает на Mac, а код исполняется в WebAssembly или контейнере"
+    },
+    {
+      "data": "2026-11-17T02:14:29Z",
+      "oboroty": false,
+      "url": "https://x.com/testingcatalog/status/2122413901685891441",
+      "vid": "x",
+      "zagolovok": "Hugging Face переводит инференс языковых моделей на OpenRouter"
+    },
+    {
+      "data": "2026-11-17T02:14:30Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261116/p43#a261116p43",
+      "vid": "dengi",
+      "zagolovok": "Altimeter хочет вложить 5 млрд долларов в IPO Anthropic — в пять раз больше его крупнейшей IPO-ставки"
+    },
+    {
+      "data": "2026-11-17T02:14:30Z",
+      "oboroty": false,
+      "url": "https://x.com/testingcatalog/status/2122474097598673165",
+      "vid": "dengi",
+      "zagolovok": "Стартап Howie с ИИ-секретарём переходит в Google Labs"
+    },
+    {
+      "data": "2026-11-17T02:14:30Z",
+      "oboroty": false,
+      "url": "https://x.com/testingcatalog/status/2122472245129859267",
+      "vid": "dengi",
+      "zagolovok": "Японская Kotoba, лаборатория голосового ИИ, присоединяется к ElevenLabs"
     }
   ],
-  "posledniy_sbor": "2026-11-16T17:13:35Z",
-  "posledniy_slot": "2026-11-16T18:00:00Z",
+  "posledniy_sbor": "2026-11-17T01:12:43Z",
+  "posledniy_slot": "2026-11-17T02:00:00Z",
   "vidennye": {
     "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/": "2026-11-13T02:17:22Z",
     "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-hydrogen/": "2026-11-13T02:17:22Z",
@@ -645,10 +722,12 @@
     "https://claude.com/resources/articles/self-hosted-claude-managed-agents": "2026-11-12T18:10:15Z",
     "https://claude.com/resources/articles/sheets-whiteboards-data": "2026-11-10T20:46:17Z",
     "https://claude.com/resources/articles/using-claude-opus-5-5-as-your-daily-driver-for-knowledge-work": "2026-11-13T02:17:24Z",
+    "https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/": "2026-11-17T02:14:29Z",
     "https://claude.dev/blog/safely-scaling-multi-agent-teams-with-fable-5-2/": "2026-11-10T20:46:17Z",
     "https://claude.dev/blog/which-claude-model-should-you-build-with/": "2026-11-10T20:46:17Z",
     "https://code.claude.com/docs/en/changelog#2-1-323": "2026-11-13T02:17:23Z",
     "https://code.claude.com/docs/en/changelog#2-1-325": "2026-11-13T21:51:00Z",
+    "https://code.claude.com/docs/en/changelog#2-1-326": "2026-11-17T02:14:29Z",
     "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/": "2026-11-12T18:10:16Z",
     "https://deepmind.google/blog/gemini-4-carbon-is-now-available/": "2026-11-10T20:46:15Z",
     "https://deepmind.google/blog/introducing-alphaproof-code/": "2026-11-10T20:46:17Z",
@@ -658,6 +737,7 @@
     "https://developers.googleblog.com/catch-go-bugs-that-fuzzing-misses-with-gemini-and-a-constraint-solver/": "2026-11-13T02:17:24Z",
     "https://developers.googleblog.com/how-agent-anomaly-detection-scores-on-benchmarks-we-didnt-write/": "2026-11-13T02:17:23Z",
     "https://developers.googleblog.com/securing-your-agents-a-hands-on-guide-to-agent-anomaly-detection/": "2026-11-16T18:15:35Z",
+    "https://developers.googleblog.com/tpu-model-design-considerations-and-optimization-guide/": "2026-11-17T02:14:29Z",
     "https://developers.googleblog.com/unlocking-stable-on-policy-rl-on-tpu-with-bitwise-zero-traininference-mismatch/": "2026-11-16T18:15:35Z",
     "https://developers.openai.com/api/docs/changelog": "2026-11-16T18:15:34Z",
     "https://developers.openai.com/api/docs/changelog#2026-11-16 Feature · omni-moderation-csam-latest · v1/moderations: Approved organizations can use the OpenAI CSAM Image Classifier at no cost to help prioritize images for human review.": "2026-11-16T18:15:34Z",
@@ -744,6 +824,7 @@
     "https://platform.claude.com/docs/en/release-notes/overview#dreams-claude-fable-5-2": "2026-11-12T18:10:15Z",
     "https://platform.claude.com/docs/en/release-notes/overview#fast-mode-claude-fable-5-2": "2026-11-10T20:46:17Z",
     "https://platform.claude.com/docs/en/release-notes/overview#self-hosted-managed-agents": "2026-11-12T18:10:15Z",
+    "https://platform.claude.com/docs/en/release-notes/overview#text-watermark-claude-opus-4-6-and-4-5-models": "2026-11-17T02:14:29Z",
     "https://simonwillison.net/2026/Nov/10/llm-gemini/": "2026-11-11T00:04:17Z",
     "https://simonwillison.net/2026/Nov/10/muse-ember/": "2026-11-10T20:46:17Z",
     "https://simonwillison.net/2026/Nov/10/prompting-claude-fable-52/": "2026-11-10T20:46:17Z",
@@ -763,6 +844,7 @@
     "https://simonwillison.net/2026/Nov/15/datasette-apps/": "2026-11-16T02:17:58Z",
     "https://simonwillison.net/2026/Nov/15/datasette-maplibre/": "2026-11-16T02:17:58Z",
     "https://simonwillison.net/2026/Nov/15/datasette/": "2026-11-16T02:17:58Z",
+    "https://simonwillison.net/2026/Nov/16/llm/": "2026-11-17T02:14:30Z",
     "https://simonwillison.net/2026/Nov/9/llm-anthropic/": "2026-11-10T20:46:17Z",
     "https://simonwillison.net/2026/Nov/9/mysterious-beeps/": "2026-11-10T20:46:17Z",
     "https://www.anthropic.com/claude-fable-and-mythos-5-2": "2026-11-10T20:46:14Z",
@@ -916,7 +998,19 @@
     "https://www.techmeme.com/261116/p34#a261116p34": "2026-11-16T18:15:35Z",
     "https://www.techmeme.com/261116/p35#a261116p35": "2026-11-16T18:15:34Z",
     "https://www.techmeme.com/261116/p36#a261116p36": "2026-11-16T18:15:34Z",
+    "https://www.techmeme.com/261116/p37#a261116p37": "2026-11-17T02:14:29Z",
+    "https://www.techmeme.com/261116/p38#a261116p38": "2026-11-17T02:14:29Z",
+    "https://www.techmeme.com/261116/p39#a261116p39": "2026-11-17T02:14:30Z",
     "https://www.techmeme.com/261116/p4#a261116p4": "2026-11-16T10:22:10Z",
+    "https://www.techmeme.com/261116/p40#a261116p40": "2026-11-17T02:14:30Z",
+    "https://www.techmeme.com/261116/p41#a261116p41": "2026-11-17T02:14:30Z",
+    "https://www.techmeme.com/261116/p42#a261116p42": "2026-11-17T02:14:30Z",
+    "https://www.techmeme.com/261116/p43#a261116p43": "2026-11-17T02:14:30Z",
+    "https://www.techmeme.com/261116/p44#a261116p44": "2026-11-17T02:14:30Z",
+    "https://www.techmeme.com/261116/p45#a261116p45": "2026-11-17T02:14:30Z",
+    "https://www.techmeme.com/261116/p46#a261116p46": "2026-11-17T02:14:30Z",
+    "https://www.techmeme.com/261116/p47#a261116p47": "2026-11-17T02:14:30Z",
+    "https://www.techmeme.com/261116/p48#a261116p48": "2026-11-17T02:14:30Z",
     "https://www.techmeme.com/261116/p5#a261116p5": "2026-11-16T10:22:10Z",
     "https://www.techmeme.com/261116/p6#a261116p6": "2026-11-16T10:22:10Z",
     "https://www.techmeme.com/261116/p7#a261116p7": "2026-11-16T10:22:10Z",
@@ -944,6 +1038,8 @@
     "https://x.com/ClaudeDevs/status/2120962481225146636": "2026-11-13T02:17:24Z",
     "https://x.com/ClaudeDevs/status/2121375309287301360": "2026-11-14T02:16:23Z",
     "https://x.com/ClaudeDevs/status/2121392666244186327": "2026-11-14T02:16:23Z",
+    "https://x.com/ClaudeDevs/status/2122439098740674839": "2026-11-17T02:14:29Z",
+    "https://x.com/ClaudeDevs/status/2122457608963395586": "2026-11-17T02:14:29Z",
     "https://x.com/GoogleDeepMind/status/2120169787896525104": "2026-11-10T20:46:17Z",
     "https://x.com/GoogleDeepMind/status/2120219371473617099": "2026-11-10T20:46:17Z",
     "https://x.com/GoogleDeepMind/status/2120484246401777737": "2026-11-12T18:10:16Z",
@@ -968,6 +1064,7 @@
     "https://x.com/OpenAI/status/2122359930628063248": "2026-11-16T18:15:34Z",
     "https://x.com/OpenAI/status/2122377585523126615": "2026-11-16T18:15:34Z",
     "https://x.com/OpenAI/status/2122380010287960095": "2026-11-16T18:15:34Z",
+    "https://x.com/OpenAI/status/2122465625109090646": "2026-11-17T02:14:30Z",
     "https://x.com/OpenAIDevs/status/2120212596850663712": "2026-11-10T20:46:17Z",
     "https://x.com/OpenAIDevs/status/2120258357533749755": "2026-11-11T00:04:16Z",
     "https://x.com/OpenAIDevs/status/2120669165283680644": "2026-11-12T18:10:16Z",
@@ -1009,6 +1106,7 @@
     "https://x.com/simonw/status/2120258951594037732": "2026-11-11T00:04:17Z",
     "https://x.com/simonw/status/2121039423441981444": "2026-11-13T02:17:24Z",
     "https://x.com/simonw/status/2121695097674981849": "2026-11-15T02:20:29Z",
+    "https://x.com/simonw/status/2122500307557265651": "2026-11-17T02:14:29Z",
     "https://x.com/swyx/status/2119935240202539147": "2026-11-10T20:46:17Z",
     "https://x.com/swyx/status/2120187167901372559": "2026-11-10T20:46:17Z",
     "https://x.com/swyx/status/2120208862221684809": "2026-11-10T20:46:17Z",
@@ -1029,6 +1127,7 @@
     "https://x.com/swyx/status/2121815348370612414": "2026-11-15T10:18:09Z",
     "https://x.com/swyx/status/2121896675048587765": "2026-11-15T18:15:07Z",
     "https://x.com/swyx/status/2122236664408084526": "2026-11-16T10:22:10Z",
+    "https://x.com/swyx/status/2122418961107284083": "2026-11-17T02:14:30Z",
     "https://x.com/testingcatalog/status/2119894220748280190": "2026-11-10T20:46:17Z",
     "https://x.com/testingcatalog/status/2119913217371799774": "2026-11-10T20:46:17Z",
     "https://x.com/testingcatalog/status/2119914321245577334": "2026-11-10T20:46:17Z",
@@ -1112,6 +1211,16 @@
     "https://x.com/testingcatalog/status/2122006928826257731": "2026-11-15T18:15:07Z",
     "https://x.com/testingcatalog/status/2122238075426275745": "2026-11-16T10:22:10Z",
     "https://x.com/testingcatalog/status/2122376735509422093": "2026-11-16T18:15:35Z",
+    "https://x.com/testingcatalog/status/2122380991750607319": "2026-11-17T02:14:30Z",
+    "https://x.com/testingcatalog/status/2122387728881045868": "2026-11-17T02:14:30Z",
+    "https://x.com/testingcatalog/status/2122397854836859223": "2026-11-17T02:14:30Z",
+    "https://x.com/testingcatalog/status/2122408263665012948": "2026-11-17T02:14:30Z",
+    "https://x.com/testingcatalog/status/2122413901685891441": "2026-11-17T02:14:29Z",
+    "https://x.com/testingcatalog/status/2122427521211785388": "2026-11-17T02:14:30Z",
+    "https://x.com/testingcatalog/status/2122469912006344921": "2026-11-17T02:14:30Z",
+    "https://x.com/testingcatalog/status/2122472245129859267": "2026-11-17T02:14:30Z",
+    "https://x.com/testingcatalog/status/2122474097598673165": "2026-11-17T02:14:30Z",
+    "https://x.com/testingcatalog/status/2122487574237466905": "2026-11-17T02:14:29Z",
     "https://x.com/thsottiaux/status/2120021043876106429": "2026-11-10T20:46:17Z",
     "https://x.com/thsottiaux/status/2120266880963473789": "2026-11-11T00:04:15Z",
     "https://x.com/thsottiaux/status/2120267268517249036": "2026-11-11T00:04:17Z",
@@ -1124,6 +1233,7 @@
     "https://x.com/trq212/status/2120223476279869875": "2026-11-10T20:46:17Z",
     "https://x.com/trq212/status/2120620900785820143": "2026-11-12T18:10:16Z",
     "https://x.com/trq212/status/2121067561915916575": "2026-11-13T18:16:34Z",
-    "https://x.com/trq212/status/2122154124024381828": "2026-11-16T10:22:10Z"
+    "https://x.com/trq212/status/2122154124024381828": "2026-11-16T10:22:10Z",
+    "https://x.com/trq212/status/2122438326431154210": "2026-11-17T02:14:30Z"
   }
 }
