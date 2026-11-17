@@ -1,0 +1,122 @@
+{
+ "krupnye": [
+  {
+   "zagolovok": "OpenAI выпустила GPT-6.2 Astra и GPT-6.2 Sol",
+   "abzacy": [
+    "OpenAI представила две новые модели — GPT-6.2 Astra и GPT-6.2 Sol.",
+    "Astra — для самых сложных проектов: например, внести и проверить изменение во всей существующей кодовой базе или превратить отчёт в слайды по вашему шаблону.",
+    "Sol рассчитана на повседневное программирование, тексты и многошаговые задачи.",
+    "Обе модели уже доступны в ChatGPT Work и в Codex, а в API их можно вызывать через Responses API и Chat Completions; вызов инструментов требует Responses API.",
+    "На том же платном тарифе Sol выполняет больше задач, чем GPT-6.1 Sol.",
+    "Подписчикам Pro за 200 долларов доступен режим Ultrafast для Sol, подписчикам Pro за 500 долларов — Ultrafast и для Sol, и для Astra.",
+    "По данным OpenAI, на тесте Agents’ Last Exam Astra набирает на 5,2 пункта больше, чем GPT-6 Astra, при цене меньше трети прежней.",
+    "Для перехода существующих интеграций есть руководство по миграции на GPT-6.2."
+   ],
+   "url": "https://developers.openai.com/codex/changelog/#codex-gpt-62-astra",
+   "oboroty": false,
+   "idy": [
+    "https://developers.openai.com/codex/changelog/#codex-gpt-62-astra",
+    "https://developers.openai.com/api/docs/changelog#2026-11-17 Feature · gpt-6.2-astra · gpt-6.2-sol · v1/responses · v1/chat/completions: Use GPT-6.2 Astra for demanding reasoning and coding tasks, or GPT-6.2 Sol for everyday coding and agent workflows.",
+    "https://www.techmeme.com/261117/p43#a261117p43",
+    "https://x.com/OpenAI/status/2122750124543926515",
+    "https://x.com/OpenAIDevs/status/2122752256923873753",
+    "https://x.com/testingcatalog/status/2122752775272411491",
+    "https://x.com/testingcatalog/status/2122750503104770400"
+   ]
+  }
+ ],
+ "sayty": [
+  {
+   "zagolovok": "Linked billing в бета-версии: клиенты сервисов на Claude платят за API через свою организацию в Claude Platform, не передавая ключ",
+   "url": "https://platform.claude.com/docs/en/release-notes/overview#linked-billing",
+   "istochnik": "Claude Platform",
+   "zvezda": false,
+   "idy": [
+    "https://platform.claude.com/docs/en/release-notes/overview#linked-billing",
+    "https://claude.com/resources/articles/linked-billing-on-claude-platform",
+    "https://x.com/ClaudeDevs/status/2122751844455956760"
+   ]
+  },
+  {
+   "zagolovok": "Tasks в Gemini стали бесплатными в шести странах, добавились новые функции и интеграция с Google Workspace",
+   "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
+   "istochnik": "Блог Google",
+   "zvezda": false,
+   "idy": [
+    "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
+    "https://x.com/testingcatalog/status/2122748373921157579"
+   ]
+  },
+  {
+   "zagolovok": "Gemini 4 Hydrogen для робототехники и плагин Robotics для Google Antigravity: от робота-руки до рабочего приложения за день",
+   "url": "https://developers.googleblog.com/gemini-hydrogen-for-robotics/",
+   "istochnik": "Google Developers Blog",
+   "zvezda": false,
+   "idy": [
+    "https://developers.googleblog.com/gemini-hydrogen-for-robotics/"
+   ]
+  },
+  {
+   "zagolovok": "Google опубликовала технический отчёт по EmbeddingGemma 2 — мультимодальной модели с единым векторным пространством",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2-technical-report/",
+   "istochnik": "Блог Google",
+   "zvezda": false,
+   "idy": [
+    "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2-technical-report/"
+   ]
+  },
+  {
+   "zagolovok": "Datasette Lite целиком в браузере: серверное приложение Datasette работает через service workers и Pyodide",
+   "url": "https://simonwillison.net/2026/Nov/17/datasette-lite/",
+   "istochnik": "Simon Willison",
+   "zvezda": false,
+   "idy": [
+    "https://simonwillison.net/2026/Nov/17/datasette-lite/",
+    "https://x.com/simonw/status/2122746008736276734"
+   ]
+  },
+  {
+   "zagolovok": "Google открыла ABFS — файловую систему и кэш сборки для огромных Git-репозиториев: checkout Android за 8 секунд",
+   "url": "https://developers.googleblog.com/accelerating-development-for-massive-git-repositories/",
+   "istochnik": "Google Developers Blog",
+   "zvezda": false,
+   "idy": [
+    "https://developers.googleblog.com/accelerating-development-for-massive-git-repositories/"
+   ]
+  }
+ ],
+ "x": [
+  {
+   "zagolovok": "Mistral сделала Vibe бесплатным в Европе на первые три месяца; промокоды на сегодня разобрали",
+   "url": "https://x.com/MistralAI/status/2122713540666806397",
+   "akkaunt": "MistralAI",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/MistralAI/status/2122713540666806397",
+    "https://x.com/MistralAI/status/2122728226531545138"
+   ]
+  },
+  {
+   "zagolovok": "OpenAI Daybreak — ИИ для защиты сетей НАТО и союзников",
+   "url": "https://x.com/gdb/status/2122740752556216515",
+   "akkaunt": "gdb",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/gdb/status/2122740752556216515"
+   ]
+  }
+ ],
+ "dengi": [
+  {
+   "zagolovok": "Isomorphic Labs привлекла 5 млрд долларов в раунде C при участии Greenoaks, Sequoia, Andreessen Horowitz и Alphabet",
+   "url": "https://x.com/demishassabis/status/2122662616367853670",
+   "akkaunt": "demishassabis",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/demishassabis/status/2122662616367853670",
+    "https://x.com/testingcatalog/status/2122667562269814984"
+   ]
+  }
+ ],
+ "github": []
+}
