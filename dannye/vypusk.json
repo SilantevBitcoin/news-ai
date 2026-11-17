@@ -1,0 +1,45 @@
+{
+ "krupnye": [],
+ "sayty": [
+  {
+   "zagolovok": "Nvidia представила Rubin HPC: видеокарта для научных расчётов и агентов с более чем 50 тысячами ядер CUDA",
+   "url": "https://www.techmeme.com/261117/p3#a261117p3",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261117/p3#a261117p3"
+   ]
+  },
+  {
+   "zagolovok": "Anthropic: Claude Mythos Preview запустил её ИИ на видеокартах AMD примерно за три дня почти без участия людей",
+   "url": "https://www.techmeme.com/261116/p52#a261116p52",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261116/p52#a261116p52"
+   ]
+  }
+ ],
+ "x": [],
+ "dengi": [
+  {
+   "zagolovok": "Годовая выручка Perplexity достигла 1 млрд долларов — в четыре раза больше, чем в начале года",
+   "url": "https://latent.space/p/ainews-perplexity-hits-a-1b-revenue-run-rate-up-4x-in-2026/",
+   "istochnik": "AINews",
+   "zvezda": false,
+   "idy": [
+    "https://latent.space/p/ainews-perplexity-hits-a-1b-revenue-run-rate-up-4x-in-2026/"
+   ]
+  },
+  {
+   "zagolovok": "Numa, ИИ-платформа для автодилеров, привлекла 45 млн долларов в раунде C при оценке 500 млн",
+   "url": "https://www.techmeme.com/261117/p7#a261117p7",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261117/p7#a261117p7"
+   ]
+  }
+ ],
+ "github": []
+}
