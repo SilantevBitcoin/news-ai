@@ -1,0 +1,187 @@
+{
+ "krupnye": [
+  {
+   "zagolovok": "OpenAI выпустила GPT-6.2 Astra и Sol: флагман дешевле прежнего и быстрая модель для повседневной работы",
+   "abzacy": [
+    "OpenAI выпустила GPT-6.2 Astra и GPT-6.2 Sol — две новые модели для ChatGPT Work, Codex и API.",
+    "Astra — новая флагманская модель для самых сложных задач: правок в большой кодовой базе, превращения отчёта в слайды по шаблону.",
+    "Sol — эффективная универсальная модель для повседневного кода, текстов и многошаговых сценариев; на том же платном тарифе она выполняет больше задач, чем GPT-6.1 Sol.",
+    "В API обе модели называются gpt-6.2-astra и gpt-6.2-sol, работают через Responses API и Chat Completions, а вызов инструментов требует Responses API.",
+    "Astra стоит 8 долларов за миллион входных и 40 за миллион выходных токенов — на 20% дешевле GPT-6 Astra и столько же, сколько Claude Fable 5.2; кэшированные токены — 40 центов вместо доллара.",
+    "Цена Sol не изменилась: 2 и 10 долларов. Кроме того, в Responses API в публичной бете появилось фоновое выполнение с окном в два или восемь часов — токены там дешевле на 30 и 40%.",
+    "По данным самой OpenAI, на бенчмарке Agents' Last Exam Astra на 5,2 пункта выше GPT-6 Astra при цене менее трети, а Artificial Analysis ставит её в своём индексе второй, после Claude Fable 5.2.",
+    "Режим Ultrafast доступен подписчикам Pro: за 200 долларов — для Sol, за 500 — для обеих моделей."
+   ],
+   "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+   "oboroty": false,
+   "idy": [
+    "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+    "https://developers.openai.com/codex/changelog/#codex-gpt-62-astra",
+    "https://simonwillison.net/2026/Nov/17/gpt62-astra-and-sol/",
+    "https://www.techmeme.com/261117/p57#a261117p57",
+    "https://x.com/OpenAI/status/2122750124543926515",
+    "https://x.com/OpenAIDevs/status/2122752256923873753",
+    "https://x.com/sama/status/2122798039899263456",
+    "https://x.com/thsottiaux/status/2122753991000133943",
+    "https://x.com/testingcatalog/status/2122752775272411491",
+    "https://developers.openai.com/api/docs/changelog#2026-11-17 Feature · gpt-6.2-astra · gpt-6.2-sol · v1/responses · v1/chat/completions: Use GPT-6.2 Astra for demanding reasoning and coding tasks, or GPT-6.2 Sol for everyday coding and agent workflows.",
+    "https://developers.openai.com/api/docs/changelog#2026-11-17 Feature · gpt-6.2-astra · gpt-6.2-sol · gpt-6.1-terra · gpt-6-luna · v1/responses: Choose a two-hour or eight-hour background completion window in the Responses API public beta."
+   ]
+  }
+ ],
+ "sayty": [
+  {
+   "zagolovok": "ChatGPT for Sales: плагин для продаж и больше 30 плагинов партнёров — исследовать клиентов, готовить питчи, обновлять CRM",
+   "url": "https://openai.com/index/introducing-chatgpt-for-sales",
+   "istochnik": "OpenAI",
+   "zvezda": false,
+   "idy": [
+    "https://openai.com/index/introducing-chatgpt-for-sales",
+    "https://x.com/gdb/status/2122825442021572838"
+   ]
+  },
+  {
+   "zagolovok": "Calif нашла с помощью GPT-6 Cyber критическую уязвимость удалённого выполнения кода в Java",
+   "url": "https://www.techmeme.com/261117/p55#a261117p55",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261117/p55#a261117p55",
+    "https://x.com/gdb/status/2122819528858161322"
+   ]
+  },
+  {
+   "zagolovok": "Claude Code 2.1.327: подтверждение перед изменением репозитория в /install-github-app, claude mcp add-json читает JSON из stdin",
+   "url": "https://code.claude.com/docs/en/changelog#2-1-327",
+   "istochnik": "Claude Code",
+   "zvezda": false,
+   "idy": [
+    "https://code.claude.com/docs/en/changelog#2-1-327"
+   ]
+  },
+  {
+   "zagolovok": "Gemini в Google AI Studio собирает полноценные Android-приложения на Kotlin с Firestore и аутентификацией из одного запроса",
+   "url": "https://developers.googleblog.com/build-full-stack-android-apps-with-gemini-in-google-ai-studio/",
+   "istochnik": "Google Developers Blog",
+   "zvezda": false,
+   "idy": [
+    "https://developers.googleblog.com/build-full-stack-android-apps-with-gemini-in-google-ai-studio/",
+    "https://x.com/OfficialLoganK/status/2122818500763009273",
+    "https://x.com/testingcatalog/status/2122835234802794509"
+   ]
+  },
+  {
+   "zagolovok": "Suno запустила Visuals: 15-секундные клипы, из которых склеивается целый клип к песне",
+   "url": "https://www.techmeme.com/261117/p58#a261117p58",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261117/p58#a261117p58"
+   ]
+  },
+  {
+   "zagolovok": "Внешние песочницы для кодинг-агентов: способ безопасно пробовать локальные модели",
+   "url": "https://simonwillison.net/2026/Nov/17/external-sandboxes-for-coding-agents/",
+   "istochnik": "Simon Willison",
+   "zvezda": false,
+   "idy": [
+    "https://simonwillison.net/2026/Nov/17/external-sandboxes-for-coding-agents/"
+   ]
+  }
+ ],
+ "x": [
+  {
+   "zagolovok": "Microsoft на Ignite представила модели MAI Decision 1, MAI Code 2, Code 2 Flash и Cyber 2",
+   "url": "https://x.com/testingcatalog/status/2122759893174178173",
+   "akkaunt": "testingcatalog",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/testingcatalog/status/2122759893174178173"
+   ]
+  },
+  {
+   "zagolovok": "Microsoft Autopilot — проактивные агенты — расширяется на Copilot, Teams и Outlook в Microsoft 365",
+   "url": "https://x.com/testingcatalog/status/2122811499718594987",
+   "akkaunt": "testingcatalog",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/testingcatalog/status/2122811499718594987"
+   ]
+  },
+  {
+   "zagolovok": "Perplexity запустила Multiagent — режим, где команда агентов на разных моделях работает в Computer и Teammates",
+   "url": "https://x.com/testingcatalog/status/2122816561782120630",
+   "akkaunt": "testingcatalog",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/testingcatalog/status/2122816561782120630"
+   ]
+  },
+  {
+   "zagolovok": "Claude Desktop на Windows и Mac: можно перейти на канал Latest и получать сборки чаще",
+   "url": "https://x.com/ClaudeDevs/status/2122821051910684824",
+   "akkaunt": "ClaudeDevs",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/ClaudeDevs/status/2122821051910684824"
+   ]
+  },
+  {
+   "zagolovok": "Astra for Law на базе GPT-6.2 Astra лидирует по юридическому интеллекту и доступна клиентам ChatGPT Enterprise",
+   "url": "https://x.com/gdb/status/2122869636928598361",
+   "akkaunt": "gdb",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/gdb/status/2122869636928598361"
+   ]
+  },
+  {
+   "zagolovok": "Антигравити исполнился год: Google сбросила пользователям лимиты по всем моделям",
+   "url": "https://x.com/testingcatalog/status/2122847322837250303",
+   "akkaunt": "testingcatalog",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/testingcatalog/status/2122847322837250303"
+   ]
+  },
+  {
+   "zagolovok": "Microsoft анонсировала Transcribe Dragon и Realtime 1 — последняя будет питать голосовой режим Copilot",
+   "url": "https://x.com/testingcatalog/status/2122762250540687655",
+   "akkaunt": "testingcatalog",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/testingcatalog/status/2122762250540687655"
+   ]
+  },
+  {
+   "zagolovok": "ElevenLabs запустила Scribe v3 Live Medical — транскрипцию медицинских разговоров с точными названиями лекарств",
+   "url": "https://x.com/testingcatalog/status/2122844266552492173",
+   "akkaunt": "testingcatalog",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/testingcatalog/status/2122844266552492173"
+   ]
+  }
+ ],
+ "dengi": [
+  {
+   "zagolovok": "Выручка Nvidia в третьем квартале выросла на 103% — до 115,8 млрд долларов, выручка дата-центров — на 110%",
+   "url": "https://www.techmeme.com/261117/p56#a261117p56",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261117/p56#a261117p56"
+   ]
+  },
+  {
+   "zagolovok": "Genesis AI привлекла 500 млн долларов в раунде A при оценке 3,5 млрд — делает роботов для тонкой ручной работы",
+   "url": "https://x.com/testingcatalog/status/2122800044394815948",
+   "akkaunt": "testingcatalog",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/testingcatalog/status/2122800044394815948"
+   ]
+  }
+ ],
+ "github": []
+}
