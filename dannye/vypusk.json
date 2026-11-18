@@ -1,0 +1,120 @@
+{
+ "krupnye": [],
+ "sayty": [
+  {
+   "zagolovok": "OpenAI: модели нашли улучшения в схемах чипов — для AMD и собственного чипа Jalapeño, проверено на кремнии",
+   "url": "https://openai.com/index/advancing-chip-design-with-our-models",
+   "istochnik": "OpenAI",
+   "zvezda": false,
+   "idy": [
+    "https://openai.com/index/advancing-chip-design-with-our-models",
+    "https://x.com/OpenAI/status/2123100386638877054"
+   ]
+  },
+  {
+   "zagolovok": "Приложение Gemini заработало на Android-устройствах с малым объёмом памяти",
+   "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-lower-memory-devices/",
+   "istochnik": "Блог Google",
+   "zvezda": false,
+   "idy": [
+    "https://blog.google/innovation-and-ai/products/gemini-app/gemini-lower-memory-devices/"
+   ]
+  },
+  {
+   "zagolovok": "Ньюсом предложил дать Калифорнии широкие полномочия по регулированию ИИ, но без обязательных «рубильников»",
+   "url": "https://www.techmeme.com/261118/p36#a261118p36",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261118/p36#a261118p36"
+   ]
+  },
+  {
+   "zagolovok": "Администрация Трампа думает обязать компании США сообщать на сайтах об использовании китайских ИИ-моделей",
+   "url": "https://www.techmeme.com/261118/p23#a261118p23",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261118/p23#a261118p23"
+   ]
+  },
+  {
+   "zagolovok": "Xint нашла уязвимости удалённого выполнения кода в Nginx с помощью GPT 6.1 Sol и GPT-6 Luna",
+   "url": "https://www.techmeme.com/261118/p32#a261118p32",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261118/p32#a261118p32"
+   ]
+  }
+ ],
+ "x": [
+  {
+   "zagolovok": "Mistral Vibe вышел как приложение для Mac и Windows: агенты работают локально или удалённо",
+   "url": "https://x.com/MistralAI/status/2123073168659141119",
+   "akkaunt": "MistralAI",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/MistralAI/status/2123073168659141119",
+    "https://x.com/testingcatalog/status/2123083547720196437"
+   ]
+  },
+  {
+   "zagolovok": "Google анонсировала Loop — автономного агента в Stitch, который сам ведёт продукт от поиска идей до внедрения и мониторинга; лист ожидания",
+   "url": "https://x.com/testingcatalog/status/2123104328609071560",
+   "akkaunt": "testingcatalog",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/testingcatalog/status/2123104328609071560"
+   ]
+  },
+  {
+   "zagolovok": "CodeRabbit запустил публичную бету Verify — агента, который проверяет в браузере, не сломался ли код после изменений",
+   "url": "https://x.com/testingcatalog/status/2123107448395321648",
+   "akkaunt": "testingcatalog",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/testingcatalog/status/2123107448395321648"
+   ]
+  },
+  {
+   "zagolovok": "В приложении Claude для iOS появится сканирование документов с улучшенным распознаванием текста",
+   "url": "https://x.com/testingcatalog/status/2123042089072279825",
+   "akkaunt": "testingcatalog",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/testingcatalog/status/2123042089072279825"
+   ]
+  }
+ ],
+ "dengi": [
+  {
+   "zagolovok": "Anthropic думает увеличить размер IPO и поставить цену выше 80 долларов вместо диапазона 70–78",
+   "url": "https://www.techmeme.com/261118/p34#a261118p34",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261118/p34#a261118p34"
+   ]
+  },
+  {
+   "zagolovok": "Apollo организует для SpaceX финансирование чипов на 40 млрд долларов через отдельную структуру, вне баланса",
+   "url": "https://www.techmeme.com/261118/p24#a261118p24",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261118/p24#a261118p24"
+   ]
+  },
+  {
+   "zagolovok": "Парижская Remanence, помогающая дообучать открытые модели, привлекла 30 млн долларов",
+   "url": "https://www.techmeme.com/261118/p35#a261118p35",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261118/p35#a261118p35"
+   ]
+  }
+ ],
+ "github": []
+}
