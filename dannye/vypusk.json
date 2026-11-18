@@ -1,0 +1,55 @@
+{
+  "krupnye": [],
+  "sayty": [
+    {
+      "zagolovok": "Microsoft сделала Word, Excel и PowerPoint общедоступными внутри Copilot",
+      "url": "https://www.techmeme.com/261118/p1#a261118p1",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261118/p1#a261118p1"
+      ]
+    }
+  ],
+  "x": [
+    {
+      "zagolovok": "Seedream 5.5 от ByteDance вышла в лидеры по соотношению цены и качества: 20 долларов за тысячу картинок",
+      "url": "https://x.com/testingcatalog/status/2122988394108039231",
+      "akkaunt": "testingcatalog",
+      "zvezda": false,
+      "idy": [
+        "https://x.com/testingcatalog/status/2122988394108039231"
+      ]
+    }
+  ],
+  "dengi": [
+    {
+      "zagolovok": "IPO Anthropic перекроит рейтинг венчурных фондов: малоизвестные вроде Spark Capital выиграют больше крупных",
+      "url": "https://www.techmeme.com/261118/p3#a261118p3",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261118/p3#a261118p3"
+      ]
+    },
+    {
+      "zagolovok": "Инсайдеры ИИ-стартапов Сан-Франциско владеют капиталом на 1,2 трлн долларов; при IPO Anthropic доля среднего сотрудника — 72 млн",
+      "url": "https://www.techmeme.com/261117/p67#a261117p67",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261117/p67#a261117p67"
+      ]
+    },
+    {
+      "zagolovok": "LanceDB, мультимодальное хранилище данных для обучения ИИ, привлекла 57,5 млн долларов в раунде B",
+      "url": "https://www.techmeme.com/261117/p72#a261117p72",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261117/p72#a261117p72"
+      ]
+    }
+  ],
+  "github": []
+}
