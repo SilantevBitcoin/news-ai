@@ -1,0 +1,132 @@
+{
+  "krupnye": [],
+  "sayty": [
+    {
+      "zagolovok": "Genie 4 появилась в Gemini API и Google AI Studio: мировую модель можно подключать в свои приложения",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/genie-4-in-gemini-api/",
+      "istochnik": "Блог Google",
+      "zvezda": false,
+      "idy": [
+        "https://blog.google/innovation-and-ai/technology/developers-tools/genie-4-in-gemini-api/",
+        "https://x.com/OfficialLoganK/status/2123467449257623770"
+      ]
+    },
+    {
+      "zagolovok": "Codex в приложении ChatGPT для iOS: сохранённые боковые чаты и выбор проекта на подключённом компьютере",
+      "url": "https://developers.openai.com/codex/changelog/#codex-2026-11-18-mobile",
+      "istochnik": "Codex",
+      "zvezda": false,
+      "idy": [
+        "https://developers.openai.com/codex/changelog/#codex-2026-11-18-mobile"
+      ]
+    },
+    {
+      "zagolovok": "Google построила «зеркальный интернет» с имитацией соцсетей и банков, чтобы обучать браузерных агентов Chrome",
+      "url": "https://www.techmeme.com/261119/p43#a261119p43",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261119/p43#a261119p43"
+      ]
+    },
+    {
+      "zagolovok": "Как обучить агента с инструментами через многоходовое обучение с подкреплением: Tunix и Gemma 4 на TPU",
+      "url": "https://developers.googleblog.com/multi-turn-agentic-reinforcement-learning-with-tunix-and-gemma-4-on-google-tpus/",
+      "istochnik": "Google Developers Blog",
+      "zvezda": false,
+      "idy": [
+        "https://developers.googleblog.com/multi-turn-agentic-reinforcement-learning-with-tunix-and-gemma-4-on-google-tpus/"
+      ]
+    },
+    {
+      "zagolovok": "Streaming DiLoCo в MaxText: обучение больших моделей на TPU в разных городах",
+      "url": "https://developers.googleblog.com/distributed-llm-training-across-metros-streaming-diloco-in-maxtext/",
+      "istochnik": "Google Developers Blog",
+      "zvezda": false,
+      "idy": [
+        "https://developers.googleblog.com/distributed-llm-training-across-metros-streaming-diloco-in-maxtext/"
+      ]
+    }
+  ],
+  "x": [
+    {
+      "zagolovok": "Вышла Ideogram 4.6: нативный 4K, точное редактирование без искажений вне правок, лучше цвет и фактура",
+      "url": "https://x.com/btibor91/status/2123478464514941047",
+      "akkaunt": "btibor91",
+      "zvezda": false,
+      "idy": [
+        "https://x.com/btibor91/status/2123478464514941047"
+      ]
+    },
+    {
+      "zagolovok": "Microsoft добавила в MAI Playground режим Canvas на модели MAI Image 2.7 Flash: диаграммы и картинки правятся запросами и инструментами",
+      "url": "https://x.com/testingcatalog/status/2123471796628488253",
+      "akkaunt": "testingcatalog",
+      "zvezda": false,
+      "idy": [
+        "https://x.com/testingcatalog/status/2123471796628488253"
+      ]
+    },
+    {
+      "zagolovok": "Performance Factory: агенты ищут причины замедлений ChatGPT, предлагают исправления и проверяют их в работе",
+      "url": "https://x.com/OpenAIDevs/status/2123471880292299171",
+      "akkaunt": "OpenAIDevs",
+      "zvezda": false,
+      "idy": [
+        "https://x.com/OpenAIDevs/status/2123471880292299171"
+      ]
+    }
+  ],
+  "dengi": [
+    {
+      "zagolovok": "Anthropic вышла на Nasdaq: торги открылись на $111,50 за акцию при цене размещения $83, капитализация около $2 трлн",
+      "url": "https://x.com/AnthropicAI/status/2123461658890686863",
+      "akkaunt": "AnthropicAI",
+      "zvezda": true,
+      "idy": [
+        "https://www.techmeme.com/261119/p40#a261119p40",
+        "https://www.techmeme.com/261119/p39#a261119p39",
+        "https://x.com/AnthropicAI/status/2123461658890686863",
+        "https://x.com/testingcatalog/status/2123462712420147675",
+        "https://x.com/testingcatalog/status/2123432658298421487"
+      ]
+    },
+    {
+      "zagolovok": "Bloomberg: в IPO Anthropic больше половины институциональных заявок остались без акций, распределение в пользу инвесторов США",
+      "url": "https://www.techmeme.com/261119/p33#a261119p33",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261119/p33#a261119p33"
+      ]
+    },
+    {
+      "zagolovok": "Акции AMD упали более чем на 6% после short-позиции Hunterbrook, обвинившего компанию в «круговых сделках»",
+      "url": "https://www.techmeme.com/261119/p38#a261119p38",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261119/p38#a261119p38"
+      ]
+    },
+    {
+      "zagolovok": "Boltz, ИИ для поиска лекарств, привлекла $110 млн серии A под руководством Bessemer",
+      "url": "https://www.techmeme.com/261119/p41#a261119p41",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261119/p41#a261119p41"
+      ]
+    },
+    {
+      "zagolovok": "Alphabet готовит продажу облигаций в Канаде минимум на 5 млрд канадских долларов",
+      "url": "https://www.techmeme.com/261119/p42#a261119p42",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261119/p42#a261119p42"
+      ]
+    }
+  ],
+  "github": []
+}
