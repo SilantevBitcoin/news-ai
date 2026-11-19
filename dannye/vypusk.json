@@ -1,0 +1,158 @@
+{
+  "krupnye": [
+    {
+      "zagolovok": "Google выпустила Gemini 4 Neon — быструю модель уровня флагмана для кода и офисной работы",
+      "abzacy": [
+        "Google выпустила Gemini 4 Neon — модель, которая сочетает уровень передовых моделей с быстрым выполнением задач от начала до конца.",
+        "Она рассчитана на сложную разработку, работу со знаниями и научные задачи; в Google называют её лучшей по сочетанию скорости и качества.",
+        "В независимых рейтингах Neon занимает третье место в индексе интеллекта Artificial Analysis и второе в Vals Index, отстав только от более крупных и медленных моделей.",
+        "Контекстное окно — миллион токенов; модель сводит таблицы, документы, графики, аудио и видео в готовые результаты.",
+        "Для агентной работы Neon можно использовать самостоятельно или как оркестратора, который управляет параллельными субагентами Hydrogen в Antigravity.",
+        "Цена — 3 доллара за миллион входных токенов и 15 долларов за миллион выходных; кешированный ввод стоит на 95% дешевле.",
+        "Модель уже доступна в API и AI Studio, в Gemini для бизнеса, в Antigravity для платных подписчиков Pro и Ultra, а также в приложении Gemini для подписчиков Pro и Ultra.",
+        "Neon встаёт между недавними Carbon и Hydrogen, а Cursor добавил её сразу в день выхода."
+      ],
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+      "oboroty": false,
+      "idy": [
+        "https://deepmind.google/blog/introducing-gemini-4-neon/",
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+        "https://www.techmeme.com/261118/p49#a261118p49",
+        "https://www.techmeme.com/261118/p44#a261118p44",
+        "https://x.com/GoogleDeepMind/status/2123167884411077030",
+        "https://x.com/OfficialLoganK/status/2123167791922741362",
+        "https://x.com/demishassabis/status/2123168218743554465",
+        "https://x.com/cursor_ai/status/2123198346802450926",
+        "https://x.com/testingcatalog/status/2123168936363741689",
+        "https://x.com/testingcatalog/status/2123155483338904022",
+        "https://x.com/testingcatalog/status/2123133757615980707"
+      ]
+    }
+  ],
+  "sayty": [
+    {
+      "zagolovok": "Genie 4 доступна в Project Genie: мировая модель с родным звуком и правкой в реальном времени для подписчиков Ultra",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/",
+      "istochnik": "Блог Google",
+      "zvezda": false,
+      "idy": [
+        "https://deepmind.google/blog/genie-4-is-now-available/",
+        "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/",
+        "https://x.com/GoogleDeepMind/status/2123117733709586849",
+        "https://x.com/demishassabis/status/2123130606162985350",
+        "https://x.com/testingcatalog/status/2123131313800819136"
+      ]
+    },
+    {
+      "zagolovok": "OpenAI: агенты сами выполняют 46% задач её исследователей длиной 2–4 часа, в марте было 23%",
+      "url": "https://openai.com/index/research-acceleration-jagged-frontier",
+      "istochnik": "OpenAI",
+      "zvezda": false,
+      "idy": [
+        "https://openai.com/index/research-acceleration-jagged-frontier",
+        "https://www.techmeme.com/261118/p54#a261118p54",
+        "https://x.com/OpenAI/status/2123191365983248653"
+      ]
+    },
+    {
+      "zagolovok": "Claude Code 2.1.328: авторежим для Opus 4.6 и Sonnet 4.6 на облачных платформах, блокировка по сбою хука",
+      "url": "https://code.claude.com/docs/en/changelog#2-1-328",
+      "istochnik": "Claude Code",
+      "zvezda": false,
+      "idy": [
+        "https://code.claude.com/docs/en/changelog#2-1-328"
+      ]
+    }
+  ],
+  "x": [
+    {
+      "zagolovok": "Responses API: фоновый режим с окном ответа в 2 или 8 часов — до 40% дешевле стандартного тарифа на GPT-6.2",
+      "url": "https://x.com/OpenAIDevs/status/2123188195202617408",
+      "zvezda": false,
+      "idy": [
+        "https://developers.openai.com/api/docs/changelog#2026-11-17 Feature · gpt-6.2-astra · gpt-6.2-sol · v1/responses · v1/chat/completions: Use GPT-6.2 Astra for demanding reasoning and coding tasks, or GPT-6.2 Sol for everyday coding and agent workflows.",
+        "https://developers.openai.com/api/docs/changelog#2026-11-17 Feature · gpt-6.2-astra · gpt-6.2-sol · gpt-6.1-terra · gpt-6-luna · v1/responses: Choose a two-hour or eight-hour background completion window in the Responses API public beta.",
+        "https://x.com/OpenAIDevs/status/2123188195202617408"
+      ],
+      "akkaunt": "OpenAIDevs"
+    },
+    {
+      "zagolovok": "ChatGPT для бухгалтерии: плагин закрывает месяц, сверяет банк и готовит аудит, работает с QuickBooks и Xero",
+      "url": "https://x.com/gdb/status/2123225465762542044",
+      "akkaunt": "gdb",
+      "zvezda": false,
+      "idy": [
+        "https://x.com/gdb/status/2123225465762542044"
+      ]
+    },
+    {
+      "zagolovok": "Живая диктовка в ChatGPT: текст появляется по мере речи, быстрее и надёжнее",
+      "url": "https://x.com/gdb/status/2123150520303161763",
+      "akkaunt": "gdb",
+      "zvezda": false,
+      "idy": [
+        "https://x.com/gdb/status/2123150520303161763",
+        "https://x.com/testingcatalog/status/2123126214755783142"
+      ]
+    },
+    {
+      "zagolovok": "Netlify перезапускается вокруг ИИ-агентов: 150 коннекторов и откат любого изменения",
+      "url": "https://x.com/testingcatalog/status/2123184343405219979",
+      "akkaunt": "testingcatalog",
+      "zvezda": false,
+      "idy": [
+        "https://x.com/testingcatalog/status/2123184343405219979",
+        "https://x.com/swyx/status/2123165970940441038"
+      ]
+    },
+    {
+      "zagolovok": "Grok Bot получит бронирование авиабилетов, отелей и аренды машин",
+      "url": "https://x.com/testingcatalog/status/2123187422125043905",
+      "akkaunt": "testingcatalog",
+      "zvezda": false,
+      "idy": [
+        "https://x.com/testingcatalog/status/2123187422125043905"
+      ]
+    }
+  ],
+  "dengi": [
+    {
+      "zagolovok": "Anthropic назначила цену IPO в 83 доллара за акцию, торги на Nasdaq начнутся завтра",
+      "url": "https://x.com/AnthropicAI/status/2123196808675405860",
+      "akkaunt": "AnthropicAI",
+      "zvezda": false,
+      "idy": [
+        "https://x.com/AnthropicAI/status/2123196808675405860",
+        "https://x.com/testingcatalog/status/2123206145552883894"
+      ]
+    },
+    {
+      "zagolovok": "Anthropic привлекла около 3 млрд долларов от японских инвесторов в рамках IPO",
+      "url": "https://www.techmeme.com/261118/p51#a261118p51",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261118/p51#a261118p51"
+      ]
+    },
+    {
+      "zagolovok": "Palo Alto Networks купит Applied Compute за 4,5 млрд долларов акциями",
+      "url": "https://www.techmeme.com/261118/p41#a261118p41",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261118/p41#a261118p41"
+      ]
+    },
+    {
+      "zagolovok": "Sierra ведёт переговоры о раунде около 1,5 млрд долларов при оценке около 30 млрд",
+      "url": "https://www.techmeme.com/261118/p40#a261118p40",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261118/p40#a261118p40"
+      ]
+    }
+  ],
+  "github": []
+}
