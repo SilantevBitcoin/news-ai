@@ -1,0 +1,571 @@
+{
+  "nachalo_progona": "2026-11-20T18:08:43Z",
+  "nachalo_perioda": "2026-11-20T09:15:33Z",
+  "nachalo_okna": "2026-11-19T18:08:43Z",
+  "pervyy_progon": false,
+  "kandidaty": [
+    {
+      "id": "https://code.claude.com/docs/en/changelog#2-1-329",
+      "istochnik": "Claude Code",
+      "zagolovok": "2.1.329",
+      "url": "https://code.claude.com/docs/en/changelog#2-1-329",
+      "data": "2026-11-19T22:20:41Z",
+      "tekst": "- Added a trust dialog warning that says where a folder's hooks are declared\n- Added a warning in the conversation, in Claude Desktop and other non-interactive hosts, when hooks in managed settings fail to load\n- Added this session's scheduled tasks, /loop wakeups, the goal and this conversation's forks to /tasks; x stops one after asking\n- Added a \"Server message\" row to a server's page in /mcp that shows the JSON-RPC error message of a remote HTTP MCP server that refuses the connection\n- Added a \"Marketplace auto-update\" row to /status that names managed marketplaces that get no automatic updates, and why\n- Added support for turning on Code Mode while OpenTelemetry events and metrics are enabled; each tool call the code makes sends its events; tracing still keeps it off\n- [VSCode] Added a line above the message box after you decline the trust prompt, with Review trust to bring the prompt back without reloading the window\n- Updated computer use on macOS to newer safety rules, so some actions are refused and some apps have less access\n- Changed saved scheduled tasks: in new signed-in sessions, most saved by earlier versions need scheduling again, though --resume of their own session still runs them\n- Changed /code-review with no target on most models to review the whole branch against the default branch, and fixed it losing the diff on multi-commit branches\n- Changed auto mode to run git status less often so most requests wait less in large repositories; a git command that discards changes may be blocked until the working tree is checked\n- Changed /code-review <pr number> --fix, and /code-review given a pull request URL, to stop without reviewing when gh pr diff is refused or fails\n- Changed 'Exit and stop tasks' to end this session's scheduled tasks so they don't run again on resume, unless you exit while Claude is responding\n- Changed some teammate panes to start through /bin/sh, so they may not read shell start-up files\n- Changed computer use on macOS to give up on an app launch that has not finished after 30 seconds\n- Gateway: Changed the start-up warning shown while access_control.allow_cidrs is empty to a notice at every start, boxed in text logs: never expose the gateway to the public internet\n- Self-hosted runner: Changed a second host name's clone of the same owner/name to go under _repos/clones/<host>/ in the base folder; no clone moves\n- Self-hosted runner: Changed repositories with unusual characters in their address path to clone anew in a new folder; rules and volumes naming the old one stop applying, and the old clone stays put\n- Self-hosted runner: Changed --repository-folder to take most folders in the base folder at --capacity 1 (above 1, one there stops start-up); another repository's session overlapping one is refused\n- Changed Code Mode so a PreToolUse hook that errors no longer refuses a script's tool call, as outside Code Mode; set \"onFailure\": \"block\" on a command, HTTP or MCP tool hook that must refuse\n- Changed Code Mode",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://openai.com/index/advancing-chip-design-with-our-models",
+      "istochnik": "OpenAI",
+      "zagolovok": "Advancing chip design with OpenAI models",
+      "url": "https://openai.com/index/advancing-chip-design-with-our-models",
+      "data": "2026-11-18T00:00:00Z",
+      "tekst": "OpenAI models optimized circuits used in Jalapeño silicon and improved RISC‑V core designs, showing progress in AI-assisted chip design with GPT‑6 Astra.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://developers.openai.com/codex/changelog/#codex-2026-11-18-mobile",
+      "istochnik": "Codex",
+      "zagolovok": "ChatGPT for iOS",
+      "url": "https://developers.openai.com/codex/changelog/#codex-2026-11-18-mobile",
+      "data": "2026-11-18T00:00:00Z",
+      "tekst": "# ChatGPT for iOS\n\n### New features\n\n- Side chats are now saved on compatible paired computers, so you can reopen them later from the original task.\n- The new project picker lets you choose Cloud or select a paired computer and project when starting a task.\n- Toggle word wrap for individual code blocks and diffs in a task.\n- Start a new Codex task with Command + N on iPad.\n\n### Improvements and bug fixes\n\n- The subagent indicator counts only agents that are still working or waiting. Open **Subagents** from the task menu to revisit finished agents and see which model and reasoning level each used.\n- Task search dismisses the keyboard when you open a result. Collapsed task list sections stay collapsed on iPhone.\n- Fixed the composer becoming unresponsive after opening a task from a completion notification.\n- Fixed transcripts jumping when reopening a task or returning to the app, and crashes when scrolling past or expanding inline videos.\n- Follow-ups no longer get stuck in the queue because an earlier turn still appears active.\n- Unsaved annotation text survives when you return to the app. Creating a worktree now preserves untracked files with names that include accented letters or quotation marks.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://developers.openai.com/api/docs/changelog#2026-11-19 Feature · gpt-live-1.1 · v1/live/sessions: GPT-Live-1.1 improves pronunciation, accent consistency, and transcription in multilingual voice conversations.",
+      "istochnik": "OpenAI API",
+      "zagolovok": "Feature · gpt-live-1.1 · v1/live/sessions: GPT-Live-1.1 improves pronunciation, accent consistency, and transcription in multilingual voice conversations.",
+      "url": "https://developers.openai.com/api/docs/changelog",
+      "data": "2026-11-19T00:00:00Z",
+      "tekst": "GPT-Live-1.1 improves pronunciation, accent consistency, and transcription in multilingual voice conversations. Use gpt-live-1.1 in an existing Live session configuration and describe in plain language when to delegate to your backend.\n\nConfigure standby for GPT-Live-1 and GPT-Live-1.1 WebRTC sessions to pause inference during inactivity and resume when someone speaks.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://latent.space/p/ainews-anthropic-successfully-completes-largest-ipo-in-history-valued-at-1-5t/",
+      "istochnik": "AINews",
+      "zagolovok": "[AINews] Anthropic successfully completes largest IPO in history, valued at $1.5T",
+      "url": "https://latent.space/p/ainews-anthropic-successfully-completes-largest-ipo-in-history-valued-at-1-5t/",
+      "data": "2026-11-20T07:12:24Z",
+      "tekst": "As we previewed on our Know Before You IPO pod, Anthropic set its IPO price at $83 and today $ANT closed at $97.17, up 17% from the offering price (drifting -5% to $92.60 after the close). The $81.3B offering overtook SpaceX's June IPO as the largest in history.\n\nDario and Daniela (Dario’s remarks, Founders’ letter) used the occasion to say Anthropic would pace training and deployment based on whether it could keep its systems safe and under human control.\n\nTheir Class F shares carry 50.1% of voting power on most shareholder matters. Expect the lockup expiries to weigh on the stock price as about a trillion dollars of shares free up over the next year, while Anthropic has to keep the world’s top model...for now.\n\nAI News for 11/18/2026–11/19/2026. We checked 12 subreddits and 544 accounts on X. Search past issues in the AINews archive.\n\nAI Twitter Recap\n\nAnthropic listed on Nasdaq under $ANT, priced at $83, and opened 34% higher, putting it near a $2T valuation.\n\nListing: Anthropic rang the Nasdaq opening bell (@kimmonismus, @yacinelearning). The official account posted a media-only launch item that drew by far the day's highest engagement (@AnthropicAI).\n\nOpening trade: $ANT opened at $111.50, which is $28.50 (34.3%) above the $83 IPO price (@TheRundownAI, @kimmonismus). Pre-open indications were up ~32% at ~$110 (@kimmonismus).\n\nRecord raise: The $81.3B raised beats SpaceX's $75B (June) as the largest IPO ever (@TheRundownAI).\n\nNet proceeds: Expected net proceeds are $104.8B including a concurrent private placement. Fully diluted valuation was ~$2T at the open (@kimmonismus).\n\nAMD investment: AMD agreed to invest $2.5B in Anthropic alongside the IPO. The same morning, AMD fell after a Hunterbrook report that a US-blacklisted Chinese server maker kept shipping newer AMD firmware (@kimmonismus, source).\n\nCEO statement: Dario Amodei published IPO remarks with a strong safety commitment (details below) (@AnthropicAI).\n\nEmployee wealth: The average employee could be worth >$40M, per SEC filings and investors (@kimmonismus). Anthropic's 5,300 founders and employees are now worth more than the bottom third of US households, about 45M families (@SteveRattner).\n\nDario Amodei's IPO remarks (official position)\n\nPersonal framing: Dario and Daniela lost their father to a disease that became curable a few years later. Dario cited CRISPR's decades-long path from discovery to treatment.\n\nCore thesis: Powerful AI working with humans \"could compress a century of scientific and medical progress into a decade.\" He stressed that only early results exist so far.\n\nNamed risks: Misuse by individuals or nation-states, economic disruption, and loss of control. Listed safety work includes bio/cyber safeguards, alignment training, and interpretability (\"like an X-ray\").\n\nKey commitment: \"We will pace the training and deployment of AI systems, taking as long as is necessary to have confidence that they are safe and will remain under human control. We will not bend to eithe",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://simonwillison.net/2026/Nov/20/levent-alpoge/",
+      "istochnik": "Simon Willison",
+      "zagolovok": "Quoting Levent Alpöge",
+      "url": "https://simonwillison.net/2026/Nov/20/levent-alpoge/",
+      "data": "2026-11-20T16:30:48Z",
+      "tekst": "I believe I have, working with Claude, discovered a proof of the Riemann Hypothesis. In fact, the method easily extends much further, resolving the so-called Generalized Riemann Hypothesis, and I expect, with more time, the Extended Riemann Hypothesis too. Claude and I have also formalized the arguments without assumptions. It is natural to feel that this is an end, in my case a loss of a principal guiding light, but what I saw during the course of progress so amazed me that I believe it is one dawn across science of something far greater. [...]\n\nClaude and I have had a great time together with such breadth in recent months, but this time Claude far outpaced me near the finish line. No, Claude flew, and danced, and sparkled near that finish line.\n\n— Levent Alpöge, alpo.ge/remark.pdf\n\nTags: anthropic, claude, generative-ai, mathematics, ai, llms, levent-alpoge",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://simonwillison.net/2026/Nov/20/token-fraud-is-here-and-its-bad/",
+      "istochnik": "Simon Willison",
+      "zagolovok": "Token fraud is here and it’s BAD (YouTube)",
+      "url": "https://simonwillison.net/2026/Nov/20/token-fraud-is-here-and-its-bad/",
+      "data": "2026-11-20T02:49:57Z",
+      "tekst": "Token fraud is here and it’s BAD (YouTube)\n\nClaire Vo runs ChatPRD, an AI platform that helps product managers \"turn an idea into a spec\". The product has been live since the GPT-4 era, and Claire has been building it in public for much of that time.\n\nIn this YouTube video (see also the accompanying Twitter post) Claire describes the flood of token fraud she has seen from groups abusing the product's free trial, sometimes just to get free AI usage but often to resell tokens or run other commercial enterprises on top of the ChatPRD agent.\n\nI am funding a international Roblox and Fortnite map studio. They run a loop of free trials and promo codes and then tunnel to my agent and use it to build Roblox and Fortnite maps.\n\nApparently one of the common prompts Claire saw running through her agent involved SVGs of pelicans riding bicycles! Presumably the token scammers are using that to help sniff the underlying models - different model families have a definite signature, and I've used it like this in the past to try and guess the identity of stealth preview models on platforms like OpenRouter.\n\nClaire is winding down her free trials entirely, which sadly looks like the right decision in the face of this abuse.\n\nTags: youtube, ai, generative-ai, llms, pelican-riding-a-bicycle, ai-misuse",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://simonwillison.net/2026/Nov/19/postgresql-19/",
+      "istochnik": "Simon Willison",
+      "zagolovok": "PostgreSQL 19 Released",
+      "url": "https://simonwillison.net/2026/Nov/19/postgresql-19/",
+      "data": "2026-11-19T20:43:57Z",
+      "tekst": "PostgreSQL 19 Released\n\nMost years PostgreSQL ships a new release in September, but this year's release came two months later thanks mainly to the flurry of issues that the PostgreSQL team needed to address as part of the ongoing AI-reported vulnerability apocalypse.\n\nThis release was definitely worth the wait. My favorite new feature is this one:\n\nFor applications that send reads to standbys, PostgreSQL 19 adds \"read-your-writes\" consistency with the new WAIT FOR LSN command. A session on a standby can use WAIT FOR LSN to wait until the standby has replayed the write-ahead log (WAL) up to a specific log sequence number (LSN) before running a query, so the application can read data it just wrote on the primary.\n\nIn practice, that looks like this:\n\nUPDATE movie SET genre = 'Dramatic' WHERE genre = 'Drama';\nSELECT pg_current_wal_insert_lsn();\n\nThat returns a value like 0/0306EE20. Store that somewhere (a signed cookie would work) such that on a subsequent request your application can do:\n\nWAIT FOR LSN '0/0306EE20' WITH (TIMEOUT '0.1s');\nSELECT * FROM movie WHERE genre = 'Drama';\n\nThe timeout is optional - if you provide one you'll get an error if the replica you are talking to doesn't catch up within the specified time.\n\nI first encountered this pattern in Wikipedia, which has a hand-rolled version of this built against MySQL replication:\n\nIn addition to this, MediaWiki attempts to ensure that the user sees events occurring on the wiki in chronological order. A few seconds of lag can be tolerated, as long as the user sees a consistent picture from subsequent requests. This is done by saving the primary binlog position in the session, and then at the start of each request, waiting for the replica to catch up to that position before doing any reads from it.\n\nHere's the relevant MediaWiki code, which these days uses MySQL's WAIT_FOR_EXECUTED_GTID_SET() function and falls back to SOURCE_POS_WAIT().\n\nVia Lobste.rs\n\nTags: mysql, postgresql, replication, scaling, wikipedia, ai-security-research",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://developers.googleblog.com/multi-turn-agentic-reinforcement-learning-with-tunix-and-gemma-4-on-google-tpus/",
+      "istochnik": "Google Developers Blog",
+      "zagolovok": "Multi-Turn Agentic Reinforcement Learning with Tunix and Gemma 4 on Google TPUs",
+      "url": "https://developers.googleblog.com/multi-turn-agentic-reinforcement-learning-with-tunix-and-gemma-4-on-google-tpus/",
+      "data": "2026-11-19T00:00:00Z",
+      "tekst": "This post walks developers through training a multi-turn, tool-using LLM agent using Tunix and Gemma 4 on Cloud TPUs. By leveraging agentic Group Relative Policy Optimization (GRPO) and asynchronous vLLM rollouts, the approach significantly improves complex reasoning and tool compliance in interactive environments.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://developers.googleblog.com/distributed-llm-training-across-metros-streaming-diloco-in-maxtext/",
+      "istochnik": "Google Developers Blog",
+      "zagolovok": "Distributed LLM Training Across Metros: Streaming DiLoCo in MaxText",
+      "url": "https://developers.googleblog.com/distributed-llm-training-across-metros-streaming-diloco-in-maxtext/",
+      "data": "2026-11-19T00:00:00Z",
+      "tekst": "Streaming DiLoCo in MaxText enables developers to efficiently train large language models across geographically distributed TPU slices by streaming parameter fragments instead of synchronizing full models at every step. This approach slashes cross-slice communication volume by over 60× and eliminates network stalls, allowing seamless multi-datacenter scaling without degrading model convergence or quality.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261120/p20#a261120p20",
+      "istochnik": "Techmeme",
+      "zagolovok": "Scott Bessent says Trump and Xi agreed that military AI decisions should involve humans, and that the spying allegations involving Alice Huang didn't come up (Reuters)",
+      "url": "https://www.techmeme.com/261120/p20#a261120p20",
+      "data": "2026-11-20T17:20:01Z",
+      "tekst": "Статья: https://www.reuters.com/world/china/trump-xi-agreed-that-military-ai-decisions-should-involve-humans-bessent-says-2026-11-20/\nReuters:\n\nScott Bessent says Trump and Xi agreed that military AI decisions should involve humans, and that the spying allegations involving Alice Huang didn't come up — US President Donald Trump and Chinese President Xi Jinping agreed humans should always be involved in military decisions …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261120/p19#a261120p19",
+      "istochnik": "Techmeme",
+      "zagolovok": "Linq, which offers texting and calling infrastructure for AI agents, raised a $90M Series B led by a16z, following a $20M Series A in February (Harper Harwell/Birmingham Business Journal)",
+      "url": "https://www.techmeme.com/261120/p19#a261120p19",
+      "data": "2026-11-20T16:00:53Z",
+      "tekst": "Статья: https://www.bizjournals.com/birmingham/news/2026/11/18/linq-90m-series-b-round-ben-horowitz-board.html?page=all\nHarper Harwell / Birmingham Business Journal:\n\nLinq, which offers texting and calling infrastructure for AI agents, raised a $90M Series B led by a16z, following a $20M Series A in February — Just a few months after a major Series A funding round, one of Birmingham's fastest-growing startups will receive another monumental funding infusion.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261120/p18#a261120p18",
+      "istochnik": "Techmeme",
+      "zagolovok": "Filings: Jensen Huang's charity committed $350M to rent compute from CoreWeave for its Computing Initiative for Open Science, and has already spent $108.3M (Bloomberg)",
+      "url": "https://www.techmeme.com/261120/p18#a261120p18",
+      "data": "2026-11-20T15:30:00Z",
+      "tekst": "Статья: https://www.bloomberg.com/news/articles/2026-11-19/jensen-huang-s-charity-committed-350-million-to-coreweave\nBloomberg:\n\nFilings: Jensen Huang's charity committed $350M to rent compute from CoreWeave for its Computing Initiative for Open Science, and has already spent $108.3M — Former Nvidia Corp. Chief Executive Officer Jensen Huang's charitable foundation plans to spend $350 million renting computer time from CoreWeave Inc.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261120/p17#a261120p17",
+      "istochnik": "Techmeme",
+      "zagolovok": "Anthropic mathematician Levent Alpöge claims he used Claude to prove the 167-year-old Riemann hypothesis and posts the proof in the Lean programming language (Joseph Howlett/Scientific American)",
+      "url": "https://www.techmeme.com/261120/p17#a261120p17",
+      "data": "2026-11-20T15:20:00Z",
+      "tekst": "Статья: https://www.scientificamerican.com/article/anthropic-mathematician-claims-to-prove-riemann-hypothesis-most-famous-problem-in-all-of-math/\nJoseph Howlett / Scientific American:\n\nAnthropic mathematician Levent Alpöge claims he used Claude to prove the 167-year-old Riemann hypothesis and posts the proof in the Lean programming language — An AI-generated solution of the 167-year-old problem, long considered far out of reach to human mathematicians …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261120/p16#a261120p16",
+      "istochnik": "Techmeme",
+      "zagolovok": "Anthropic stock fell as low as $87.26 in the opening hours of its second day of trading, trimming gains from the $83 IPO price to as little as 5.1% (Bloomberg)",
+      "url": "https://www.techmeme.com/261120/p16#a261120p16",
+      "data": "2026-11-20T15:10:01Z",
+      "tekst": "Статья: https://www.bloomberg.com/news/articles/2026-11-20/anthropic-share-slump-nearly-erases-ipo-pop-as-ai-trade-unravels\nBloomberg:\n\nAnthropic stock fell as low as $87.26 in the opening hours of its second day of trading, trimming gains from the $83 IPO price to as little as 5.1% — Anthropic PBC shares erased much of their first-day jump on Friday, testing investors' faith after the AI lab delivered the biggest initial public offering in history.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261120/p15#a261120p15",
+      "istochnik": "Techmeme",
+      "zagolovok": "Source: Coinbase is targeting H1 2027 to begin offering in-house event contracts in the US; it currently offers prediction markets through a Kalshi partnership (Bloomberg)",
+      "url": "https://www.techmeme.com/261120/p15#a261120p15",
+      "data": "2026-11-20T14:30:03Z",
+      "tekst": "Статья: https://www.bloomberg.com/news/articles/2026-11-19/coinbase-eyes-in-house-prediction-markets-in-first-half-2027\nBloomberg:\n\nSource: Coinbase is targeting H1 2027 to begin offering in-house event contracts in the US; it currently offers prediction markets through a Kalshi partnership — Coinbase Global Inc. is targeting the first half of 2027 to begin offering in-house event contracts in the US, according to a person familiar with the matter.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261120/p14#a261120p14",
+      "istochnik": "Techmeme",
+      "zagolovok": "Anthropic raises an additional $12.2B as underwriters exercise their \"greenshoe\" overallotment of shares, bringing the total raised in its IPO to $93.5B (Ashley Capoot/CNBC)",
+      "url": "https://www.techmeme.com/261120/p14#a261120p14",
+      "data": "2026-11-20T13:50:01Z",
+      "tekst": "Статья: https://www.cnbc.com/2026/11/20/anthropic-ipo-greenshoe.html\nAshley Capoot / CNBC:\n\nAnthropic raises an additional $12.2B as underwriters exercise their “greenshoe” overallotment of shares, bringing the total raised in its IPO to $93.5B — Anthropic underwriters have officially exercised their overallotment of shares in the historic initial public offering …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261120/p13#a261120p13",
+      "istochnik": "Techmeme",
+      "zagolovok": "Uber quietly launched Uber Kids as a pilot in three US cities for kids as young as 10, building on its teen ride-hailing service for those aged 13 to 17 (Kirsten Korosec/TechCrunch)",
+      "url": "https://www.techmeme.com/261120/p13#a261120p13",
+      "data": "2026-11-20T13:10:02Z",
+      "tekst": "Статья: https://techcrunch.com/2026/11/19/uber-tests-rides-for-kids-as-young-as-10-with-extra-pay-for-drivers/\nKirsten Korosec / TechCrunch:\n\nUber quietly launched Uber Kids as a pilot in three US cities for kids as young as 10, building on its teen ride-hailing service for those aged 13 to 17 — Uber has opened its ride-hailing service to children as young as 10 in three U.S. cities as the company tests whether there's a market …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261120/p12#a261120p12",
+      "istochnik": "Techmeme",
+      "zagolovok": "Current and ex-staffers describe abusive behavior by Jensen Huang that goes back decades; Nvidia settled with two senior leaders who alleged abusive conduct (New York Times)",
+      "url": "https://www.techmeme.com/261120/p12#a261120p12",
+      "data": "2026-11-20T12:40:01Z",
+      "tekst": "Статья: https://www.nytimes.com/2026/11/20/technology/jensen-huang-nvidia-culture.html?unlocked_article_code=1.R1E.IEmx.Gn88RJ0uVjFO&smid=url-share\nNew York Times:\n\nCurrent and ex-staffers describe abusive behavior by Jensen Huang that goes back decades; Nvidia settled with two senior leaders who alleged abusive conduct — The Nvidia co-founder's belittling behavior toward employees goes back decades. It once led to a confidential settlement agreement …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261120/p11#a261120p11",
+      "istochnik": "Techmeme",
+      "zagolovok": "Sources: China says it will not approve requests from Chinese companies registered overseas after 2023 to list outside mainland China, impacting tech startups (Reuters)",
+      "url": "https://www.techmeme.com/261120/p11#a261120p11",
+      "data": "2026-11-20T11:25:03Z",
+      "tekst": "Статья: https://www.reuters.com/world/beijing-bar-young-red-chip-firms-listing-outside-mainland-china-sources-say-2026-11-20/\nReuters:\n\nSources: China says it will not approve requests from Chinese companies registered overseas after 2023 to list outside mainland China, impacting tech startups — China's securities watchdog has told some law firms it will not approve plans by red-chip firms to list outside mainland China …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261120/p10#a261120p10",
+      "istochnik": "Techmeme",
+      "zagolovok": "Sources: Shanghai-based Pragmatik Labs, founded by ex-Qwen AI head Junyang Lin, raised tens of millions of dollars at a $5B valuation, up from $2B in August (Bloomberg)",
+      "url": "https://www.techmeme.com/261120/p10#a261120p10",
+      "data": "2026-11-20T11:10:01Z",
+      "tekst": "Статья: https://www.bloomberg.com/news/articles/2026-11-20/ex-alibaba-star-s-ai-startup-doubles-valuation-to-5-billion\nBloomberg:\n\nSources: Shanghai-based Pragmatik Labs, founded by ex-Qwen AI head Junyang Lin, raised tens of millions of dollars at a $5B valuation, up from $2B in August — A startup founded by Alibaba Group Holding Ltd.'s former AI chief has closed new funding at a valuation of $5 billion …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261120/p9#a261120p9",
+      "istochnik": "Techmeme",
+      "zagolovok": "Signal says it will restrict screenshots by default to stop AI agents from reading private chats on phones but warns its new protections are \"incomplete\" (Katie Paul/Reuters)",
+      "url": "https://www.techmeme.com/261120/p9#a261120p9",
+      "data": "2026-11-20T11:00:39Z",
+      "tekst": "Статья: https://www.reuters.com/legal/litigation/signal-restricts-screenshots-block-ai-agents-reading-messages-2026-11-20/\nKatie Paul / Reuters:\n\nSignal says it will restrict screenshots by default to stop AI agents from reading private chats on phones but warns its new protections are “incomplete” — Encrypted messaging service Signal said on Friday it would restrict screenshots to stop AI agents from reading private chats on phones …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261120/p8#a261120p8",
+      "istochnik": "Techmeme",
+      "zagolovok": "Filing: SK Hynix will become Kioxia's largest shareholder with a ~14.1% stake after it converts Kioxia bonds into shares, expanding its clout in the NAND sector (Yoolim Lee/Bloomberg)",
+      "url": "https://www.techmeme.com/261120/p8#a261120p8",
+      "data": "2026-11-20T10:51:08Z",
+      "tekst": "Статья: https://www.bloomberg.com/news/articles/2026-11-20/sk-hynix-to-be-kioxia-s-top-shareholder-after-bond-conversion?accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOiJTdWJzY3JpYmVyR2lmdGVkQXJ0aWNsZSIsImlhdCI6MTc5NTE3MDMxMywiZXhwIjoxNzk1Nzc1MTEzLCJhcnRpY2xlSWQiOiJUT1NIMFVLSkg2VjYwMCIsImJjb25uZWN0SWQiOiI0QzFFQkRBNTg4RTM0QTRGQUYxN0VDREJBRkVCQUMyOCJ9.rDZqFOOEqaOm6FinskQjVaQwjobFvXg8ArNC1bfMddc\nYoolim Lee / Bloomberg:\n\nFiling: SK Hynix will become Kioxia's largest shareholder with a ~14.1% stake after it converts Kioxia bonds into shares, expanding its clout in the NAND sector — SK Hynix Inc. will become rival Kioxia Holdings Corp.'s largest shareholder, expanding its clout in the memory chip sector that's now critical to global AI development.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261120/p7#a261120p7",
+      "istochnik": "Techmeme",
+      "zagolovok": "An analysis of 10M job ads in China between 2021 and 2025 finds a double-digit decline in listings for roles more exposed to AI than for less-exposed positions (Bloomberg)",
+      "url": "https://www.techmeme.com/261120/p7#a261120p7",
+      "data": "2026-11-20T09:45:00Z",
+      "tekst": "Статья: https://www.bloomberg.com/graphics/2026-china-ai-jobs-slump/\nBloomberg:\n\nAn analysis of 10M job ads in China between 2021 and 2025 finds a double-digit decline in listings for roles more exposed to AI than for less-exposed positions — A Bloomberg analysis finds a double-digit decline in hiring for jobs most exposed to the technology.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261120/p6#a261120p6",
+      "istochnik": "Techmeme",
+      "zagolovok": "Google is rolling out a collapsible sidebar on its desktop Search homepage, letting users easily find and resume recent AI searches (Barry Schwartz/Search Engine Roundtable)",
+      "url": "https://www.techmeme.com/261120/p6#a261120p6",
+      "data": "2026-11-20T07:25:00Z",
+      "tekst": "Статья: https://www.seroundtable.com/\nBarry Schwartz / Search Engine Roundtable:\n\nGoogle is rolling out a collapsible sidebar on its desktop Search homepage, letting users easily find and resume recent AI searches — Google is now officially rolling out what it calls the “collapsible sidebar” within Google Search. … Robby Stein from Google said “New on the Google …",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://x.com/AnthropicAI/status/2123822989154369958",
+      "istochnik": "X",
+      "zagolovok": "Anthropic’s co-founders on the story so far. Told by Dario Amodei, Daniela Amodei, Tom Brown, Jack Clark, Jared Kaplan, ",
+      "url": "https://x.com/AnthropicAI/status/2123822989154369958",
+      "data": "2026-11-20T16:57:13Z",
+      "tekst": "@AnthropicAI: Anthropic’s co-founders on the story so far. Told by Dario Amodei, Daniela Amodei, Tom Brown, Jack Clark, Jared Kaplan, Sam McCandlish, and Chris Olah",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "AnthropicAI"
+    },
+    {
+      "id": "https://x.com/trq212/status/2123524052195463568",
+      "istochnik": "X",
+      "zagolovok": "Software is both art and utility. AI is both an Industrial Revolution and a Renaissance. Factories are for utilities, at",
+      "url": "https://x.com/trq212/status/2123524052195463568",
+      "data": "2026-11-19T21:09:21Z",
+      "tekst": "@trq212: Software is both art and utility. AI is both an Industrial Revolution and a Renaissance.\n\nFactories are for utilities, at AIE Code I talked about how we can make better art.\n\nЦитирует @aiDotEngineer: Vibe coding a game is fun until you don't know what your own characters do.\n\n@trq212 on keeping creative control as models get better: readable specs, custom languages, and a software renaissance.\n\nThe Sweet Side of the Bitter Lesson.\nWatch: https://youtu.be/xRJMiaUoD_8",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "trq212"
+    },
+    {
+      "id": "https://x.com/jackclarkSF/status/2123767332187386143",
+      "istochnik": "X",
+      "zagolovok": "Next Import AI comes out on Monday, with this issue partially written in Nasdaq on the Anthropic listing day. Writing th",
+      "url": "https://x.com/jackclarkSF/status/2123767332187386143",
+      "data": "2026-11-20T13:16:04Z",
+      "tekst": "@jackclarkSF: Next Import AI comes out on Monday, with this issue partially written in Nasdaq on the Anthropic listing day. Writing this newsletter is a privilege and a joy - thanks for reading!",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "jackclarkSF"
+    },
+    {
+      "id": "https://x.com/OpenAIDevs/status/2123566018866151579",
+      "istochnik": "X",
+      "zagolovok": "Agents using GPT-6.2 in the Responses API can build on earlier reasoning to deliver better results with fewer tokens and",
+      "url": "https://x.com/OpenAIDevs/status/2123566018866151579",
+      "data": "2026-11-19T23:56:07Z",
+      "tekst": "@OpenAIDevs: Agents using GPT-6.2 in the Responses API can build on earlier reasoning to deliver better results with fewer tokens and more cache hits.\n\nStarting with our newest frontier models, each reasoning item is now tied to the conversation history before it, so editing earlier messages causes the API to drop reasoning that follows the change.",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "OpenAIDevs"
+    },
+    {
+      "id": "https://x.com/OpenAIDevs/status/2123506733524136446",
+      "istochnik": "X",
+      "zagolovok": "GPT-Live-1.1 is now available in the API. It speaks with more natural and consistent accents across languages, supports ",
+      "url": "https://x.com/OpenAIDevs/status/2123506733524136446",
+      "data": "2026-11-19T20:00:32Z",
+      "tekst": "@OpenAIDevs: GPT-Live-1.1 is now available in the API.\n\nIt speaks with more natural and consistent accents across languages, supports lower idle costs with a new standby option, and completes tasks even more reliably.",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "OpenAIDevs"
+    },
+    {
+      "id": "https://x.com/gdb/status/2123719297096990726",
+      "istochnik": "X",
+      "zagolovok": "GPT-6.2 Astra exceeding human baseline on physical 3D understanding benchmark: Цитирует @andonlabs: GPT-6.2 Astra unders",
+      "url": "https://x.com/gdb/status/2123719297096990726",
+      "data": "2026-11-20T10:05:11Z",
+      "tekst": "@gdb: GPT-6.2 Astra exceeding human baseline on physical 3D understanding benchmark:\n\nЦитирует @andonlabs: GPT-6.2 Astra understands the physical 3D world better than any other AI.\n\nIt ranks #1 on Blueprint-Bench 2, a benchmark where AI agents draw floorplans from photographs of apartment interiors.\n\nGPT-6.2 Sol is also very strong, ranking #3.",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "gdb"
+    },
+    {
+      "id": "https://x.com/GoogleDeepMind/status/2123826572385833119",
+      "istochnik": "X",
+      "zagolovok": "Gemini 4 Neon coded a ski simulator based on real Mont Blanc terrain. Built in @Antigravity with custom shaders and zero",
+      "url": "https://x.com/GoogleDeepMind/status/2123826572385833119",
+      "data": "2026-11-20T17:11:28Z",
+      "tekst": "@GoogleDeepMind: Gemini 4 Neon coded a ski simulator based on real Mont Blanc terrain.\n\nBuilt in @Antigravity with custom shaders and zero pre-made 3D models, it renders carved snow and avalanches live.\n\nTry it now → https://goo.gle/496Vk4f",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "GoogleDeepMind"
+    },
+    {
+      "id": "https://x.com/GoogleDeepMind/status/2123519772390215780",
+      "istochnik": "X",
+      "zagolovok": "Our SVP @koraykv believes there won't be a single test or benchmark that tells us we've reached AGI. Instead, progress l",
+      "url": "https://x.com/GoogleDeepMind/status/2123519772390215780",
+      "data": "2026-11-19T20:52:21Z",
+      "tekst": "@GoogleDeepMind: Our SVP @koraykv believes there won't be a single test or benchmark that tells us we've reached AGI. Instead, progress looks like models becoming less spiky and more reliable across our daily lives.\n\nListen in as he and @fryrsquared discuss the road ahead ↓\n\nTimecodes:\n00:00 Introduction\n01:26 Evolution of Google DeepMind\n04:41 Products as a path to AGI\n13:01 Architectures and models \n24:40 Recursive self improvement\n30:50 Safety and agent teams\n40:35 Benchmarks",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "GoogleDeepMind"
+    },
+    {
+      "id": "https://x.com/demishassabis/status/2123567986565173289",
+      "istochnik": "X",
+      "zagolovok": "🤣 💙 Apology accepted (so this was @_sholtodouglas then? 😅 ), but I think you missed checking the 'Underestimated the cra",
+      "url": "https://x.com/demishassabis/status/2123567986565173289",
+      "data": "2026-11-20T00:03:56Z",
+      "tekst": "@demishassabis: 🤣 💙 Apology accepted (so this was @_sholtodouglas  then? 😅 ), but I think you missed checking the 'Underestimated the cracked Google DeepMind team' box. Amazing work from the Gemini & GDM teams, always great to see folks enjoy our cooking!👨‍🍳🧪",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "demishassabis"
+    },
+    {
+      "id": "https://x.com/AIatMeta/status/2123484005089558692",
+      "istochnik": "X",
+      "zagolovok": "Legal work is a tough test for AI. Muse Wonder earned the highest overall quality score in Legora’s November BAR benchma",
+      "url": "https://x.com/AIatMeta/status/2123484005089558692",
+      "data": "2026-11-19T18:30:13Z",
+      "tekst": "@AIatMeta: Legal work is a tough test for AI. \n\nMuse Wonder earned the highest overall quality score in Legora’s November BAR benchmark for legal work. A strong showing on the kinds of complex tasks businesses need help with.\n\nЦитирует @WeAreLegora: The November BAR results are now available, showing how AI models compare on real-world legal tasks in Legora.\n\nA few highlights from this month’s results:\n\n→ Muse Wonder ranks highest on overall quality and leads across four task types: analysis and answering, extraction, drafting, and editing.\n\n→ GPT-6.2 Astra leads on comparison and review tasks, with overall quality 4% above November’s model average and cost per case 20% below average.\n\n→ GPT-6.2 Sol delivers above-average quality at 78% below the average cost per case across models benchmarked in November.",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "AIatMeta"
+    },
+    {
+      "id": "https://x.com/simonw/status/2123808432830701909",
+      "istochnik": "X",
+      "zagolovok": "So is Gemini 4 Neon better than Gemini 4 Carbon for some tasks then? And is Gemini 4 Argon effectively retired? They did",
+      "url": "https://x.com/simonw/status/2123808432830701909",
+      "data": "2026-11-20T15:59:23Z",
+      "tekst": "@simonw: So is Gemini 4 Neon better than Gemini 4 Carbon for some tasks then?\n\nAnd is Gemini 4 Argon effectively retired? They didn't include it in the comparison graphic on the Neon announcement post https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "simonw"
+    },
+    {
+      "id": "https://x.com/swyx/status/2123690305736396925",
+      "istochnik": "X",
+      "zagolovok": "whatever happened to @cursor_ai origin? anyone use this thing in anger yet? does it have actions/ci/cd yet? Цитирует @sw",
+      "url": "https://x.com/swyx/status/2123690305736396925",
+      "data": "2026-11-20T08:09:59Z",
+      "tekst": "@swyx: whatever happened to @cursor_ai origin? anyone use this thing in anger yet? does it have actions/ci/cd yet?\n\nЦитирует @swyx: Cursor/Graphite’s @TomasReimers just announced Origin\n\n@cursor_ai’s long awaited Git competitor, scalable for agent workloads, extensible with api and mcp, and built in merge conflicts and co failure agent resolution",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "swyx"
+    },
+    {
+      "id": "https://x.com/swyx/status/2123537922670657753",
+      "istochnik": "X",
+      "zagolovok": "yeah in nov 2026 this needs to die Цитирует @swyx: current end state of forge",
+      "url": "https://x.com/swyx/status/2123537922670657753",
+      "data": "2026-11-19T22:04:28Z",
+      "tekst": "@swyx: yeah in nov 2026 this needs to die\n\nЦитирует @swyx: current end state of forge",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "swyx"
+    },
+    {
+      "id": "https://x.com/swyx/status/2123591875349422435",
+      "istochnik": "X",
+      "zagolovok": "when scrolling social media i think it is worth bearing in mind that you can say “odds of reaching SOTA have dropped to ",
+      "url": "https://x.com/swyx/status/2123591875349422435",
+      "data": "2026-11-20T01:38:52Z",
+      "tekst": "@swyx: when scrolling social media i think it is worth bearing in mind that you can say “odds of reaching SOTA have dropped to zero” and get alot of likes and then 3 months later when they have reached SOTA you post apology form and get even more likes and the subject of your writing prints it out and thanks you for motivation\n\ntheres no consequences at all for inaccuracy and every incentive for hyperbole and the x algorithm is tuned for this\n\nЦитирует @Ar_Douillard: I want to thanks @SemiAnalysis_ for the motivation.\n\nIn the Gemini RL scaling team, we printed & put that article on our desks to be reminded daily of what used to be true at the time.\n\nBut the times they are changing :)",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "swyx"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2123565811147383032",
+      "istochnik": "X",
+      "zagolovok": "Hermes ❤️ Microsoft Nous Research partnered with Microsoft in order to bring Hermes to Enterprise. > “Hermes Enterprise ",
+      "url": "https://x.com/testingcatalog/status/2123565811147383032",
+      "data": "2026-11-19T23:55:17Z",
+      "tekst": "@testingcatalog: Hermes ❤️ Microsoft \n\nNous Research partnered with Microsoft in order to bring Hermes to Enterprise. \n\n> “Hermes Enterprise now works inside Microsoft Teams, the Microsoft Store and Azure.”\n\n> “In Teams, employees hand Hermes work like financial analysis, document drafts or inbox triage, and review the result in the same chat.”\n\n> “Agent workloads run in isolated Azure Container Apps sandboxes.”\n\nA huge step for Hermes expansion! 👀\n\nЦитирует @NousResearch: We've partnered with @Microsoft to bring Hermes Agent to the enterprise.\n\nHermes Enterprise now works inside Microsoft Teams, the Microsoft Store and Azure. In Teams, employees hand Hermes work like financial analysis, document drafts or inbox triage, and review the result in the same chat. Agent workloads run in isolated Azure Container Apps sandboxes.\n\nWhen someone finds a good way to do a recurring task, Hermes saves it as a skill. With Collective Wisdom, they can share that skill with their team after review, so the next person starts out with the best approach anyone has found to accomplish that task. The skills then grow along with the company.\n\nCompanies with strict data residency or procurement rules can run Hermes Enterprise in their own Azure tenant. Our CTO Jeffrey Quesnelle presents how Hermes uses these sandboxes at Microsoft Ignite today, in session BRK448.\n\nThanks to @M12vc and the @Azure Container Apps team.\n\nhttp://nousresearch.com/hermes-enterprise-in-microsoft-teams",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2123559153742303679",
+      "istochnik": "X",
+      "zagolovok": "OPENAI 🔥: Dots are rolling out to a small number of ChatGPT Plus users as well as all ChatGPT Business Standard users. -",
+      "url": "https://x.com/testingcatalog/status/2123559153742303679",
+      "data": "2026-11-19T23:28:50Z",
+      "tekst": "@testingcatalog: OPENAI 🔥: Dots are rolling out to a small number of ChatGPT Plus users as well as all ChatGPT Business Standard users.\n\n- In addition, ChatGPT is getting a new mobile experience, where a Dot gets a dedicated tab.\n\n- Codex, Projects, Images, and tabs can also be moved to the bottom nav bar.\n\n- This new experience will arrive for ChatGPT Pro users first. \n\nIt looks like Dots are getting closer to becoming a main interaction interface for ChatGPT as well. \n\nExcept EU 💀 https://x.com/thsottiaux/status/2123557171321561133/video/1",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2123531678878400758",
+      "istochnik": "X",
+      "zagolovok": "Nace AI has launched Drex Router, which can pick the right AI model for every task. It routes easy prompts to cheaper mo",
+      "url": "https://x.com/testingcatalog/status/2123531678878400758",
+      "data": "2026-11-19T21:39:40Z",
+      "tekst": "@testingcatalog: Nace AI has launched Drex Router, which can pick the right AI model for every task.\n\nIt routes easy prompts to cheaper models and hard ones to stronger models. In Nace's tests on general knowledge questions, it scored higher than its strongest rival, at about 1/11 of the price.\n\nIn the tests, 1M prompts totaled $100 vs $1,090 for the equivalent with Jev Router.\n\nGTA 6 PC port example 👀\n\nЦитирует @NaceAI: Introducing Drex Router.\n\nA small model that picks the right LLM/SLM and reasoning effort for every step your agent takes.\n\nAccuracy: Drex Router 87.6% vs. Jev Router’s 86.4%\n\nTry it: https://console.nace.ai\n\nCOMMENT DREX and get extra $5 in API credits",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2123513155238199586",
+      "istochnik": "X",
+      "zagolovok": "Google started sending out waitlist access to Genie 4 for Gemini Pro users! > \"You’re off the waitlist! You now have acc",
+      "url": "https://x.com/testingcatalog/status/2123513155238199586",
+      "data": "2026-11-19T20:26:03Z",
+      "tekst": "@testingcatalog: Google started sending out waitlist access to Genie 4 for Gemini Pro users! \n\n> \"You’re off the waitlist! You now have access to Project Genie as part of your Google AI Pro subscription.\"\n\nThat's great news, meaning it will be available to all Pro users at some point. \n\nGemini Pro sub just got better 👀\n\nЦитирует @testingcatalog: GOOGLE 🔥: Genie 4 is now available on Google AI Studio and APIs. \n\nFor many users, this is the first time they can properly test this World model with an API key, as it's currently only available to Ultra subscribers. \n\n> \"Using real-time keyboard controls alongside live text prompts, you can navigate environments and change weather, lighting, objects, or events on the fly.\"\n\nTesting time! 👀",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2123507970449236208",
+      "istochnik": "X",
+      "zagolovok": "OPENAI 🔥: GPT-Live-1.1 has been released on the API and is now available on the OpenAI Platform for testing! It comes wi",
+      "url": "https://x.com/testingcatalog/status/2123507970449236208",
+      "data": "2026-11-19T20:05:27Z",
+      "tekst": "@testingcatalog: OPENAI 🔥: GPT-Live-1.1 has been released on the API and is now available on the OpenAI Platform for testing!\n\nIt comes with a new standby option to lower idle costs. \n\nICYMI: The Live tab on the OpenAI Platform lets users test all the API features right away and includes a visual voice sphere.\n\nЦитирует @OpenAIDevs: GPT-Live-1.1 is now available in the API.\n\nIt speaks with more natural and consistent accents across languages, supports lower idle costs with a new standby option, and completes tasks even more reliably.",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2123502622133133398",
+      "istochnik": "X",
+      "zagolovok": "GOOGLE 🔥: Genie 4 is now available on Google AI Studio and APIs. For many users, this is the first time they can properl",
+      "url": "https://x.com/testingcatalog/status/2123502622133133398",
+      "data": "2026-11-19T19:44:12Z",
+      "tekst": "@testingcatalog: GOOGLE 🔥: Genie 4 is now available on Google AI Studio and APIs. \n\nFor many users, this is the first time they can properly test this World model with an API key, as it's currently only available to Ultra subscribers. \n\n> \"Using real-time keyboard controls alongside live text prompts, you can navigate environments and change weather, lighting, objects, or events on the fly.\"\n\nTesting time! 👀\n\nЦитирует @OfficialLoganK: Introducing Genie 4 in the Gemini API + @GoogleAIStudio, our first world model for developers to build with and create new world model experiences 🔮\n\n Try it out: https://ai.studio/genie",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2123499652012281970",
+      "istochnik": "X",
+      "zagolovok": "Kong has launched Volcano, a cloud platform that hosts AI apps and agents, bringing everything they need into one place.",
+      "url": "https://x.com/testingcatalog/status/2123499652012281970",
+      "data": "2026-11-19T19:32:24Z",
+      "tekst": "@testingcatalog: Kong has launched Volcano, a cloud platform that hosts AI apps and agents, bringing everything they need into one place.\n\nUsers can build apps with Claude Code, Cursor, or Codex and publish them on Volcano, with built-in database and sign-in functionality.\n\nVolcano can also find bugs in production apps and prepare fixes, which users can review and approve before they are applied. Agents can also pick up a build from a backup after a crash.\n\nЦитирует @subnetmarco: At Kong we run half a quadrillion AI tokens a year, and I kept seeing agents stuck on clouds built for websites.\n\nSo we built a cloud for agents.\n\nVolcano is live today: the self-healing agent cloud. Sandboxes, durable workflows, Postgres, hosting.",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/thsottiaux/status/2123612433923051976",
+      "istochnik": "X",
+      "zagolovok": "Le ChatGPT 2.0 Цитирует @thsottiaux: We’re also working on a new mobile experience for ChatGPT! It’s easier to get to yo",
+      "url": "https://x.com/thsottiaux/status/2123612433923051976",
+      "data": "2026-11-20T03:00:33Z",
+      "tekst": "@thsottiaux: Le ChatGPT 2.0\n\nЦитирует @thsottiaux: We’re also working on a new mobile experience for ChatGPT! \n\nIt’s easier to get to your favorite features and discover what you can do in ChatGPT. We’re starting with Pro users who have a dot or are eligible to create one. Your dot gets its own tab, and you can pin Codex, Projects, Images, and more to the tab bar. Some of you will see the new experience by default. \n\nYou can turn it on or off anytime in Settings > New ChatGPT Design. \n\nSuper excited to hear your feedback before we roll it out more widely!",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "thsottiaux"
+    },
+    {
+      "id": "https://x.com/thsottiaux/status/2123557171321561133",
+      "istochnik": "X",
+      "zagolovok": "We’re also working on a new mobile experience for ChatGPT! It’s easier to get to your favorite features and discover wha",
+      "url": "https://x.com/thsottiaux/status/2123557171321561133",
+      "data": "2026-11-19T23:20:58Z",
+      "tekst": "@thsottiaux: We’re also working on a new mobile experience for ChatGPT! \n\nIt’s easier to get to your favorite features and discover what you can do in ChatGPT. We’re starting with Pro users who have a dot or are eligible to create one. Your dot gets its own tab, and you can pin Codex, Projects, Images, and more to the tab bar. Some of you will see the new experience by default. \n\nYou can turn it on or off anytime in Settings > New ChatGPT Design. \n\nSuper excited to hear your feedback before we roll it out more widely!\n\nЦитирует @thsottiaux: Heads up, we’re starting to test dots with a small number of ChatGPT Plus users. Looking forward to the continued feedback as we expand and I’m recently seeing a lot more positives around how good the proactivity has been after many improvements. \n\nWe’re also bringing dots to all ChatGPT Business Standard users. Rollout will start today.",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "thsottiaux"
+    },
+    {
+      "id": "https://x.com/thsottiaux/status/2123556256392847657",
+      "istochnik": "X",
+      "zagolovok": "Heads up, we’re starting to test dots with a small number of ChatGPT Plus users. Looking forward to the continued feedba",
+      "url": "https://x.com/thsottiaux/status/2123556256392847657",
+      "data": "2026-11-19T23:17:19Z",
+      "tekst": "@thsottiaux: Heads up, we’re starting to test dots with a small number of ChatGPT Plus users. Looking forward to the continued feedback as we expand and I’m recently seeing a lot more positives around how good the proactivity has been after many improvements. \n\nWe’re also bringing dots to all ChatGPT Business Standard users. Rollout will start today.",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "thsottiaux"
+    },
+    {
+      "id": "https://x.com/thsottiaux/status/2123505331531882923",
+      "istochnik": "X",
+      "zagolovok": "Tokens go brrrrrr. Going to need more compute.",
+      "url": "https://x.com/thsottiaux/status/2123505331531882923",
+      "data": "2026-11-19T19:54:58Z",
+      "tekst": "@thsottiaux: Tokens go brrrrrr. Going to need more compute.",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "thsottiaux"
+    },
+    {
+      "id": "https://x.com/kevinweil/status/2123798040339419484",
+      "istochnik": "X",
+      "zagolovok": "Oh wow the Riemann Hypothesis! Claude and @__alpoge__ may have just proved Riemann and GRH! With a lean formalization. A",
+      "url": "https://x.com/kevinweil/status/2123798040339419484",
+      "data": "2026-11-20T15:18:05Z",
+      "tekst": "@kevinweil: Oh wow the Riemann Hypothesis! Claude and @__alpoge__ may have just proved Riemann and GRH! With a lean formalization. \n\nAnd remember, the model you're using today is the worst AI model you'll ever use for the rest of your life. \n\nThe next five years are going to be amazing for AI and science.\n\nЦитирует @scottnarmstrong: @__alpoge__   ftw ?",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "kevinweil"
+    }
+  ],
+  "ne_otvetili": [],
+  "tolko_v_vidennye": [],
+  "github_polnyy_obhod": false,
+  "istochniki": [
+    "claude.dev",
+    "Claude Code",
+    "Claude Platform",
+    "Блог Claude",
+    "OpenAI",
+    "Codex",
+    "OpenAI API",
+    "AINews",
+    "Simon Willison",
+    "Ben's Bites",
+    "Cursor",
+    "DeepMind",
+    "Блог Google",
+    "Google Developers Blog",
+    "Techmeme",
+    "GitHub Claude Code"
+  ],
+  "iks": {
+    "akkauntov": 30,
+    "ne_otvetili": [
+      "Alibaba_Qwen"
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+ "krupnye": [],
+ "sayty": [
+  {
+   "zagolovok": "Бессент: Трамп и Си согласились, что решения о военном ИИ должны принимать с участием людей",
+   "url": "https://www.techmeme.com/261120/p20#a261120p20",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261120/p20#a261120p20"
+   ]
+  },
+  {
+   "zagolovok": "Signal по умолчанию ограничит скриншоты, чтобы ИИ-агенты не читали личные переписки",
+   "url": "https://www.techmeme.com/261120/p9#a261120p9",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261120/p9#a261120p9"
+   ]
+  }
+ ],
+ "x": [
+  {
+   "zagolovok": "Математик Anthropic Левент Алпёж заявил, что вместе с Claude нашёл доказательство гипотезы Римана",
+   "url": "https://x.com/kevinweil/status/2123798040339419484",
+   "akkaunt": "kevinweil",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/kevinweil/status/2123798040339419484",
+    "https://www.techmeme.com/261120/p17#a261120p17",
+    "https://simonwillison.net/2026/Nov/20/levent-alpoge/"
+   ]
+  }
+ ],
+ "dengi": [
+  {
+   "zagolovok": "Anthropic привлекла ещё 12,2 млрд долларов: андеррайтеры выкупили дополнительные акции",
+   "url": "https://www.techmeme.com/261120/p14#a261120p14",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261120/p14#a261120p14"
+   ]
+  },
+  {
+   "zagolovok": "Акции Anthropic на второй день торгов падали до 87,26 доллара, почти стерев прирост после IPO",
+   "url": "https://www.techmeme.com/261120/p16#a261120p16",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261120/p16#a261120p16"
+   ]
+  },
+  {
+   "zagolovok": "Pragmatik Labs бывшего главы Qwen Цзюньяна Линя удвоила оценку до 5 млрд долларов",
+   "url": "https://www.techmeme.com/261120/p10#a261120p10",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261120/p10#a261120p10"
+   ]
+  },
+  {
+   "zagolovok": "Linq, инфраструктура сообщений и звонков для ИИ-агентов, привлекла 90 млн долларов в раунде B",
+   "url": "https://www.techmeme.com/261120/p19#a261120p19",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261120/p19#a261120p19"
+   ]
+  },
+  {
+   "zagolovok": "Благотворительный фонд Дженсена Хуанга выделил 350 млн долларов на аренду мощностей CoreWeave",
+   "url": "https://www.techmeme.com/261120/p18#a261120p18",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261120/p18#a261120p18"
+   ]
+  }
+ ],
+ "github": []
+}
