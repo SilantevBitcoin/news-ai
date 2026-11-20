@@ -1,0 +1,113 @@
+{
+ "krupnye": [],
+ "sayty": [
+  {
+   "zagolovok": "Gemini на Mac получил управление компьютером: работает в приложениях, файлах и вебе в фоне, пока для подписчиков из США",
+   "url": "https://www.techmeme.com/261119/p47#a261119p47",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261119/p47#a261119p47"
+   ]
+  },
+  {
+   "zagolovok": "Tool Retrieval в Gemini API: агент может использовать сотни инструментов и тратить меньше токенов (превью)",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
+   "istochnik": "Блог Google",
+   "zvezda": false,
+   "idy": [
+    "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/"
+   ]
+  },
+  {
+   "zagolovok": "Claude Code 2.1.329: предупреждение о хуках в диалоге доверия, фоновые задачи и циклы в /tasks, Code Mode с телеметрией",
+   "url": "https://code.claude.com/docs/en/changelog#2-1-329",
+   "istochnik": "Claude Code",
+   "zvezda": false,
+   "idy": [
+    "https://code.claude.com/docs/en/changelog#2-1-329"
+   ]
+  }
+ ],
+ "x": [
+  {
+   "zagolovok": "OpenAI выпустила GPT-Live-1.1: голосовая модель в API точнее произносит слова и держит акцент в многоязычных разговорах",
+   "url": "https://x.com/OpenAIDevs/status/2123506733524136446",
+   "akkaunt": "OpenAIDevs",
+   "zvezda": false,
+   "idy": [
+    "https://developers.openai.com/api/docs/changelog#2026-11-19 Feature · gpt-live-1.1 · v1/live/sessions: GPT-Live-1.1 improves pronunciation, accent consistency, and transcription in multilingual voice conversations.",
+    "https://x.com/OpenAIDevs/status/2123506733524136446",
+    "https://x.com/testingcatalog/status/2123507970449236208"
+   ]
+  },
+  {
+   "zagolovok": "В Responses API с GPT-6.2 рассуждения привязаны к истории разговора: правка старых сообщений сбрасывает последующие, зато меньше токенов и больше попаданий в кэш",
+   "url": "https://x.com/OpenAIDevs/status/2123566018866151579",
+   "akkaunt": "OpenAIDevs",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/OpenAIDevs/status/2123566018866151579"
+   ]
+  },
+  {
+   "zagolovok": "Dots в ChatGPT тестируют на небольшой группе подписчиков Plus и у всех пользователей Business Standard; готовится новый мобильный интерфейс",
+   "url": "https://x.com/thsottiaux/status/2123556256392847657",
+   "akkaunt": "thsottiaux",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/thsottiaux/status/2123556256392847657",
+    "https://x.com/testingcatalog/status/2123559153742303679",
+    "https://x.com/thsottiaux/status/2123557171321561133"
+   ]
+  },
+  {
+   "zagolovok": "Google начала открывать подписчикам Gemini Pro доступ к Genie 4 в Project Genie с листа ожидания",
+   "url": "https://x.com/testingcatalog/status/2123513155238199586",
+   "akkaunt": "testingcatalog",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/testingcatalog/status/2123513155238199586"
+   ]
+  },
+  {
+   "zagolovok": "Nous Research и Microsoft вывели Hermes Enterprise в Teams, Microsoft Store и Azure",
+   "url": "https://x.com/testingcatalog/status/2123565811147383032",
+   "akkaunt": "testingcatalog",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/testingcatalog/status/2123565811147383032"
+   ]
+  }
+ ],
+ "dengi": [
+  {
+   "zagolovok": "Nvidia ведёт переговоры о покупке разработчика диффузионных языковых моделей Inception примерно за 500 млн долларов",
+   "url": "https://www.techmeme.com/261119/p54#a261119p54",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261119/p54#a261119p54"
+   ]
+  },
+  {
+   "zagolovok": "Iconiq вложила в Anthropic более 6 млрд долларов, её доля около 1,8%",
+   "url": "https://www.techmeme.com/261119/p56#a261119p56",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261119/p56#a261119p56"
+   ]
+  },
+  {
+   "zagolovok": "Menlo вложила в Anthropic больше миллиарда долларов за долю около 1,5%, сейчас она стоит свыше 20 млрд",
+   "url": "https://www.techmeme.com/261119/p55#a261119p55",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261119/p55#a261119p55"
+   ]
+  }
+ ],
+ "github": []
+}
