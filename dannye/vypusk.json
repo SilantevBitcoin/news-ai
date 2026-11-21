@@ -1,0 +1,144 @@
+{
+ "krupnye": [],
+ "sayty": [
+  {
+   "zagolovok": "Claude Code 2.1.330: встроенный мод easel рисует графики по запросу, вход в организации через консоль администратора",
+   "url": "https://code.claude.com/docs/en/changelog#2-1-330",
+   "istochnik": "Claude Code",
+   "zvezda": false,
+   "idy": [
+    "https://code.claude.com/docs/en/changelog#2-1-330"
+   ]
+  },
+  {
+   "zagolovok": "MedChemBench: OpenAI представила бенчмарк рассуждений ИИ в медицинской химии",
+   "url": "https://openai.com/index/introducing-medchembench",
+   "istochnik": "OpenAI",
+   "zvezda": false,
+   "idy": [
+    "https://openai.com/index/introducing-medchembench",
+    "https://x.com/OpenAI/status/2123856316187975756",
+    "https://x.com/gdb/status/2123859658473668694"
+   ]
+  },
+  {
+   "zagolovok": "Google: Agent Anomaly Detection теперь следит за агентами в AWS, Azure и локальных средах",
+   "url": "https://developers.googleblog.com/agent-anomaly-detection-safeguarding-agents-across-other-clouds/",
+   "istochnik": "Google Developers Blog",
+   "zvezda": false,
+   "idy": [
+    "https://developers.googleblog.com/agent-anomaly-detection-safeguarding-agents-across-other-clouds/"
+   ]
+  },
+  {
+   "zagolovok": "Google: политики семантического контроля проверяют каждый вызов инструмента агентом до выполнения",
+   "url": "https://developers.googleblog.com/check-what-your-ai-agents-do-before-they-do-it-with-semantic-governance-policies/",
+   "istochnik": "Google Developers Blog",
+   "zvezda": false,
+   "idy": [
+    "https://developers.googleblog.com/check-what-your-ai-agents-do-before-they-do-it-with-semantic-governance-policies/"
+   ]
+  }
+ ],
+ "x": [
+  {
+   "zagolovok": "Thinking Machines выпустила открытую модель Inkling 2 Mini: 26,4 млрд параметров, цикл по средним слоям",
+   "url": "https://x.com/testingcatalog/status/2123876288586727906",
+   "akkaunt": "testingcatalog",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/testingcatalog/status/2123876288586727906",
+    "https://www.techmeme.com/261120/p33#a261120p33",
+    "https://www.techmeme.com/261120/p37#a261120p37"
+   ]
+  },
+  {
+   "zagolovok": "ChatGPT Space открыт подписчикам Plus: совместные страницы, слайды и сайты, правка с телефона",
+   "url": "https://x.com/gdb/status/2123855521996570772",
+   "akkaunt": "gdb",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/gdb/status/2123855521996570772",
+    "https://x.com/testingcatalog/status/2123938809113137280",
+    "https://x.com/thsottiaux/status/2123861214644347122"
+   ]
+  },
+  {
+   "zagolovok": "Google готовит Loop — самообучающегося агента, который сам работает над заданной целью",
+   "url": "https://x.com/testingcatalog/status/2123932281693724890",
+   "akkaunt": "testingcatalog",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/testingcatalog/status/2123932281693724890"
+   ]
+  },
+  {
+   "zagolovok": "Подписчики Google AI могут создавать GIF в Gemini",
+   "url": "https://x.com/testingcatalog/status/2123845089495515621",
+   "akkaunt": "testingcatalog",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/testingcatalog/status/2123845089495515621"
+   ]
+  },
+  {
+   "zagolovok": "Dot в ChatGPT теперь можно вызвать из Apple CarPlay",
+   "url": "https://x.com/romainhuet/status/2123924316110966824",
+   "akkaunt": "romainhuet",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/romainhuet/status/2123924316110966824",
+    "https://x.com/gdb/status/2123939543200219210"
+   ]
+  },
+  {
+   "zagolovok": "OpenAI: GPT-Rosalind нашла новую зацепку для понимания нейродегенеративных болезней",
+   "url": "https://x.com/OpenAI/status/2123899406550528422",
+   "akkaunt": "OpenAI",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/OpenAI/status/2123899406550528422",
+    "https://x.com/gdb/status/2123902578878525451"
+   ]
+  },
+  {
+   "zagolovok": "OpenAI рассказала, как борется с дистилляцией своих моделей без защитных ограничений",
+   "url": "https://x.com/OpenAI/status/2123862344422088794",
+   "akkaunt": "OpenAI",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/OpenAI/status/2123862344422088794"
+   ]
+  }
+ ],
+ "dengi": [
+  {
+   "zagolovok": "Cognition ведёт переговоры о раунде от 2 млрд долларов при оценке в 75 млрд",
+   "url": "https://www.techmeme.com/261120/p36#a261120p36",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261120/p36#a261120p36"
+   ]
+  },
+  {
+   "zagolovok": "Databricks в ранних переговорах о раунде в несколько миллиардов при оценке около 225 млрд",
+   "url": "https://www.techmeme.com/261120/p40#a261120p40",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261120/p40#a261120p40"
+   ]
+  },
+  {
+   "zagolovok": "Oracle заявила, что обеспечила финансирование контракта с OpenAI",
+   "url": "https://www.techmeme.com/261120/p43#a261120p43",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261120/p43#a261120p43"
+   ]
+  }
+ ],
+ "github": []
+}
