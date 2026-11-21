@@ -1491,10 +1491,24 @@
       "url": "https://x.com/gdb/status/2123953589882413337",
       "vid": "x",
       "zagolovok": "GPT-6.2 Astra хорошо проявляет себя в робототехнике: за день сотни очных сравнений вывели её на первое место в рейтинге Elo соревнования SO-101"
+    },
+    {
+      "data": "2026-11-21T18:15:58Z",
+      "oboroty": false,
+      "url": "https://x.com/testingcatalog/status/2124091275011821845",
+      "vid": "x",
+      "zagolovok": "В Antigravity сброшена квота использования для всех пользователей, кеширование даёт примерно на 22% больше работы в рамках квоты"
+    },
+    {
+      "data": "2026-11-21T18:15:58Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261121/p8#a261121p8",
+      "vid": "dengi",
+      "zagolovok": "Amazon близка к сделке на 7,5 млрд долларов по покупке ИИ-стартапа Decart, по данным источников FT"
     }
   ],
-  "posledniy_sbor": "2026-11-21T09:16:20Z",
-  "posledniy_slot": "2026-11-21T10:00:00Z",
+  "posledniy_sbor": "2026-11-21T17:14:17Z",
+  "posledniy_slot": "2026-11-21T18:00:00Z",
   "vidennye": {
     "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/": "2026-11-13T02:17:22Z",
     "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/": "2026-11-19T02:19:54Z",
@@ -2027,6 +2041,9 @@
     "https://www.techmeme.com/261121/p3#a261121p3": "2026-11-21T10:20:40Z",
     "https://www.techmeme.com/261121/p4#a261121p4": "2026-11-21T10:20:40Z",
     "https://www.techmeme.com/261121/p5#a261121p5": "2026-11-21T10:20:40Z",
+    "https://www.techmeme.com/261121/p6#a261121p6": "2026-11-21T18:15:58Z",
+    "https://www.techmeme.com/261121/p7#a261121p7": "2026-11-21T18:15:58Z",
+    "https://www.techmeme.com/261121/p8#a261121p8": "2026-11-21T18:15:58Z",
     "https://x.com/AIatMeta/status/2119912647034642817": "2026-11-10T20:46:16Z",
     "https://x.com/AIatMeta/status/2123484005089558692": "2026-11-20T02:21:40Z",
     "https://x.com/AIatMeta/status/2123882678332322134": "2026-11-21T02:23:16Z",
@@ -2180,6 +2197,7 @@
     "https://x.com/jackclarkSF/status/2120162750660026481": "2026-11-10T20:46:17Z",
     "https://x.com/jackclarkSF/status/2121715797974479100": "2026-11-15T02:20:29Z",
     "https://x.com/jackclarkSF/status/2123767332187386143": "2026-11-20T18:23:08Z",
+    "https://x.com/jackclarkSF/status/2124163568748626056": "2026-11-21T18:15:58Z",
     "https://x.com/kevinweil/status/2120678428378894684": "2026-11-12T18:10:16Z",
     "https://x.com/kevinweil/status/2121678230164041734": "2026-11-15T02:20:29Z",
     "https://x.com/kevinweil/status/2121715683855868381": "2026-11-15T02:20:29Z",
@@ -2234,6 +2252,7 @@
     "https://x.com/swyx/status/2123591875349422435": "2026-11-20T10:22:56Z",
     "https://x.com/swyx/status/2123690305736396925": "2026-11-20T10:22:56Z",
     "https://x.com/swyx/status/2123843282082132335": "2026-11-21T02:23:16Z",
+    "https://x.com/swyx/status/2124147427313861009": "2026-11-21T18:15:58Z",
     "https://x.com/testingcatalog/status/2119894220748280190": "2026-11-10T20:46:17Z",
     "https://x.com/testingcatalog/status/2119913217371799774": "2026-11-10T20:46:17Z",
     "https://x.com/testingcatalog/status/2119914321245577334": "2026-11-10T20:46:17Z",
@@ -2386,6 +2405,8 @@
     "https://x.com/testingcatalog/status/2123928657248899176": "2026-11-21T02:23:16Z",
     "https://x.com/testingcatalog/status/2123932281693724890": "2026-11-21T02:23:15Z",
     "https://x.com/testingcatalog/status/2123938809113137280": "2026-11-21T02:23:15Z",
+    "https://x.com/testingcatalog/status/2124091275011821845": "2026-11-21T18:15:58Z",
+    "https://x.com/testingcatalog/status/2124099608510931256": "2026-11-21T18:15:58Z",
     "https://x.com/thsottiaux/status/2120021043876106429": "2026-11-10T20:46:17Z",
     "https://x.com/thsottiaux/status/2120266880963473789": "2026-11-11T00:04:15Z",
     "https://x.com/thsottiaux/status/2120267268517249036": "2026-11-11T00:04:17Z",
