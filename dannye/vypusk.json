@@ -1,0 +1,28 @@
+{
+  "krupnye": [],
+  "sayty": [
+    {
+      "zagolovok": "Профессор Нью-Йоркского университета и математик Anthropic опубликовали доказательство взрыва решений уравнений Навье — Стокса с помощью ИИ; говорят, что оно закрывает лазейку в решении OpenAI",
+      "url": "https://www.techmeme.com/261121/p4#a261121p4",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261121/p4#a261121p4"
+      ]
+    }
+  ],
+  "x": [
+    {
+      "zagolovok": "GPT-6.2 Astra хорошо проявляет себя в робототехнике: за день сотни очных сравнений вывели её на первое место в рейтинге Elo соревнования SO-101",
+      "url": "https://x.com/gdb/status/2123953589882413337",
+      "akkaunt": "gdb",
+      "zvezda": false,
+      "idy": [
+        "https://x.com/gdb/status/2123953589882413337",
+        "https://x.com/gdb/status/2123876651583111322"
+      ]
+    }
+  ],
+  "dengi": [],
+  "github": []
+}
