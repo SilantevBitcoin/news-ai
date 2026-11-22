@@ -1519,10 +1519,31 @@
       "url": "https://www.techmeme.com/261122/p4#a261122p4",
       "vid": "sayty",
       "zagolovok": "Tesla выпустила FSD v15: машина рисует окружение фотореалистично, Маск называет это генерацией видео ИИ в реальном времени без игровых движков"
+    },
+    {
+      "data": "2026-11-22T18:16:29Z",
+      "oboroty": false,
+      "url": "https://openai.com/index/perplexity-and-intelligence",
+      "vid": "sayty",
+      "zagolovok": "OpenAI опубликовала внутренние замеры перплексии и предлагает сделать её общей метрикой для сравнения разработчиков моделей и общих границ безопасности"
+    },
+    {
+      "data": "2026-11-22T18:16:29Z",
+      "oboroty": false,
+      "url": "https://x.com/testingcatalog/status/2124473529764852190",
+      "vid": "x",
+      "zagolovok": "Подписка Google AI, судя по намёкам, станет доступна в сторонних приложениях-обвязках 2 декабря, среди первых — Hermes"
+    },
+    {
+      "data": "2026-11-22T18:16:29Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261122/p8#a261122p8",
+      "vid": "dengi",
+      "zagolovok": "Anthropic ограничила часть IPO-банков командами по четыре человека и просила шестимесячный запрет на работу с конкурентами, чтобы избежать утечек, сообщают источники"
     }
   ],
-  "posledniy_sbor": "2026-11-22T09:14:52Z",
-  "posledniy_slot": "2026-11-22T10:00:00Z",
+  "posledniy_sbor": "2026-11-22T17:14:52Z",
+  "posledniy_slot": "2026-11-22T18:00:00Z",
   "vidennye": {
     "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/": "2026-11-13T02:17:22Z",
     "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/": "2026-11-19T02:19:54Z",
@@ -1677,6 +1698,7 @@
     "https://openai.com/index/introducing-gpt-6-2-astra-sol": "2026-11-18T02:20:43Z",
     "https://openai.com/index/introducing-medchembench": "2026-11-21T02:23:15Z",
     "https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare": "2026-11-16T18:15:34Z",
+    "https://openai.com/index/perplexity-and-intelligence": "2026-11-22T18:16:29Z",
     "https://openai.com/index/research-acceleration-jagged-frontier": "2026-11-19T02:19:54Z",
     "https://openai.com/index/science-at-the-frontier": "2026-11-16T18:15:34Z",
     "https://platform.claude.com/docs/en/release-notes/overview#claude-fable-5-2": "2026-11-10T20:46:17Z",
@@ -2067,6 +2089,9 @@
     "https://www.techmeme.com/261122/p3#a261122p3": "2026-11-22T10:20:49Z",
     "https://www.techmeme.com/261122/p4#a261122p4": "2026-11-22T10:20:49Z",
     "https://www.techmeme.com/261122/p5#a261122p5": "2026-11-22T10:20:49Z",
+    "https://www.techmeme.com/261122/p6#a261122p6": "2026-11-22T18:16:29Z",
+    "https://www.techmeme.com/261122/p7#a261122p7": "2026-11-22T18:16:29Z",
+    "https://www.techmeme.com/261122/p8#a261122p8": "2026-11-22T18:16:29Z",
     "https://x.com/AIatMeta/status/2119912647034642817": "2026-11-10T20:46:16Z",
     "https://x.com/AIatMeta/status/2123484005089558692": "2026-11-20T02:21:40Z",
     "https://x.com/AIatMeta/status/2123882678332322134": "2026-11-21T02:23:16Z",
@@ -2174,6 +2199,9 @@
     "https://x.com/btibor91/status/2122010249255432478": "2026-11-15T18:15:07Z",
     "https://x.com/btibor91/status/2122807736941609261": "2026-11-18T02:20:44Z",
     "https://x.com/btibor91/status/2123478464514941047": "2026-11-19T18:23:30Z",
+    "https://x.com/btibor91/status/2124525039135633918": "2026-11-22T18:16:29Z",
+    "https://x.com/btibor91/status/2124526478381678847": "2026-11-22T18:16:29Z",
+    "https://x.com/btibor91/status/2124550678626660680": "2026-11-22T18:16:29Z",
     "https://x.com/claudeai/status/2119899459761131615": "2026-11-10T20:46:17Z",
     "https://x.com/claudeai/status/2120174844822298730": "2026-11-10T20:46:17Z",
     "https://x.com/claudeai/status/2120206365759094857": "2026-11-10T20:46:17Z",
@@ -2236,6 +2264,7 @@
     "https://x.com/romainhuet/status/2123924316110966824": "2026-11-21T02:23:15Z",
     "https://x.com/sama/status/2122798039899263456": "2026-11-18T02:20:43Z",
     "https://x.com/sama/status/2123103873166381287": "2026-11-19T02:19:55Z",
+    "https://x.com/sama/status/2124551594691932405": "2026-11-22T18:16:29Z",
     "https://x.com/simonw/status/2119945524514328631": "2026-11-10T20:46:17Z",
     "https://x.com/simonw/status/2120029347948220500": "2026-11-10T20:46:17Z",
     "https://x.com/simonw/status/2120258951594037732": "2026-11-11T00:04:17Z",
@@ -2434,6 +2463,8 @@
     "https://x.com/testingcatalog/status/2123938809113137280": "2026-11-21T02:23:15Z",
     "https://x.com/testingcatalog/status/2124091275011821845": "2026-11-21T18:15:58Z",
     "https://x.com/testingcatalog/status/2124099608510931256": "2026-11-21T18:15:58Z",
+    "https://x.com/testingcatalog/status/2124473529764852190": "2026-11-22T18:16:29Z",
+    "https://x.com/testingcatalog/status/2124494418891645153": "2026-11-22T18:16:29Z",
     "https://x.com/thsottiaux/status/2120021043876106429": "2026-11-10T20:46:17Z",
     "https://x.com/thsottiaux/status/2120266880963473789": "2026-11-11T00:04:15Z",
     "https://x.com/thsottiaux/status/2120267268517249036": "2026-11-11T00:04:17Z",
