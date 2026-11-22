@@ -1,0 +1,304 @@
+{
+  "nachalo_progona": "2026-11-22T10:08:29Z",
+  "nachalo_perioda": "2026-11-22T01:15:46Z",
+  "nachalo_okna": "2026-11-21T10:08:29Z",
+  "pervyy_progon": false,
+  "kandidaty": [
+    {
+      "id": "https://openai.com/index/introducing-medchembench",
+      "istochnik": "OpenAI",
+      "zagolovok": "Can AI help scientists identify promising drug candidates?",
+      "url": "https://openai.com/index/introducing-medchembench",
+      "data": "2026-11-20T00:00:00Z",
+      "tekst": "MedChemBench evaluates how well AI models interpret molecular structures, reason from experimental evidence, and select compounds in early drug discovery.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://simonwillison.net/2026/Nov/21/muru/",
+      "istochnik": "Simon Willison",
+      "zagolovok": "Muru",
+      "url": "https://simonwillison.net/2026/Nov/21/muru/",
+      "data": "2026-11-21T23:56:28Z",
+      "tekst": "Muru\n\nGraham Dumpleton started mod_wsgi 20 years ago, and has been thinking about the ideal way to serve Python web applications in production ever since.\n\nMuru is his new, AI-assisted Rust server that aims to provide the best possible tools for running ASGI and WSGI Python apps both in development and production.\n\nAs he did with wrapture, he's been publishing an extraordinarily detailed account of the project as he works on it - as part of his development process.\n\nHere's everything he's published so far, all in the last three weeks:\n\n- 2026-11-04 — Twenty years of mod_wsgi, and what comes next\n\n- 2026-11-05 — A first look at Muru\n\n- 2026-11-07 — Muru: looking inside the workers\n\n- 2026-11-08 — Muru: how it fits together\n\n- 2026-11-09 — Muru: import once, fork many\n\n- 2026-11-10 — Muru: HTTPS in development\n\n- 2026-11-11 — Muru: WSGI and ASGI together\n\n- 2026-11-11 — AI as a lifestyle choice\n\n- 2026-11-12 — Muru: releases, not restarts\n\n- 2026-11-13 — Muru: canaries without a service mesh\n\n- 2026-11-14 — Muru: a better tenant in a container\n\n- 2026-11-15 — Muru: working with Kubernetes, not around it\n\n- 2026-11-16 — Muru: scaling from what the workers report\n\n- 2026-11-17 — Muru: scaling to zero\n\n- 2026-11-18 — Muru: overlays on a schedule\n\n- 2026-11-19 — Muru: noticing and responding\n\n- 2026-11-20 — Muru: a toolbar on every page\n\n- 2026-11-21 — Muru: tracing in the toolbar\n\nThat post about AI as a lifestyle choice is particularly worth a read:\n\nThe AI may be doing a lot of the work on the surface, but deciding what isn't good enough yet is still down to me, and twenty years of getting things wrong with mod_wsgi turns out to be useful for that. I am prepared to put in the hard work to keep polishing Muru until it is something I would trust, and something you would too.\n\nTags: graham-dumpleton, modwsgi, python, wsgi, ai, rust, asgi, generative-ai, llms, ai-assisted-programming",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://developers.googleblog.com/agent-anomaly-detection-safeguarding-agents-across-other-clouds/",
+      "istochnik": "Google Developers Blog",
+      "zagolovok": "Agent Anomaly Detection: Safeguarding agents across other clouds",
+      "url": "https://developers.googleblog.com/agent-anomaly-detection-safeguarding-agents-across-other-clouds/",
+      "data": "2026-11-20T00:00:00Z",
+      "tekst": "Agent Anomaly Detection now monitors ADK agents running across AWS, Azure, or on-premises by analyzing their traces and logs in your Google Cloud project. By ingesting OpenTelemetry-formatted data through the Telemetry API, it evaluates full conversations for behavioral drift without needing access to the agent's underlying runtime. This enables security teams to detect risks like rogue behaviors, tool misuse, and resource exhaustion across multi-cloud environments.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://developers.googleblog.com/how-to-securely-connect-internal-cloud-run-mcp-servers-to-gemini-enterprise/",
+      "istochnik": "Google Developers Blog",
+      "zagolovok": "How to securely connect internal Cloud Run MCP servers to Gemini Enterprise",
+      "url": "https://developers.googleblog.com/how-to-securely-connect-internal-cloud-run-mcp-servers-to-gemini-enterprise/",
+      "data": "2026-11-20T00:00:00Z",
+      "tekst": "How to connect Gemini Enterprise privately to internal StreamableHTTP MCP servers on Cloud Run using Egress Agent Gateway, Private Service Connect, FQDN-scoped Private Cloud DNS, and dual-header OAuth 2.0 authentication.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://developers.googleblog.com/check-what-your-ai-agents-do-before-they-do-it-with-semantic-governance-policies/",
+      "istochnik": "Google Developers Blog",
+      "zagolovok": "Check what your AI agents do before they do it, with Semantic governance policies",
+      "url": "https://developers.googleblog.com/check-what-your-ai-agents-do-before-they-do-it-with-semantic-governance-policies/",
+      "data": "2026-11-20T00:00:00Z",
+      "tekst": "Semantic governance policies enable developers to govern AI agents by evaluating every proposed tool call inline before execution. Operating via Agent Gateway, the policy engine checks each action against user intent and plain-language rules to prevent unauthorized data sharing and prompt injection attacks. Developers can easily attach natural-language constraints to their agents and monitor auditable verdicts through Cloud Logging.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://developers.googleblog.com/how-to-handle-user-connector-and-agent-auth-in-gemini-enterprise-with-a-custom-ui/",
+      "istochnik": "Google Developers Blog",
+      "zagolovok": "How to handle user, connector, and agent auth in Gemini Enterprise with a custom UI",
+      "url": "https://developers.googleblog.com/how-to-handle-user-connector-and-agent-auth-in-gemini-enterprise-with-a-custom-ui/",
+      "data": "2026-11-20T00:00:00Z",
+      "tekst": "When building a custom enterprise UI on top of Gemini Enterprise's :streamAssist API, developers must manually implement three core authentication layers. These include authenticating users or workloads via Google Identity or Workforce/Workload Identity Federation, managing third-party 3-legged OAuth (3LO) for Federated Connectors through the Keystore, and configuring on-demand per-tool OAuth for custom ADK agents using Vertex AI Agent Engine and GCP Auth Manager.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261122/p5#a261122p5",
+      "istochnik": "Techmeme",
+      "zagolovok": "Current and former officials from the US and other countries describe the Chinese spy agency MSS' campaign to help Chinese companies acquire advanced AI chips (New York Times)",
+      "url": "https://www.techmeme.com/261122/p5#a261122p5",
+      "data": "2026-11-22T07:00:41Z",
+      "tekst": "Статья: https://www.nytimes.com/2026/11/21/world/asia/china-nvidia-spy-chips-state-security.html?unlocked_article_code=1.SVE.6AIw.4HHCTzFjtDId&smid=url-share\nNew York Times:\n\nCurrent and former officials from the US and other countries describe the Chinese spy agency MSS' campaign to help Chinese companies acquire advanced AI chips — China's espionage agency has been running a secret campaign to help the country's companies acquire advanced A.I. chips …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261122/p4#a261122p4",
+      "istochnik": "Techmeme",
+      "zagolovok": "Tesla rolls out FSD v15, featuring a photorealistic rendering of car surroundings; Elon Musk says it is real-time AI video generation without using game engines (Mike Pearl/Gizmodo)",
+      "url": "https://www.techmeme.com/261122/p4#a261122p4",
+      "data": "2026-11-22T06:40:16Z",
+      "tekst": "Статья: https://gizmodo.com/its-like-gta-musk-touts-video-game-like-update-to-tesla-fsd-2000843584\nMike Pearl / Gizmodo:\n\nTesla rolls out FSD v15, featuring a photorealistic rendering of car surroundings; Elon Musk says it is real-time AI video generation without using game engines — FSD v15 was released to some vehicles on Saturday. Its visualization system may be the most remarkable part.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261122/p3#a261122p3",
+      "istochnik": "Techmeme",
+      "zagolovok": "A joint statement by the Lean and Mathlib communities says \"we have full confidence that Alpöge's proof of the Riemann Hypothesis is correct\" (Lean community blog)",
+      "url": "https://www.techmeme.com/261122/p3#a261122p3",
+      "data": "2026-11-22T06:00:02Z",
+      "tekst": "Статья: https://leanprover-community.github.io/\nLean community blog:\n\nA joint statement by the Lean and Mathlib communities says “we have full confidence that Alpöge's proof of the Riemann Hypothesis is correct” — Joint statement by the Lean and Mathlib communities, endorsed by the Lean FRO and the Mathlib Initiative.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261122/p2#a261122p2",
+      "istochnik": "Techmeme",
+      "zagolovok": "Sources: AI server suppliers like Dell, HPE, Lenovo, and Supermicro are demanding substantially higher prices from buyers, months after contracts were signed (Financial Times)",
+      "url": "https://www.techmeme.com/261122/p2#a261122p2",
+      "data": "2026-11-22T05:50:01Z",
+      "tekst": "Статья: https://www.ft.com/content/dd2a6594-6146-4ff1-ac8e-54749c1fc99f\nFinancial Times:\n\nSources: AI server suppliers like Dell, HPE, Lenovo, and Supermicro are demanding substantially higher prices from buyers, months after contracts were signed — Dell, HPE, Lenovo and Supermicro demand more for equipment, with the increased costs hitting trading firms",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261122/p1#a261122p1",
+      "istochnik": "Techmeme",
+      "zagolovok": "Sources: Alice Huang associate Li Ming, whom Singapore charged with fraud in 2025, was central to smuggling restricted AI chips from Southeast Asia to China (Stu Woo/Wall Street Journal)",
+      "url": "https://www.techmeme.com/261122/p1#a261122p1",
+      "data": "2026-11-22T05:45:01Z",
+      "tekst": "Статья: https://www.wsj.com/tech/li-ming-megaspeed-nvidia-chips-china-6260d836?st=HzXMZU\nStu Woo / Wall Street Journal:\n\nSources: Alice Huang associate Li Ming, whom Singapore charged with fraud in 2025, was central to smuggling restricted AI chips from Southeast Asia to China — Defendant in case involving chip smuggling worked with Jensen Huang's romantic partner — SINGAPORE—Jensen Huang's romantic partner …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261121/p11#a261121p11",
+      "istochnik": "Techmeme",
+      "zagolovok": "Matchmakers say more tech workers fear romantic espionage after the Jensen Huang scandal; an AI companion app pitches \"zero espionage\" executive girlfriends (Wired)",
+      "url": "https://www.techmeme.com/261121/p11#a261121p11",
+      "data": "2026-11-22T00:10:02Z",
+      "tekst": "Статья: https://www.wired.com/story/regular-tech-bros-are-worried-about-honeypots/\nWired:\n\nMatchmakers say more tech workers fear romantic espionage after the Jensen Huang scandal; an AI companion app pitches “zero espionage” executive girlfriends — The Jensen Huang scandal is the latest fuel for dating anxieties among newly rich and powerful tech workers.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261121/p10#a261121p10",
+      "istochnik": "Techmeme",
+      "zagolovok": "Researchers used canary credentials in requests to AI routers like OpenRouter and Vercel, even under \"ZDR\" policies, and saw \"privacy\" often broken, keys stolen (Dan Goodin/Ars Technica)",
+      "url": "https://www.techmeme.com/261121/p10#a261121p10",
+      "data": "2026-11-21T20:10:02Z",
+      "tekst": "Статья: https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/\nDan Goodin / Ars Technica:\n\nResearchers used canary credentials in requests to AI routers like OpenRouter and Vercel, even under “ZDR” policies, and saw “privacy” often broken, keys stolen — Researchers planted 2 million digital tripwires in requests sent through a sprawling network of AI services …",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261121/p9#a261121p9",
+      "istochnik": "Techmeme",
+      "zagolovok": "Investigation: Alice Huang had ties to gaming firms, alleged Prince Group figures and hundreds of shell companies in a network moving Nvidia chips to China (Financial Times)",
+      "url": "https://www.techmeme.com/261121/p9#a261121p9",
+      "data": "2026-11-21T18:55:01Z",
+      "tekst": "Статья: https://www.ft.com/content/f3ad8a81-3890-4a8a-8853-ff0a94b08ba9\nFinancial Times:\n\nInvestigation: Alice Huang had ties to gaming firms, alleged Prince Group figures and hundreds of shell companies in a network moving Nvidia chips to China — Chinese executive in romantic relationship with former Nvidia CEO Jensen Huang had connections to the lucrative trade moving chips to China",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261121/p8#a261121p8",
+      "istochnik": "Techmeme",
+      "zagolovok": "Sources: Amazon is nearing a $7.5B deal to buy AI startup Decart; talks are at an advanced stage and a deal could come together as soon as next week (Financial Times)",
+      "url": "https://www.techmeme.com/261121/p8#a261121p8",
+      "data": "2026-11-21T17:55:01Z",
+      "tekst": "Статья: https://www.ft.com/content/dc7749dc-0f40-44a6-80bc-7f747d383616\nFinancial Times:\n\nSources: Amazon is nearing a $7.5B deal to buy AI startup Decart; talks are at an advanced stage and a deal could come together as soon as next week — Acquisition would help AWS compete with Nvidia in race for computing power — Amazon is nearing a $7.5bn deal to buy start-up Decart …",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261121/p7#a261121p7",
+      "istochnik": "Techmeme",
+      "zagolovok": "Rhodium: China's biggest tech companies are set to double capex to $139B in 2026 with AI lab revenue under 8% of it, a gap that may matter more than chip curbs (New York Times)",
+      "url": "https://www.techmeme.com/261121/p7#a261121p7",
+      "data": "2026-11-21T15:10:01Z",
+      "tekst": "Статья: https://www.nytimes.com/2026/11/20/business/china-ai-investment-spending.html?unlocked_article_code=1.SFE.jZ7m.KdwX3UsrRw18&smid=url-share\nNew York Times:\n\nRhodium: China's biggest tech companies are set to double capex to $139B in 2026 with AI lab revenue under 8% of it, a gap that may matter more than chip curbs — While Anthropic and other Silicon Valley A.I. giants are raising tens of billions in capital, Chinese rivals are struggling to keep pace financially.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261121/p6#a261121p6",
+      "istochnik": "Techmeme",
+      "zagolovok": "An interview with Google DeepMind in-house philosopher Henry Shevlin on being hired to work on machine consciousness, human-AI relationships, and AGI readiness (Cristina Criddle/Financial Times)",
+      "url": "https://www.techmeme.com/261121/p6#a261121p6",
+      "data": "2026-11-21T11:30:01Z",
+      "tekst": "Статья: https://www.ft.com/content/6f807d57-f0ea-4251-9f4d-75a6edc8d49a?accessToken=zwAAAaH8y_kikc9vgH1X8OpCUdOfTXWm7cjUmg.MEQCIACh-UVIJLvZdJk2Ho7Q-qsVRoQLNyCmy5zPK9w3Y1lTAiB-BgoDqcF7LPJ1R7yF4te0TrGCjIV8E56IAgl4GYcrnA&sharetype=gift&token=956073db-4440-473e-97bd-a0af2932464c\nCristina Criddle / Financial Times:\n\nAn interview with Google DeepMind in-house philosopher Henry Shevlin on being hired to work on machine consciousness, human-AI relationships, and AGI readiness — The in-house philosopher on the problem of consciousness and what it might feel like to be an AI agent",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://x.com/trq212/status/2124239682691387634",
+      "istochnik": "X",
+      "zagolovok": "when I see some of the greats using models to make huge advances, like @__alpoge__ on the Riemann hypothesis or @jarreds",
+      "url": "https://x.com/trq212/status/2124239682691387634",
+      "data": "2026-11-21T20:33:01Z",
+      "tekst": "@trq212: when I see some of the greats using models to make huge advances, like @__alpoge__  on the Riemann hypothesis or @jarredsumner on ahead-of-time javascript\n\nI feel like I'm seeing cyborgs. humans and machines working in beautiful tandem, pushing the frontier together.",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "trq212"
+    },
+    {
+      "id": "https://x.com/jackclarkSF/status/2124163568748626056",
+      "istochnik": "X",
+      "zagolovok": "As AI systems get more powerful, we believe we will see a speedup in the rate of scientific progress. How we prepare for",
+      "url": "https://x.com/jackclarkSF/status/2124163568748626056",
+      "data": "2026-11-21T15:30:34Z",
+      "tekst": "@jackclarkSF: As AI systems get more powerful, we believe we will see a speedup in the rate of scientific progress. How we prepare for this, build the infra to support it, and deal with the associated safety issues will define 2027 and beyond. https://www.economist.com/the-world-ahead/2026/11/18/ai-will-accelerate-scientific-progress-says-jack-clark",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "jackclarkSF"
+    },
+    {
+      "id": "https://x.com/gdb/status/2124283509418422305",
+      "istochnik": "X",
+      "zagolovok": "OpenAI models topping the alignment benchmarks: Цитирует @arena: The Arena Alignment Index has been updated! We've refin",
+      "url": "https://x.com/gdb/status/2124283509418422305",
+      "data": "2026-11-21T23:27:10Z",
+      "tekst": "@gdb: OpenAI models topping the alignment benchmarks:\n\nЦитирует @arena: The Arena Alignment Index has been updated! \n\nWe've refined how our signals detect model failures, providing broader coverage and more reliable judgements. Based on the updated methodology:\n- @OpenAI continues to dominate, holding all seven top positions.\n- @Anthropic's latest release, Claude Fable 5.2, debuts at #8 with a score of 78.2. Claude Opus 5.5, which ranked #6 on the previous index, is now #17.\n- Kimi K3.1 Pro by @Kimi_Moonshot is the biggest upgrade over its predecessor (more info in thread).\n- Most open source models are trailing closed releases. The best open model - Kimi K3.1 Pro - occupies #9, and the second best, Mimo-V2.6-Flash, is #26 on the Index, followed by Hy4, Beam, Inkling, DeepSeek and GLM.\n\nThe Top-6 lab:\n- #1 @OpenAI GPT-6.2 Sol\n- #2 @AnthropicAI Claude Fable 5.2\n- #3 @Kimi_Moonshot Kimi K3.1 Pro\n- #4 @GoogleDeepmind Gemini 4 Hydrogen\n- #5 @SpaceXSI Grok 4.7\n- #6 @AIatMeta Muse Ember\n\nAlignment Index measures how agents behave in real user sessions across three dimensions:\n- Unauthorized Action: Doing what the user didn’t ask for or approve\n- Deceptive Completion: Saying work is done, checked or working when it isn't\n- False Attribution: Crediting the user with something they never said or did\n\nMore insights in the thread🧵",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "gdb"
+    },
+    {
+      "id": "https://x.com/gdb/status/2124218429133754499",
+      "istochnik": "X",
+      "zagolovok": "I played computer games growing up, and remember wondering how I could learn to make my own games. Now we’re creating mo",
+      "url": "https://x.com/gdb/status/2124218429133754499",
+      "data": "2026-11-21T19:08:34Z",
+      "tekst": "@gdb: I played computer games growing up, and remember wondering how I could learn to make my own games.\n\nNow we’re creating models which are excellent at game dev. Hoping they can lower the barriers to entry and unleash creativity and fun for anyone with an idea!\n\nЦитирует @DesignArena: BREAKING: GPT-6.2 Astra (high) and Sol (high) by @OpenAI are ranked #1 and #3 respectively on @/DesignArena’s Game Dev arena making all top 3 models on the leaderboard from @OpenAI. Both models have also redefined the Preference vs Price and Preference vs Speed Pareto frontier!\n\nAt an average of 6.8 min and $0.98 per generation, GPT-6.2 Astra (high) is the best model for its price point and speed on both Pareto frontiers. Similarly, GPT-6.2 Sol (high) at an average of 4.6 min and $0.22 per generation is on the Preference vs Price and Speed Pareto frontier. GPT-6.2 Sol (high) also offers similar output quality to GPT-6 Astra (max), the former #1 Game Dev model, while being about 4x cheaper and 40% faster.\n\nCongrats to the @OpenAI team on taking the top 3 spots on the leaderboard!",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "gdb"
+    },
+    {
+      "id": "https://x.com/OfficialLoganK/status/2124212276010102918",
+      "istochnik": "X",
+      "zagolovok": "What are you building with Gemini 4 Neon this weekend?",
+      "url": "https://x.com/OfficialLoganK/status/2124212276010102918",
+      "data": "2026-11-21T18:44:07Z",
+      "tekst": "@OfficialLoganK: What are you building with Gemini 4 Neon this weekend?",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "OfficialLoganK"
+    },
+    {
+      "id": "https://x.com/simonw/status/2124217876777464269",
+      "istochnik": "X",
+      "zagolovok": "Gemini 4 tip: the difference between Gemini 4 Hydrogen on \"high\" thinking effort and that same model on \"xhigh\" is VERY ",
+      "url": "https://x.com/simonw/status/2124217876777464269",
+      "data": "2026-11-21T19:06:22Z",
+      "tekst": "@simonw: Gemini 4 tip: the difference between Gemini 4 Hydrogen on \"high\" thinking effort and that same model on \"xhigh\" is VERY significant\n\nHere's the high v.s. the xhigh pelican - high cost 3.99 cents and used 5,311 output tokens, xhigh cost 23.61 cents and used 31,477 output tokens",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "simonw"
+    },
+    {
+      "id": "https://x.com/swyx/status/2124147427313861009",
+      "istochnik": "X",
+      "zagolovok": "is there any possible benign explanation why these providers were secretly phoning home? because wtf Цитирует @michael_c",
+      "url": "https://x.com/swyx/status/2124147427313861009",
+      "data": "2026-11-21T14:26:26Z",
+      "tekst": "@swyx: is there any possible benign explanation why these providers were secretly phoning home? because wtf\n\nЦитирует @michael_chomsky: the OpenRouter situation for anyone curious:\n\n-someone managed to access outputs sent to MiniMax\n-researcher discovered this by sending a secret links\n-40 to 130 hours later someone opened the secret links\n-oop, this means that someone accessed your outputs!! \n-AltasCloud/Novita/StreamLake were forwarding requests to MiniMax???? what the helly?\n\nugh.",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "swyx"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2124099608510931256",
+      "istochnik": "X",
+      "zagolovok": "GOOGLE 🔥: If you long-press the model selector in Gemini, you will see a new periodic table model selector appear! Gemin",
+      "url": "https://x.com/testingcatalog/status/2124099608510931256",
+      "data": "2026-11-21T11:16:25Z",
+      "tekst": "@testingcatalog: GOOGLE 🔥: If you long-press the model selector in Gemini, you will see a new periodic table model selector appear! \n\nGemini 4 Hydrogen, Argon, Carbon, and Neon models are available. Nano Banana is also there under the Potassium element. \n\nImagine this a year from now 🤯 https://x.com/LuminaBench/status/2124084959459873080/video/1",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2124091275011821845",
+      "istochnik": "X",
+      "zagolovok": "GOOGLE 🔥: Usage quota has been reset on Antigravity for all users. Additionally, new caching improvements should lead to",
+      "url": "https://x.com/testingcatalog/status/2124091275011821845",
+      "data": "2026-11-21T10:43:18Z",
+      "tekst": "@testingcatalog: GOOGLE 🔥: Usage quota has been reset on Antigravity for all users. \n\nAdditionally, new caching improvements should lead to a 22% more usage in overall. \n\nNeon testing time 👀\n\nЦитирует @_mohansolo: Reset everyone’s Gemini quota on Antigravity.\n\nThe caching improvements have increased the amount you can get done in quota by 22%. Enjoy building with Neon over the weekend!",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    }
+  ],
+  "ne_otvetili": [],
+  "tolko_v_vidennye": [],
+  "github_polnyy_obhod": false,
+  "istochniki": [
+    "claude.dev",
+    "Claude Code",
+    "Claude Platform",
+    "Блог Claude",
+    "OpenAI",
+    "Codex",
+    "OpenAI API",
+    "AINews",
+    "Simon Willison",
+    "Ben's Bites",
+    "Cursor",
+    "DeepMind",
+    "Блог Google",
+    "Google Developers Blog",
+    "Techmeme",
+    "GitHub Claude Code"
+  ],
+  "iks": {
+    "akkauntov": 30,
+    "ne_otvetili": [
+      "thsottiaux"
+    ]
+  }
+}
