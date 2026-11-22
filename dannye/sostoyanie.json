@@ -1505,10 +1505,17 @@
       "url": "https://www.techmeme.com/261121/p8#a261121p8",
       "vid": "dengi",
       "zagolovok": "Amazon близка к сделке на 7,5 млрд долларов по покупке ИИ-стартапа Decart, по данным источников FT"
+    },
+    {
+      "data": "2026-11-22T02:22:29Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261121/p10#a261121p10",
+      "vid": "sayty",
+      "zagolovok": "Исследователи подложили в запросы к ИИ-маршрутизаторам вроде OpenRouter и Vercel ловушки-ключи: приватность часто нарушалась, ключи крали даже при политике нулевого хранения"
     }
   ],
-  "posledniy_sbor": "2026-11-21T17:14:17Z",
-  "posledniy_slot": "2026-11-21T18:00:00Z",
+  "posledniy_sbor": "2026-11-22T01:15:46Z",
+  "posledniy_slot": "2026-11-22T02:00:00Z",
   "vidennye": {
     "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/": "2026-11-13T02:17:22Z",
     "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/": "2026-11-19T02:19:54Z",
@@ -1703,6 +1710,7 @@
     "https://simonwillison.net/2026/Nov/20/levent-alpoge/": "2026-11-20T18:23:08Z",
     "https://simonwillison.net/2026/Nov/20/ravi-vakil/": "2026-11-21T02:23:16Z",
     "https://simonwillison.net/2026/Nov/20/token-fraud-is-here-and-its-bad/": "2026-11-20T10:22:56Z",
+    "https://simonwillison.net/2026/Nov/21/muru/": "2026-11-22T02:22:29Z",
     "https://simonwillison.net/2026/Nov/9/llm-anthropic/": "2026-11-10T20:46:17Z",
     "https://simonwillison.net/2026/Nov/9/mysterious-beeps/": "2026-11-10T20:46:17Z",
     "https://www.anthropic.com/claude-fable-and-mythos-5-2": "2026-11-10T20:46:14Z",
@@ -2037,6 +2045,8 @@
     "https://www.techmeme.com/261120/p8#a261120p8": "2026-11-20T18:23:08Z",
     "https://www.techmeme.com/261120/p9#a261120p9": "2026-11-20T18:23:08Z",
     "https://www.techmeme.com/261121/p1#a261121p1": "2026-11-21T10:20:40Z",
+    "https://www.techmeme.com/261121/p10#a261121p10": "2026-11-22T02:22:29Z",
+    "https://www.techmeme.com/261121/p11#a261121p11": "2026-11-22T02:22:29Z",
     "https://www.techmeme.com/261121/p2#a261121p2": "2026-11-21T10:20:40Z",
     "https://www.techmeme.com/261121/p3#a261121p3": "2026-11-21T10:20:40Z",
     "https://www.techmeme.com/261121/p4#a261121p4": "2026-11-21T10:20:40Z",
@@ -2044,6 +2054,7 @@
     "https://www.techmeme.com/261121/p6#a261121p6": "2026-11-21T18:15:58Z",
     "https://www.techmeme.com/261121/p7#a261121p7": "2026-11-21T18:15:58Z",
     "https://www.techmeme.com/261121/p8#a261121p8": "2026-11-21T18:15:58Z",
+    "https://www.techmeme.com/261121/p9#a261121p9": "2026-11-22T02:22:29Z",
     "https://x.com/AIatMeta/status/2119912647034642817": "2026-11-10T20:46:16Z",
     "https://x.com/AIatMeta/status/2123484005089558692": "2026-11-20T02:21:40Z",
     "https://x.com/AIatMeta/status/2123882678332322134": "2026-11-21T02:23:16Z",
@@ -2117,6 +2128,7 @@
     "https://x.com/OfficialLoganK/status/2123198296122667053": "2026-11-19T02:19:55Z",
     "https://x.com/OfficialLoganK/status/2123216422122016965": "2026-11-19T02:19:55Z",
     "https://x.com/OfficialLoganK/status/2123467449257623770": "2026-11-19T18:23:30Z",
+    "https://x.com/OfficialLoganK/status/2124212276010102918": "2026-11-22T02:22:29Z",
     "https://x.com/OpenAI/status/2119913172039868579": "2026-11-10T20:46:17Z",
     "https://x.com/OpenAI/status/2120202353907486826": "2026-11-10T20:46:17Z",
     "https://x.com/OpenAI/status/2120216592395174382": "2026-11-10T20:46:17Z",
@@ -2194,6 +2206,8 @@
     "https://x.com/gdb/status/2123930232013115487": "2026-11-21T02:23:16Z",
     "https://x.com/gdb/status/2123939543200219210": "2026-11-21T02:23:15Z",
     "https://x.com/gdb/status/2123953589882413337": "2026-11-21T10:20:40Z",
+    "https://x.com/gdb/status/2124218429133754499": "2026-11-22T02:22:29Z",
+    "https://x.com/gdb/status/2124283509418422305": "2026-11-22T02:22:29Z",
     "https://x.com/jackclarkSF/status/2120162750660026481": "2026-11-10T20:46:17Z",
     "https://x.com/jackclarkSF/status/2121715797974479100": "2026-11-15T02:20:29Z",
     "https://x.com/jackclarkSF/status/2123767332187386143": "2026-11-20T18:23:08Z",
@@ -2220,6 +2234,7 @@
     "https://x.com/simonw/status/2122822310428279136": "2026-11-18T02:20:44Z",
     "https://x.com/simonw/status/2123305131206967571": "2026-11-19T10:22:04Z",
     "https://x.com/simonw/status/2123808432830701909": "2026-11-20T18:23:08Z",
+    "https://x.com/simonw/status/2124217876777464269": "2026-11-22T02:22:29Z",
     "https://x.com/swyx/status/2119935240202539147": "2026-11-10T20:46:17Z",
     "https://x.com/swyx/status/2120187167901372559": "2026-11-10T20:46:17Z",
     "https://x.com/swyx/status/2120208862221684809": "2026-11-10T20:46:17Z",
@@ -2427,6 +2442,7 @@
     "https://x.com/thsottiaux/status/2123861214644347122": "2026-11-21T02:23:15Z",
     "https://x.com/thsottiaux/status/2123864112694509995": "2026-11-21T02:23:16Z",
     "https://x.com/thsottiaux/status/2123997735326232775": "2026-11-21T10:20:40Z",
+    "https://x.com/thsottiaux/status/2124277855131664869": "2026-11-22T02:22:29Z",
     "https://x.com/trq212/status/2120223476279869875": "2026-11-10T20:46:17Z",
     "https://x.com/trq212/status/2120620900785820143": "2026-11-12T18:10:16Z",
     "https://x.com/trq212/status/2121067561915916575": "2026-11-13T18:16:34Z",
@@ -2437,6 +2453,7 @@
     "https://x.com/trq212/status/2123457177419760100": "2026-11-19T18:23:31Z",
     "https://x.com/trq212/status/2123524052195463568": "2026-11-20T02:21:40Z",
     "https://x.com/trq212/status/2123892474334806400": "2026-11-21T02:23:16Z",
-    "https://x.com/trq212/status/2123909357071159327": "2026-11-21T02:23:16Z"
+    "https://x.com/trq212/status/2123909357071159327": "2026-11-21T02:23:16Z",
+    "https://x.com/trq212/status/2124239682691387634": "2026-11-22T02:22:29Z"
   }
 }
