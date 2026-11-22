@@ -1,0 +1,39 @@
+{
+  "krupnye": [],
+  "sayty": [
+    {
+      "zagolovok": "OpenAI опубликовала внутренние замеры перплексии и предлагает сделать её общей метрикой для сравнения разработчиков моделей и общих границ безопасности",
+      "url": "https://openai.com/index/perplexity-and-intelligence",
+      "istochnik": "OpenAI",
+      "zvezda": false,
+      "idy": [
+        "https://openai.com/index/perplexity-and-intelligence",
+        "https://x.com/btibor91/status/2124550678626660680",
+        "https://x.com/sama/status/2124551594691932405"
+      ]
+    }
+  ],
+  "x": [
+    {
+      "zagolovok": "Подписка Google AI, судя по намёкам, станет доступна в сторонних приложениях-обвязках 2 декабря, среди первых — Hermes",
+      "url": "https://x.com/testingcatalog/status/2124473529764852190",
+      "akkaunt": "testingcatalog",
+      "zvezda": false,
+      "idy": [
+        "https://x.com/testingcatalog/status/2124473529764852190"
+      ]
+    }
+  ],
+  "dengi": [
+    {
+      "zagolovok": "Anthropic ограничила часть IPO-банков командами по четыре человека и просила шестимесячный запрет на работу с конкурентами, чтобы избежать утечек, сообщают источники",
+      "url": "https://www.techmeme.com/261122/p8#a261122p8",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261122/p8#a261122p8"
+      ]
+    }
+  ],
+  "github": []
+}
