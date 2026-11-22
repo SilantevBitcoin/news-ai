@@ -1512,10 +1512,17 @@
       "url": "https://www.techmeme.com/261121/p10#a261121p10",
       "vid": "sayty",
       "zagolovok": "Исследователи подложили в запросы к ИИ-маршрутизаторам вроде OpenRouter и Vercel ловушки-ключи: приватность часто нарушалась, ключи крали даже при политике нулевого хранения"
+    },
+    {
+      "data": "2026-11-22T10:20:49Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261122/p4#a261122p4",
+      "vid": "sayty",
+      "zagolovok": "Tesla выпустила FSD v15: машина рисует окружение фотореалистично, Маск называет это генерацией видео ИИ в реальном времени без игровых движков"
     }
   ],
-  "posledniy_sbor": "2026-11-22T01:15:46Z",
-  "posledniy_slot": "2026-11-22T02:00:00Z",
+  "posledniy_sbor": "2026-11-22T09:14:52Z",
+  "posledniy_slot": "2026-11-22T10:00:00Z",
   "vidennye": {
     "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/": "2026-11-13T02:17:22Z",
     "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/": "2026-11-19T02:19:54Z",
@@ -2055,6 +2062,11 @@
     "https://www.techmeme.com/261121/p7#a261121p7": "2026-11-21T18:15:58Z",
     "https://www.techmeme.com/261121/p8#a261121p8": "2026-11-21T18:15:58Z",
     "https://www.techmeme.com/261121/p9#a261121p9": "2026-11-22T02:22:29Z",
+    "https://www.techmeme.com/261122/p1#a261122p1": "2026-11-22T10:20:49Z",
+    "https://www.techmeme.com/261122/p2#a261122p2": "2026-11-22T10:20:49Z",
+    "https://www.techmeme.com/261122/p3#a261122p3": "2026-11-22T10:20:49Z",
+    "https://www.techmeme.com/261122/p4#a261122p4": "2026-11-22T10:20:49Z",
+    "https://www.techmeme.com/261122/p5#a261122p5": "2026-11-22T10:20:49Z",
     "https://x.com/AIatMeta/status/2119912647034642817": "2026-11-10T20:46:16Z",
     "https://x.com/AIatMeta/status/2123484005089558692": "2026-11-20T02:21:40Z",
     "https://x.com/AIatMeta/status/2123882678332322134": "2026-11-21T02:23:16Z",
@@ -2443,6 +2455,7 @@
     "https://x.com/thsottiaux/status/2123864112694509995": "2026-11-21T02:23:16Z",
     "https://x.com/thsottiaux/status/2123997735326232775": "2026-11-21T10:20:40Z",
     "https://x.com/thsottiaux/status/2124277855131664869": "2026-11-22T02:22:29Z",
+    "https://x.com/thsottiaux/status/2124322968499282388": "2026-11-22T10:20:49Z",
     "https://x.com/trq212/status/2120223476279869875": "2026-11-10T20:46:17Z",
     "https://x.com/trq212/status/2120620900785820143": "2026-11-12T18:10:16Z",
     "https://x.com/trq212/status/2121067561915916575": "2026-11-13T18:16:34Z",
