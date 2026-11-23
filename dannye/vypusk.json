@@ -1,0 +1,100 @@
+{
+ "krupnye": [],
+ "sayty": [
+  {
+   "zagolovok": "Китайские исследования: ИИ США может сократить время ядерного решения до 90 секунд",
+   "url": "https://www.techmeme.com/261123/p8#a261123p8",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261123/p8#a261123p8"
+   ]
+  },
+  {
+   "zagolovok": "Губернаторы США предлагают разделить регулирование ИИ: проверка моделей — федеральная, защита потребителей — штатная",
+   "url": "https://www.techmeme.com/261123/p7#a261123p7",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261123/p7#a261123p7"
+   ]
+  },
+  {
+   "zagolovok": "GPT-6.2 Astra и Claude Fable 5.2 почти равны на трёх задачах, но Fable обошёлся в 5+ раз дороже",
+   "url": "https://www.techmeme.com/261122/p16#a261122p16",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261122/p16#a261122p16"
+   ]
+  }
+ ],
+ "x": [
+  {
+   "zagolovok": "Zhipu открыла тестирование GLM-5.4 с новым зрением для подписчиков кодерских тарифов; бенчмарков и открытых весов пока нет",
+   "url": "https://x.com/testingcatalog/status/2124797839503225042",
+   "akkaunt": "testingcatalog",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/testingcatalog/status/2124797839503225042"
+   ]
+  },
+  {
+   "zagolovok": "GPT-6.2 Astra — единственная модель, победившая Сета Блинга в новом тесте KradleBench в Minecraft",
+   "url": "https://x.com/romainhuet/status/2124753204776968615",
+   "akkaunt": "romainhuet",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/romainhuet/status/2124753204776968615"
+   ]
+  }
+ ],
+ "dengi": [
+  {
+   "zagolovok": "Databricks, по слухам, ведёт переговоры о раунде Series N при оценке 225 млрд долларов",
+   "url": "https://x.com/romainhuet/status/2124723188097774054",
+   "akkaunt": "romainhuet",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/romainhuet/status/2124723188097774054"
+   ]
+  },
+  {
+   "zagolovok": "Китайский стартап Simplexity Robotics привлёк 100 млн долларов при оценке 1,6 млрд",
+   "url": "https://www.techmeme.com/261123/p4#a261123p4",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261123/p4#a261123p4"
+   ]
+  },
+  {
+   "zagolovok": "Compute Desk, строящая биржевую инфраструктуру для вычислений, привлекла 45 млн долларов",
+   "url": "https://www.techmeme.com/261123/p3#a261123p3",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261123/p3#a261123p3"
+   ]
+  },
+  {
+   "zagolovok": "Aevius, чьи модели анализируют здоровье пациентов, привлекла 22 млн долларов",
+   "url": "https://www.techmeme.com/261123/p5#a261123p5",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261123/p5#a261123p5"
+   ]
+  },
+  {
+   "zagolovok": "Arva AI, делающая агентов для банковского комплаенса, привлекла 20 млн долларов",
+   "url": "https://www.techmeme.com/261122/p18#a261122p18",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261122/p18#a261122p18"
+   ]
+  }
+ ],
+ "github": []
+}

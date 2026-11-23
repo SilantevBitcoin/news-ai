@@ -1,0 +1,357 @@
+{
+  "nachalo_progona": "2026-11-23T10:08:16Z",
+  "nachalo_perioda": "2026-11-23T01:14:56Z",
+  "nachalo_okna": "2026-11-22T10:08:16Z",
+  "pervyy_progon": false,
+  "kandidaty": [
+    {
+      "id": "https://openai.com/index/perplexity-and-intelligence",
+      "istochnik": "OpenAI",
+      "zagolovok": "Perplexity and Intelligence",
+      "url": "https://openai.com/index/perplexity-and-intelligence",
+      "data": "2026-11-22T00:00:00Z",
+      "tekst": "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://simonwillison.net/2026/Nov/22/select-styling/",
+      "istochnik": "Simon Willison",
+      "zagolovok": "Select Styling Specimens",
+      "url": "https://simonwillison.net/2026/Nov/22/select-styling/",
+      "data": "2026-11-22T19:45:06Z",
+      "tekst": "Tool: Select Styling Specimens\n\nI got frustrated at how HTML <select> boxes default to looking different in different browsers, and are (I think) quite ugly in Chrome:\n\nSo I had Claude Fable 5.2 build me this page showing all of the ways they can be styled:\n\nBuild an HTML page that shows all of the ways a select box can be styled, I plan to take screenshots in every desktop and mobile browser\n\nAfter some experimentation I've decided my favorite CSS for select boxes is this:\n\nselect {\nappearance: none;\ncolor: #1f2933;\npadding: 0.5em 2.25em 0.5em 0.75em;\nborder: 1px solid #c4cbd3;\nborder-radius: 6px;\nbackground: #fff url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23667085' stroke-width='1.5'/%3E%3C/svg%3E\") no-repeat right 0.75em center / 0.75em;\n}\n\nHere's what that looks like in the three browsers:\n\nTags: tools, css, html",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261123/p9#a261123p9",
+      "istochnik": "Techmeme",
+      "zagolovok": "President Trump hosted a dinner on Sunday for the top $TRUMP collectors; an analysis finds the entry cost was as low as $518, down from its $55K peak in 2025 (Isaac Arnsdorf/Washington Post)",
+      "url": "https://www.techmeme.com/261123/p9#a261123p9",
+      "data": "2026-11-23T09:55:01Z",
+      "tekst": "Статья: https://www.washingtonpost.com/politics/2026/11/22/trump-hosts-crypto-traders-demand-his-meme-coin-fades/\nIsaac Arnsdorf / Washington Post:\n\nPresident Trump hosted a dinner on Sunday for the top $TRUMP collectors; an analysis finds the entry cost was as low as $518, down from its $55K peak in 2025 — The president presided over an upscale dinner for investors in his collapsing meme coin, celebrating the venture even as the price of admission has plummeted.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261123/p8#a261123p8",
+      "istochnik": "Techmeme",
+      "zagolovok": "Chinese civilian and military studies show a growing concern that US AI advances may cut nuclear decision-making to 90 seconds, undermining Beijing's deterrent (Chris Buckley/New York Times)",
+      "url": "https://www.techmeme.com/261123/p8#a261123p8",
+      "data": "2026-11-23T09:30:00Z",
+      "tekst": "Статья: https://www.nytimes.com/2026/11/23/world/asia/china-us-nuclear-ai.html?unlocked_article_code=1.SlE.7MPS.E8d7eCsFiexw&smid=url-share\nChris Buckley / New York Times:\n\nChinese civilian and military studies show a growing concern that US AI advances may cut nuclear decision-making to 90 seconds, undermining Beijing's deterrent — Chinese military researchers are studying how to harness A.I., but they worry the technology makes their country's nuclear forces more vulnerable to attack.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261123/p7#a261123p7",
+      "istochnik": "Techmeme",
+      "zagolovok": "The National Governors Association proposes a split of AI regulation roles, asking the US government to review AI models while letting states protect consumers (Bloomberg)",
+      "url": "https://www.techmeme.com/261123/p7#a261123p7",
+      "data": "2026-11-23T09:15:03Z",
+      "tekst": "Статья: https://www.bloomberg.com/\nBloomberg:\n\nThe National Governors Association proposes a split of AI regulation roles, asking the US government to review AI models while letting states protect consumers — A bipartisan group of US governors is urging Washington to set rules for the most powerful artificial intelligence systems …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261123/p6#a261123p6",
+      "istochnik": "Techmeme",
+      "zagolovok": "A look at AECJ, an Amazon employee group with over 1,000 members that is stepping up efforts to slow Amazon's data center expansion and spark debate over AI use (Rafe Rosner-Uddin/Financial Times)",
+      "url": "https://www.techmeme.com/261123/p6#a261123p6",
+      "data": "2026-11-23T09:05:00Z",
+      "tekst": "Статья: https://www.ft.com/content/d194e93b-8d3c-42eb-85dd-46d58c4f2a80\nRafe Rosner-Uddin / Financial Times:\n\nA look at AECJ, an Amazon employee group with over 1,000 members that is stepping up efforts to slow Amazon's data center expansion and spark debate over AI use — Tech company's plans for rapid expansion face opposition from the public and its own employees",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261123/p5#a261123p5",
+      "istochnik": "Techmeme",
+      "zagolovok": "Boston-based Aevius, whose foundation models analyze patient health using medical records, imaging, and other data, raised a $22M seed led by Insight Partners (Katherine Davis/Axios)",
+      "url": "https://www.techmeme.com/261123/p5#a261123p5",
+      "data": "2026-11-23T08:45:00Z",
+      "tekst": "Статья: https://www.axios.com/\nKatherine Davis / Axios:\n\nBoston-based Aevius, whose foundation models analyze patient health using medical records, imaging, and other data, raised a $22M seed led by Insight Partners — Clinical intelligence startup Aevius raised $22 million in seed funding from Insight Partners, CEO Rowland Pettit exclusively tells Axios Pro.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261123/p4#a261123p4",
+      "istochnik": "Techmeme",
+      "zagolovok": "Chinese physical AI startup Simplexity Robotics raised a $100M pre-Series A led by Ant Group, with Alibaba, Tencent, and others joining, at a $1.6B valuation (Saritha Rai/Bloomberg)",
+      "url": "https://www.techmeme.com/261123/p4#a261123p4",
+      "data": "2026-11-23T07:01:27Z",
+      "tekst": "Статья: https://www.bloomberg.com/news/articles/2026-11-22/ant-group-bets-on-simplexity-to-thrive-in-china-s-humanoid-race\nSaritha Rai / Bloomberg:\n\nChinese physical AI startup Simplexity Robotics raised a $100M pre-Series A led by Ant Group, with Alibaba, Tencent, and others joining, at a $1.6B valuation — Chinese physical AI startup Simplexity Robotics received $100 million in a funding round led by Jack Ma-backed Ant Group Co. …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261123/p3#a261123p3",
+      "istochnik": "Techmeme",
+      "zagolovok": "Compute Desk, which is building capital markets infrastructure to price, trade, hedge, and clear compute, raised a $45M seed led by Lightspeed (Lucinda Shen/Axios)",
+      "url": "https://www.techmeme.com/261123/p3#a261123p3",
+      "data": "2026-11-23T06:40:01Z",
+      "tekst": "Статья: https://www.axios.com/pro/all-deals/2026/11/17/compute-pricing-startup-compute-desk-45-million-lightspeed\nLucinda Shen / Axios:\n\nCompute Desk, which is building capital markets infrastructure to price, trade, hedge, and clear compute, raised a $45M seed led by Lightspeed — Compute Desk, a startup aiming to make compute an asset that can be traded and hedged, raised $45 million in a Lightspeed Venture Partners-led seed funding …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261123/p2#a261123p2",
+      "istochnik": "Techmeme",
+      "zagolovok": "New US chip export rules threaten SEA's data center boom, risking incomplete and abandoned projects and forcing neoclouds to replace their Chinese customers (Bloomberg)",
+      "url": "https://www.techmeme.com/261123/p2#a261123p2",
+      "data": "2026-11-23T06:02:06Z",
+      "tekst": "Статья: https://www.bloomberg.com/news/features/2026-11-22/trump-s-ai-chip-crackdown-on-china-after-nvidia-crisis-squeezes-southeast-asia?accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOiJTdWJzY3JpYmVyR2lmdGVkQXJ0aWNsZSIsImlhdCI6MTc5NTQwNzgwMCwiZXhwIjoxNzk2MDEyNjAwLCJhcnRpY2xlSWQiOiJUT1hCU0RLR0lGUTMwMCIsImJjb25uZWN0SWQiOiJDNTc5RDIwMDZBQjQ0RjRDODkwMTU0M0U0ODMxNkJCNiJ9.3vmQa_rIIOmutX3CrjU1ib8_jJyygL3HHaYJC4NpNfo\nBloomberg:\n\nNew US chip export rules threaten SEA's data center boom, risking incomplete and abandoned projects and forcing neoclouds to replace their Chinese customers — Washington's new rulebook spells trouble for a multibillion dollar cloud business helping to power the region's data center boom.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261123/p1#a261123p1",
+      "istochnik": "Techmeme",
+      "zagolovok": "London-based Alecto, which uses AI and legal experts to help consumers understand UK property law, raised a $20M seed led by Insight Partners (Kyt Dotson/SiliconANGLE)",
+      "url": "https://www.techmeme.com/261123/p1#a261123p1",
+      "data": "2026-11-23T05:30:01Z",
+      "tekst": "Статья: https://siliconangle.com/2026/11/16/alecto-raises-20m-seed-funding-to-make-uk-property-law-more-accessible-to-consumers-with-ai/\nKyt Dotson / SiliconANGLE:\n\nLondon-based Alecto, which uses AI and legal experts to help consumers understand UK property law, raised a $20M seed led by Insight Partners — Alecto Conveyancing Ltd., a London-based artificial intelligence-native law firm, today announced it raised $20 million in seed funding led …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261122/p20#a261122p20",
+      "istochnik": "Techmeme",
+      "zagolovok": "South Korean PE firm MBK Partners agrees to take Japan's Wacom private, in a deal valuing the digital pen tech company at ~$860M, with Samsung participating (Kim Woo-young/CHOSUNBIZ)",
+      "url": "https://www.techmeme.com/261122/p20#a261122p20",
+      "data": "2026-11-23T04:40:00Z",
+      "tekst": "Статья: https://biz.chosun.com/en/en-international/2026/11/21/ARGP75AUBRFRJOU4M7PGDQTPOI/\nKim Woo-young / CHOSUNBIZ:\n\nSouth Korean PE firm MBK Partners agrees to take Japan's Wacom private, in a deal valuing the digital pen tech company at ~$860M, with Samsung participating — Private equity firm MBK Partners will acquire Wacom, a Japanese company that supplies core technology for the Samsung Electronics …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261122/p19#a261122p19",
+      "istochnik": "Techmeme",
+      "zagolovok": "Alexandr Wang says the Riemann Hypothesis proof shows AI will surpass humans in every field, including AI research, and calls for AI safety and alignment (Alexandr Wang/@alexandr_wang)",
+      "url": "https://www.techmeme.com/261122/p19#a261122p19",
+      "data": "2026-11-23T04:00:14Z",
+      "tekst": "Статья: https://x.com/alexandr_wang\nAlexandr Wang / @alexandr_wang:\n\nAlexandr Wang says the Riemann Hypothesis proof shows AI will surpass humans in every field, including AI research, and calls for AI safety and alignment — Superintelligence is Arriving",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261122/p18#a261122p18",
+      "istochnik": "Techmeme",
+      "zagolovok": "Arva AI, which builds AI agents for banks' financial-crime compliance teams and counts Wise as a customer, raised a $20M Series A led by Arthur Ventures (Ryan Lawler/Axios)",
+      "url": "https://www.techmeme.com/261122/p18#a261122p18",
+      "data": "2026-11-23T03:25:01Z",
+      "tekst": "Статья: https://www.axios.com/pro/fintech-deals/2026/11/17/arva-ai-20-million-series-a-bank-compliance\nRyan Lawler / Axios:\n\nArva AI, which builds AI agents for banks' financial-crime compliance teams and counts Wise as a customer, raised a $20M Series A led by Arthur Ventures — Arva AI, which builds AI agents for banks' financial-crime compliance teams, has raised $20 million in Series A funding, CEO Rhim Shah tells Axios Pro exclusively.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261122/p17#a261122p17",
+      "istochnik": "Techmeme",
+      "zagolovok": "TPG and Corpay agree to acquire and take private BILL Holdings, whose cloud-based software lets SMBs automate financial operations, in a deal valued at ~$6B (Pritam Biswas/Reuters)",
+      "url": "https://www.techmeme.com/261122/p17#a261122p17",
+      "data": "2026-11-23T02:35:00Z",
+      "tekst": "Статья: http://www.reuters.com/\nPritam Biswas / Reuters:\n\nTPG and Corpay agree to acquire and take private BILL Holdings, whose cloud-based software lets SMBs automate financial operations, in a deal valued at ~$6B — Fintech firm BILL Holdings (BILL.N) said on Thursday it will be acquired by private equity group TPG, in partnership with Corpay …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261122/p16#a261122p16",
+      "istochnik": "Techmeme",
+      "zagolovok": "GPT-6.2 Astra vs. Claude Fable 5.2 hands-on: nearly tied on three custom accounting, coding, and data tasks, but Fable used far more tokens and cost 5x+ as much (Jessica Wachtel/The New Stack)",
+      "url": "https://www.techmeme.com/261122/p16#a261122p16",
+      "data": "2026-11-23T01:45:00Z",
+      "tekst": "Статья: https://thenewstack.io/gpt-6-2-astra-vs-claude-fable-5-2/\nJessica Wachtel / The New Stack:\n\nGPT-6.2 Astra vs. Claude Fable 5.2 hands-on: nearly tied on three custom accounting, coding, and data tasks, but Fable used far more tokens and cost 5x+ as much — When I compared Anthropic's Fable 5.2 vs. OpenAI's GPT-6 Astra last week, Fable 5.2 was slightly more accurate (149 points vs. 145).",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261122/p15#a261122p15",
+      "istochnik": "Techmeme",
+      "zagolovok": "Sources: Jay Clayton, director of national intelligence and AI czar, will also be acting national cyber director pending Kirsten A. Davies' Senate confirmation (Axios)",
+      "url": "https://www.techmeme.com/261122/p15#a261122p15",
+      "data": "2026-11-23T00:55:00Z",
+      "tekst": "Статья: https://www.axios.com/2026/11/23/jay-clayton-acting-national-cyber-director\nAxios:\n\nSources: Jay Clayton, director of national intelligence and AI czar, will also be acting national cyber director pending Kirsten A. Davies' Senate confirmation — Director of National Intelligence Jay Clayton will also serve as acting national cyber director while Kirsten Davies awaits Senate confirmation …",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://x.com/trq212/status/2124767804247379968",
+      "istochnik": "X",
+      "zagolovok": "they cut the scene in Hitchhiker's Guide where the computer follows 42 with 500 million pages of Lean",
+      "url": "https://x.com/trq212/status/2124767804247379968",
+      "data": "2026-11-23T07:31:35Z",
+      "tekst": "@trq212: they cut the scene in Hitchhiker's Guide where the computer follows 42 with 500 million pages of Lean",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "trq212"
+    },
+    {
+      "id": "https://x.com/sama/status/2124551594691932405",
+      "istochnik": "X",
+      "zagolovok": "This is the most important thing OpenAI has published in awhile. We are providing a lot of transparency into our pretrai",
+      "url": "https://x.com/sama/status/2124551594691932405",
+      "data": "2026-11-22T17:12:27Z",
+      "tekst": "@sama: This is the most important thing OpenAI has published in awhile.\n\nWe are providing a lot of transparency into our pretraining progress and hope we can agree as a frield to common limits. I think that would be very wise and help ensure safety and control.\n\nЦитирует @merettm: We decided to provide more transparency into pretraining progress at OpenAI for the sake of moving toward shared safety bars. In “Perplexity and Intelligence” I argue for common limits based on perplexity and other measurements, with progress beyond them gated on our ability to understand AI behavior.\n\nhttps://openai.com/index/perplexity-and-intelligence",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "sama"
+    },
+    {
+      "id": "https://x.com/romainhuet/status/2124753204776968615",
+      "istochnik": "X",
+      "zagolovok": "GPT-6.2 Astra is the only model to beat Minecraft legend @SethBling on the new KradleBench. Pretty incredible! Love that",
+      "url": "https://x.com/romainhuet/status/2124753204776968615",
+      "data": "2026-11-23T06:33:34Z",
+      "tekst": "@romainhuet: GPT-6.2 Astra is the only model to beat Minecraft legend @SethBling on the new KradleBench. Pretty incredible!\n\nLove that we’re starting to test AI in live and unpredictable worlds, not just static benchmarks.\n\nSuch cool work from @JamesTamplin and the Kradle team!\n\nЦитирует @kradleai: We had Minecraft legend @SethBling represent humanity on our new benchmark.\n\nHe was #1 until Astra 6.2 launched yesterday.\n\nIntroducing KradleBench: evals in live, multi-agent worlds",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "romainhuet"
+    },
+    {
+      "id": "https://x.com/romainhuet/status/2124723188097774054",
+      "istochnik": "X",
+      "zagolovok": "Series N is impressive! After Series Z, do we go to Series AA like Excel? Цитирует @exec_sum: BREAKING: Databricks is in",
+      "url": "https://x.com/romainhuet/status/2124723188097774054",
+      "data": "2026-11-23T04:34:18Z",
+      "tekst": "@romainhuet: Series N is impressive! After Series Z, do we go to Series AA like Excel?\n\nЦитирует @exec_sum: BREAKING: Databricks is in early talks to raise a Series N funding round at a $225B valuation",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "romainhuet"
+    },
+    {
+      "id": "https://x.com/kevinweil/status/2124606602888274311",
+      "istochnik": "X",
+      "zagolovok": "Accurate",
+      "url": "https://x.com/kevinweil/status/2124606602888274311",
+      "data": "2026-11-22T20:51:02Z",
+      "tekst": "@kevinweil: Accurate",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "kevinweil"
+    },
+    {
+      "id": "https://x.com/swyx/status/2124583459356373052",
+      "istochnik": "X",
+      "zagolovok": "OpenAI proposes perplexity as the universal metric for industry self regulation and pacing (as opposed to eg FLOPS) “Giv",
+      "url": "https://x.com/swyx/status/2124583459356373052",
+      "data": "2026-11-22T19:19:04Z",
+      "tekst": "@swyx: OpenAI proposes perplexity as the universal metric for industry self regulation and pacing (as opposed to eg FLOPS)\n\n“Given that the main way new surprising capabilities emerge is by progress on compression, a measure rooted in perplexity could give us a shared benchmark for general intelligence, regardless of the degree of automation of the development process. Extrapolating from recent progress, we should expect further transformative capabilities as we enter the ~0.68-0.7 log-perplexity window.”\n\nthis chart is one of the most beautiful ways to tell the story of the last 4 years. it also shows that a lot of the post training issues we debate is kinda the B plot to the overall A plot of large scale pretrain progress.\n\nЦитирует @merettm: We decided to provide more transparency into pretraining progress at OpenAI for the sake of moving toward shared safety bars. In “Perplexity and Intelligence” I argue for common limits based on perplexity and other measurements, with progress beyond them gated on our ability to understand AI behavior.\n\nhttps://openai.com/index/perplexity-and-intelligence",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "swyx"
+    },
+    {
+      "id": "https://x.com/swyx/status/2124730733147390347",
+      "istochnik": "X",
+      "zagolovok": "incredible founder journey breakdown from founding to acquisition complete with regrets and advice. not enough founders ",
+      "url": "https://x.com/swyx/status/2124730733147390347",
+      "data": "2026-11-23T05:04:17Z",
+      "tekst": "@swyx: incredible founder journey breakdown from founding to acquisition complete with regrets and advice. not enough founders document this! please do, it saves others potentially a lot of pain\n\nhighlights \n- @theallinpod top ticking saas market\n- IP assignment woes\n- do not brag about your SEO\n- how to draw @naval’s interest\n- hiring advice and layoff advice\n- how to fish for an acquisition\n- how to clear roadblocks for an acquisition\n- there are CTO coaches??\n\nЦитирует @taimurabdaal: Anthropic IPO at $1T, Riemann hypothesis proved, anyway... here's the story of our B2B SaaS\n\nFelt a lot of nostalgia for the quaint 2019–2024 era of startups writing this. Hopefully still some relevant lessons for early stage startups today:\n\nhttps://taimur.me/blog-posts/causal-from-idea-to-acquisition",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "swyx"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2124797839503225042",
+      "istochnik": "X",
+      "zagolovok": "ZHIPU AI 🔥: GLM-5.4 is now available for testing on GLM coding plans along with new a new vision capabilities. No benchm",
+      "url": "https://x.com/testingcatalog/status/2124797839503225042",
+      "data": "2026-11-23T09:30:56Z",
+      "tekst": "@testingcatalog: ZHIPU AI 🔥: GLM-5.4 is now available for testing on GLM coding plans along with new a new vision capabilities.  \n\nNo benchmarks and no open weights for now.\n\nЦитирует @ZixuanLi_: GLM-5.4 is now available to all GLM Coding Plan users.\n\nNew vision capabilities and stronger all-round coding performance.\n\nFor users with weekly quotas, GLM-5.4 now comes with 50% more quota compared to GLM-5.3.",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2124666576263692490",
+      "istochnik": "X",
+      "zagolovok": "SPACEXSI 🔥: Grok Bot app for macOS is about to get Computer Use and system-level dictation features. Currently, Computer",
+      "url": "https://x.com/testingcatalog/status/2124666576263692490",
+      "data": "2026-11-23T00:49:20Z",
+      "tekst": "@testingcatalog: SPACEXSI 🔥: Grok Bot app for macOS is about to get Computer Use and system-level dictation features. \n\nCurrently, Computer Use on Grok Bot is already available through cloud VMs, while the team is working on a local Computer Use feature that lets Grok Bot operate apps on your desktop. \n\nAdditionally, \"Dictation in any app\" is in the works! \n\n> \"Talk in any app, Hotkeys, dictionary, snippets, whisper, retention, and history live in their own window.\"\n\nSupergrok app incoming 👀",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2124494418891645153",
+      "istochnik": "X",
+      "zagolovok": "Google continues to work on a new \"Inbox mode\" for Antigravity, where users will be able to see threads that require the",
+      "url": "https://x.com/testingcatalog/status/2124494418891645153",
+      "data": "2026-11-22T13:25:15Z",
+      "tekst": "@testingcatalog: Google continues to work on a new \"Inbox mode\" for Antigravity, where users will be able to see threads that require their attention. \n\nIt follows a broader shift we see across other Google AI tools, like Gemini (in the works) and Loop (waitlist). This change positions users in the decision-making seat to approve and review AI outcomes, rather than steering them precisely, as a main interface. \n\nAntigravity is also getting new logic to create AI agents from the prompt, distinguished as \"For Me\" and \"For my Team\". \n\nIt is getting even more interesting now 👀",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2124473529764852190",
+      "istochnik": "X",
+      "zagolovok": "GOOGLE 🔥: There have been several hints pointing to a Google AI subscription becoming available on 3rd-party harness app",
+      "url": "https://x.com/testingcatalog/status/2124473529764852190",
+      "data": "2026-11-22T12:02:14Z",
+      "tekst": "@testingcatalog: GOOGLE 🔥: There have been several hints pointing to a Google AI subscription becoming available on 3rd-party harness apps on December 2nd. \n\nHermes is among the first ones 👀\n\nЦитирует @OfficialLoganK: @kunchenguid December 2nd we take the first step",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/btibor91/status/2124550678626660680",
+      "istochnik": "X",
+      "zagolovok": "OpenAI published its internal perplexity measurements and proposes perplexity as a shared metric to compare model develo",
+      "url": "https://x.com/btibor91/status/2124550678626660680",
+      "data": "2026-11-22T17:08:48Z",
+      "tekst": "@btibor91: OpenAI published its internal perplexity measurements and proposes perplexity as a shared metric to compare model developers\n\nGPT-3.5 was at a log-perplexity of ~0.99, GPT-4 at ~0.91, and losses below 0.8 brought capabilities in cybersecurity and mathematics\n\nFurther transformative capabilities are expected in the ~0.68-0.7 window\n\nProposed common limits for developers would hold until AI monitoring reaches a concrete milestone\n\nhttps://openai.com/index/perplexity-and-intelligence/",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "btibor91"
+    },
+    {
+      "id": "https://x.com/btibor91/status/2124526478381678847",
+      "istochnik": "X",
+      "zagolovok": "OpenAI and Anthropic this week: GPT-6.2, Anthropic IPO, Riemann Hypothesis claim, black holes, ChatGPT Space (Week 47, 2",
+      "url": "https://x.com/btibor91/status/2124526478381678847",
+      "data": "2026-11-22T15:32:38Z",
+      "tekst": "@btibor91: OpenAI and Anthropic this week: GPT-6.2, Anthropic IPO, Riemann Hypothesis claim, black holes, ChatGPT Space (Week 47, 2026)\n\nOpenAI launched GPT-6.2 Astra and GPT-6.2 Sol in ChatGPT Work, Codex and the API, with Astra priced 20% lower than GPT-6 Astra\n\nFrom my own testing, GPT-6.2 Astra upgraded a multimillion-line legacy app with all tests passing after about six hours\n\nOpenAI started a science blog, opening with a candidate lattice definition of the Standard Model built with GPT-6 Astra\n\nOpenAI signed agreements for a first phase of embedded assessments with Apollo Research, METR, Transluce and Goodfire, and shared that agents now complete 46% of two-to-four-hour research tasks at OpenAI on their own\n\nChatGPT is getting Live Dictation, ChatGPT for Sales and Accounting launched, and Space is rolling out globally to Plus users\n\nFor developers, GPT-Live-1.1 is available in the API, and the Responses API background mode got discounted two-hour and eight-hour completion windows in public beta\n\nOpenAI is bringing Daybreak to NATO and allied cyber defense agencies, and signed journalism partnerships with LVMH's Media Division and Le Groupe Figaro\n\nAnthropic priced its IPO at $83 per share and started trading on Nasdaq as ANT, then closed the offering with the full underwriter option and a $26 billion private placement\n\nAnthropic's Levent Alpöge claims a proof of the Riemann Hypothesis found working with Claude, published for now only as a Lean formalization with a writeup still to come\n\nAnthropic reported that Claude Fable 5.2 solved two open problems in black hole physics\n\nClaude Code got an experimental Code Mode, linked billing launched in beta on the Claude Platform, and Anthropic started rolling out a refreshed Claude mobile app, and more\n\nЦитирует @btibor91: https://x.com/i/article/2124467736143163392",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "btibor91"
+    },
+    {
+      "id": "https://x.com/btibor91/status/2124525039135633918",
+      "istochnik": "X",
+      "zagolovok": "https://x.com/i/article/2124467736143163392",
+      "url": "https://x.com/btibor91/status/2124525039135633918",
+      "data": "2026-11-22T15:26:55Z",
+      "tekst": "@btibor91: https://x.com/i/article/2124467736143163392",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "btibor91"
+    }
+  ],
+  "ne_otvetili": [],
+  "tolko_v_vidennye": [],
+  "github_polnyy_obhod": false,
+  "istochniki": [
+    "claude.dev",
+    "Claude Code",
+    "Claude Platform",
+    "Блог Claude",
+    "OpenAI",
+    "Codex",
+    "OpenAI API",
+    "AINews",
+    "Simon Willison",
+    "Ben's Bites",
+    "Cursor",
+    "DeepMind",
+    "Блог Google",
+    "Google Developers Blog",
+    "Techmeme",
+    "GitHub Claude Code"
+  ],
+  "iks": {
+    "akkauntov": 30,
+    "ne_otvetili": []
+  }
+}
