@@ -1,0 +1,88 @@
+{
+ "krupnye": [],
+ "sayty": [
+  {
+   "zagolovok": "Google позволяет подключить Wallet, Drive и приложение Gemini к персональному интеллекту в режиме ИИ поиска",
+   "url": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/",
+   "istochnik": "Блог Google",
+   "zvezda": false,
+   "idy": [
+    "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/"
+   ]
+  },
+  {
+   "zagolovok": "Совет директоров Nvidia единогласно вернул Дженсена Хуанга на пост главы компании",
+   "url": "https://www.techmeme.com/261123/p20#a261123p20",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261123/p20#a261123p20",
+    "https://x.com/testingcatalog/status/2124868735332708631",
+    "https://www.techmeme.com/261123/p21#a261123p21",
+    "https://www.techmeme.com/261123/p22#a261123p22"
+   ]
+  },
+  {
+   "zagolovok": "Claude: нулевое хранение данных с Enterprise Frontier Safeguards вышло в бету",
+   "url": "https://claude.com/resources/articles/zero-data-retention-with-enterprise-frontier-safeguards",
+   "istochnik": "Блог Claude",
+   "zvezda": false,
+   "idy": [
+    "https://platform.claude.com/docs/en/release-notes/overview#enterprise-frontier-safeguards",
+    "https://claude.com/resources/articles/zero-data-retention-with-enterprise-frontier-safeguards"
+   ]
+  },
+  {
+   "zagolovok": "DeepMind: команды агентов и формальная проверка ускоряют квантовые алгоритмы для химии и термоядерной энергии",
+   "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/",
+   "istochnik": "DeepMind",
+   "zvezda": false,
+   "idy": [
+    "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/",
+    "https://x.com/GoogleDeepMind/status/2124911073266413634"
+   ]
+  }
+ ],
+ "x": [
+  {
+   "zagolovok": "OpenAI запустила OpenWorks: платит местным ИИ-экспертам, чтобы они бесплатно помогали малому бизнесу",
+   "url": "https://x.com/OpenAI/status/2124922133545714160",
+   "akkaunt": "OpenAI",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/OpenAI/status/2124922133545714160",
+    "https://x.com/btibor91/status/2124919196383604841"
+   ]
+  },
+  {
+   "zagolovok": "Новые рабочие пространства ChatGPT Business, созданные до 30 ноября, получат двойной лимит до 31 декабря",
+   "url": "https://x.com/thsottiaux/status/2124922313019953319",
+   "akkaunt": "thsottiaux",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/thsottiaux/status/2124922313019953319"
+   ]
+  },
+  {
+   "zagolovok": "Mistral даёт месяц Vibe Pro бесплатно всем разработчикам в Европе без лимита мест",
+   "url": "https://x.com/MistralAI/status/2124905610386780451",
+   "akkaunt": "MistralAI",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/MistralAI/status/2124905610386780451"
+   ]
+  }
+ ],
+ "dengi": [
+  {
+   "zagolovok": "Amazon договорилась купить большую часть ИИ-стартапа Decart примерно за 7,5 млрд долларов",
+   "url": "https://www.techmeme.com/261123/p23#a261123p23",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261123/p23#a261123p23"
+   ]
+  }
+ ],
+ "github": []
+}
