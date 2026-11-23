@@ -1554,10 +1554,80 @@
       "url": "https://x.com/testingcatalog/status/2124666576263692490",
       "vid": "x",
       "zagolovok": "Приложение Grok Bot для macOS скоро получит локальное управление компьютером и диктовку в любом приложении"
+    },
+    {
+      "data": "2026-11-23T10:17:50Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261123/p8#a261123p8",
+      "vid": "sayty",
+      "zagolovok": "Китайские исследования: ИИ США может сократить время ядерного решения до 90 секунд"
+    },
+    {
+      "data": "2026-11-23T10:17:50Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261123/p7#a261123p7",
+      "vid": "sayty",
+      "zagolovok": "Губернаторы США предлагают разделить регулирование ИИ: проверка моделей — федеральная, защита потребителей — штатная"
+    },
+    {
+      "data": "2026-11-23T10:17:50Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261122/p16#a261122p16",
+      "vid": "sayty",
+      "zagolovok": "GPT-6.2 Astra и Claude Fable 5.2 почти равны на трёх задачах, но Fable обошёлся в 5+ раз дороже"
+    },
+    {
+      "data": "2026-11-23T10:17:51Z",
+      "oboroty": false,
+      "url": "https://x.com/testingcatalog/status/2124797839503225042",
+      "vid": "x",
+      "zagolovok": "Zhipu открыла тестирование GLM-5.4 с новым зрением для подписчиков кодерских тарифов; бенчмарков и открытых весов пока нет"
+    },
+    {
+      "data": "2026-11-23T10:17:51Z",
+      "oboroty": false,
+      "url": "https://x.com/romainhuet/status/2124753204776968615",
+      "vid": "x",
+      "zagolovok": "GPT-6.2 Astra — единственная модель, победившая Сета Блинга в новом тесте KradleBench в Minecraft"
+    },
+    {
+      "data": "2026-11-23T10:17:51Z",
+      "oboroty": false,
+      "url": "https://x.com/romainhuet/status/2124723188097774054",
+      "vid": "dengi",
+      "zagolovok": "Databricks, по слухам, ведёт переговоры о раунде Series N при оценке 225 млрд долларов"
+    },
+    {
+      "data": "2026-11-23T10:17:51Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261123/p4#a261123p4",
+      "vid": "dengi",
+      "zagolovok": "Китайский стартап Simplexity Robotics привлёк 100 млн долларов при оценке 1,6 млрд"
+    },
+    {
+      "data": "2026-11-23T10:17:51Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261123/p3#a261123p3",
+      "vid": "dengi",
+      "zagolovok": "Compute Desk, строящая биржевую инфраструктуру для вычислений, привлекла 45 млн долларов"
+    },
+    {
+      "data": "2026-11-23T10:17:51Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261123/p5#a261123p5",
+      "vid": "dengi",
+      "zagolovok": "Aevius, чьи модели анализируют здоровье пациентов, привлекла 22 млн долларов"
+    },
+    {
+      "data": "2026-11-23T10:17:51Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261122/p18#a261122p18",
+      "vid": "dengi",
+      "zagolovok": "Arva AI, делающая агентов для банковского комплаенса, привлекла 20 млн долларов"
     }
   ],
-  "posledniy_sbor": "2026-11-23T01:14:56Z",
-  "posledniy_slot": "2026-11-23T02:00:00Z",
+  "posledniy_sbor": "2026-11-23T09:13:02Z",
+  "posledniy_slot": "2026-11-23T10:00:00Z",
   "vidennye": {
     "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/": "2026-11-13T02:17:22Z",
     "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/": "2026-11-19T02:19:54Z",
@@ -2106,7 +2176,12 @@
     "https://www.techmeme.com/261122/p13#a261122p13": "2026-11-23T02:16:35Z",
     "https://www.techmeme.com/261122/p14#a261122p14": "2026-11-23T02:16:35Z",
     "https://www.techmeme.com/261122/p15#a261122p15": "2026-11-23T02:16:35Z",
+    "https://www.techmeme.com/261122/p16#a261122p16": "2026-11-23T10:17:50Z",
+    "https://www.techmeme.com/261122/p17#a261122p17": "2026-11-23T10:17:51Z",
+    "https://www.techmeme.com/261122/p18#a261122p18": "2026-11-23T10:17:51Z",
+    "https://www.techmeme.com/261122/p19#a261122p19": "2026-11-23T10:17:51Z",
     "https://www.techmeme.com/261122/p2#a261122p2": "2026-11-22T10:20:49Z",
+    "https://www.techmeme.com/261122/p20#a261122p20": "2026-11-23T10:17:51Z",
     "https://www.techmeme.com/261122/p3#a261122p3": "2026-11-22T10:20:49Z",
     "https://www.techmeme.com/261122/p4#a261122p4": "2026-11-22T10:20:49Z",
     "https://www.techmeme.com/261122/p5#a261122p5": "2026-11-22T10:20:49Z",
@@ -2114,6 +2189,14 @@
     "https://www.techmeme.com/261122/p7#a261122p7": "2026-11-22T18:16:29Z",
     "https://www.techmeme.com/261122/p8#a261122p8": "2026-11-22T18:16:29Z",
     "https://www.techmeme.com/261122/p9#a261122p9": "2026-11-23T02:16:35Z",
+    "https://www.techmeme.com/261123/p1#a261123p1": "2026-11-23T10:17:51Z",
+    "https://www.techmeme.com/261123/p2#a261123p2": "2026-11-23T10:17:51Z",
+    "https://www.techmeme.com/261123/p3#a261123p3": "2026-11-23T10:17:51Z",
+    "https://www.techmeme.com/261123/p4#a261123p4": "2026-11-23T10:17:51Z",
+    "https://www.techmeme.com/261123/p5#a261123p5": "2026-11-23T10:17:51Z",
+    "https://www.techmeme.com/261123/p6#a261123p6": "2026-11-23T10:17:51Z",
+    "https://www.techmeme.com/261123/p7#a261123p7": "2026-11-23T10:17:50Z",
+    "https://www.techmeme.com/261123/p8#a261123p8": "2026-11-23T10:17:50Z",
     "https://x.com/AIatMeta/status/2119912647034642817": "2026-11-10T20:46:16Z",
     "https://x.com/AIatMeta/status/2123484005089558692": "2026-11-20T02:21:40Z",
     "https://x.com/AIatMeta/status/2123882678332322134": "2026-11-21T02:23:16Z",
@@ -2285,6 +2368,8 @@
     "https://x.com/romainhuet/status/2121416122637615319": "2026-11-14T10:17:27Z",
     "https://x.com/romainhuet/status/2121757659766661452": "2026-11-15T02:20:29Z",
     "https://x.com/romainhuet/status/2123924316110966824": "2026-11-21T02:23:15Z",
+    "https://x.com/romainhuet/status/2124723188097774054": "2026-11-23T10:17:51Z",
+    "https://x.com/romainhuet/status/2124753204776968615": "2026-11-23T10:17:51Z",
     "https://x.com/sama/status/2122798039899263456": "2026-11-18T02:20:43Z",
     "https://x.com/sama/status/2123103873166381287": "2026-11-19T02:19:55Z",
     "https://x.com/sama/status/2124551594691932405": "2026-11-22T18:16:29Z",
@@ -2333,6 +2418,7 @@
     "https://x.com/swyx/status/2123843282082132335": "2026-11-21T02:23:16Z",
     "https://x.com/swyx/status/2124147427313861009": "2026-11-21T18:15:58Z",
     "https://x.com/swyx/status/2124583459356373052": "2026-11-23T02:16:35Z",
+    "https://x.com/swyx/status/2124730733147390347": "2026-11-23T10:17:51Z",
     "https://x.com/testingcatalog/status/2119894220748280190": "2026-11-10T20:46:17Z",
     "https://x.com/testingcatalog/status/2119913217371799774": "2026-11-10T20:46:17Z",
     "https://x.com/testingcatalog/status/2119914321245577334": "2026-11-10T20:46:17Z",
@@ -2490,6 +2576,7 @@
     "https://x.com/testingcatalog/status/2124473529764852190": "2026-11-22T18:16:29Z",
     "https://x.com/testingcatalog/status/2124494418891645153": "2026-11-22T18:16:29Z",
     "https://x.com/testingcatalog/status/2124666576263692490": "2026-11-23T02:16:35Z",
+    "https://x.com/testingcatalog/status/2124797839503225042": "2026-11-23T10:17:51Z",
     "https://x.com/thsottiaux/status/2120021043876106429": "2026-11-10T20:46:17Z",
     "https://x.com/thsottiaux/status/2120266880963473789": "2026-11-11T00:04:15Z",
     "https://x.com/thsottiaux/status/2120267268517249036": "2026-11-11T00:04:17Z",
@@ -2523,6 +2610,7 @@
     "https://x.com/trq212/status/2123524052195463568": "2026-11-20T02:21:40Z",
     "https://x.com/trq212/status/2123892474334806400": "2026-11-21T02:23:16Z",
     "https://x.com/trq212/status/2123909357071159327": "2026-11-21T02:23:16Z",
-    "https://x.com/trq212/status/2124239682691387634": "2026-11-22T02:22:29Z"
+    "https://x.com/trq212/status/2124239682691387634": "2026-11-22T02:22:29Z",
+    "https://x.com/trq212/status/2124767804247379968": "2026-11-23T10:17:51Z"
   }
 }
