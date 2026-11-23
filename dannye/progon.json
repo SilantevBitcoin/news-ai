@@ -1,0 +1,302 @@
+{
+  "nachalo_progona": "2026-11-23T02:08:01Z",
+  "nachalo_perioda": "2026-11-22T17:14:52Z",
+  "nachalo_okna": "2026-11-22T02:08:01Z",
+  "pervyy_progon": false,
+  "kandidaty": [
+    {
+      "id": "https://openai.com/index/perplexity-and-intelligence",
+      "istochnik": "OpenAI",
+      "zagolovok": "Perplexity and Intelligence",
+      "url": "https://openai.com/index/perplexity-and-intelligence",
+      "data": "2026-11-22T00:00:00Z",
+      "tekst": "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://simonwillison.net/2026/Nov/22/select-styling/",
+      "istochnik": "Simon Willison",
+      "zagolovok": "Select Styling Specimens",
+      "url": "https://simonwillison.net/2026/Nov/22/select-styling/",
+      "data": "2026-11-22T19:45:06Z",
+      "tekst": "Tool: Select Styling Specimens\n\nI got frustrated at how HTML <select> boxes default to looking different in different browsers, and are (I think) quite ugly in Chrome:\n\nSo I had Claude Fable 5.2 build me this page showing all of the ways they can be styled:\n\nBuild an HTML page that shows all of the ways a select box can be styled, I plan to take screenshots in every desktop and mobile browser\n\nAfter some experimentation I've decided my favorite CSS for select boxes is this:\n\nselect {\nappearance: none;\ncolor: #1f2933;\npadding: 0.5em 2.25em 0.5em 0.75em;\nborder: 1px solid #c4cbd3;\nborder-radius: 6px;\nbackground: #fff url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23667085' stroke-width='1.5'/%3E%3C/svg%3E\") no-repeat right 0.75em center / 0.75em;\n}\n\nHere's what that looks like in the three browsers:\n\nTags: tools, css, html",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261122/p16#a261122p16",
+      "istochnik": "Techmeme",
+      "zagolovok": "GPT-6.2 Astra vs. Claude Fable 5.2 hands-on: nearly tied on three custom accounting, coding, and data tasks, but Fable used far more tokens and cost 5x+ as much (Jessica Wachtel/The New Stack)",
+      "url": "https://www.techmeme.com/261122/p16#a261122p16",
+      "data": "2026-11-23T01:45:00Z",
+      "tekst": "Статья: https://thenewstack.io/gpt-6-2-astra-vs-claude-fable-5-2/\nJessica Wachtel / The New Stack:\n\nGPT-6.2 Astra vs. Claude Fable 5.2 hands-on: nearly tied on three custom accounting, coding, and data tasks, but Fable used far more tokens and cost 5x+ as much — When I compared Anthropic's Fable 5.2 vs. OpenAI's GPT-6 Astra last week, Fable 5.2 was slightly more accurate (149 points vs. 145).",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261122/p15#a261122p15",
+      "istochnik": "Techmeme",
+      "zagolovok": "Sources: Jay Clayton, director of national intelligence and AI czar, will also be acting national cyber director pending Kirsten A. Davies' Senate confirmation (Axios)",
+      "url": "https://www.techmeme.com/261122/p15#a261122p15",
+      "data": "2026-11-23T00:55:00Z",
+      "tekst": "Статья: https://www.axios.com/2026/11/23/jay-clayton-acting-national-cyber-director\nAxios:\n\nSources: Jay Clayton, director of national intelligence and AI czar, will also be acting national cyber director pending Kirsten A. Davies' Senate confirmation — Director of National Intelligence Jay Clayton will also serve as acting national cyber director while Kirsten Davies awaits Senate confirmation …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261122/p14#a261122p14",
+      "istochnik": "Techmeme",
+      "zagolovok": "A profile of siblings Dario and Daniela Amodei; while at OpenAI, Dario suggested immersive videogames might ease political strife from AI-induced joblessness (Wall Street Journal)",
+      "url": "https://www.techmeme.com/261122/p14#a261122p14",
+      "data": "2026-11-23T00:45:01Z",
+      "tekst": "Статья: https://www.wsj.com/tech/ai/anthropic-dario-daniela-amodei-siblings-ipo-be84ad11\nWall Street Journal:\n\nA profile of siblings Dario and Daniela Amodei; while at OpenAI, Dario suggested immersive videogames might ease political strife from AI-induced joblessness — Dario and Daniela Amodei were on top of the biggest IPO ever Thursday-and a market rout one day later.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261122/p13#a261122p13",
+      "istochnik": "Techmeme",
+      "zagolovok": "Sources: Alice Huang was in touch with an officer of China's spy agency MSS from spring 2025 until this fall; her business partner Kang Wei also worked with MSS (New York Times)",
+      "url": "https://www.techmeme.com/261122/p13#a261122p13",
+      "data": "2026-11-23T00:30:02Z",
+      "tekst": "Статья: https://www.nytimes.com/2026/11/22/us/politics/alice-huang-china-spy-agency-nvidia.html?unlocked_article_code=1.SlE.mMaV._G76gCoFrg-4&smid=url-share\nNew York Times:\n\nSources: Alice Huang was in touch with an officer of China's spy agency MSS from spring 2025 until this fall; her business partner Kang Wei also worked with MSS — U.S. intelligence is said to show that the woman at the heart of the A.I. chip scandal was in touch with China's Ministry …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261122/p12#a261122p12",
+      "istochnik": "Techmeme",
+      "zagolovok": "How Dario Amodei built Anthropic's tightly knit culture with essays, Slack memos, and \"Vision Quest\" talks, as Anthropic seeds his ideas with opinion-makers (Nitasha Tiku/Washington Post)",
+      "url": "https://www.techmeme.com/261122/p12#a261122p12",
+      "data": "2026-11-22T23:20:08Z",
+      "tekst": "Статья: https://www.washingtonpost.com/technology/2026/11/22/inside-an-ai-prophets-secretive-plans-humanitys-future/\nNitasha Tiku / Washington Post:\n\nHow Dario Amodei built Anthropic's tightly knit culture with essays, Slack memos, and “Vision Quest” talks, as Anthropic seeds his ideas with opinion-makers — Anthropic is worth more than $1 trillion. CEO Dario Amodei also wants to sell the world on his philosophy of the future.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261122/p11#a261122p11",
+      "istochnik": "Techmeme",
+      "zagolovok": "After FAA, Microsoft, and bank outages, DNI Jay Clayton says Americans should prepare for \"bumps in the road\" as systems are upgraded to adapt to the AI age (Garrett Downs/CNBC)",
+      "url": "https://www.techmeme.com/261122/p11#a261122p11",
+      "data": "2026-11-22T20:35:00Z",
+      "tekst": "Статья: https://www.cnbc.com/2026/11/22/jay-clayton-tech-outages-faa-microsoft-thanksgiving.html\nGarrett Downs / CNBC:\n\nAfter FAA, Microsoft, and bank outages, DNI Jay Clayton says Americans should prepare for “bumps in the road” as systems are upgraded to adapt to the AI age — Director of National Intelligence Jay Clayton warned Americans to prepare for “bumps in the road” …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261122/p10#a261122p10",
+      "istochnik": "Techmeme",
+      "zagolovok": "A week after urging an Nvidia shake-up, Scott Bessent says Jensen Huang's return should depend on probes of its China chip sales and presses Nvidia for answers (Alan Rappeport/New York Times)",
+      "url": "https://www.techmeme.com/261122/p10#a261122p10",
+      "data": "2026-11-22T19:50:01Z",
+      "tekst": "Статья: https://www.nytimes.com/2026/11/22/business/scott-bessent-jensen-huang-nvidia.html\nAlan Rappeport / New York Times:\n\nA week after urging an Nvidia shake-up, Scott Bessent says Jensen Huang's return should depend on probes of its China chip sales and presses Nvidia for answers — The treasury secretary said on CBS that it was too soon to say if Jensen Huang should return as the company's chief executive.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261122/p9#a261122p9",
+      "istochnik": "Techmeme",
+      "zagolovok": "OpenAI shares its models' perplexity, or how well they predict data, and urges pacing limits based on such metrics, citing a possible 2027 avalanche of AI gains (Jakub Pachocki/OpenAI)",
+      "url": "https://www.techmeme.com/261122/p9#a261122p9",
+      "data": "2026-11-22T18:25:01Z",
+      "tekst": "Статья: https://openai.com/index/perplexity-and-intelligence\nJakub Pachocki / OpenAI:\n\nOpenAI shares its models' perplexity, or how well they predict data, and urges pacing limits based on such metrics, citing a possible 2027 avalanche of AI gains — - Difficulty of comparison across labs. … - Detachment from actionable evaluations. … - Not accounting for advances outside of pretraining.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261122/p8#a261122p8",
+      "istochnik": "Techmeme",
+      "zagolovok": "Sources: amid leak fears, Anthropic limited some IPO banks to four-person teams, used a view-logging file platform, and sought six-month bans on advising rivals (Reuters)",
+      "url": "https://www.techmeme.com/261122/p8#a261122p8",
+      "data": "2026-11-22T17:15:01Z",
+      "tekst": "Статья: https://www.reuters.com/world/like-spacex-anthropic-ran-an-unusual-ipo-process-chafing-some-bankers-2026-11-22/\nReuters:\n\nSources: amid leak fears, Anthropic limited some IPO banks to four-person teams, used a view-logging file platform, and sought six-month bans on advising rivals — For the second time this year, Wall Street bankers and lawyers took home a massive paycheck from a record-setting initial public offering.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261122/p7#a261122p7",
+      "istochnik": "Techmeme",
+      "zagolovok": "Jony Ive, ex-OpenAI product designer Joey Flynn, and others on Silicon Valley's obsession with \"taste\" as a moat against AI slop and whether AI can learn it (Jonah Weiner/New York Times)",
+      "url": "https://www.techmeme.com/261122/p7#a261122p7",
+      "data": "2026-11-22T15:00:34Z",
+      "tekst": "Статья: https://www.nytimes.com/2026/11/20/magazine/ai-slop-taste-aesthetic-silicon-valley.html?unlocked_article_code=1.SFE.1a6T.-kpbFF_tJYZx&smid=url-share\nJonah Weiner / New York Times:\n\nJony Ive, ex-OpenAI product designer Joey Flynn, and others on Silicon Valley's obsession with “taste” as a moat against AI slop and whether AI can learn it — To move through A.I.-era San Francisco as a relatively normal person is to confront the sheer volume of bewildering concepts that tech has lately thrust upon us.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261122/p6#a261122p6",
+      "istochnik": "Techmeme",
+      "zagolovok": "Experts say AI has made planning cyberattacks on industrial equipment faster by helping attackers read manuals and research past accidents more quickly (Tom Wilson/Financial Times)",
+      "url": "https://www.techmeme.com/261122/p6#a261122p6",
+      "data": "2026-11-22T11:01:10Z",
+      "tekst": "Статья: https://www.ft.com/content/3cf882c6-0be6-43f5-b01e-b6f765686c8b?accessToken=zwAAAaH84u1pkc88-ILGC-ZD9dOwHrb3ZWhsiw.MEQCIEewq-yMEhWLLFytskbl4UfRofl-P5tnaU_ItSGndPYsAiB5E9iR8KtH8A9y5DsKiZxw46YWH_09vwzWKRqKB451VA&sharetype=gift&token=78da349b-c4b7-48c6-8dfa-5cf8d65ca0f1\nTom Wilson / Financial Times:\n\nExperts say AI has made planning cyberattacks on industrial equipment faster by helping attackers read manuals and research past accidents more quickly — The freezer war is just a start. The year is 2027. You wake up one morning to find you cannot use email or send instant messages.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261122/p5#a261122p5",
+      "istochnik": "Techmeme",
+      "zagolovok": "Current and former officials from the US and other countries describe the Chinese spy agency MSS' campaign to help Chinese companies acquire advanced AI chips (New York Times)",
+      "url": "https://www.techmeme.com/261122/p5#a261122p5",
+      "data": "2026-11-22T07:00:41Z",
+      "tekst": "Статья: https://www.nytimes.com/2026/11/21/world/asia/china-nvidia-spy-chips-state-security.html?unlocked_article_code=1.SVE.6AIw.4HHCTzFjtDId&smid=url-share\nNew York Times:\n\nCurrent and former officials from the US and other countries describe the Chinese spy agency MSS' campaign to help Chinese companies acquire advanced AI chips — China's espionage agency has been running a secret campaign to help the country's companies acquire advanced A.I. chips …",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261122/p4#a261122p4",
+      "istochnik": "Techmeme",
+      "zagolovok": "Tesla rolls out FSD v15, featuring a photorealistic rendering of car surroundings; Elon Musk says it is real-time AI video generation without using game engines (Mike Pearl/Gizmodo)",
+      "url": "https://www.techmeme.com/261122/p4#a261122p4",
+      "data": "2026-11-22T06:40:16Z",
+      "tekst": "Статья: https://gizmodo.com/its-like-gta-musk-touts-video-game-like-update-to-tesla-fsd-2000843584\nMike Pearl / Gizmodo:\n\nTesla rolls out FSD v15, featuring a photorealistic rendering of car surroundings; Elon Musk says it is real-time AI video generation without using game engines — FSD v15 was released to some vehicles on Saturday. Its visualization system may be the most remarkable part.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261122/p3#a261122p3",
+      "istochnik": "Techmeme",
+      "zagolovok": "A joint statement by the Lean and Mathlib communities says \"we have full confidence that Alpöge's proof of the Riemann Hypothesis is correct\" (Lean community blog)",
+      "url": "https://www.techmeme.com/261122/p3#a261122p3",
+      "data": "2026-11-22T06:00:02Z",
+      "tekst": "Статья: https://leanprover-community.github.io/\nLean community blog:\n\nA joint statement by the Lean and Mathlib communities says “we have full confidence that Alpöge's proof of the Riemann Hypothesis is correct” — Joint statement by the Lean and Mathlib communities, endorsed by the Lean FRO and the Mathlib Initiative.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261122/p2#a261122p2",
+      "istochnik": "Techmeme",
+      "zagolovok": "Sources: AI server suppliers like Dell, HPE, Lenovo, and Supermicro are demanding substantially higher prices from buyers, months after contracts were signed (Financial Times)",
+      "url": "https://www.techmeme.com/261122/p2#a261122p2",
+      "data": "2026-11-22T05:50:01Z",
+      "tekst": "Статья: https://www.ft.com/content/dd2a6594-6146-4ff1-ac8e-54749c1fc99f\nFinancial Times:\n\nSources: AI server suppliers like Dell, HPE, Lenovo, and Supermicro are demanding substantially higher prices from buyers, months after contracts were signed — Dell, HPE, Lenovo and Supermicro demand more for equipment, with the increased costs hitting trading firms",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://x.com/sama/status/2124551594691932405",
+      "istochnik": "X",
+      "zagolovok": "This is the most important thing OpenAI has published in awhile. We are providing a lot of transparency into our pretrai",
+      "url": "https://x.com/sama/status/2124551594691932405",
+      "data": "2026-11-22T17:12:27Z",
+      "tekst": "@sama: This is the most important thing OpenAI has published in awhile.\n\nWe are providing a lot of transparency into our pretraining progress and hope we can agree as a frield to common limits. I think that would be very wise and help ensure safety and control.\n\nЦитирует @merettm: We decided to provide more transparency into pretraining progress at OpenAI for the sake of moving toward shared safety bars. In “Perplexity and Intelligence” I argue for common limits based on perplexity and other measurements, with progress beyond them gated on our ability to understand AI behavior.\n\nhttps://openai.com/index/perplexity-and-intelligence",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "sama"
+    },
+    {
+      "id": "https://x.com/kevinweil/status/2124606602888274311",
+      "istochnik": "X",
+      "zagolovok": "Accurate",
+      "url": "https://x.com/kevinweil/status/2124606602888274311",
+      "data": "2026-11-22T20:51:02Z",
+      "tekst": "@kevinweil: Accurate",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "kevinweil"
+    },
+    {
+      "id": "https://x.com/swyx/status/2124583459356373052",
+      "istochnik": "X",
+      "zagolovok": "OpenAI proposes perplexity as the universal metric for industry self regulation and pacing (as opposed to eg FLOPS) “Giv",
+      "url": "https://x.com/swyx/status/2124583459356373052",
+      "data": "2026-11-22T19:19:04Z",
+      "tekst": "@swyx: OpenAI proposes perplexity as the universal metric for industry self regulation and pacing (as opposed to eg FLOPS)\n\n“Given that the main way new surprising capabilities emerge is by progress on compression, a measure rooted in perplexity could give us a shared benchmark for general intelligence, regardless of the degree of automation of the development process. Extrapolating from recent progress, we should expect further transformative capabilities as we enter the ~0.68-0.7 log-perplexity window.”\n\nthis chart is one of the most beautiful ways to tell the story of the last 4 years. it also shows that a lot of the post training issues we debate is kinda the B plot to the overall A plot of large scale pretrain progress.\n\nЦитирует @merettm: We decided to provide more transparency into pretraining progress at OpenAI for the sake of moving toward shared safety bars. In “Perplexity and Intelligence” I argue for common limits based on perplexity and other measurements, with progress beyond them gated on our ability to understand AI behavior.\n\nhttps://openai.com/index/perplexity-and-intelligence",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "swyx"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2124666576263692490",
+      "istochnik": "X",
+      "zagolovok": "SPACEXSI 🔥: Grok Bot app for macOS is about to get Computer Use and system-level dictation features. Currently, Computer",
+      "url": "https://x.com/testingcatalog/status/2124666576263692490",
+      "data": "2026-11-23T00:49:20Z",
+      "tekst": "@testingcatalog: SPACEXSI 🔥: Grok Bot app for macOS is about to get Computer Use and system-level dictation features. \n\nCurrently, Computer Use on Grok Bot is already available through cloud VMs, while the team is working on a local Computer Use feature that lets Grok Bot operate apps on your desktop. \n\nAdditionally, \"Dictation in any app\" is in the works! \n\n> \"Talk in any app, Hotkeys, dictionary, snippets, whisper, retention, and history live in their own window.\"\n\nSupergrok app incoming 👀",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2124494418891645153",
+      "istochnik": "X",
+      "zagolovok": "Google continues to work on a new \"Inbox mode\" for Antigravity, where users will be able to see threads that require the",
+      "url": "https://x.com/testingcatalog/status/2124494418891645153",
+      "data": "2026-11-22T13:25:15Z",
+      "tekst": "@testingcatalog: Google continues to work on a new \"Inbox mode\" for Antigravity, where users will be able to see threads that require their attention. \n\nIt follows a broader shift we see across other Google AI tools, like Gemini (in the works) and Loop (waitlist). This change positions users in the decision-making seat to approve and review AI outcomes, rather than steering them precisely, as a main interface. \n\nAntigravity is also getting new logic to create AI agents from the prompt, distinguished as \"For Me\" and \"For my Team\". \n\nIt is getting even more interesting now 👀",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2124473529764852190",
+      "istochnik": "X",
+      "zagolovok": "GOOGLE 🔥: There have been several hints pointing to a Google AI subscription becoming available on 3rd-party harness app",
+      "url": "https://x.com/testingcatalog/status/2124473529764852190",
+      "data": "2026-11-22T12:02:14Z",
+      "tekst": "@testingcatalog: GOOGLE 🔥: There have been several hints pointing to a Google AI subscription becoming available on 3rd-party harness apps on December 2nd. \n\nHermes is among the first ones 👀\n\nЦитирует @OfficialLoganK: @kunchenguid December 2nd we take the first step",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/btibor91/status/2124550678626660680",
+      "istochnik": "X",
+      "zagolovok": "OpenAI published its internal perplexity measurements and proposes perplexity as a shared metric to compare model develo",
+      "url": "https://x.com/btibor91/status/2124550678626660680",
+      "data": "2026-11-22T17:08:48Z",
+      "tekst": "@btibor91: OpenAI published its internal perplexity measurements and proposes perplexity as a shared metric to compare model developers\n\nGPT-3.5 was at a log-perplexity of ~0.99, GPT-4 at ~0.91, and losses below 0.8 brought capabilities in cybersecurity and mathematics\n\nFurther transformative capabilities are expected in the ~0.68-0.7 window\n\nProposed common limits for developers would hold until AI monitoring reaches a concrete milestone\n\nhttps://openai.com/index/perplexity-and-intelligence/",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "btibor91"
+    },
+    {
+      "id": "https://x.com/btibor91/status/2124526478381678847",
+      "istochnik": "X",
+      "zagolovok": "OpenAI and Anthropic this week: GPT-6.2, Anthropic IPO, Riemann Hypothesis claim, black holes, ChatGPT Space (Week 47, 2",
+      "url": "https://x.com/btibor91/status/2124526478381678847",
+      "data": "2026-11-22T15:32:38Z",
+      "tekst": "@btibor91: OpenAI and Anthropic this week: GPT-6.2, Anthropic IPO, Riemann Hypothesis claim, black holes, ChatGPT Space (Week 47, 2026)\n\nOpenAI launched GPT-6.2 Astra and GPT-6.2 Sol in ChatGPT Work, Codex and the API, with Astra priced 20% lower than GPT-6 Astra\n\nFrom my own testing, GPT-6.2 Astra upgraded a multimillion-line legacy app with all tests passing after about six hours\n\nOpenAI started a science blog, opening with a candidate lattice definition of the Standard Model built with GPT-6 Astra\n\nOpenAI signed agreements for a first phase of embedded assessments with Apollo Research, METR, Transluce and Goodfire, and shared that agents now complete 46% of two-to-four-hour research tasks at OpenAI on their own\n\nChatGPT is getting Live Dictation, ChatGPT for Sales and Accounting launched, and Space is rolling out globally to Plus users\n\nFor developers, GPT-Live-1.1 is available in the API, and the Responses API background mode got discounted two-hour and eight-hour completion windows in public beta\n\nOpenAI is bringing Daybreak to NATO and allied cyber defense agencies, and signed journalism partnerships with LVMH's Media Division and Le Groupe Figaro\n\nAnthropic priced its IPO at $83 per share and started trading on Nasdaq as ANT, then closed the offering with the full underwriter option and a $26 billion private placement\n\nAnthropic's Levent Alpöge claims a proof of the Riemann Hypothesis found working with Claude, published for now only as a Lean formalization with a writeup still to come\n\nAnthropic reported that Claude Fable 5.2 solved two open problems in black hole physics\n\nClaude Code got an experimental Code Mode, linked billing launched in beta on the Claude Platform, and Anthropic started rolling out a refreshed Claude mobile app, and more\n\nЦитирует @btibor91: https://x.com/i/article/2124467736143163392",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "btibor91"
+    },
+    {
+      "id": "https://x.com/btibor91/status/2124525039135633918",
+      "istochnik": "X",
+      "zagolovok": "https://x.com/i/article/2124467736143163392",
+      "url": "https://x.com/btibor91/status/2124525039135633918",
+      "data": "2026-11-22T15:26:55Z",
+      "tekst": "@btibor91: https://x.com/i/article/2124467736143163392",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "btibor91"
+    }
+  ],
+  "ne_otvetili": [],
+  "tolko_v_vidennye": [],
+  "github_polnyy_obhod": false,
+  "istochniki": [
+    "claude.dev",
+    "Claude Code",
+    "Claude Platform",
+    "Блог Claude",
+    "OpenAI",
+    "Codex",
+    "OpenAI API",
+    "AINews",
+    "Simon Willison",
+    "Ben's Bites",
+    "Cursor",
+    "DeepMind",
+    "Блог Google",
+    "Google Developers Blog",
+    "Techmeme",
+    "GitHub Claude Code"
+  ],
+  "iks": {
+    "akkauntov": 30,
+    "ne_otvetili": []
+  }
+}
