@@ -1,0 +1,157 @@
+{
+ "krupnye": [
+  {
+   "zagolovok": "Claude Ship: Claude сам проверяет, чинит и одобряет pull request'ы",
+   "abzacy": [
+    "Anthropic запустила в бете Claude Ship — набор, который проводит pull request через проверку, правки и решение об одобрении.",
+    "Он состоит из уже доступного Code Review и двух новых агентов в бете: PR Steward и Claude Approvals.",
+    "PR Steward следит, чтобы запрос оставался зелёным: берётся за упавшие проверки, конфликты слияния и замечания ревьюеров, а после каждого пуша пишет, что изменил и как это откатить.",
+    "Claude Approvals применяет политику одобрения, которую команда хранит файлом в репозитории: рутинные изменения может одобрить сам, а для остальных требует подписи человека.",
+    "Разработчик может запустить всё командой /ship в Claude Code, а администратор — включить Claude Ship на весь репозиторий, и тогда команда не нужна.",
+    "Администраторы выбирают глубину проверки (быструю, стандартную или глубокую), задают лимиты расходов и могут начать с режима наблюдения без права одобрять.",
+    "Бета открыта для тарифов Team и Enterprise; подходящим организациям Enterprise Anthropic даёт кредиты на сумму от 10 тысяч долларов."
+   ],
+   "url": "https://claude.com/resources/articles/introducing-claude-ship",
+   "oboroty": false,
+   "idy": [
+    "https://claude.com/resources/articles/introducing-claude-ship",
+    "https://x.com/ClaudeDevs/status/2124959436640858475",
+    "https://x.com/bcherny/status/2124961485801836573",
+    "https://www.techmeme.com/261123/p41#a261123p41",
+    "https://x.com/testingcatalog/status/2124990088002310579"
+   ]
+  }
+ ],
+ "sayty": [
+  {
+   "zagolovok": "Claude Opus 4.5 объявлен устаревшим: на API его отключат 22 января 2027, лучше перейти на Opus 5.5",
+   "url": "https://platform.claude.com/docs/en/release-notes/overview#claude-opus-4-5-deprecation",
+   "istochnik": "Claude Platform",
+   "zvezda": false,
+   "idy": [
+    "https://platform.claude.com/docs/en/release-notes/overview#claude-opus-4-5-deprecation"
+   ]
+  },
+  {
+   "zagolovok": "GLM-5.4 от Zhipu вышла: первая модель лаборатории с зацикленным трансформером, где общие слои обрабатывают данные по нескольку проходов",
+   "url": "https://simonwillison.net/2026/Nov/23/glm-54/",
+   "istochnik": "Simon Willison",
+   "zvezda": false,
+   "idy": [
+    "https://simonwillison.net/2026/Nov/23/glm-54/",
+    "https://x.com/simonw/status/2125017693917155424",
+    "https://x.com/testingcatalog/status/2124797839503225042",
+    "https://x.com/testingcatalog/status/2124825630852194638"
+   ]
+  },
+  {
+   "zagolovok": "Gemini API: PDF, документы Office, аудио и видео можно передавать целиком и просить только нужные страницы, ячейки и фрагменты",
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/",
+   "istochnik": "Блог Google",
+   "zvezda": false,
+   "idy": [
+    "https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/",
+    "https://x.com/OfficialLoganK/status/2124938672399384681"
+   ]
+  },
+  {
+   "zagolovok": "Claude Code 2.1.331: Code Mode в терминале на Bedrock, Google Cloud, Foundry и Claude Platform on AWS, раздел проверки связи с API в claude doctor",
+   "url": "https://code.claude.com/docs/en/changelog#2-1-331",
+   "istochnik": "Claude Code",
+   "zvezda": false,
+   "idy": [
+    "https://code.claude.com/docs/en/changelog#2-1-331"
+   ]
+  },
+  {
+   "zagolovok": "Минторг США внёс Megaspeed в список ограничений: продавать этой компании чипы без лицензии нельзя",
+   "url": "https://www.techmeme.com/261123/p40#a261123p40",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261123/p40#a261123p40"
+   ]
+  }
+ ],
+ "x": [
+  {
+   "zagolovok": "Коннекторы и навыки объединены в плагины: открыты на Free, Pro, Max и Ultra, для Team и Enterprise — скоро, в каталоге больше 10 000",
+   "url": "https://x.com/claudeai/status/2124970294523945328",
+   "akkaunt": "claudeai",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/claudeai/status/2124970294523945328"
+   ]
+  },
+  {
+   "zagolovok": "GPT-6.2 Sol, настроенная на повседневный разговор, раскатывается во вкладке Chat в ChatGPT для Plus, Pro, Business и Enterprise",
+   "url": "https://x.com/thsottiaux/status/2124998553856844186",
+   "akkaunt": "thsottiaux",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/thsottiaux/status/2124998553856844186",
+    "https://x.com/testingcatalog/status/2124946994439610482"
+   ]
+  },
+  {
+   "zagolovok": "Gemini 4 Neon раскатана на клиентов Google Workspace в приложении Gemini",
+   "url": "https://x.com/OfficialLoganK/status/2125018427790344654",
+   "akkaunt": "OfficialLoganK",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/OfficialLoganK/status/2125018427790344654"
+   ]
+  },
+  {
+   "zagolovok": "Gemini 4 Carbon стала доступна на тарифе Google AI Pro, а Hydrogen — всем пользователям Antigravity",
+   "url": "https://x.com/testingcatalog/status/2124962486105280698",
+   "akkaunt": "testingcatalog",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/testingcatalog/status/2124962486105280698"
+   ]
+  },
+  {
+   "zagolovok": "OpenAI и Cisco выпустили Shirudo — открытую среду для Linux, где агенты пишут eBPF-правила защиты от эксплойтов без простоя систем",
+   "url": "https://x.com/OpenAI/status/2124980590717911527",
+   "akkaunt": "OpenAI",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/OpenAI/status/2124980590717911527",
+    "https://x.com/gdb/status/2124985602722676794"
+   ]
+  },
+  {
+   "zagolovok": "GPT-6 Cyber за один прогон подтвердила 948 уязвимостей ядра Linux, дающих локальный root, и подготовила патчи",
+   "url": "https://x.com/OpenAI/status/2125007927098699827",
+   "akkaunt": "OpenAI",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/OpenAI/status/2125007927098699827",
+    "https://x.com/gdb/status/2125015245383180300",
+    "https://x.com/thsottiaux/status/2125027477877887231"
+   ]
+  },
+  {
+   "zagolovok": "В Antigravity можно выбрать пару моделей и уровень рассуждений для оркестратора",
+   "url": "https://x.com/testingcatalog/status/2124938733354918133",
+   "akkaunt": "testingcatalog",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/testingcatalog/status/2124938733354918133"
+   ]
+  }
+ ],
+ "dengi": [
+  {
+   "zagolovok": "Supertake, превращающая прогнозы пользователей в инвестпортфели с помощью ИИ-агентов, привлекла 20 млн долларов в seed-раунде",
+   "url": "https://www.techmeme.com/261123/p46#a261123p46",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261123/p46#a261123p46"
+   ]
+  }
+ ],
+ "github": []
+}
