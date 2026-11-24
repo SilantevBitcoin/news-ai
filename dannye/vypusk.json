@@ -1,0 +1,58 @@
+{
+ "krupnye": [],
+ "sayty": [
+  {
+   "zagolovok": "Claude: серверы MCP теперь могут поставлять навыки (Skills over MCP, публичная бета), а задачи и запросы ввода вышли из беты",
+   "url": "https://claude.com/resources/articles/skills-over-mcp-tasks-and-more",
+   "istochnik": "Блог Claude",
+   "zvezda": false,
+   "idy": [
+    "https://claude.com/resources/articles/skills-over-mcp-tasks-and-more",
+    "https://x.com/ClaudeDevs/status/2125289794871963935",
+    "https://x.com/claudeai/status/2124970294523945328"
+   ]
+  }
+ ],
+ "x": [
+  {
+   "zagolovok": "OpenAI открыла в API медицинские конфигурации моделей GPT-6.2 Sol и Astra с поиском по базе медицинских источников",
+   "url": "https://x.com/testingcatalog/status/2125283519484338640",
+   "akkaunt": "testingcatalog",
+   "zvezda": false,
+   "idy": [
+    "https://developers.openai.com/api/docs/changelog#2026-11-24 Feature · gpt-6.2-astra-healthcare · gpt-6.2-sol-healthcare · gpt-6-astra-healthcare · gpt-6.1-sol-healthcare · v1/responses: Released Healthcare model configurations for the Responses API, pairing se",
+    "https://x.com/testingcatalog/status/2125283519484338640"
+   ]
+  },
+  {
+   "zagolovok": "ChatGPT начал выдавать небольшой группе подписчиков Pro объединённый режим «Чат и Работа»",
+   "url": "https://x.com/thsottiaux/status/2125284868414394550",
+   "akkaunt": "thsottiaux",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/thsottiaux/status/2125284868414394550"
+   ]
+  }
+ ],
+ "dengi": [
+  {
+   "zagolovok": "Акции Anthropic упали на 12% до ~76 долларов — ниже цены IPO в 83 доллара",
+   "url": "https://www.techmeme.com/261124/p21#a261124p21",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261124/p21#a261124p21"
+   ]
+  },
+  {
+   "zagolovok": "Zipher, ИИ-агенты для управления рабочими нагрузками данных, привлёк 53 млн долларов",
+   "url": "https://www.techmeme.com/261124/p19#a261124p19",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261124/p19#a261124p19"
+   ]
+  }
+ ],
+ "github": []
+}
