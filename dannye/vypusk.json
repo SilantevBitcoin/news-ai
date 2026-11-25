@@ -1,0 +1,13 @@
+{
+  "krupnye": [],
+  "sayty": [],
+  "x": [
+    {"zagolovok": "OpenAI опубликовала препринт: показатель степени в умножении матриц равен ровно 9/4 — нижняя оценка найдена моделью, как и верхняя", "url": "https://x.com/gdb/status/2125418102049628201", "akkaunt": "gdb", "zvezda": false, "idy": ["https://x.com/gdb/status/2125418102049628201", "https://x.com/gdb/status/2125428215347085370", "https://www.techmeme.com/261125/p5#a261125p5"]},
+    {"zagolovok": "Fujitsu вместе с OpenAI запускает сервис поиска уязвимостей глазами атакующего и вступает в сеть Daybreak Defense Network", "url": "https://x.com/gdb/status/2125488568101736872", "akkaunt": "gdb", "zvezda": false, "idy": ["https://x.com/gdb/status/2125488568101736872"]}
+  ],
+  "dengi": [
+    {"zagolovok": "ЕС готов направить до 50 млрд евро в фонд Sovereign Tech Equity Fund для покупки долей в европейских ИИ- и квантовых компаниях", "url": "https://www.techmeme.com/261125/p1#a261125p1", "istochnik": "Techmeme", "zvezda": false, "idy": ["https://www.techmeme.com/261125/p1#a261125p1"]},
+    {"zagolovok": "AidenAI, интегрирующая ИИ в корпоративные приложения и процессы, привлекла 32 млн долларов в раунде A под руководством A91 Partners", "url": "https://www.techmeme.com/261125/p2#a261125p2", "istochnik": "Techmeme", "zvezda": false, "idy": ["https://www.techmeme.com/261125/p2#a261125p2"]}
+  ],
+  "github": []
+}
