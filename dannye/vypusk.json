@@ -1,0 +1,109 @@
+{
+ "krupnye": [
+  {
+   "zagolovok": "Claude: артефакты можно установить как приложения для Mac и Windows",
+   "abzacy": [
+    "Anthropic запустила в бете функцию «Установить как приложение» в Claude для Mac и Windows.",
+    "Установленный артефакт получает собственный значок и открывается в отдельном окне, а не внутри Claude.",
+    "Приложением можно поделиться с другими людьми.",
+    "Каждое приложение использует Claude и подключённые коннекторы и обновляется само, когда меняется артефакт.",
+    "Права выдаются на трёх уровнях: как в браузере, расширенные (уведомления, глобальные сочетания клавиш, значок в меню) и полный доступ к компьютеру.",
+    "Разрешение действует только для текущей версии, после каждого обновления Claude спрашивает снова.",
+    "Полный доступ можно дать лишь приложениям, которые сделали вы сами или коллеги по организации в Team и Enterprise; администраторы могут отключить права для организации.",
+    "Запросы приложения к Claude идут в лимиты тарифа, а Anthropic не проверяет приложения заранее."
+   ],
+   "url": "https://claude.com/resources/articles/install-as-app",
+   "oboroty": false,
+   "idy": [
+    "https://claude.com/resources/articles/install-as-app",
+    "https://x.com/ClaudeDevs/status/2125315491522650299",
+    "https://x.com/testingcatalog/status/2125370559001231814",
+    "https://www.techmeme.com/261124/p40#a261124p40"
+   ]
+  }
+ ],
+ "sayty": [
+  {
+   "zagolovok": "GPT-6.2 Astra за 22 минуты определила автора анонимного альбома 1808 года из Йеля — случай историка",
+   "url": "https://simonwillison.net/2026/Nov/24/astra-historical-mystery/",
+   "istochnik": "Simon Willison",
+   "zvezda": true,
+   "idy": [
+    "https://simonwillison.net/2026/Nov/24/astra-historical-mystery/",
+    "https://www.techmeme.com/261124/p49#a261124p49",
+    "https://x.com/gdb/status/2125305172721320165"
+   ]
+  },
+  {
+   "zagolovok": "Agent Retrieval в Vertex AI: управляемая загрузка файлов и SearchDocuments возвращают ответы с цитатами за один вызов API",
+   "url": "https://developers.googleblog.com/from-files-to-cited-answers-in-one-api-call-managed-ingestion-and-searchdocuments-in-agent-retrieval/",
+   "istochnik": "Google Developers Blog",
+   "zvezda": false,
+   "idy": [
+    "https://developers.googleblog.com/from-files-to-cited-answers-in-one-api-call-managed-ingestion-and-searchdocuments-in-agent-retrieval/"
+   ]
+  },
+  {
+   "zagolovok": "Claude Code 2.1.332: навыки из серверов MCP (бета), хук PreSkillShellCommand, уровень Cyber Verification Program в заголовке",
+   "url": "https://code.claude.com/docs/en/changelog#2-1-332",
+   "istochnik": "Claude Code",
+   "zvezda": false,
+   "idy": [
+    "https://code.claude.com/docs/en/changelog#2-1-332"
+   ]
+  }
+ ],
+ "x": [
+  {
+   "zagolovok": "Модели GPT-6 проектируют новые белки только рассуждением и кодом, без специальных биомоделей; препринт с лабораторной проверкой",
+   "url": "https://x.com/OpenAI/status/2125334383490105601",
+   "akkaunt": "OpenAI",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/OpenAI/status/2125334383490105601",
+    "https://x.com/gdb/status/2125341356503748716",
+    "https://www.techmeme.com/261124/p44#a261124p44"
+   ]
+  },
+  {
+   "zagolovok": "Siren: проверка, сбегут ли ИИ-агенты из ослабленной песочницы — модели Claude выходили за её рамки в 21–32% случаев, а с описанием правил — не более 2%",
+   "url": "https://x.com/AnthropicAI/status/2125341904644763678",
+   "akkaunt": "AnthropicAI",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/AnthropicAI/status/2125341904644763678",
+    "https://www.techmeme.com/261124/p38#a261124p38"
+   ]
+  },
+  {
+   "zagolovok": "Исследование: интерпретировать модели можно по отдельным нейронам — прежние возражения оказались слабее, чем считалось",
+   "url": "https://x.com/AnthropicAI/status/2125365268381929637",
+   "akkaunt": "AnthropicAI",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/AnthropicAI/status/2125365268381929637"
+   ]
+  },
+  {
+   "zagolovok": "ChatGPT Business: накопленный сброс лимитов и быстрый режим без доплаты до 31 декабря",
+   "url": "https://x.com/thsottiaux/status/2125299248782778588",
+   "akkaunt": "thsottiaux",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/thsottiaux/status/2125299248782778588"
+   ]
+  }
+ ],
+ "dengi": [
+  {
+   "zagolovok": "Dell: выручка третьего квартала выросла на 103% до 54,94 млрд долларов на спросе на ИИ-серверы, прогноз на год поднят в третий раз",
+   "url": "https://www.techmeme.com/261124/p39#a261124p39",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261124/p39#a261124p39"
+   ]
+  }
+ ],
+ "github": []
+}
