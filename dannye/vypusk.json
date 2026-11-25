@@ -1,0 +1,57 @@
+{
+  "krupnye": [],
+  "sayty": [],
+  "x": [
+    {
+      "zagolovok": "OpenAI тестирует Private Inference — обработку запросов на собственном хостинге клиента в рамках Private Intelligence",
+      "url": "https://x.com/sama/status/2125638790593274259",
+      "akkaunt": "sama",
+      "zvezda": false,
+      "idy": [
+        "https://x.com/sama/status/2125638790593274259",
+        "https://x.com/testingcatalog/status/2125642883801997653"
+      ]
+    },
+    {
+      "zagolovok": "Anthropic перевела Messages API с Python на Rust, сверяя новый сервис со старым командами агентов Claude",
+      "url": "https://x.com/AnthropicAI/status/2125627317263466739",
+      "akkaunt": "AnthropicAI",
+      "zvezda": false,
+      "idy": [
+        "https://x.com/AnthropicAI/status/2125627317263466739",
+        "https://x.com/ClaudeDevs/status/2125628717263372512",
+        "https://www.techmeme.com/261125/p26#a261125p26"
+      ]
+    },
+    {
+      "zagolovok": "Gemini Live получил ещё 60+ голосов с местными акцентами для США, Великобритании, Индии, Индонезии, Кореи и Бразилии",
+      "url": "https://x.com/testingcatalog/status/2125648140455858183",
+      "akkaunt": "testingcatalog",
+      "zvezda": false,
+      "idy": [
+        "https://x.com/testingcatalog/status/2125648140455858183"
+      ]
+    }
+  ],
+  "dengi": [
+    {
+      "zagolovok": "Техакции падают: Nasdaq 100 теряет более 4%, Nvidia и Anthropic — свыше 9%",
+      "url": "https://www.techmeme.com/261125/p24#a261125p24",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261125/p24#a261125p24"
+      ]
+    },
+    {
+      "zagolovok": "Медиакомпания Every, консультирующая по внедрению ИИ, привлекла 17,5 млн долларов при оценке 110 млн",
+      "url": "https://www.techmeme.com/261125/p28#a261125p28",
+      "istochnik": "Techmeme",
+      "zvezda": false,
+      "idy": [
+        "https://www.techmeme.com/261125/p28#a261125p28"
+      ]
+    }
+  ],
+  "github": []
+}
