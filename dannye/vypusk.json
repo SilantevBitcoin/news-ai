@@ -1,0 +1,15 @@
+{
+  "krupnye": [],
+  "sayty": [
+    {"zagolovok": "Reuters: флагманская модель Zhipu GLM-5.5 на 3 трлн параметров не вышла в ноябре и может задержаться до первого квартала 2027 года или дольше из-за ограничений США и мер против дистилляции", "url": "https://www.techmeme.com/261126/p11#a261126p11", "istochnik": "Techmeme", "zvezda": false, "idy": ["https://www.techmeme.com/261126/p11#a261126p11"]}
+  ],
+  "x": [
+    {"zagolovok": "Mistral Large 4 находит объект на карте и обводит его; в задачах на визуальную привязку, по словам компании, обходит даже закрытые передовые модели", "url": "https://x.com/MistralAI/status/2125915743212761359", "akkaunt": "MistralAI", "zvezda": false, "idy": ["https://x.com/MistralAI/status/2125915743212761359"]},
+    {"zagolovok": "Anthropic тестирует управление файлами Google Drive в Claude: просмотр Docs, Sheets и Slides прямо в интерфейсе", "url": "https://x.com/testingcatalog/status/2126014729273405625", "akkaunt": "testingcatalog", "zvezda": false, "idy": ["https://x.com/testingcatalog/status/2126014729273405625"]}
+  ],
+  "dengi": [
+    {"zagolovok": "Avicena, соединяющая ИИ-чипы микросветодиодами вместо лазеров, привлекла более 100 млн долларов в раунде C; среди участников SK hynix, Samsung и AMD", "url": "https://www.techmeme.com/261126/p20#a261126p20", "istochnik": "Techmeme", "zvezda": false, "idy": ["https://www.techmeme.com/261126/p20#a261126p20"]},
+    {"zagolovok": "TrustedRouter, стартап со сквозным шифрованием для корпоративных ИИ-запросов, привлёк 6 млн долларов и обрабатывает уже более 6 млрд токенов в сутки", "url": "https://www.techmeme.com/261126/p18#a261126p18", "istochnik": "Techmeme", "zvezda": false, "idy": ["https://www.techmeme.com/261126/p18#a261126p18"]}
+  ],
+  "github": []
+}
