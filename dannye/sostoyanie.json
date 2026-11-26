@@ -2,76 +2,6 @@
   "github_obhod": true,
   "opublikovannye": [
     {
-      "data": "2026-11-12T18:10:15Z",
-      "oboroty": true,
-      "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/",
-      "vid": "sayty",
-      "zagolovok": "Google выпустила Gemini 4 Hydrogen — быструю модель для кода и мультимодальных задач"
-    },
-    {
-      "data": "2026-11-12T18:10:15Z",
-      "oboroty": false,
-      "url": "https://simonwillison.net/2026/Nov/11/gemini-decisions-api/",
-      "vid": "sayty",
-      "zagolovok": "Google запустила Gemini Decision 1 — модель-«решатель» за 10 центов на миллион токенов"
-    },
-    {
-      "data": "2026-11-12T18:10:15Z",
-      "oboroty": false,
-      "url": "https://claude.com/resources/articles/self-hosted-claude-managed-agents",
-      "vid": "sayty",
-      "zagolovok": "Claude Managed Agents можно целиком развернуть в своей инфраструктуре (закрытая бета)"
-    },
-    {
-      "data": "2026-11-12T18:10:15Z",
-      "oboroty": false,
-      "url": "https://claude.com/resources/articles/claude-for-manufacturing",
-      "vid": "sayty",
-      "zagolovok": "Claude для производства: плагин из 17 навыков и четырёх коннекторов"
-    },
-    {
-      "data": "2026-11-12T18:10:15Z",
-      "oboroty": false,
-      "url": "https://www.techmeme.com/261112/p31#a261112p31",
-      "vid": "sayty",
-      "zagolovok": "Глава Nvidia Дженсен Хуанг ушёл в отставку, акции компании упали на 14%"
-    },
-    {
-      "data": "2026-11-12T18:10:15Z",
-      "oboroty": false,
-      "url": "https://platform.claude.com/docs/en/release-notes/overview#dreams-claude-fable-5-2",
-      "vid": "sayty",
-      "zagolovok": "Dreams в Claude теперь работает на Claude Fable 5.2"
-    },
-    {
-      "data": "2026-11-12T18:10:15Z",
-      "oboroty": false,
-      "url": "https://developers.openai.com/codex/changelog/#codex-2026-11-10-mobile",
-      "vid": "sayty",
-      "zagolovok": "Приложение Codex для iOS: вставка файлов и картинок, диктовка заметок"
-    },
-    {
-      "data": "2026-11-12T18:10:16Z",
-      "oboroty": false,
-      "url": "https://x.com/AnthropicAI/status/2120841731302154708",
-      "vid": "dengi",
-      "zagolovok": "Anthropic опубликовала страницу своего IPO с проспектом эмиссии"
-    },
-    {
-      "data": "2026-11-12T18:10:16Z",
-      "oboroty": false,
-      "url": "https://latent.space/p/ainews-mercor-750m-series-d-at-20b-valuation-3b-run-rate/",
-      "vid": "dengi",
-      "zagolovok": "Mercor привлёк 750 млн долларов при оценке в 20 млрд"
-    },
-    {
-      "data": "2026-11-12T18:10:16Z",
-      "oboroty": false,
-      "url": "https://www.techmeme.com/261112/p35#a261112p35",
-      "vid": "dengi",
-      "zagolovok": "LangChain привлекла 300 млн долларов при оценке в 3 млрд"
-    },
-    {
       "data": "2026-11-13T02:17:22Z",
       "oboroty": true,
       "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/",
@@ -1862,10 +1792,45 @@
       "url": "https://www.techmeme.com/261125/p48#a261125p48",
       "vid": "dengi",
       "zagolovok": "Фонд Леопольда Ашенбреннера Situational Awareness потерял 65% в третьем квартале после комиссий, но с начала года в плюсе на 88,5%"
+    },
+    {
+      "data": "2026-11-26T18:21:41Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261126/p11#a261126p11",
+      "vid": "sayty",
+      "zagolovok": "Reuters: флагманская модель Zhipu GLM-5.5 на 3 трлн параметров не вышла в ноябре и может задержаться до первого квартала 2027 года или дольше из-за ограничений США и мер против дистилляции"
+    },
+    {
+      "data": "2026-11-26T18:21:42Z",
+      "oboroty": false,
+      "url": "https://x.com/MistralAI/status/2125915743212761359",
+      "vid": "x",
+      "zagolovok": "Mistral Large 4 находит объект на карте и обводит его; в задачах на визуальную привязку, по словам компании, обходит даже закрытые передовые модели"
+    },
+    {
+      "data": "2026-11-26T18:21:42Z",
+      "oboroty": false,
+      "url": "https://x.com/testingcatalog/status/2126014729273405625",
+      "vid": "x",
+      "zagolovok": "Anthropic тестирует управление файлами Google Drive в Claude: просмотр Docs, Sheets и Slides прямо в интерфейсе"
+    },
+    {
+      "data": "2026-11-26T18:21:42Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261126/p20#a261126p20",
+      "vid": "dengi",
+      "zagolovok": "Avicena, соединяющая ИИ-чипы микросветодиодами вместо лазеров, привлекла более 100 млн долларов в раунде C; среди участников SK hynix, Samsung и AMD"
+    },
+    {
+      "data": "2026-11-26T18:21:42Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261126/p18#a261126p18",
+      "vid": "dengi",
+      "zagolovok": "TrustedRouter, стартап со сквозным шифрованием для корпоративных ИИ-запросов, привлёк 6 млн долларов и обрабатывает уже более 6 млрд токенов в сутки"
     }
   ],
-  "posledniy_sbor": "2026-11-26T09:15:08Z",
-  "posledniy_slot": "2026-11-26T10:00:00Z",
+  "posledniy_sbor": "2026-11-26T17:15:45Z",
+  "posledniy_slot": "2026-11-26T18:00:00Z",
   "vidennye": {
     "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-hydrogen-builders/": "2026-11-24T02:21:47Z",
     "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-neon-builders/": "2026-11-24T18:22:58Z",
@@ -2100,6 +2065,8 @@
     "https://simonwillison.net/2026/Nov/24/llm-inflection-points/": "2026-11-25T02:21:15Z",
     "https://simonwillison.net/2026/Nov/25/datasette-charts/": "2026-11-26T10:22:19Z",
     "https://simonwillison.net/2026/Nov/25/scott-aaronson/": "2026-11-26T02:17:08Z",
+    "https://simonwillison.net/2026/Nov/26/hn-50651685/": "2026-11-26T18:21:42Z",
+    "https://simonwillison.net/2026/Nov/26/jack-despain-zhou/": "2026-11-26T18:21:42Z",
     "https://simonwillison.net/2026/Nov/26/sqlite3-rsync/": "2026-11-26T10:22:19Z",
     "https://simonwillison.net/2026/Nov/9/llm-anthropic/": "2026-11-10T20:46:17Z",
     "https://simonwillison.net/2026/Nov/9/mysterious-beeps/": "2026-11-10T20:46:17Z",
@@ -2581,12 +2548,26 @@
     "https://www.techmeme.com/261125/p8#a261125p8": "2026-11-25T10:21:42Z",
     "https://www.techmeme.com/261125/p9#a261125p9": "2026-11-25T10:21:42Z",
     "https://www.techmeme.com/261126/p1#a261126p1": "2026-11-26T10:22:19Z",
+    "https://www.techmeme.com/261126/p10#a261126p10": "2026-11-26T18:21:42Z",
+    "https://www.techmeme.com/261126/p11#a261126p11": "2026-11-26T18:21:41Z",
+    "https://www.techmeme.com/261126/p12#a261126p12": "2026-11-26T18:21:42Z",
+    "https://www.techmeme.com/261126/p13#a261126p13": "2026-11-26T18:21:42Z",
+    "https://www.techmeme.com/261126/p14#a261126p14": "2026-11-26T18:21:42Z",
+    "https://www.techmeme.com/261126/p15#a261126p15": "2026-11-26T18:21:42Z",
+    "https://www.techmeme.com/261126/p16#a261126p16": "2026-11-26T18:21:42Z",
+    "https://www.techmeme.com/261126/p17#a261126p17": "2026-11-26T18:21:42Z",
+    "https://www.techmeme.com/261126/p18#a261126p18": "2026-11-26T18:21:42Z",
+    "https://www.techmeme.com/261126/p19#a261126p19": "2026-11-26T18:21:42Z",
     "https://www.techmeme.com/261126/p2#a261126p2": "2026-11-26T10:22:19Z",
+    "https://www.techmeme.com/261126/p20#a261126p20": "2026-11-26T18:21:42Z",
+    "https://www.techmeme.com/261126/p21#a261126p21": "2026-11-26T18:21:42Z",
+    "https://www.techmeme.com/261126/p22#a261126p22": "2026-11-26T18:21:42Z",
     "https://www.techmeme.com/261126/p3#a261126p3": "2026-11-26T10:22:19Z",
     "https://www.techmeme.com/261126/p4#a261126p4": "2026-11-26T10:22:19Z",
     "https://www.techmeme.com/261126/p5#a261126p5": "2026-11-26T10:22:19Z",
     "https://www.techmeme.com/261126/p6#a261126p6": "2026-11-26T10:22:19Z",
     "https://www.techmeme.com/261126/p7#a261126p7": "2026-11-26T10:22:19Z",
+    "https://www.techmeme.com/261126/p9#a261126p9": "2026-11-26T18:21:42Z",
     "https://x.com/AIatMeta/status/2119912647034642817": "2026-11-10T20:46:16Z",
     "https://x.com/AIatMeta/status/2123484005089558692": "2026-11-20T02:21:40Z",
     "https://x.com/AIatMeta/status/2123882678332322134": "2026-11-21T02:23:16Z",
@@ -2666,6 +2647,7 @@
     "https://x.com/MistralAI/status/2123339999244636509": "2026-11-19T10:22:04Z",
     "https://x.com/MistralAI/status/2123418013278114139": "2026-11-19T18:23:31Z",
     "https://x.com/MistralAI/status/2124905610386780451": "2026-11-23T18:12:55Z",
+    "https://x.com/MistralAI/status/2125915743212761359": "2026-11-26T18:21:42Z",
     "https://x.com/OfficialLoganK/status/2120024720510984234": "2026-11-10T20:46:17Z",
     "https://x.com/OfficialLoganK/status/2120186016254624039": "2026-11-10T20:46:17Z",
     "https://x.com/OfficialLoganK/status/2120372550354280848": "2026-11-12T18:10:16Z",
@@ -2830,6 +2812,8 @@
     "https://x.com/sama/status/2124894264564092952": "2026-11-23T18:12:55Z",
     "https://x.com/sama/status/2125638790593274259": "2026-11-25T18:21:33Z",
     "https://x.com/sama/status/2125639418849714280": "2026-11-25T18:21:34Z",
+    "https://x.com/sama/status/2125983591389974980": "2026-11-26T18:21:42Z",
+    "https://x.com/sama/status/2125990371897557278": "2026-11-26T18:21:42Z",
     "https://x.com/simonw/status/2119945524514328631": "2026-11-10T20:46:17Z",
     "https://x.com/simonw/status/2120029347948220500": "2026-11-10T20:46:17Z",
     "https://x.com/simonw/status/2120258951594037732": "2026-11-11T00:04:17Z",
@@ -2849,6 +2833,7 @@
     "https://x.com/simonw/status/2125619997796123135": "2026-11-25T18:21:34Z",
     "https://x.com/simonw/status/2125640464863056148": "2026-11-26T02:17:08Z",
     "https://x.com/simonw/status/2125816458911600681": "2026-11-26T10:22:19Z",
+    "https://x.com/simonw/status/2125998873252605954": "2026-11-26T18:21:42Z",
     "https://x.com/swyx/status/2119935240202539147": "2026-11-10T20:46:17Z",
     "https://x.com/swyx/status/2120187167901372559": "2026-11-10T20:46:17Z",
     "https://x.com/swyx/status/2120208862221684809": "2026-11-10T20:46:17Z",
@@ -2889,6 +2874,9 @@
     "https://x.com/swyx/status/2125627281230205435": "2026-11-25T18:21:34Z",
     "https://x.com/swyx/status/2125638081848250634": "2026-11-25T18:21:34Z",
     "https://x.com/swyx/status/2125717383839162505": "2026-11-26T02:17:08Z",
+    "https://x.com/swyx/status/2125969097276178943": "2026-11-26T18:21:42Z",
+    "https://x.com/swyx/status/2125993331482345858": "2026-11-26T18:21:42Z",
+    "https://x.com/swyx/status/2125995865525629084": "2026-11-26T18:21:42Z",
     "https://x.com/testingcatalog/status/2119894220748280190": "2026-11-10T20:46:17Z",
     "https://x.com/testingcatalog/status/2119913217371799774": "2026-11-10T20:46:17Z",
     "https://x.com/testingcatalog/status/2119914321245577334": "2026-11-10T20:46:17Z",
@@ -3073,6 +3061,8 @@
     "https://x.com/testingcatalog/status/2125749051048046703": "2026-11-26T02:17:08Z",
     "https://x.com/testingcatalog/status/2125850156872409349": "2026-11-26T10:22:19Z",
     "https://x.com/testingcatalog/status/2125853297227518069": "2026-11-26T10:22:19Z",
+    "https://x.com/testingcatalog/status/2125978663870947513": "2026-11-26T18:21:42Z",
+    "https://x.com/testingcatalog/status/2126014729273405625": "2026-11-26T18:21:42Z",
     "https://x.com/thsottiaux/status/2120021043876106429": "2026-11-10T20:46:17Z",
     "https://x.com/thsottiaux/status/2120266880963473789": "2026-11-11T00:04:15Z",
     "https://x.com/thsottiaux/status/2120267268517249036": "2026-11-11T00:04:17Z",
