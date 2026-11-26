@@ -1,0 +1,56 @@
+{
+ "krupnye": [],
+ "sayty": [
+  {
+   "zagolovok": "Nvidia велела партнёрам-сборщикам остановить поставки ИИ-серверов в Малайзию, Сингапур, Таиланд и Индонезию на фоне ужесточения экспортного контроля США",
+   "url": "https://www.techmeme.com/261126/p2#a261126p2",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261126/p2#a261126p2"
+   ]
+  }
+ ],
+ "x": [
+  {
+   "zagolovok": "Qwen-Audio-3.1 расширили по языкам: распознавание речи — 59 языков, синтез — 65, живой режим — 53, с упором на китайские диалекты",
+   "url": "https://x.com/Alibaba_Qwen/status/2125798914490249411",
+   "akkaunt": "Alibaba_Qwen",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/Alibaba_Qwen/status/2125798914490249411"
+   ]
+  },
+  {
+   "zagolovok": "OpenAI исправила ошибку тарификации GPT-6.2: лимиты Astra расходуются на 40% быстрее, Sol — на 25%, в извинение всем на Go, Plus, Pro и Business добавят накопленный сброс лимитов",
+   "url": "https://x.com/thsottiaux/status/2125784147889393806",
+   "akkaunt": "thsottiaux",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/thsottiaux/status/2125784147889393806",
+    "https://x.com/testingcatalog/status/2125850156872409349"
+   ]
+  },
+  {
+   "zagolovok": "Google сбросила квоту Gemini в Antigravity для всех пользователей в честь Дня благодарения",
+   "url": "https://x.com/testingcatalog/status/2125853297227518069",
+   "akkaunt": "testingcatalog",
+   "zvezda": false,
+   "idy": [
+    "https://x.com/testingcatalog/status/2125853297227518069"
+   ]
+  }
+ ],
+ "dengi": [
+  {
+   "zagolovok": "Фонд Леопольда Ашенбреннера Situational Awareness потерял 65% в третьем квартале после комиссий, но с начала года в плюсе на 88,5%",
+   "url": "https://www.techmeme.com/261125/p48#a261125p48",
+   "istochnik": "Techmeme",
+   "zvezda": false,
+   "idy": [
+    "https://www.techmeme.com/261125/p48#a261125p48"
+   ]
+  }
+ ],
+ "github": []
+}
