@@ -1,0 +1,552 @@
+{
+  "nachalo_progona": "2026-11-26T02:08:08Z",
+  "nachalo_perioda": "2026-11-25T17:15:44Z",
+  "nachalo_okna": "2026-11-25T02:08:08Z",
+  "pervyy_progon": false,
+  "kandidaty": [
+    {
+      "id": "https://claude.com/resources/articles/install-as-app",
+      "istochnik": "Блог Claude",
+      "zagolovok": "Turn artifacts into Mac and Windows apps",
+      "url": "https://claude.com/resources/articles/install-as-app",
+      "data": "2026-11-24T00:00:00Z",
+      "tekst": "Open the artifacts you use every day like any other app, and let them do more on your computer",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://claude.com/resources/articles/skills-over-mcp-tasks-and-more",
+      "istochnik": "Блог Claude",
+      "zagolovok": "MCP servers can now ship skills, run tasks, and more with Claude",
+      "url": "https://claude.com/resources/articles/skills-over-mcp-tasks-and-more",
+      "data": "2026-11-24T00:00:00Z",
+      "tekst": "",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://developers.openai.com/api/docs/changelog#2026-11-24 Update · chat-latest: Updated the chat-latest snapshot, which points to the latest model available in ChatGPT for Plus, Pro, Business and Enterprise users.",
+      "istochnik": "OpenAI API",
+      "zagolovok": "Update · chat-latest: Updated the chat-latest snapshot, which points to the latest model available in ChatGPT for Plus, Pro, Business and Enterprise users.",
+      "url": "https://developers.openai.com/api/docs/changelog",
+      "data": "2026-11-24T00:00:00Z",
+      "tekst": "Updated the chat-latest snapshot, which points to the latest model available in ChatGPT for Plus, Pro, Business and Enterprise users. We recommend leveraging the GPT-6.2 model family for production API usage, but feel free to use this model to test the latest improvements for chat use cases. The underlying model snapshot will be regularly updated. Read more here.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://developers.openai.com/api/docs/changelog#2026-11-24 Feature · gpt-6.2-astra-healthcare · gpt-6.2-sol-healthcare · gpt-6-astra-healthcare · gpt-6.1-sol-healthcare · v1/responses: Released Healthcare model configurations for the Responses API, pairing se",
+      "istochnik": "OpenAI API",
+      "zagolovok": "Feature · gpt-6.2-astra-healthcare · gpt-6.2-sol-healthcare · gpt-6-astra-healthcare · gpt-6.1-sol-healthcare · v1/responses: Released Healthcare model configurations for the Responses API, pairing se",
+      "url": "https://developers.openai.com/api/docs/changelog",
+      "data": "2026-11-24T00:00:00Z",
+      "tekst": "Released Healthcare model configurations for the Responses API, pairing select OpenAI models with a harness tailored to clinical questions. When the model uses web search, it searches a dedicated index of medical sources.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them/",
+      "istochnik": "AINews",
+      "zagolovok": "[AINews] Math Proofs Are Landing Faster Than We Can Read Them",
+      "url": "https://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them/",
+      "data": "2026-11-25T22:23:41Z",
+      "tekst": "AINews by Latent Space\n\nScott Aaronson was still trying to digest two proofs of VP ≠ VNP at dinner. Before dessert, an OpenAI paper claimed that the square matrix multiplication exponent ω is exactly 9/4. During dessert, another paper claimed matching upper and lower bounds for the finite Fourier transform. The lower bound is the biggest news. In October, OpenAI found an upper bound for ω down to at most 9/4. Finding the lower bound = upper bound leaves only one possible value, which is a shocking result for most.\n\nWe plotted 64 selected AI-assisted research advances so far this year. November accounts for 20, including six preprints from Google’s Cogentic. The curve follows public releases, including proofs still under review. We count the two VP ≠ VNP proofs once and give October’s faster matrix multiplication algorithm and November’s matching lower bound an entry each.\n\nThe big releases underline how much a paper count can hide. OpenAI’s catalogue lists 730 manuscripts across 375 result families, including follow-ups and companion arguments. Its revision log also records three October withdrawals after a sign error in one paper affected two others. Yupan Liu showed that two messages suffice for quantum interactive proofs, a result that would have been a big deal on its own. Aaronson says Liu used AI and that he had to remind himself the result had even happened.\n\nIn other big news, today’s guest Thariq Shihipar announced his big move from Anthropic to OpenAI, the second high profile Ant→OAI move in recent times after Cat Wu. We dive into his two philosophies of AI and how and where /humans add taste.\n\nAI News for 11/25/2026. We checked 12 subreddits, 544 Twitters and no further Discords. AINews' website lets you search all past issues. As a reminder, AINews is now a section of Latent Space. You can opt in/out of email frequencies!\n\nAI Twitter Recap\n\nAI-Generated Math Results: Matmul Exponent, Factoring and Lean Proofs\n\nMatrix multiplication exponent: OpenAI's model claims a lower bound matching its October upper bound, making ω exactly 9/4. Previously no nontrivial lower bound was known (@SebastienBubeck; repo).\n\nMechanism: The result reportedly comes through an explicit superlinear circuit lower bound (@wjmzbmr1).\n\nImplications: Bubeck notes that a prior Lee et al. result implies LPs solvable in n^{9/4}. He also says LPs can now be solved in strongly polynomial time, a Smale problem (follow-up).\n\nExpert reaction: Omri Weinstein calls it \"truly surreal\" if correct, since most experts expected ω = 2 (@WeinsteinOmri).\n\nOpenAI batch: Nine new papers with Lean proofs came out a day after a claimed VP ≠ VNP proof (summary).\n\nOther claims: Fourier transform complexity of n√log n (@lreyzin).\n\nInteger multiplication: Also n√log n, tight under weak ETH (@cloneofsimo).\n\nSame-day solutions: Anthropic posted its own VP ≠ VNP solution the same day (@vitaliychiley).\n\nGoogle Cogentic: Six papers were posted to GitHub without an announcement, produced by an a",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://latent.space/p/ainews-gemini-4-neon-marks-gdm-s-full-return-as-a-frontier-lab/",
+      "istochnik": "AINews",
+      "zagolovok": "[AINews] Gemini 4 Neon marks GDM's full return as a Frontier Lab",
+      "url": "https://latent.space/p/ainews-gemini-4-neon-marks-gdm-s-full-return-as-a-frontier-lab/",
+      "data": "2026-11-25T04:29:07Z",
+      "tekst": "Three months ago, shortly after the Demis/Dean/etc departures, and with disappointing progress on Gemini 3 models, people had publicly given up on Google DeepMind as a frontier lab. Today, apologies are being issued, and Neon is the talk of the town!\n\nView post on X ↗\n\nDespite giving Gemini 4 Argon (RIP), Carbon and Neon the title story (with Hydrogen a near miss), we are exercising yet another rare double-feature choice to highlight the unusually strong breakout trend in Neon’s adoption:\n\nView post on X ↗\n\nView post on X ↗\n\nView post on X ↗\n\nView post on X ↗\n\nView post on X ↗\n\nView post on X ↗\n\nView post on X ↗\n\nView post on X ↗\n\nView post on X ↗\n\nIf this seems like a coordinated hype campaign, it very probably isn’t, mostly because the names we feature can’t be bought, especially coming up to the end.\n\nView post on X ↗\n\nAI News for 11/23/2026-11/24/2026. We checked 12 subreddits, 544 Twitters and no further Discords. AINews' website lets you search all past issues. As a reminder, AINews is now a section of Latent Space. You can opt in/out of email frequencies!\n\nAI Twitter Recap\n\nFrontier Models as Research Engines: VP ≠ VNP, Protein Design and 948 Kernel Bugs\n\nVP ≠ VNP, posted by two labs: An Anthropic GitHub repo reportedly contains a proof by an internal Claude research model that VP ≠ VNP. This is the algebraic analogue of P vs NP, posed by Valiant in 1979, and implies that polynomials such as the permanent lack small circuits over every field (@kimmonismus, repo pointer).\n\nOpenAI's counter-release: OpenAI then posted its own proof and says it was \"obtained on November 6, 2026.\" Neither lab named a model or published an announcement (@AndrewCurran_).\n\nScope: The result does not imply P ≠ NP, which still requires general Boolean circuit lower bounds (@ZhihuFrontier).\n\nSpeculation: Curran argues that both labs are sitting on unreleased results and repeats unconfirmed rumors of cryptography breakthroughs. Treat this as opinion.\n\nRiemann proof clarifications: Levent Alpöge says the \"250,000+ pages\" claim was a joke. He released only the Lean code because he could not produce a readable writeup, and called it \"full of garbage obviously, but compiles\" (@kimmonismus, @simonw).\n\nLineage claim: A Zhihu analysis traces Alpöge's key method to a short OpenAI proof excluding Landau–Siegel zeros. This is an attributed inference (@ZhihuFrontier).\n\nGPT-6 protein design, wet-lab validated: OpenAI released a preprint showing GPT-6 models designing new protein shapes and sequences through reasoning and code, without specialized bio models (@OpenAI).\n\nResults: 14 of 107 resequenced proteins showed binding. 128 of 182 redesigned small antibodies and 179 of 272 antibody fragments retained binding (details).\n\nCost caveat: On a prior DNA task, GPT-6.1 Sol was about 2,000x more expensive per task than a specialized model (@_lewtun).\n\nGPT-6 Cyber and the Linux kernel: In one run, GPT-6 Cyber helped validate 948 Linux kernel bugs that could grant local root and genera",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://simonwillison.net/2026/Nov/25/scott-aaronson/",
+      "istochnik": "Simon Willison",
+      "zagolovok": "Quoting Scott Aaronson",
+      "url": "https://simonwillison.net/2026/Nov/25/scott-aaronson/",
+      "data": "2026-11-25T23:26:32Z",
+      "tekst": "It’s now obvious that we’ll be getting, not one-off solutions to this or that complexity question, but a whole new continent of mathematical truth, one that we’d previously only glimpsed through fog. Picture van Leeuwenhoek first training a microscope on pondwater, or Galileo first training his telescope on the stars. That might give you some idea of how our resolution into the complexity-theoretic universe, and the whole universe of mathematical truth beyond it, has now improved.\n\n— Scott Aaronson\n\nTags: mathematics, llms, ai, generative-ai",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://developers.googleblog.com/from-files-to-cited-answers-in-one-api-call-managed-ingestion-and-searchdocuments-in-agent-retrieval/",
+      "istochnik": "Google Developers Blog",
+      "zagolovok": "From Files to Cited Answers in One API Call: Managed Ingestion and SearchDocuments in Agent Retrieval",
+      "url": "https://developers.googleblog.com/from-files-to-cited-answers-in-one-api-call-managed-ingestion-and-searchdocuments-in-agent-retrieval/",
+      "data": "2026-11-24T00:00:00Z",
+      "tekst": "Agent Retrieval in Vertex AI introduces managed ingestion and SearchDocuments to replace custom chunking and embedding pipelines. Developers can now import document and video files directly from Cloud Storage and query them with a single API call for cited page numbers and timestamped results. The feature supports hybrid retrieval, metadata filtering, reranking, and multimodal video audio search.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261125/p45#a261125p45",
+      "istochnik": "Techmeme",
+      "zagolovok": "Investigation: Nvidia sells its most advanced chips to at least two Chinese-owned California companies, which have leased or sold some of them to firms in Asia (Josh Boswell/CBS News)",
+      "url": "https://www.techmeme.com/261125/p45#a261125p45",
+      "data": "2026-11-26T01:55:00Z",
+      "tekst": "Статья: https://www.cbsnews.com/news/nvidia-china-ai-chips-computing-sales/\nJosh Boswell / CBS News:\n\nInvestigation: Nvidia sells its most advanced chips to at least two Chinese-owned California companies, which have leased or sold some of them to firms in Asia — Nvidia is selling its most cutting-edge chips to at least two companies that are U.S.-based, but are actually controlled by Chinese-owned firms …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261125/p44#a261125p44",
+      "istochnik": "Techmeme",
+      "zagolovok": "Apple removes MiniMax's chatbot Talkie from the App Store worldwide over sexual content, after outlets showed it evidence of AI characters sexualizing children (TBIJ)",
+      "url": "https://www.techmeme.com/261125/p44#a261125p44",
+      "data": "2026-11-26T01:30:01Z",
+      "tekst": "Статья: https://www.thebureauinvestigates.com/stories/2026-11-24/talkie-china-chatbot-children\nTBIJ:\n\nApple removes MiniMax's chatbot Talkie from the App Store worldwide over sexual content, after outlets showed it evidence of AI characters sexualizing children — Talkie's characters belittle and sexualise their young users - and its owners won't explain how it uses the data",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261125/p43#a261125p43",
+      "istochnik": "Techmeme",
+      "zagolovok": "Neuralink says it got FDA approval for the LINK Pivotal Study, a US clinical trial to evaluate the safety and effectiveness of its BCI system in ALS patients (Craig Trudell/Bloomberg)",
+      "url": "https://www.techmeme.com/261125/p43#a261125p43",
+      "data": "2026-11-26T01:00:13Z",
+      "tekst": "Статья: https://www.bloomberg.com/news/articles/2026-11-25/neuralink-gets-clearance-for-brain-implant-trial-in-als-patients\nCraig Trudell / Bloomberg:\n\nNeuralink says it got FDA approval for the LINK Pivotal Study, a US clinical trial to evaluate the safety and effectiveness of its BCI system in ALS patients — Elon Musk's startup Neuralink received US approval to start what it's calling a pivotal trial for its brain-computer implants.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261125/p42#a261125p42",
+      "istochnik": "Techmeme",
+      "zagolovok": "A US court dismisses Amazon's challenge to a 2025 CPSC order requiring it to recall 400K+ hazardous products sold by third parties via Fulfillment by Amazon (Emma Roth/The Verge)",
+      "url": "https://www.techmeme.com/261125/p42#a261125p42",
+      "data": "2026-11-26T00:25:01Z",
+      "tekst": "Статья: https://www.theverge.com/tech/1042870/amazon-recall-order-cpsc\nEmma Roth / The Verge:\n\nA US court dismisses Amazon's challenge to a 2025 CPSC order requiring it to recall 400K+ hazardous products sold by third parties via Fulfillment by Amazon — A court ruled in favor of the US CPSC's argument that Amazon is responsible for recalled products that other companies sell on its platforms.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261125/p41#a261125p41",
+      "istochnik": "Techmeme",
+      "zagolovok": "A coalition of 42 AGs opposes Character.AI's plan to auction off data from 21M+ US accounts, 2.1M+ registered to minors, saying the sale lacks user protections (Sarah Perez/TechCrunch)",
+      "url": "https://www.techmeme.com/261125/p41#a261125p41",
+      "data": "2026-11-25T23:50:04Z",
+      "tekst": "Статья: https://techcrunch.com/2026/11/25/state-ags-fight-character-ais-plan-to-auction-off-users-private-chats/\nSarah Perez / TechCrunch:\n\nA coalition of 42 AGs opposes Character.AI's plan to auction off data from 21M+ US accounts, 2.1M+ registered to minors, saying the sale lacks user protections — What happens to your private conversations when an AI company goes bankrupt? If it's Character.ai, apparently, the plan is to auction them off to the highest bidder.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261125/p40#a261125p40",
+      "istochnik": "Techmeme",
+      "zagolovok": "Hands-on with the \"Install as app\" feature for Claude artifacts: they are HTML apps wrapped inside an Electron shim, which is managed via the main Claude app (Federico Viticci/MacStories)",
+      "url": "https://www.techmeme.com/261125/p40#a261125p40",
+      "data": "2026-11-25T23:20:01Z",
+      "tekst": "Статья: https://www.macstories.net/stories/a-closer-look-at-claudes-mac-apps/\nFederico Viticci / MacStories:\n\nHands-on with the “Install as app” feature for Claude artifacts: they are HTML apps wrapped inside an Electron shim, which is managed via the main Claude app — From the company's blog: … If you're an AppStories listener, you know that I've long thought it was only a matter …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261125/p39#a261125p39",
+      "istochnik": "Techmeme",
+      "zagolovok": "Sources: Pete Hegseth and other Pentagon officials discussed using the Defense Production Act as leverage to pressure Nvidia's board to reinstate Jensen Huang (Washington Post)",
+      "url": "https://www.techmeme.com/261125/p39#a261125p39",
+      "data": "2026-11-25T22:55:03Z",
+      "tekst": "Статья: https://www.washingtonpost.com/technology/2026/11/25/hegseth-pentagon-officials-floated-using-wartime-law-reappoint-nvidia-ceo/?pwapi_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZWFzb24iOiJnaWZ0IiwibmJmIjoxNzk1NTgyODAwLCJpc3MiOiJzdWJzY3JpcHRpb25zIiwiZXhwIjoxNzk2OTY1MTk5LCJpYXQiOjE3OTU1ODI4MDAsImp0aSI6IjZiNDI1NjE3LTkzZDQtNDY5MS1hZjMxLTJmNjdhMWU2MGIwYyIsInVybCI6Imh0dHBzOi8vd3d3Lndhc2hpbmd0b25wb3N0LmNvbS90ZWNobm9sb2d5LzIwMjYvMTEvMjUvaGVnc2V0aC1wZW50YWdvbi1vZmZpY2lhbHMtZmxvYXRlZC11c2luZy13YXJ0aW1lLWxhdy1yZWFwcG9pbnQtbnZpZGlhLWNlby8ifQ.IC587f-ZsvMSTdejz3SE90kzYZs7rK7qFb57vH6USNU&itid=gfta\nWashington Post:\n\nSources: Pete Hegseth and other Pentagon officials discussed using the Defense Production Act as leverage to pressure Nvidia's board to reinstate Jensen Huang — The Cold War-era Defense Production Act gives presidents extraordinary power to intervene in the economy.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261125/p38#a261125p38",
+      "istochnik": "Techmeme",
+      "zagolovok": "Sources: US chip curbs stall billions in data center loans tied to ByteDance, Alibaba, and Tencent, with some lenders delaying a $6.6B Bridge Data Centres loan (Bloomberg)",
+      "url": "https://www.techmeme.com/261125/p38#a261125p38",
+      "data": "2026-11-25T22:05:01Z",
+      "tekst": "Статья: https://www.bloomberg.com/news/articles/2026-11-25/billions-in-data-center-deals-grind-to-halt-after-ai-chip-curbs\nBloomberg:\n\nSources: US chip curbs stall billions in data center loans tied to ByteDance, Alibaba, and Tencent, with some lenders delaying a $6.6B Bridge Data Centres loan — Lenders have hit the brakes on billions of dollars in loans tied to Chinese firms ByteDance, Alibaba and Tencent …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261125/p37#a261125p37",
+      "istochnik": "Techmeme",
+      "zagolovok": "NY Gov. Kathy Hochul signs a bill banning AI chatbot toys for five years, starting in February; California Gov. Gavin Newsom signed a four-year ban in September (NBC News)",
+      "url": "https://www.techmeme.com/261125/p37#a261125p37",
+      "data": "2026-11-25T21:30:02Z",
+      "tekst": "Статья: https://www.nbcnews.com/tech/tech-news/new-york-governor-kathy-hochul-sign-ai-toy-ban-law-rcna610962\nNBC News:\n\nNY Gov. Kathy Hochul signs a bill banning AI chatbot toys for five years, starting in February; California Gov. Gavin Newsom signed a four-year ban in September — Gov. Kathy Hochul signed a bill today preventing the manufacture, exchange, distribution and sale of toys powered by AI chatbots in New York State.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261125/p36#a261125p36",
+      "istochnik": "Techmeme",
+      "zagolovok": "Nvidia agrees to pay $290M to settle a 2018 class action lawsuit alleging it misled shareholders about how much crypto mining fueled its GPU sales (Mike Scarcella/Reuters)",
+      "url": "https://www.techmeme.com/261125/p36#a261125p36",
+      "data": "2026-11-25T21:15:01Z",
+      "tekst": "Статья: https://www.reuters.com/legal/government/nvidia-agrees-settle-2018-us-investor-class-action-for-290-million-2026-11-25/\nMike Scarcella / Reuters:\n\nNvidia agrees to pay $290M to settle a 2018 class action lawsuit alleging it misled shareholders about how much crypto mining fueled its GPU sales — Nvidia (NVDA.O) has agreed to pay $290 million to settle a long-running investor lawsuit alleging the chipmaker misled shareholders …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261125/p35#a261125p35",
+      "istochnik": "Techmeme",
+      "zagolovok": "Sources: the DOJ didn't formally investigate Jensen Huang before his reinstatement; AG Todd Blanche cleared him based on probes into Super Micro and Megaspeed (Reuters)",
+      "url": "https://www.techmeme.com/261125/p35#a261125p35",
+      "data": "2026-11-25T21:01:00Z",
+      "tekst": "Статья: https://www.reuters.com/business/us-justice-department-did-not-open-probe-into-jensen-huang-before-reinstatement-2026-11-25/\nReuters:\n\nSources: the DOJ didn't formally investigate Jensen Huang before his reinstatement; AG Todd Blanche cleared him based on probes into Super Micro and Megaspeed — The US Justice Department did not conduct a formal investigation into Jensen Huang before US President Donald Trump pushed …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261125/p34#a261125p34",
+      "istochnik": "Techmeme",
+      "zagolovok": "WhatsApp starts letting users schedule messages from 10 minutes to 14 days in advance, in group and individual chats; messages are sent even if the phone is off (Ivan Mehta/TechCrunch)",
+      "url": "https://www.techmeme.com/261125/p34#a261125p34",
+      "data": "2026-11-25T20:50:02Z",
+      "tekst": "Статья: https://techcrunch.com/2026/11/25/whatsapp-now-lets-you-schedule-messages-in-group-and-individual-chats/\nIvan Mehta / TechCrunch:\n\nWhatsApp starts letting users schedule messages from 10 minutes to 14 days in advance, in group and individual chats; messages are sent even if the phone is off — WhatsApp on Wednesday started rolling out a much-sought-after feature: the ability to schedule messages in both individual and group chats.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261125/p33#a261125p33",
+      "istochnik": "Techmeme",
+      "zagolovok": "Sources: a16z is in talks to raise ~$20B across its next set of funds; its last set, announced in January at $15B+, later grew to $20B+ with three add-ons (Lucinda Shen/Axios)",
+      "url": "https://www.techmeme.com/261125/p33#a261125p33",
+      "data": "2026-11-25T20:30:00Z",
+      "tekst": "Статья: https://www.axios.com/pro/all-deals/2026/11/25/andreessen-horowitz-20b-fundraise\nLucinda Shen / Axios:\n\nSources: a16z is in talks to raise ~$20B across its next set of funds; its last set, announced in January at $15B+, later grew to $20B+ with three add-ons — Venture capital firm Andreessen Horowitz is in talks to raise about $20 billion across its next set of funds, Axios Pro has learned from three sources familiar.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261125/p32#a261125p32",
+      "istochnik": "Techmeme",
+      "zagolovok": "1Password says an attacker used an employee's GitHub account to push malicious code to its backend, taking some users' names and emails; vaults weren't accessed (Zack Whittaker/TechCrunch)",
+      "url": "https://www.techmeme.com/261125/p32#a261125p32",
+      "data": "2026-11-25T20:05:01Z",
+      "tekst": "Статья: https://techcrunch.com/2026/11/25/1password-said-hackers-broke-into-its-internal-systems-but-customer-passwords-are-safe/\nZack Whittaker / TechCrunch:\n\n1Password says an attacker used an employee's GitHub account to push malicious code to its backend, taking some users' names and emails; vaults weren't accessed — Password manager maker 1Password has confirmed that some customer information was taken in a recent intrusion into its internal systems …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261125/p31#a261125p31",
+      "istochnik": "Techmeme",
+      "zagolovok": "Dario Amodei rejects the idea of surrendering free will to AI and accuses rival AI execs of \"vibes-based\" positioning, rebutting a report on AI leaders' views (Madison Mills/Axios)",
+      "url": "https://www.techmeme.com/261125/p31#a261125p31",
+      "data": "2026-11-25T19:45:01Z",
+      "tekst": "Статья: https://www.axios.com/2026/11/25/anthropic-dario-amodei-ai-free-will-contro-axios\nMadison Mills / Axios:\n\nDario Amodei rejects the idea of surrendering free will to AI and accuses rival AI execs of “vibes-based” positioning, rebutting a report on AI leaders' views — - Amodei distinguished between handing over governance to AI, which he opposes, and automating specific tasks, on which he holds more nuanced views.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://x.com/AnthropicAI/status/2125627317263466739",
+      "istochnik": "X",
+      "zagolovok": "We recently migrated our Messages API from Python to Rust. On our engineering blog, we share how we used the existing se",
+      "url": "https://x.com/AnthropicAI/status/2125627317263466739",
+      "data": "2026-11-25T16:26:59Z",
+      "tekst": "@AnthropicAI: We recently migrated our Messages API from Python to Rust.\n\nOn our engineering blog, we share how we used the existing service to verify the new one, with teams of Claude agents tracking down and fixing differences between the two versions.\n\nhttps://www.anthropic.com/research/migrating-api-to-rust",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "AnthropicAI"
+    },
+    {
+      "id": "https://x.com/claudeai/status/2125616057788637364",
+      "istochnik": "X",
+      "zagolovok": "It’s been two weeks since we released Claude Fable 5.2. Here’s what people have been exploring with it: Where the letter",
+      "url": "https://x.com/claudeai/status/2125616057788637364",
+      "data": "2026-11-25T15:42:14Z",
+      "tekst": "@claudeai: It’s been two weeks since we released Claude Fable 5.2. Here’s what people have been exploring with it:\n\nWhere the letter A came from, one alphabet at a time.",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "claudeai"
+    },
+    {
+      "id": "https://x.com/ClaudeDevs/status/2125628717263372512",
+      "istochnik": "X",
+      "zagolovok": "Our new engineering blog shares how we migrated the Claude Messages API from Python to Rust. We share how we used the ex",
+      "url": "https://x.com/ClaudeDevs/status/2125628717263372512",
+      "data": "2026-11-25T16:32:33Z",
+      "tekst": "@ClaudeDevs: Our new engineering blog shares how we migrated the Claude Messages API from Python to Rust. \n\nWe share how we used the existing Python service to verify the migration, with teams of agents tracking down and fixing differences between the two versions.\n\nhttps://x.com/AnthropicAI/status/2125627317263466739?a=cMWx_Moml5Tb3-Enk4A&s=20\n\nЦитирует @AnthropicAI: We recently migrated our Messages API from Python to Rust.\n\nOn our engineering blog, we share how we used the existing service to verify the new one, with teams of Claude agents tracking down and fixing differences between the two versions.\n\nhttps://www.anthropic.com/research/migrating-api-to-rust",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "ClaudeDevs"
+    },
+    {
+      "id": "https://x.com/trq212/status/2125750153609163075",
+      "istochnik": "X",
+      "zagolovok": "just like me fr Цитирует @crampell: The Treasury CIO appears to have spent the past three days vibecoding a Civilization",
+      "url": "https://x.com/trq212/status/2125750153609163075",
+      "data": "2026-11-26T00:35:05Z",
+      "tekst": "@trq212: just like me fr\n\nЦитирует @crampell: The Treasury CIO appears to have spent the past three days vibecoding a Civilization game clone instead of working on this major Treasury database cyber breach. As I type this, his Claude code is literally adding theme music",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "trq212"
+    },
+    {
+      "id": "https://x.com/trq212/status/2125675533761671405",
+      "istochnik": "X",
+      "zagolovok": "I've joined OpenAI! I'm very proud of my time at Anthropic, and I'll continue to root for my former colleagues. Both com",
+      "url": "https://x.com/trq212/status/2125675533761671405",
+      "data": "2026-11-25T19:38:35Z",
+      "tekst": "@trq212: I've joined OpenAI!\n\nI'm very proud of my time at Anthropic, and I'll continue to root for my former colleagues. Both companies have important roles to play in the future.\n\nThere is a tremendous amount of work ahead of us to bring AI to the world, and it will demand the very best of all of us. I felt that I could personally contribute the most to this effort at OpenAI.\n\nI believe this is one of the great strengths of Silicon Valley, the flow of ideas and people.\n\nI'm excited to join a team I've long admired, building incredible AI products for over a billion people, and to work alongside friends like @_catwu, @thsottiaux, @ajambrosino, @sharifshameem, @jxnlco and many others to push the frontier forward.\n\nMore than anything, I hope to make your experience of using AI just a little bit better.\n\nI am once again at your service.\n\nThariq",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "trq212"
+    },
+    {
+      "id": "https://x.com/OpenAI/status/2125635627341561995",
+      "istochnik": "X",
+      "zagolovok": "For ordinary days that feel like a movie. Make a Day Do Anything with ChatGPT.",
+      "url": "https://x.com/OpenAI/status/2125635627341561995",
+      "data": "2026-11-25T17:00:00Z",
+      "tekst": "@OpenAI: For ordinary days that feel like a movie. \n\nMake a Day Do Anything with ChatGPT.",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "OpenAI"
+    },
+    {
+      "id": "https://x.com/sama/status/2125639418849714280",
+      "istochnik": "X",
+      "zagolovok": "I don't think I'd heard the word \"hyperstitioning\" before, but it's a good one. Цитирует @vitrupo: Ex-OpenAI researcher ",
+      "url": "https://x.com/sama/status/2125639418849714280",
+      "data": "2026-11-25T17:15:04Z",
+      "tekst": "@sama: I don't think I'd heard the word \"hyperstitioning\" before, but it's a good one.\n\nЦитирует @vitrupo: Ex-OpenAI researcher Will Depue says Anthropic may be hyperstitioning AGI, RSI and the AI race into existence.\n\n\"More friends than I'd like at Anthropic think there's a very high chance of everyone dying and are also like our hands are forced we must do this because everyone else is.\"\n\n\"You're literally causing the thing you believe to happen. And it's not necessarily inevitable but your depth of belief is causing it to be inevitable.\"\n\nSource: Soon https://www.youtube.com/watch?v=YzjvYYB2thE&t=474s",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "sama"
+    },
+    {
+      "id": "https://x.com/sama/status/2125638790593274259",
+      "istochnik": "X",
+      "zagolovok": "We’re now testing Private Inference, our latest offering as part of OpenAI Private Intelligence, with a small group of c",
+      "url": "https://x.com/sama/status/2125638790593274259",
+      "data": "2026-11-25T17:12:34Z",
+      "tekst": "@sama: We’re now testing Private Inference, our latest offering as part of OpenAI Private Intelligence, with a small group of customers.\n\nStronger privacy protections will make frontier AI useful for a lot more work, and business privacy is important for a healthy ecosystem. Reach out to @shekar4x if interested!\n\n(Also, ZDR with Private Safety Processing enables automated safety reviews without giving OpenAI personnel access to the underlying content.)",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "sama"
+    },
+    {
+      "id": "https://x.com/gdb/status/2125525157464973661",
+      "istochnik": "X",
+      "zagolovok": "Writing Shirudo Shields to defend against fresh CVEs: Цитирует @Cyburgerim: Elasticsearch CVE drops. 33 minutes later, O",
+      "url": "https://x.com/gdb/status/2125525157464973661",
+      "data": "2026-11-25T09:41:02Z",
+      "tekst": "@gdb: Writing Shirudo Shields to defend against fresh CVEs:\n\nЦитирует @Cyburgerim: Elasticsearch CVE drops. 33 minutes later, OpenAI & Cisco drop Shirudo. 12 hours later, a working exploit and a Shirudo Shield blocking it. Full writeup 👇",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "gdb"
+    },
+    {
+      "id": "https://x.com/gdb/status/2125488568101736872",
+      "istochnik": "X",
+      "zagolovok": "excited to work with Fujitsu on cyberdefense Цитирует @fujitsulabs: Fujitsu expands collaboration with OpenAI (@OpenAI) ",
+      "url": "https://x.com/gdb/status/2125488568101736872",
+      "data": "2026-11-25T07:15:38Z",
+      "tekst": "@gdb: excited to work with Fujitsu on cyberdefense\n\nЦитирует @fujitsulabs: Fujitsu expands collaboration with OpenAI (@OpenAI) to launch a service that identifies vulnerabilities that can be exploited in practice from an attacker’s perspective, while accelerating the expansion of cybersecurity services through participation in the Daybreak Defense Network. \nhttps://global.fujitsu/en-global/pr/news/2026/11/25-01",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "gdb"
+    },
+    {
+      "id": "https://x.com/gdb/status/2125428215347085370",
+      "istochnik": "X",
+      "zagolovok": "AI is helping us discover better ways to compute, and understand the fundamental limits of computation. AI for science i",
+      "url": "https://x.com/gdb/status/2125428215347085370",
+      "data": "2026-11-25T03:15:49Z",
+      "tekst": "@gdb: AI is helping us discover better ways to compute, and understand the fundamental limits of computation.\n\nAI for science is about creating new knowledge about the world. Excited to make this kind of discovery capability available more broadly.\n\nЦитирует @gdb: matrix multiplication exponent is exactly 9/4: \"This is really the kind of result that I never thought I would see in my lifetime\"",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "gdb"
+    },
+    {
+      "id": "https://x.com/gdb/status/2125418102049628201",
+      "istochnik": "X",
+      "zagolovok": "matrix multiplication exponent is exactly 9/4: \"This is really the kind of result that I never thought I would see in my",
+      "url": "https://x.com/gdb/status/2125418102049628201",
+      "data": "2026-11-25T02:35:38Z",
+      "tekst": "@gdb: matrix multiplication exponent is exactly 9/4: \"This is really the kind of result that I never thought I would see in my lifetime\"\n\nЦитирует @SebastienBubeck: As part of the October 6 release we had a particularly clean advance on the matrix multiplication exponent, with a new upper bound of 9/4. Since then, the model has been working on a LOWER BOUND for this exponent. This is already pretty crazy since NOTHING was known for lower bounds! Today we announced that actually 9/4 is tight ... This is really the kind of result that I never thought I would see in my lifetime.\n\n(btw, by an \"old\" result of Yin Tat Lee and collaborators this also implies that linear programs can be solved in time n^{9/4}.)",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "gdb"
+    },
+    {
+      "id": "https://x.com/demishassabis/status/2125663033993437651",
+      "istochnik": "X",
+      "zagolovok": "You should try Gemini Neon, it's a good model... 🫡 Цитирует @OfficialLoganK: Neon usage is 📈📈📈",
+      "url": "https://x.com/demishassabis/status/2125663033993437651",
+      "data": "2026-11-25T18:48:54Z",
+      "tekst": "@demishassabis: You should try Gemini Neon, it's a good model... 🫡\n\nЦитирует @OfficialLoganK: Neon usage is 📈📈📈",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "demishassabis"
+    },
+    {
+      "id": "https://x.com/simonw/status/2125640464863056148",
+      "istochnik": "X",
+      "zagolovok": "It's only been two weeks? I've made 194 commits to my open source projects that were co-authored by Fable 5.2 Цитирует @",
+      "url": "https://x.com/simonw/status/2125640464863056148",
+      "data": "2026-11-25T17:19:13Z",
+      "tekst": "@simonw: It's only been two weeks?\n\nI've made 194 commits to my open source projects that were co-authored by Fable 5.2\n\nЦитирует @claudeai: It’s been two weeks since we released Claude Fable 5.2. Here’s what people have been exploring with it:\n\nWhere the letter A came from, one alphabet at a time.",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "simonw"
+    },
+    {
+      "id": "https://x.com/simonw/status/2125619997796123135",
+      "istochnik": "X",
+      "zagolovok": "How many of those infuriating reply bots are running on an unmodified Grok Bot? Цитирует @willmcgugan: Having a look at ",
+      "url": "https://x.com/simonw/status/2125619997796123135",
+      "data": "2026-11-25T15:57:54Z",
+      "tekst": "@simonw: How many of those infuriating reply bots are running on an unmodified Grok Bot?\n\nЦитирует @willmcgugan: Having a look at grok bot. It seems keen to draft replies to tweets for me. All this time I thought those awful bot replies were externally automated somehow, when they were coming from within Twitter itself. How naive am I.\n\nFor the record, I will never use that. Be assured that my shit posting is au natural.\n\nI can’t imagine what @elonmusk is thinking. Bots writing content for bots would be the death of this platform.",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "simonw"
+    },
+    {
+      "id": "https://x.com/swyx/status/2125717383839162505",
+      "istochnik": "X",
+      "zagolovok": "any prizes for guessing whos next Цитирует @latentspacepod: [AINews 26 Nov 2026] here we go again... with the Math proof",
+      "url": "https://x.com/swyx/status/2125717383839162505",
+      "data": "2026-11-25T22:24:52Z",
+      "tekst": "@swyx: any prizes for guessing whos next\n\nЦитирует @latentspacepod: [AINews 26 Nov 2026]\n\nhere we go again... with the Math proofs and with the Ant->OAI moves:\n\nhttps://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them/\n\n2 in 1 ainews issue today, hot off the presses!",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "swyx"
+    },
+    {
+      "id": "https://x.com/swyx/status/2125638081848250634",
+      "istochnik": "X",
+      "zagolovok": "really hurtful to be a new media founder when old media is dying this quickly. like; its not a \"haha they suck this is a",
+      "url": "https://x.com/swyx/status/2125638081848250634",
+      "data": "2026-11-25T17:09:45Z",
+      "tekst": "@swyx: really hurtful to be a new media founder when old media is dying this quickly.\n\nlike; its not a \"haha they suck this is a skill issue\" thing, it's a \"we need to figure out what they couldn't with 31 years of experience\"\n\nЦитирует @SteveGuest: NEWS YOU CAN USE: Goodbye from Salon\n\n\"Today, after 31 years, we are saddened to announce that Salon is ceasing publication.\"",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "swyx"
+    },
+    {
+      "id": "https://x.com/swyx/status/2125627281230205435",
+      "istochnik": "X",
+      "zagolovok": "\"Cost per task is a misleading metric; the scarce resource is human attention, not token cost.\" beware the pareto fronti",
+      "url": "https://x.com/swyx/status/2125627281230205435",
+      "data": "2026-11-25T16:26:50Z",
+      "tekst": "@swyx: \"Cost per task is a misleading metric; the scarce resource is human attention, not token cost.\"\n\nbeware the pareto frontier charts that make you believe you can reduce every model to 2 numbers; it can hide some AWFUL reliability issues👏\n\nЦитирует @eugeneyan: AI benchmarks are more realistic than ever. But they still have bugs (e.g., failing correct work) and mostly measure what's easy, not what matters. Here's my breakdown of 12 public evals:  how they're built, where they break, and what to measure instead.\n\nhttps://eugeneyan.com/writing/public-evals",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "swyx"
+    },
+    {
+      "id": "https://x.com/swyx/status/2125444028527468699",
+      "istochnik": "X",
+      "zagolovok": "hey is silicon valley okay because wtf Цитирует @MTSlive: \"Basically most jobs are UBI right now.\" Morph founder @tejasy",
+      "url": "https://x.com/swyx/status/2125444028527468699",
+      "data": "2026-11-25T04:18:39Z",
+      "tekst": "@swyx: hey is silicon valley okay because wtf\n\nЦитирует @MTSlive: \"Basically most jobs are UBI right now.\"\n\nMorph founder @tejasybhakta argues that AI could create even more bullshit jobs rather than lead to mass unemployment:\n\n\"Most people are in jobs that don't need to exist. These procurement officers that are putting out this paperwork that doesn't need to be done to sign this doc that no one cares about or will ever read.\n\n\"Basically most jobs are UBI right now. That's sort of the hottest take in there.\"\n\n\"Some people have this take that we're gonna have more mass unemployment as a result of this. I almost feel the opposite. I think we're gonna have more bullshit jobs, just way more.\"\n\n\"Pre-AGI, 40% of jobs were just not really actually doing anything. In order for that organism to keep surviving, it needs these people to have UBI, otherwise the economy falls apart.\"\n\n\"So we'll just have more jobs that are fake jobs while AGI does all the work.\"\n@morphllm",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "swyx"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2125749051048046703",
+      "istochnik": "X",
+      "zagolovok": "SpaceXSI is developing a new Quick Chat feature for Grok Bot, with the option to assign a hotkey to launch a quick chat ",
+      "url": "https://x.com/testingcatalog/status/2125749051048046703",
+      "data": "2026-11-26T00:30:42Z",
+      "tekst": "@testingcatalog: SpaceXSI is developing a new Quick Chat feature for Grok Bot, with the option to assign a hotkey to launch a quick chat window. \n\n> \"Message your main Bot from any app, even when the Grok Bot window is closed.\" \n\n\"Option+Space\" is already launching 5 different quick chat windows on my machine - looks like I will have 6 of them soon.",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2125666554516001223",
+      "istochnik": "X",
+      "zagolovok": "GOOGLE 🔥: Cache hit ratio for Gemini 4 Neon in Antigravity went up by another 4.5%. All this on top of earlier improveme",
+      "url": "https://x.com/testingcatalog/status/2125666554516001223",
+      "data": "2026-11-25T19:02:54Z",
+      "tekst": "@testingcatalog: GOOGLE 🔥: Cache hit ratio for Gemini 4 Neon in Antigravity went up by another 4.5%.\n\nAll this on top of earlier improvements in Neon usage, bringing it close to a 75% gain. \n\nOverall, usage optimization is as important as increasing compute capacity. \n\nOr probably even better 👀\n\nЦитирует @_mohansolo: We've increased the cache hit rate for Neon in Antigravity again by another 4.5%. This means you can complete 28% more tasks within quota.\n\nIn the last 5 days, we've effectively increased Neon usage on the subscription by close to 75% through caching and harness improvements!",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2125648140455858183",
+      "istochnik": "X",
+      "zagolovok": "GOOGLE 🔥: Gemini Live now supports 60+ more voices with local accents across the US, UK, India, Indonesia, Korea, and Br",
+      "url": "https://x.com/testingcatalog/status/2125648140455858183",
+      "data": "2026-11-25T17:49:43Z",
+      "tekst": "@testingcatalog: GOOGLE 🔥: Gemini Live now supports 60+ more voices with local accents across the US, UK, India, Indonesia, Korea, and Brazil. \n\nThat's a huge variety of choices! 🤯\n\nLooks like I need to pick a new voice now 👀",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2125642883801997653",
+      "istochnik": "X",
+      "zagolovok": "OPENAI 🔥: A new Private Inference is now being tested with a small group of OpenAI business customers. Private inference",
+      "url": "https://x.com/testingcatalog/status/2125642883801997653",
+      "data": "2026-11-25T17:28:50Z",
+      "tekst": "@testingcatalog: OPENAI 🔥: A new Private Inference is now being tested with a small group of OpenAI business customers. \n\nPrivate inference is a new offering inside OpenAI Private Intelligence to enable users to process inference via their own hosting. \n\nPinference 👀\n\nЦитирует @sama: We’re now testing Private Inference, our latest offering as part of OpenAI Private Intelligence, with a small group of customers.\n\nStronger privacy protections will make frontier AI useful for a lot more work, and business privacy is important for a healthy ecosystem. Reach out to @shekar4x if interested!\n\n(Also, ZDR with Private Safety Processing enables automated safety reviews without giving OpenAI personnel access to the underlying content.)",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2125634373860933912",
+      "istochnik": "X",
+      "zagolovok": "Anthropic is reportedly A/B testing its next version of the Opus model on Claude Code, presumably Claude Opus 5.6. We ar",
+      "url": "https://x.com/testingcatalog/status/2125634373860933912",
+      "data": "2026-11-25T16:55:01Z",
+      "tekst": "@testingcatalog: Anthropic is reportedly A/B testing its next version of the Opus model on Claude Code, presumably Claude Opus 5.6.  \n\nWe are getting to the point where AI models can generate almost anything via code, and soon it will be very hard to challenge them with a \"hard prompt\". \n\nA collection of early outputs 👀 https://x.com/legit_api/status/2125613576396104034/video/1",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2125629259750232450",
+      "istochnik": "X",
+      "zagolovok": "AI Agents powered by Living Brain have proved 17 math results, including the Lindelöf hypothesis, Erdős Problem 985, and",
+      "url": "https://x.com/testingcatalog/status/2125629259750232450",
+      "data": "2026-11-25T16:34:42Z",
+      "tekst": "@testingcatalog: AI Agents powered by Living Brain have proved 17 math results, including the Lindelöf hypothesis, Erdős Problem 985, and Euler’s idoneal numbers.\n\nLiving Brain is a memory tool for AI agents, developed by ChatAndBuild.\n\nThe team spent months adding math papers and open problems to @livingbrain. When the proof came out, Living Brain pointed out to the agents which problems were now within reach.\n\nThis happened within three days of the new Riemann Hypothesis proof. Six of the problems were long-standing, with some open for over 100 years.\n\nЦитирует @ladyxtel: Three days after the Riemann Hypothesis was proved in Lean, our agents had used it to prove 17 results.\n\nSix are named conjectures that were open until 20 November, including the Lindelöf hypothesis, Erdős Problem 985 and Euler’s idoneal numbers.\n\nSome had been open for more than 100 years.\n\n@livingbrain held the memory, OpenHuman’s agents wrote the proofs, and Lean checked every one.",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/GoogleDeepMind/status/2125694207197110560",
+      "istochnik": "X",
+      "zagolovok": "Gemini 4 Neon coded a Rube Goldberg machine inside a 1980s arcade. Built in @Antigravity with simulated physics and a Ly",
+      "url": "https://x.com/GoogleDeepMind/status/2125694207197110560",
+      "data": "2026-11-25T20:52:47Z",
+      "tekst": "@GoogleDeepMind: Gemini 4 Neon coded a Rube Goldberg machine inside a 1980s arcade.\n\nBuilt in @Antigravity with simulated physics and a Lyria 3.5 synth track, it runs through pinball bumpers before lighting up glass tubes.",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "GoogleDeepMind"
+    }
+  ],
+  "ne_otvetili": [],
+  "tolko_v_vidennye": [],
+  "github_polnyy_obhod": false,
+  "istochniki": [
+    "claude.dev",
+    "Claude Code",
+    "Claude Platform",
+    "Блог Claude",
+    "OpenAI",
+    "Codex",
+    "OpenAI API",
+    "AINews",
+    "Simon Willison",
+    "Ben's Bites",
+    "Cursor",
+    "DeepMind",
+    "Блог Google",
+    "Google Developers Blog",
+    "Techmeme",
+    "GitHub Claude Code"
+  ],
+  "iks": {
+    "akkauntov": 30,
+    "ne_otvetili": [
+      "OfficialLoganK",
+      "AIatMeta"
+    ]
+  }
+}
