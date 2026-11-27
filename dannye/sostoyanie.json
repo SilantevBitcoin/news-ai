@@ -2,76 +2,6 @@
   "github_obhod": true,
   "opublikovannye": [
     {
-      "data": "2026-11-13T02:17:22Z",
-      "oboroty": true,
-      "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/",
-      "vid": "krupnaya",
-      "zagolovok": "Google выпустила Gemini 4 Hydrogen — быструю модель для кода и агентов"
-    },
-    {
-      "data": "2026-11-13T02:17:23Z",
-      "oboroty": false,
-      "url": "https://code.claude.com/docs/en/changelog#2-1-323",
-      "vid": "sayty",
-      "zagolovok": "Claude Code 2.1.323: экспериментальный Code Mode, где Claude вызывает инструменты кодом на JavaScript"
-    },
-    {
-      "data": "2026-11-13T02:17:23Z",
-      "oboroty": false,
-      "url": "https://claude.com/resources/articles/claude-meetings",
-      "vid": "sayty",
-      "zagolovok": "Claude Meetings: Claude подключается к видеозвонку и начинает работу, пока вы говорите"
-    },
-    {
-      "data": "2026-11-13T02:17:23Z",
-      "oboroty": false,
-      "url": "https://developers.googleblog.com/a2ui-10-build-delightful-fast-reliable-agentic-experiences/",
-      "vid": "sayty",
-      "zagolovok": "A2UI 1.0: открытый протокол, чтобы агенты рисовали интерактивные экраны в вебе и мобильных приложениях"
-    },
-    {
-      "data": "2026-11-13T02:17:23Z",
-      "oboroty": false,
-      "url": "https://developers.googleblog.com/how-agent-anomaly-detection-scores-on-benchmarks-we-didnt-write/",
-      "vid": "sayty",
-      "zagolovok": "Google: Agent Anomaly Detection ловит 87% вредных действий агентов без задержки"
-    },
-    {
-      "data": "2026-11-13T02:17:23Z",
-      "oboroty": false,
-      "url": "https://x.com/gdb/status/2121004237413142656",
-      "vid": "x",
-      "zagolovok": "OpenAI представила кибер-продукты Daybreak Defense Factory и Daybreak Red Team"
-    },
-    {
-      "data": "2026-11-13T02:17:23Z",
-      "oboroty": false,
-      "url": "https://x.com/thsottiaux/status/2120999993079451919",
-      "vid": "x",
-      "zagolovok": "Dots в ChatGPT стали быстрее и поддерживают свои инструкции; сброс лимитов уже активирован"
-    },
-    {
-      "data": "2026-11-13T02:17:23Z",
-      "oboroty": false,
-      "url": "https://www.techmeme.com/261112/p55#a261112p55",
-      "vid": "dengi",
-      "zagolovok": "Размещение акций Anthropic переподписано примерно в шесть раз"
-    },
-    {
-      "data": "2026-11-13T02:17:23Z",
-      "oboroty": false,
-      "url": "https://www.techmeme.com/261112/p57#a261112p57",
-      "vid": "dengi",
-      "zagolovok": "Выручка Cerebras в третьем квартале выросла на 70% — до 230,9 млн долларов, объявлена сделка с Microsoft"
-    },
-    {
-      "data": "2026-11-13T02:17:23Z",
-      "oboroty": false,
-      "url": "https://www.techmeme.com/261112/p65#a261112p65",
-      "vid": "dengi",
-      "zagolovok": "Hatz AI, делающая ИИ-инструменты для поставщиков IT-услуг, привлекла 24 млн долларов"
-    },
-    {
       "data": "2026-11-13T10:16:39Z",
       "oboroty": false,
       "url": "https://www.techmeme.com/261113/p1#a261113p1",
@@ -1827,10 +1757,24 @@
       "url": "https://www.techmeme.com/261126/p18#a261126p18",
       "vid": "dengi",
       "zagolovok": "TrustedRouter, стартап со сквозным шифрованием для корпоративных ИИ-запросов, привлёк 6 млн долларов и обрабатывает уже более 6 млрд токенов в сутки"
+    },
+    {
+      "data": "2026-11-27T02:21:05Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261126/p26#a261126p26",
+      "vid": "sayty",
+      "zagolovok": "В Конгрессе США набирают силу двухпартийные инициативы по регулированию ИИ, но их тормозят медленная работа и борьба ведомств"
+    },
+    {
+      "data": "2026-11-27T02:21:05Z",
+      "oboroty": false,
+      "url": "https://x.com/testingcatalog/status/2126069984011178293",
+      "vid": "x",
+      "zagolovok": "Расход лимитов в чате Grok оптимизировали: обычные чаты дают на 11% больше использования, рутины — до 50%"
     }
   ],
-  "posledniy_sbor": "2026-11-26T17:15:45Z",
-  "posledniy_slot": "2026-11-26T18:00:00Z",
+  "posledniy_sbor": "2026-11-27T01:13:49Z",
+  "posledniy_slot": "2026-11-27T02:00:00Z",
   "vidennye": {
     "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-hydrogen-builders/": "2026-11-24T02:21:47Z",
     "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-neon-builders/": "2026-11-24T18:22:58Z",
@@ -2562,6 +2506,10 @@
     "https://www.techmeme.com/261126/p20#a261126p20": "2026-11-26T18:21:42Z",
     "https://www.techmeme.com/261126/p21#a261126p21": "2026-11-26T18:21:42Z",
     "https://www.techmeme.com/261126/p22#a261126p22": "2026-11-26T18:21:42Z",
+    "https://www.techmeme.com/261126/p23#a261126p23": "2026-11-27T02:21:05Z",
+    "https://www.techmeme.com/261126/p24#a261126p24": "2026-11-27T02:21:05Z",
+    "https://www.techmeme.com/261126/p25#a261126p25": "2026-11-27T02:21:05Z",
+    "https://www.techmeme.com/261126/p26#a261126p26": "2026-11-27T02:21:05Z",
     "https://www.techmeme.com/261126/p3#a261126p3": "2026-11-26T10:22:19Z",
     "https://www.techmeme.com/261126/p4#a261126p4": "2026-11-26T10:22:19Z",
     "https://www.techmeme.com/261126/p5#a261126p5": "2026-11-26T10:22:19Z",
@@ -2877,6 +2825,7 @@
     "https://x.com/swyx/status/2125969097276178943": "2026-11-26T18:21:42Z",
     "https://x.com/swyx/status/2125993331482345858": "2026-11-26T18:21:42Z",
     "https://x.com/swyx/status/2125995865525629084": "2026-11-26T18:21:42Z",
+    "https://x.com/swyx/status/2126106139582677088": "2026-11-27T02:21:05Z",
     "https://x.com/testingcatalog/status/2119894220748280190": "2026-11-10T20:46:17Z",
     "https://x.com/testingcatalog/status/2119913217371799774": "2026-11-10T20:46:17Z",
     "https://x.com/testingcatalog/status/2119914321245577334": "2026-11-10T20:46:17Z",
@@ -3063,6 +3012,7 @@
     "https://x.com/testingcatalog/status/2125853297227518069": "2026-11-26T10:22:19Z",
     "https://x.com/testingcatalog/status/2125978663870947513": "2026-11-26T18:21:42Z",
     "https://x.com/testingcatalog/status/2126014729273405625": "2026-11-26T18:21:42Z",
+    "https://x.com/testingcatalog/status/2126069984011178293": "2026-11-27T02:21:05Z",
     "https://x.com/thsottiaux/status/2120021043876106429": "2026-11-10T20:46:17Z",
     "https://x.com/thsottiaux/status/2120266880963473789": "2026-11-11T00:04:15Z",
     "https://x.com/thsottiaux/status/2120267268517249036": "2026-11-11T00:04:17Z",
