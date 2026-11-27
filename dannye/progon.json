@@ -1,0 +1,347 @@
+{
+  "nachalo_progona": "2026-11-27T10:08:11Z",
+  "nachalo_perioda": "2026-11-27T01:13:49Z",
+  "nachalo_okna": "2026-11-26T10:08:11Z",
+  "pervyy_progon": false,
+  "kandidaty": [
+    {
+      "id": "https://simonwillison.net/2026/Nov/26/jack-despain-zhou/",
+      "istochnik": "Simon Willison",
+      "zagolovok": "Quoting Jack Despain Zhou",
+      "url": "https://simonwillison.net/2026/Nov/26/jack-despain-zhou/",
+      "data": "2026-11-26T15:09:31Z",
+      "tekst": "Among the many already existing effects of AI has been a great de-individualization. I open a YouTube video, and I hear Claude. I sit in a conference presentation, and I hear Claude. I open my email inbox, and I find pitches and articles from ostensibly serious people with ostensibly serious credentials attached to ostensibly serious institutions who want to publish things attached to their reputations and mine, and I see Claude.\n\n— Jack Despain Zhou, Spitting in the Face of Glaude\n\nTags: ai-misuse, claude, generative-ai, ai, llms",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261127/p2#a261127p2",
+      "istochnik": "Techmeme",
+      "zagolovok": "Foreign investors sold a record net $33.1B of Taiwanese stocks in November, topping October's record outflow amid AI valuation fears and a broader tech sell-off (Eunice Xu/Bloomberg)",
+      "url": "https://www.techmeme.com/261127/p2#a261127p2",
+      "data": "2026-11-27T07:30:00Z",
+      "tekst": "Статья: https://www.bloomberg.com/\nEunice Xu / Bloomberg:\n\nForeign investors sold a record net $33.1B of Taiwanese stocks in November, topping October's record outflow amid AI valuation fears and a broader tech sell-off — Foreign investors dumped a record amount of Taiwanese stocks so far in November, underscoring how heavily the global AI bellwether …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261127/p1#a261127p1",
+      "istochnik": "Techmeme",
+      "zagolovok": "US smartphone shipments fell 9% YoY in Q3 as memory costs hit Android OEMs, especially at the low end; Apple's share rose from 50% to 57%, Samsung holds at 25% (Maurice Klaehne/Counterpoint Research)",
+      "url": "https://www.techmeme.com/261127/p1#a261127p1",
+      "data": "2026-11-27T05:45:01Z",
+      "tekst": "Статья: http://www.counterpointresearch.com/\nMaurice Klaehne / Counterpoint Research:\n\nUS smartphone shipments fell 9% YoY in Q3 as memory costs hit Android OEMs, especially at the low end; Apple's share rose from 50% to 57%, Samsung holds at 25% — - US smartphone shipments fell 9% YoY in Q3 as rising memory costs weighed on Android OEMs, especially at the low end.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261126/p27#a261126p27",
+      "istochnik": "Techmeme",
+      "zagolovok": "Dante Security, which has developed a platform for monitoring the activity of AI agents within organizations, raised a $10M seed led by NFX (Meir Orbach/CTech)",
+      "url": "https://www.techmeme.com/261126/p27#a261126p27",
+      "data": "2026-11-27T03:15:01Z",
+      "tekst": "Статья: https://www.calcalistech.com/ctechnews/article/h18nob7kml\nMeir Orbach / CTech:\n\nDante Security, which has developed a platform for monitoring the activity of AI agents within organizations, raised a $10M seed led by NFX — Dante Security is developing a platform that gives organizations visibility into the actions of autonomous AI agents and connects their activity to the employees responsible for them.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261126/p26#a261126p26",
+      "istochnik": "Techmeme",
+      "zagolovok": "Bipartisan efforts in Congress to regulate AI are gaining momentum, but they face an uphill climb due to the slow pace of legislative work and turf battles (New York Times)",
+      "url": "https://www.techmeme.com/261126/p26#a261126p26",
+      "data": "2026-11-27T00:30:01Z",
+      "tekst": "Статья: https://www.nytimes.com/2026/11/26/us/politics/ai-regulation-congress-nvidia.html\nNew York Times:\n\nBipartisan efforts in Congress to regulate AI are gaining momentum, but they face an uphill climb due to the slow pace of legislative work and turf battles — Members of both parties say they want to tackle artificial intelligence policy, but the slow pace of legislating and turf battles could stand in the way.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261126/p25#a261126p25",
+      "istochnik": "Techmeme",
+      "zagolovok": "A US judge sentences a Florida man to 47 months in prison for using AI to impersonate Kick streamer N3on, defrauding a memecoin's organizers out of ~$260K (Nathan Grayson/Aftermath)",
+      "url": "https://www.techmeme.com/261126/p25#a261126p25",
+      "data": "2026-11-26T22:10:01Z",
+      "tekst": "Статья: https://aftermath.site/n3on-impersonator-ai-prison-260000-dollars-kick-stream/\nNathan Grayson / Aftermath:\n\nA US judge sentences a Florida man to 47 months in prison for using AI to impersonate Kick streamer N3on, defrauding a memecoin's organizers out of ~$260K — What goes around comes around, I suppose. Earlier this year, Kick streamer N3on, a weasly little twig person who spends …",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261126/p24#a261126p24",
+      "istochnik": "Techmeme",
+      "zagolovok": "Binance says it has finished its recovery work and fully lifted its withdrawal suspension, after a record $6.3B was stolen in a hack last month (Rajveer Singh Pardesi/Reuters)",
+      "url": "https://www.techmeme.com/261126/p24#a261126p24",
+      "data": "2026-11-26T19:55:02Z",
+      "tekst": "Статья: https://www.reuters.com/technology/binance-lifts-withdrawal-suspension-after-63-billion-crypto-heist-2026-11-26/\nRajveer Singh Pardesi / Reuters:\n\nBinance says it has finished its recovery work and fully lifted its withdrawal suspension, after a record $6.3B was stolen in a hack last month — Binance said on Thursday its withdrawal recovery work is complete and it has lifted its withdrawal suspension after a record $6.3 billion was stolen in a hack last month.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261126/p23#a261126p23",
+      "istochnik": "Techmeme",
+      "zagolovok": "Altair Semiconductor, an Israeli chipmaker spun off from Sony earlier in 2026, raised a $100M Series A, as it prepares to launch low-power cellular modems (CTech)",
+      "url": "https://www.techmeme.com/261126/p23#a261126p23",
+      "data": "2026-11-26T18:05:38Z",
+      "tekst": "Статья: https://www.calcalistech.com/ctechnews/article/m3h4xzamw\nCTech:\n\nAltair Semiconductor, an Israeli chipmaker spun off from Sony earlier in 2026, raised a $100M Series A, as it prepares to launch low-power cellular modems — The company, spun off from Sony earlier this year, is preparing a new low-power 5G modem for smart glasses, wearables and industrial devices.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261126/p22#a261126p22",
+      "istochnik": "Techmeme",
+      "zagolovok": "Sources: SAP is preparing a plan to eliminate at least 10,000 positions, or 9% of its staff globally, to transform its software business for the AI era (Christina Kyriasoglou/Bloomberg)",
+      "url": "https://www.techmeme.com/261126/p22#a261126p22",
+      "data": "2026-11-26T16:50:28Z",
+      "tekst": "Статья: https://www.bloomberg.com/news/articles/2026-11-26/sap-weighs-cutting-at-least-10-000-positions-in-ai-restructuring\nChristina Kyriasoglou / Bloomberg:\n\nSources: SAP is preparing a plan to eliminate at least 10,000 positions, or 9% of its staff globally, to transform its software business for the AI era — SAP SE is preparing a plan to eliminate at least 10,000 positions to transform its software business for the artificial intelligence era …",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261126/p21#a261126p21",
+      "istochnik": "Techmeme",
+      "zagolovok": "UK workers at Rockstar Games vote against a union recognition deal, with only 25% voting in favor; source: 1,544 employees, or 93.2% of eligible workers, voted (Chris Kerr/Vertical Slice)",
+      "url": "https://www.techmeme.com/261126/p21#a261126p21",
+      "data": "2026-11-26T16:10:01Z",
+      "tekst": "Статья: https://www.verticalslice.news/rockstar-workers-vote-against-historic-union-recognition-deal/\nChris Kerr / Vertical Slice:\n\nUK workers at Rockstar Games vote against a union recognition deal, with only 25% voting in favor; source: 1,544 employees, or 93.2% of eligible workers, voted — UK workers at Grand Theft Auto maker Rockstar Games have voted against a union recognition deal that would have seen …",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261126/p20#a261126p20",
+      "istochnik": "Techmeme",
+      "zagolovok": "Avicena, which links AI chips with microLEDs instead of lasers, raised a $100M+ Series C led by Intervest, with participation from SK Hynix, Samsung, and AMD (Cristian Dina/The Next Web)",
+      "url": "https://www.techmeme.com/261126/p20#a261126p20",
+      "data": "2026-11-26T15:50:27Z",
+      "tekst": "Статья: https://thenextweb.com/news/avicena-100m-series-c-microled-optical-interconnects-ai\nCristian Dina / The Next Web:\n\nAvicena, which links AI chips with microLEDs instead of lasers, raised a $100M+ Series C led by Intervest, with participation from SK Hynix, Samsung, and AMD — SK hynix, Samsung and AMD's venture arms joined the Series C. New chief executive Kevin Pope plans to bring the first LightBundle product to market next year.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261126/p19#a261126p19",
+      "istochnik": "Techmeme",
+      "zagolovok": "Texas resumes data center permitting, approving permits for SpaceX's $24B gas power plant, ahead of Democratic Governor Gina Hinojosa taking office in January (Stephanie Findlay/Financial Times)",
+      "url": "https://www.techmeme.com/261126/p19#a261126p19",
+      "data": "2026-11-26T13:45:00Z",
+      "tekst": "Статья: https://www.ft.com/content/e0a1bf7a-7c28-4a20-8ca8-86dc7d5097b3\nStephanie Findlay / Financial Times:\n\nTexas resumes data center permitting, approving permits for SpaceX's $24B gas power plant, ahead of Democratic Governor Gina Hinojosa taking office in January — Incoming governor Gina Hinojosa pledged to rein in construction of new projects during her campaign — Hello and welcome to Energy Source, coming to you from Houston.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261126/p18#a261126p18",
+      "istochnik": "Techmeme",
+      "zagolovok": "TrustedRouter, which raised $6M to offer E2EE and confidential computing for enterprise AI queries, says it processes 6B+ tokens per day, up from 1B in August (Davey Alba/Bloomberg)",
+      "url": "https://www.techmeme.com/261126/p18#a261126p18",
+      "data": "2026-11-26T13:30:01Z",
+      "tekst": "Статья: https://www.bloomberg.com/news/newsletters/2026-11-26/trustedrouter-aims-to-give-companies-greater-privacy-with-ai\nDavey Alba / Bloomberg:\n\nTrustedRouter, which raised $6M to offer E2EE and confidential computing for enterprise AI queries, says it processes 6B+ tokens per day, up from 1B in August — The startup offers companies a way to keep employees' AI use private from model makers … Tech Across the Globe",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261126/p17#a261126p17",
+      "istochnik": "Techmeme",
+      "zagolovok": "The UK FCA says it plans to require DeFi platforms to obtain authorization, adopting a stricter stance than the US and the EU after the $6.3B Binance hack (Financial Times)",
+      "url": "https://www.techmeme.com/261126/p17#a261126p17",
+      "data": "2026-11-26T13:10:04Z",
+      "tekst": "Статья: https://www.ft.com/content/ec820cb6-4983-4ece-8e7b-de116b57525d\nFinancial Times:\n\nThe UK FCA says it plans to require DeFi platforms to obtain authorization, adopting a stricter stance than the US and the EU after the $6.3B Binance hack — FCA points to Binance heist and ‘lack of consumer protections’ as reasons for tighter regulation of decentralised finance than in US and EU",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261126/p16#a261126p16",
+      "istochnik": "Techmeme",
+      "zagolovok": "OpenAI says it corrected a GPT-6.2 Astra and Sol launch billing mistake that had incorrectly discounted usage; Astra users will now hit their limits 40% faster (Graham Barlow/TechRadar)",
+      "url": "https://www.techmeme.com/261126/p16#a261126p16",
+      "data": "2026-11-26T13:01:08Z",
+      "tekst": "Статья: https://www.techradar.com/ai-platforms-assistants/chatgpt/weve-fixed-this-now-so-the-same-work-will-use-more-of-your-plans-usage-allowance-openai-admits-it-made-a-mistake-when-launching-gpt-6-2-and-now-paying-chatgpt-users-could-hit-their-usage-limits-up-to-40-percent-faster\nGraham Barlow / TechRadar:\n\nOpenAI says it corrected a GPT-6.2 Astra and Sol launch billing mistake that had incorrectly discounted usage; Astra users will now hit their limits 40% faster — Too little, too late? … - OpenAI has admitted to a billing mistake with its new GPT-6.2 models — You'll now hit your usage limits up to 40% faster",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261126/p15#a261126p15",
+      "istochnik": "Techmeme",
+      "zagolovok": "The Dutch government says it will resist the US' planned Match Act, which aims to restrict ASML's sales to China, calling the proposal a threat to the company (Bloomberg)",
+      "url": "https://www.techmeme.com/261126/p15#a261126p15",
+      "data": "2026-11-26T12:50:19Z",
+      "tekst": "Статья: https://www.bloomberg.com/news/articles/2026-11-26/netherlands-plans-to-fight-rollout-of-proposed-us-curbs-on-asml\nBloomberg:\n\nThe Dutch government says it will resist the US' planned Match Act, which aims to restrict ASML's sales to China, calling the proposal a threat to the company — The Dutch government said it will resist US plans to further restrict ASML Holding NV's sales to China, calling the proposed rules …",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://x.com/trq212/status/2126210197647753273",
+      "istochnik": "X",
+      "zagolovok": "everything is reps",
+      "url": "https://x.com/trq212/status/2126210197647753273",
+      "data": "2026-11-27T07:03:08Z",
+      "tekst": "@trq212: everything is reps",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "trq212"
+    },
+    {
+      "id": "https://x.com/sama/status/2125990371897557278",
+      "istochnik": "X",
+      "zagolovok": "Ven was one of the earliest believers that we could use our then-current model to solve millenium prize problems. There ",
+      "url": "https://x.com/sama/status/2125990371897557278",
+      "data": "2026-11-26T16:29:38Z",
+      "tekst": "@sama: Ven was one of the earliest believers that we could use our then-current model to solve millenium prize problems.\n\nThere are a lot of brilliant people in the world, but being brilliant and also having correctly-placed confidence and courage to keep pushing on something that others don't think is possible is a very valuable thing and fairly rare.\n\nI am grateful so many people at OpenAI have this combination.\n\nЦитирует @tszzl: ven chandrasekaran’s proposal for a quantum theory of vacuum gravity in 4d\n\nhttps://arxiv.org/abs/2611.34924",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "sama"
+    },
+    {
+      "id": "https://x.com/sama/status/2125983591389974980",
+      "istochnik": "X",
+      "zagolovok": "I am thankful for a lot of things in life, but my family is the best thing that has ever happened to me. The two most co",
+      "url": "https://x.com/sama/status/2125983591389974980",
+      "data": "2026-11-26T16:02:41Z",
+      "tekst": "@sama: I am thankful for a lot of things in life, but my family is the best thing that has ever happened to me.\n\nThe two most common things people said to me before having kids is that it's better than anyone can explain to you and it goes very fast; these are both true and I don't have much to add. But I am very grateful and I love them more than there is any way to explain.\n\nAlso I cannot really imagine life without Ollie and I think without his unwavering support and great advice I would have gone crazy by now.\n\n🦃",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "sama"
+    },
+    {
+      "id": "https://x.com/gdb/status/2126017271114195036",
+      "istochnik": "X",
+      "zagolovok": "GPT-6.2 for interactive lessons for history class: Цитирует @VraserX: I built an entire interactive WWI lesson for my 10",
+      "url": "https://x.com/gdb/status/2126017271114195036",
+      "data": "2026-11-26T18:16:31Z",
+      "tekst": "@gdb: GPT-6.2 for interactive lessons for history class:\n\nЦитирует @VraserX: I built an entire interactive WWI lesson for my 10th graders with GPT-6.2 Astra.\n\nThey can walk through a 3D trench on their phones, examine objects in a dugout, and use historical sources to piece together what life was like on the Western Front.\n\nhttps://westfront-1916.vraserx.chatgpt.site/",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "gdb"
+    },
+    {
+      "id": "https://x.com/MistralAI/status/2125915743212761359",
+      "istochnik": "X",
+      "zagolovok": "Point taken 📍 Mistral Large 4 finds the exact match and outlines it on the map. On visual grounding tasks, Le Chonk beat",
+      "url": "https://x.com/MistralAI/status/2125915743212761359",
+      "data": "2026-11-26T11:33:05Z",
+      "tekst": "@MistralAI: Point taken 📍 \n\nMistral Large 4 finds the exact match and outlines it on the map. On visual grounding tasks, Le Chonk beats even closed frontier models.",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "MistralAI"
+    },
+    {
+      "id": "https://x.com/simonw/status/2125998873252605954",
+      "istochnik": "X",
+      "zagolovok": "Emails with \"Your post on [summarize some blog post of mine] caught my eye\" are so depressing Цитирует @KentonVarda: I g",
+      "url": "https://x.com/simonw/status/2125998873252605954",
+      "data": "2026-11-26T17:03:25Z",
+      "tekst": "@simonw: Emails with \"Your post on [summarize some blog post of mine] caught my eye\" are so depressing\n\nЦитирует @KentonVarda: I get a few emails a day from people who have applied for jobs at Cloudflare and want me to consider them.\n\nA few years ago such an email was rare and a sign that someone was really excited about Cloudflare Workers specifically and were not just sending resumes to 100 companies.\n\nBut now it's the opposite. I'm pretty sure 100% of these emails are written by AI agents. In fact the majority of them start out with \"Your post on [summarize some blog post of mine] caught my eye,\" which is a turn of phrase that's also very common in recruiter spam.\n\nReally sad.",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "simonw"
+    },
+    {
+      "id": "https://x.com/swyx/status/2126201671026180469",
+      "istochnik": "X",
+      "zagolovok": "beating cursor and t3code on day 0. strong start Цитирует @mitchellh: Rex is live in the App Store. It requires a Rex Se",
+      "url": "https://x.com/swyx/status/2126201671026180469",
+      "data": "2026-11-27T06:29:15Z",
+      "tekst": "@swyx: beating cursor and t3code on day 0. strong start\n\nЦитирует @mitchellh: Rex is live in the App Store. It requires a Rex Server running on another device so maybe a hint that a full public release is imminent… in the meantime enjoy the startup animation and screenshots. 😎 https://apps.apple.com/us/app/rex-by-superlogical/id6813649254",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "swyx"
+    },
+    {
+      "id": "https://x.com/swyx/status/2126106139582677088",
+      "istochnik": "X",
+      "zagolovok": "i think agentic payments is one of the most divisive yet important themes to get right for 2028. no real in between, eit",
+      "url": "https://x.com/swyx/status/2126106139582677088",
+      "data": "2026-11-27T00:09:39Z",
+      "tekst": "@swyx: i think agentic payments is one of the most divisive yet important themes to get right for 2028. no real in between, either you get in early or you declare its basically never gonna happen\n\nЦитирует @lukaivicev: If you’re in agentic payments, pivot to: something useful.",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "swyx"
+    },
+    {
+      "id": "https://x.com/swyx/status/2125969097276178943",
+      "istochnik": "X",
+      "zagolovok": "the amount of saas founders having to refound their decade+ old company is visibly going up in the timeline and 1) its c",
+      "url": "https://x.com/swyx/status/2125969097276178943",
+      "data": "2026-11-26T15:05:06Z",
+      "tekst": "@swyx: the amount of saas founders having to refound their decade+ old company is visibly going up in the timeline and 1) its causing a reckoning with lazy saas lockin business models, 2) it’s kinda cool that we all get to see them work thru this problem live\n\nЦитирует @wadefoster: Refounding Zapier means answering a lot of hard questions.\n\nLike: \"Why use Zapier, when Claude connects to my apps?\"\n\nThe short answer: use them together. Your agent does the thinking. Zapier MCP plugs it into 10,000+ apps so it can take real actions in the tools you need.\n\n@Zapier is for work that repeats: a new lead, a payment notification, the Monday morning report, anything that has to keep running after you close the chat.\n\nSure, you can set that up as a scheduled task in Claude, ChatGPT, etc. But then you're paying for AI tokens every time it wakes up to check for work, even when it finds nothing. \n\nZapier’s AI Workflow Index priced 2,944 real workflows and found that 𝘀𝗰𝗵𝗲𝗱𝘂𝗹𝗲𝗱 𝗮𝗴𝗲𝗻𝘁𝘀 𝗰𝗼𝘀𝘁 𝗮𝗻 𝗲𝘀𝘁𝗶𝗺𝗮𝘁𝗲𝗱 𝟮.𝟭𝘅 𝗮𝘀 𝗺𝘂𝗰𝗵 𝗮𝘀 𝗭𝗮𝗽𝘀.\n\nA Zap starts when something actually happens. It runs the same steps every time and only calls AI for the parts that need judgment.\n\nA scheduled task works great while you're at your computer. But who fixes it when it breaks at 2am? If you built it yourself, you do. If it's hosted on Zapier, Zapier fixes it on its own. Plus, when it sees you using AI for something simple automation or code could do? It recommends a fix. (Something the big labs aren’t enticed to do…)\n\nThe new Zapier works with whatever AI agent you already use. So use them together.\n\nThe next time you ask Claude or ChatGPT or Grok or Muse for the same thing twice, have it build a Zap.",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "swyx"
+    },
+    {
+      "id": "https://x.com/swyx/status/2125995865525629084",
+      "istochnik": "X",
+      "zagolovok": "smol forge now runs macos/ios CI thanks to @namespacelabs @20thr and boots linux ci in <1s thanks to cloudflare containe",
+      "url": "https://x.com/swyx/status/2125995865525629084",
+      "data": "2026-11-26T16:51:28Z",
+      "tekst": "@swyx: smol forge now runs macos/ios CI thanks to @namespacelabs @20thr and boots linux ci in <1s thanks to cloudflare container snapshots by @southpolesteve\n\nЦитирует @swyx: current end state of forge",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "swyx"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2126238130684535288",
+      "istochnik": "X",
+      "zagolovok": "DAILY AI BRIEF 🗞 — Nov 27 GOOGLE $273.10 (−2.13%) 🔥: - Gemini quota on Antigravity was reset for all users for Thanksgiv",
+      "url": "https://x.com/testingcatalog/status/2126238130684535288",
+      "data": "2026-11-27T08:54:08Z",
+      "tekst": "@testingcatalog: DAILY AI BRIEF 🗞 — Nov 27\n\nGOOGLE $273.10 (−2.13%) 🔥:\n- Gemini quota on Antigravity was reset for all users for Thanksgiving.\n- The Gemini app now has an option to Search Google (via SaiNemani1).\n\nOPENAI 🔥:\n- A GPT-6.2 billing bug is fixed, so Astra now hits limits 40% faster and Sol 25% faster, with a banked reset as an apology.\n\nNVIDIA $149.30 (−3.91%) 🔥:\n- Nvidia told Dell and Supermicro to pause AI server shipments to Malaysia, Singapore, Thailand and Indonesia under new US export rules, per Financial Times.\n\nSPACEXSI $127.44 (+1.30%) 🔥:\n- Grok Bot 1.3.0 is rolling out with smarter Slack bots, restock alerts, mobile buy now and automatic Teams setup.\n- Grok Bot plans now give 11% more usage, and up to 50% more for routines.\n- Grok Bot is working on \"Select anything, anywhere\" to attach any on-screen area to quick chat (via nima_owji).\n\nANTHROPIC $82.79 (+1.07%) 🔥:\n- Anthropic is testing Google Drive file management so Claude users can browse Docs, Sheets and Slides inside its UI.\n\nZHIPU AI $45.74 (+22.25%) 🔥:\n- GLM-5.5 missed its planned November release and could slip to Q1 2027 or later, per Reuters.\n\nMOONSHOT 🔥:\n- Moonshot is giving free Kimi API credits to scientific research teams worldwide.\n- The gap before Kimi K4 could stretch to a year or more if Moonshot loses overseas compute, per Reuters.\n\nCLOUDFLARE $283.30 (−1.39%) 🔥:\n- Search for Agents beta lets any site offer a search endpoint that returns Markdown to AI agents.\n\nHERMES 🔥:\n- Hermes Desktop is getting a major redesign early next week, focused on Hermes Agents.\n- A Bot Marketplace is coming, letting users share agents and start new bots from pre-made templates.\n\nPERPLEXITY 🔥:\n- Perplexity Teammates adoption among Max users is doubling every ten days.\n\nЦитирует @testingcatalog: DAILY AI BRIEF 🗞 — Nov 26\n\nOPENAI 🔥:\n- OpenAI is testing Private Inference with a small group of business customers.\n- A GPT-6.2 billing bug is fixed, so Astra now hits limits 40% faster and Sol 25% faster, with a banked reset as an apology.\n- Shared Chat and Work usage limits will reach Plus, Pro and Business subscribers more broadly in December.\n\nANTHROPIC $82.79 (+1.07%) 🔥:\n- Claude Duet's research preview expands beyond the US to India, Brazil, Indonesia and Japan.\n- Claude Opus 5.6 is now in A/B tests on Claude Code.\n\nGOOGLE $273.10 (−2.13%) 🔥:\n- Gemini Live adds 60+ new voices with local accents across six countries.\n- Guided Vision in Gemini Live is now available on iOS.\n- Antigravity raised Neon's cache hit rate by another 4.5%, fitting 28% more tasks into quota.\n\nSPACEXSI $127.44 (+1.30%) 🔥:\n- SpaceX plans to invest $50B+ in its Colossus 3 supercompute site in Cochise County, Arizona.\n- Grok Bot is getting a Quick Chat window with a hotkey to message your main Bot from any app.\n- SpaceXSI and X are testing free Grok Bot access in XChat, even without Premium (via blankspeaker).\n\nPERPLEXITY 🔥:\n- Time Machine lets the Search and Context APIs show the web as it was on any past date.\n",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2126069984011178293",
+      "istochnik": "X",
+      "zagolovok": "Grok Bot usage has been optimised by 11% for normal chats and up to 50% for Routines. This is the way 💪👀 Цитирует @SamSo",
+      "url": "https://x.com/testingcatalog/status/2126069984011178293",
+      "data": "2026-11-26T21:45:59Z",
+      "tekst": "@testingcatalog: Grok Bot usage has been optimised by 11% for normal chats and up to 50% for Routines. \n\nThis is the way 💪👀\n\nЦитирует @SamSokolin: The team has been cooking over the last few weeks! You should now see an additional 11% more usage out of your plan, and up to 50% more usage for routines!\n\nExcited to share more soon on how we optimized our routine harness to remove inference requests for simple and repetitive tasks!",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2126014729273405625",
+      "istochnik": "X",
+      "zagolovok": "Anthropic is testing Google Drive file management for Claude to let users browse Docs, Sheets, and Slides directly insid",
+      "url": "https://x.com/testingcatalog/status/2126014729273405625",
+      "data": "2026-11-26T18:06:25Z",
+      "tekst": "@testingcatalog: Anthropic is testing Google Drive file management for Claude to let users browse Docs, Sheets, and Slides directly inside its UI. \n\nInterestingly, a similar functionality already exists in ChatGPT Spaces. \n\nNo one will need to leave AI superapps eventually; they are about to consume everything. When will we see AI labs acquiring Grub, Gojack, Rappi, and others?",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2125978663870947513",
+      "istochnik": "X",
+      "zagolovok": "NOUS RESEARCH 🔥: Hermes desktop app is expected to get a major redesign next week, focused on Hermes Agents. Also, Bot M",
+      "url": "https://x.com/testingcatalog/status/2125978663870947513",
+      "data": "2026-11-26T15:43:06Z",
+      "tekst": "@testingcatalog: NOUS RESEARCH 🔥: Hermes desktop app is expected to get a major redesign next week, focused on Hermes Agents. \n\nAlso, Bot Marketplace is coming soon, allowing users to share their agents with others and kickstart new bots from pre-made templates.\n\nWhat's next? 👀\n\nh/t Hermes Release Watch https://x.com/HermesWatcher/status/2125421174624784493/video/1",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    }
+  ],
+  "ne_otvetili": [],
+  "tolko_v_vidennye": [],
+  "github_polnyy_obhod": false,
+  "istochniki": [
+    "claude.dev",
+    "Claude Code",
+    "Claude Platform",
+    "Блог Claude",
+    "OpenAI",
+    "Codex",
+    "OpenAI API",
+    "AINews",
+    "Simon Willison",
+    "Ben's Bites",
+    "Cursor",
+    "DeepMind",
+    "Блог Google",
+    "Google Developers Blog",
+    "Techmeme",
+    "GitHub Claude Code"
+  ],
+  "iks": {
+    "akkauntov": 30,
+    "ne_otvetili": []
+  }
+}
