@@ -1,0 +1,308 @@
+{
+  "nachalo_progona": "2026-11-27T18:08:28Z",
+  "nachalo_perioda": "2026-11-27T09:12:06Z",
+  "nachalo_okna": "2026-11-26T18:08:28Z",
+  "pervyy_progon": false,
+  "kandidaty": [
+    {
+      "id": "https://www.techmeme.com/261127/p9#a261127p9",
+      "istochnik": "Techmeme",
+      "zagolovok": "SAP confirms a cybersecurity incident; report: hackers obtained its staffers' authentication tokens, letting them copy and alter source code stored on GitHub (Eduard Kovacs/SecurityWeek)",
+      "url": "https://www.techmeme.com/261127/p9#a261127p9",
+      "data": "2026-11-27T16:35:08Z",
+      "tekst": "Статья: https://www.securityweek.com/sap-confirms-cyberattack-source-code-reportedly-compromised/\nEduard Kovacs / SecurityWeek:\n\nSAP confirms a cybersecurity incident; report: hackers obtained its staffers' authentication tokens, letting them copy and alter source code stored on GitHub — SAP has detected suspicious activity on GitHub, where hackers reportedly used stolen employee tokens to copy and alter source code.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261127/p8#a261127p8",
+      "istochnik": "Techmeme",
+      "zagolovok": "The CMA says Meta made changes to Muse's ToS in the UK to reflect the country's consumer law; the terms give users far more protections than in the US (Joseph Bambridge/Politico)",
+      "url": "https://www.techmeme.com/261127/p8#a261127p8",
+      "data": "2026-11-27T15:25:00Z",
+      "tekst": "Статья: https://www.politico.eu/article/metas-uk-rollout-for-muse-ai-agent-exposes-it-to-more-liability/\nJoseph Bambridge / Politico:\n\nThe CMA says Meta made changes to Muse's ToS in the UK to reflect the country's consumer law; the terms give users far more protections than in the US — The U.K. terms of service for Muse give consumers far more protection than in the U.S. — LONDON — Meta will be on the hook …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261127/p7#a261127p7",
+      "istochnik": "Techmeme",
+      "zagolovok": "Interviews with Huawei CEO Ren Zhengfei and others on how Trump's restrictions pushed Huawei toward self-reliance, making it central to China's AI ambitions (New York Times)",
+      "url": "https://www.techmeme.com/261127/p7#a261127p7",
+      "data": "2026-11-27T14:20:01Z",
+      "tekst": "Статья: https://www.nytimes.com/2026/11/26/business/huawei-trump-china-ai.html?unlocked_article_code=1.TlE.eHV_.2f70GvuLgZxe&smid=nytcore-ios-share\nNew York Times:\n\nInterviews with Huawei CEO Ren Zhengfei and others on how Trump's restrictions pushed Huawei toward self-reliance, making it central to China's AI ambitions — As China's access to Nvidia's advanced chips shrinks, Huawei is becoming increasingly indispensable to Beijing despite a wide technological gap with its American rival.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261127/p6#a261127p6",
+      "istochnik": "Techmeme",
+      "zagolovok": "Serial numbers in Chinese filings reveal that Nvidia's restricted Blackwell chips were installed at a Shanghai data center linked to Alice Huang and Megaspeed (Bloomberg)",
+      "url": "https://www.techmeme.com/261127/p6#a261127p6",
+      "data": "2026-11-27T13:05:01Z",
+      "tekst": "Статья: https://www.bloomberg.com/news/articles/2026-11-27/nvidia-blackwell-chips-turn-up-at-china-site-tied-to-alice-huang?accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOiJTdWJzY3JpYmVyR2lmdGVkQXJ0aWNsZSIsImlhdCI6MTc5NTc4ODgyMywiZXhwIjoxNzk2MzkzNjIzLCJhcnRpY2xlSWQiOiJUUDFVMFJUOU5KTFMwMCIsImJjb25uZWN0SWQiOiI3QTcxRTEyQjY2RTM0RkI3ODlCQTA5NEZBQzVGMkE0OSJ9.tcyYBUyKr7A_4Qyf4S69z95uT1ZiyuOyOOZi73bhQ7Q\nBloomberg:\n\nSerial numbers in Chinese filings reveal that Nvidia's restricted Blackwell chips were installed at a Shanghai data center linked to Alice Huang and Megaspeed — A pair of Chinese firms installed Nvidia Corp.'s powerful Blackwell semiconductors in a Shanghai data center linked to Alice Huang …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261127/p5#a261127p5",
+      "istochnik": "Techmeme",
+      "zagolovok": "Meituan reports Q3 revenue up 21.6% YoY to ~$17.3B, above est., and an adjusted net profit of ~$285.1M, up from a ~$2.4B adjusted net loss (Ben Jiang/South China Morning Post)",
+      "url": "https://www.techmeme.com/261127/p5#a261127p5",
+      "data": "2026-11-27T12:35:01Z",
+      "tekst": "Статья: http://www.scmp.com/\nBen Jiang / South China Morning Post:\n\nMeituan reports Q3 revenue up 21.6% YoY to ~$17.3B, above est., and an adjusted net profit of ~$285.1M, up from a ~$2.4B adjusted net loss — Chinese food-delivery giant Meituan reported a second consecutive profitable quarter on Friday, as the company navigates intensifying competition …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261127/p4#a261127p4",
+      "istochnik": "Techmeme",
+      "zagolovok": "Sources: the US Air Force recently discovered a breach of Cloud One, which combines Microsoft, Amazon, Oracle, and Google clouds to power Air Force applications (Reuters)",
+      "url": "https://www.techmeme.com/261127/p4#a261127p4",
+      "data": "2026-11-27T12:10:01Z",
+      "tekst": "Статья: https://www.reuters.com/world/hackers-breach-us-air-force-flagship-cloud-one-computing-platform-2026-11-27/\nReuters:\n\nSources: the US Air Force recently discovered a breach of Cloud One, which combines Microsoft, Amazon, Oracle, and Google clouds to power Air Force applications — Hackers have breached the US Air Force's flagship cloud computing platform, three people familiar with the matter told Reuters …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261127/p3#a261127p3",
+      "istochnik": "Techmeme",
+      "zagolovok": "A look at proposals for vertical data centers, often the only option where land is limited in places like Taiwan; Kansas City recently rejected a 20-story tower (Tiffany Hsu/New York Times)",
+      "url": "https://www.techmeme.com/261127/p3#a261127p3",
+      "data": "2026-11-27T10:25:08Z",
+      "tekst": "Статья: https://www.nytimes.com/2026/11/26/business/energy-environment/vertical-data-center-kansas-city.html\nTiffany Hsu / New York Times:\n\nA look at proposals for vertical data centers, often the only option where land is limited in places like Taiwan; Kansas City recently rejected a 20-story tower — The facilities that power A.I. and other big data needs are in high demand but widely despised. Some developers are trying to build them up instead of out.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261127/p2#a261127p2",
+      "istochnik": "Techmeme",
+      "zagolovok": "Foreign investors sold a record net $33.1B of Taiwanese stocks in November, topping October's record outflow amid AI valuation fears and a broader tech sell-off (Eunice Xu/Bloomberg)",
+      "url": "https://www.techmeme.com/261127/p2#a261127p2",
+      "data": "2026-11-27T07:30:00Z",
+      "tekst": "Статья: https://www.bloomberg.com/\nEunice Xu / Bloomberg:\n\nForeign investors sold a record net $33.1B of Taiwanese stocks in November, topping October's record outflow amid AI valuation fears and a broader tech sell-off — Foreign investors dumped a record amount of Taiwanese stocks so far in November, underscoring how heavily the global AI bellwether …",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261127/p1#a261127p1",
+      "istochnik": "Techmeme",
+      "zagolovok": "US smartphone shipments fell 9% YoY in Q3 as memory costs hit Android OEMs, especially at the low end; Apple's share rose from 50% to 57%, Samsung held at 25% (Maurice Klaehne/Counterpoint Research)",
+      "url": "https://www.techmeme.com/261127/p1#a261127p1",
+      "data": "2026-11-27T05:45:01Z",
+      "tekst": "Статья: http://www.counterpointresearch.com/\nMaurice Klaehne / Counterpoint Research:\n\nUS smartphone shipments fell 9% YoY in Q3 as memory costs hit Android OEMs, especially at the low end; Apple's share rose from 50% to 57%, Samsung held at 25% — - US smartphone shipments fell 9% YoY in Q3 as rising memory costs weighed on Android OEMs, especially at the low end.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261126/p27#a261126p27",
+      "istochnik": "Techmeme",
+      "zagolovok": "Dante Security, which has developed a platform for monitoring the activity of AI agents within organizations, raised a $10M seed led by NFX (Meir Orbach/CTech)",
+      "url": "https://www.techmeme.com/261126/p27#a261126p27",
+      "data": "2026-11-27T03:15:01Z",
+      "tekst": "Статья: https://www.calcalistech.com/ctechnews/article/h18nob7kml\nMeir Orbach / CTech:\n\nDante Security, which has developed a platform for monitoring the activity of AI agents within organizations, raised a $10M seed led by NFX — Dante Security is developing a platform that gives organizations visibility into the actions of autonomous AI agents and connects their activity to the employees responsible for them.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261126/p26#a261126p26",
+      "istochnik": "Techmeme",
+      "zagolovok": "Bipartisan efforts in Congress to regulate AI are gaining momentum, but they face an uphill climb due to the slow pace of legislative work and turf battles (New York Times)",
+      "url": "https://www.techmeme.com/261126/p26#a261126p26",
+      "data": "2026-11-27T00:30:01Z",
+      "tekst": "Статья: https://www.nytimes.com/2026/11/26/us/politics/ai-regulation-congress-nvidia.html\nNew York Times:\n\nBipartisan efforts in Congress to regulate AI are gaining momentum, but they face an uphill climb due to the slow pace of legislative work and turf battles — Members of both parties say they want to tackle artificial intelligence policy, but the slow pace of legislating and turf battles could stand in the way.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261126/p25#a261126p25",
+      "istochnik": "Techmeme",
+      "zagolovok": "A US judge sentences a Florida man to 47 months in prison for using AI to impersonate Kick streamer N3on, defrauding a memecoin's organizers out of ~$260K (Nathan Grayson/Aftermath)",
+      "url": "https://www.techmeme.com/261126/p25#a261126p25",
+      "data": "2026-11-26T22:10:01Z",
+      "tekst": "Статья: https://aftermath.site/n3on-impersonator-ai-prison-260000-dollars-kick-stream/\nNathan Grayson / Aftermath:\n\nA US judge sentences a Florida man to 47 months in prison for using AI to impersonate Kick streamer N3on, defrauding a memecoin's organizers out of ~$260K — What goes around comes around, I suppose. Earlier this year, Kick streamer N3on, a weasly little twig person who spends …",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261126/p24#a261126p24",
+      "istochnik": "Techmeme",
+      "zagolovok": "Binance says it has finished its recovery work and fully lifted its withdrawal suspension, after a record $6.3B was stolen in a hack last month (Rajveer Singh Pardesi/Reuters)",
+      "url": "https://www.techmeme.com/261126/p24#a261126p24",
+      "data": "2026-11-26T19:55:02Z",
+      "tekst": "Статья: https://www.reuters.com/technology/binance-lifts-withdrawal-suspension-after-63-billion-crypto-heist-2026-11-26/\nRajveer Singh Pardesi / Reuters:\n\nBinance says it has finished its recovery work and fully lifted its withdrawal suspension, after a record $6.3B was stolen in a hack last month — Binance said on Thursday its withdrawal recovery work is complete and it has lifted its withdrawal suspension after a record $6.3 billion was stolen in a hack last month.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://x.com/trq212/status/2126210197647753273",
+      "istochnik": "X",
+      "zagolovok": "everything is reps",
+      "url": "https://x.com/trq212/status/2126210197647753273",
+      "data": "2026-11-27T07:03:08Z",
+      "tekst": "@trq212: everything is reps",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "trq212"
+    },
+    {
+      "id": "https://x.com/gdb/status/2126017271114195036",
+      "istochnik": "X",
+      "zagolovok": "GPT-6.2 for interactive lessons for history class: Цитирует @VraserX: I built an entire interactive WWI lesson for my 10",
+      "url": "https://x.com/gdb/status/2126017271114195036",
+      "data": "2026-11-26T18:16:31Z",
+      "tekst": "@gdb: GPT-6.2 for interactive lessons for history class:\n\nЦитирует @VraserX: I built an entire interactive WWI lesson for my 10th graders with GPT-6.2 Astra.\n\nThey can walk through a 3D trench on their phones, examine objects in a dugout, and use historical sources to piece together what life was like on the Western Front.\n\nhttps://westfront-1916.vraserx.chatgpt.site/",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "gdb"
+    },
+    {
+      "id": "https://x.com/MistralAI/status/2126292459265442028",
+      "istochnik": "X",
+      "zagolovok": "5 of our models rank in the top 40 for transcription accuracy on @ArtificialAnlys. English, French, Japanese, Hungarian,",
+      "url": "https://x.com/MistralAI/status/2126292459265442028",
+      "data": "2026-11-27T12:30:01Z",
+      "tekst": "@MistralAI: 5 of our models rank in the top 40 for transcription accuracy on @ArtificialAnlys.\n\nEnglish, French, Japanese, Hungarian, Turkish. Every word, transcribed by Voxtral.\n\nTranscription you can trust. 🤝\nhttps://artificialanalysis.ai/speech-to-text/non-streaming#error-rate-tabs",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "MistralAI"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2126331794379215080",
+      "istochnik": "X",
+      "zagolovok": "GOOGLE 🔥: In addition to existing Plugins, Google is preparing to release Bundles too! > \"Curated sets of plugins for co",
+      "url": "https://x.com/testingcatalog/status/2126331794379215080",
+      "data": "2026-11-27T15:06:19Z",
+      "tekst": "@testingcatalog: GOOGLE 🔥: In addition to existing Plugins, Google is preparing to release Bundles too! \n\n> \"Curated sets of plugins for common workflows and roles.\"\n\nBundles are meant to be collections of Plugins combined around a specific scope, such as Finance, Legal, and more. A similar functionality exists in Claude, for instance.",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2126306271892475950",
+      "istochnik": "X",
+      "zagolovok": "GOOGLE 🔥: Antigravity will have a way to create AI agents directly from its UI! > In the current implementation, users c",
+      "url": "https://x.com/testingcatalog/status/2126306271892475950",
+      "data": "2026-11-27T13:24:54Z",
+      "tekst": "@testingcatalog: GOOGLE 🔥: Antigravity will have a way to create AI agents directly from its UI! \n\n> In the current implementation, users can configure agent's name, icon, and its goal. \n\n> Earlier, Google also added a way to create agents through prompts. Both features are currently hidden. \n\nGiven that Antigravity is now Google's main focus and is about to become Google's AI Superapp, and given that Google is lagging far behind on personalized agents, it is very possible we could see them integrated directly into Antigravity soon. \n\nThat would be big 👀",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2126238130684535288",
+      "istochnik": "X",
+      "zagolovok": "DAILY AI BRIEF 🗞 — Nov 27 GOOGLE $273.10 (−2.13%) 🔥: - Gemini quota on Antigravity was reset for all users for Thanksgiv",
+      "url": "https://x.com/testingcatalog/status/2126238130684535288",
+      "data": "2026-11-27T08:54:08Z",
+      "tekst": "@testingcatalog: DAILY AI BRIEF 🗞 — Nov 27\n\nGOOGLE $273.10 (−2.13%) 🔥:\n- Gemini quota on Antigravity was reset for all users for Thanksgiving.\n- The Gemini app now has an option to Search Google (via SaiNemani1).\n\nOPENAI 🔥:\n- A GPT-6.2 billing bug is fixed, so Astra now hits limits 40% faster and Sol 25% faster, with a banked reset as an apology.\n\nNVIDIA $149.30 (−3.91%) 🔥:\n- Nvidia told Dell and Supermicro to pause AI server shipments to Malaysia, Singapore, Thailand and Indonesia under new US export rules, per Financial Times.\n\nSPACEXSI $127.44 (+1.30%) 🔥:\n- Grok Bot 1.3.0 is rolling out with smarter Slack bots, restock alerts, mobile buy now and automatic Teams setup.\n- Grok Bot plans now give 11% more usage, and up to 50% more for routines.\n- Grok Bot is working on \"Select anything, anywhere\" to attach any on-screen area to quick chat (via nima_owji).\n\nANTHROPIC $82.79 (+1.07%) 🔥:\n- Anthropic is testing Google Drive file management so Claude users can browse Docs, Sheets and Slides inside its UI.\n\nZHIPU AI $45.74 (+22.25%) 🔥:\n- GLM-5.5 missed its planned November release and could slip to Q1 2027 or later, per Reuters.\n\nMOONSHOT 🔥:\n- Moonshot is giving free Kimi API credits to scientific research teams worldwide.\n- The gap before Kimi K4 could stretch to a year or more if Moonshot loses overseas compute, per Reuters.\n\nCLOUDFLARE $283.30 (−1.39%) 🔥:\n- Search for Agents beta lets any site offer a search endpoint that returns Markdown to AI agents.\n\nHERMES 🔥:\n- Hermes Desktop is getting a major redesign early next week, focused on Hermes Agents.\n- A Bot Marketplace is coming, letting users share agents and start new bots from pre-made templates.\n\nPERPLEXITY 🔥:\n- Perplexity Teammates adoption among Max users is doubling every ten days.\n\nЦитирует @testingcatalog: DAILY AI BRIEF 🗞 — Nov 26\n\nOPENAI 🔥:\n- OpenAI is testing Private Inference with a small group of business customers.\n- A GPT-6.2 billing bug is fixed, so Astra now hits limits 40% faster and Sol 25% faster, with a banked reset as an apology.\n- Shared Chat and Work usage limits will reach Plus, Pro and Business subscribers more broadly in December.\n\nANTHROPIC $82.79 (+1.07%) 🔥:\n- Claude Duet's research preview expands beyond the US to India, Brazil, Indonesia and Japan.\n- Claude Opus 5.6 is now in A/B tests on Claude Code.\n\nGOOGLE $273.10 (−2.13%) 🔥:\n- Gemini Live adds 60+ new voices with local accents across six countries.\n- Guided Vision in Gemini Live is now available on iOS.\n- Antigravity raised Neon's cache hit rate by another 4.5%, fitting 28% more tasks into quota.\n\nSPACEXSI $127.44 (+1.30%) 🔥:\n- SpaceX plans to invest $50B+ in its Colossus 3 supercompute site in Cochise County, Arizona.\n- Grok Bot is getting a Quick Chat window with a hotkey to message your main Bot from any app.\n- SpaceXSI and X are testing free Grok Bot access in XChat, even without Premium (via blankspeaker).\n\nPERPLEXITY 🔥:\n- Time Machine lets the Search and Context APIs show the web as it was on any past date.\n",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2126069984011178293",
+      "istochnik": "X",
+      "zagolovok": "Grok Bot usage has been optimised by 11% for normal chats and up to 50% for Routines. This is the way 💪👀 Цитирует @SamSo",
+      "url": "https://x.com/testingcatalog/status/2126069984011178293",
+      "data": "2026-11-26T21:45:59Z",
+      "tekst": "@testingcatalog: Grok Bot usage has been optimised by 11% for normal chats and up to 50% for Routines. \n\nThis is the way 💪👀\n\nЦитирует @SamSokolin: The team has been cooking over the last few weeks! You should now see an additional 11% more usage out of your plan, and up to 50% more usage for routines!\n\nExcited to share more soon on how we optimized our routine harness to remove inference requests for simple and repetitive tasks!",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/OpenAIDevs/status/2126372238853112227",
+      "istochnik": "X",
+      "zagolovok": "“Can we get those 40 welcome kits to San Francisco any sooner?” Here’s how we built a merch store you can talk to: • GPT",
+      "url": "https://x.com/OpenAIDevs/status/2126372238853112227",
+      "data": "2026-11-27T17:47:02Z",
+      "tekst": "@OpenAIDevs: “Can we get those 40 welcome kits to San Francisco any sooner?”\n\nHere’s how we built a merch store you can talk to:\n\n• GPT-Live-1.1 reads out the rush fee and delivery estimate.\n• The Decisions API scores damage to a returned mug.\n• WebMCP lets any agentcall the store’s cart tools.",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "OpenAIDevs"
+    },
+    {
+      "id": "https://x.com/swyx/status/2126352854394790172",
+      "istochnik": "X",
+      "zagolovok": "google has a new tibo, spawning just as neon is the hottest frontier model in the world. banked resets and all this is a",
+      "url": "https://x.com/swyx/status/2126352854394790172",
+      "data": "2026-11-27T16:30:00Z",
+      "tekst": "@swyx: google has a new tibo, spawning just as neon is the hottest frontier model in the world. banked resets and all\n\nthis is a completely revitalized GDM unlike which we have not seen since basically Gemini 2.5 in my memory. writeup coming @latentspacepod but basically the # of frontier and near-frontier labs has ~doubled every year since 2023 and that’s by far the biggest existence disproof that the bitter lesson is the sole determinant of ai industrial economics. @saranormous calls it model neurodiversity and basically its the single most impt macro factor driving the life/death of agent labs and ai engineering.\n\nЦитирует @eliza_huang: wow, didn’t expect a hello world to hit 50k+ views and take me past 1k followers 🥹\n\nto give thanks: i’m cooking up banked reset & fixing papercuts 🧚🏻‍♀️\n\nhow can @antigravity be improved?",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "swyx"
+    },
+    {
+      "id": "https://x.com/swyx/status/2126201671026180469",
+      "istochnik": "X",
+      "zagolovok": "beating cursor and t3code on day 0. strong start Цитирует @mitchellh: Rex is live in the App Store. It requires a Rex Se",
+      "url": "https://x.com/swyx/status/2126201671026180469",
+      "data": "2026-11-27T06:29:15Z",
+      "tekst": "@swyx: beating cursor and t3code on day 0. strong start\n\nЦитирует @mitchellh: Rex is live in the App Store. It requires a Rex Server running on another device so maybe a hint that a full public release is imminent… in the meantime enjoy the startup animation and screenshots. 😎 https://apps.apple.com/us/app/rex-by-superlogical/id6813649254",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "swyx"
+    },
+    {
+      "id": "https://x.com/swyx/status/2126106139582677088",
+      "istochnik": "X",
+      "zagolovok": "i think agentic payments is one of the most divisive yet important themes to get right for 2028. no real in between, eit",
+      "url": "https://x.com/swyx/status/2126106139582677088",
+      "data": "2026-11-27T00:09:39Z",
+      "tekst": "@swyx: i think agentic payments is one of the most divisive yet important themes to get right for 2028. no real in between, either you get in early or you declare its basically never gonna happen\n\nЦитирует @lukaivicev: If you’re in agentic payments, pivot to: something useful.",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "swyx"
+    },
+    {
+      "id": "https://x.com/btibor91/status/2126357062879940899",
+      "istochnik": "X",
+      "zagolovok": "\"He knows about our updates before some of our employees do\" lol (Source: \"the group chat where your AI talks behind you",
+      "url": "https://x.com/btibor91/status/2126357062879940899",
+      "data": "2026-11-27T16:46:44Z",
+      "tekst": "@btibor91: \"He knows about our updates before some of our employees do\" lol\n\n(Source: \"the group chat where your AI talks behind your back\" - https://construct22.com)",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "btibor91"
+    },
+    {
+      "id": "https://x.com/btibor91/status/2126270609449725967",
+      "istochnik": "X",
+      "zagolovok": "The dream team",
+      "url": "https://x.com/btibor91/status/2126270609449725967",
+      "data": "2026-11-27T11:03:12Z",
+      "tekst": "@btibor91: The dream team",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "btibor91"
+    }
+  ],
+  "ne_otvetili": [],
+  "tolko_v_vidennye": [],
+  "github_polnyy_obhod": false,
+  "istochniki": [
+    "claude.dev",
+    "Claude Code",
+    "Claude Platform",
+    "Блог Claude",
+    "OpenAI",
+    "Codex",
+    "OpenAI API",
+    "AINews",
+    "Simon Willison",
+    "Ben's Bites",
+    "Cursor",
+    "DeepMind",
+    "Блог Google",
+    "Google Developers Blog",
+    "Techmeme",
+    "GitHub Claude Code"
+  ],
+  "iks": {
+    "akkauntov": 30,
+    "ne_otvetili": [
+      "AIatMeta"
+    ]
+  }
+}
