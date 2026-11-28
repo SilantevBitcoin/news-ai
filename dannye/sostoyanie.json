@@ -2,83 +2,6 @@
   "github_obhod": true,
   "opublikovannye": [
     {
-      "data": "2026-11-13T20:35:18Z",
-      "oboroty": false,
-      "url": "https://www.techmeme.com/261113/p19#a261113p19",
-      "vid": "sayty",
-      "zagolovok": "OpenAI расформировала отдельную команду робототехники: считает, что модели вроде GPT-6 Astra можно применять к роботам напрямую"
-    },
-    {
-      "data": "2026-11-13T20:35:18Z",
-      "oboroty": false,
-      "url": "https://x.com/testingcatalog/status/2121297682333606345",
-      "vid": "x",
-      "zagolovok": "Perplexity Teammates — персональные проактивные агенты — открылись в приложении для Mac подписчикам Max"
-    },
-    {
-      "data": "2026-11-13T20:35:18Z",
-      "oboroty": false,
-      "url": "https://x.com/testingcatalog/status/2121260921435623813",
-      "vid": "x",
-      "zagolovok": "Meta готовит расширение Muse для Chrome, которое выполняет задачи на открытых страницах"
-    },
-    {
-      "data": "2026-11-13T20:35:18Z",
-      "oboroty": false,
-      "url": "https://x.com/AnthropicAI/status/2121317227618340990",
-      "vid": "x",
-      "zagolovok": "Anthropic дала 10 рекомендаций, как проектировать, проводить и описывать оценки безопасности моделей"
-    },
-    {
-      "data": "2026-11-13T20:43:55Z",
-      "oboroty": false,
-      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/google-cloud-credits-gdp-ai-studio/",
-      "vid": "sayty",
-      "zagolovok": "Облачные кредиты Google Developer Program теперь прямо в AI Studio: подписчики AI Pro и Ultra получают их там же"
-    },
-    {
-      "data": "2026-11-13T20:43:55Z",
-      "oboroty": false,
-      "url": "https://x.com/testingcatalog/status/2121338593675489338",
-      "vid": "x",
-      "zagolovok": "Reason Machines запустила кодинг-агента Reason: по её тестам решает больше задач, чем Codex на той же модели, и тратит на 22% меньше"
-    },
-    {
-      "data": "2026-11-13T21:51:00Z",
-      "oboroty": false,
-      "url": "https://code.claude.com/docs/en/changelog#2-1-325",
-      "vid": "sayty",
-      "zagolovok": "Claude Code 2.1.325: песочница по умолчанию спрашивает разрешение на команды, подсказки следующего запроса в VS Code"
-    },
-    {
-      "data": "2026-11-13T21:51:00Z",
-      "oboroty": false,
-      "url": "https://x.com/testingcatalog/status/2121352761379860628",
-      "vid": "x",
-      "zagolovok": "Все пользователи Gemini в США могут подключить Google Wallet и получать персональные ответы о финансах"
-    },
-    {
-      "data": "2026-11-14T02:16:23Z",
-      "oboroty": false,
-      "url": "https://x.com/ClaudeDevs/status/2121392666244186327",
-      "vid": "x",
-      "zagolovok": "Claude Code на десктопе получил моды: можно собрать свою тему — цвета, анимированный фон — просто описав её Claude"
-    },
-    {
-      "data": "2026-11-14T02:16:23Z",
-      "oboroty": false,
-      "url": "https://x.com/ClaudeDevs/status/2121375309287301360",
-      "vid": "x",
-      "zagolovok": "Проекты в Claude Code: координатор стал заметно активнее, отвечает в чате проекта и сообщает о статусе параллельных потоков"
-    },
-    {
-      "data": "2026-11-14T02:16:23Z",
-      "oboroty": false,
-      "url": "https://www.techmeme.com/261113/p31#a261113p31",
-      "vid": "dengi",
-      "zagolovok": "Moonshot AI закрывает каймановую холдинговую компанию и переводит доли инвесторов в китайскую операционную структуру — готовит IPO"
-    },
-    {
       "data": "2026-11-14T10:17:26Z",
       "oboroty": false,
       "url": "https://latent.space/p/ainews-the-no-ai-slop-manifesto/",
@@ -1743,10 +1666,24 @@
       "url": "https://x.com/testingcatalog/status/2126306271892475950",
       "vid": "x",
       "zagolovok": "В Antigravity появится создание ИИ-агентов прямо из интерфейса: имя, значок и цель; функция пока скрыта"
+    },
+    {
+      "data": "2026-11-28T02:19:04Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261127/p12#a261127p12",
+      "vid": "sayty",
+      "zagolovok": "OpenAI подала встречный иск к Apple: обвиняет её в краже коммерческих тайн через вернувшегося в Apple сотрудника и в давлении на общих поставщиков"
+    },
+    {
+      "data": "2026-11-28T02:19:04Z",
+      "oboroty": false,
+      "url": "https://x.com/btibor91/status/2126410343308288420",
+      "vid": "x",
+      "zagolovok": "OpenAI и Lenovo запустили акцию: на части ПК Lenovo с Windows ChatGPT установлен заранее, а бизнес-аккаунты получают кредиты — 100 долларов за вход и 100 долларов за место в первые 90 дней"
     }
   ],
-  "posledniy_sbor": "2026-11-27T17:16:05Z",
-  "posledniy_slot": "2026-11-27T18:00:00Z",
+  "posledniy_sbor": "2026-11-28T01:12:15Z",
+  "posledniy_slot": "2026-11-28T02:00:00Z",
   "vidennye": {
     "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-hydrogen-builders/": "2026-11-24T02:21:47Z",
     "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-neon-builders/": "2026-11-24T18:22:58Z",
@@ -1984,6 +1921,7 @@
     "https://simonwillison.net/2026/Nov/26/hn-50651685/": "2026-11-26T18:21:42Z",
     "https://simonwillison.net/2026/Nov/26/jack-despain-zhou/": "2026-11-26T18:21:42Z",
     "https://simonwillison.net/2026/Nov/26/sqlite3-rsync/": "2026-11-26T10:22:19Z",
+    "https://simonwillison.net/2026/Nov/27/datasette-charts/": "2026-11-28T02:19:04Z",
     "https://simonwillison.net/2026/Nov/9/llm-anthropic/": "2026-11-10T20:46:17Z",
     "https://simonwillison.net/2026/Nov/9/mysterious-beeps/": "2026-11-10T20:46:17Z",
     "https://www.anthropic.com/claude-fable-and-mythos-5-2": "2026-11-10T20:46:14Z",
@@ -2490,6 +2428,12 @@
     "https://www.techmeme.com/261126/p7#a261126p7": "2026-11-26T10:22:19Z",
     "https://www.techmeme.com/261126/p9#a261126p9": "2026-11-26T18:21:42Z",
     "https://www.techmeme.com/261127/p1#a261127p1": "2026-11-27T10:17:41Z",
+    "https://www.techmeme.com/261127/p10#a261127p10": "2026-11-28T02:19:04Z",
+    "https://www.techmeme.com/261127/p11#a261127p11": "2026-11-28T02:19:04Z",
+    "https://www.techmeme.com/261127/p12#a261127p12": "2026-11-28T02:19:04Z",
+    "https://www.techmeme.com/261127/p13#a261127p13": "2026-11-28T02:19:04Z",
+    "https://www.techmeme.com/261127/p14#a261127p14": "2026-11-28T02:19:04Z",
+    "https://www.techmeme.com/261127/p15#a261127p15": "2026-11-28T02:19:04Z",
     "https://www.techmeme.com/261127/p2#a261127p2": "2026-11-27T10:17:41Z",
     "https://www.techmeme.com/261127/p3#a261127p3": "2026-11-27T18:17:48Z",
     "https://www.techmeme.com/261127/p4#a261127p4": "2026-11-27T18:17:48Z",
@@ -2598,6 +2542,7 @@
     "https://x.com/OfficialLoganK/status/2125018427790344654": "2026-11-24T02:21:46Z",
     "https://x.com/OfficialLoganK/status/2125640447305420950": "2026-11-26T02:17:08Z",
     "https://x.com/OfficialLoganK/status/2125681386388422775": "2026-11-26T02:17:08Z",
+    "https://x.com/OfficialLoganK/status/2126434025292144821": "2026-11-28T02:19:04Z",
     "https://x.com/OpenAI/status/2119913172039868579": "2026-11-10T20:46:17Z",
     "https://x.com/OpenAI/status/2120202353907486826": "2026-11-10T20:46:17Z",
     "https://x.com/OpenAI/status/2120216592395174382": "2026-11-10T20:46:17Z",
@@ -2632,6 +2577,7 @@
     "https://x.com/OpenAIDevs/status/2123880710843048001": "2026-11-21T02:23:16Z",
     "https://x.com/OpenAIDevs/status/2124944225955639430": "2026-11-24T02:21:47Z",
     "https://x.com/OpenAIDevs/status/2124981063487492379": "2026-11-24T02:21:47Z",
+    "https://x.com/OpenAIDevs/status/2126372238853112227": "2026-11-28T02:19:04Z",
     "https://x.com/alexalbert__/status/2119916954337349737": "2026-11-10T20:46:17Z",
     "https://x.com/alexalbert__/status/2120983722182988206": "2026-11-13T18:16:34Z",
     "https://x.com/bcherny/status/2124961485801836573": "2026-11-24T02:21:46Z",
@@ -2647,6 +2593,8 @@
     "https://x.com/btibor91/status/2124919196383604841": "2026-11-23T18:12:55Z",
     "https://x.com/btibor91/status/2126270609449725967": "2026-11-27T18:17:48Z",
     "https://x.com/btibor91/status/2126357062879940899": "2026-11-27T18:17:48Z",
+    "https://x.com/btibor91/status/2126406628249575466": "2026-11-28T02:19:04Z",
+    "https://x.com/btibor91/status/2126410343308288420": "2026-11-28T02:19:04Z",
     "https://x.com/claudeai/status/2119899459761131615": "2026-11-10T20:46:17Z",
     "https://x.com/claudeai/status/2120174844822298730": "2026-11-10T20:46:17Z",
     "https://x.com/claudeai/status/2120206365759094857": "2026-11-10T20:46:17Z",
@@ -2723,6 +2671,7 @@
     "https://x.com/jackclarkSF/status/2121715797974479100": "2026-11-15T02:20:29Z",
     "https://x.com/jackclarkSF/status/2123767332187386143": "2026-11-20T18:23:08Z",
     "https://x.com/jackclarkSF/status/2124163568748626056": "2026-11-21T18:15:58Z",
+    "https://x.com/jackclarkSF/status/2126380579512057911": "2026-11-28T02:19:04Z",
     "https://x.com/karpathy/status/2125779541952246039": "2026-11-26T10:22:19Z",
     "https://x.com/kevinweil/status/2120678428378894684": "2026-11-12T18:10:16Z",
     "https://x.com/kevinweil/status/2121678230164041734": "2026-11-15T02:20:29Z",
@@ -3052,6 +3001,7 @@
     "https://x.com/trq212/status/2125156290494353663": "2026-11-24T10:18:23Z",
     "https://x.com/trq212/status/2125675533761671405": "2026-11-26T02:17:08Z",
     "https://x.com/trq212/status/2125750153609163075": "2026-11-26T02:17:08Z",
-    "https://x.com/trq212/status/2126210197647753273": "2026-11-27T10:17:41Z"
+    "https://x.com/trq212/status/2126210197647753273": "2026-11-27T10:17:41Z",
+    "https://x.com/trq212/status/2126386932989210714": "2026-11-28T02:19:04Z"
   }
 }
