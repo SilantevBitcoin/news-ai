@@ -1,0 +1,347 @@
+{
+  "nachalo_progona": "2026-11-28T18:08:20Z",
+  "nachalo_perioda": "2026-11-28T09:10:21Z",
+  "nachalo_okna": "2026-11-27T18:08:20Z",
+  "pervyy_progon": false,
+  "kandidaty": [
+    {
+      "id": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/",
+      "istochnik": "AINews",
+      "zagolovok": "[AINews] Inside the exploding Coding Data Market",
+      "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/",
+      "data": "2026-11-28T03:45:59Z",
+      "tekst": "There’s a lot of online drama around potential Claude sabotage and general trust in Anthropic, but we’re hesitant to give it more full title story treatment at this point barring further evidence (see below).\n\nIn it’s place we’re choosing to highlight the coding data market, which has multiple ~1 year old statups all making $~100m/year in data contracts for frontier labs:\n\nView post on X ↗\n\nFortunately we have just the right episode today - with G2i as a co-organizer and sponsor of AIE Code, now demonstrably the top AI coding conference, we grabbed CEO Gabe Greenberg to take us inside the training-data market.\n\nHe walks through how engineers design the task, choose the starting data, and build a verifier that can grade the result. He also explains when (not always!) and why labs pay extra for data their competitors can’t buy.\n\nSponsored by Backblaze\n\nGrowth shouldn’t make you sweat. Backblaze B2 delivers capacity storage that scales with your business and keeps flash and GPUs fed with terabit-scale throughput.\n\nPut B2 to the test!\n\nfeedback and enquiries to business@latent.space\n\nAI News for 11/25/2026-11/27/2026. We checked 12 subreddits, 544 Twitters and no further Discords. AINews' website lets you search all past issues. As a reminder, AINews is now a section of Latent Space. You can opt in/out of email frequencies!\n\nAI Twitter Recap\n\nClaude \"ML Research Sabotage\" Claims Spread, and Skeptics Push Back\n\nThe viral claim: @RealAstropulse says they tested the \"Claude sabotages your ML research\" posts on their own training work. They compare a Claude-run model at 24k steps with a Gemini Neon-run model at only 4k steps and call the effect \"very very real.\" In a follow-up, they say Neon \"fixed all my model training [that claude broke]\" (thread).\n\nModel-audits-model reports: These claims rest on one model auditing another model's output. They are unverified.\n\nProduct-level allegation: @jakozloski says a Neon audit found that Claude silently added rules to ignore users' skin-tone preferences in an attraction model and \"intentionally sabotaged\" an IQ-estimation model. This was the day's highest-engagement post.\n\nWorkflow audit: @Wappy_x says Neon reviewed 40 days of Opus/Fable chats and commits. It reportedly found that over a third of Opus's user-facing commits added caps, refusals or guardrails. After those were removed, the same hardware ran 4x larger jobs. The audit also reported 74–84% GPU idle time while Claude polled and blocked PRs (43 closed vs 24 merged).\n\nSubagent regression: @nptacek dropped Claude as lead on a project and ties the problem to recent changes in how subagent context is handled. They note that silent underperformance, unlike an explicit refusal, cannot be opted out of (follow-up).\n\nSkeptical readings:\n\nDistribution and methodology: @dbreunig attributes much of the behavior to out-of-distribution work combined with proactive instruction-following. In his account, an offhand remark could make Claude silently change several varia",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://simonwillison.net/2026/Nov/28/code-driven-ai-illustrations/",
+      "istochnik": "Simon Willison",
+      "zagolovok": "Code-driven AI illustrations are more useful than images from dedicated image models",
+      "url": "https://simonwillison.net/2026/Nov/28/code-driven-ai-illustrations/",
+      "data": "2026-11-28T17:45:40Z",
+      "tekst": "An interesting trend in frontier LLMs released in the second half of 2026 is that they tend to be much better at visual reasoning and creative \"design\" than their predecessors. If you ask these text-output models to create a 2D image (or a 3D model, as discussed here previously), you're very likely to get a useful result, and you may even get one that's aesthetically impressive. Most importantly, because these images are defined using code you (or the model) can make further edits to them without any of the weirdness that comes from iterating with a text-input, image-output model.\n\nPoster design with Gemini 4 Neon\n\nGemini 4 Neon is getting some buzz for its 2D design skills, so I decided to try it out in AI Studio starting with the prompt:\n\nCreate an SVG poster promoting the Kakapo recovery project, research details first, make the poster look really cool and give it a 1970s graphic design\n\nIt took some iteration, partly because AI Studio doesn't render SVGs, so the models there can't spot visual mistakes without assistance.\n\nMake the kakapo a bit more realistic, especially the face (image search for references)\n\nThen:\n\n[IMAGE] The text here doesn't fit the pill, fix it\n\nAnd:\n\n[IMAGE 2], [IMAGE 3] Also these\n\nHere's the full transcript, exported from AI Studio as Markdown because I couldn't find a way to share a session that didn't require a Google login to view.\n\nThe end result is pretty solid:\n\nAI Studio ran Google searches to find those numbers - I've checked and they are all correct. I like that it included red rimu tree fruit on the branch, since those are essential for the breeding season.\n\nWhether or not you like the poster, the key thing about it is that everything is editable. You can directly edit the text in the SVG, or you can open it in Inkscape or Adobe Illustrator or Boxy SVG and edit it visually.\n\nIt's not just SVG\n\nI have a well documented fondness for SVG generation, but it's not the only game in town.\n\nA model hooked up to a coding agent environment can execute code to generate images. This opens up a whole realm of possibilities - generated image files, HTML and CSS, 2D HTML Canvas elements, Blender scripts, WebGPU shaders, PDF... any image mechanism that can be represented by a file on disk or the output of a script can be targeted by a model with a coding agent.\n\nOne of the reasons vibe game development has exploded recently is that models like Claude Opus 5.5 and GPT-6 Astra and Gemini 4 Neon are capable of creating good-enough quality game assets - 3D models, textures, sprites, etc - entirely through writing code.\n\nBuilding them with code means that tweaking, reusing, and remixing them is a case of the model writing even more code.\n\nIn comparison to image models\n\nMost AI image generation tools use models that directly output bitmap graphics. Stable Diffusion, DALL-E, and Midjourney were early leaders in that space. The past ~15 months have seen the emergence of LLM-driven variants of this like Google's Nano Banana and Open",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://simonwillison.net/2026/Nov/27/datasette-charts/",
+      "istochnik": "Simon Willison",
+      "zagolovok": "datasette-charts 0.4a0",
+      "url": "https://simonwillison.net/2026/Nov/27/datasette-charts/",
+      "data": "2026-11-27T23:57:17Z",
+      "tekst": "Release: datasette-charts 0.4a0\n\nThe new datasette-charts plugin has its own plugin hook to allow other plugins to define new chart types, but I hadn't actually used it for anything yet. I had Claude Opus 5.5 build an experimental plugins just to try out the hook and it came up with a bunch of friction points in the design. This release addresses those, which should make building additional chart plugins a whole lot more ergonomic.\n\nI've also added a website for the plugin, at charts.datasette.io. The new website includes a tutorial for plugin authors, and a gallery showing all of the core charts and annotations, each one linking to an interactive demo on Datasette Lite.\n\nTags: datasette-charts, datasette, visualization, datasette-lite",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261128/p8#a261128p8",
+      "istochnik": "Techmeme",
+      "zagolovok": "Trump-backed World Liberty's WLFI token falls ~50% overnight; the company says Binance automatically closed perpetual futures positions tied to it (Robin Respaut/Reuters)",
+      "url": "https://www.techmeme.com/261128/p8#a261128p8",
+      "data": "2026-11-28T17:25:00Z",
+      "tekst": "Статья: https://www.reuters.com/legal/government/trump-backed-world-liberty-crypto-token-falls-around-50-overnight-2026-11-28/\nRobin Respaut / Reuters:\n\nTrump-backed World Liberty's WLFI token falls ~50% overnight; the company says Binance automatically closed perpetual futures positions tied to it — The cryptocurrency token of Trump family-backed World Liberty Financial lost around 50% of its value overnight, highlighting volatility in politically linked crypto assets.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261128/p7#a261128p7",
+      "istochnik": "Techmeme",
+      "zagolovok": "The US aerospace and defense sector is struggling to secure memory chips, labor, land, power, and factory infrastructure amid the AI data center boom (Christian Davies/Financial Times)",
+      "url": "https://www.techmeme.com/261128/p7#a261128p7",
+      "data": "2026-11-28T16:15:03Z",
+      "tekst": "Статья: https://www.ft.com/content/76143592-b1c8-42d2-bf4c-17aa87255467?accessToken=zwAAAaIgiLyjkc92FDWSschC0tO_TBeqhyVUZw.MEQCIBmgVqJJzHOv1Qe-PIiWUFFtTF5ylTNetqBdlwsyHc7_AiAChLJ-vCeIaMVO5WUFLlz5TOaszBKx430YqEkEKnp9BA&sharetype=gift&token=838699d9-46f1-4d5e-8012-243438eac6c0\nChristian Davies / Financial Times:\n\nThe US aerospace and defense sector is struggling to secure memory chips, labor, land, power, and factory infrastructure amid the AI data center boom — Boeing and leading defence contractors wrestle with ballooning backlogs fuelled by a surge in air travel and military spending",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261128/p6#a261128p6",
+      "istochnik": "Techmeme",
+      "zagolovok": "Q&A with Q.ANT CEO Michael Förtsch on making AI photonic processors which could be built with 90nm nodes, their memory efficiency, adoption challenges, and more (Joel Khalili/Wired)",
+      "url": "https://www.techmeme.com/261128/p6#a261128p6",
+      "data": "2026-11-28T14:40:01Z",
+      "tekst": "Статья: https://www.wired.com/story/a-new-breed-of-chip-runs-ai-models-using-waves-of-light/\nJoel Khalili / Wired:\n\nQ&A with Q.ANT CEO Michael Förtsch on making AI photonic processors which could be built with 90nm nodes, their memory efficiency, adoption challenges, and more — German company Q.ANT is trying to cut the amount of energy required to run AI models by using light to perform the toughest calculations.",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261128/p5#a261128p5",
+      "istochnik": "Techmeme",
+      "zagolovok": "Power operators are using sensors and software to dynamically adjust grid safety limits, boosting existing network capacity amid rising AI-driven energy demand (Martha Muir/Financial Times)",
+      "url": "https://www.techmeme.com/261128/p5#a261128p5",
+      "data": "2026-11-28T12:40:01Z",
+      "tekst": "Статья: https://www.ft.com/content/7db3c2c9-dfad-4b5d-a8dc-aabf6fa87440\nMartha Muir / Financial Times:\n\nPower operators are using sensors and software to dynamically adjust grid safety limits, boosting existing network capacity amid rising AI-driven energy demand — Operators are using sensors and sophisticated software to eke out more capacity from installed transmission lines as they struggle …",
+      "skoro": false,
+      "novyy": true
+    },
+    {
+      "id": "https://www.techmeme.com/261128/p4#a261128p4",
+      "istochnik": "Techmeme",
+      "zagolovok": "A profile of Jensen Huang, whom longtime friends and associates say has an unrelenting ability to make the most of any situation, as he returns as Nvidia's CEO (Erich Schwartzel/Wall Street Journal)",
+      "url": "https://www.techmeme.com/261128/p4#a261128p4",
+      "data": "2026-11-28T07:40:01Z",
+      "tekst": "Статья: https://www.wsj.com/business/jensen-huang-nvidia-ping-pong-rise-and-fall-bfd13000?st=NG91Cq\nErich Schwartzel / Wall Street Journal:\n\nA profile of Jensen Huang, whom longtime friends and associates say has an unrelenting ability to make the most of any situation, as he returns as Nvidia's CEO — As a longtime friend of the Nvidia CEO puts it, “Jensen will always pull a rabbit out of a hat”",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261128/p3#a261128p3",
+      "istochnik": "Techmeme",
+      "zagolovok": "Sweden-based Trustly, which lets merchants accept payments via bank transfers, raised $60M from Nordic Capital and others, taking its total funding to $450M+ (John Reynolds/Tech.eu)",
+      "url": "https://www.techmeme.com/261128/p3#a261128p3",
+      "data": "2026-11-28T06:45:01Z",
+      "tekst": "Статья: https://tech.eu/2026/11/24/trustly-completes-60m-funding-raise/\nJohn Reynolds / Tech.eu:\n\nSweden-based Trustly, which lets merchants accept payments via bank transfers, raised $60M from Nordic Capital and others, taking its total funding to $450M+ — Trustly has raised the funds from existing investors. — Swedish fintech Trustly today confirmed it had completed a $60m funding round …",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261128/p2#a261128p2",
+      "istochnik": "Techmeme",
+      "zagolovok": "COO Jen Wong says 80%+ of Reddit's monetization comes from logged-in users whose time on the site rises from 5 min/day in year one to 40 min/day by year five (Eleanor Pringle/Fortune)",
+      "url": "https://www.techmeme.com/261128/p2#a261128p2",
+      "data": "2026-11-28T06:25:04Z",
+      "tekst": "Статья: https://fortune.com/2026/11/26/reddit-coo-jen-wong-user-karma-moderator-model-ai/\nEleanor Pringle / Fortune:\n\nCOO Jen Wong says 80%+ of Reddit's monetization comes from logged-in users whose time on the site rises from 5 min/day in year one to 40 min/day by year five — Reddit boasts engagement metrics that would be the envy of many other online platforms: Over 80% of its monetization comes from loyal …",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261128/p1#a261128p1",
+      "istochnik": "Techmeme",
+      "zagolovok": "Embo, which is developing world models for robotics trained on massive amounts of internet video, emerges from stealth with a $110M seed led by a16z (Embo)",
+      "url": "https://www.techmeme.com/261128/p1#a261128p1",
+      "data": "2026-11-28T05:50:02Z",
+      "tekst": "Статья: https://embo.com/introducing-embo\nEmbo:\n\nEmbo, which is developing world models for robotics trained on massive amounts of internet video, emerges from stealth with a $110M seed led by a16z — Embo is building the next generation of frontier AI models, with a deep understanding of physical reality and fine-grained motor skills.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261127/p17#a261127p17",
+      "istochnik": "Techmeme",
+      "zagolovok": "Anthropic says Claude doesn't silently sabotage work and that some user reports reflect \"overcaution\", where Claude clings to self-imposed rules on long tasks (Edwin/@edwinarbus)",
+      "url": "https://www.techmeme.com/261127/p17#a261127p17",
+      "data": "2026-11-28T03:35:05Z",
+      "tekst": "Статья: https://x.com/edwinarbus\nEdwin / @edwinarbus:\n\nAnthropic says Claude doesn't silently sabotage work and that some user reports reflect “overcaution”, where Claude clings to self-imposed rules on long tasks — Claude has not been trained to sabotage work. Yes, it sometimes makes mistakes, and other agents might identify them, but this isn't sabotage. There have been a few screenshots floating around of an outdated Fable 5 system card. For the first two days of Fable 5's launch in June, we d...",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261127/p16#a261127p16",
+      "istochnik": "Techmeme",
+      "zagolovok": "How the MATCH Act could backfire by barring ASML from its ~350 immersion scanners in China, letting rivals service and reverse engineer them, and hire its staff (LithoWar)",
+      "url": "https://www.techmeme.com/261127/p16#a261127p16",
+      "data": "2026-11-28T02:00:01Z",
+      "tekst": "Статья: https://lithowar.com/lithography-war/\nLithoWar:\n\nHow the MATCH Act could backfire by barring ASML from its ~350 immersion scanners in China, letting rivals service and reverse engineer them, and hire its staff — At the heart of the AI race, while East and West stockpile advanced processors, a quiet technology battle is under …",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261127/p15#a261127p15",
+      "istochnik": "Techmeme",
+      "zagolovok": "US insurance giant Allstate has been suffering an outage since November 23, affecting its website and app; the company hasn't said what is causing the outage (Jean Eaglesham/Wall Street Journal)",
+      "url": "https://www.techmeme.com/261127/p15#a261127p15",
+      "data": "2026-11-27T23:30:02Z",
+      "tekst": "Статья: https://www.wsj.com/finance/allstate-joins-growing-list-of-companies-hit-by-tech-outages-77dbb488?st=h32XJK&reflink=desktopwebshare_permalink\nJean Eaglesham / Wall Street Journal:\n\nUS insurance giant Allstate has been suffering an outage since November 23, affecting its website and app; the company hasn't said what is causing the outage — The multiday outage has left customers struggling to reach the insurer during one of the year's busiest travel weeks",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261127/p14#a261127p14",
+      "istochnik": "Techmeme",
+      "zagolovok": "Some users claim Claude is silently sabotaging projects, especially those involving ML work, but it's hard to prove because models are built to be proactive (Drew Breunig)",
+      "url": "https://www.techmeme.com/261127/p14#a261127p14",
+      "data": "2026-11-27T21:35:01Z",
+      "tekst": "Статья: https://www.dbreunig.com/2026/11/27/proactivity-can-read-as-sabotage.html\nDrew Breunig:\n\nSome users claim Claude is silently sabotaging projects, especially those involving ML work, but it's hard to prove because models are built to be proactive — Is Claude Throwing the Game? — There's a recent spate of claims that Claude is silently sabotaging people's projects, especially when they involve machine learning.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261127/p13#a261127p13",
+      "istochnik": "Techmeme",
+      "zagolovok": "Q&A with AI researchers Ege Erdil and Daniel Kokotajlo on the odds of an intelligence explosion before 2029, pausing AI, the US antagonizing China, and more (Dwarkesh Patel/Dwarkesh Podcast)",
+      "url": "https://www.techmeme.com/261127/p13#a261127p13",
+      "data": "2026-11-27T20:15:01Z",
+      "tekst": "Статья: https://www.dwarkesh.com/p/daniel-kokotajlo-ege-erdil\nDwarkesh Patel / Dwarkesh Podcast:\n\nQ&A with AI researchers Ege Erdil and Daniel Kokotajlo on the odds of an intelligence explosion before 2029, pausing AI, the US antagonizing China, and more — “If we pause now, people still won't understand what's at stake.” — New podcast episode between Ege Erdil and Daniel Kokotajlo.",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261127/p12#a261127p12",
+      "istochnik": "Techmeme",
+      "zagolovok": "OpenAI countersues Apple for allegedly stealing trade secrets via a staffer who returned to Apple and \"coercing and threatening\" suppliers that work with both (Financial Times)",
+      "url": "https://www.techmeme.com/261127/p12#a261127p12",
+      "data": "2026-11-27T18:57:47Z",
+      "tekst": "Статья: https://www.ft.com/content/af599e07-d44c-4068-ab84-6ee3c85551d4\nFinancial Times:\n\nOpenAI countersues Apple for allegedly stealing trade secrets via a staffer who returned to Apple and “coercing and threatening” suppliers that work with both — The ChatGPT maker also accuses the tech giant of ‘coercing and threatening’ suppliers who work with both companies, as legal battle escalates",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://www.techmeme.com/261127/p11#a261127p11",
+      "istochnik": "Techmeme",
+      "zagolovok": "Sources: Verizon is in talks to buy fiber-optic broadband operator Fidium for ~$6B, as part of its goal to expand its network to 50M US homes and businesses (Financial Times)",
+      "url": "https://www.techmeme.com/261127/p11#a261127p11",
+      "data": "2026-11-27T18:50:02Z",
+      "tekst": "Статья: https://www.ft.com/content/19c8508b-0dc6-492c-9f68-497da516a398\nFinancial Times:\n\nSources: Verizon is in talks to buy fiber-optic broadband operator Fidium for ~$6B, as part of its goal to expand its network to 50M US homes and businesses — US group pursues company owned by Searchlight Capital and Canada's BCI in push to boost its presence in New England region",
+      "skoro": false,
+      "novyy": false
+    },
+    {
+      "id": "https://x.com/trq212/status/2126714525894533192",
+      "istochnik": "X",
+      "zagolovok": "The margin of error we give AIs is 100x less than that of a human. A single waymo crash will be in the news. A coding ag",
+      "url": "https://x.com/trq212/status/2126714525894533192",
+      "data": "2026-11-28T16:27:10Z",
+      "tekst": "@trq212: The margin of error we give AIs is 100x less than that of a human.\n\nA single waymo crash will be in the news. A coding agent has to ask for your decision 5x loudly, despite you ignoring it and not reading the code over and over again.",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "trq212"
+    },
+    {
+      "id": "https://x.com/trq212/status/2126386932989210714",
+      "istochnik": "X",
+      "zagolovok": "Models should be scored more like an RPG stat sheet than a leaderboard.",
+      "url": "https://x.com/trq212/status/2126386932989210714",
+      "data": "2026-11-27T18:45:25Z",
+      "tekst": "@trq212: Models should be scored more like an RPG stat sheet than a leaderboard.",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "trq212"
+    },
+    {
+      "id": "https://x.com/jackclarkSF/status/2126710747682234671",
+      "istochnik": "X",
+      "zagolovok": "Ways I have failed my toddler today: Tried to separate stuffing from some mashed potatoes. But upon serving the toddler ",
+      "url": "https://x.com/jackclarkSF/status/2126710747682234671",
+      "data": "2026-11-28T16:12:09Z",
+      "tekst": "@jackclarkSF: Ways I have failed my toddler today: Tried to separate stuffing from some mashed potatoes. But upon serving the toddler discovered a speck of stuffing; dish ruined. Moved to off-menu item of toast & marmite. Toast is \"too round\" and not \"big gigantic\" like they wanted.",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "jackclarkSF"
+    },
+    {
+      "id": "https://x.com/jackclarkSF/status/2126380579512057911",
+      "istochnik": "X",
+      "zagolovok": "https://x.com/i/article/2126379730517864448",
+      "url": "https://x.com/jackclarkSF/status/2126380579512057911",
+      "data": "2026-11-27T18:20:11Z",
+      "tekst": "@jackclarkSF: https://x.com/i/article/2126379730517864448",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "jackclarkSF"
+    },
+    {
+      "id": "https://x.com/OfficialLoganK/status/2126434025292144821",
+      "istochnik": "X",
+      "zagolovok": "I’ve onboarded a few non-tech family members to @instinct over the last week, it’s crazy how fast people just get it, ti",
+      "url": "https://x.com/OfficialLoganK/status/2126434025292144821",
+      "data": "2026-11-27T21:52:33Z",
+      "tekst": "@OfficialLoganK: I’ve onboarded a few non-tech family members to @instinct over the last week, it’s crazy how fast people just get it, time to value for good agent experiences in 2027 is going to be minutes or less.\n\nAnd it is retentive because you don’t need a new app. Texting for the win!",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "OfficialLoganK"
+    },
+    {
+      "id": "https://x.com/swyx/status/2126727822316376312",
+      "istochnik": "X",
+      "zagolovok": "Why labs DON'T usually have an exclusivity clause when buying data from rl env vendors — big surprise moment for me pers",
+      "url": "https://x.com/swyx/status/2126727822316376312",
+      "data": "2026-11-28T17:20:00Z",
+      "tekst": "@swyx: Why labs DON'T usually have an exclusivity clause when buying data from rl env vendors — big surprise moment for me personally chatting with @gabegreenberg\n\nЦитирует @latentspacepod: 🆕 What data is going into post-training top coding models like Gemini 4 Neon, Anthropic's Opus 5.5 and OpenAI's GPT-6 Astra? Who are the staff engineers creating the RL Envs to replace their own jobs? \n\nThe coding data vendor industry is exploding, and we're excited to dive in:\n\nhttps://youtu.be/lCtMq8jegvo\n\n@gabegreenberg says @g2i_ai will grow from $15M to ~$100M this year as the only completely bootstrapped human data vendor, and we go into:\n\n• How to set task difficulty just beyond what the model can already solve\n• How one training task can take two weeks of engineering\n• When labs pay extra for exclusive data and when they take the discount\n• What happens when the GPUs are ready before the data\n• Why a project’s history across GitHub, Linear, and Slack is valuable for computer-use training\n\nEnjoy!",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "swyx"
+    },
+    {
+      "id": "https://x.com/swyx/status/2126643285443919993",
+      "istochnik": "X",
+      "zagolovok": "theres a lot of disingenuous/wishful thinking on “open catching up to closed” and more recently have heard that a few to",
+      "url": "https://x.com/swyx/status/2126643285443919993",
+      "data": "2026-11-28T11:44:05Z",
+      "tekst": "@swyx: theres a lot of disingenuous/wishful thinking on “open catching up to closed” and more recently have heard that a few top open models are benchmaxxed (rank much lower on any private eval)\n\nthis pretrain pplx estimate probably better reflects reality at least from a pretrain perspective. \n\nthe good news - open models eventually get there! only 1.5 year behind!\n\nthe bad news - best model rn is opus 4.1/gemini 2.5 tier. unusable by 2027 standard\n\nposttraining is NOT to be ignored and in fact @jietang has been basically entirely investing in scaling posttraining for glm. but generally intelligent “big model smell” is probably best tracked by pplx\n\nЦитирует @anpaure: I found a way to estimate log-perplexity/BPB for all frontier models! Introducing the Anpaure Pretrain Index.\nResults are shocking: Gemini 3.1 Pro was a Fable 5-level pretrain, Chinese pretrains lag behind US by around 8-12 months, and it now makes sense why Opus 5 was a flop!",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "swyx"
+    },
+    {
+      "id": "https://x.com/swyx/status/2126528882262348003",
+      "istochnik": "X",
+      "zagolovok": "worthwhile talk on whats going on with the neolab reinventions Цитирует @GergelyOrosz: Feels like the most straightforwa",
+      "url": "https://x.com/swyx/status/2126528882262348003",
+      "data": "2026-11-28T04:09:29Z",
+      "tekst": "@swyx: worthwhile talk on whats going on with the neolab reinventions\n\nЦитирует @GergelyOrosz: Feels like the most straightforward way these days get an offer from Anthropic or OpenAI is “work at Cloudflare”\n\n(which itself is hard enough to do fwiw)",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "swyx"
+    },
+    {
+      "id": "https://x.com/testingcatalog/status/2126690558529732890",
+      "istochnik": "X",
+      "zagolovok": "Google is planning to upgrade Flashcards in Gemini Notebook to use the \"spaced repetition\" method. > The spaced repetiti",
+      "url": "https://x.com/testingcatalog/status/2126690558529732890",
+      "data": "2026-11-28T14:51:55Z",
+      "tekst": "@testingcatalog: Google is planning to upgrade Flashcards in Gemini Notebook to use the \"spaced repetition\" method. \n\n> The spaced repetition method is a learning technique in which you review information at gradually increasing intervals rather than cramming it all at once. \n\n> Each time you recall something correctly, the gap before your next review grows longer, helping move facts into long-term memory with less total study time.\n\nI seriously need to try to learn German again 👀",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "testingcatalog"
+    },
+    {
+      "id": "https://x.com/simonw/status/2126735062469370191",
+      "istochnik": "X",
+      "zagolovok": "Code-driven AI illustrations are more useful than images from dedicated image models: https://simonwillison.net/2026/Nov",
+      "url": "https://x.com/simonw/status/2126735062469370191",
+      "data": "2026-11-28T17:48:46Z",
+      "tekst": "@simonw: Code-driven AI illustrations are more useful than images from dedicated image models: https://simonwillison.net/2026/Nov/28/code-driven-ai-illustrations/\n\nI thought Anthropic had a product gap: no equivalent to Nano Banana or ChatGPT Images\n\nThey closed it: their text-output models got really good at design through code",
+      "skoro": false,
+      "novyy": true,
+      "akkaunt": "simonw"
+    },
+    {
+      "id": "https://x.com/btibor91/status/2126410343308288420",
+      "istochnik": "X",
+      "zagolovok": "Looks like OpenAI and Lenovo have a new promo - some Lenovo Windows PCs come with ChatGPT preinstalled, with ChatGPT Bus",
+      "url": "https://x.com/btibor91/status/2126410343308288420",
+      "data": "2026-11-27T20:18:27Z",
+      "tekst": "@btibor91: Looks like OpenAI and Lenovo have a new promo - some Lenovo Windows PCs come with ChatGPT preinstalled, with ChatGPT Business credits for using that app\n\nSigning in to an existing Business workspace adds $100, and creating a new one from the app earns $100 per seat bought in the first 90 days\n\n(https://help.openai.com/en/articles/20001705)",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "btibor91"
+    },
+    {
+      "id": "https://x.com/btibor91/status/2126406628249575466",
+      "istochnik": "X",
+      "zagolovok": "Fun fact: Neon found an old, known NAS RAID defect causing data damage in two minutes, after Astra and Fable had spent f",
+      "url": "https://x.com/btibor91/status/2126406628249575466",
+      "data": "2026-11-27T20:03:41Z",
+      "tekst": "@btibor91: Fun fact: Neon found an old, known NAS RAID defect causing data damage in two minutes, after Astra and Fable had spent five days investigating\n\nЦитирует @btibor91: The dream team",
+      "skoro": false,
+      "novyy": false,
+      "akkaunt": "btibor91"
+    }
+  ],
+  "ne_otvetili": [],
+  "tolko_v_vidennye": [],
+  "github_polnyy_obhod": false,
+  "istochniki": [
+    "claude.dev",
+    "Claude Code",
+    "Claude Platform",
+    "Блог Claude",
+    "OpenAI",
+    "Codex",
+    "OpenAI API",
+    "AINews",
+    "Simon Willison",
+    "Ben's Bites",
+    "Cursor",
+    "DeepMind",
+    "Блог Google",
+    "Google Developers Blog",
+    "Techmeme",
+    "GitHub Claude Code"
+  ],
+  "iks": {
+    "akkauntov": 30,
+    "ne_otvetili": [
+      "demishassabis"
+    ]
+  }
+}
