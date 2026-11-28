@@ -2,48 +2,6 @@
   "github_obhod": true,
   "opublikovannye": [
     {
-      "data": "2026-11-14T10:17:26Z",
-      "oboroty": false,
-      "url": "https://latent.space/p/ainews-the-no-ai-slop-manifesto/",
-      "vid": "sayty",
-      "zagolovok": "llama.cpp и ggml дошли до версии 1.0: API стабилизирован, убрано 35 устаревших функций"
-    },
-    {
-      "data": "2026-11-14T10:17:26Z",
-      "oboroty": false,
-      "url": "https://www.techmeme.com/261114/p6#a261114p6",
-      "vid": "dengi",
-      "zagolovok": "Operand, ИИ-инструменты для проверки сделок фондами прямых инвестиций, привлекла $31 млн при оценке $220 млн"
-    },
-    {
-      "data": "2026-11-14T10:17:26Z",
-      "oboroty": false,
-      "url": "https://www.techmeme.com/261114/p5#a261114p5",
-      "vid": "dengi",
-      "zagolovok": "WhiteMatter, разработчик ИИ-агентов-«стражей» для надзора за другими агентами, привлекла $20 млн в раунде A"
-    },
-    {
-      "data": "2026-11-14T10:17:26Z",
-      "oboroty": false,
-      "url": "https://www.techmeme.com/261114/p4#a261114p4",
-      "vid": "dengi",
-      "zagolovok": "Charta Health, автоматизация проверки медкарт и биллинга с помощью ИИ, привлекла $55 млн в раунде B"
-    },
-    {
-      "data": "2026-11-14T10:17:26Z",
-      "oboroty": false,
-      "url": "https://www.techmeme.com/261114/p3#a261114p3",
-      "vid": "dengi",
-      "zagolovok": "Luminal, облако для инференса и компилятор для запуска моделей на разных чипах, привлекла $25 млн в раунде A"
-    },
-    {
-      "data": "2026-11-14T10:17:26Z",
-      "oboroty": false,
-      "url": "https://www.techmeme.com/261113/p42#a261113p42",
-      "vid": "dengi",
-      "zagolovok": "FT: вложение Сэма Бэнкмана-Фрида в Anthropic ($500 млн в 2021) стоило бы ~$37 млрд при листинге компании на $1,5 трлн"
-    },
-    {
       "data": "2026-11-14T18:17:54Z",
       "oboroty": false,
       "url": "https://www.techmeme.com/261114/p15#a261114p15",
@@ -1680,10 +1638,24 @@
       "url": "https://x.com/btibor91/status/2126410343308288420",
       "vid": "x",
       "zagolovok": "OpenAI и Lenovo запустили акцию: на части ПК Lenovo с Windows ChatGPT установлен заранее, а бизнес-аккаунты получают кредиты — 100 долларов за вход и 100 долларов за место в первые 90 дней"
+    },
+    {
+      "data": "2026-11-28T10:17:34Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261127/p17#a261127p17",
+      "vid": "sayty",
+      "zagolovok": "Anthropic ответила на жалобы о «тихом саботаже»: Claude не обучали саботировать работу, а часть случаев — «сверхосторожность», когда модель держится за придуманные себе правила в долгих задачах"
+    },
+    {
+      "data": "2026-11-28T10:17:34Z",
+      "oboroty": false,
+      "url": "https://www.techmeme.com/261128/p1#a261128p1",
+      "vid": "dengi",
+      "zagolovok": "Embo, делающая мировые модели для робототехники на основе видео из интернета, вышла из тени с посевным раундом в 110 млн долларов под руководством a16z"
     }
   ],
-  "posledniy_sbor": "2026-11-28T01:12:15Z",
-  "posledniy_slot": "2026-11-28T02:00:00Z",
+  "posledniy_sbor": "2026-11-28T09:10:21Z",
+  "posledniy_slot": "2026-11-28T10:00:00Z",
   "vidennye": {
     "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-hydrogen-builders/": "2026-11-24T02:21:47Z",
     "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-neon-builders/": "2026-11-24T18:22:58Z",
@@ -1845,6 +1817,7 @@
     "https://latent.space/p/ainews-gemini-4-neon-gdm-s-opus-sol-contender/": "2026-11-19T10:22:04Z",
     "https://latent.space/p/ainews-gemini-4-neon-marks-gdm-s-full-return-as-a-frontier-lab/": "2026-11-25T10:21:42Z",
     "https://latent.space/p/ainews-gpt-6-2-astra-the-2-frontier-model-is-better-and-20-600-cheaper-but-has-mixed-reviews-6-2-sol/": "2026-11-18T18:19:00Z",
+    "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/": "2026-11-28T10:17:34Z",
     "https://latent.space/p/ainews-jensen-huang-resigns-after-33-years-leading-nvidia/": "2026-11-13T18:16:34Z",
     "https://latent.space/p/ainews-jensen-is-back-and-openai-shows-its-pretraining-curve-joined-by-microsoft/": "2026-11-24T10:18:23Z",
     "https://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them/": "2026-11-26T02:17:08Z",
@@ -2434,6 +2407,8 @@
     "https://www.techmeme.com/261127/p13#a261127p13": "2026-11-28T02:19:04Z",
     "https://www.techmeme.com/261127/p14#a261127p14": "2026-11-28T02:19:04Z",
     "https://www.techmeme.com/261127/p15#a261127p15": "2026-11-28T02:19:04Z",
+    "https://www.techmeme.com/261127/p16#a261127p16": "2026-11-28T10:17:34Z",
+    "https://www.techmeme.com/261127/p17#a261127p17": "2026-11-28T10:17:34Z",
     "https://www.techmeme.com/261127/p2#a261127p2": "2026-11-27T10:17:41Z",
     "https://www.techmeme.com/261127/p3#a261127p3": "2026-11-27T18:17:48Z",
     "https://www.techmeme.com/261127/p4#a261127p4": "2026-11-27T18:17:48Z",
@@ -2442,6 +2417,10 @@
     "https://www.techmeme.com/261127/p7#a261127p7": "2026-11-27T18:17:48Z",
     "https://www.techmeme.com/261127/p8#a261127p8": "2026-11-27T18:17:48Z",
     "https://www.techmeme.com/261127/p9#a261127p9": "2026-11-27T18:17:48Z",
+    "https://www.techmeme.com/261128/p1#a261128p1": "2026-11-28T10:17:34Z",
+    "https://www.techmeme.com/261128/p2#a261128p2": "2026-11-28T10:17:34Z",
+    "https://www.techmeme.com/261128/p3#a261128p3": "2026-11-28T10:17:34Z",
+    "https://www.techmeme.com/261128/p4#a261128p4": "2026-11-28T10:17:34Z",
     "https://x.com/AIatMeta/status/2119912647034642817": "2026-11-10T20:46:16Z",
     "https://x.com/AIatMeta/status/2123484005089558692": "2026-11-20T02:21:40Z",
     "https://x.com/AIatMeta/status/2123882678332322134": "2026-11-21T02:23:16Z",
@@ -2763,6 +2742,7 @@
     "https://x.com/swyx/status/2126106139582677088": "2026-11-27T02:21:05Z",
     "https://x.com/swyx/status/2126201671026180469": "2026-11-27T10:17:41Z",
     "https://x.com/swyx/status/2126352854394790172": "2026-11-27T18:17:48Z",
+    "https://x.com/swyx/status/2126528882262348003": "2026-11-28T10:17:34Z",
     "https://x.com/testingcatalog/status/2119894220748280190": "2026-11-10T20:46:17Z",
     "https://x.com/testingcatalog/status/2119913217371799774": "2026-11-10T20:46:17Z",
     "https://x.com/testingcatalog/status/2119914321245577334": "2026-11-10T20:46:17Z",
